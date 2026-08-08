@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1897228452687313881}
   - component: {fileID: 4044610521869419380}
   - component: {fileID: 1927590738378748706}
+  - component: {fileID: 3642033684219853151}
   m_Layer: 0
   m_Name: SM_beech_tree_07
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5541415839557156106}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.9929085, y: -0.010001183, z: -142.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5541415839557156106}
-  m_Mesh: {fileID: 8638093416666158643, guid: cb4561e5c961b464d9a6662167324ed4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7fbdab2513d9b437488ce93c67420b27, type: 2}
 --- !u!23 &1927590738378748706
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,9 +65,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2cb073e85af32442892b0f70879e791, type: 2}
-  - {fileID: 2100000, guid: 5ecf08e52fec57746b1ae3bf9e8716ef, type: 2}
-  - {fileID: 2100000, guid: 76589db5c95bd9c48a13e480d5a184e8, type: 2}
+  - {fileID: 2100000, guid: c2f1933befa354a5297c55f3de4f1b84, type: 2}
+  - {fileID: 2100000, guid: f7a242d3919954a5f8195c0d97bc910f, type: 2}
+  - {fileID: 2100000, guid: 27ebf75e815ce4b7f99f8490d684012f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,3 +89,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3642033684219853151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541415839557156106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 254309a30daa647c98d980c3f962f47c
+  storedPrefabParentGUID: a3df8674308170c47a6898e4e23e6e3e
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 

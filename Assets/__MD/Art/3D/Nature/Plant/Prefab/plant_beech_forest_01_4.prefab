@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5166808946771762820}
   - component: {fileID: 8555782848620113856}
   - component: {fileID: 9059363530582471212}
+  - component: {fileID: 1167255801783850226}
   m_Layer: 0
   m_Name: plant_beech_forest_01_4
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7107893612406652562}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.58, y: -0.0099983215, z: -47.873}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7107893612406652562}
-  m_Mesh: {fileID: 4647942883000957857, guid: 4114ce7ad1c595440b37ab4c956f7d3f, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 428ef796795764f5c91a1bf933d2a637, type: 2}
 --- !u!23 &9059363530582471212
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2eefb519086ff184983961226a51b5d5, type: 2}
+  - {fileID: 2100000, guid: 0570053d4d1b0426b80a7becbff2c390, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1167255801783850226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7107893612406652562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 4f639c7539ad349599ec6e61f579984d
+  storedPrefabParentGUID: 48f1798c399ecc14eb87bbe5e95caf9a
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 

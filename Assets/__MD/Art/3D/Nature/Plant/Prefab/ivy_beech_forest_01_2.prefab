@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 764486800087110576}
   - component: {fileID: 76282894124125331}
   - component: {fileID: 4343184715488785431}
+  - component: {fileID: 445510056251780765}
   m_Layer: 0
   m_Name: ivy_beech_forest_01_2
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8815841208089736114}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.47, y: -0.0099983215, z: -47.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8815841208089736114}
-  m_Mesh: {fileID: -2535365177495478285, guid: 1c36e8d71bc13274ca3604762665df63, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1f8439deb932248b6898daad1885a9e5, type: 2}
 --- !u!23 &4343184715488785431
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9913390ada3aca84e92558c6521c9c06, type: 2}
+  - {fileID: 2100000, guid: b44e609984c6249b8b14c8f19f0d45f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &445510056251780765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815841208089736114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: e6137bcd69d1e426cb437fd99720f2e3
+  storedPrefabParentGUID: 88070a0e7e7cfa74e9fd8b70e2ecacff
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3887935394114724855}
   - component: {fileID: 563590212184522510}
   - component: {fileID: 5477658861839298586}
+  - component: {fileID: 2195692611947982361}
   m_Layer: 0
   m_Name: foliage_fern_01_2
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975640523683341806}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.31, y: -0.0099983215, z: -47.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975640523683341806}
-  m_Mesh: {fileID: 6318885846933741355, guid: dc06987d6fca75f48ab2e2c7c1918a92, type: 3}
+  m_Mesh: {fileID: 4300000, guid: bdb5f3eef34e6481086cd9c6530eafc7, type: 2}
 --- !u!23 &5477658861839298586
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 117966070030b3f48ac07c637547d220, type: 2}
+  - {fileID: 2100000, guid: 86a8b50b7aaf149f2a3f8c12b2427bfc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2195692611947982361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975640523683341806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 9fd5a0f2df1264ae88b31a75d6b5abcd
+  storedPrefabParentGUID: e25d98b971ee99d4eb9a6035d7ad9f23
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 

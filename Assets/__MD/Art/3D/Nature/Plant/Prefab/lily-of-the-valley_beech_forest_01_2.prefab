@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5473940598377028984}
   - component: {fileID: 6342375117773579054}
   - component: {fileID: 473549367369043667}
+  - component: {fileID: 1283452902072162501}
   m_Layer: 0
   m_Name: lily-of-the-valley_beech_forest_01_2
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018310140169882786}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.41, y: -0.0099983215, z: -47.103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018310140169882786}
-  m_Mesh: {fileID: 8984378215071298456, guid: 17ec3be3e154b2545b9ecd7b03f0cb4d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0b598632c31404f5aa6e9ca71b667ea9, type: 2}
 --- !u!23 &473549367369043667
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af25f3a1412953d46b468901aeaa13a2, type: 2}
+  - {fileID: 2100000, guid: 4cfa4969eb0304e64a16f7d62509439b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1283452902072162501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018310140169882786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 8e83d7c1fa80943a291ec22e89056ca1
+  storedPrefabParentGUID: 9a75ce4d41cf8414d9460fabf65c71f7
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8386096245275270517}
   - component: {fileID: 7307141736058074433}
   - component: {fileID: 5909504775820729672}
+  - component: {fileID: 5664898100081070770}
   m_Layer: 0
   m_Name: beech_plant_02
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400117320794684246}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.07, y: -0.010000229, z: -46.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400117320794684246}
-  m_Mesh: {fileID: 1641882434584090405, guid: 96823202f5f7ec14a86435eeabb3869d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 76d3c5efa9a29430d9c1a0cf43ee28cd, type: 2}
 --- !u!23 &5909504775820729672
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76589db5c95bd9c48a13e480d5a184e8, type: 2}
+  - {fileID: 2100000, guid: c5fc32381748c4c69b6e748d042b34c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5664898100081070770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400117320794684246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 77c3da05049e84d28985507fded539e9
+  storedPrefabParentGUID: e45933cf5ece8f249924f7cfdf794e85
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 

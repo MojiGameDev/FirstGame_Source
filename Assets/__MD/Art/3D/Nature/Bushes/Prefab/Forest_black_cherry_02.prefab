@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5075117662006827684}
   - component: {fileID: 8268360725973868663}
   - component: {fileID: 9199124708527264005}
+  - component: {fileID: 1076313200895308750}
   m_Layer: 0
   m_Name: Forest_black_cherry_02
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497286020976668980}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.2143555, y: -0.010002136, z: -41.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497286020976668980}
-  m_Mesh: {fileID: 1910504171275714827, guid: fdc3d587894887f42b6e0aaf92c2777c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 635573cd520e9487c922d31d3e9d134a, type: 2}
 --- !u!23 &9199124708527264005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7348209e412548345a8d38e79a48e188, type: 2}
+  - {fileID: 2100000, guid: 3fc4c61e9836c46ea9dcb6c7167baea1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1076313200895308750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497286020976668980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 65ce11421894a4d0e8e93f591b3adbb1
+  storedPrefabParentGUID: 0e9323f19961ab742b1fd4a2c22615d9
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 

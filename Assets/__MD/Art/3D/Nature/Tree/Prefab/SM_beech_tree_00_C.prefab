@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4344719255062406640}
   - component: {fileID: 1484743590711333569}
   - component: {fileID: 185130349775857237}
+  - component: {fileID: 8368007709730700556}
   m_Layer: 0
   m_Name: SM_beech_tree_00_C
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010931159040827886}
-  m_Mesh: {fileID: 7319134437850886464, guid: 23e98d6a9e3cfe24084f83b4e74014d3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 9a7306d8dd4624620b6971aa3adec813, type: 2}
 --- !u!23 &185130349775857237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,8 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76589db5c95bd9c48a13e480d5a184e8, type: 2}
-  - {fileID: 2100000, guid: 5ecf08e52fec57746b1ae3bf9e8716ef, type: 2}
+  - {fileID: 2100000, guid: 27ebf75e815ce4b7f99f8490d684012f, type: 2}
+  - {fileID: 2100000, guid: f7a242d3919954a5f8195c0d97bc910f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,3 +88,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8368007709730700556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010931159040827886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: ae6646b83c21e4d97884bf7d02202290
+  storedPrefabParentGUID: 0175b9953617f8e4ba134398d2d82e06
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 
