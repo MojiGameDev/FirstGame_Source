@@ -20,7 +20,6 @@ Material:
   - TVE_FOURTH_SAMPLE_MAIN_UV
   - TVE_MAIN_SAMPLE_MAIN_UV
   - TVE_MOTION
-  - TVE_MOTION_ELEMENT
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
@@ -77,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainShaderTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 07ce22b1276b3494b83753acf7f77d17, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetaAlbedoTex:
@@ -167,7 +166,7 @@ Material:
     - _ColormapEnd: 1
     - _ColormapInfo: 0
     - _ColormapIntensityValue: 0
-    - _Cutoff: 0.17
+    - _Cutoff: 0.175
     - _CutoutAlphaValue: 0
     - _CutoutBakeMode: 0
     - _CutoutCategory: 0
@@ -304,7 +303,7 @@ Material:
     - _IsTVEShader: 1
     - _IsVersion: 2160
     - _MainAlbedoValue: 1
-    - _MainAlphaClipValue: 0.17
+    - _MainAlphaClipValue: 0.175
     - _MainCategory: 1
     - _MainColorMode: 0
     - _MainCoordMode: 0
@@ -314,7 +313,7 @@ Material:
     - _MainNormalValue: 1
     - _MainOcclusionValue: 1
     - _MainSampleMode: 0
-    - _MainSmoothnessValue: 0.251
+    - _MainSmoothnessValue: 0.212
     - _MetaAlbedoValue: 1
     - _MetaCategory: 0
     - _MetaCutoutValue: 1
@@ -334,33 +333,33 @@ Material:
     - _MetaVariationValue: 1
     - _MetaWetnessValue: 1
     - _MotionBaseDelayValue: 0
-    - _MotionBaseIntensityValue: 1
-    - _MotionBaseMaskMode: 3
+    - _MotionBaseIntensityValue: 0.3
+    - _MotionBaseMaskMode: 1
     - _MotionBaseNoiseValue: 0.5
     - _MotionBasePhaseValue: 0
     - _MotionBasePivotValue: 0.9
     - _MotionBasePushValue: 0
     - _MotionBaseSpeedValue: 2
-    - _MotionBaseTillingValue: 0
+    - _MotionBaseTillingValue: 5
     - _MotionCategory: 1
     - _MotionDistValue: 100
-    - _MotionElementMode: 1
+    - _MotionElementMode: 0
     - _MotionEnd: 1
     - _MotionHighlightValue: 0
     - _MotionIntensityValue: 1
     - _MotionPushInfo: 0
-    - _MotionSmallDelayValue: 0.7
-    - _MotionSmallIntensityValue: 0
+    - _MotionSmallDelayValue: 0
+    - _MotionSmallIntensityValue: 3
     - _MotionSmallMaskMode: 1
     - _MotionSmallNoiseValue: 0.5
     - _MotionSmallPhaseValue: 1
     - _MotionSmallPivotValue: 0.8
     - _MotionSmallPushValue: 0
     - _MotionSmallSpeedValue: 5
-    - _MotionSmallTillingValue: 0
-    - _MotionTinyIntensityValue: 1.5
-    - _MotionTinyMaskMode: 2
-    - _MotionTinyNoiseValue: 0.5
+    - _MotionSmallTillingValue: 5
+    - _MotionTinyIntensityValue: 5
+    - _MotionTinyMaskMode: 1
+    - _MotionTinyNoiseValue: 1
     - _MotionTinySpeedValue: 12
     - _MotionTinyTillingValue: 25
     - _ObjectCategory: 1
@@ -560,7 +559,7 @@ Material:
     - _WetnessWaterSmoothnessValue: 1
     - _XRMotionVectorsPass: 1
     - _emissive_power_value: 1
-    - _motion_small_mode: 0
+    - _motion_small_mode: 1
     - _render_coverage: 0
     - _render_cull: 0
     - _render_dst: 0
