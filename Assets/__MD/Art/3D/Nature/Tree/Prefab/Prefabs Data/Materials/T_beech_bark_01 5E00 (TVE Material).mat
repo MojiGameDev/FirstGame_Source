@@ -18,6 +18,8 @@ Material:
   - TVE_FOURTH_MASK_SAMPLE_MAIN_UV
   - TVE_FOURTH_SAMPLE_MAIN_UV
   - TVE_MAIN_SAMPLE_MAIN_UV
+  - TVE_MOTION
+  - TVE_MOTION_ELEMENT
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
@@ -40,8 +42,6 @@ Material:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - UniversalGBuffer
-  - MOTIONVECTORS
-  - XRMotionVectors
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -331,21 +331,21 @@ Material:
     - _MetaTintingValue: 1
     - _MetaVariationValue: 1
     - _MetaWetnessValue: 1
-    - _MotionBaseDelayValue: 1
-    - _MotionBaseIntensityValue: 0.3
+    - _MotionBaseDelayValue: 0
+    - _MotionBaseIntensityValue: 1
     - _MotionBaseMaskMode: 3
     - _MotionBaseNoiseValue: 0.5
     - _MotionBasePhaseValue: 0
     - _MotionBasePivotValue: 0.9
     - _MotionBasePushValue: 0
     - _MotionBaseSpeedValue: 2
-    - _MotionBaseTillingValue: 5
+    - _MotionBaseTillingValue: 0
     - _MotionCategory: 1
     - _MotionDistValue: 100
     - _MotionElementMode: 1
     - _MotionEnd: 1
     - _MotionHighlightValue: 0
-    - _MotionIntensityValue: 0
+    - _MotionIntensityValue: 1
     - _MotionPushInfo: 0
     - _MotionSmallDelayValue: 0.7
     - _MotionSmallIntensityValue: 0

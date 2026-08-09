@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8059815647656921041}
   - component: {fileID: 3618445721787354796}
   - component: {fileID: 5833168665385845118}
+  - component: {fileID: 318037655316654103}
   m_Layer: 0
   m_Name: SM_OakTree_Set_03k
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4702128000737809544}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.3, y: -0.010000229, z: -69.5}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4702128000737809544}
-  m_Mesh: {fileID: -367451754248938048, guid: 3c1f805a5dbcc6c419e04989e949cd9e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0fc3ab62517e146fa922097c33dffcb2, type: 2}
 --- !u!23 &5833168665385845118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,8 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2b3d149e378c2046b7a568c120177ef, type: 2}
-  - {fileID: 2100000, guid: b1fde540b0b22ca4595863abb6a35981, type: 2}
+  - {fileID: 2100000, guid: f9256758fda3d4c9ba72a52cbe72f03b, type: 2}
+  - {fileID: 2100000, guid: 4a12f727662d4450d87d7690b0066373, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,3 +88,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &318037655316654103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702128000737809544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: e7c4f1f85fe934be38c14b3c05d8604a
+  storedPrefabParentGUID: 005ff68041cd67b47aa0707ad6c283a1
+  storedPreset: Choose a preset;Vegetation
+  storedOverrides: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8034420307007349126}
   - component: {fileID: 7866461751476830020}
   - component: {fileID: 5756665127325534085}
+  - component: {fileID: 940726583313452339}
   m_Layer: 0
   m_Name: Grass_Lowpoly_sm
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4668900385849187106}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.098193996, z: -0, w: 0.99516726}
+  m_LocalRotation: {x: 0, y: -0.098190814, z: 0, w: 0.9951677}
   m_LocalPosition: {x: 11.962972, y: 0.32, z: -48.993855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4668900385849187106}
-  m_Mesh: {fileID: 8502815274032394174, guid: 5300d0c41cb92ad49960ebec48ef42c1, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2d51d8a37591f472d973ba17b318a22c, type: 2}
 --- !u!23 &5756665127325534085
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 285dff9bd6fa4cd478d16a358a3f677d, type: 2}
+  - {fileID: 2100000, guid: 77ae72feca7e7474094cfdd613e9d92b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &940726583313452339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668900385849187106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 6e57f76c618184560bc45f9abfc165c4
+  storedPrefabParentGUID: 16dec6c1f5daefb47ad51812136119ea
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Grass
+  storedOverrides: 

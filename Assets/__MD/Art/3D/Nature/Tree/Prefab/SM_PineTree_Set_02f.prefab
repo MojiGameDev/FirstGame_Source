@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3572337137108133668}
   - component: {fileID: 240549070177300817}
   - component: {fileID: 8945126122430139767}
+  - component: {fileID: 3636669551106371994}
   m_Layer: 0
   m_Name: SM_PineTree_Set_02f
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697557243981856686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.9071503, y: -0.010002136, z: -126.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697557243981856686}
-  m_Mesh: {fileID: -8354576332378122468, guid: b14d0257adfb62f4887e3108b405638e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6e7f921cc1e4e2babcd583b217bcbd, type: 2}
 --- !u!23 &8945126122430139767
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,8 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 461db84ca98a99f49ad3290c666ffb84, type: 2}
-  - {fileID: 2100000, guid: 1b18f1c50ac8ad5409e74ab881e8d624, type: 2}
+  - {fileID: 2100000, guid: a9c11ee7f18e642ceb6320d0fa46a6f5, type: 2}
+  - {fileID: 2100000, guid: a059c53db093845bea34874ebf6a72cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,3 +88,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3636669551106371994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697557243981856686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 7a9625165e42d446894e9295fdec2753
+  storedPrefabParentGUID: bf2505c73cbf0984a9fb26677a49eb76
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 
