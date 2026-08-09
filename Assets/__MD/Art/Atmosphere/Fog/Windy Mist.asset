@@ -31,12 +31,12 @@ MonoBehaviour:
   detailScale: 0.5
   detailStrength: 0.5
   detailOffset: -0.5
-  density: 0.1
+  density: 0.15
   shape: 0
   scaleNoiseWithHeight: 0
   border: 0.061
   customHeight: 1
-  height: 20
+  height: 50
   verticalOffset: 0
   distance: 0
   distanceFallOff: 1
@@ -50,7 +50,7 @@ MonoBehaviour:
   terrainFogHeight: 25
   terrainFogMinAltitude: 0
   terrainFogMaxAltitude: 150
-  albedo: {r: 0.8901961, g: 0.8901961, b: 0.8901961, a: 1}
+  albedo: {r: 0.2784314, g: 0.39215687, b: 0.5764706, a: 0.8}
   enableDepthGradient: 0
   depthGradient:
     serializedVersion: 2
@@ -120,11 +120,11 @@ MonoBehaviour:
   specularThreshold: 0.6
   specularIntensity: 0.1
   turbulence: 0
-  windDirection: {x: 0.01, y: 0, z: -0.01}
+  windDirection: {x: 0.005, y: 0, z: -0.005}
   useCustomDetailNoiseWindDirection: 1
-  detailNoiseWindDirection: {x: 0.02, y: 0.001, z: 0}
-  dayNightCycle: 1
-  sunDirection: {x: 45, y: 45, z: 0}
+  detailNoiseWindDirection: {x: 0.01, y: 0.001, z: 0}
+  dayNightCycle: 0
+  sunDirection: {x: 0, y: 0, z: 0}
   sunColor: {r: 1, g: 1, b: 1, a: 1}
   sunIntensity: 1
   ambientLightMultiplier: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   distantFogDistanceDensity: 0.5
   distantFogMaxHeight: 500
   distantFogHeightDensity: 0.2
-  distantFogColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0.5647059}
+  distantFogColor: {r: 0.2784314, g: 0.39215687, b: 0.5764706, a: 1}
   distantFogDiffusionIntensity: 0.4
   distantFogRenderQueue: 2999
   distantFogBaseAltitude: 0
