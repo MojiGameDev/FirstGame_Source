@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4990539416741615515}
   - component: {fileID: 1846828997878281668}
   - component: {fileID: 94189890519874121}
+  - component: {fileID: 4443447886167710884}
   m_Layer: 0
   m_Name: dwarf_pine_small_01
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2365990919084730600}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -16.28, y: 0.04175839, z: -46.1}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &1846828997878281668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2365990919084730600}
-  m_Mesh: {fileID: -618338890810840266, guid: a805b67e167d32343ac6365ff6d7bbfc, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ebc1f106845ef475aac2b77e0d6111dd, type: 2}
 --- !u!23 &94189890519874121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4288a3bb2906d64498c265083f3aa13f, type: 2}
+  - {fileID: 2100000, guid: a18005b02c8f84d9aad071e06a155fb0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4443447886167710884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2365990919084730600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: d3402803b4752436ab4cfa9afd43aace
+  storedPrefabParentGUID: 05ea547b7f5cd6748900b3ea41acb47c
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 
