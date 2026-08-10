@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 3329541696545164712}
   - component: {fileID: 287576552505669653}
   - component: {fileID: 6389827286560042239}
+  - component: {fileID: 8823540746101568558}
   m_Layer: 0
   m_Name: SM_Rock_Scatter_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 17
   m_IsActive: 1
 --- !u!4 &3329541696545164712
 Transform:
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9166932321126794909}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -61.699223, y: 0.01195218, z: 73.662}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0cfda36517620d54484ec4bf4ada4df1, type: 2}
+  - {fileID: 2100000, guid: baebde6a0c09a4d66be613836f7c107f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8823540746101568558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166932321126794909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: baf158cd574c449f581d65f7cebb95b8
+  storedPrefabParentGUID: a2b84d4028cb4a84ca41f2d05ecb5f43
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Props
+  storedOverrides: 
