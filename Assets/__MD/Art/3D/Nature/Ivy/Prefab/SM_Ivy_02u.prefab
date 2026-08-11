@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6187305184471215092}
   - component: {fileID: 4216309942542799457}
   - component: {fileID: 8978458391746881914}
+  - component: {fileID: 902013213089607318}
   m_Layer: 0
   m_Name: SM_Ivy_02u
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673891026685571365}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071058, z: -0, w: 0.7071078}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -47.88664, y: 2.435316, z: -84.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673891026685571365}
-  m_Mesh: {fileID: 6477409066217129244, guid: c64e6f5b35745d740a186bec89f0e20d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ce84e3ab3a1404c13ba4b192a5afdafe, type: 2}
 --- !u!23 &8978458391746881914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fdcf38cae72f80440a24056323797901, type: 2}
+  - {fileID: 2100000, guid: 26ef1d1604ca14ec79597e28972930bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &902013213089607318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6673891026685571365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 2f89555e0604945fc9f6cc6e2965705d
+  storedPrefabParentGUID: e185cbb1f7cddb048b6a1b4226de7b75
+  storedPreset: Realistic/Nature Manufacture/Dynamic Nature Collection;Vegetation
+  storedOverrides: 
