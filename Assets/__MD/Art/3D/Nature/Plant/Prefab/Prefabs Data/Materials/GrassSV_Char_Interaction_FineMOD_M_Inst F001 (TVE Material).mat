@@ -29,9 +29,10 @@ Material:
   m_InvalidKeywords:
   - TVE_IMPOSTOR_MASK_OFF
   - TVE_TERRAIN_TEX_DEFAULT
+  - _DOUBLESIDED_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2000
   stringTagMap:
     NatureRendererInstancing: true
@@ -75,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainShaderTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3a52ccb8aa9a0c54fbad2892f07081ff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetaAlbedoTex:
@@ -310,9 +311,9 @@ Material:
     - _MainMetallicValue: 0
     - _MainMultiMode: 5
     - _MainNormalValue: 1
-    - _MainOcclusionValue: 0
+    - _MainOcclusionValue: 1
     - _MainSampleMode: 0
-    - _MainSmoothnessValue: 0
+    - _MainSmoothnessValue: 0.193
     - _MetaAlbedoValue: 1
     - _MetaCategory: 0
     - _MetaCutoutValue: 1
@@ -406,7 +407,7 @@ Material:
     - _RenderBakeGI: 0
     - _RenderCategory: 1
     - _RenderClip: 0
-    - _RenderCull: 2
+    - _RenderCull: 0
     - _RenderEnd: 1
     - _RenderFilter: 0
     - _RenderGBuffer: 0
@@ -560,7 +561,7 @@ Material:
     - _emissive_power_value: 1
     - _motion_small_mode: 0
     - _render_coverage: 0
-    - _render_cull: 2
+    - _render_cull: 0
     - _render_dst: 0
     - _render_src: 1
     - _render_zw: 1
@@ -600,7 +601,7 @@ Material:
     - _MainCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MainMultiRemap: {r: 0, g: 1, b: 1, a: 0}
     - _MainOcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainSmoothnessRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainSmoothnessRemap: {r: 0, g: 0.47441858, b: 2.1078432, a: 0}
     - _MetaAlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _MetaCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MotionBaseMaskRemap: {r: 0, g: 1, b: 1, a: 0}
