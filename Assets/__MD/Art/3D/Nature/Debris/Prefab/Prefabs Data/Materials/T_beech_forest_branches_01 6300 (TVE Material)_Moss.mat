@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: T_stones_roots_01 4A00 (TVE Material)
+  m_Name: T_beech_forest_branches_01 6300 (TVE Material)_Moss
   m_Shader: {fileID: 4800000, guid: a933075b367f9b24981408633f72ff34, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -20,7 +20,9 @@ Material:
   - TVE_MAIN_SAMPLE_MAIN_UV
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
-  - TVE_SECOND_MASK_SAMPLE_MAIN_UV
+  - TVE_SECOND
+  - TVE_SECOND_MASK
+  - TVE_SECOND_MASK_SAMPLE_PLANAR_3D
   - TVE_SECOND_SAMPLE_MAIN_UV
   - TVE_THIRD_MASK_SAMPLE_MAIN_UV
   - TVE_THIRD_SAMPLE_MAIN_UV
@@ -67,19 +69,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainAlbedoTex:
-        m_Texture: {fileID: 2800000, guid: aef5bdf6678368c4c94b1cba74fd29d2, type: 3}
+        m_Texture: {fileID: 2800000, guid: a7d05cc11f4c8d04fb106de58fe2db10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainNormalTex:
-        m_Texture: {fileID: 2800000, guid: cd993786805d659458056707138ae92f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fc8e897f56d674499fb6d254bcbad61, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainShaderTex:
-        m_Texture: {fileID: 2800000, guid: 2b8cf29e234393640bd627d4c7b0bf5f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 291fbae0821272548be3b8466ba80fda, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetaAlbedoTex:
-        m_Texture: {fileID: 2800000, guid: aef5bdf6678368c4c94b1cba74fd29d2, type: 3}
+        m_Texture: {fileID: 2800000, guid: a7d05cc11f4c8d04fb106de58fe2db10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MotionMaskTex:
@@ -107,19 +109,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondAlbedoTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 60735d00921806d42a8acbe6985da8c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondMaskTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 798ee112543a844c8bd093f4ef178272, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondNormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e2863ddda90d4f149b0e4774b3aacf63, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondShaderTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c6ff5c1b37cae6a488451e8c497de9b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThirdAlbedoTex:
@@ -293,7 +295,7 @@ Material:
     - _IsConverted: 1
     - _IsCustomShader: 0
     - _IsGeneralShader: 1
-    - _IsIdentifier: 40
+    - _IsIdentifier: 38
     - _IsLightingType: 4
     - _IsObjectType: 0
     - _IsShaderType: 1
@@ -411,7 +413,7 @@ Material:
     - _RenderFilter: 0
     - _RenderGBuffer: 0
     - _RenderMode: 0
-    - _RenderMotion: 0
+    - _RenderMotion: 1
     - _RenderMotionXR: 0
     - _RenderNormal: 2
     - _RenderPriority: 0
@@ -439,12 +441,12 @@ Material:
     - _SecondElementMode: 0
     - _SecondEnd: 1
     - _SecondGlobalValue: 1
-    - _SecondIntensityValue: 0
+    - _SecondIntensityValue: 1
     - _SecondLumaValue: 0
     - _SecondMaskCoordMode: 0
     - _SecondMaskMode: 0
-    - _SecondMaskSampleMode: 0
-    - _SecondMaskValue: 0
+    - _SecondMaskSampleMode: 3
+    - _SecondMaskValue: 1
     - _SecondMeshMode: 0
     - _SecondMeshValue: 0
     - _SecondMetallicValue: 0
@@ -600,7 +602,7 @@ Material:
     - _MainCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MainMultiRemap: {r: 0, g: 1, b: 1, a: 0}
     - _MainOcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainSmoothnessRemap: {r: 0, g: 0.4868421, b: 2.054054, a: 0}
+    - _MainSmoothnessRemap: {r: 0, g: 0.5025126, b: 1.99, a: 0}
     - _MetaAlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _MetaCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MotionBaseMaskRemap: {r: 0, g: 1, b: 1, a: 0}
@@ -626,7 +628,7 @@ Material:
     - _SecondCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _SecondLumaRemap: {r: 0, g: 1, b: 1, a: 0}
     - _SecondMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _SecondMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _SecondMaskRemap: {r: 0, g: 0.68014705, b: 1.4702703, a: 0}
     - _SecondMeshRemap: {r: 0, g: 1, b: 1, a: 0}
     - _SecondMultiRemap: {r: 0, g: 1, b: 1, a: 0}
     - _SecondOcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
