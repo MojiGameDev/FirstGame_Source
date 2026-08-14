@@ -22,6 +22,8 @@ Material:
   - TVE_MOTION_ELEMENT
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
+  - TVE_SECOND
+  - TVE_SECOND_MASK
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
   - TVE_SECOND_SAMPLE_MAIN_UV
   - TVE_THIRD_MASK_SAMPLE_MAIN_UV
@@ -107,7 +109,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondAlbedoTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 60735d00921806d42a8acbe6985da8c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondMaskTex:
@@ -115,11 +117,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondNormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e2863ddda90d4f149b0e4774b3aacf63, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondShaderTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c6ff5c1b37cae6a488451e8c497de9b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThirdAlbedoTex:
@@ -426,34 +428,34 @@ Material:
     - _RimLightEnd: 1
     - _RimLightIntensityValue: 0
     - _SecondAlbedoValue: 1
-    - _SecondAlphaClipValue: 0.5
+    - _SecondAlphaClipValue: 0.1
     - _SecondBakeMode: 1
     - _SecondBaseValue: 0
-    - _SecondBlendAlbedoValue: 0
+    - _SecondBlendAlbedoValue: 0.3
     - _SecondBlendIntensityValue: 1
-    - _SecondBlendNormalValue: 0
-    - _SecondBlendShaderValue: 0
-    - _SecondCategory: 0
+    - _SecondBlendNormalValue: 1
+    - _SecondBlendShaderValue: 0.5
+    - _SecondCategory: 1
     - _SecondColorMode: 0
     - _SecondCoordMode: 0
     - _SecondElementMode: 0
     - _SecondEnd: 1
-    - _SecondGlobalValue: 1
-    - _SecondIntensityValue: 0
+    - _SecondGlobalValue: 0
+    - _SecondIntensityValue: 1
     - _SecondLumaValue: 0
     - _SecondMaskCoordMode: 0
     - _SecondMaskMode: 0
     - _SecondMaskSampleMode: 0
-    - _SecondMaskValue: 0
-    - _SecondMeshMode: 0
-    - _SecondMeshValue: 0
+    - _SecondMaskValue: 1
+    - _SecondMeshMode: 3
+    - _SecondMeshValue: 1
     - _SecondMetallicValue: 0
     - _SecondMultiMode: 1
     - _SecondNormalValue: 1
-    - _SecondOcclusionValue: 0
+    - _SecondOcclusionValue: 1
     - _SecondProjValue: 0
     - _SecondSampleMode: 0
-    - _SecondSmoothnessValue: 0
+    - _SecondSmoothnessValue: 0.5
     - _SecondSpace0: 0
     - _SizeFadeCategory: 0
     - _SizeFadeDistMaxValue: 0
@@ -627,11 +629,11 @@ Material:
     - _SecondLumaRemap: {r: 0, g: 1, b: 1, a: 0}
     - _SecondMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _SecondMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _SecondMeshRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _SecondMeshRemap: {r: 0.17647056, g: 0, b: -5.6666675, a: 1}
     - _SecondMultiRemap: {r: 0, g: 1, b: 1, a: 0}
     - _SecondOcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
     - _SecondProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _SecondSmoothnessRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _SecondSmoothnessRemap: {r: 0, g: 0.45588237, b: 2.1935482, a: 0}
     - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThirdBaseRemap: {r: 0, g: 1, b: 1, a: 0}
     - _ThirdBlendRemap: {r: 0, g: 1, b: 1, a: 0}
