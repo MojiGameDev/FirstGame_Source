@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7503810693435463799}
   - component: {fileID: 4753502047577524249}
   - component: {fileID: 2814236822389204428}
+  - component: {fileID: 6644083734652756800}
   m_Layer: 0
   m_Name: Tulip_Red_02
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3476020146321195475}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.654, y: -0.01000011, z: -37.092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3476020146321195475}
-  m_Mesh: {fileID: 8918013755313697262, guid: a75b9513ef7a89e41a461c387735b239, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 414d775a9dbd24c478ced4f652b5fae0, type: 2}
 --- !u!23 &2814236822389204428
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e7645a662ff9c0b40a35a3b623c4e9e8, type: 2}
+  - {fileID: 2100000, guid: b2441cfdce41a486db885fe96a1a1467, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6644083734652756800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476020146321195475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 387204f79b7db4fa7ac2015f0dc4503b
+  storedPrefabParentGUID: 3fc69b6912c7d7d4594385ddd6243e74
+  storedPreset: Automatic;Flowers
+  storedOverrides: 

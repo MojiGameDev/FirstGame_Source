@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8977803720522311784}
   - component: {fileID: 9199408744154509370}
   - component: {fileID: 7107634927245208218}
+  - component: {fileID: 8796634650545527793}
   m_Layer: 0
   m_Name: Chamomile_02
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069239638714037802}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.274, y: -0.00999999, z: -37.174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069239638714037802}
-  m_Mesh: {fileID: -5167077751748510590, guid: 2ed54f1ac803c1d43b3195bfd1c23a55, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7d3c47565bcdf4e4e9b8124e5f72100d, type: 2}
 --- !u!23 &7107634927245208218
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2006c8b852003043af48f77545d8a12, type: 2}
+  - {fileID: 2100000, guid: ba8b757c4f07c47ee8ba9c4633030aa4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8796634650545527793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069239638714037802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: cc89b3804da6c419ebbf984a85e3ee06
+  storedPrefabParentGUID: f97422908ae54a848aeeafa303bb6439
+  storedPreset: Automatic;Flowers
+  storedOverrides: 

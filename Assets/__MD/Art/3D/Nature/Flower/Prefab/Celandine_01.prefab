@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1845315827800288599}
   - component: {fileID: 7782584365699294173}
   - component: {fileID: 7987453287301751147}
+  - component: {fileID: 117564110149067679}
   m_Layer: 0
   m_Name: Celandine_01
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8790869994941381393}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.957, y: -0.00999999, z: -36.756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8790869994941381393}
-  m_Mesh: {fileID: 9214593171349692362, guid: ec8c8bb727d7427438d139f3f0dda351, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ee77aa07045684fb7b1acd0042953c6e, type: 2}
 --- !u!23 &7987453287301751147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2006c8b852003043af48f77545d8a12, type: 2}
+  - {fileID: 2100000, guid: ba8b757c4f07c47ee8ba9c4633030aa4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &117564110149067679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8790869994941381393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: a46c9b14552d848788ba26acc992ab18
+  storedPrefabParentGUID: 2f2115352d2e7c4449da957e673ff64c
+  storedPreset: Automatic;Flowers
+  storedOverrides: 
