@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7898812759921817170}
   - component: {fileID: 4023481311268985800}
   - component: {fileID: 8240710636876979798}
+  - component: {fileID: 1348468397780148443}
   m_Layer: 0
   m_Name: Narcissus_02
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015823631467782357}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.654, y: -0.01000011, z: -37.092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015823631467782357}
-  m_Mesh: {fileID: 731079739729537494, guid: edc48f8b8d2d46242a3a71e97a0c2887, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f49e3a35170934d3e8d7f396511410ad, type: 2}
 --- !u!23 &8240710636876979798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e7645a662ff9c0b40a35a3b623c4e9e8, type: 2}
+  - {fileID: 2100000, guid: b2441cfdce41a486db885fe96a1a1467, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1348468397780148443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015823631467782357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 3335fcefe3d1c48ac983dd2037118a1f
+  storedPrefabParentGUID: 92f7048f6eff0f540b80f2583aa8b193
+  storedPreset: Automatic;Flowers
+  storedOverrides: 
