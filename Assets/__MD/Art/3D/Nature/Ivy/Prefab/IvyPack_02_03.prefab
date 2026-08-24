@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7315921628823032656}
   - component: {fileID: 27508432301069363}
   - component: {fileID: 2343425165486260502}
+  - component: {fileID: 8203477685471593080}
   m_Layer: 0
   m_Name: IvyPack_02_03
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3021188350006248184}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -50.99, y: 1.97, z: -135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3021188350006248184}
-  m_Mesh: {fileID: -571464288626704435, guid: f822b75fbd6dde24ba0cf68d3c770dd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 037fd1c1ca8a84529a280a9dbdc8d79a, type: 2}
 --- !u!23 &2343425165486260502
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 738cd7fdbc8dc4e40a1c465159925aa7, type: 2}
+  - {fileID: 2100000, guid: bd2a92d5b81a34b4a83b04c2f57a3679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8203477685471593080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3021188350006248184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 1a404f00429af4f52aa2974feea59af7
+  storedPrefabParentGUID: 52dba8bcb6af07b43adff3c2232728cc
+  storedPreset: Automatic;Plants
+  storedOverrides: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3858185547160421013}
   - component: {fileID: 1791235812791301322}
   - component: {fileID: 6286467978648201865}
+  - component: {fileID: 2697077829543693739}
   m_Layer: 0
   m_Name: IvyPack_02_16
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4855562489380916009}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -50.99, y: 1.97, z: -126.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4855562489380916009}
-  m_Mesh: {fileID: -6562818773276231710, guid: 92e4c3494013bd843818a9b8a6da17db, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b399290a717674e00a089f88fffefcf0, type: 2}
 --- !u!23 &6286467978648201865
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 738cd7fdbc8dc4e40a1c465159925aa7, type: 2}
+  - {fileID: 2100000, guid: bd2a92d5b81a34b4a83b04c2f57a3679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2697077829543693739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855562489380916009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 70d8729ab28114d378a85c493a2e20cc
+  storedPrefabParentGUID: 46d4eab672050f041bb0984d8c733661
+  storedPreset: Automatic;Plants
+  storedOverrides: 
