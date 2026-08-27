@@ -11,8 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 823f6b206953b674a9a64f9e3ec57752, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _REFRACTION
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - ADVANCED_LIGHTING
   - _DEPTHEXP_ON
@@ -32,7 +31,7 @@ Material:
   m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _NormalMapOn
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -245,7 +244,7 @@ Material:
     - _Reflectivity: 1
     - _RefractionAmount: 0.05
     - _RefractionChromaticAberration: 1
-    - _RefractionOn: 1
+    - _RefractionOn: 0
     - _RefractionStrength: 0.089
     - _RimRize: 1
     - _RimTiling: 0.025

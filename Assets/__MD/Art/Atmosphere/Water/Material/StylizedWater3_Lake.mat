@@ -54,11 +54,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d63a31f28f34eae4ebc27e00a9799433, type: 3}
+        m_Texture: {fileID: 2800000, guid: de8363beafb6340f89957eeb5ca2c1e8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMapLarge:
-        m_Texture: {fileID: 2800000, guid: efd0d88edbb048d489c41da8174e6a35, type: 3}
+        m_Texture: {fileID: 2800000, guid: bcf7e7e8c68a54fc49fa8668cac4616c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMapSlope:
@@ -66,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CausticsTex:
-        m_Texture: {fileID: 2800000, guid: 6a6111d7c04a2aa41a70e3595cc26c9c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8ea17a311181c4373bd26616cf9e3619, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DepthTex:
@@ -78,15 +78,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: 7705156529211f14995762ef939f6cfa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 00aa8d8cc4c454ad3aaf27613f5ec35d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTexDynamic:
-        m_Texture: {fileID: 2800000, guid: f8c7522379eccbf46bb5473bd771e5cd, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1e83563c62324d4d9e51ec8f5609ad1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IntersectionNoise:
-        m_Texture: {fileID: 2800000, guid: f8c7522379eccbf46bb5473bd771e5cd, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1e83563c62324d4d9e51ec8f5609ad1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -122,7 +122,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WaveProfile:
-        m_Texture: {fileID: 5393152077581806659, guid: 733b5ffd19f2aa140862193b21026d41, type: 2}
+        m_Texture: {fileID: 5393152077581806659, guid: 8c0a80797f3e74f33a407cff08ff7d19, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -183,7 +183,7 @@ Material:
     - _EnvironmentReflectionsOn: 1
     - _FlatShadingOn: 0
     - _FlowSpeed: 1
-    - _FoamBaseAmount: 0.297
+    - _FoamBaseAmount: 0.5
     - _FoamBubblesSpread: 1
     - _FoamBubblesStrength: 0
     - _FoamClipping: 0
@@ -195,7 +195,7 @@ Material:
     - _FoamSize: 0.606
     - _FoamSpeed: 0.06000001
     - _FoamSpeedDynamic: 0.1
-    - _FoamStrength: 1
+    - _FoamStrength: 0.3
     - _FoamSubSpeed: -0.25
     - _FoamSubSpeedDynamic: -0.1
     - _FoamSubTiling: 0.5
@@ -212,16 +212,16 @@ Material:
     - _HorizonDistance: 8
     - _IntersectionClipping: 1
     - _IntersectionDistortion: 0
-    - _IntersectionFalloff: 0.01
+    - _IntersectionFalloff: 0.7
     - _IntersectionFoamOn: 1
-    - _IntersectionLength: 1.02
+    - _IntersectionLength: 1.93
     - _IntersectionRippleDist: 30
     - _IntersectionRippleSpeed: 0
     - _IntersectionRippleStrength: 0.5
     - _IntersectionSharp: 0
     - _IntersectionSize: 0.944
     - _IntersectionSource: 0
-    - _IntersectionSpeed: 0
+    - _IntersectionSpeed: 0.02
     - _IntersectionStyle: 1
     - _IntersectionTiling: 0.05999976
     - _IntersectionWaveDist: 33.28
@@ -283,7 +283,7 @@ Material:
     - _SparkleSize: 0.302
     - _SpecularHighlights: 1
     - _SpecularReflectionsOn: 1
-    - _Speed: 0.3
+    - _Speed: 0.5
     - _SrcBlend: 1
     - _SunReflectionDistortion: 0.762
     - _SunReflectionPerturbance: 0.386
@@ -325,7 +325,7 @@ Material:
     - _ZClip: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.16451614, b: 0.34, a: 0.9647059}
+    - _BaseColor: {r: 0.0627451, g: 0.17254902, b: 0.16862746, a: 0.89411765}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _DepthMapBounds: {r: -402.3, g: -459.43, b: 0.0012693577, a: 0}
     - _Direction: {r: 1, g: 1, b: 0, a: 0}
@@ -336,10 +336,10 @@ Material:
     - _FoamCrestMinMaxHeight: {r: 1, g: 2, b: 0, a: 0}
     - _FoamTiling: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _HorizonColor: {r: 0.68, g: 1, b: 0.99, a: 0.15}
-    - _IntersectionColor: {r: 1, g: 1, b: 1, a: 0.34901962}
+    - _IntersectionColor: {r: 1, g: 1, b: 1, a: 0.3529412}
     - _NormalTiling: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShallowColor: {r: 0, g: 1, b: 0.98136926, a: 0.3764706}
+    - _ShallowColor: {r: 0, g: 0.41568628, b: 0.47843137, a: 0.5019608}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _WaterColor: {r: 0.21176466, g: 0.6745098, b: 1, a: 1}
     - _WaterShallowColor: {r: 0, g: 0.9394503, b: 1, a: 1}
