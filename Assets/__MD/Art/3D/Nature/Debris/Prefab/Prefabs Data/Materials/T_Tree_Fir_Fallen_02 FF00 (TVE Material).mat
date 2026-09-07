@@ -24,6 +24,8 @@ Material:
   - TVE_SECOND_SAMPLE_MAIN_UV
   - TVE_THIRD_MASK_SAMPLE_MAIN_UV
   - TVE_THIRD_SAMPLE_MAIN_UV
+  - TVE_WETNESS
+  - TVE_WETNESS_ELEMENT
   m_InvalidKeywords:
   - TVE_IMPOSTOR_MASK_OFF
   - TVE_TERRAIN_TEX_DEFAULT
@@ -303,7 +305,7 @@ Material:
     - _IsVersion: 2160
     - _MainAlbedoValue: 1
     - _MainAlphaClipValue: 0.1
-    - _MainCategory: 1
+    - _MainCategory: 0
     - _MainColorMode: 0
     - _MainCoordMode: 0
     - _MainEnd: 1
@@ -546,10 +548,10 @@ Material:
     - _WetnessDropsIntensityValue: 1
     - _WetnessDropsNormalValue: 1
     - _WetnessDropsTillingValue: 0.25
-    - _WetnessElementMode: 0
+    - _WetnessElementMode: 1
     - _WetnessEnd: 1
     - _WetnessGlobalValue: 1
-    - _WetnessIntensityValue: 0
+    - _WetnessIntensityValue: 0.5
     - _WetnessRainDistValue: 50
     - _WetnessRainIntensityValue: 0
     - _WetnessSmoothnessValue: 0.8
