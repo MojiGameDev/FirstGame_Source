@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6649303181806180691}
   - component: {fileID: 8791625993722296215}
   - component: {fileID: 386103005778281306}
+  - component: {fileID: 8288455298756265327}
   m_Layer: 0
   m_Name: SM_Cave_Foliage_02
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484964808940113965}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.106665, y: -0.009999752, z: -50.329865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484964808940113965}
-  m_Mesh: {fileID: -3597981198945123977, guid: de23a11470d384e4abb95163d5902e79, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 00c9b291406ed481e947c85f029d7936, type: 2}
 --- !u!23 &386103005778281306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9a2afe5d920dc4428bdaefd77b33931, type: 2}
+  - {fileID: 2100000, guid: 0641a70ce36d54ee596b3a6a29aa0616, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8288455298756265327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484964808940113965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: a5b29424fc15a465b845726947493202
+  storedPrefabParentGUID: 52e47fa0d1de9e94b969dc099ac3b510
+  storedPreset: Automatic;Plants
+  storedOverrides: 
