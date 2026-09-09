@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ADVANCED_SHADING
   - _DISTANCE_NORMALS
   - _NORMALMAP
   - _REFRACTION
@@ -37,7 +38,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3002
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -49,15 +50,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d63a31f28f34eae4ebc27e00a9799433, type: 3}
+        m_Texture: {fileID: 2800000, guid: de8363beafb6340f89957eeb5ca2c1e8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMapLarge:
-        m_Texture: {fileID: 2800000, guid: efd0d88edbb048d489c41da8174e6a35, type: 3}
+        m_Texture: {fileID: 2800000, guid: bcf7e7e8c68a54fc49fa8668cac4616c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMapSlope:
-        m_Texture: {fileID: 2800000, guid: e7124ab7f8f2b28478921aa8a615ebc0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2e349fd33e5b84289ad184f9dbd2c31a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CausticsTex:
@@ -69,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: ca53ec5ec282dcd438a481ebac7c4d2c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9b3e6271f2296476fb57bd9cce71d2c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTexDynamic:
@@ -105,7 +106,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WaveProfile:
-        m_Texture: {fileID: 5393152077581806659, guid: b01535463a9772945b0085c0ee54e1bf, type: 2}
+        m_Texture: {fileID: 5393152077581806659, guid: 3043d4a0d4b57462199d744a57fa42e2, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -143,7 +144,7 @@ Material:
     - _DistanceNormalsOn: 1
     - _DistanceNormalsTiling: 0.25
     - _DstBlend: 0
-    - _EdgeFade: 3
+    - _EdgeFade: 5
     - _EnableDirectionalCaustics: 0
     - _EnvironmentReflections: 1
     - _EnvironmentReflectionsOn: 1
@@ -159,10 +160,10 @@ Material:
     - _FoamSize: 0.045
     - _FoamSpeed: 1
     - _FoamSpeedDynamic: 0
-    - _FoamStrength: 1
+    - _FoamStrength: 0.7
     - _FoamSubSpeed: 0.1
     - _FoamSubSpeedDynamic: -0.1
-    - _FoamSubTiling: 1
+    - _FoamSubTiling: 2
     - _FoamSubTilingDynamic: 2
     - _FoamTiling: 0.20000002
     - _FoamTilingDynamic: 0.4
@@ -193,7 +194,7 @@ Material:
     - _NormalSpeed: 1
     - _NormalStrength: 0.169
     - _NormalSubSpeed: 0.58000004
-    - _NormalSubTiling: 0.8
+    - _NormalSubTiling: 0.5
     - _NormalTiling: 0.5
     - _OcclusionStrength: 1
     - _PlanarReflectionsEnabled: 0
@@ -219,7 +220,7 @@ Material:
     - _RefractionStrength: 1
     - _RiverModeOn: 1
     - _ScreenSpaceReflectionsEnabled: 0
-    - _ShadingMode: 0
+    - _ShadingMode: 1
     - _ShadowStrength: 1
     - _SlopeAngleFalloff: 40
     - _SlopeAngleThreshold: 22
@@ -241,6 +242,9 @@ Material:
     - _SunReflectionSize: 0.927
     - _SunReflectionStrength: 10
     - _Surface: 0
+    - _TessMax: 15
+    - _TessMin: 0
+    - _TessValue: 16
     - _TranslucencyCurvatureMask: 0.723
     - _TranslucencyExp: 4
     - _TranslucencyOn: 1
@@ -257,7 +261,7 @@ Material:
     - _WaveDistortion: 0.5
     - _WaveFrequency: 1
     - _WaveHeight: 1.14
-    - _WaveMaxLayers: 16
+    - _WaveMaxLayers: 32
     - _WaveNormalStr: 4.4
     - _WaveSpeed: 1
     - _WaveSteepness: 0
