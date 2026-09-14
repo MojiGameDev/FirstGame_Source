@@ -24,6 +24,8 @@ Material:
   - TVE_SECOND_SAMPLE_MAIN_UV
   - TVE_THIRD_MASK_SAMPLE_MAIN_UV
   - TVE_THIRD_SAMPLE_MAIN_UV
+  - TVE_WETNESS
+  - TVE_WETNESS_ELEMENT
   m_InvalidKeywords:
   - TVE_IMPOSTOR_MASK_OFF
   - TVE_TERRAIN_TEX_DEFAULT
@@ -180,7 +182,7 @@ Material:
     - _CutoutNoiseValue: 1
     - _CutoutShadowMode: 1
     - _CutoutSpace: 1
-    - _DitherCategory: 0
+    - _DitherCategory: 1
     - _DitherConstantMaskValue: 1
     - _DitherConstantValue: 0
     - _DitherDistanceMaxValue: 0
@@ -538,24 +540,24 @@ Material:
     - _VariationIntensityValue: 0
     - _VariationMultiValue: 1
     - _WetnessBakeMode: 0
-    - _WetnessCategory: 0
+    - _WetnessCategory: 1
     - _WetnessContrastValue: 0.2
     - _WetnessDripsIntensityValue: 1
     - _WetnessDripsNormalValue: 1
     - _WetnessDripsTillingValue: 0.25
-    - _WetnessDropsIntensityValue: 1
+    - _WetnessDropsIntensityValue: 0
     - _WetnessDropsNormalValue: 1
     - _WetnessDropsTillingValue: 0.25
-    - _WetnessElementMode: 0
+    - _WetnessElementMode: 1
     - _WetnessEnd: 1
     - _WetnessGlobalValue: 1
-    - _WetnessIntensityValue: 0
+    - _WetnessIntensityValue: 0.55
     - _WetnessRainDistValue: 50
     - _WetnessRainIntensityValue: 0
     - _WetnessSmoothnessValue: 0.8
     - _WetnessWaterBaseValue: 1
     - _WetnessWaterIntensityValue: 0
-    - _WetnessWaterSmoothnessValue: 1
+    - _WetnessWaterSmoothnessValue: 0
     - _XRMotionVectorsPass: 1
     - _emissive_power_value: 1
     - _motion_small_mode: 0

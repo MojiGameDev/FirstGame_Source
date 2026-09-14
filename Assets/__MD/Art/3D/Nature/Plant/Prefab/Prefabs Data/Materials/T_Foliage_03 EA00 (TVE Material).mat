@@ -20,6 +20,7 @@ Material:
   - TVE_FOURTH_SAMPLE_MAIN_UV
   - TVE_MAIN_SAMPLE_MAIN_UV
   - TVE_MOTION
+  - TVE_MOTION_ELEMENT
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
@@ -33,7 +34,7 @@ Material:
   - _DOUBLESIDED_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2450
   stringTagMap:
     NatureRendererInstancing: true
@@ -339,12 +340,12 @@ Material:
     - _MotionBaseNoiseValue: 0.5
     - _MotionBasePhaseValue: 0
     - _MotionBasePivotValue: 0.8
-    - _MotionBasePushValue: 0
+    - _MotionBasePushValue: 2
     - _MotionBaseSpeedValue: 5
     - _MotionBaseTillingValue: 5
-    - _MotionCategory: 1
+    - _MotionCategory: 0
     - _MotionDistValue: 100
-    - _MotionElementMode: 0
+    - _MotionElementMode: 1
     - _MotionEnd: 1
     - _MotionHighlightValue: 0
     - _MotionIntensityValue: 1
@@ -355,7 +356,7 @@ Material:
     - _MotionSmallNoiseValue: 0.5
     - _MotionSmallPhaseValue: 0
     - _MotionSmallPivotValue: 0.2
-    - _MotionSmallPushValue: 9.588676
+    - _MotionSmallPushValue: 2
     - _MotionSmallSpeedValue: 5
     - _MotionSmallTillingValue: 5
     - _MotionTinyIntensityValue: 0.2
@@ -419,7 +420,7 @@ Material:
     - _RenderPriority: 0
     - _RenderQueue: 0
     - _RenderShadow: 1
-    - _RenderSpecular: 1
+    - _RenderSpecular: 0
     - _RenderZWrite: 1
     - _ReshadeCategory: 0
     - _ReshadeEnd: 1
@@ -469,7 +470,7 @@ Material:
     - _SpecularHighlights: 1
     - _SubsurfaceAmbientValue: 0.2
     - _SubsurfaceAngleValue: 8
-    - _SubsurfaceCategory: 1
+    - _SubsurfaceCategory: 0
     - _SubsurfaceDirectValue: 1
     - _SubsurfaceElementMode: 0
     - _SubsurfaceEnd: 1
