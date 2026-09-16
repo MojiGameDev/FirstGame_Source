@@ -19,7 +19,6 @@ Material:
   - TVE_FOURTH_MASK_SAMPLE_MAIN_UV
   - TVE_FOURTH_SAMPLE_MAIN_UV
   - TVE_MAIN_SAMPLE_MAIN_UV
-  - TVE_MOTION
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
@@ -33,7 +32,7 @@ Material:
   - _DOUBLESIDED_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2450
   stringTagMap:
     NatureRendererInstancing: true
@@ -44,6 +43,8 @@ Material:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - UniversalGBuffer
+  - MOTIONVECTORS
+  - XRMotionVectors
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -347,7 +348,7 @@ Material:
     - _MotionElementMode: 0
     - _MotionEnd: 1
     - _MotionHighlightValue: 0
-    - _MotionIntensityValue: 1
+    - _MotionIntensityValue: 0
     - _MotionPushInfo: 0
     - _MotionSmallDelayValue: 0
     - _MotionSmallIntensityValue: 0.2
@@ -355,10 +356,10 @@ Material:
     - _MotionSmallNoiseValue: 0.5
     - _MotionSmallPhaseValue: 0
     - _MotionSmallPivotValue: 0.2
-    - _MotionSmallPushValue: 9.588676
+    - _MotionSmallPushValue: 0
     - _MotionSmallSpeedValue: 5
     - _MotionSmallTillingValue: 5
-    - _MotionTinyIntensityValue: 0.2
+    - _MotionTinyIntensityValue: 0.5
     - _MotionTinyMaskMode: 2
     - _MotionTinyNoiseValue: 1
     - _MotionTinySpeedValue: 10

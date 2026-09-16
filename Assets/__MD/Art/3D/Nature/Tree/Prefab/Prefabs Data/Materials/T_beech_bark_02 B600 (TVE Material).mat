@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: T_beech_bark_02 B600 (TVE Material)
-  m_Shader: {fileID: 4800000, guid: a933075b367f9b24981408633f72ff34, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7befaa6f41d00a6478d5f4af21d66518, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -19,7 +19,6 @@ Material:
   - TVE_FOURTH_SAMPLE_MAIN_UV
   - TVE_MAIN_SAMPLE_MAIN_UV
   - TVE_MOTION
-  - TVE_MOTION_ELEMENT
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
@@ -41,7 +40,6 @@ Material:
   - TransparentBackfaceDebugDisplay
   - TransparentDepthPrepass
   - TransparentDepthPostpass
-  - UniversalGBuffer
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -294,10 +292,11 @@ Material:
     - _IsCustomShader: 0
     - _IsGeneralShader: 1
     - _IsIdentifier: 15
-    - _IsLightingType: 4
+    - _IsLightingType: 3
     - _IsObjectType: 0
     - _IsShaderType: 1
     - _IsShared: 1
+    - _IsStandardShader: 1
     - _IsSubsurfaceShader: 1
     - _IsTVEShader: 1
     - _IsVersion: 2160
@@ -332,35 +331,35 @@ Material:
     - _MetaVariationValue: 1
     - _MetaWetnessValue: 1
     - _MotionBaseDelayValue: 0
-    - _MotionBaseIntensityValue: 0.3
+    - _MotionBaseIntensityValue: 0.05
     - _MotionBaseMaskMode: 3
     - _MotionBaseNoiseValue: 0.5
     - _MotionBasePhaseValue: 0
-    - _MotionBasePivotValue: 0.9
+    - _MotionBasePivotValue: 0.8
     - _MotionBasePushValue: 0
-    - _MotionBaseSpeedValue: 2
+    - _MotionBaseSpeedValue: 5
     - _MotionBaseTillingValue: 5
     - _MotionCategory: 1
     - _MotionDistValue: 100
-    - _MotionElementMode: 1
+    - _MotionElementMode: 0
     - _MotionEnd: 1
     - _MotionHighlightValue: 0
     - _MotionIntensityValue: 1
     - _MotionPushInfo: 0
     - _MotionSmallDelayValue: 0
-    - _MotionSmallIntensityValue: 3
+    - _MotionSmallIntensityValue: 0.2
     - _MotionSmallMaskMode: 1
     - _MotionSmallNoiseValue: 0.5
-    - _MotionSmallPhaseValue: 1
-    - _MotionSmallPivotValue: 0.8
+    - _MotionSmallPhaseValue: 0
+    - _MotionSmallPivotValue: 0.2
     - _MotionSmallPushValue: 0
     - _MotionSmallSpeedValue: 5
     - _MotionSmallTillingValue: 5
     - _MotionTinyIntensityValue: 0
-    - _MotionTinyMaskMode: 1
+    - _MotionTinyMaskMode: 2
     - _MotionTinyNoiseValue: 1
-    - _MotionTinySpeedValue: 12
-    - _MotionTinyTillingValue: 25
+    - _MotionTinySpeedValue: 10
+    - _MotionTinyTillingValue: 50
     - _ObjectCategory: 1
     - _ObjectCoordMode: 0
     - _ObjectEnd: 1
@@ -417,7 +416,7 @@ Material:
     - _RenderPriority: 0
     - _RenderQueue: 0
     - _RenderShadow: 1
-    - _RenderSpecular: 0
+    - _RenderSpecular: 1
     - _RenderZWrite: 1
     - _ReshadeCategory: 0
     - _ReshadeEnd: 1
@@ -433,7 +432,7 @@ Material:
     - _SecondBlendIntensityValue: 1
     - _SecondBlendNormalValue: 0
     - _SecondBlendShaderValue: 0
-    - _SecondCategory: 0
+    - _SecondCategory: 1
     - _SecondColorMode: 0
     - _SecondCoordMode: 0
     - _SecondElementMode: 0
@@ -604,7 +603,7 @@ Material:
     - _MetaAlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _MetaCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MotionBaseMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MotionHighlightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MotionHighlightColor: {r: 0, g: 0, b: 0, a: 0}
     - _MotionSmallMaskRemap: {r: 0, g: 1, b: 1, a: 0}
     - _MotionTinyMaskRemap: {r: 0, g: 1, b: 1, a: 0}
     - _OcclusionColorMeshRemap: {r: 0, g: 1, b: 1, a: 0}
@@ -659,7 +658,7 @@ Material:
     - _fourth_coord_value: {r: 1, g: 1, b: 0, a: 0}
     - _fourth_mask_coord_value: {r: 1, g: 1, b: 0, a: 0}
     - _main_coord_value: {r: 1, g: 1, b: 0, a: 0}
-    - _motion_highlight_color: {r: 1, g: 1, b: 1, a: 1}
+    - _motion_highlight_color: {r: 0, g: 0, b: 0, a: 0}
     - _overlay_coord_value: {r: 1, g: 1, b: 0, a: 0}
     - _render_normal: {r: 1, g: 1, b: 1, a: 0}
     - _second_coord_value: {r: 1, g: 1, b: 0, a: 0}
