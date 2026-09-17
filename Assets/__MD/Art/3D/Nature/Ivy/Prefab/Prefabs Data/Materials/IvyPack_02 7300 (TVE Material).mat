@@ -19,6 +19,7 @@ Material:
   - TVE_FOURTH_MASK_SAMPLE_MAIN_UV
   - TVE_FOURTH_SAMPLE_MAIN_UV
   - TVE_MAIN_SAMPLE_MAIN_UV
+  - TVE_MOTION
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
@@ -43,8 +44,6 @@ Material:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - UniversalGBuffer
-  - MOTIONVECTORS
-  - XRMotionVectors
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -335,8 +334,8 @@ Material:
     - _MetaVariationValue: 1
     - _MetaWetnessValue: 1
     - _MotionBaseDelayValue: 0
-    - _MotionBaseIntensityValue: 0.05
-    - _MotionBaseMaskMode: 3
+    - _MotionBaseIntensityValue: 0
+    - _MotionBaseMaskMode: 2
     - _MotionBaseNoiseValue: 0.5
     - _MotionBasePhaseValue: 0
     - _MotionBasePivotValue: 0.8
@@ -348,10 +347,10 @@ Material:
     - _MotionElementMode: 0
     - _MotionEnd: 1
     - _MotionHighlightValue: 0
-    - _MotionIntensityValue: 0
+    - _MotionIntensityValue: 1
     - _MotionPushInfo: 0
     - _MotionSmallDelayValue: 0
-    - _MotionSmallIntensityValue: 0.2
+    - _MotionSmallIntensityValue: 0
     - _MotionSmallMaskMode: 1
     - _MotionSmallNoiseValue: 0.5
     - _MotionSmallPhaseValue: 0
@@ -359,7 +358,7 @@ Material:
     - _MotionSmallPushValue: 0
     - _MotionSmallSpeedValue: 5
     - _MotionSmallTillingValue: 5
-    - _MotionTinyIntensityValue: 0.5
+    - _MotionTinyIntensityValue: 0.2
     - _MotionTinyMaskMode: 2
     - _MotionTinyNoiseValue: 1
     - _MotionTinySpeedValue: 10
@@ -561,7 +560,7 @@ Material:
     - _WetnessWaterSmoothnessValue: 1
     - _XRMotionVectorsPass: 1
     - _emissive_power_value: 1
-    - _motion_small_mode: 1
+    - _motion_small_mode: 0
     - _render_coverage: 0
     - _render_cull: 0
     - _render_dst: 0
@@ -609,7 +608,7 @@ Material:
     - _MotionBaseMaskRemap: {r: 0, g: 1, b: 1, a: 0}
     - _MotionHighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _MotionSmallMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MotionTinyMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MotionTinyMaskRemap: {r: 1, g: 0.60402685, b: -2.5254238, a: 1}
     - _OcclusionColorMeshRemap: {r: 0, g: 1, b: 1, a: 0}
     - _OcclusionColorOne: {r: 1, g: 1, b: 1, a: 1}
     - _OcclusionColorTwo: {r: 0.24999997, g: 0.24999997, b: 0.24999997, a: 1}
