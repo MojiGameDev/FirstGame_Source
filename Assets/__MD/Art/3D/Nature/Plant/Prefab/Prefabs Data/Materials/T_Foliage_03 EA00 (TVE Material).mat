@@ -27,6 +27,8 @@ Material:
   - TVE_SECOND_SAMPLE_MAIN_UV
   - TVE_THIRD_MASK_SAMPLE_MAIN_UV
   - TVE_THIRD_SAMPLE_MAIN_UV
+  - TVE_WETNESS
+  - TVE_WETNESS_ELEMENT
   m_InvalidKeywords:
   - TVE_IMPOSTOR_MASK_OFF
   - TVE_SUBSURFACE
@@ -315,7 +317,7 @@ Material:
     - _MainNormalValue: 1
     - _MainOcclusionValue: 1
     - _MainSampleMode: 0
-    - _MainSmoothnessValue: 0.6
+    - _MainSmoothnessValue: 0.5
     - _MetaAlbedoValue: 1
     - _MetaCategory: 0
     - _MetaCutoutValue: 1
@@ -541,18 +543,18 @@ Material:
     - _VariationIntensityValue: 0
     - _VariationMultiValue: 1
     - _WetnessBakeMode: 0
-    - _WetnessCategory: 0
+    - _WetnessCategory: 1
     - _WetnessContrastValue: 0.2
     - _WetnessDripsIntensityValue: 1
     - _WetnessDripsNormalValue: 1
     - _WetnessDripsTillingValue: 0.25
-    - _WetnessDropsIntensityValue: 1
+    - _WetnessDropsIntensityValue: 0
     - _WetnessDropsNormalValue: 1
     - _WetnessDropsTillingValue: 0.25
-    - _WetnessElementMode: 0
+    - _WetnessElementMode: 1
     - _WetnessEnd: 1
     - _WetnessGlobalValue: 1
-    - _WetnessIntensityValue: 0
+    - _WetnessIntensityValue: 0.5
     - _WetnessRainDistValue: 50
     - _WetnessRainIntensityValue: 0
     - _WetnessSmoothnessValue: 0.8
@@ -603,7 +605,7 @@ Material:
     - _MainCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MainMultiRemap: {r: 0, g: 1, b: 1, a: 0}
     - _MainOcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainSmoothnessRemap: {r: 0, g: 0.34437087, b: 2.903846, a: 0}
+    - _MainSmoothnessRemap: {r: 0, g: 0.49738222, b: 2.0105262, a: 0}
     - _MetaAlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _MetaCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MotionBaseMaskRemap: {r: 0, g: 1, b: 1, a: 0}
