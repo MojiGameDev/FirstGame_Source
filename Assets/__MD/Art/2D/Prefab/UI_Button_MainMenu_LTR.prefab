@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2962375345975227936}
   - component: {fileID: 8206486191776942942}
   m_Layer: 5
-  m_Name: Pressed
+  m_Name: Highlighted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 1608544958625152786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 110}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2962375345975227936
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -151,6 +151,9 @@ GameObject:
   - component: {fileID: 216845646578408696}
   - component: {fileID: 8407335713717836449}
   - component: {fileID: 3681280371783733496}
+  - component: {fileID: 6826159845120180906}
+  - component: {fileID: 441163177404869053}
+  - component: {fileID: 588976463103777924}
   m_Layer: 5
   m_Name: UI_Button_MainMenu_LTR
   m_TagString: Untagged
@@ -232,7 +235,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 588976463103777924}
+        m_TargetAssemblyTypeName: PlayClickSound, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   betterTransitions:
   - mode: 3
     stateNames:
@@ -294,7 +309,7 @@ Animator:
   m_GameObject: {fileID: 2843636073739134163}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fef0b10a88fb64724bb50fddb9d364ce, type: 2}
+  m_Controller: {fileID: 9100000, guid: 06b057e3c8f5c6149a94d1f55be72ab4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -306,6 +321,145 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &6826159845120180906
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843636073739134163}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 643c69f552f774e63bdee23b36494f28, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &441163177404869053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843636073739134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6826159845120180906}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &588976463103777924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843636073739134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abce95158d9b4e168ce8aa6ba1272a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 7ffeaae281e2b4847bae2cd8b9af5469, type: 3}
 --- !u!1 &4900325579322142841
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d69ee60d3a4ca44ff94acefecfd4bae1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2d8c6f6409f647fc94fd05db300ab49, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -447,7 +601,7 @@ MonoBehaviour:
   customBorderScales:
     items: []
   fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: d69ee60d3a4ca44ff94acefecfd4bae1, type: 3}
+    Sprite: {fileID: 21300000, guid: e2d8c6f6409f647fc94fd05db300ab49, type: 3}
     ColorMode: 0
     PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
@@ -590,10 +744,10 @@ RectTransform:
   m_Father: {fileID: 1608544958625152786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 110}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &947122823998804796
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -616,8 +770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6129729469863810110}
   - component: {fileID: 139888073157527098}
-  - component: {fileID: 4679472269267969848}
-  - component: {fileID: 7831559937278750332}
+  - component: {fileID: 4322201485452501676}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -640,10 +793,10 @@ RectTransform:
   m_Father: {fileID: 9196421465889416432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 110}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &139888073157527098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -652,7 +805,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7030294494553861884}
   m_CullTransparentMesh: 1
---- !u!114 &4679472269267969848
+--- !u!114 &4322201485452501676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -661,7 +814,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7030294494553861884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9839c2d141529145a431aef4d757ff3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0220f4040307f2a45a27ef20a895b030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -672,16 +825,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start a New Game
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b892acd6f05434411ba67e2a3fef6f20, type: 2}
-  m_sharedMaterial: {fileID: -6426819121469998384, guid: b892acd6f05434411ba67e2a3fef6f20, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6d64fe707143843749d8fe08912786c8, type: 2}
+  m_sharedMaterial: {fileID: 8541226525373711634, guid: 6d64fe707143843749d8fe08912786c8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281545523
+    rgba: 4294967295
   m_fontColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -699,13 +852,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -744,112 +897,80 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
-  disableLocalizer: 1
-  localizerText: {fileID: 11400000, guid: 394a1d927f4d54820b1d049f4be2491c, type: 2}
-  preserveNumbers: 0
-  farsi: 0
-  originalText: Start a New Game
-  fixTags: 1
-  forceFix: 0
---- !u!114 &7831559937278750332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030294494553861884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d6436a87432de4d9a8278f12bf49b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 0
-  source: {fileID: 0}
-  settingsFallback:
-    HorizontalFit: 2
-    VerticalFit: 0
-    IsAnimated: 0
-    AnimationTime: 0.2
-    HasMinWidth: 0
-    HasMinHeight: 0
-    HasMaxWidth: 0
-    HasMaxHeight: 0
+  fitting: 0
+  marginSizerFallback:
     screenConfigName: 
-  customSettings:
-    items: []
-  minWidthSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 0
-    MinSize: 0
-    MaxSize: 4000
+    OptimizedSize:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+    MinSize:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+    MaxSize:
+      left: 1000
+      right: 1000
+      top: 1000
+      bottom: 1000
     UseMinSize: 0
     UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  minWidthSizers:
-    items: []
-  minHeightSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 0
-    MinSize: 0
-    MaxSize: 4000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  minHeightSizers:
-    items: []
-  maxWidthSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 1000
-    MinSize: 0
-    MaxSize: 4000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  maxWidthSizers:
-    items: []
-  maxHeightSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 1000
-    MinSize: 0
-    MaxSize: 4000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  maxHeightSizers:
-    items: []
-  paddingFallback:
-    screenConfigName: 
-    OptimizedSize: {x: 0, y: 0}
-    MinSize: {x: -5000, y: -5000}
-    MaxSize: {x: 5000, y: 5000}
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModX:
+    ModLeft:
       ExponentialScale: 1
       SizeModifiers: []
-    ModY:
+    ModRight:
       ExponentialScale: 1
       SizeModifiers: []
-  paddingSizers:
+    ModTop:
+      ExponentialScale: 1
+      SizeModifiers: []
+    ModBottom:
+      ExponentialScale: 1
+      SizeModifiers: []
+  customMarginSizers:
     items: []
-  treatAsLayoutElement: 0
+  fontSizerFallback:
+    screenConfigName: 
+    OptimizedSize: 40
+    MinSize: 10
+    MaxSize: 500
+    UseMinSize: 0
+    UseMaxSize: 0
+    Mod:
+      ExponentialScale: 1
+      SizeModifiers: []
+  customFontSizers:
+    items: []
+  minFontSizerFallback:
+    screenConfigName: 
+    OptimizedSize: 10
+    MinSize: 10
+    MaxSize: 500
+    UseMinSize: 0
+    UseMaxSize: 0
+    Mod:
+      ExponentialScale: 1
+      SizeModifiers:
+      - Mode: 0
+        Impact: 1
+  customMinFontSizers:
+    items: []
+  maxFontSizerFallback:
+    screenConfigName: 
+    OptimizedSize: 500
+    MinSize: 500
+    MaxSize: 500
+    UseMinSize: 0
+    UseMaxSize: 0
+    Mod:
+      ExponentialScale: 1
+      SizeModifiers:
+      - Mode: 0
+        Impact: 1
+  customMaxFontSizers:
+    items: []
 --- !u!1 &7674037692106881093
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,8 +981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7902575936178814091}
   - component: {fileID: 3013049487452056292}
-  - component: {fileID: 4030080391073006097}
-  - component: {fileID: 4851928790491793027}
+  - component: {fileID: 698583743262221179}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -884,10 +1004,10 @@ RectTransform:
   m_Father: {fileID: 4507513750063088550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 110}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3013049487452056292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -896,7 +1016,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7674037692106881093}
   m_CullTransparentMesh: 1
---- !u!114 &4030080391073006097
+--- !u!114 &698583743262221179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -905,7 +1025,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7674037692106881093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9839c2d141529145a431aef4d757ff3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0220f4040307f2a45a27ef20a895b030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -916,17 +1036,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start a New Game
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b892acd6f05434411ba67e2a3fef6f20, type: 2}
-  m_sharedMaterial: {fileID: -6426819121469998384, guid: b892acd6f05434411ba67e2a3fef6f20, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6d64fe707143843749d8fe08912786c8, type: 2}
+  m_sharedMaterial: {fileID: 8541226525373711634, guid: 6d64fe707143843749d8fe08912786c8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290559164
-  m_fontColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -943,13 +1063,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -988,112 +1108,80 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
-  disableLocalizer: 1
-  localizerText: {fileID: 11400000, guid: 394a1d927f4d54820b1d049f4be2491c, type: 2}
-  preserveNumbers: 0
-  farsi: 0
-  originalText: Start a New Game
-  fixTags: 1
-  forceFix: 0
---- !u!114 &4851928790491793027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7674037692106881093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d6436a87432de4d9a8278f12bf49b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 0
-  source: {fileID: 0}
-  settingsFallback:
-    HorizontalFit: 2
-    VerticalFit: 0
-    IsAnimated: 0
-    AnimationTime: 0.2
-    HasMinWidth: 0
-    HasMinHeight: 0
-    HasMaxWidth: 0
-    HasMaxHeight: 0
+  fitting: 0
+  marginSizerFallback:
     screenConfigName: 
-  customSettings:
-    items: []
-  minWidthSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 0
-    MinSize: 0
-    MaxSize: 4000
+    OptimizedSize:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+    MinSize:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+    MaxSize:
+      left: 1000
+      right: 1000
+      top: 1000
+      bottom: 1000
     UseMinSize: 0
     UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  minWidthSizers:
-    items: []
-  minHeightSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 0
-    MinSize: 0
-    MaxSize: 4000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  minHeightSizers:
-    items: []
-  maxWidthSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 1000
-    MinSize: 0
-    MaxSize: 4000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  maxWidthSizers:
-    items: []
-  maxHeightSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 1000
-    MinSize: 0
-    MaxSize: 4000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  maxHeightSizers:
-    items: []
-  paddingFallback:
-    screenConfigName: 
-    OptimizedSize: {x: 0, y: 0}
-    MinSize: {x: -5000, y: -5000}
-    MaxSize: {x: 5000, y: 5000}
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModX:
+    ModLeft:
       ExponentialScale: 1
       SizeModifiers: []
-    ModY:
+    ModRight:
       ExponentialScale: 1
       SizeModifiers: []
-  paddingSizers:
+    ModTop:
+      ExponentialScale: 1
+      SizeModifiers: []
+    ModBottom:
+      ExponentialScale: 1
+      SizeModifiers: []
+  customMarginSizers:
     items: []
-  treatAsLayoutElement: 0
+  fontSizerFallback:
+    screenConfigName: 
+    OptimizedSize: 40
+    MinSize: 10
+    MaxSize: 500
+    UseMinSize: 0
+    UseMaxSize: 0
+    Mod:
+      ExponentialScale: 1
+      SizeModifiers: []
+  customFontSizers:
+    items: []
+  minFontSizerFallback:
+    screenConfigName: 
+    OptimizedSize: 10
+    MinSize: 10
+    MaxSize: 500
+    UseMinSize: 0
+    UseMaxSize: 0
+    Mod:
+      ExponentialScale: 1
+      SizeModifiers:
+      - Mode: 0
+        Impact: 1
+  customMinFontSizers:
+    items: []
+  maxFontSizerFallback:
+    screenConfigName: 
+    OptimizedSize: 500
+    MinSize: 500
+    MaxSize: 500
+    UseMinSize: 0
+    UseMaxSize: 0
+    Mod:
+      ExponentialScale: 1
+      SizeModifiers:
+      - Mode: 0
+        Impact: 1
+  customMaxFontSizers:
+    items: []
 --- !u!1 &8983969851200138141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,11 +1215,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1608544958625152786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -65, y: 0}
   m_SizeDelta: {x: 700, y: 110}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3989505469739549155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1160,7 +1248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d69ee60d3a4ca44ff94acefecfd4bae1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2d8c6f6409f647fc94fd05db300ab49, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1234,7 +1322,7 @@ MonoBehaviour:
   customBorderScales:
     items: []
   fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: d69ee60d3a4ca44ff94acefecfd4bae1, type: 3}
+    Sprite: {fileID: 21300000, guid: e2d8c6f6409f647fc94fd05db300ab49, type: 3}
     ColorMode: 0
     PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
