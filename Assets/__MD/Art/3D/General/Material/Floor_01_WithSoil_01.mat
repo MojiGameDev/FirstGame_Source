@@ -28,28 +28,34 @@ Material:
   - _LAYERALBEDO
   - _LAYERALBEDO_DEF_1
   - _LAYERALBEDO_DEF_2
+  - _LAYERALBEDO_DEF_3
   - _LAYERBLENDHEIGHT
   - _LAYERBLENDHEIGHT_DEF_1
   - _LAYERBLENDHEIGHT_DEF_2
+  - _LAYERBLENDHEIGHT_DEF_3
   - _LAYERMASK
   - _LAYERMASK_DEF_1
   - _LAYERMASK_DEF_2
+  - _LAYERMASK_DEF_3
   - _LAYERNOISE
   - _LAYERNOISEHQ
+  - _LAYERNOISEHQ_DEF_3
   - _LAYERNOISEWORLD
   - _LAYERNOISEWORLD_DEF_1
-  - _LAYERNOISEWORLD_DEF_2
   - _LAYERNOISE_DEF_1
   - _LAYERNOISE_DEF_2
+  - _LAYERNOISE_DEF_3
   - _LAYERNORMAL
   - _LAYERNORMAL_DEF_1
   - _LAYERNORMAL_DEF_2
-  - _LAYERTRIPLANAR
+  - _LAYERNORMAL_DEF_3
   - _MASKMAP
   - _NORMALMAP
   - _USELAYER
   - _USELAYER_DEF_1
   - _USELAYER_DEF_2
+  - _USELAYER_DEF_3
+  - _VERTEXCOLOR_OVERLAY
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -192,11 +198,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _LayerAlbedoMap:
         m_Texture: {fileID: 2800000, guid: 50b2c7c30aa24b249b1975b3917dcc85, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LayerAlbedoMap_Ext_1:
         m_Texture: {fileID: 2800000, guid: 8aaae21935258fc4fb3711c1d8964de8, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LayerAlbedoMap_Ext_1_P1_Ext_1:
         m_Texture: {fileID: 0}
@@ -208,7 +214,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _LayerAlbedoMap_Ext_2:
         m_Texture: {fileID: 2800000, guid: 9ad660239f530e844bb1a7d56538f56c, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _LayerAlbedoMap_Ext_2_P1_Ext_2:
         m_Texture: {fileID: 0}
@@ -219,8 +225,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LayerAlbedoMap_Ext_3:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 4506778303e97ec478b0b2caa9a5e9ab, type: 3}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _LayerAlbedoMap_Ext_3_P1_Ext_3:
         m_Texture: {fileID: 0}
@@ -411,7 +417,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LayerMaskMap_Ext_3:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a2a9a609efde80b4797c5f0d387688d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LayerMaskMap_Ext_3_P1_Ext_3:
@@ -475,7 +481,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LayerNormalMap_Ext_3:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2e17ad0e7c373f841a340339b12aca35, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LayerNormalMap_Ext_3_P1_Ext_3:
@@ -795,10 +801,10 @@ Material:
     - _Cutoff: 0.5
     - _DebugSampleCountThreshold: 12
     - _DetailAlbedoMapScale: 1
-    - _DetailAlbedoStrength: 1
+    - _DetailAlbedoStrength: 2
     - _DetailNormalMapScale: 1
-    - _DetailNormalStrength: 1
-    - _DetailSmoothnessStrength: 1
+    - _DetailNormalStrength: 2
+    - _DetailSmoothnessStrength: 2
     - _DetailStochasticContrast: 0.7
     - _DetailStochasticScale: 0.5
     - _DetailTriplanarBaryBlend: 0.9
@@ -863,7 +869,7 @@ Material:
     - _LayerBlendContrast_Ext_3: 2
     - _LayerBlendMode: 0
     - _LayerBlendMode_Ext_1: 0
-    - _LayerBlendMode_Ext_2: 0
+    - _LayerBlendMode_Ext_2: 2
     - _LayerBlendMode_Ext_3: 0
     - _LayerCheapSSSThickness: 0
     - _LayerCheapSSSThickness_Ext_1: 0
@@ -892,7 +898,7 @@ Material:
     - _LayerHeight: 0
     - _LayerHeightContrast: 0.5
     - _LayerHeightContrast_Ext_1: 0.5
-    - _LayerHeightContrast_Ext_2: 0.5
+    - _LayerHeightContrast_Ext_2: 0.702
     - _LayerHeightContrast_Ext_3: 0.5
     - _LayerHeight_Ext_1: 0
     - _LayerHeight_Ext_2: 0
@@ -911,20 +917,20 @@ Material:
     - _LayerMicroShadowStrength_Ext_3: 0
     - _LayerNoiseAmplitude: 3
     - _LayerNoiseAmplitude_Ext_1: 2.5
-    - _LayerNoiseAmplitude_Ext_2: 1.52
-    - _LayerNoiseAmplitude_Ext_3: 0.5
+    - _LayerNoiseAmplitude_Ext_2: 10
+    - _LayerNoiseAmplitude_Ext_3: 4.64
     - _LayerNoiseCenter: 0.53
-    - _LayerNoiseCenter_Ext_1: 0.5
-    - _LayerNoiseCenter_Ext_2: 0.5
-    - _LayerNoiseCenter_Ext_3: 0
+    - _LayerNoiseCenter_Ext_1: 0.64
+    - _LayerNoiseCenter_Ext_2: -0.68
+    - _LayerNoiseCenter_Ext_3: -0.05
     - _LayerNoiseFrequency: 0.5
-    - _LayerNoiseFrequency_Ext_1: 0.3
-    - _LayerNoiseFrequency_Ext_2: 0.5
-    - _LayerNoiseFrequency_Ext_3: 1
+    - _LayerNoiseFrequency_Ext_1: 3.32
+    - _LayerNoiseFrequency_Ext_2: 34.27
+    - _LayerNoiseFrequency_Ext_3: 1.27
     - _LayerNoiseOffset: 3.88
     - _LayerNoiseOffset_Ext_1: 3.88
-    - _LayerNoiseOffset_Ext_2: 1.04
-    - _LayerNoiseOffset_Ext_3: 0
+    - _LayerNoiseOffset_Ext_2: 8.03
+    - _LayerNoiseOffset_Ext_3: 3.75
     - _LayerNormalStrength: 1
     - _LayerNormalStrength_Ext_1: 1
     - _LayerNormalStrength_Ext_2: 1
@@ -950,9 +956,9 @@ Material:
     - _LayerStochasticScale_Ext_2: 0.5
     - _LayerStochasticScale_Ext_3: 0.5
     - _LayerStrength: 1.06
-    - _LayerStrength_Ext_1: 1
-    - _LayerStrength_Ext_2: 0.79
-    - _LayerStrength_Ext_3: 1
+    - _LayerStrength_Ext_1: 0.744
+    - _LayerStrength_Ext_2: 0.388
+    - _LayerStrength_Ext_3: 1.104
     - _LayerTessStrength: 1
     - _LayerTessStrength_Ext_1: 1
     - _LayerTessStrength_Ext_2: 1
@@ -1167,7 +1173,7 @@ Material:
     - _LayerTextureRotation_Ext_2: {r: 0, g: 0, b: 0, a: 0}
     - _LayerTextureRotation_Ext_3: {r: 0, g: 0, b: 0, a: 0}
     - _LayerTint: {r: 1, g: 1, b: 1, a: 1}
-    - _LayerTint_Ext_1: {r: 1, g: 1, b: 1, a: 1}
+    - _LayerTint_Ext_1: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
     - _LayerTint_Ext_2: {r: 1, g: 1, b: 1, a: 1}
     - _LayerTint_Ext_3: {r: 1, g: 1, b: 1, a: 1}
     - _LayerWeightOverDistance: {r: 1, g: 1, b: 1, a: 1}
@@ -1197,7 +1203,7 @@ Material:
     - _TextureClampY: {r: 0.001, g: 0.999, b: 0.001, a: 0.999}
     - _TextureClampZ: {r: 0.001, g: 0.999, b: 0.001, a: 0.999}
     - _TextureRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     - _TraxTint: {r: 1, g: 1, b: 1, a: 1}
     - _WindParticulateAngleMask: {r: -1, g: -1, b: 1, a: 1}
     - _WindParticulateColor: {r: 1, g: 1, b: 1, a: 1}
