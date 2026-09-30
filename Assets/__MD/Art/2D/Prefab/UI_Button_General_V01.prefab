@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7291345075929801068}
   - component: {fileID: 6961541558472899471}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   fallbackSpriteSettings:
     Sprite: {fileID: 21300000, guid: 4d43cdc68a9f54b19a56491ca40fc43a, type: 3}
     ColorMode: 0
-    PrimaryColor: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
+    PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292075492
-  m_fontColor: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 5
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -358,149 +358,6 @@ MonoBehaviour:
         Impact: 1
   customMaxFontSizers:
     items: []
---- !u!1 &4916942465801922700
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7600720631019265008}
-  - component: {fileID: 7426878299120577104}
-  - component: {fileID: 689526143782148038}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7600720631019265008
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4916942465801922700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6882144288716133902}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7426878299120577104
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4916942465801922700}
-  m_CullTransparentMesh: 1
---- !u!114 &689526143782148038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4916942465801922700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a132ebb16d23354b841b6618f4fa0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: efd9470ca446f4feab310d6159ac1eec, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
-  raycastPaddingFallback:
-    screenConfigName: 
-    OptimizedSize:
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-    MinSize:
-      left: -1000
-      right: -1000
-      top: -1000
-      bottom: -1000
-    MaxSize:
-      left: 1000
-      right: 1000
-      top: 1000
-      bottom: 1000
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModLeft:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModRight:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModTop:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModBottom:
-      ExponentialScale: 1
-      SizeModifiers: []
-  raycastPaddingSizers:
-    items: []
-  colorMode: 0
-  secondColor: {r: 1, g: 1, b: 1, a: 1}
-  flippingMode: 0
-  materialProperties:
-    FloatProperties: []
-  materialType: Default
-  materialEffect: 0
-  materialProperty1: 0
-  materialProperty2: 0
-  materialProperty3: 0
-  keepBorderAspectRatio: 0
-  spriteBorderScaleFallback:
-    screenConfigName: 
-    OptimizedSize: {x: 1, y: 1}
-    MinSize: {x: 0, y: 0}
-    MaxSize: {x: 3, y: 3}
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModX:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModY:
-      ExponentialScale: 1
-      SizeModifiers: []
-  customBorderScales:
-    items: []
-  fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: efd9470ca446f4feab310d6159ac1eec, type: 3}
-    ColorMode: 0
-    PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
-    SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
-    FlippingMode: 0
-    screenConfigName: 
-  customSpriteSettings:
-    items: []
 --- !u!1 &5473180078217746196
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +370,7 @@ GameObject:
   - component: {fileID: 9062325730187010279}
   - component: {fileID: 4190145844439073227}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,155 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0.015686275}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd58d8ffa59214fca9b02ed699830f33, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
-  raycastPaddingFallback:
-    screenConfigName: 
-    OptimizedSize:
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-    MinSize:
-      left: -1000
-      right: -1000
-      top: -1000
-      bottom: -1000
-    MaxSize:
-      left: 1000
-      right: 1000
-      top: 1000
-      bottom: 1000
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModLeft:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModRight:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModTop:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModBottom:
-      ExponentialScale: 1
-      SizeModifiers: []
-  raycastPaddingSizers:
-    items: []
-  colorMode: 0
-  secondColor: {r: 1, g: 1, b: 1, a: 1}
-  flippingMode: 0
-  materialProperties:
-    FloatProperties: []
-  materialType: Default
-  materialEffect: 0
-  materialProperty1: 0
-  materialProperty2: 0
-  materialProperty3: 0
-  keepBorderAspectRatio: 0
-  spriteBorderScaleFallback:
-    screenConfigName: 
-    OptimizedSize: {x: 1, y: 1}
-    MinSize: {x: 0, y: 0}
-    MaxSize: {x: 3, y: 3}
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModX:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModY:
-      ExponentialScale: 1
-      SizeModifiers: []
-  customBorderScales:
-    items: []
-  fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: dd58d8ffa59214fca9b02ed699830f33, type: 3}
-    ColorMode: 0
-    PrimaryColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0.015686275}
-    SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
-    FlippingMode: 0
-    screenConfigName: 
-  customSpriteSettings:
-    items: []
---- !u!1 &5589337723915927395
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6882144288716133902}
-  - component: {fileID: 3618229648694128755}
-  - component: {fileID: 3689162880493236886}
-  - component: {fileID: 301250158869961010}
-  m_Layer: 5
-  m_Name: UI_Button_General_V01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6882144288716133902
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589337723915927395}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5293471925492513279}
-  - {fileID: 7600720631019265008}
-  - {fileID: 1500112687627782449}
-  - {fileID: 9212064130434591335}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 210, y: 60}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!222 &3618229648694128755
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589337723915927395}
-  m_CullTransparentMesh: 1
---- !u!114 &3689162880493236886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589337723915927395}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a132ebb16d23354b841b6618f4fa0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.019607844}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -715,9 +424,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
-  m_FillCenter: 1
+  m_FillCenter: 0
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
@@ -767,10 +476,10 @@ MonoBehaviour:
   materialProperty1: 0
   materialProperty2: 0
   materialProperty3: 0
-  keepBorderAspectRatio: 1
+  keepBorderAspectRatio: 0
   spriteBorderScaleFallback:
     screenConfigName: 
-    OptimizedSize: {x: 0.3, y: 0.3}
+    OptimizedSize: {x: 0.2, y: 0.2}
     MinSize: {x: 0, y: 0}
     MaxSize: {x: 3, y: 3}
     UseMinSize: 0
@@ -786,12 +495,60 @@ MonoBehaviour:
   fallbackSpriteSettings:
     Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     ColorMode: 0
-    PrimaryColor: {r: 1, g: 1, b: 1, a: 0.019607844}
+    PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
   customSpriteSettings:
     items: []
+--- !u!1 &5589337723915927395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6882144288716133902}
+  - component: {fileID: 3618229648694128755}
+  - component: {fileID: 301250158869961010}
+  m_Layer: 5
+  m_Name: UI_Button_General_V01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6882144288716133902
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589337723915927395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5293471925492513279}
+  - {fileID: 1500112687627782449}
+  - {fileID: 9212064130434591335}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 210, y: 60}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &3618229648694128755
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589337723915927395}
+  m_CullTransparentMesh: 1
 --- !u!114 &301250158869961010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,10 +570,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
-    m_HighlightedColor: {r: 0.8156863, g: 0.5529412, b: 0.19607843, a: 1}
-    m_PressedColor: {r: 0.74509805, g: 0.5019608, b: 0.17254902, a: 1}
-    m_SelectedColor: {r: 0.7921569, g: 0.5921569, b: 0.28627452, a: 1}
+    m_NormalColor: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.12941177}
+    m_HighlightedColor: {r: 1, g: 0.8509804, b: 0.47058824, a: 1}
+    m_PressedColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+    m_SelectedColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -832,7 +589,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 689526143782148038}
+  m_TargetGraphic: {fileID: 4190145844439073227}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -848,4 +605,104 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  betterTransitions: []
+  betterTransitions:
+  - mode: 1
+    stateNames:
+    - Normal
+    - Highlighted
+    - Pressed
+    - Selected
+    - Disabled
+    colorTransitions:
+      target: {fileID: 910524240385036700}
+      colorMultiplier: 1
+      fadeDuration: 0.1
+      affectedColor: 0
+      states:
+      - Name: Normal
+        StateObject: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+      - Name: Highlighted
+        StateObject: {r: 1, g: 0.8509804, b: 0.47058824, a: 1}
+      - Name: Pressed
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Selected
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Disabled
+        StateObject: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    color32Transitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    spriteSwapTransitions:
+      target: {fileID: 0}
+      states: []
+    animationTransitions:
+      target: {fileID: 0}
+      states: []
+    activenessTransitions:
+      target: {fileID: 0}
+      states: []
+    alphaTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    materialPropertyTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+      propertyIndex: 0
+    locationAnimationTransitions:
+      target: {fileID: 0}
+      states: []
+    customTransitions:
+      states: []
+  - mode: 1
+    stateNames:
+    - Normal
+    - Highlighted
+    - Pressed
+    - Selected
+    - Disabled
+    colorTransitions:
+      target: {fileID: 6961541558472899471}
+      colorMultiplier: 1
+      fadeDuration: 0.1
+      affectedColor: 0
+      states:
+      - Name: Normal
+        StateObject: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+      - Name: Highlighted
+        StateObject: {r: 1, g: 0.8509804, b: 0.47058824, a: 1}
+      - Name: Pressed
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Selected
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Disabled
+        StateObject: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    color32Transitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    spriteSwapTransitions:
+      target: {fileID: 0}
+      states: []
+    animationTransitions:
+      target: {fileID: 0}
+      states: []
+    activenessTransitions:
+      target: {fileID: 0}
+      states: []
+    alphaTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    materialPropertyTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+      propertyIndex: 0
+    locationAnimationTransitions:
+      target: {fileID: 0}
+      states: []
+    customTransitions:
+      states: []

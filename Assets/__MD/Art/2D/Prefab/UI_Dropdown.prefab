@@ -29,7 +29,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2518226243225551366}
   - {fileID: 6312582237833742986}
   - {fileID: 3825559732407036090}
   m_Father: {fileID: 0}
@@ -184,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
+  m_Color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -570,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 0.03529412}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.11764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -633,7 +632,7 @@ MonoBehaviour:
   keepBorderAspectRatio: 0
   spriteBorderScaleFallback:
     screenConfigName: 
-    OptimizedSize: {x: 0.3, y: 0.3}
+    OptimizedSize: {x: 0.2, y: 0.2}
     MinSize: {x: 0, y: 0}
     MaxSize: {x: 3, y: 3}
     UseMinSize: 0
@@ -649,7 +648,7 @@ MonoBehaviour:
   fallbackSpriteSettings:
     Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     ColorMode: 0
-    PrimaryColor: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 0.03529412}
+    PrimaryColor: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.11764706}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
@@ -1027,7 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
+  m_Color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1036,7 +1035,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: aa2eb8a33b341402b9969a878165a903, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1046,12 +1045,12 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0
   m_Text: Option01
   fitting: 0
   fontSizerFallback:
     screenConfigName: 
-    OptimizedSize: 30
+    OptimizedSize: 25
     MinSize: 0
     MaxSize: 500
     UseMinSize: 0
@@ -1203,149 +1202,6 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: a255b7edc459147d7a202b64b745bd96, type: 3}
     ColorMode: 0
     PrimaryColor: {r: 0.7921569, g: 0.5921569, b: 0.28627452, a: 0.39215687}
-    SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
-    FlippingMode: 0
-    screenConfigName: 
-  customSpriteSettings:
-    items: []
---- !u!1 &4817251916648660705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2518226243225551366}
-  - component: {fileID: 235387845910625216}
-  - component: {fileID: 2124914190698938665}
-  m_Layer: 5
-  m_Name: Back
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2518226243225551366
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4817251916648660705}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8043774131479182289}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &235387845910625216
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4817251916648660705}
-  m_CullTransparentMesh: 1
---- !u!114 &2124914190698938665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4817251916648660705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a132ebb16d23354b841b6618f4fa0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e345733743364f509b23de8a24a9fda, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1.45
-  raycastPaddingFallback:
-    screenConfigName: 
-    OptimizedSize:
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-    MinSize:
-      left: -1000
-      right: -1000
-      top: -1000
-      bottom: -1000
-    MaxSize:
-      left: 1000
-      right: 1000
-      top: 1000
-      bottom: 1000
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModLeft:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModRight:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModTop:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModBottom:
-      ExponentialScale: 1
-      SizeModifiers: []
-  raycastPaddingSizers:
-    items: []
-  colorMode: 0
-  secondColor: {r: 1, g: 1, b: 1, a: 1}
-  flippingMode: 0
-  materialProperties:
-    FloatProperties: []
-  materialType: Default
-  materialEffect: 0
-  materialProperty1: 0
-  materialProperty2: 0
-  materialProperty3: 0
-  keepBorderAspectRatio: 1
-  spriteBorderScaleFallback:
-    screenConfigName: 
-    OptimizedSize: {x: 1, y: 1}
-    MinSize: {x: 0, y: 0}
-    MaxSize: {x: 3, y: 3}
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModX:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModY:
-      ExponentialScale: 1
-      SizeModifiers: []
-  customBorderScales:
-    items: []
-  fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: 8e345733743364f509b23de8a24a9fda, type: 3}
-    ColorMode: 0
-    PrimaryColor: {r: 0, g: 0, b: 0, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
@@ -1967,7 +1823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8156863, g: 0.5529412, b: 0.2, a: 1}
+  m_Color: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2050,7 +1906,7 @@ MonoBehaviour:
   fallbackSpriteSettings:
     Sprite: {fileID: 21300000, guid: e82eee8cf1c074a8f9a2a110a27e7980, type: 3}
     ColorMode: 0
-    PrimaryColor: {r: 0.8156863, g: 0.5529412, b: 0.2, a: 1}
+    PrimaryColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
@@ -2131,8 +1987,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292075492
-  m_fontColor: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
+    rgba: 4293256677
+  m_fontColor: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2149,8 +2005,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2159,7 +2015,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 5
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2230,7 +2086,7 @@ MonoBehaviour:
     items: []
   fontSizerFallback:
     screenConfigName: 
-    OptimizedSize: 30
+    OptimizedSize: 27
     MinSize: 10
     MaxSize: 500
     UseMinSize: 0
