@@ -377,7 +377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 04f74f44d55f54776910f21367c180d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1de303be124d746fe8288d2bb9adf6c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -451,9 +451,156 @@ MonoBehaviour:
   customBorderScales:
     items: []
   fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: 04f74f44d55f54776910f21367c180d9, type: 3}
+    Sprite: {fileID: 21300000, guid: 1de303be124d746fe8288d2bb9adf6c3, type: 3}
     ColorMode: 0
     PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
+    SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
+    FlippingMode: 0
+    screenConfigName: 
+  customSpriteSettings:
+    items: []
+--- !u!1 &3498017016522342894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8125542701359035961}
+  - component: {fileID: 6537571943643315395}
+  - component: {fileID: 9193411948664834688}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8125542701359035961
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498017016522342894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1993901194762033617}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 4}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &6537571943643315395
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498017016522342894}
+  m_CullTransparentMesh: 1
+--- !u!114 &9193411948664834688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498017016522342894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a132ebb16d23354b841b6618f4fa0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7d54cab0355d94e869ad05debfd57668, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+  raycastPaddingFallback:
+    screenConfigName: 
+    OptimizedSize:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+    MinSize:
+      left: -1000
+      right: -1000
+      top: -1000
+      bottom: -1000
+    MaxSize:
+      left: 1000
+      right: 1000
+      top: 1000
+      bottom: 1000
+    UseMinSize: 0
+    UseMaxSize: 0
+    ModLeft:
+      ExponentialScale: 1
+      SizeModifiers: []
+    ModRight:
+      ExponentialScale: 1
+      SizeModifiers: []
+    ModTop:
+      ExponentialScale: 1
+      SizeModifiers: []
+    ModBottom:
+      ExponentialScale: 1
+      SizeModifiers: []
+  raycastPaddingSizers:
+    items: []
+  colorMode: 0
+  secondColor: {r: 1, g: 1, b: 1, a: 1}
+  flippingMode: 0
+  materialProperties:
+    FloatProperties: []
+  materialType: Default
+  materialEffect: 0
+  materialProperty1: 0
+  materialProperty2: 0
+  materialProperty3: 0
+  keepBorderAspectRatio: 0
+  spriteBorderScaleFallback:
+    screenConfigName: 
+    OptimizedSize: {x: 1, y: 1}
+    MinSize: {x: 0, y: 0}
+    MaxSize: {x: 3, y: 3}
+    UseMinSize: 0
+    UseMaxSize: 0
+    ModX:
+      ExponentialScale: 1
+      SizeModifiers:
+      - Mode: 0
+        Impact: 1
+    ModY:
+      ExponentialScale: 1
+      SizeModifiers:
+      - Mode: 0
+        Impact: 1
+  customBorderScales:
+    items: []
+  fallbackSpriteSettings:
+    Sprite: {fileID: 21300000, guid: 7d54cab0355d94e869ad05debfd57668, type: 3}
+    ColorMode: 0
+    PrimaryColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
@@ -516,7 +663,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
@@ -576,15 +723,15 @@ MonoBehaviour:
     - On
     - Off
     colorTransitions:
-      target: {fileID: 4024017749063461810}
+      target: {fileID: 9193411948664834688}
       colorMultiplier: 1
       fadeDuration: 0.1
       affectedColor: 0
       states:
       - Name: On
-        StateObject: {r: 0.9607843, g: 0.8352941, b: 0.42352942, a: 1}
+        StateObject: {r: 1, g: 1, b: 1, a: 1}
       - Name: Off
-        StateObject: {r: 0.89411765, g: 0.8745098, b: 0.827451, a: 1}
+        StateObject: {r: 1, g: 1, b: 1, a: 0}
     color32Transitions:
       target: {fileID: 0}
       fadeDuration: 0
@@ -612,8 +759,108 @@ MonoBehaviour:
       states: []
     customTransitions:
       states: []
-  betterTransitionsWhenOn: []
-  betterTransitionsWhenOff: []
+  betterTransitionsWhenOn:
+  - mode: 1
+    stateNames:
+    - Normal
+    - Highlighted
+    - Pressed
+    - Selected
+    - Disabled
+    colorTransitions:
+      target: {fileID: 4024017749063461810}
+      colorMultiplier: 1
+      fadeDuration: 0.1
+      affectedColor: 0
+      states:
+      - Name: Normal
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Highlighted
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Pressed
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Selected
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Disabled
+        StateObject: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    color32Transitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    spriteSwapTransitions:
+      target: {fileID: 0}
+      states: []
+    animationTransitions:
+      target: {fileID: 0}
+      states: []
+    activenessTransitions:
+      target: {fileID: 0}
+      states: []
+    alphaTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    materialPropertyTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+      propertyIndex: 0
+    locationAnimationTransitions:
+      target: {fileID: 0}
+      states: []
+    customTransitions:
+      states: []
+  betterTransitionsWhenOff:
+  - mode: 1
+    stateNames:
+    - Normal
+    - Highlighted
+    - Pressed
+    - Selected
+    - Disabled
+    colorTransitions:
+      target: {fileID: 4024017749063461810}
+      colorMultiplier: 1
+      fadeDuration: 0.1
+      affectedColor: 0
+      states:
+      - Name: Normal
+        StateObject: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+      - Name: Highlighted
+        StateObject: {r: 1, g: 0.8509804, b: 0.47058824, a: 1}
+      - Name: Pressed
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Selected
+        StateObject: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+      - Name: Disabled
+        StateObject: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    color32Transitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    spriteSwapTransitions:
+      target: {fileID: 0}
+      states: []
+    animationTransitions:
+      target: {fileID: 0}
+      states: []
+    activenessTransitions:
+      target: {fileID: 0}
+      states: []
+    alphaTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+    materialPropertyTransitions:
+      target: {fileID: 0}
+      fadeDuration: 0
+      states: []
+      propertyIndex: 0
+    locationAnimationTransitions:
+      target: {fileID: 0}
+      states: []
+    customTransitions:
+      states: []
 --- !u!1 &7571124257633835391
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +890,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8125542701359035961}
   m_Father: {fileID: 6575932380244852201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -672,14 +920,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 0.05882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e42fefb6e2bab4228af09cb0394a4824, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0e9ce6a1b72c4d2ba9d0ecdfd4ac9b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -753,9 +1001,9 @@ MonoBehaviour:
   customBorderScales:
     items: []
   fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: e42fefb6e2bab4228af09cb0394a4824, type: 3}
+    Sprite: {fileID: 21300000, guid: c0e9ce6a1b72c4d2ba9d0ecdfd4ac9b4, type: 3}
     ColorMode: 0
-    PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
+    PrimaryColor: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 0.05882353}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
