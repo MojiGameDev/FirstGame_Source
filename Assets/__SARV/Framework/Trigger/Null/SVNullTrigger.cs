@@ -1,5 +1,5 @@
-﻿using __SARV.Framework.Attributes;
-using __SARV.Framework.Logic;
+﻿using __SARV.Core.Attributes;
+using __SARV.Framework.Component;
 
 namespace __SARV.Framework.Trigger
 {

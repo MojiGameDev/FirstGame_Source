@@ -1,4 +1,4 @@
-﻿namespace __SARV.Framework.Constant
+﻿namespace __SARV.Core.Constant
 {
     public static class SVConstantCategory
     {

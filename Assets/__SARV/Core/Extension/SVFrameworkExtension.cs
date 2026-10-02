@@ -1,8 +1,8 @@
-﻿using __SARV.Framework.Attributes;
-using __SARV.Framework.Component;
+﻿using __SARV.Core.Attributes;
+using __SARV.Framework.Component.Base;
 using Sirenix.Utilities;
 
-namespace __SARV.Framework.Extension
+namespace __SARV.Core.Extension
 {
     public static class SVFrameworkExtension
     {

@@ -2,9 +2,8 @@
 using System.Linq;
 using __MD.Script.Core.Base;
 using __SARV.Core.Extension;
-using __SARV.Framework.Extension;
-using __SARV.Framework.Logic;
-using __SARV.Framework.Reflection;
+using __SARV.Core.Reflection;
+using __SARV.Framework.Component;
 using __SARV.Framework.Trigger;
 using Sirenix.OdinInspector;
 using UnityEngine;
