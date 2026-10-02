@@ -1,12 +1,13 @@
 ﻿using __SARV.Core.Extension;
+using __SARV.Framework;
 using UnityEditor;
 using UnityEngine;
 
-namespace __SARV.Framework.Editor
+namespace __SARV.Editor
 {
     public static class SVLogicCreatorEditor
     {
-        [MenuItem("SARV/Create Trigger", false, 10)]
+        [MenuItem("GameObject/SARV/Create Trigger", false, 10)]
         private static void CreateSARVTrigger(MenuCommand command)
         {
             var selectedObject = command.context as GameObject;
@@ -15,12 +16,9 @@ namespace __SARV.Framework.Editor
             {
                 return;
             }
-
-            // Add your custom component to the selected GameObject
-            var component = selectedObject.AddComponent<SARVTrigger>();
-
+            
             // Create child
-            var child = new GameObject("Trigger");
+            var child = new GameObject("New Trigger");
             child.transform.SetParent(selectedObject.transform);
             child.transform.Reset();
 
@@ -31,13 +29,12 @@ namespace __SARV.Framework.Editor
             Selection.activeGameObject = child;
 
             Undo.RegisterCreatedObjectUndo(child, "Create Trigger");
-            Undo.RegisterCreatedObjectUndo(component, "Add Trigger");
         }
 
-        [MenuItem("SARV/Create Trigger", true)]
-        private static bool ValidateCreateSARVTrigger(MenuCommand command)
-        {
-            return command.context is GameObject;
-        }
+        // [MenuItem("CONTEXT/SARV/Create Trigger", true)]
+        // private static bool ValidateCreateSARVTrigger(MenuCommand command)
+        // {
+        //     return command.context is GameObject;
+        // }
     }
 }
