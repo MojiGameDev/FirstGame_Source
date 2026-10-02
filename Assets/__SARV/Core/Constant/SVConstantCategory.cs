@@ -6,5 +6,9 @@
         {
             public const string LIFECYCLE = "Lifecycle";
         }
+        public static class Action
+        {
+            public const string DEBUG = "Debug";
+        }
     }
 }

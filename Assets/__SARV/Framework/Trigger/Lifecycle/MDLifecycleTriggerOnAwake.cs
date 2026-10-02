@@ -1,6 +1,7 @@
 ﻿using __SARV.Core.Attributes;
 using __SARV.Core.Constant;
 using __SARV.Framework.Component;
+using UnityEngine;
 
 namespace __SARV.Framework.Trigger
 {
@@ -9,6 +10,9 @@ namespace __SARV.Framework.Trigger
     [SVDescription("...")]
     public class MDLifecycleTriggerOnAwake : SVTriggerComponent
     {
-        
+        public override void HandleAwake()
+        {
+            Debug.Log("HandleAwake");
+        }
     }
 }
