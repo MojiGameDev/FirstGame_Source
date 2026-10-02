@@ -1,6 +1,5 @@
 ﻿using __SARV.Framework.Attributes;
 using __SARV.Framework.Component;
-using __SARV.Framework.Logic;
 using Sirenix.Utilities;
 
 namespace __SARV.Framework.Extension
@@ -16,6 +15,19 @@ namespace __SARV.Framework.Extension
 
             var attribute = component.GetType()
                 .GetCustomAttribute<SVTitleAttribute>();
+
+            return attribute?.Value ?? component.GetType().Name;
+        }
+
+        public static string GetCategory(this SVComponent component)
+        {
+            if (component == null)
+            {
+                return string.Empty;
+            }
+
+            var attribute = component.GetType()
+                .GetCustomAttribute<SVCategoryAttribute>();
 
             return attribute?.Value ?? component.GetType().Name;
         }

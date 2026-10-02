@@ -2,36 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using __SARV.Framework.Attributes;
+using __SARV.Framework.Component;
+using __SARV.Framework.Extension;
+using __SARV.Framework.Logic;
 using Unity.VisualScripting;
+using UnityEngine;
 
 namespace __SARV.Framework.Reflection
 {
     public static class SVReflection
     {
-        public static List<Type> FindAllTypes<TInheritFrom>()
+        public static List<TInheritFrom> FindAllTypes<TInheritFrom>()
         {
-            var results = new List<Type>();
-
-            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                // Skip Unity system assemblies
-                if (assembly.FullName.StartsWith("Unity.") ||
-                    assembly.FullName.StartsWith("System."))
-                    continue;
-
-                foreach (var type in assembly.GetTypes())
-                {
-                    // Check: inherits from Variable AND has TitleAttribute
-                    if (typeof(TInheritFrom).IsAssignableFrom(type) &&
-                        !type.IsAbstract &&
-                        !type.HasAttribute<SVIgnoreAttribute>())
-                    {
-                        results.Add(type);
-                    }
-                }
-            }
-
-            return results;
+            return AppDomain.CurrentDomain
+                .GetAssemblies()
+                .SelectMany(assembly => assembly.GetTypes())
+                .Where(type =>
+                    type.IsClass &&
+                    !type.IsAbstract &&
+                    typeof(TInheritFrom).IsAssignableFrom(type))
+                .Select(type => (TInheritFrom)Activator.CreateInstance(type))
+                .ToList();
         }
 
         // public static List<string> GetAllTitles()
@@ -55,12 +46,12 @@ namespace __SARV.Framework.Reflection
         //         .ToList();
         // }
         //
-        // public static List<string> GetAllTriggers()
-        // {
-        //     return FindAllTypes<MDTrigger>()
-        //         .Select(t => GetTriggerMenuPath(t.Name))
-        //         .ToList();
-        // }
+        public static List<string> GetAllTriggerComponents()
+        {
+            return FindAllTypes<SVTriggerComponent>()
+                .Select(GetMenuPath)
+                .ToList();
+        }
         //
         // public static List<string> GetAllPropertyTypes<TType>()
         // {
@@ -120,6 +111,13 @@ namespace __SARV.Framework.Reflection
             return GetMenuPath(value, "Trigger");
         }
 
+        private static string GetMenuPath(SVComponent component)
+        {
+            var title = component.GetTitle();
+            var category = component.GetCategory();
+            return $"{category}/{title}";
+        }
+
         private static string GetPropertyMenuPath(string value)
         {
             return GetMenuPath(value, "Property");
@@ -127,7 +125,7 @@ namespace __SARV.Framework.Reflection
 
         private static string GetMenuPath(string value, string separator)
         {
-            if (value.StartsWith("MD"))
+            if (value.StartsWith("SV"))
             {
                 value = value[2..];
             }
