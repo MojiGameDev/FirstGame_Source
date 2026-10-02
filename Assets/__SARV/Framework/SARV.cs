@@ -1,8 +1,9 @@
+using __SARV.Core.Base;
 using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public class SARV : MonoBehaviour
+    public abstract class SARV : SVMonoBehaviour
     {
         
     }
