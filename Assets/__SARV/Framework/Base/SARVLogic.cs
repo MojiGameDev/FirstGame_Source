@@ -2,7 +2,7 @@
 
 namespace __SARV.Framework.Base
 {
-    public abstract class SARVDefinition : SVMonoBehaviour
+    public abstract class SARVLogic : SVMonoBehaviour
     {
         
     }

@@ -2,7 +2,7 @@
 
 namespace __SARV.Framework
 {
-    public class SARVTrigger : SARVDefinition
+    public class SARVTrigger : SARVLogic
     {
         
     }
