@@ -1,5 +1,5 @@
 ﻿using __SARV.Core.Attributes;
-using __SARV.Framework.Component.Base;
+using __SARV.Core.Component.Base;
 using Sirenix.Utilities;
 
 namespace __SARV.Core.Extension

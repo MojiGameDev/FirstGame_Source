@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using __SARV.Core.Attributes;
+using __SARV.Core.Component;
+using __SARV.Core.Component.Base;
 using __SARV.Core.Extension;
-using __SARV.Framework.Component;
-using __SARV.Framework.Component.Base;
 using Unity.VisualScripting;
 
 namespace __SARV.Core.Reflection
@@ -49,6 +49,12 @@ namespace __SARV.Core.Reflection
         public static SVTriggerComponent GetTriggerByPath(string path)
         {
             return GetAllTypes<SVTriggerComponent>()
+                .FirstOrDefault(t => GetMenuPath(t) == path);
+        }
+        
+        public static SVPropertyComponent<TType> GetPropertyTypeByPath<TType>(string path)
+        {
+            return GetAllTypes<SVPropertyComponent<TType>>()
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
 

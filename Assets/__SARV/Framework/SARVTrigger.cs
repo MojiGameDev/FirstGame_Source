@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using __MD.Script.Core.Base;
+using __SARV.Core.Base;
+using __SARV.Core.Component;
 using __SARV.Core.Extension;
 using __SARV.Core.Reflection;
-using __SARV.Framework.Component;
 using __SARV.Framework.Trigger;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public class SARVTrigger : MDMonoBehaviour
+    public class SARVTrigger : SVMonoBehaviour
     {
         [BoxGroup("$TriggerTitle", showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllTriggerComponents))] [Required] [OnValueChanged(nameof(OnTriggerChanged), InvokeOnInitialize = true)]
         private string trigger = "";
@@ -19,12 +19,12 @@ namespace __SARV.Framework
         [BoxGroup("$TriggerTitle", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
 
-        [BoxGroup("$TriggerTitle", showLabel: false)] [BoxGroup("$TriggerTitle/Row02", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsTriggerLogicNull))] [OnValueChanged(nameof(OnTriggerComponentChanged), includeChildren: true)]
+        [BoxGroup("$TriggerTitle", showLabel: false)] [BoxGroup("$TriggerTitle/Row02", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsTriggerComponentNull))] [OnValueChanged(nameof(OnTriggerComponentChanged), includeChildren: true)]
         private SVTriggerComponent triggerComponent = new SVNullTrigger();
 
-        public SVTriggerComponent TriggerComponent => IsTriggerLogicNull ? null : triggerComponent;
-        public bool IsTriggerLogicNull => triggerComponent is SVNullTrigger or null;
-        public string TriggerTitle => $"{(IsTriggerLogicNull ? "..." : triggerComponent.GetTitle())}";
+        public SVTriggerComponent TriggerComponent => IsTriggerComponentNull ? null : triggerComponent;
+        public bool IsTriggerComponentNull => triggerComponent is SVNullTrigger or null;
+        public string TriggerTitle => $"{(IsTriggerComponentNull ? "..." : triggerComponent.GetTitle())}";
 
         private void Awake()
         {

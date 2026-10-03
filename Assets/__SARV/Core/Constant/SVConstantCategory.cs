@@ -6,9 +6,16 @@
         {
             public const string LIFECYCLE = "Lifecycle";
         }
+
         public static class Action
         {
             public const string DEBUG = "Debug";
+        }
+
+        public static class Property
+        {
+            public const string EXTERNAL = "External";
+            public const string STRING = "String";
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using __SARV.Core.Attributes;
-using __SARV.Framework.Component;
+using __SARV.Core.Component;
 
 namespace __SARV.Framework.Action
 {

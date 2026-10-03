@@ -1,7 +1,7 @@
 ﻿using System;
-using __SARV.Framework.Component.Base;
+using __SARV.Core.Component.Base;
 
-namespace __SARV.Framework.Component
+namespace __SARV.Core.Component
 {
     [Serializable]
     public abstract class SVConditionComponent : SVComponent

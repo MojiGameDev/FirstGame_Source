@@ -1,8 +1,8 @@
 ﻿using System;
-using __SARV.Framework.Component.Base;
+using __SARV.Core.Component.Base;
 using UnityEngine;
 
-namespace __SARV.Framework.Component
+namespace __SARV.Core.Component
 {
     [Serializable]
     public abstract class SVTriggerComponent : SVComponent
