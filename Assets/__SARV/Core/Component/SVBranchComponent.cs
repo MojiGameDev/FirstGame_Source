@@ -6,6 +6,9 @@ namespace __SARV.Core.Component
     [Serializable]
     public class SVBranchComponent : SVComponent
     {
-        
+        public virtual bool IsTrue()
+        {
+            return false;
+        }
     }
 }

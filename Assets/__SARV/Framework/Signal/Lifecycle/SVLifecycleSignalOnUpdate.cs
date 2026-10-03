@@ -6,7 +6,7 @@ using __SARV.Core.Constant;
 namespace __SARV.Framework.Signal
 {
     [SVTitle("OnUpdate")]
-    [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
+    [SVCategory(SVConstantCategory.Signal.LIFECYCLE)]
     [SVDescription("Called once every frame")]
     [Serializable]
     public class SVLifecycleSignalOnUpdate : SVSignalComponent

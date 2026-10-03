@@ -1,7 +1,7 @@
 ﻿using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 
-namespace __SARV.Framework.Property.Null
+namespace __SARV.Framework.Property
 {
     [SVIgnore]
     public class SVNullProperty<TType> : SVPropertyComponent<TType>

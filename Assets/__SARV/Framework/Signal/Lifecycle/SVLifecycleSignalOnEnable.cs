@@ -6,7 +6,7 @@ using __SARV.Core.Constant;
 namespace __SARV.Framework.Signal
 {
     [SVTitle("OnEnable")]
-    [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
+    [SVCategory(SVConstantCategory.Signal.LIFECYCLE)]
     [SVDescription("Called whenever the trigger becomes enabled and active")]
     [Serializable]
     public class SVLifecycleSignalOnEnable : SVSignalComponent

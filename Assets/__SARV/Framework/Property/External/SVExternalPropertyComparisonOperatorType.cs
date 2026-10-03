@@ -8,16 +8,16 @@ using UnityEngine;
 
 namespace __SARV.Framework.Property
 {
-    [SVTitle("LogLevel")]
+    [SVTitle("ComparisonOperatorType")]
     [SVCategory(SVConstantCategory.Property.EXTERNAL)]
-    [SVDescription("The type of log message that will be printed to the console")]
+    [SVDescription("The type of comparison operator")]
     [Serializable]
     [SVIgnore]
-    public class SVExternalPropertyLogLevel : SVPropertyComponent<SVLogLevel>
+    public class SVExternalPropertyComparisonOperatorType : SVPropertyComponent<SVComparisonOperatorType>
     {
-        [SerializeField] [HideLabel] private SVLogLevel value = SVLogLevel.Info;
+        [SerializeField] [HideLabel] private SVComparisonOperatorType value = SVComparisonOperatorType.Equal;
 
-        public override SVLogLevel Value => value;
+        public override SVComparisonOperatorType Value => value;
 
         public override string ToString()
         {

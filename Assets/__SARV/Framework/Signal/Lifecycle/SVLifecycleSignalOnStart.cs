@@ -6,7 +6,7 @@ using __SARV.Core.Constant;
 namespace __SARV.Framework.Signal
 {
     [SVTitle("OnStart")]
-    [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
+    [SVCategory(SVConstantCategory.Signal.LIFECYCLE)]
     [SVDescription("Called once when the trigger starts running")]
     [Serializable]
     public class SVLifecycleSignalOnStart : SVSignalComponent

@@ -6,7 +6,7 @@ using __SARV.Core.Constant;
 namespace __SARV.Framework.Signal
 {
     [SVTitle("OnFixedUpdate")]
-    [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
+    [SVCategory(SVConstantCategory.Signal.LIFECYCLE)]
     [SVDescription("Called at fixed time intervals, primarily for physics updates")]
     [Serializable]
     public class SVLifecycleSignalOnFixedUpdate : SVSignalComponent

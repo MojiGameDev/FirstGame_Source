@@ -2,8 +2,8 @@
 {
     public enum SVLogLevel
     {
-        Info,
-        Warning,
-        Error,
+        Info = 10,
+        Warning = 20,
+        Error = 30,
     }
 }

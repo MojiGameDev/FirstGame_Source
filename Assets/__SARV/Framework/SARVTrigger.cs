@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using __SARV.Core.Base;
 using __SARV.Core.Component;
@@ -23,7 +24,7 @@ namespace __SARV.Framework
 
         public SVSignalComponent SignalComponent => IsSignalComponentNull ? null : signalComponent;
         public bool IsSignalComponentNull => signalComponent is SVNullSignal or null;
-        public string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetTitle())}";
+        public string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetType().GetTitle())}";
 
         private void Awake()
         {
@@ -77,7 +78,7 @@ namespace __SARV.Framework
 
         private IEnumerable GetAllSignalComponents()
         {
-            var components = SVReflection.GetAllSignalComponents();
+            var components = SVReflection.GetAllSignalComponentPaths();
             return components.Select(d => new ValueDropdownItem(d, d));
         }
 
@@ -91,12 +92,12 @@ namespace __SARV.Framework
 
             var selectedComponent = SVReflection.GetSignalByPath(signal);
 
-            if (selectedComponent != null && selectedComponent == signalComponent)
+            if (selectedComponent == null || selectedComponent == signalComponent.GetType())
             {
                 return;
             }
 
-            signalComponent = selectedComponent;
+            signalComponent = (SVSignalComponent)Activator.CreateInstance(selectedComponent);
         }
 
         private void OnSignalComponentChanged()

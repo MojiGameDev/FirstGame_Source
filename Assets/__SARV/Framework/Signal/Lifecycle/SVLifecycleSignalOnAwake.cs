@@ -7,7 +7,7 @@ using UnityEngine;
 namespace __SARV.Framework.Signal
 {
     [SVTitle("OnAwake")]
-    [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
+    [SVCategory(SVConstantCategory.Signal.LIFECYCLE)]
     [SVDescription("Called when the trigger is initialized")]
     [Serializable]
     public class SVLifecycleSignalOnAwake : SVSignalComponent

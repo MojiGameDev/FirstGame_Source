@@ -6,7 +6,7 @@ using __SARV.Core.Constant;
 namespace __SARV.Framework.Signal
 {
     [SVTitle("OnDestroy")]
-    [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
+    [SVCategory(SVConstantCategory.Signal.LIFECYCLE)]
     [SVDescription("Called when the trigger is being destroyed")]
     [Serializable]
     public class SVLifecycleSignalOnDestroy : SVSignalComponent

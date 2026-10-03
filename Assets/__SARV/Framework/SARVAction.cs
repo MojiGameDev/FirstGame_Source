@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using __SARV.Core.Base;
@@ -19,17 +20,18 @@ namespace __SARV.Framework
         [HideLabel]
         [Button(ButtonSizes.Medium, Icon = SdfIconType.Plus, ButtonHeight = 21)]
         [EnableIf(nameof(IsInstructionValid))]
-        private void AddNewAction()
+        private void AddNewInstruction()
         {
             if (IsInstructionValid)
             {
-                var selectedComponent = SVReflection.GetInstructionByPath(instruction);
-                Instructions.Add(selectedComponent);
+                var selectedComponentType = SVReflection.GetInstructionByPath(instruction);
+                var instructionComponent = (SVInstructionComponent)Activator.CreateInstance(selectedComponentType);
+                Instructions.Add(instructionComponent);
                 instruction = "";
             }
         }
 
-        [BoxGroup("Row02", showLabel: false)] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnInstructionsChanged))]
+        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnInstructionsChanged))]
         private List<SVInstructionComponent> instructions = new();
 
         public List<SVInstructionComponent> Instructions => instructions;
@@ -45,7 +47,7 @@ namespace __SARV.Framework
 
         private IEnumerable GetAllInstructionComponents()
         {
-            var components = SVReflection.GetAllInstructionComponents();
+            var components = SVReflection.GetAllInstructionComponentPaths();
             return components.Select(d => new ValueDropdownItem(d, d));
         }
     }

@@ -2327,30 +2327,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instruction: 
   instructions:
-  - rid: 4447245326977073426
+  - rid: 4447245337753288909
   references:
     version: 2
     RefIds:
-    - rid: 4447245326977073426
+    - rid: 4447245337753288909
       type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
       data:
         logLevelProperty:
-          rid: 4447245326977073427
+          rid: 4447245337753288910
         textProperty:
-          rid: 4447245326977073428
-    - rid: 4447245326977073427
+          rid: 4447245337753288911
+    - rid: 4447245337753288910
       type: {class: SVExternalPropertyLogLevel, ns: __SARV.Framework.Property.External, asm: Assembly-CSharp}
       data:
         value: 0
-    - rid: 4447245326977073428
+    - rid: 4447245337753288911
       type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
-        property: 
+        property: Manual
         propertyComponent:
-          rid: 4447245326977073429
-    - rid: 4447245326977073429
-      type: {class: 'SVNullProperty`1[[System.String, mscorlib]]', ns: __SARV.Framework.Property.Null, asm: Assembly-CSharp}
-      data: 
+          rid: 4447245337753288914
+    - rid: 4447245337753288914
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: 
 --- !u!1 &1696863629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,15 +2571,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: 
+  signal: Lifecycle/OnEnable
   description: 
   signalComponent:
-    rid: 4447245326977073417
+    rid: 4447245337753288811
   references:
     version: 2
     RefIds:
-    - rid: 4447245326977073417
-      type: {class: SVNullSignal, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
+    - rid: 4447245337753288811
+      type: {class: SVLifecycleSignalOnEnable, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
       data: 
 --- !u!1 &2080392905
 GameObject:
