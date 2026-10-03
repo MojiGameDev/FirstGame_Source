@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7673054960514323209}
   - component: {fileID: 2741014267365564918}
   - component: {fileID: 2971124452321368775}
-  - component: {fileID: 6120587117060277863}
   m_Layer: 5
   m_Name: UI_Simple_Button
   m_TagString: Untagged
@@ -109,56 +108,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   betterTransitions:
-  - mode: 3
-    stateNames:
-    - Normal
-    - Highlighted
-    - Pressed
-    - Selected
-    - Disabled
-    colorTransitions:
-      target: {fileID: 0}
-      colorMultiplier: 0
-      fadeDuration: 0
-      affectedColor: 0
-      states: []
-    color32Transitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-    spriteSwapTransitions:
-      target: {fileID: 0}
-      states: []
-    animationTransitions:
-      target: {fileID: 6120587117060277863}
-      states:
-      - Name: Normal
-        StateObject: Normal
-      - Name: Highlighted
-        StateObject: Highlighted
-      - Name: Pressed
-        StateObject: Pressed
-      - Name: Selected
-        StateObject: Selected
-      - Name: Disabled
-        StateObject: Disabled
-    activenessTransitions:
-      target: {fileID: 0}
-      states: []
-    alphaTransitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-    materialPropertyTransitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-      propertyIndex: 0
-    locationAnimationTransitions:
-      target: {fileID: 0}
-      states: []
-    customTransitions:
-      states: []
   - mode: 5
     stateNames:
     - Normal
@@ -348,28 +297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 7ffeaae281e2b4847bae2cd8b9af5469, type: 3}
---- !u!95 &6120587117060277863
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189803671008781299}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06b057e3c8f5c6149a94d1f55be72ab4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5419231532779208020
 GameObject:
   m_ObjectHideFlags: 0
