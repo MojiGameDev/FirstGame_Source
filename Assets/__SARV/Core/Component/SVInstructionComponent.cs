@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Threading.Tasks;
+using __SARV.Core.Attributes;
 using __SARV.Core.Component.Base;
 using UnityEngine;
 
 namespace __SARV.Core.Component
 {
     [Serializable]
-    public abstract class SVActionComponent : SVComponent
+    public class SVInstructionComponent : SVComponent
     {
         protected static readonly Task OkResult = Task.FromResult(true);
-        
-        public abstract Task Execute();
-        
+
+        public virtual Task Execute()
+        {
+            return OkResult;
+        }
+
         protected async Task Wait(float duration, bool realTime)
         {
             var startTime = GetTime(realTime);

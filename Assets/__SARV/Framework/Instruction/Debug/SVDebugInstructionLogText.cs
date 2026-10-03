@@ -7,22 +7,21 @@ using __SARV.Core.Enum;
 using __SARV.Core.Utils;
 using __SARV.Framework.Property;
 using __SARV.Framework.Property.External;
-using SingularityGroup.HotReload;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Action
+namespace __SARV.Framework.Instruction
 {
     [SVTitle("LogText")]
     [SVCategory(SVConstantCategory.Action.DEBUG)]
     [SVDescription("Sends a log text to the Console")]
     [Serializable]
-    public class SVDebugActionLogText : SVActionComponent
+    public class SVDebugInstructionLogText : SVInstructionComponent
     {
-        [Title("LogLevel")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [BoxGroup("Group", showLabel: false)] [Title("LogLevel")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<SVLogLevel> logLevelProperty = new SVExternalPropertyLogLevel();
 
-        [Title("Text")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [BoxGroup("Group", showLabel: false)] [Title("Text")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<string> textProperty = new SVStringProperty();
 
         public override Task Execute()

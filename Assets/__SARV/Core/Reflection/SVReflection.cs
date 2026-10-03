@@ -19,39 +19,46 @@ namespace __SARV.Core.Reflection
                 .Where(type =>
                     type.IsClass &&
                     !type.IsAbstract &&
+                    type != typeof(TInheritFrom) &&
                     typeof(TInheritFrom).IsAssignableFrom(type) &&
                     !type.HasAttribute<SVIgnoreAttribute>())
                 .Select(type => (TInheritFrom)Activator.CreateInstance(type))
                 .ToList();
         }
 
-        public static List<string> GetAllTriggerComponents()
+        public static List<string> GetAllSignalComponents()
         {
-            return GetAllTypes<SVTriggerComponent>()
+            return GetAllTypes<SVSignalComponent>()
                 .Select(GetMenuPath)
                 .ToList();
         }
 
-        public static List<string> GetAllActionComponents()
+        public static List<string> GetAllInstructionComponents()
         {
-            return GetAllTypes<SVActionComponent>()
+            return GetAllTypes<SVInstructionComponent>()
                 .Select(GetMenuPath)
                 .ToList();
         }
 
-        public static List<string> GetAllConditionComponents()
+        public static List<string> GetAllBranchComponents()
         {
-            return GetAllTypes<SVConditionComponent>()
+            return GetAllTypes<SVBranchComponent>()
                 .Select(GetMenuPath)
                 .ToList();
         }
-        
-        public static SVTriggerComponent GetTriggerByPath(string path)
+
+        public static SVSignalComponent GetSignalByPath(string path)
         {
-            return GetAllTypes<SVTriggerComponent>()
+            return GetAllTypes<SVSignalComponent>()
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
-        
+
+        public static SVInstructionComponent GetInstructionByPath(string path)
+        {
+            return GetAllTypes<SVInstructionComponent>()
+                .FirstOrDefault(t => GetMenuPath(t) == path);
+        }
+
         public static SVPropertyComponent<TType> GetPropertyTypeByPath<TType>(string path)
         {
             return GetAllTypes<SVPropertyComponent<TType>>()

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace __SARV.Core.Component
 {
     [Serializable]
-    public abstract class SVTriggerComponent : SVComponent
+    public class SVSignalComponent : SVComponent
     {
         public virtual void HandleAwake()
         {

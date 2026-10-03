@@ -3,13 +3,13 @@ using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
 
-namespace __SARV.Framework.Trigger
+namespace __SARV.Framework.Signal
 {
-    [SVTitle("OnStart")]
+    [SVTitle("OnEnable")]
     [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
-    [SVDescription("Called once when the trigger starts running")]
+    [SVDescription("Called whenever the trigger becomes enabled and active")]
     [Serializable]
-    public class SVLifecycleTriggerOnStart : SVTriggerComponent
+    public class SVLifecycleSignalOnEnable : SVSignalComponent
     {
         
     }

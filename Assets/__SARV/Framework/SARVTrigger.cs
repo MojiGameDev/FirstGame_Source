@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
 using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
 using __SARV.Core.Reflection;
-using __SARV.Framework.Trigger;
+using __SARV.Framework.Signal;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,94 +12,94 @@ namespace __SARV.Framework
 {
     public class SARVTrigger : SVMonoBehaviour
     {
-        [BoxGroup("$TriggerTitle", showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllTriggerComponents))] [Required] [OnValueChanged(nameof(OnTriggerChanged), InvokeOnInitialize = true)]
-        private string trigger = "";
+        [BoxGroup("$SignalTitle", showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllSignalComponents))] [Required] [OnValueChanged(nameof(OnSignalChanged), InvokeOnInitialize = true)]
+        private string signal = "";
 
-        [BoxGroup("$TriggerTitle", showLabel: false)] [SerializeField] [HideLabel]
+        [BoxGroup("$SignalTitle", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
 
-        [BoxGroup("$TriggerTitle", showLabel: false)] [BoxGroup("$TriggerTitle/Row02", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsTriggerComponentNull))] [OnValueChanged(nameof(OnTriggerComponentChanged), includeChildren: true)]
-        private SVTriggerComponent triggerComponent = new SVNullTrigger();
+        [BoxGroup("$SignalTitle", showLabel: false)] [BoxGroup("$SignalTitle/Row02", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsSignalComponentNull))] [OnValueChanged(nameof(OnSignalComponentChanged), includeChildren: true)]
+        private SVSignalComponent signalComponent = new SVNullSignal();
 
-        public SVTriggerComponent TriggerComponent => IsTriggerComponentNull ? null : triggerComponent;
-        public bool IsTriggerComponentNull => triggerComponent is SVNullTrigger or null;
-        public string TriggerTitle => $"{(IsTriggerComponentNull ? "..." : triggerComponent.GetTitle())}";
+        public SVSignalComponent SignalComponent => IsSignalComponentNull ? null : signalComponent;
+        public bool IsSignalComponentNull => signalComponent is SVNullSignal or null;
+        public string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetTitle())}";
 
         private void Awake()
         {
-            TriggerComponent?.HandleAwake();
+            SignalComponent?.HandleAwake();
         }
 
         private void Start()
         {
-            TriggerComponent?.HandleStart();
+            SignalComponent?.HandleStart();
         }
 
         private void OnEnable()
         {
-            TriggerComponent?.HandleOnEnable();
+            SignalComponent?.HandleOnEnable();
         }
 
         private void Update()
         {
-            TriggerComponent?.HandleUpdate(Time.deltaTime);
+            SignalComponent?.HandleUpdate(Time.deltaTime);
         }
 
         private void FixedUpdate()
         {
-            TriggerComponent?.HandleFixedUpdate(Time.deltaTime);
+            SignalComponent?.HandleFixedUpdate(Time.deltaTime);
         }
 
         private void OnDisable()
         {
-            TriggerComponent?.HandleOnDisable();
+            SignalComponent?.HandleOnDisable();
         }
 
         private void OnDestroy()
         {
-            TriggerComponent?.HandleOnDestroy();
+            SignalComponent?.HandleOnDestroy();
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            TriggerComponent?.HandleOnTriggerEnter(other);
+            SignalComponent?.HandleOnTriggerEnter(other);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            TriggerComponent?.HandleOnTriggerStay(other);
+            SignalComponent?.HandleOnTriggerStay(other);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            TriggerComponent?.HandleOnTriggerExit(other);
+            SignalComponent?.HandleOnTriggerExit(other);
         }
 
-        private IEnumerable GetAllTriggerComponents()
+        private IEnumerable GetAllSignalComponents()
         {
-            var components = SVReflection.GetAllTriggerComponents();
+            var components = SVReflection.GetAllSignalComponents();
             return components.Select(d => new ValueDropdownItem(d, d));
         }
 
-        private void OnTriggerChanged()
+        private void OnSignalChanged()
         {
-            if (string.IsNullOrEmpty(trigger))
+            if (string.IsNullOrEmpty(signal))
             {
-                triggerComponent = new SVNullTrigger();
+                signalComponent = new SVNullSignal();
                 return;
             }
 
-            var selectedComponent = SVReflection.GetTriggerByPath(trigger);
+            var selectedComponent = SVReflection.GetSignalByPath(signal);
 
-            if (selectedComponent != null && selectedComponent == triggerComponent)
+            if (selectedComponent != null && selectedComponent == signalComponent)
             {
                 return;
             }
 
-            triggerComponent = selectedComponent;
+            signalComponent = selectedComponent;
         }
 
-        private void OnTriggerComponentChanged()
+        private void OnSignalComponentChanged()
         {
             Debug.Log("ChildOrSelf Changed");
         }

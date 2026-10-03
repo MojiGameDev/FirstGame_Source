@@ -2,11 +2,11 @@
 using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 
-namespace __SARV.Framework.Trigger
+namespace __SARV.Framework.Signal
 {
     [SVIgnore]
     [Serializable]
-    public class SVNullTrigger : SVTriggerComponent
+    public class SVNullSignal : SVSignalComponent
     {
     }
 }

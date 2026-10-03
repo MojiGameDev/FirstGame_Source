@@ -3,13 +3,13 @@ using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
 
-namespace __SARV.Framework.Trigger
+namespace __SARV.Framework.Signal
 {
-    [SVTitle("OnDestroy")]
+    [SVTitle("OnUpdate")]
     [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
-    [SVDescription("Called when the trigger is being destroyed")]
+    [SVDescription("Called once every frame")]
     [Serializable]
-    public class SVLifecycleTriggerOnDestroy : SVTriggerComponent
+    public class SVLifecycleSignalOnUpdate : SVSignalComponent
     {
         
     }

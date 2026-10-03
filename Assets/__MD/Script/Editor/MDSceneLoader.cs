@@ -11,7 +11,7 @@ namespace __MD.Script.Editor
         private const string ACT_01_SECTION_01 = @"Assets\__MD\Scene\World\Act_01\Section_01\";
         private const string ACT_01_SECTION_02 = @"Assets\__MD\Scene\World\Act_01\Section_02\";
 
-        [MenuItem("SARV/Scene/Gameplay")]
+        [MenuItem("MD/Scene/Gameplay")]
         public static void LoadGameplay()
         {
             // Close all current scenes first
@@ -21,7 +21,7 @@ namespace __MD.Script.Editor
             EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Gameplay.unity", OpenSceneMode.Additive);
         }
 
-        [MenuItem("SARV/Scene/MainMenu")]
+        [MenuItem("MD/Scene/MainMenu")]
         public static void LoadMainMenu()
         {
             // Close all current scenes first
@@ -30,7 +30,7 @@ namespace __MD.Script.Editor
             EditorSceneManager.OpenScene($"{MENU_SCENE}Menu_Main.unity", OpenSceneMode.Single);
         }
 
-        [MenuItem("SARV/Scene/Act01_Section01")]
+        [MenuItem("MD/Scene/Act01_Section01")]
         public static void LoadAct01Section01()
         {
             // Close all current scenes first
@@ -39,7 +39,7 @@ namespace __MD.Script.Editor
             EditorSceneManager.OpenScene($"{ACT_01_SECTION_01}Act_01_Section_01.unity", OpenSceneMode.Single);
         }
 
-        [MenuItem("SARV/Scene/Act01_Section02")]
+        [MenuItem("MD/Scene/Act01_Section02")]
         public static void LoadAct01Section02()
         {
             // Close all current scenes first

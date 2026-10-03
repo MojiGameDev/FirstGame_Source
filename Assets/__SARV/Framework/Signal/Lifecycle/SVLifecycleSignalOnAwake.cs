@@ -4,13 +4,13 @@ using __SARV.Core.Component;
 using __SARV.Core.Constant;
 using UnityEngine;
 
-namespace __SARV.Framework.Trigger
+namespace __SARV.Framework.Signal
 {
     [SVTitle("OnAwake")]
     [SVCategory(SVConstantCategory.Trigger.LIFECYCLE)]
     [SVDescription("Called when the trigger is initialized")]
     [Serializable]
-    public class SVLifecycleTriggerOnAwake : SVTriggerComponent
+    public class SVLifecycleSignalOnAwake : SVSignalComponent
     {
         public override void HandleAwake()
         {

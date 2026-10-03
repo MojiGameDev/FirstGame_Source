@@ -422,60 +422,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 362699091203085366, guid: d9f55de92d2b9b44f8c40742c4f67ef8, type: 3}
   m_PrefabInstance: {fileID: 3491106382170347399}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &254053386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 254053387}
-  - component: {fileID: 254053388}
-  m_Layer: 0
-  m_Name: New Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &254053387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254053386}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 424851563}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &254053388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254053386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: Lifecycle/OnAwake
-  description: 
-  triggerComponent:
-    rid: 4447245315150971271
-  references:
-    version: 2
-    RefIds:
-    - rid: 4447245315150971271
-      type: {class: MDLifecycleTriggerOnAwake, ns: __SARV.Framework.Trigger, asm: Assembly-CSharp}
-      data: 
 --- !u!1 &255175260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2281,76 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601679306}
   m_Mesh: {fileID: 4300000, guid: bd3c4cc11cf625340a7d1c0d21eed312, type: 3}
+--- !u!1 &1622947399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622947400}
+  - component: {fileID: 1622947401}
+  m_Layer: 0
+  m_Name: New Action
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622947400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622947399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424851563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622947401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622947399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8a335c1e5949c38fc7570267320a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instruction: 
+  instructions:
+  - rid: 4447245326977073426
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245326977073426
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+      data:
+        logLevelProperty:
+          rid: 4447245326977073427
+        textProperty:
+          rid: 4447245326977073428
+    - rid: 4447245326977073427
+      type: {class: SVExternalPropertyLogLevel, ns: __SARV.Framework.Property.External, asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 4447245326977073428
+      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        property: 
+        propertyComponent:
+          rid: 4447245326977073429
+    - rid: 4447245326977073429
+      type: {class: 'SVNullProperty`1[[System.String, mscorlib]]', ns: __SARV.Framework.Property.Null, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &1696863629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,9 +2520,66 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1543230256277520103, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 254053387}
+      addedObject: {fileID: 1870447758}
+    - targetCorrespondingSourceObject: {fileID: 1543230256277520103, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1622947400}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
+--- !u!1 &1870447757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870447758}
+  - component: {fileID: 1870447759}
+  m_Layer: 0
+  m_Name: New Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870447758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870447757}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424851563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1870447759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870447757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: 
+  description: 
+  signalComponent:
+    rid: 4447245326977073417
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245326977073417
+      type: {class: SVNullSignal, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &2080392905
 GameObject:
   m_ObjectHideFlags: 0

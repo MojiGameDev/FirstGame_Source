@@ -48,7 +48,7 @@ namespace __SARV.Framework.Property
 
         private IEnumerable GetAllStringProperties()
         {
-            var components = SVReflection.GetAllTriggerComponents();
+            var components = SVReflection.GetAllSignalComponents();
             return components.Select(d => new ValueDropdownItem(d, d));
         }
     }
