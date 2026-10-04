@@ -1,6 +1,7 @@
 ﻿using System;
 using __SARV.Core.Attributes;
 using __SARV.Core.Component;
+using __SARV.Framework.Argument;
 
 namespace __SARV.Framework.Branch
 {
@@ -8,7 +9,7 @@ namespace __SARV.Framework.Branch
     [Serializable]
     public class SVNullBranch : SVBranchComponent
     {
-        public override bool IsTrue()
+        public override bool IsTrue(SVArgument argument)
         {
             return false;
         }

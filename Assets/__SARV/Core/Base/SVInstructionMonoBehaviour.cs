@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using __SARV.Core.Component;
 using __SARV.Core.Reflection;
 using __SARV.Framework.Argument;
@@ -37,12 +38,12 @@ namespace __SARV.Core.Base
 
         public List<SVInstructionComponent> Instructions => instructions;
         private bool IsInstructionValid => !string.IsNullOrEmpty(instruction);
-        
-        protected void ExecuteInstructions(SVArgument argument)
+
+        protected async Task ExecuteInstructions(SVArgument argument)
         {
             foreach (var instructionComponent in instructions)
             {
-                instructionComponent.Execute(argument);
+                await instructionComponent.Execute(argument);
             }
         }
 

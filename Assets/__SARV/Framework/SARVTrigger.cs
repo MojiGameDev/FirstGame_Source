@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using System.Threading.Tasks;
 using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
@@ -32,7 +31,7 @@ namespace __SARV.Framework
 
         private void Awake()
         {
-            signalComponent.SetHandler(ExecuteInstructions);
+            signalComponent.SetHandler(d=>_ = ExecuteInstructions(d));
             SignalComponent.HandleAwake();
         }
 

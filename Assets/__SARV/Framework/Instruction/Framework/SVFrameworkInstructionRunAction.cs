@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
 using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
+using __SARV.Framework.Argument;
 using __SARV.Framework.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -23,5 +25,15 @@ namespace __SARV.Framework.Instruction
         private bool IsActionPropertyNull => actionProperty == null || actionProperty.Value == null;
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsActionPropertyNull ? "..." : actionProperty)}";
+
+        protected override async Task ExecuteInternal(SVArgument argument)
+        {
+            if (waitToFinishProperty.Value)
+            {
+                await actionProperty.Value.RunAction(argument);
+                return;
+            }
+            _ = actionProperty.Value.RunAction(argument);
+        }
     }
 }

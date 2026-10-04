@@ -3,6 +3,7 @@ using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
 using __SARV.Core.Enum;
+using __SARV.Framework.Argument;
 using __SARV.Framework.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -26,7 +27,7 @@ namespace __SARV.Framework.Branch
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftSideBoolProperty} {(Not ? "Is not" : "Is")} {operatorProperty} to {rightSideBoolProperty}";
 
-        public override bool IsTrue()
+        public override bool IsTrue(SVArgument argument)
         {
             var result = false;
             switch (operatorProperty.Value)

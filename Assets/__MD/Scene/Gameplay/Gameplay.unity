@@ -2326,11 +2326,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instruction: 
-  instructions: []
+  instructions:
+  - rid: 4447245359468249223
   description: 
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4447245359468249223
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevelProperty:
+          rid: 4447245359468249224
+        textProperty:
+          rid: 4447245359468249225
+    - rid: 4447245359468249224
+      type: {class: SVExternalPropertyLogLevel, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: 10
+    - rid: 4447245359468249225
+      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245359468249228
+    - rid: 4447245359468249228
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: Text From Action By Trigger
 --- !u!1 &1696863629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,7 +2577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instruction: 
-  instructions: []
+  instructions:
+  - rid: 4447245359468249229
   description: 
   signal: Lifecycle/OnAwake
   signalComponent:
@@ -2566,6 +2590,22 @@ MonoBehaviour:
     - rid: 4447245347984769161
       type: {class: SVLifecycleSignalOnAwake, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
       data: 
+    - rid: 4447245359468249229
+      type: {class: SVFrameworkInstructionRunCondition, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        conditionProperty:
+          rid: 4447245359468249230
+        waitToFinishProperty:
+          rid: 4447245359468249231
+    - rid: 4447245359468249230
+      type: {class: SVExternalPropertySARVCondition, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 1890567020}
+    - rid: 4447245359468249231
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: 0
 --- !u!1 &1890567018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,7 +2652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instruction: 
   instructions:
-  - rid: 4447245359468249196
+  - rid: 4447245359468249232
   description: 
   branch: 
   conditionJoinType: 10
@@ -2621,19 +2661,19 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4447245359468249196
-      type: {class: SVFrameworkInstructionRunCondition, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+    - rid: 4447245359468249232
+      type: {class: SVFrameworkInstructionRunAction, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
-        conditionProperty:
-          rid: 4447245359468249197
+        actionProperty:
+          rid: 4447245359468249233
         waitToFinishProperty:
-          rid: 4447245359468249198
-    - rid: 4447245359468249197
-      type: {class: SVExternalPropertySARVCondition, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+          rid: 4447245359468249234
+    - rid: 4447245359468249233
+      type: {class: SVExternalPropertySARVAction, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
-        value: {fileID: 0}
-    - rid: 4447245359468249198
+        value: {fileID: 1622947401}
+    - rid: 4447245359468249234
       type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
         value: 0

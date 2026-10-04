@@ -1,5 +1,6 @@
 ﻿using System;
 using __SARV.Core.Component.Base;
+using __SARV.Framework.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace __SARV.Core.Component
         public bool Not => not;
         public bool Disabled => disabled;
 
-        public virtual bool IsTrue()
+        public virtual bool IsTrue(SVArgument argument)
         {
             return false;
         }

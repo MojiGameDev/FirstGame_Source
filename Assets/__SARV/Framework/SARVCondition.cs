@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Enum;
 using __SARV.Core.Reflection;
+using __SARV.Framework.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -35,10 +37,9 @@ namespace __SARV.Framework
                 branch = "";
             }
         }
-
         [BoxGroup("Row02", showLabel: false)] [BoxGroup("Row02/InnerRow01", showLabel: false)] [BoxGroup("Row02/InnerRow01/InnerRow02", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
         private SVConditionJoinType conditionJoinType = SVConditionJoinType.And;
-        
+
         [BoxGroup("Row02", showLabel: false)] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
         private List<SVBranchComponent> branches = new();
 
@@ -47,6 +48,27 @@ namespace __SARV.Framework
 
         public List<SVBranchComponent> Branches => branches;
         private bool IsBranchValid => !string.IsNullOrEmpty(branch);
+
+        public async Task RunCondition(SVArgument argument)
+        {
+            if (IsBranchesPassed(argument))
+            {
+                await ExecuteInstructions(argument);
+            }
+        }
+
+        private bool IsBranchesPassed(SVArgument argument)
+        {
+            foreach (var branchComponent in branches.Where(d => !d.Disabled))
+            {
+                if (conditionJoinType == SVConditionJoinType.And && !branchComponent.IsTrue(argument))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
         private void OnBranchChanged()
         {
