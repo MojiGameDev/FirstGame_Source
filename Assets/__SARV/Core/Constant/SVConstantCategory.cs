@@ -10,6 +10,7 @@
         public static class Instruction
         {
             public const string DEBUG = "Debug";
+            public const string FRAMEWORK = "Framework";
         }
 
         public static class Branch

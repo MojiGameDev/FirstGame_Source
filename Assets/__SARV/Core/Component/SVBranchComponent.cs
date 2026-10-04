@@ -14,7 +14,7 @@ namespace __SARV.Core.Component
         [FoldoutGroup("$" + nameof(GroupTitle))] [HorizontalGroup("$" + nameof(GroupTitle) + "/HorizontalGroup", 90)] [SerializeField] [LabelText("Disabled?")]
         private bool disabled;
 
-        public virtual string GroupTitle => "GroupTitle";
+        protected virtual string GroupTitle => string.Empty;
         public bool Not => not;
         public bool Disabled => disabled;
 

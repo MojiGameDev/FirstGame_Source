@@ -26,6 +26,11 @@ namespace __SARV.Framework.Property
         private bool IsPropertyComponentNull => propertyComponent == null || string.IsNullOrEmpty(propertyComponent.Value);
         public override string Value => IsPropertyComponentNull ? string.Empty : propertyComponent.Value;
 
+        public override string ToString()
+        {
+            return propertyComponent.ToString();
+        }
+
         private void OnPropertyChanged()
         {
             if (string.IsNullOrEmpty(property))

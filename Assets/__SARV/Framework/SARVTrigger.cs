@@ -5,22 +5,26 @@ using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
 using __SARV.Core.Reflection;
+using __SARV.Framework.Instruction.Framework;
 using __SARV.Framework.Signal;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public class SARVTrigger : SVMonoBehaviour
+    public class SARVTrigger : SARVAction
     {
-        [BoxGroup("$SignalTitle", showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllSignalComponents))] [Required] [OnValueChanged(nameof(OnSignalChanged), InvokeOnInitialize = true)]
-        private string signal = "";
-
-        [BoxGroup("$SignalTitle", showLabel: false)] [SerializeField] [HideLabel]
+        [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
 
-        [BoxGroup("$SignalTitle", showLabel: false)] [BoxGroup("$SignalTitle/Row02", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsSignalComponentNull))] [OnValueChanged(nameof(OnSignalComponentChanged), includeChildren: true)]
+        [BoxGroup("$" + nameof(SignalTitle), showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllSignalComponents))] [Required] [OnValueChanged(nameof(OnSignalChanged), InvokeOnInitialize = true)]
+        private string signal = "";
+
+        [BoxGroup("$" + nameof(SignalTitle), showLabel: false)] [BoxGroup("$" + nameof(SignalTitle) + "/InnerRow01", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsSignalComponentNull))] [OnValueChanged(nameof(OnSignalComponentChanged), includeChildren: true)]
         private SVSignalComponent signalComponent = new SVNullSignal();
+
+        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 15, spaceAfter: -15)] [InfoBox("Execute the following instructions when the event above is raised", InfoMessageType.Info)]
+        private string tooltip = "";
 
         public SVSignalComponent SignalComponent => IsSignalComponentNull ? null : signalComponent;
         public bool IsSignalComponentNull => signalComponent is SVNullSignal or null;

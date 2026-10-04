@@ -24,7 +24,7 @@ namespace __SARV.Framework.Branch
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("RightSide")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<bool> rightSideBoolProperty = new SVBoolProperty();
 
-        public override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftSideBoolProperty} {(Not ? "Is not" : "Is")} {operatorProperty} to {rightSideBoolProperty}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftSideBoolProperty} {(Not ? "Is not" : "Is")} {operatorProperty} to {rightSideBoolProperty}";
 
         public override bool IsTrue()
         {

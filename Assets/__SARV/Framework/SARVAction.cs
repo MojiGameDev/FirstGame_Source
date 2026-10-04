@@ -12,15 +12,19 @@ namespace __SARV.Framework
 {
     public class SARVAction : SVMonoBehaviour
     {
-        [BoxGroup("Row01", showLabel: false)] [HorizontalGroup("Row01/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllInstructionComponents))] [OnValueChanged(nameof(OnInstructionChanged), InvokeOnInitialize = true)]
-        private string instruction = "";
+        [BoxGroup("ActionPurpose", showLabel: false)] [SerializeField] [HideLabel] [PropertyOrder(int.MaxValue)]
+        private string actionDescription = "";
 
-        [BoxGroup("Row01", showLabel: false)]
-        [HorizontalGroup("Row01/Group01", Width = 21)]
+        [BoxGroup("ActionRow01", showLabel: false)] [HorizontalGroup("ActionRow01/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllInstructionComponents))] [OnValueChanged(nameof(OnInstructionChanged), InvokeOnInitialize = true)] [PropertyOrder(int.MaxValue)]
+        protected string instruction = "";
+
+        [BoxGroup("ActionRow01", showLabel: false)]
+        [HorizontalGroup("ActionRow01/Group01", Width = 21)]
         [HideLabel]
         [Button(ButtonSizes.Medium, Icon = SdfIconType.Plus, ButtonHeight = 21)]
         [EnableIf(nameof(IsInstructionValid))]
-        private void AddNewInstruction()
+        [PropertyOrder(int.MaxValue)]
+        protected void AddNewInstruction()
         {
             if (IsInstructionValid)
             {
@@ -31,8 +35,8 @@ namespace __SARV.Framework
             }
         }
 
-        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnInstructionsChanged))]
-        private List<SVInstructionComponent> instructions = new();
+        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnInstructionsChanged))] [PropertyOrder(int.MaxValue)]
+        protected List<SVInstructionComponent> instructions = new();
 
         public List<SVInstructionComponent> Instructions => instructions;
         private bool IsInstructionValid => !string.IsNullOrEmpty(instruction);

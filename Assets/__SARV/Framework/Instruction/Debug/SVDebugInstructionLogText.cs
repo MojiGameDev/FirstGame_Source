@@ -23,9 +23,9 @@ namespace __SARV.Framework.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Text")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<string> textProperty = new SVStringProperty();
 
-        private string GroupTitle => $"Sends {(string.IsNullOrEmpty(textProperty.Value) ? "..." : textProperty.Value)} to the console";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Sends {textProperty} to the console";
 
-        public override Task Execute()
+        protected override Task ExecuteInternal()
         {
             SVComponentUtils.DebugLog(logLevelProperty.Value, textProperty.Value);
             return OkResult;

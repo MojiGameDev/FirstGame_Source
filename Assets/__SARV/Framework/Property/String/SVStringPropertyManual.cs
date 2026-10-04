@@ -20,7 +20,7 @@ namespace __SARV.Framework.Property
 
         public override string ToString()
         {
-            return Value;
+            return $"Manual({Value})";
         }
     }
 }
