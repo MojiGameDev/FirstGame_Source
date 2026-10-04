@@ -17,10 +17,10 @@ namespace __SARV.Framework.Instruction
     [Serializable]
     public class SVDebugInstructionLogText : SVInstructionComponent
     {
-        [FoldoutGroup("$GroupTitle")] [Title("LogLevel")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("LogLevel")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<SVLogLevel> logLevelProperty = new SVExternalPropertyLogLevel();
 
-        [FoldoutGroup("$GroupTitle")] [Title("Text")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Text")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<string> textProperty = new SVStringProperty();
 
         private string GroupTitle => $"Sends {(string.IsNullOrEmpty(textProperty.Value) ? "..." : textProperty.Value)} to the console";

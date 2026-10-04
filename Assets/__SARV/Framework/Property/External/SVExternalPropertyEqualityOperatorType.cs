@@ -3,6 +3,7 @@ using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
 using __SARV.Core.Enum;
+using __SARV.Core.Extension;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace __SARV.Framework.Property
 
         public override string ToString()
         {
-            return value.ToString();
+            return Value.ToReadableString();
         }
     }
 }

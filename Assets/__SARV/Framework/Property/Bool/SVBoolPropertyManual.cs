@@ -8,19 +8,19 @@ using UnityEngine;
 namespace __SARV.Framework.Property
 {
     [SVTitle("Manual")]
-    [SVCategory(SVConstantCategory.Property.STRING)]
-    [SVDescription("Enter a text")]
+    [SVCategory(SVConstantCategory.Property.BOOL)]
+    [SVDescription("True or False")]
     [Serializable]
-    public class SVStringPropertyManual : SVPropertyComponent<string>
+    public class SVBoolPropertyManual : SVPropertyComponent<bool>
     {
         [SerializeField] [HideLabel]
-        private string value;
+        private bool value;
 
-        public override string Value => value;
+        public override bool Value => value;
 
         public override string ToString()
         {
-            return Value;
+            return Value ? "true" : "false";
         }
     }
 }

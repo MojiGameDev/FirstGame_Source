@@ -14,7 +14,7 @@
 
         public static class Branch
         {
-            public const string COMPARE_BOOL = "CompareBool";
+            public const string LOGIC = "Logic";
         }
 
         public static class Property

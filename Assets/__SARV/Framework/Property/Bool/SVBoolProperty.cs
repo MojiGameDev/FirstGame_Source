@@ -23,8 +23,18 @@ namespace __SARV.Framework.Property
         private SVPropertyComponent<bool> propertyComponent = new SVNullProperty<bool>();
 
         private bool IsPropertyHasValue => !string.IsNullOrEmpty(property);
-        private bool IsPropertyComponentNull => propertyComponent == null;
-        public override bool Value => IsPropertyComponentNull ? false : propertyComponent.Value;
+        private bool IsPropertyComponentNull => propertyComponent is null or SVNullProperty<bool>;
+        public override bool Value => !IsPropertyComponentNull && propertyComponent.Value;
+
+        public override string ToString()
+        {
+            if (IsPropertyHasValue && !IsPropertyComponentNull)
+            {
+                return IsPropertyHasValue ? $"{property} ({(Value ? "true" : "false")})" : "...";
+            }
+
+            return IsPropertyHasValue ? property : "...";
+        }
 
         private void OnPropertyChanged()
         {

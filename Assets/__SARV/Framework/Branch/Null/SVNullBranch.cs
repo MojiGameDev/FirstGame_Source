@@ -2,7 +2,7 @@
 using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 
-namespace __SARV.Framework.Branch.Null
+namespace __SARV.Framework.Branch
 {
     [SVIgnore]
     [Serializable]
