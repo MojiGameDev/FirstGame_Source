@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using System.Threading.Tasks;
 using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
@@ -22,7 +23,7 @@ namespace __SARV.Framework
         [BoxGroup("$" + nameof(SignalTitle), showLabel: false)] [BoxGroup("$" + nameof(SignalTitle) + "/InnerRow01", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsSignalComponentNull))] [OnValueChanged(nameof(OnSignalComponentChanged), includeChildren: true)]
         private SVSignalComponent signalComponent = new SVNullSignal();
 
-        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the event above is raised", InfoMessageType.Info)]
+        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the event above is raised")]
         private string tooltip = "";
 
         public SVSignalComponent SignalComponent => IsSignalComponentNull ? null : signalComponent;
@@ -31,52 +32,53 @@ namespace __SARV.Framework
 
         private void Awake()
         {
-            SignalComponent?.HandleAwake();
+            signalComponent.SetHandler(ExecuteInstructions);
+            SignalComponent.HandleAwake();
         }
 
         private void Start()
         {
-            SignalComponent?.HandleStart();
+            SignalComponent.HandleStart();
         }
 
         private void OnEnable()
         {
-            SignalComponent?.HandleOnEnable();
+            SignalComponent.HandleOnEnable();
         }
 
         private void Update()
         {
-            SignalComponent?.HandleUpdate(Time.deltaTime);
+            SignalComponent.HandleUpdate(Time.deltaTime);
         }
 
         private void FixedUpdate()
         {
-            SignalComponent?.HandleFixedUpdate(Time.deltaTime);
+            SignalComponent.HandleFixedUpdate(Time.fixedDeltaTime);
         }
 
         private void OnDisable()
         {
-            SignalComponent?.HandleOnDisable();
+            SignalComponent.HandleOnDisable();
         }
 
         private void OnDestroy()
         {
-            SignalComponent?.HandleOnDestroy();
+            SignalComponent.HandleOnDestroy();
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            SignalComponent?.HandleOnTriggerEnter(other);
+            SignalComponent.HandleOnTriggerEnter(other);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            SignalComponent?.HandleOnTriggerStay(other);
+            SignalComponent.HandleOnTriggerStay(other);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            SignalComponent?.HandleOnTriggerExit(other);
+            SignalComponent.HandleOnTriggerExit(other);
         }
 
         private IEnumerable GetAllSignalComponents()

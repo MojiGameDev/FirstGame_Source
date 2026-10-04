@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using __SARV.Core.Component;
 using __SARV.Core.Reflection;
+using __SARV.Framework.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -36,6 +37,14 @@ namespace __SARV.Core.Base
 
         public List<SVInstructionComponent> Instructions => instructions;
         private bool IsInstructionValid => !string.IsNullOrEmpty(instruction);
+        
+        protected void ExecuteInstructions(SVArgument argument)
+        {
+            foreach (var instructionComponent in instructions)
+            {
+                instructionComponent.Execute(argument);
+            }
+        }
 
         private void OnInstructionChanged()
         {

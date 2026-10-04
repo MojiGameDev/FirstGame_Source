@@ -2,7 +2,7 @@
 using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
-using UnityEngine;
+using __SARV.Framework.Argument;
 
 namespace __SARV.Framework.Signal
 {
@@ -14,7 +14,7 @@ namespace __SARV.Framework.Signal
     {
         public override void HandleAwake()
         {
-            Debug.Log("HandleAwake");
+            Handler.Invoke(SVArgument.Empty());
         }
     }
 }

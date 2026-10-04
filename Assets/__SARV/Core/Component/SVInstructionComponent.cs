@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using __SARV.Core.Attributes;
 using __SARV.Core.Component.Base;
+using __SARV.Framework.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -17,16 +17,16 @@ namespace __SARV.Core.Component
         protected static readonly Task OkResult = Task.FromResult(true);
         public bool Disabled => disabled;
 
-        public virtual Task Execute()
+        public virtual Task Execute(SVArgument argument)
         {
             if (Disabled)
             {
                 return OkResult;
             }
-            return ExecuteInternal();
+            return ExecuteInternal(argument);
         }
 
-        protected virtual Task ExecuteInternal()
+        protected virtual Task ExecuteInternal(SVArgument argument)
         {
             return OkResult;
         }

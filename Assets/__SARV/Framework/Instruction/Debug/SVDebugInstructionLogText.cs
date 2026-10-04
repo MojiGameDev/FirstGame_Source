@@ -5,6 +5,7 @@ using __SARV.Core.Component;
 using __SARV.Core.Constant;
 using __SARV.Core.Enum;
 using __SARV.Core.Utils;
+using __SARV.Framework.Argument;
 using __SARV.Framework.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -25,7 +26,7 @@ namespace __SARV.Framework.Instruction
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Sends {textProperty} to the console";
 
-        protected override Task ExecuteInternal()
+        protected override Task ExecuteInternal(SVArgument argument)
         {
             SVComponentUtils.DebugLog(logLevelProperty.Value, textProperty.Value);
             return OkResult;

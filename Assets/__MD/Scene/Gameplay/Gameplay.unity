@@ -2611,7 +2611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instruction: 
-  instructions: []
+  instructions:
+  - rid: 4447245359468249196
   description: 
   branch: 
   conditionJoinType: 10
@@ -2619,7 +2620,23 @@ MonoBehaviour:
   tooltip: 
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4447245359468249196
+      type: {class: SVFrameworkInstructionRunCondition, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        conditionProperty:
+          rid: 4447245359468249197
+        waitToFinishProperty:
+          rid: 4447245359468249198
+    - rid: 4447245359468249197
+      type: {class: SVExternalPropertySARVCondition, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 0}
+    - rid: 4447245359468249198
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: 0
 --- !u!1 &2080392905
 GameObject:
   m_ObjectHideFlags: 0

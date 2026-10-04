@@ -6,7 +6,7 @@ using __SARV.Framework.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Instruction.Framework
+namespace __SARV.Framework.Instruction
 {
     [SVTitle("RunAction")]
     [SVCategory(SVConstantCategory.Instruction.FRAMEWORK)]
@@ -17,6 +17,11 @@ namespace __SARV.Framework.Instruction.Framework
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Action")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<SARVAction> actionProperty = new SVExternalPropertySARVAction();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(actionProperty == null ? "..." : actionProperty)}";
+        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("WaitToFinish")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        private SVPropertyComponent<bool> waitToFinishProperty = new SVBoolPropertyManual();
+
+        private bool IsActionPropertyNull => actionProperty == null || actionProperty.Value == null;
+
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsActionPropertyNull ? "..." : actionProperty)}";
     }
 }

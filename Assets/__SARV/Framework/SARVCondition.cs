@@ -6,7 +6,6 @@ using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Enum;
 using __SARV.Core.Reflection;
-using __SARV.Framework.Instruction.Framework;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -39,7 +38,7 @@ namespace __SARV.Framework
 
         [BoxGroup("Row02", showLabel: false)] [BoxGroup("Row02/InnerRow01", showLabel: false)] [BoxGroup("Row02/InnerRow01/InnerRow02", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
         private SVConditionJoinType conditionJoinType = SVConditionJoinType.And;
-
+        
         [BoxGroup("Row02", showLabel: false)] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
         private List<SVBranchComponent> branches = new();
 
