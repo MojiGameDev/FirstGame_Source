@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public class SARVCondition : SARVAction
+    public class SARVCondition : SVInstructionMonoBehaviour
     {
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
@@ -43,7 +43,7 @@ namespace __SARV.Framework
         [BoxGroup("Row02", showLabel: false)] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
         private List<SVBranchComponent> branches = new();
 
-        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 15, spaceAfter: -15)] [InfoBox("Execute the following instructions when the branches above are true", InfoMessageType.Info)]
+        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the branches above are true", InfoMessageType.Info)]
         private string tooltip = "";
 
         public List<SVBranchComponent> Branches => branches;

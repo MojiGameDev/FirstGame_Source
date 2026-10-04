@@ -2326,32 +2326,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instruction: 
-  instructions:
-  - rid: 4447245337753288909
+  instructions: []
+  description: 
   references:
     version: 2
-    RefIds:
-    - rid: 4447245337753288909
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
-      data:
-        logLevelProperty:
-          rid: 4447245337753288910
-        textProperty:
-          rid: 4447245337753288911
-    - rid: 4447245337753288910
-      type: {class: SVExternalPropertyLogLevel, ns: __SARV.Framework.Property.External, asm: Assembly-CSharp}
-      data:
-        value: 0
-    - rid: 4447245337753288911
-      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245337753288914
-    - rid: 4447245337753288914
-      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: 
+    RefIds: []
 --- !u!1 &1696863629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,6 +2504,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1543230256277520103, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1622947400}
+    - targetCorrespondingSourceObject: {fileID: 1543230256277520103, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1890567019}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
 --- !u!1 &1870447757
@@ -2571,16 +2553,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: Lifecycle/OnEnable
+  instruction: 
+  instructions: []
   description: 
+  signal: Lifecycle/OnAwake
   signalComponent:
-    rid: 4447245337753288811
+    rid: 4447245347984769161
+  tooltip: 
   references:
     version: 2
     RefIds:
-    - rid: 4447245337753288811
-      type: {class: SVLifecycleSignalOnEnable, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
+    - rid: 4447245347984769161
+      type: {class: SVLifecycleSignalOnAwake, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
       data: 
+--- !u!1 &1890567018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1890567019}
+  - component: {fileID: 1890567020}
+  m_Layer: 0
+  m_Name: New Condition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1890567019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890567018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424851563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1890567020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890567018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ff69791fde49a79366e95afa34baaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instruction: 
+  instructions: []
+  description: 
+  branch: 
+  conditionJoinType: 10
+  branches: []
+  tooltip: 
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2080392905
 GameObject:
   m_ObjectHideFlags: 0

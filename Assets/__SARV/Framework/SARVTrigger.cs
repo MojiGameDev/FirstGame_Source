@@ -5,14 +5,13 @@ using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
 using __SARV.Core.Reflection;
-using __SARV.Framework.Instruction.Framework;
 using __SARV.Framework.Signal;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public class SARVTrigger : SARVAction
+    public class SARVTrigger : SVInstructionMonoBehaviour
     {
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
@@ -23,7 +22,7 @@ namespace __SARV.Framework
         [BoxGroup("$" + nameof(SignalTitle), showLabel: false)] [BoxGroup("$" + nameof(SignalTitle) + "/InnerRow01", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsSignalComponentNull))] [OnValueChanged(nameof(OnSignalComponentChanged), includeChildren: true)]
         private SVSignalComponent signalComponent = new SVNullSignal();
 
-        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 15, spaceAfter: -15)] [InfoBox("Execute the following instructions when the event above is raised", InfoMessageType.Info)]
+        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the event above is raised", InfoMessageType.Info)]
         private string tooltip = "";
 
         public SVSignalComponent SignalComponent => IsSignalComponentNull ? null : signalComponent;
