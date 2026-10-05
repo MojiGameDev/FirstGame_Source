@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using __SARV.Core.Attributes;
+using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
 using Unity.VisualScripting;
@@ -45,16 +46,29 @@ namespace __SARV.Core.Reflection
                 .ToList();
         }
 
+        public static List<string> GetAllBehaviorComponentPaths()
+        {
+            return GetAllTypes<SVBehaviorComponent>()
+                .Select(GetMenuPath)
+                .ToList();
+        }
+
         public static List<string> GetPropertyTitlesByType<TType>()
         {
             return GetAllTypes<SVPropertyComponent<TType>>()
-                .Select(d=>d.GetTitle())
+                .Select(d => d.GetTitle())
                 .ToList();
         }
 
         public static Type GetSignalByPath(string path)
         {
             return GetAllTypes<SVSignalComponent>()
+                .FirstOrDefault(t => GetMenuPath(t) == path);
+        }
+
+        public static Type GetBehaviorByPath(string path)
+        {
+            return GetAllTypes<SVBehaviorComponent>()
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
 

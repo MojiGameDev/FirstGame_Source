@@ -24,5 +24,10 @@
             public const string STRING = "String";
             public const string BOOL = "Bool";
         }
+
+        public static class Behavior
+        {
+            public const string PLAYER = "Player";
+        }
     }
 }

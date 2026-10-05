@@ -26,6 +26,12 @@ namespace __SARV.Editor
             CreateComponent<SARVCondition>(command, "Condition");
         }
 
+        [MenuItem("GameObject/SARV/Create State", false, 10)]
+        private static void CreateSARVState(MenuCommand command)
+        {
+            CreateComponent<SARVState>(command, "State");
+        }
+
         [MenuItem("CONTEXT/SARV/Create Trigger", true)]
         private static bool ValidateCreateSARVTrigger(MenuCommand command)
         {
@@ -40,6 +46,12 @@ namespace __SARV.Editor
 
         [MenuItem("CONTEXT/SARV/Create Condition", true)]
         private static bool ValidateCreateSARVCondition(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
+
+        [MenuItem("CONTEXT/SARV/Create State", true)]
+        private static bool ValidateCreateSARVState(MenuCommand command)
         {
             return command.context is GameObject;
         }

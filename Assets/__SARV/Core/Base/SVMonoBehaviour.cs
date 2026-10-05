@@ -4,7 +4,7 @@ using UnityEngine;
 namespace __SARV.Core.Base
 {
     [HideMonoScript]
-    public class SVMonoBehaviour : MonoBehaviour
+    public abstract class SVMonoBehaviour : MonoBehaviour
     {
     }
 }
