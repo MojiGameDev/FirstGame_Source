@@ -6,18 +6,19 @@ namespace __MD.Script.Editor
     public static class MDSceneLoader
     {
         private const string DEMO_SCENE = @"Assets\__MD\Scene\Demo\";
-        private const string GAMEPLAY_SCENE = @"Assets\__MD\Scene\Gameplay\";
+        private const string PLAY_SCENE = @"Assets\__MD\Scene\Play\";
         private const string MENU_SCENE = @"Assets\__MD\Scene\Menu\";
-        private const string ACT_01_SECTION_01 = @"Assets\__MD\Scene\World\Act_01\Section_01\";
-        private const string ACT_01_SECTION_02 = @"Assets\__MD\Scene\World\Act_01\Section_02\";
+        private const string ACT_01_SECTION_01 = @"Assets\__MD\Scene\Landscape\Act_01\Section_01\";
+        private const string ACT_01_SECTION_02 = @"Assets\__MD\Scene\Landscape\Act_01\Section_02\";
 
-        [MenuItem("MD/Scene/Gameplay")]
-        public static void LoadGameplay()
+        [MenuItem("MD/Scene/Play")]
+        public static void LoadPlay()
         {
             // Close all current scenes first
             CloseAllScenes();
 
-            EditorSceneManager.OpenScene($"{GAMEPLAY_SCENE}Gameplay.unity", OpenSceneMode.Single);
+            EditorSceneManager.OpenScene($"{PLAY_SCENE}World.unity", OpenSceneMode.Single);
+            EditorSceneManager.OpenScene($"{PLAY_SCENE}Controller.unity", OpenSceneMode.Additive);
             EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Gameplay.unity", OpenSceneMode.Additive);
         }
 
@@ -27,7 +28,7 @@ namespace __MD.Script.Editor
             // Close all current scenes first
             CloseAllScenes();
 
-            EditorSceneManager.OpenScene($"{MENU_SCENE}Menu_Main.unity", OpenSceneMode.Single);
+            EditorSceneManager.OpenScene($"{MENU_SCENE}MainMenu.unity", OpenSceneMode.Single);
         }
 
         [MenuItem("MD/Scene/Act01_Section01")]
