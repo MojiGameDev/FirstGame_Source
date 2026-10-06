@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2229474936153387224}
   - component: {fileID: 1247456502868172141}
   - component: {fileID: 7323785931754186012}
-  - component: {fileID: 2768729012486291389}
   - component: {fileID: 83422270562684065}
+  - component: {fileID: 2294576881056646161}
   m_Layer: 0
   m_Name: SM_Large_Rock_03
   m_TagString: Untagged
@@ -88,7 +88,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2768729012486291389
+--- !u!114 &83422270562684065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4407093012327012801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInAssetConverter: 0
+  storedPrefabBackupGUID: 760ef92877262411683ea3b29c1896e9
+  storedPrefabParentGUID: b0bea60e0340c0f429393797ded49819
+  storedPreset: Automatic;Props
+  storedOverrides: 
+--- !u!64 &2294576881056646161
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,20 +127,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2270620829107833172, guid: cd60c245f42f27e41b81a47d5f94db64, type: 3}
---- !u!114 &83422270562684065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4407093012327012801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 089e7123bacb77a429df24ec08d2d672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockInAssetConverter: 0
-  storedPrefabBackupGUID: 760ef92877262411683ea3b29c1896e9
-  storedPrefabParentGUID: b0bea60e0340c0f429393797ded49819
-  storedPreset: Automatic;Props
-  storedOverrides: 
