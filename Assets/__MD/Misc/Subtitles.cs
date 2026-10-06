@@ -8,6 +8,8 @@ public class Subtitles : MonoBehaviour
     [SerializeField] private TextMeshProUGUI subtitleText;
     [SerializeField] private CanvasGroup canvasGroup;
 
+    [SerializeField] private float extraSubtitleTime = 1.5f;
+
     [SerializeField] private float fadeDuration = 0.25f;
 
     private Coroutine currentSubtitle;
@@ -42,7 +44,7 @@ public class Subtitles : MonoBehaviour
         subtitleBox.SetActive(true);
 
         // Fade In
-        yield return Fade(0f, 3f);
+        yield return Fade(0f, 1f);
 
         // تا وقتی صدا در حال پخش است صبر کن
         while (audioSource != null && audioSource.isPlaying)
@@ -50,8 +52,7 @@ public class Subtitles : MonoBehaviour
             yield return null;
         }
 
-        // Fade Out
-        yield return Fade(3f, 0f);
+        yield return new WaitForSeconds(extraSubtitleTime);
 
         subtitleBox.SetActive(false);
 
