@@ -179,80 +179,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4156951399366295403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &150164197254159332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 230995337802632014}
-  - component: {fileID: 553830768029593292}
-  m_Layer: 0
-  m_Name: New Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &230995337802632014
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150164197254159332}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1543230256277520103}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &553830768029593292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150164197254159332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instruction: 
-  instructions:
-  - rid: 4447245359468249229
-  description: 
-  signal: Lifecycle/OnAwake
-  signalComponent:
-    rid: 4447245347984769161
-  tooltip: 
-  references:
-    version: 2
-    RefIds:
-    - rid: 4447245347984769161
-      type: {class: SVLifecycleSignalOnAwake, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
-      data: 
-    - rid: 4447245359468249229
-      type: {class: SVFrameworkInstructionRunCondition, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        conditionProperty:
-          rid: 4447245359468249230
-        waitToFinishProperty:
-          rid: 4447245359468249231
-    - rid: 4447245359468249230
-      type: {class: SVExternalPropertySARVCondition, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 7050933826362431003}
-    - rid: 4447245359468249231
-      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: 0
 --- !u!1 &238157609519492741
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,70 +719,10 @@ MonoBehaviour:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
     states:
-    - {fileID: 5742999597103414593}
+    - {fileID: 0}
   movementSpeed: 0
   changeSpeedDuration: 0.2
   changeRotationRateDuration: 0.2
---- !u!1 &927676730753541773
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8692447061426478677}
-  - component: {fileID: 5742999597103414593}
-  m_Layer: 0
-  m_Name: New State
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8692447061426478677
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927676730753541773}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1543230256277520103}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5742999597103414593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927676730753541773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e911f9af5646528e46f6a31906cdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: 
-  behavior: Player/FreeMovement
-  behaviorComponent:
-    rid: 4447245383066189920
-  references:
-    version: 2
-    RefIds:
-    - rid: 4447245383066189920
-      type: {class: SVPlayerBehaviorFreeMovement, ns: __SARV.Framework.Behavior, asm: Assembly-CSharp}
-      data:
-        identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
-        runSpeed: 7
-        runRotationRate: 540
-        sprintSpeed: 10
-        sprintRotationRate: 700
-        parameterMovementSpeed: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
 --- !u!1 &1057096346643487136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,79 +1231,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7070761083509045502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1499546282962614666
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4268186498375175972}
-  - component: {fileID: 5282294515343796309}
-  m_Layer: 0
-  m_Name: New Action
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4268186498375175972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499546282962614666}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1543230256277520103}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5282294515343796309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499546282962614666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8a335c1e5949c38fc7570267320a1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instruction: 
-  instructions:
-  - rid: 4447245359468249223
-  description: 
-  references:
-    version: 2
-    RefIds:
-    - rid: 4447245359468249223
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        logLevelProperty:
-          rid: 4447245359468249224
-        textProperty:
-          rid: 4447245359468249225
-    - rid: 4447245359468249224
-      type: {class: SVExternalPropertyLogLevel, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: 10
-    - rid: 4447245359468249225
-      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245359468249228
-    - rid: 4447245359468249228
-      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: Text From Action By Trigger
 --- !u!1 &1573926714480413930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,77 +1358,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5220038189410653887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2087992065547491692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3055922317665405232}
-  - component: {fileID: 7050933826362431003}
-  m_Layer: 0
-  m_Name: New Condition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3055922317665405232
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087992065547491692}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1543230256277520103}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7050933826362431003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087992065547491692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ff69791fde49a79366e95afa34baaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instruction: 
-  instructions:
-  - rid: 4447245359468249232
-  description: 
-  branch: 
-  conditionJoinType: 10
-  branches: []
-  tooltip: 
-  references:
-    version: 2
-    RefIds:
-    - rid: 4447245359468249232
-      type: {class: SVFrameworkInstructionRunAction, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        actionProperty:
-          rid: 4447245359468249233
-        waitToFinishProperty:
-          rid: 4447245359468249234
-    - rid: 4447245359468249233
-      type: {class: SVExternalPropertySARVAction, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 5282294515343796309}
-    - rid: 4447245359468249234
-      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: 0
 --- !u!1 &2135640923134432616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,7 +2395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1543230256277520103}
   m_Layer: 7
-  m_Name: SARV
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2687,16 +2409,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3559200311672120366}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 230995337802632014}
-  - {fileID: 4268186498375175972}
-  - {fileID: 3055922317665405232}
-  - {fileID: 8692447061426478677}
-  m_Father: {fileID: 5916954829686717409}
+  m_Children: []
+  m_Father: {fileID: 6313901982196763450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3569804123301846049
 GameObject:
@@ -3254,6 +2972,39 @@ Transform:
   m_Children:
   - {fileID: 4339517796093788602}
   m_Father: {fileID: 1922982083125155237}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4173960000771650772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6313901982196763450}
+  m_Layer: 7
+  m_Name: SARV
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6313901982196763450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4173960000771650772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1543230256277520103}
+  - {fileID: 6112998586163153568}
+  m_Father: {fileID: 5916954829686717409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4203464306555918504
 GameObject:
@@ -5272,6 +5023,37 @@ Transform:
   - {fileID: 6004656875044770658}
   m_Father: {fileID: 8220048099718404108}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7005406004896196514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6112998586163153568}
+  m_Layer: 7
+  m_Name: State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6112998586163153568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005406004896196514}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6313901982196763450}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7096266175959367989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5630,7 +5412,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5964301867289542776}
-  - {fileID: 1543230256277520103}
+  - {fileID: 6313901982196763450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7525479398307775012
