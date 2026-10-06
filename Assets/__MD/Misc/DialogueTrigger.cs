@@ -1,62 +1,47 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
+public class DialogueLine
+{
+    public string speakerName;
+    
+    [TextArea(2, 5)]
+    public string subtitle;
+
+    public AudioClip audioClip;
+}
+
 public class DialogueTrigger : MonoBehaviour
 {
-    [Header("Dialogue")]
-    [SerializeField] private string speakerName;
+    public DialogueLine[] dialogueLines;
 
-    [TextArea(2, 5)]
-    [SerializeField] private string dialogueText;
+    public AudioSource audioSource;
 
-    [Header("References")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private Subtitles subtitleUI;
-
-    [Header("Settings")]
-    [SerializeField] private bool playOnlyOnce = true;
-
-    private bool hasPlayed = false;
+    private bool hasTriggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-
-        Debug.Log("TRIGGER ENTERED: " + other.name);
+        if (hasTriggered)
+            return;
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("PLAYER ENTERED!");
+            hasTriggered = true;
+
+            StartCoroutine(PlayDialogue());
         }
-        if (!other.CompareTag("Player"))
-            return;
+    }
 
-        if (playOnlyOnce && hasPlayed)
-            return;
-
-        hasPlayed = true;
-
-        if (audioSource == null)
+    private System.Collections.IEnumerator PlayDialogue()
+    {
+        foreach (DialogueLine line in dialogueLines)
         {
-            Debug.LogWarning("AudioSource is missing.", this);
-            return;
-        }
+            Debug.Log(line.speakerName + ": " + line.subtitle);
 
-        if (audioSource.clip == null)
-        {
-            Debug.LogWarning("AudioClip is missing.", this);
-            return;
-        }
+            audioSource.clip = line.audioClip;
+            audioSource.Play();
 
-        // Play audio
-        audioSource.Play();
-
-        // Show subtitle
-        if (subtitleUI != null)
-        {
-            subtitleUI.ShowSubtitle(
-                speakerName,
-                dialogueText,
-                audioSource
-            );
+            yield return new WaitForSeconds(line.audioClip.length);
         }
     }
 }
