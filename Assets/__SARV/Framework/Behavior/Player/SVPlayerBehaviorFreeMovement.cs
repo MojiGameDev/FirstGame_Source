@@ -27,7 +27,7 @@ namespace __SARV.Framework.Behavior
 
         [BoxGroup("Speed")] [SerializeField] private float sprintRotationRate = 700f;
 
-        [BoxGroup("ParameterIdentifier")] [SerializeField] [Required]
+        [BoxGroup("Parameter")] [SerializeField] [Required]
         private SVIdentifier parameterMovementSpeed;
 
         private bool _isMovementSpeedParameterChanged;
