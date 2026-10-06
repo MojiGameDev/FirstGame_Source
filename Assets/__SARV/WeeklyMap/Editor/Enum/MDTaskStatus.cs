@@ -1,4 +1,4 @@
-﻿namespace __MD.Script.WeeklyMap.Editor.Enum
+﻿namespace __SARV.WeeklyMap.Editor.Enum
 {
     public enum MDTaskStatus
     {
