@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using __SARV.Core.Component;
+using __SARV.Core.Base;
 using __SARV.Framework;
 using __SARV.Framework.Argument;
 using __SARV.Identifier;
@@ -9,36 +9,41 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace __SARV.Core.Base
+namespace __SARV.Core.Shared
 {
-    public abstract class SVCharacter : SVOverrideMonoBehaviour
+    [Serializable]
+    public class SVSharedCharacter : SVSerializableMonoBehaviour
     {
-        [FoldoutGroup("State")] [BoxGroup("State/Debug")] [SerializeField] [ReadOnly]
+        [BoxGroup("Debug")] [SerializeField] [ReadOnly]
         protected SVIdentifier currentStateIdentifier;
 
-        [FoldoutGroup("State")] [BoxGroup("State/Debug")] [SerializeField] [ReadOnly]
+        [BoxGroup("Debug")] [SerializeField] [ReadOnly]
         protected List<string> trackStates = new();
 
-        [FoldoutGroup("State")] [BoxGroup("State/States")] [SerializeField] [ListDrawerSettings(ShowFoldout = false)] [OnValueChanged(nameof(OnBehaviorsChanged))] [PropertyOrder(int.MaxValue)]
+        [BoxGroup("States")] [SerializeField] [ListDrawerSettings(ShowFoldout = false)] [OnValueChanged(nameof(OnBehaviorsChanged))] [PropertyOrder(int.MaxValue)]
         protected List<SARVState> states = new();
 
         protected SARVState _currentState;
         protected SARVState _previousState;
         protected bool _isStateChanged;
         protected readonly Dictionary<Type, SVIdentifier> UniqueStateIdentifier = new();
-        public readonly Dictionary<SVIdentifier, SARVState> RuntimeStates = new();
+        private readonly Dictionary<SVIdentifier, SARVState> RuntimeStates = new();
 
         protected UnityEvent<string> OnEnterState;
         protected UnityEvent<string> OnExitState;
         protected UnityEvent<string, string> OnChangeState;
 
-        protected override void Awake()
+        public override void HandleAwake()
         {
             HandleStatesToDictionary();
+        }
+
+        public override void HandleStart()
+        {
             HandleDefaultState();
         }
 
-        protected override void Update()
+        public override void HandleUpdate(float deltaTime)
         {
             if (_isStateChanged)
             {
@@ -69,11 +74,7 @@ namespace __SARV.Core.Base
             _isStateChanged = true;
         }
 
-        protected void OnBehaviorsChanged()
-        {
-        }
-
-        protected void SetArgument<TCharacter>(TCharacter character) where TCharacter : SVCharacter
+        public void SetArgument<TCharacter>(TCharacter character)
         {
             foreach (var state in states)
             {
@@ -82,11 +83,15 @@ namespace __SARV.Core.Base
             }
         }
 
+        protected void OnBehaviorsChanged()
+        {
+        }
+
         private void HandleStatesToDictionary()
         {
             foreach (var state in states)
             {
-                RuntimeStates.Add(state.Identifier, state);
+                RuntimeStates.Add(state.BehaviorComponent.Identifier, state);
             }
 
             var uniqueStates = states
@@ -97,7 +102,7 @@ namespace __SARV.Core.Base
 
             foreach (var state in uniqueStates)
             {
-                UniqueStateIdentifier.Add(state.GetType(), state.Identifier);
+                UniqueStateIdentifier.Add(state.GetType(), state.BehaviorComponent.Identifier);
             }
         }
     }

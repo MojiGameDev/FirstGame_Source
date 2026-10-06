@@ -1,4 +1,4 @@
-﻿using __SARV.Wrapper;
+﻿using __SARV.Core.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -7,14 +7,20 @@ namespace __SARV.Player.SubPlayer
     public abstract class MDSubSARVPlayerAnimancer : SVSubSARVPlayerReference
     {
         [FoldoutGroup("Animancer")] [SerializeField] [HideLabel]
-        private SVAnimancerWrapper animancerWrapper;
+        private SVSharedAnimancer sharedAnimancer;
 
-        public SVAnimancerWrapper SubAnimancerWrapper => animancerWrapper;
+        public SVSharedAnimancer SharedAnimancer => sharedAnimancer;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            SharedAnimancer.HandleAwake();
+        }
 
         protected override void Start()
         {
             base.Start();
-            SubAnimancerWrapper.SetAnimancerComponent(AnimancerComponent);
+            SharedAnimancer.SetAnimancerComponent(animancerComponent);
         }
     }
 }

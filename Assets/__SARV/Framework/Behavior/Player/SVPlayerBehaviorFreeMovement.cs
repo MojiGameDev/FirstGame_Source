@@ -2,6 +2,7 @@
 using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
+using UnityEngine;
 
 namespace __SARV.Framework.Behavior
 {
@@ -14,6 +15,7 @@ namespace __SARV.Framework.Behavior
         public override void Enter()
         {
             base.Enter();
+            Argument.SARVPlayer.SharedAnimancer.Play(Identifier);
         }
 
         public override void Tick(float deltaTime)

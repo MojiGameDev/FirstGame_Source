@@ -17,11 +17,6 @@ namespace __SARV.Framework
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
         
-        [BoxGroup("Identifier")] [SerializeField] [HideLabel]
-        private SVIdentifier identifier;
-        
-        public SVIdentifier Identifier => identifier;
-
         [BoxGroup("$" + nameof(BehaviorTitle), showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBehaviorComponents))] [Required] [OnValueChanged(nameof(OnBehaviorChanged), InvokeOnInitialize = true)]
         private string behavior = "";
 

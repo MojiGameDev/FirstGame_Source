@@ -11,6 +11,11 @@ namespace __SARV.Core.Component
     [Serializable]
     public class SVBehaviorComponent : SVComponent
     {
+        [BoxGroup("Identifier")] [SerializeField] [HideLabel]
+        private SVIdentifier identifier;
+        
+        public SVIdentifier Identifier => identifier;
+        
         protected SVArgument Argument;
 
         public void SetArgument(SVArgument argument)

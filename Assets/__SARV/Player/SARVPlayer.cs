@@ -1,13 +1,12 @@
-﻿using __SARV.Core.Base;
-using __SARV.Player.SubPlayer;
+﻿using __SARV.Player.SubPlayer;
 
 namespace __SARV.Player
 {
-    public class SARVPlayer : MDSubSARVPlayerAnimancer
+    public class SARVPlayer : MDSubSARVPlayerCharacter
     {
         protected override void Awake()
         {
-            SetArgument(this);
+            SharedCharacter.SetArgument(this);
             base.Awake();
         }
     }

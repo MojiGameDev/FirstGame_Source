@@ -4,7 +4,7 @@ using __SARV.Identifier;
 using Animancer;
 using UnityEngine;
 
-namespace __SARV.Wrapper.Entity
+namespace __SARV.Core.Shared.Entity
 {
     [Serializable]
     public class SVAnimancerIdentifier : SVSerializable

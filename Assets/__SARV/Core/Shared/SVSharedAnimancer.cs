@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using __SARV.Core.Base;
+using __SARV.Core.Shared.Entity;
 using __SARV.Identifier;
-using __SARV.Wrapper.Entity;
 using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Wrapper
+namespace __SARV.Core.Shared
 {
     [Serializable]
-    public class SVAnimancerWrapper : SVSharedCharacter
+    public class SVSharedAnimancer : SVSerializableMonoBehaviour
     {
         [SerializeField] [TableList] private List<SVAnimancerIdentifier> wrappers = new();
 
-        private AnimancerState _currentAnimancerState;
+        private AnimancerState _currentState;
         private AnimancerComponent _animancer;
 
-        public AnimancerState CurrentAnimancerState => _currentAnimancerState;
-        public readonly Dictionary<SVIdentifier, StringAsset> RuntimeAlias = new();
+        public AnimancerState CurrentState => _currentState;
+        private readonly Dictionary<SVIdentifier, StringAsset> RuntimeAlias = new();
 
         public override void HandleAwake()
         {
@@ -30,14 +30,14 @@ namespace __SARV.Wrapper
             _animancer = animancer;
         }
 
-        public void PlayTransition(SVIdentifier identifier, Action onEnd = null)
+        public void Play(SVIdentifier identifier, Action onEnd = null)
         {
             var alias = RuntimeAlias[identifier];
-            _currentAnimancerState = _animancer.TryPlay(alias);
+            _currentState = _animancer.TryPlay(alias);
 
             if (onEnd != null)
             {
-                _currentAnimancerState.Events(this).OnEnd = onEnd;
+                _currentState.Events(this).OnEnd = onEnd;
             }
         }
 
