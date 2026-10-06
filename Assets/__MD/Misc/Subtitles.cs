@@ -43,7 +43,6 @@ public class Subtitles : MonoBehaviour
 
         subtitleBox.SetActive(true);
 
-        // Fade In
         yield return Fade(0f, 1f);
 
         // تا وقتی صدا در حال پخش است صبر کن
@@ -52,8 +51,13 @@ public class Subtitles : MonoBehaviour
             yield return null;
         }
 
+        // کمی بیشتر زیرنویس را نگه دار
         yield return new WaitForSeconds(extraSubtitleTime);
 
+        // Fade Out
+        yield return Fade(1f, 0f);
+
+        // بعد از کامل شدن Fade غیرفعال کن
         subtitleBox.SetActive(false);
 
         currentSubtitle = null;
