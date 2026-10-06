@@ -42,7 +42,7 @@ public class Subtitles : MonoBehaviour
         subtitleBox.SetActive(true);
 
         // Fade In
-        yield return Fade(0f, 1f);
+        yield return Fade(0f, 3f);
 
         // تا وقتی صدا در حال پخش است صبر کن
         while (audioSource != null && audioSource.isPlaying)
@@ -51,7 +51,7 @@ public class Subtitles : MonoBehaviour
         }
 
         // Fade Out
-        yield return Fade(1f, 0f);
+        yield return Fade(3f, 0f);
 
         subtitleBox.SetActive(false);
 
