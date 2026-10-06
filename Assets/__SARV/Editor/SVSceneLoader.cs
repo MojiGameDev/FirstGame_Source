@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace __MD.Script.Editor
+namespace __SARV.Editor
 {
-    public static class MDSceneLoader
+    public static class SVSceneLoader
     {
         private const string DEMO_SCENE = @"Assets\__MD\Scene\Demo\";
         private const string PLAY_SCENE = @"Assets\__MD\Scene\Play\";
@@ -22,7 +22,7 @@ namespace __MD.Script.Editor
             EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Gameplay.unity", OpenSceneMode.Additive);
         }
 
-        [MenuItem("MD/Scene/MainMenu")]
+        [MenuItem("SARV/Scene/MainMenu")]
         public static void LoadMainMenu()
         {
             // Close all current scenes first
@@ -31,7 +31,7 @@ namespace __MD.Script.Editor
             EditorSceneManager.OpenScene($"{MENU_SCENE}MainMenu.unity", OpenSceneMode.Single);
         }
 
-        [MenuItem("MD/Scene/Act01_Section01")]
+        [MenuItem("SARV/Scene/Act01_Section01")]
         public static void LoadAct01Section01()
         {
             // Close all current scenes first
@@ -40,7 +40,7 @@ namespace __MD.Script.Editor
             EditorSceneManager.OpenScene($"{ACT_01_SECTION_01}Act_01_Section_01.unity", OpenSceneMode.Single);
         }
 
-        [MenuItem("MD/Scene/Act01_Section02")]
+        [MenuItem("SARV/Scene/Act01_Section02")]
         public static void LoadAct01Section02()
         {
             // Close all current scenes first

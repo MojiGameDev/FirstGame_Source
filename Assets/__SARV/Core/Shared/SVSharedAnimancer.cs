@@ -12,14 +12,15 @@ namespace __SARV.Core.Shared
     [Serializable]
     public class SVSharedAnimancer : SVSerializableMonoBehaviour
     {
-        [SerializeField] [TableList] private List<SVAnimancerIdentifier> wrappers = new();
+        [SerializeField] [TableList]
+        private List<SVAnimancerIdentifier> wrappers = new();
 
         private AnimancerState _currentState;
         private AnimancerComponent _animancer;
 
         public AnimancerState CurrentState => _currentState;
         public readonly Dictionary<SVIdentifier, StringAsset> RuntimeAlias = new();
-        
+
         public override void HandleAwake()
         {
             HandleWrappersToDictionary();

@@ -1418,17 +1418,6 @@ MonoBehaviour:
   enableDistanceDimmer: 1
   distanceStartDimming: 70
   distanceDeactivation: 100
---- !u!114 &858452070 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5742999597103414593, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-  m_PrefabInstance: {fileID: 1869377373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e911f9af5646528e46f6a31906cdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &863588923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,37 +2397,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1806341742190990454, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-      propertyPath: sharedAnimancer.wrappers.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806341742190990454, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-      propertyPath: sharedStateManager.states.Array.size
+      propertyPath: sharedStateMachine.states.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1806341742190990454, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-      propertyPath: 'sharedStateManager.states.Array.data[0]'
-      value: 
-      objectReference: {fileID: 858452070}
-    - target: {fileID: 1806341742190990454, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-      propertyPath: sharedAnimancer.wrappers.Array.data[1].alias
-      value: 
-      objectReference: {fileID: 11400000, guid: 804658efca7a0e848999f95926f94d30, type: 2}
-    - target: {fileID: 1806341742190990454, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-      propertyPath: sharedAnimancer.wrappers.Array.data[1].identifier
-      value: 
-      objectReference: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
     - target: {fileID: 5742999597103414593, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
       propertyPath: managedReferences[4447245383066189920].runSpeed
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 5742999597103414593, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-      propertyPath: managedReferences[4447245383066189920].sprintSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5742999597103414593, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
-      propertyPath: managedReferences[4447245383066189920].parameterMovementSpeed
-      value: 
-      objectReference: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
     - target: {fileID: 5916954829686717409, guid: 07b84dcfe33f76e4bacc0610bce89949, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

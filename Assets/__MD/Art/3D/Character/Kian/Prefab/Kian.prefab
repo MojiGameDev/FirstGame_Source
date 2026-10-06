@@ -769,15 +769,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 4760874554333366725}
   animancerComponent: {fileID: 5061645055310410478}
+  playerMoveHorizontalKey: PlayerMoveHorizontal
+  playerMoveVerticalKey: PlayerMoveVertical
+  playerSprintKey: PlayerSprint
+  playerInteractKey: PlayerInteract
+  playerRollKey: PlayerRoll
+  playerAttackSwordKey: PlayerAttackSword
+  playerAttackBowKey: PlayerAttackBow
+  playerAttackSpearKey: PlayerAttackSpear
+  playerAttackDualSwordKey: PlayerAttackDualSword
+  playerComboSwitchAKey: PlayerComboSwitchA
+  playerComboSwitchBKey: PlayerComboSwitchB
+  playerComboSwitchCKey: PlayerComboSwitchC
+  playerComboSwitchDKey: PlayerComboSwitchD
+  inputMovementDirection: {x: 0, y: 0, z: 0}
   sharedAnimancer:
     wrappers:
     - identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
       alias: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
-  sharedCharacter:
+    - identifier: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
+      alias: {fileID: 11400000, guid: 804658efca7a0e848999f95926f94d30, type: 2}
+  sharedStateMachine:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
     states:
     - {fileID: 5742999597103414593}
+  movementSpeed: 0
+  changeSpeedDuration: 0.2
+  changeRotationRateDuration: 0.2
 --- !u!1 &927676730753541773
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +852,11 @@ MonoBehaviour:
       type: {class: SVPlayerBehaviorFreeMovement, ns: __SARV.Framework.Behavior, asm: Assembly-CSharp}
       data:
         identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
+        runSpeed: 8
+        runRotationRate: 540
+        sprintSpeed: 10
+        sprintRotationRate: 700
+        parameterMovementSpeed: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
 --- !u!1 &1057096346643487136
 GameObject:
   m_ObjectHideFlags: 0

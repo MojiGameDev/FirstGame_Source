@@ -20,8 +20,7 @@ namespace __SARV.Framework.Behavior
         [BoxGroup("Speed")] [SerializeField] [PropertyRange(1, 10)]
         private float runSpeed = 8f;
 
-        [BoxGroup("Speed")] [SerializeField] 
-        private float runRotationRate = 540f;
+        [BoxGroup("Speed")] [SerializeField] private float runRotationRate = 540f;
 
         [BoxGroup("Speed")] [SerializeField] [PropertyRange(1, 20)]
         private float sprintSpeed = 11f;
@@ -32,9 +31,9 @@ namespace __SARV.Framework.Behavior
         private SVIdentifier parameterMovementSpeed;
 
         private bool _isMovementSpeedParameterChanged;
-        
+
         private SmoothedFloatParameter _smoothedFloatParameterMovementSpeed;
-        
+
         private const int PARAMETER_MOVEMENT_SPEED_IDLE = 0;
         private const int PARAMETER_MOVEMENT_SPEED_RUN = 1;
         private const int PARAMETER_MOVEMENT_SPEED_SPRINT = 2;
@@ -55,6 +54,7 @@ namespace __SARV.Framework.Behavior
         {
             Argument.SARVPlayer.SetMovementDirection(Argument.SARVPlayer.InputMovementDirection);
             HandleMovementSpeedParameter();
+            HandleCharacterSpeed();
         }
 
         public override void Exit()
@@ -62,7 +62,7 @@ namespace __SARV.Framework.Behavior
             Argument.SARVPlayer.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.Dispose();
         }
-        
+
         private void HandleCharacterSpeed()
         {
             if (!_isMovementSpeedParameterChanged)
@@ -79,7 +79,7 @@ namespace __SARV.Framework.Behavior
                 Argument.SARVPlayer.UpdateSpeed(runSpeed, runRotationRate);
             }
         }
-        
+
         private void HandleMovementSpeedParameter()
         {
             SVCharacterMovementSpeed newMovementSpeed;
@@ -103,7 +103,7 @@ namespace __SARV.Framework.Behavior
 
             _smoothedFloatParameterMovementSpeed.TargetValue = GetMovementSpeed();
         }
-        
+
         private int GetMovementSpeed()
         {
             var movementSpeed = 0;
