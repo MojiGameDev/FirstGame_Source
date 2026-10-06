@@ -26,8 +26,8 @@ namespace __SARV.Core.Shared
         private SARVState _currentState;
         private SARVState _previousState;
         private bool _isStateChanged;
-        private readonly Dictionary<Type, SVIdentifier> UniqueStateIdentifier = new();
-        private readonly Dictionary<SVIdentifier, SARVState> RuntimeStates = new();
+        private readonly Dictionary<Type, SVIdentifier> _uniqueStateIdentifier = new();
+        private readonly Dictionary<SVIdentifier, SARVState> _runtimeStates = new();
 
         protected UnityEvent<string> OnEnterState;
         protected UnityEvent<string> OnExitState;
@@ -56,7 +56,7 @@ namespace __SARV.Core.Shared
 
         private void HandleDefaultState()
         {
-            ChangeStateTo(RuntimeStates.First().Key);
+            ChangeStateTo(_runtimeStates.First().Key);
         }
 
         public void ChangeStateTo(SVIdentifier stateIdentifier)
@@ -65,7 +65,7 @@ namespace __SARV.Core.Shared
             _previousState?.BehaviorComponent.Exit();
             OnExitState?.Invoke(currentStateIdentifier);
 
-            _currentState = RuntimeStates[stateIdentifier];
+            _currentState = _runtimeStates[stateIdentifier];
             _currentState?.BehaviorComponent.Enter();
             OnEnterState?.Invoke(stateIdentifier);
             OnChangeState?.Invoke(currentStateIdentifier, stateIdentifier);
@@ -91,7 +91,7 @@ namespace __SARV.Core.Shared
         {
             foreach (var state in states)
             {
-                RuntimeStates.Add(state.BehaviorComponent.Identifier, state);
+                _runtimeStates.Add(state.BehaviorComponent.Identifier, state);
             }
 
             var uniqueStates = states
@@ -102,7 +102,7 @@ namespace __SARV.Core.Shared
 
             foreach (var state in uniqueStates)
             {
-                UniqueStateIdentifier.Add(state.GetType(), state.BehaviorComponent.Identifier);
+                _uniqueStateIdentifier.Add(state.GetType(), state.BehaviorComponent.Identifier);
             }
         }
     }

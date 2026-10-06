@@ -11,7 +11,7 @@ namespace __SARV.Editor
         private const string ACT_01_SECTION_01 = @"Assets\__MD\Scene\Landscape\Act_01\Section_01\";
         private const string ACT_01_SECTION_02 = @"Assets\__MD\Scene\Landscape\Act_01\Section_02\";
 
-        [MenuItem("MD/Scene/Play")]
+        [MenuItem("SARV/Scene/Play")]
         public static void LoadPlay()
         {
             // Close all current scenes first

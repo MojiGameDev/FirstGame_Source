@@ -45,9 +45,9 @@ namespace __SARV.Player.SubPlayer
         public void UpdateSpeed(float newSpeed, float newRotationRate)
         {
             KillTween();
-            _changeSpeedTween = DOTween.To(() => character.maxWalkSpeed, x => character.maxWalkSpeed = x, newSpeed, changeSpeedDuration)
+            _changeSpeedTween = DOTween.To(() => Character.maxWalkSpeed, x => Character.maxWalkSpeed = x, newSpeed, changeSpeedDuration)
                 .SetEase(Ease.Linear);
-            _changeRotationRateTween = DOTween.To(() => character.rotationRate, x => character.rotationRate = x, newRotationRate, changeRotationRateDuration)
+            _changeRotationRateTween = DOTween.To(() => Character.rotationRate, x => Character.rotationRate = x, newRotationRate, changeRotationRateDuration)
                 .SetEase(Ease.Linear);
         }
 
@@ -59,7 +59,7 @@ namespace __SARV.Player.SubPlayer
 
         public void SetMovementDirection(Vector3 direction)
         {
-            character.SetMovementDirection(direction);
+            Character.SetMovementDirection(direction);
         }
 
         public void StopMovement()
@@ -69,12 +69,12 @@ namespace __SARV.Player.SubPlayer
 
         public void EnableRootMotion()
         {
-            character.useRootMotion = true;
+            Character.useRootMotion = true;
         }
 
         public void DisableRootMotion()
         {
-            character.useRootMotion = false;
+            Character.useRootMotion = false;
         }
 
         public void SetMovementSpeed(SVCharacterMovementSpeed speed)
