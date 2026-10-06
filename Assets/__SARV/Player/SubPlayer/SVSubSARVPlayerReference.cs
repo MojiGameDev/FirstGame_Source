@@ -1,4 +1,5 @@
 ﻿using __SARV.Core.Base;
+using Animancer;
 using ECM2;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -9,5 +10,13 @@ namespace __SARV.Player.SubPlayer
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
         private Character character;
+
+        [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
+        private AnimancerComponent animancerComponent;
+
+        public Vector3 Position => transform.position;
+        public Vector3 Forward => transform.forward;
+        public Character Character => character;
+        public AnimancerComponent AnimancerComponent => animancerComponent;
     }
 }

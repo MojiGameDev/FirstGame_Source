@@ -11,43 +11,44 @@ using UnityEngine.Events;
 
 namespace __SARV.Core.Base
 {
-    public abstract class SVCharacter : SVMonoBehaviour
+    public abstract class SVCharacter : SVOverrideMonoBehaviour
     {
-        [BoxGroup("Debug")] [SerializeField] [ReadOnly]
+        [FoldoutGroup("State")] [BoxGroup("State/Debug")] [SerializeField] [ReadOnly]
         protected SVIdentifier currentStateIdentifier;
 
-        [BoxGroup("Debug")] [SerializeField] [ReadOnly]
+        [FoldoutGroup("State")] [BoxGroup("State/Debug")] [SerializeField] [ReadOnly]
         protected List<string> trackStates = new();
-        
-        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(ShowFoldout = false)] [OnValueChanged(nameof(OnBehaviorsChanged))] [PropertyOrder(int.MaxValue)]
+
+        [FoldoutGroup("State")] [BoxGroup("State/States")] [SerializeField] [ListDrawerSettings(ShowFoldout = false)] [OnValueChanged(nameof(OnBehaviorsChanged))] [PropertyOrder(int.MaxValue)]
         protected List<SARVState> states = new();
-        
+
         protected SARVState _currentState;
         protected SARVState _previousState;
         protected bool _isStateChanged;
         protected readonly Dictionary<Type, SVIdentifier> UniqueStateIdentifier = new();
         public readonly Dictionary<SVIdentifier, SARVState> RuntimeStates = new();
-        
+
         protected UnityEvent<string> OnEnterState;
         protected UnityEvent<string> OnExitState;
         protected UnityEvent<string, string> OnChangeState;
 
-        protected virtual void Awake()
+        protected override void Awake()
         {
             HandleStatesToDictionary();
             HandleDefaultState();
         }
 
-        protected virtual void Update()
+        protected override void Update()
         {
             if (_isStateChanged)
             {
                 _isStateChanged = false;
                 return;
             }
+
             _currentState.BehaviorComponent.Tick(Time.deltaTime);
         }
-        
+
         private void HandleDefaultState()
         {
             ChangeStateTo(RuntimeStates.First().Key);
@@ -80,7 +81,7 @@ namespace __SARV.Core.Base
                 state.BehaviorComponent.SetArgument(fromArgument);
             }
         }
-        
+
         private void HandleStatesToDictionary()
         {
             foreach (var state in states)

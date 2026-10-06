@@ -3,7 +3,7 @@ using __SARV.Player.SubPlayer;
 
 namespace __SARV.Player
 {
-    public class SARVPlayer : SVSubSARVPlayerReference
+    public class SARVPlayer : MDSubSARVPlayerAnimancer
     {
         protected override void Awake()
         {
