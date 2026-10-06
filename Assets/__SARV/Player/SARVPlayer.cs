@@ -2,11 +2,11 @@
 
 namespace __SARV.Player
 {
-    public class SARVPlayer : MDSubSARVPlayerCharacter
+    public class SARVPlayer : SVSubSARVPlayerCharacter
     {
         protected override void Awake()
         {
-            SharedCharacter.SetArgument(this);
+            SharedStateMachine.SetArgument(this);
             base.Awake();
         }
     }

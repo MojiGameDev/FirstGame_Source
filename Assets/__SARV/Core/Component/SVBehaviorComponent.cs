@@ -22,7 +22,7 @@ namespace __SARV.Core.Component
         {
             Argument = argument;
         }
-
+        
         public virtual void Enter()
         {
         }

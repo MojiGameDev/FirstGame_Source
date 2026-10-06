@@ -18,8 +18,8 @@ namespace __SARV.Core.Shared
         private AnimancerComponent _animancer;
 
         public AnimancerState CurrentState => _currentState;
-        private readonly Dictionary<SVIdentifier, StringAsset> RuntimeAlias = new();
-
+        public readonly Dictionary<SVIdentifier, StringAsset> RuntimeAlias = new();
+        
         public override void HandleAwake()
         {
             HandleWrappersToDictionary();
