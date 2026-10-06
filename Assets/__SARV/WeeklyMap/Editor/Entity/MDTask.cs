@@ -1,13 +1,13 @@
 ﻿using System;
-using __MD.Script.Core.Base;
 using __MD.Script.WeeklyMap.Editor.Enum;
+using __SARV.Core.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __MD.Script.WeeklyMap.Editor.Entity
 {
     [Serializable]
-    public class MDTask : MDSerializable
+    public class MDTask : SVSerializable
     {
         [FoldoutGroup("$Title")] [SerializeField] [Required] [HideLabel]
         private string title;
