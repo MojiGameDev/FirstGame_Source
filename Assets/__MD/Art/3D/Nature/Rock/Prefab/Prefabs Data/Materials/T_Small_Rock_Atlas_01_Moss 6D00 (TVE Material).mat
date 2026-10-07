@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: T_Slate_Rock_01 8C00 (TVE Material)
+  m_Name: T_Small_Rock_Atlas_01_Moss 6D00 (TVE Material)
   m_Shader: {fileID: 4800000, guid: 7befaa6f41d00a6478d5f4af21d66518, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -20,8 +20,10 @@ Material:
   - TVE_MAIN_SAMPLE_MAIN_UV
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_SINGLE
+  - TVE_SECOND
+  - TVE_SECOND_MASK
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
-  - TVE_SECOND_SAMPLE_MAIN_UV
+  - TVE_SECOND_SAMPLE_PLANAR_3D
   - TVE_THIRD_MASK_SAMPLE_MAIN_UV
   - TVE_THIRD_SAMPLE_MAIN_UV
   - TVE_WETNESS
@@ -69,19 +71,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainAlbedoTex:
-        m_Texture: {fileID: 2800000, guid: d65656ba0cd95124b91a9a9e83b985f4, type: 3}
+        m_Texture: {fileID: 2800000, guid: b12639d8778c0c44ab0634b027c019fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainNormalTex:
-        m_Texture: {fileID: 2800000, guid: 9429bbb68fbc8ea4aa9d86eccde16ce4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 23cf97f821dae5741a2c952b1143ad1c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainShaderTex:
-        m_Texture: {fileID: 2800000, guid: 8bcf5a1f3cb476740b4980054dea1ea5, type: 3}
+        m_Texture: {fileID: 2800000, guid: d7a07b7fa0160554d997ae9ec733a09d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetaAlbedoTex:
-        m_Texture: {fileID: 2800000, guid: d65656ba0cd95124b91a9a9e83b985f4, type: 3}
+        m_Texture: {fileID: 2800000, guid: b12639d8778c0c44ab0634b027c019fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MotionMaskTex:
@@ -295,7 +297,7 @@ Material:
     - _IsConverted: 1
     - _IsCustomShader: 0
     - _IsGeneralShader: 1
-    - _IsIdentifier: 96
+    - _IsIdentifier: 24
     - _IsLightingType: 3
     - _IsObjectType: 1
     - _IsShaderType: 1
@@ -442,7 +444,7 @@ Material:
     - _SecondElementMode: 0
     - _SecondEnd: 1
     - _SecondGlobalValue: 1
-    - _SecondIntensityValue: 0
+    - _SecondIntensityValue: 1
     - _SecondLumaValue: 0
     - _SecondMaskCoordMode: 0
     - _SecondMaskMode: 0
