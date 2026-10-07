@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace __SARV.Player.SubPlayer
 {
-    public abstract class SVSubSARVPlayerCharacter : SVSubSARVPlayerStateMachine
+    public abstract class SVSubSARVPlayerCharacter : SVSubSARVPlayerTrait
     {
         [FoldoutGroup("Character")] [BoxGroup("Character/Data")] [SerializeField] [ReadOnly]
         private SVCharacterMovementSpeed movementSpeed = SVCharacterMovementSpeed.NotMoving;
