@@ -18,12 +18,11 @@ namespace __SARV.Framework
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
 
-        [BoxGroup("Row02", showLabel: false)] [BoxGroup("Row02/InnerRow01", showLabel: false)] [HorizontalGroup("Row02/InnerRow01/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBranchComponents))] [OnValueChanged(nameof(OnBranchChanged), InvokeOnInitialize = true)]
+        [BoxGroup("Row02", showLabel: false)] [HorizontalGroup("Row02/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBranchComponents))] [OnValueChanged(nameof(OnBranchChanged), InvokeOnInitialize = true)]
         private string branch = "";
 
         [BoxGroup("Row02", showLabel: false)]
-        [BoxGroup("Row02/InnerRow01", showLabel: false)]
-        [HorizontalGroup("Row02/InnerRow01/Group01", Width = 21)]
+        [HorizontalGroup("Row02/Group01", Width = 21)]
         [HideLabel]
         [Button(ButtonSizes.Medium, Icon = SdfIconType.Plus, ButtonHeight = 21)]
         [EnableIf(nameof(IsBranchValid))]
@@ -37,10 +36,11 @@ namespace __SARV.Framework
                 branch = "";
             }
         }
-        [BoxGroup("Row02", showLabel: false)] [BoxGroup("Row02/InnerRow01", showLabel: false)] [BoxGroup("Row02/InnerRow01/InnerRow02", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
+
+        [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
         private SVConditionJoinType conditionJoinType = SVConditionJoinType.And;
 
-        [BoxGroup("Row02", showLabel: false)] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
+        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
         private List<SVBranchComponent> branches = new();
 
         [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the branches above are true", InfoMessageType.Info)]

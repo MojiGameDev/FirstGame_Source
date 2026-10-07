@@ -1,35 +1,42 @@
 ﻿using __SARV.Core.Base;
 using __SARV.Core.Extension;
 using __SARV.Framework;
+using __SARV.Variable;
 using UnityEditor;
 using UnityEngine;
 
 namespace __SARV.Editor
 {
-    public static class SVComponentCreatorEditor
+    public static class SVCreatorEditor
     {
         [MenuItem("GameObject/SARV/Create Trigger", false, 10)]
         private static void CreateSARVTrigger(MenuCommand command)
         {
-            CreateComponent<SARVTrigger>(command, "Trigger");
+            CreateSARVGameObject<SARVTrigger>(command, "Trigger");
         }
 
         [MenuItem("GameObject/SARV/Create Action", false, 10)]
         private static void CreateSARVAction(MenuCommand command)
         {
-            CreateComponent<SARVAction>(command, "Action");
+            CreateSARVGameObject<SARVAction>(command, "Action");
         }
 
         [MenuItem("GameObject/SARV/Create Condition", false, 10)]
         private static void CreateSARVCondition(MenuCommand command)
         {
-            CreateComponent<SARVCondition>(command, "Condition");
+            CreateSARVGameObject<SARVCondition>(command, "Condition");
         }
 
         [MenuItem("GameObject/SARV/Create State", false, 10)]
         private static void CreateSARVState(MenuCommand command)
         {
-            CreateComponent<SARVState>(command, "State");
+            CreateSARVGameObject<SARVState>(command, "State");
+        }
+
+        [MenuItem("GameObject/SARV/Create Scalar Variable", false, 10)]
+        private static void CreateScalarVariable(MenuCommand command)
+        {
+            CreateSARVGameObject<SARVScalarVariable>(command, "ScalarVariable");
         }
 
         [MenuItem("CONTEXT/SARV/Create Trigger", true)]
@@ -56,7 +63,13 @@ namespace __SARV.Editor
             return command.context is GameObject;
         }
 
-        private static void CreateComponent<TComponent>(MenuCommand command, string component) where TComponent : SVMonoBehaviour
+        [MenuItem("CONTEXT/SARV/Create Scalar Variable", true)]
+        private static bool ValidateCreateScalarVariable(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
+
+        private static void CreateSARVGameObject<TComponent>(MenuCommand command, string component) where TComponent : SVMonoBehaviour
         {
             var selectedObject = command.context as GameObject;
 
