@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 739362170414897036, guid: e8dcdfdab5ceb784298565dc2d4b0314, type: 3}
       propertyPath: m_Name
-      value: Indication_Focus_Open Variant
+      value: Indication_Focus_Open
       objectReference: {fileID: 0}
     - target: {fileID: 1706819556428620940, guid: e8dcdfdab5ceb784298565dc2d4b0314, type: 3}
       propertyPath: m_Pivot.x
@@ -160,30 +160,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1587111917354764104, guid: e8dcdfdab5ceb784298565dc2d4b0314, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 739362170414897036, guid: e8dcdfdab5ceb784298565dc2d4b0314, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5988429517335874068}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8dcdfdab5ceb784298565dc2d4b0314, type: 3}
---- !u!1 &8431734506569590488 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 739362170414897036, guid: e8dcdfdab5ceb784298565dc2d4b0314, type: 3}
-  m_PrefabInstance: {fileID: 9169667655450947924}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5988429517335874068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431734506569590488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2094b3483abfa294e8f875d77c46178a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AllowInScenePoolables: 1
-  poolItemName: Indication_Focus
