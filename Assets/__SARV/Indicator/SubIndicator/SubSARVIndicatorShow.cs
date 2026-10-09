@@ -27,8 +27,11 @@ namespace __SARV.Indicator.SubIndicator
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            SARVGame.Instance.Despawn(focusUIIdentifier);
-            SARVGame.Instance.Despawn(distanceUIIdentifier);
+            if (SARVGame.IsAvailable)
+            {
+                SARVGame.Instance.Despawn(focusUIIdentifier);
+                SARVGame.Instance.Despawn(distanceUIIdentifier);
+            }
         }
 
         private void HandleIndicatorMovement(Transform targetTransform)
