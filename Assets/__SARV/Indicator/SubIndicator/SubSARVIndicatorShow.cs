@@ -13,8 +13,8 @@ namespace __SARV.Indicator.SubIndicator
         protected override void Start()
         {
             base.Start();
-            _focusUI = SARVGame.Instance.SpawnInPool(focusUIIdentifier.Value, focusUIPosition.Value);
-            _distanceUI = SARVGame.Instance.SpawnInPool(distanceUIIdentifier.Value, distanceUIPosition.Value);
+            _focusUI = SARVGame.Instance.SpawnInPool(focusUIIdentifier, focusUIPosition.Value);
+            _distanceUI = SARVGame.Instance.SpawnInPool(distanceUIIdentifier, distanceUIPosition.Value);
         }
 
         protected override void LateUpdate()
@@ -27,8 +27,8 @@ namespace __SARV.Indicator.SubIndicator
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            SARVGame.Instance.Despawn(focusUIIdentifier.Value);
-            SARVGame.Instance.Despawn(distanceUIIdentifier.Value);
+            SARVGame.Instance.Despawn(focusUIIdentifier);
+            SARVGame.Instance.Despawn(distanceUIIdentifier);
         }
 
         private void HandleIndicatorMovement(Transform targetTransform)

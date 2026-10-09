@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
-using __SARV.Core.Base;
 using __SARV.Core.Component;
-using __SARV.Core.Component.Base;
 using __SARV.Core.Extension;
 using __SARV.Core.Reflection;
 using __SARV.Framework.Behavior;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework
+namespace __SARV.Core.Base
 {
-    public class SARVState : SVMonoBehaviour
+    public abstract class SVBaseState : SVMonoBehaviour
     {
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
@@ -23,13 +22,16 @@ namespace __SARV.Framework
         [BoxGroup("$" + nameof(BehaviorTitle), showLabel: false)] [BoxGroup("$" + nameof(BehaviorTitle) + "/InnerRow01", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsBehaviorComponentNull))] [OnValueChanged(nameof(OnBehaviorComponentChanged), includeChildren: true)]
         private SVBehaviorComponent behaviorComponent = new SVNullBehavior();
 
-        public SVBehaviorComponent BehaviorComponent => IsBehaviorComponentNull ? null : behaviorComponent;
+        public SVBehaviorComponent Behavior => IsBehaviorComponentNull ? null : behaviorComponent;
         public bool IsBehaviorComponentNull => behaviorComponent is SVNullBehavior or null;
         public string BehaviorTitle => $"{(IsBehaviorComponentNull ? "..." : behaviorComponent.GetType().GetTitle())}";
 
+        protected abstract List<string> GetAllBehaviorComponentPaths();
+        protected abstract Type GetBehaviorByPath(string behavior);
+
         private IEnumerable GetAllBehaviorComponents()
         {
-            var components = SVReflection.GetAllBehaviorComponentPaths();
+            var components = GetAllBehaviorComponentPaths();
             return components.Select(d => new ValueDropdownItem(d, d));
         }
 
@@ -41,7 +43,7 @@ namespace __SARV.Framework
                 return;
             }
 
-            var selectedComponent = SVReflection.GetBehaviorByPath(behavior);
+            var selectedComponent = GetBehaviorByPath(behavior);
 
             if (selectedComponent == null || selectedComponent == behaviorComponent.GetType())
             {

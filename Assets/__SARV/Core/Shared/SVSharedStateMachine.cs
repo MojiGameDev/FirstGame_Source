@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using __SARV.Core.Base;
+using __SARV.Core.Component;
 using __SARV.Framework;
 using __SARV.Framework.Argument;
 using __SARV.Identifier;
@@ -21,13 +22,13 @@ namespace __SARV.Core.Shared
         private List<string> trackStates = new();
 
         [BoxGroup("States")] [SerializeField] [ListDrawerSettings(ShowFoldout = false)] [OnValueChanged(nameof(OnBehaviorsChanged))] [PropertyOrder(int.MaxValue)]
-        private List<SARVState> states = new();
+        private List<SVBaseState> states = new();
 
-        private SARVState _currentState;
-        private SARVState _previousState;
+        private SVBaseState _currentState;
+        private SVBaseState _previousState;
         private bool _isStateChanged;
         private readonly Dictionary<Type, SARVIdentifier> _uniqueStateIdentifier = new();
-        private readonly Dictionary<SARVIdentifier, SARVState> _runtimeStates = new();
+        private readonly Dictionary<SARVIdentifier, SVBaseState> _runtimeStates = new();
 
         protected UnityEvent<string> OnEnterState;
         protected UnityEvent<string> OnExitState;
@@ -51,7 +52,7 @@ namespace __SARV.Core.Shared
                 return;
             }
 
-            _currentState.BehaviorComponent.Tick(deltaTime);
+            _currentState.Behavior.Tick(deltaTime);
         }
 
         private void HandleDefaultState()
@@ -62,11 +63,11 @@ namespace __SARV.Core.Shared
         public void ChangeStateTo(SARVIdentifier stateIdentifier)
         {
             _previousState = _currentState;
-            _previousState?.BehaviorComponent.Exit();
+            _previousState?.Behavior.Exit();
             OnExitState?.Invoke(currentStateIdentifier);
 
             _currentState = _runtimeStates[stateIdentifier];
-            _currentState?.BehaviorComponent.Enter();
+            _currentState?.Behavior.Enter();
             OnEnterState?.Invoke(stateIdentifier);
             OnChangeState?.Invoke(currentStateIdentifier, stateIdentifier);
             currentStateIdentifier = stateIdentifier;
@@ -79,7 +80,7 @@ namespace __SARV.Core.Shared
             foreach (var state in states)
             {
                 var fromArgument = SVArgument.FromArgument(character);
-                state.BehaviorComponent.SetArgument(fromArgument);
+                state.Behavior.SetArgument(fromArgument);
             }
         }
 
@@ -91,7 +92,7 @@ namespace __SARV.Core.Shared
         {
             foreach (var state in states)
             {
-                _runtimeStates.Add(state.BehaviorComponent.Identifier, state);
+                _runtimeStates.Add(state.Behavior.Identifier, state);
             }
 
             var uniqueStates = states
@@ -102,7 +103,7 @@ namespace __SARV.Core.Shared
 
             foreach (var state in uniqueStates)
             {
-                _uniqueStateIdentifier.Add(state.GetType(), state.BehaviorComponent.Identifier);
+                _uniqueStateIdentifier.Add(state.GetType(), state.Behavior.Identifier);
             }
         }
     }

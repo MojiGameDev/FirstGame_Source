@@ -34,9 +34,9 @@ namespace __SARV.Core.Reflection
                 .ToList();
         }
 
-        public static List<string> GetAllBehaviorComponentPaths()
+        public static List<string> GetAllBehaviorComponentPaths<TType>() where TType : SVBehaviorComponent
         {
-            return GetAllPropertyTypes<SVBehaviorComponent>()
+            return GetAllPropertyTypes<TType>()
                 .Select(GetMenuPath)
                 .ToList();
         }
@@ -45,7 +45,8 @@ namespace __SARV.Core.Reflection
         {
             return GetAllPropertyTypes<SVVariableValue>()
                 .Select(d => d.GetTitle())
-                .ToList(); }
+                .ToList();
+        }
 
         public static List<string> GetPropertyTitlesByType<TType>()
         {
@@ -60,9 +61,9 @@ namespace __SARV.Core.Reflection
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
 
-        public static Type GetBehaviorByPath(string path)
+        public static Type GetBehaviorByPath<TType>(string path) where TType : SVBehaviorComponent
         {
-            return GetAllPropertyTypes<SVBehaviorComponent>()
+            return GetAllPropertyTypes<TType>()
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
 

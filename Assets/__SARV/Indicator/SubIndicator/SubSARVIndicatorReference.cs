@@ -13,9 +13,9 @@ namespace __SARV.Indicator.SubIndicator
         protected SVPropertyComponent<GameObject> target = new SVGameObjectProperty();
 
         [FoldoutGroup("Reference")] [Title("FocusUIIdentifier")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        protected SVPropertyComponent<SARVIdentifier> focusUIIdentifier = new SVExternalPropertySARVIdentifier();
+        protected SARVIdentifier focusUIIdentifier;
 
         [FoldoutGroup("Reference")] [Title("DistanceUIIdentifier")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        protected SVPropertyComponent<SARVIdentifier> distanceUIIdentifier = new SVExternalPropertySARVIdentifier();
+        protected SARVIdentifier distanceUIIdentifier;
     }
 }

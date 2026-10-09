@@ -28,11 +28,17 @@ namespace __SARV.Editor
             CreateSARVGameObject<SARVCondition>(command, "Condition");
         }
 
-        [MenuItem("GameObject/SARV/Create State", false, 10)]
-        private static void CreateSARVState(MenuCommand command)
+        [MenuItem("GameObject/SARV/Create State Player", false, 10)]
+        private static void CreateSARVStatePlayer(MenuCommand command)
         {
-            CreateSARVGameObject<SARVState>(command, "State");
+            CreateSARVGameObject<SARVStatePlayer>(command, "StatePlayer");
         }
+
+        // [MenuItem("GameObject/SARV/Create State Agent", false, 10)]
+        // private static void CreateSARVStateAgent(MenuCommand command)
+        // {
+        //     CreateSARVGameObject<SARVStateAgent>(command, "StateAgent");
+        // }
 
         [MenuItem("GameObject/SARV/Create Scalar Variable", false, 10)]
         private static void CreateScalarVariable(MenuCommand command)
@@ -64,11 +70,17 @@ namespace __SARV.Editor
             return command.context is GameObject;
         }
 
-        [MenuItem("CONTEXT/SARV/Create State", true)]
-        private static bool ValidateCreateSARVState(MenuCommand command)
+        [MenuItem("CONTEXT/SARV/Create State Player", true)]
+        private static bool ValidateCreateSARVStatePlayer(MenuCommand command)
         {
             return command.context is GameObject;
         }
+
+        // [MenuItem("CONTEXT/SARV/Create State Agent", true)]
+        // private static bool ValidateCreateSARVStateAgent(MenuCommand command)
+        // {
+        //     return command.context is GameObject;
+        // }
 
         [MenuItem("CONTEXT/SARV/Create Scalar Variable", true)]
         private static bool ValidateCreateScalarVariable(MenuCommand command)

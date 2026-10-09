@@ -19,16 +19,16 @@ namespace __SARV.Framework.Instruction
     public class SVDebugInstructionLogText : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("LogLevel")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<SVLogLevel> logLevelProperty = new SVExternalPropertyLogLevel();
+        private SVLogLevel logLevel = SVLogLevel.Info;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Text")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<string> textProperty = new SVStringProperty();
+        private SVPropertyComponent<string> text = new SVStringProperty();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Sends {textProperty} to the console";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Sends {text} to the console";
 
         protected override Task ExecuteInternal(SVArgument argument)
         {
-            SVComponentUtils.DebugLog(logLevelProperty.Value, textProperty.Value);
+            SVComponentUtils.DebugLog(logLevel, text.Value);
             return OkResult;
         }
     }

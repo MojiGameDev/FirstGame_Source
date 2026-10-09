@@ -17,23 +17,23 @@ namespace __SARV.Framework.Instruction
     public class SVFrameworkInstructionRunAction : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Action")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<SARVAction> actionProperty = new SVExternalPropertySARVAction();
+        private SARVAction sarvAction;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("WaitToFinish")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<bool> waitToFinishProperty = new SVBoolPropertyManual();
+        private SVPropertyComponent<bool> waitToFinish = new SVBoolPropertyManual();
 
-        private bool IsActionPropertyNull => actionProperty == null || actionProperty.Value == null;
+        private bool IsActionPropertyNull => sarvAction == null || sarvAction == null;
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsActionPropertyNull ? "..." : actionProperty)}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsActionPropertyNull ? "..." : sarvAction)}";
 
         protected override async Task ExecuteInternal(SVArgument argument)
         {
-            if (waitToFinishProperty.Value)
+            if (waitToFinish.Value)
             {
-                await actionProperty.Value.RunAction(argument);
+                await sarvAction.RunAction(argument);
                 return;
             }
-            _ = actionProperty.Value.RunAction(argument);
+            _ = sarvAction.RunAction(argument);
         }
     }
 }

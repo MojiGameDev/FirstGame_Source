@@ -17,23 +17,23 @@ namespace __SARV.Framework.Instruction
     public class SVFrameworkInstructionRunCondition : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Condition")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<SARVCondition> conditionProperty = new SVExternalPropertySARVCondition();
+        private SARVCondition sarvCondition;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("WaitToFinish")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<bool> waitToFinishProperty = new SVBoolPropertyManual();
 
-        private bool IsConditionPropertyNull => conditionProperty == null || conditionProperty.Value == null;
+        private bool IsConditionPropertyNull => sarvCondition == null;
         
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsConditionPropertyNull ? "..." : conditionProperty)}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsConditionPropertyNull ? "..." : sarvCondition)}";
         
         protected override async Task ExecuteInternal(SVArgument argument)
         {
             if (waitToFinishProperty.Value)
             {
-                await conditionProperty.Value.RunCondition(argument);
+                await sarvCondition.RunCondition(argument);
                 return;
             }
-            _ = conditionProperty.Value.RunCondition(argument);
+            _ = sarvCondition.RunCondition(argument);
         }
     }
 }

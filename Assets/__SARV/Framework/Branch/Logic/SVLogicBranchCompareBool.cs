@@ -17,26 +17,26 @@ namespace __SARV.Framework.Branch
     public class SVLogicBranchCompareBool : SVBranchComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("LeftSide")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<bool> leftSideBoolProperty = new SVBoolProperty();
+        private SVPropertyComponent<bool> leftSideBool = new SVBoolProperty();
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Operator")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<SVEqualityOperatorType> operatorProperty = new SVExternalPropertyEqualityOperatorType();
+        private SVEqualityOperatorType operatorType = SVEqualityOperatorType.Equal;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("RightSide")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<bool> rightSideBoolProperty = new SVBoolProperty();
+        private SVPropertyComponent<bool> rightSideBool = new SVBoolProperty();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftSideBoolProperty} {(Not ? "Is not" : "Is")} {operatorProperty} to {rightSideBoolProperty}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftSideBool} {(Not ? "Is not" : "Is")} {operatorType} to {rightSideBool}";
 
         public override bool IsTrue(SVArgument argument)
         {
             var result = false;
-            switch (operatorProperty.Value)
+            switch (operatorType)
             {
                 case SVEqualityOperatorType.Equal:
-                    result = leftSideBoolProperty.Value == rightSideBoolProperty.Value;
+                    result = leftSideBool.Value == rightSideBool.Value;
                     break;
                 case SVEqualityOperatorType.NotEqual:
-                    result = leftSideBoolProperty.Value != rightSideBoolProperty.Value;
+                    result = leftSideBool.Value != rightSideBool.Value;
                     break;
             }
 
