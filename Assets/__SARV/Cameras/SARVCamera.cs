@@ -1,9 +1,10 @@
-﻿using __SARV.Cameras.SubCamera;
+﻿using System.Linq;
+using __SARV.Cameras.SubCamera;
 using __SARV.Core.Access;
 
 namespace __SARV.Cameras
 {
-    public class SARVCamera : SubSARVCameraReference
+    public class SARVCamera : SVSubSARVCameraShot
     {
         protected override void Awake()
         {

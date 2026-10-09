@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace __SARV.Cameras.SubCamera
 {
-    public abstract class SubSARVCameraReference : SARV
+    public abstract class SVSubSARVCameraReference : SARV
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
-        private Camera mainCamera;
+        protected Camera mainCamera;
 
         public Camera MainCamera => mainCamera;
     }
