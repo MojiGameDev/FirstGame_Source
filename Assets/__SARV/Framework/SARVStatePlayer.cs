@@ -13,9 +13,9 @@ namespace __SARV.Framework
             return SVReflection.GetAllBehaviorComponentPaths<SVPlayerBehavior>();
         }
 
-        protected override Type GetBehaviorByPath(string behavior)
+        protected override Type GetBehaviorComponentByPath(string behaviorName)
         {
-            return SVReflection.GetBehaviorByPath<SVPlayerBehavior>(behavior);
+            return SVReflection.GetBehaviorComponentByPath<SVPlayerBehavior>(behaviorName);
         }
     }
 }

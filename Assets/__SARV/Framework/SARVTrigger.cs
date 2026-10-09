@@ -25,59 +25,59 @@ namespace __SARV.Framework
         [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the event above is raised")]
         private string tooltip = "";
 
-        public SVSignalComponent SignalComponent => IsSignalComponentNull ? null : signalComponent;
+        public SVSignalComponent Signal => IsSignalComponentNull ? null : signalComponent;
         public bool IsSignalComponentNull => signalComponent is SVNullSignal or null;
         public string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetType().GetTitle())}";
 
         private void Awake()
         {
             signalComponent.SetHandler(d=>_ = ExecuteInstructions(d));
-            SignalComponent.HandleAwake();
+            Signal.HandleAwake();
         }
 
         private void Start()
         {
-            SignalComponent.HandleStart();
+            Signal.HandleStart();
         }
 
         private void OnEnable()
         {
-            SignalComponent.HandleOnEnable();
+            Signal.HandleOnEnable();
         }
 
         private void Update()
         {
-            SignalComponent.HandleUpdate(Time.deltaTime);
+            Signal.HandleUpdate(Time.deltaTime);
         }
 
         private void FixedUpdate()
         {
-            SignalComponent.HandleFixedUpdate(Time.fixedDeltaTime);
+            Signal.HandleFixedUpdate(Time.fixedDeltaTime);
         }
 
         private void OnDisable()
         {
-            SignalComponent.HandleOnDisable();
+            Signal.HandleOnDisable();
         }
 
         private void OnDestroy()
         {
-            SignalComponent.HandleOnDestroy();
+            Signal.HandleOnDestroy();
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            SignalComponent.HandleOnTriggerEnter(other);
+            Signal.HandleOnTriggerEnter(other);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            SignalComponent.HandleOnTriggerStay(other);
+            Signal.HandleOnTriggerStay(other);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            SignalComponent.HandleOnTriggerExit(other);
+            Signal.HandleOnTriggerExit(other);
         }
 
         private IEnumerable GetAllSignalComponents()

@@ -719,7 +719,7 @@ MonoBehaviour:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
     states:
-    - {fileID: 0}
+    - {fileID: 4721528133828972456}
   healthAttribute: {fileID: 11400000, guid: 16b3563ce89cc9247aaf9249bd2603cf, type: 2}
   staminaAttribute: {fileID: 11400000, guid: 0ec85cf0e4c9f0142bc290841add215c, type: 2}
   movementSpeed: 0
@@ -1021,6 +1021,66 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00662373, y: 0.04770509, z: 0.010513425}
     m_Extent: {x: 0.2267856, y: 0.110003166, z: 0.20392823}
   m_DirtyAABB: 0
+--- !u!1 &1374651552653652664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864190903536386724}
+  - component: {fileID: 4721528133828972456}
+  m_Layer: 0
+  m_Name: New StatePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &864190903536386724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374651552653652664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6112998586163153568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4721528133828972456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374651552653652664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c0c7e88041482d866f0617e8bed555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  behavior: FreeMovement
+  behaviorComponent:
+    rid: 4447245475530145919
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245475530145919
+      type: {class: SVPlayerBehaviorFreeMovement, ns: __SARV.Framework.Behavior, asm: Assembly-CSharp}
+      data:
+        identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
+        runSpeed: 8
+        runRotationRate: 540
+        sprintSpeed: 11
+        sprintRotationRate: 700
+        parameterMovementSpeed: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
 --- !u!1 &1377074839011925139
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,7 +5223,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 864190903536386724}
   m_Father: {fileID: 6313901982196763450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7096266175959367989

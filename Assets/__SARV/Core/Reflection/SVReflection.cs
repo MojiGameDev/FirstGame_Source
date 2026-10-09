@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using __SARV.Core.Attributes;
-using __SARV.Core.Base;
 using __SARV.Core.Component;
-using __SARV.Core.Component.Base;
 using __SARV.Core.Extension;
 using __SARV.Variable.Base;
 using Unity.VisualScripting;
@@ -15,79 +13,79 @@ namespace __SARV.Core.Reflection
     {
         public static List<string> GetAllSignalComponentPaths()
         {
-            return GetAllPropertyTypes<SVSignalComponent>()
+            return GetAllSARVTypes<SVSignalComponent>()
                 .Select(GetMenuPath)
                 .ToList();
         }
 
         public static List<string> GetAllInstructionComponentPaths()
         {
-            return GetAllPropertyTypes<SVInstructionComponent>()
+            return GetAllSARVTypes<SVInstructionComponent>()
                 .Select(GetMenuPath)
                 .ToList();
         }
 
         public static List<string> GetAllBranchComponentPaths()
         {
-            return GetAllPropertyTypes<SVBranchComponent>()
+            return GetAllSARVTypes<SVBranchComponent>()
                 .Select(GetMenuPath)
                 .ToList();
         }
 
         public static List<string> GetAllBehaviorComponentPaths<TType>() where TType : SVBehaviorComponent
         {
-            return GetAllPropertyTypes<TType>()
-                .Select(GetMenuPath)
+            return GetAllSARVTypes<TType>()
+                .Select(d => d.GetTitle())
                 .ToList();
         }
 
         public static List<string> GetVariableValueTitles()
         {
-            return GetAllPropertyTypes<SVVariableValue>()
+            return GetAllSARVTypes<SVVariableValue>()
                 .Select(d => d.GetTitle())
                 .ToList();
         }
 
         public static List<string> GetPropertyTitlesByType<TType>()
         {
-            return GetAllPropertyTypes<SVPropertyComponent<TType>>()
+            return GetAllSARVTypes<SVPropertyComponent<TType>>()
                 .Select(d => d.GetTitle())
                 .ToList();
         }
 
         public static Type GetSignalByPath(string path)
         {
-            return GetAllPropertyTypes<SVSignalComponent>()
+            return GetAllSARVTypes<SVSignalComponent>()
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
 
-        public static Type GetBehaviorByPath<TType>(string path) where TType : SVBehaviorComponent
+        public static Type GetBehaviorComponentByPath<TType>(string path) where TType : SVBehaviorComponent
         {
-            return GetAllPropertyTypes<TType>()
-                .FirstOrDefault(t => GetMenuPath(t) == path);
+            return GetAllSARVTypes<TType>()
+                .FirstOrDefault(t => t.GetTitle() == path);
         }
 
         public static Type GetInstructionByPath(string path)
         {
-            return GetAllPropertyTypes<SVInstructionComponent>()
+            return GetAllSARVTypes<SVInstructionComponent>()
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
 
         public static Type GetBranchByPath(string path)
         {
-            return GetAllPropertyTypes<SVBranchComponent>()
+            return GetAllSARVTypes<SVBranchComponent>()
                 .FirstOrDefault(t => GetMenuPath(t) == path);
         }
 
         public static Type GetPropertyTypeByTitle<TType>(string title)
         {
-            return GetAllPropertyTypes<SVPropertyComponent<TType>>()
+            return GetAllSARVTypes<SVPropertyComponent<TType>>()
                 .FirstOrDefault(d => d.GetTitle() == title);
         }
 
         public static Type GetVariableValueByTitle(string title)
         {
-            return GetAllPropertyTypes<SVVariableValue>()
+            return GetAllSARVTypes<SVVariableValue>()
                 .FirstOrDefault(d => d.GetTitle() == title);
         }
 
@@ -98,7 +96,7 @@ namespace __SARV.Core.Reflection
             return $"{category}/{title}";
         }
 
-        private static List<Type> GetAllPropertyTypes<TInheritFrom>()
+        private static List<Type> GetAllSARVTypes<TInheritFrom>()
         {
             return AppDomain.CurrentDomain
                 .GetAssemblies()
