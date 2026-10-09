@@ -1,4 +1,5 @@
-﻿using __SARV.Player.SubPlayer;
+﻿using __SARV.Core.Access;
+using __SARV.Player.SubPlayer;
 
 namespace __SARV.Player
 {
@@ -6,7 +7,7 @@ namespace __SARV.Player
     {
         protected override void Awake()
         {
-            SharedStateMachine.SetArgument(this);
+            SVAccessPlayer.Initial(this);
             base.Awake();
         }
     }

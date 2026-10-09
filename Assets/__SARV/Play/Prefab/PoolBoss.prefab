@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7079208377001585600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8862835193342723060}
+  - component: {fileID: 4259677647563271880}
+  m_Layer: 0
+  m_Name: PoolBoss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8862835193342723060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079208377001585600}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 71.952385, y: 0, z: 293.73053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4259677647563271880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079208377001585600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9002c033b7d254fa980031296a4c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolItems:
+  - prefabSource: 0
+    prefabTransform: {fileID: 1291912388837446322, guid: 87b3c8fe0648d184aaec0157a3889ee6, type: 3}
+    gameObject: {fileID: 0}
+    instancesToPreload: 3
+    isExpanded: 1
+    logMessages: 0
+    allowInstantiateMore: 0
+    enableNavMeshAgentOnSpawn: 0
+    delayNavMeshEnableByFrames: 1
+    itemHardLimit: 10
+    allowRecycle: 0
+    categoryName: Canvas
+    isTemporary: 0
+  - prefabSource: 0
+    prefabTransform: {fileID: 7561230901608502744, guid: ece9565dea68fbe42a6535cb3411cc60, type: 3}
+    gameObject: {fileID: 0}
+    instancesToPreload: 3
+    isExpanded: 1
+    logMessages: 0
+    allowInstantiateMore: 0
+    enableNavMeshAgentOnSpawn: 0
+    delayNavMeshEnableByFrames: 1
+    itemHardLimit: 10
+    allowRecycle: 0
+    categoryName: Canvas
+    isTemporary: 0
+  allowInScenePoolables: 1
+  logMessages: 0
+  useTextFilter: 0
+  textFilter: 
+  autoAddMissingPoolItems: 0
+  allowDespawningInactive: 0
+  newCategoryName: New Category
+  addToCategoryName: New Category
+  newItemPrefabSource: 0
+  framesForInit: 1
+  autoCreatePools: 1
+  _changes: 0
+  _categories:
+  - CatName: Canvas
+    IsExpanded: 1
+    IsEditing: 0
+    ProspectiveName: Canvas
+    IsTemporary: 0

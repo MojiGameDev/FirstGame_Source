@@ -7,6 +7,6 @@ namespace __SARV.Trait.Base
     public abstract class SVBaseRuntimeTrait : SVBaseTrait
     {
         [FoldoutGroup("Identifier")] [SerializeField] [PropertyOrder(int.MinValue)]
-        protected SVIdentifier identifier;
+        protected SARVIdentifier identifier;
     }
 }

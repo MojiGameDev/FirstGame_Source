@@ -15,7 +15,7 @@ namespace __SARV.Core.Shared
     public class SVSharedStateMachine : SVSerializableMonoBehaviour
     {
         [BoxGroup("Debug")] [SerializeField] [ReadOnly]
-        private SVIdentifier currentStateIdentifier;
+        private SARVIdentifier currentStateIdentifier;
 
         [BoxGroup("Debug")] [SerializeField] [ReadOnly]
         private List<string> trackStates = new();
@@ -26,8 +26,8 @@ namespace __SARV.Core.Shared
         private SARVState _currentState;
         private SARVState _previousState;
         private bool _isStateChanged;
-        private readonly Dictionary<Type, SVIdentifier> _uniqueStateIdentifier = new();
-        private readonly Dictionary<SVIdentifier, SARVState> _runtimeStates = new();
+        private readonly Dictionary<Type, SARVIdentifier> _uniqueStateIdentifier = new();
+        private readonly Dictionary<SARVIdentifier, SARVState> _runtimeStates = new();
 
         protected UnityEvent<string> OnEnterState;
         protected UnityEvent<string> OnExitState;
@@ -59,7 +59,7 @@ namespace __SARV.Core.Shared
             ChangeStateTo(_runtimeStates.First().Key);
         }
 
-        public void ChangeStateTo(SVIdentifier stateIdentifier)
+        public void ChangeStateTo(SARVIdentifier stateIdentifier)
         {
             _previousState = _currentState;
             _previousState?.BehaviorComponent.Exit();

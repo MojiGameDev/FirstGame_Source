@@ -1,4 +1,4 @@
-﻿using __SARV.Core.Base;
+﻿using __SARV.Framework;
 using Animancer;
 using ECM2;
 using Sirenix.OdinInspector;
@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace __SARV.Player.SubPlayer
 {
-    public abstract class SVSubSARVPlayerReference : SVOverrideMonoBehaviour
+    public abstract class SVSubSARVPlayerReference : SARV
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
         private Character character;

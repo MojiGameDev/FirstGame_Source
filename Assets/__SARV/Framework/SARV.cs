@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public abstract class SARV : SVMonoBehaviour
+    public abstract class SARV : SVOverrideMonoBehaviour
     {
         
     }

@@ -718,25 +718,10 @@ MonoBehaviour:
   sharedStateMachine:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
-    states: []
-  healthAttribute:
-    definition: {fileID: 0}
-    modifiers: []
-    OnChangeMaxValue:
-      m_PersistentCalls:
-        m_Calls: []
-    OnChangeCurrentValue:
-      m_PersistentCalls:
-        m_Calls: []
-  staminaAttribute:
-    definition: {fileID: 0}
-    modifiers: []
-    OnChangeMaxValue:
-      m_PersistentCalls:
-        m_Calls: []
-    OnChangeCurrentValue:
-      m_PersistentCalls:
-        m_Calls: []
+    states:
+    - {fileID: 0}
+  healthAttribute: {fileID: 11400000, guid: 16b3563ce89cc9247aaf9249bd2603cf, type: 2}
+  staminaAttribute: {fileID: 11400000, guid: 0ec85cf0e4c9f0142bc290841add215c, type: 2}
   movementSpeed: 0
   changeSpeedDuration: 0.2
   changeRotationRateDuration: 0.2
@@ -1311,6 +1296,38 @@ Transform:
   m_Children:
   - {fileID: 2686093118548578772}
   m_Father: {fileID: 5964301867289542776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1777376648023907569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2555369023292050899}
+  m_Layer: 7
+  m_Name: Variable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2555369023292050899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777376648023907569}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 178382823384422706}
+  m_Father: {fileID: 6313901982196763450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1903562788986387195
 GameObject:
@@ -3021,6 +3038,7 @@ Transform:
   m_Children:
   - {fileID: 1543230256277520103}
   - {fileID: 6112998586163153568}
+  - {fileID: 2555369023292050899}
   m_Father: {fileID: 5916954829686717409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4203464306555918504
@@ -3203,6 +3221,83 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0010376126, y: 0.65006584, z: 0.07210189}
     m_Extent: {x: 0.07947315, y: 0.06514567, z: 0.067598134}
   m_DirtyAABB: 0
+--- !u!1 &4300689423255461934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 178382823384422706}
+  - component: {fileID: 6251483749153135423}
+  m_Layer: 0
+  m_Name: New ScalarVariable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &178382823384422706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300689423255461934}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2555369023292050899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6251483749153135423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300689423255461934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8541990fae29b0c4f90e8e22a28f4d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  variables:
+  - rid: 4447245432690573427
+  - rid: 4447245432690573435
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245432690573427
+      type: {class: SVVariable, ns: __SARV.Variable.Entity, asm: Assembly-CSharp}
+      data:
+        identifier: {fileID: 0}
+        title: dddsad
+        canSave: 0
+        valueType: Bool
+        variableValue:
+          rid: 4447245432690573434
+    - rid: 4447245432690573434
+      type: {class: SVVariableValueBool, ns: __SARV.Variable.Value, asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 4447245432690573435
+      type: {class: SVVariable, ns: __SARV.Variable.Entity, asm: Assembly-CSharp}
+      data:
+        identifier: {fileID: 0}
+        title: nnbvn
+        canSave: 0
+        valueType: String
+        variableValue:
+          rid: 4447245432690573441
+    - rid: 4447245432690573441
+      type: {class: SVVariableValueString, ns: __SARV.Variable.Value, asm: Assembly-CSharp}
+      data:
+        value: 
 --- !u!1 &4397715676547438527
 GameObject:
   m_ObjectHideFlags: 0

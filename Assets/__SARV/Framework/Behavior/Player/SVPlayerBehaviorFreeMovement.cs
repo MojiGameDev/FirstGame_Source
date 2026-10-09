@@ -1,9 +1,11 @@
 ﻿using System;
+using __SARV.Core.Access;
 using __SARV.Core.Attributes;
 using __SARV.Core.Component;
 using __SARV.Core.Constant;
 using __SARV.Core.Enum;
 using __SARV.Core.Extension;
+using __SARV.Framework.Behavior.Base;
 using __SARV.Identifier;
 using Animancer;
 using Sirenix.OdinInspector;
@@ -15,7 +17,7 @@ namespace __SARV.Framework.Behavior
     [SVCategory(SVConstantCategory.Behavior.PLAYER)]
     [SVDescription("Allows the player to freely move through the game world")]
     [Serializable]
-    public class SVPlayerBehaviorFreeMovement : SVBehaviorComponent
+    public class SVPlayerBehaviorFreeMovement : SVPlayerBehavior
     {
         [BoxGroup("Speed")] [SerializeField] [PropertyRange(1, 10)]
         private float runSpeed = 8f;
@@ -28,7 +30,7 @@ namespace __SARV.Framework.Behavior
         [BoxGroup("Speed")] [SerializeField] private float sprintRotationRate = 700f;
 
         [BoxGroup("Parameter")] [SerializeField] [Required]
-        private SVIdentifier parameterMovementSpeed;
+        private SARVIdentifier parameterMovementSpeed;
 
         private bool _isMovementSpeedParameterChanged;
 
@@ -42,24 +44,24 @@ namespace __SARV.Framework.Behavior
         public override void Enter()
         {
             _smoothedFloatParameterMovementSpeed = new SmoothedFloatParameter(
-                Argument.SARVPlayer.AnimancerComponent,
-                Argument.SARVPlayer.SharedAnimancer.RuntimeAlias[parameterMovementSpeed],
+                Player.AnimancerComponent,
+                Player.SharedAnimancer.RuntimeAlias[parameterMovementSpeed],
                 PARAMETER_MOVEMENT_SPEED_SMOOTH_TIME);
-            Argument.SARVPlayer.SharedAnimancer.Play(Identifier);
-            Argument.SARVPlayer.UpdateSpeed(runSpeed, runRotationRate);
+            Player.SharedAnimancer.Play(Identifier);
+            Player.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
         }
 
         public override void Tick(float deltaTime)
         {
-            Argument.SARVPlayer.SetMovementDirection(Argument.SARVPlayer.InputMovementDirection);
+            Player.SetMovementDirection(Player.InputMovementDirection);
             HandleMovementSpeedParameter();
             HandleCharacterSpeed();
         }
 
         public override void Exit()
         {
-            Argument.SARVPlayer.UpdateSpeed(runSpeed, runRotationRate);
+            Player.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.Dispose();
         }
 
@@ -70,36 +72,36 @@ namespace __SARV.Framework.Behavior
                 return;
             }
 
-            if (Argument.SARVPlayer.MovementSpeed == SVCharacterMovementSpeed.Sprint)
+            if (Player.MovementSpeed == SVCharacterMovementSpeed.Sprint)
             {
-                Argument.SARVPlayer.UpdateSpeed(sprintSpeed, sprintRotationRate);
+                Player.UpdateSpeed(sprintSpeed, sprintRotationRate);
             }
             else
             {
-                Argument.SARVPlayer.UpdateSpeed(runSpeed, runRotationRate);
+                Player.UpdateSpeed(runSpeed, runRotationRate);
             }
         }
 
         private void HandleMovementSpeedParameter()
         {
             SVCharacterMovementSpeed newMovementSpeed;
-            if (Argument.SARVPlayer.InputMovementDirection.HasValue())
+            if (Player.InputMovementDirection.HasValue())
             {
-                newMovementSpeed = Argument.SARVPlayer.InputSprint ? SVCharacterMovementSpeed.Sprint : SVCharacterMovementSpeed.Run;
+                newMovementSpeed = Player.InputSprint ? SVCharacterMovementSpeed.Sprint : SVCharacterMovementSpeed.Run;
             }
             else
             {
                 newMovementSpeed = SVCharacterMovementSpeed.Idle;
             }
 
-            if (Argument.SARVPlayer.MovementSpeed == newMovementSpeed)
+            if (Player.MovementSpeed == newMovementSpeed)
             {
                 _isMovementSpeedParameterChanged = false;
                 return;
             }
 
             _isMovementSpeedParameterChanged = true;
-            Argument.SARVPlayer.SetMovementSpeed(newMovementSpeed);
+            Player.SetMovementSpeed(newMovementSpeed);
 
             _smoothedFloatParameterMovementSpeed.TargetValue = GetMovementSpeed();
         }
@@ -107,7 +109,7 @@ namespace __SARV.Framework.Behavior
         private int GetMovementSpeed()
         {
             var movementSpeed = 0;
-            switch (Argument.SARVPlayer.MovementSpeed)
+            switch (Player.MovementSpeed)
             {
                 case SVCharacterMovementSpeed.Idle:
                     movementSpeed = PARAMETER_MOVEMENT_SPEED_IDLE;

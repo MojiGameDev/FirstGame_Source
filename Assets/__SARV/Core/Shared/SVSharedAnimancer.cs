@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using __SARV.Core.Base;
-using __SARV.Core.Shared.Entity;
+using __SARV.Core.Wrapper;
 using __SARV.Identifier;
 using Animancer;
 using Sirenix.OdinInspector;
@@ -13,13 +13,13 @@ namespace __SARV.Core.Shared
     public class SVSharedAnimancer : SVSerializableMonoBehaviour
     {
         [SerializeField] [TableList]
-        private List<SVAnimancerIdentifier> wrappers = new();
+        private List<SVWrapperAnimancerIdentifier> wrappers = new();
 
         private AnimancerState _currentState;
         private AnimancerComponent _animancer;
 
         public AnimancerState CurrentState => _currentState;
-        public readonly Dictionary<SVIdentifier, StringAsset> RuntimeAlias = new();
+        public readonly Dictionary<SARVIdentifier, StringAsset> RuntimeAlias = new();
 
         public override void HandleAwake()
         {
@@ -31,7 +31,7 @@ namespace __SARV.Core.Shared
             _animancer = animancer;
         }
 
-        public void Play(SVIdentifier identifier, Action onEnd = null)
+        public void Play(SARVIdentifier identifier, Action onEnd = null)
         {
             var alias = RuntimeAlias[identifier];
             _currentState = _animancer.TryPlay(alias);

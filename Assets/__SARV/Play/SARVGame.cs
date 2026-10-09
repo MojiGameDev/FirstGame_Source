@@ -3,7 +3,7 @@ using Rewired;
 
 namespace __SARV.Play
 {
-    public class SARVGame : SVSubSARVGameInput
+    public class SARVGame : SVSubSARVGamePool
     {
         private const int PLAYER_ID = 0;
 

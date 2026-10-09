@@ -23,6 +23,9 @@
             public const string EXTERNAL = "External";
             public const string STRING = "String";
             public const string BOOL = "Bool";
+            public const string VECTOR3 = "Vector3";
+            public const string GAME_OBJECT = "GameObject";
+            public const string FLOAT = "Float";
         }
 
         public static class Behavior

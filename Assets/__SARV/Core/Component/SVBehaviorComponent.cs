@@ -1,5 +1,4 @@
 ﻿using System;
-using __SARV.Core.Base;
 using __SARV.Core.Component.Base;
 using __SARV.Framework.Argument;
 using __SARV.Identifier;
@@ -12,9 +11,9 @@ namespace __SARV.Core.Component
     public class SVBehaviorComponent : SVComponent
     {
         [BoxGroup("Identifier")] [SerializeField] [HideLabel]
-        private SVIdentifier identifier;
+        private SARVIdentifier identifier;
         
-        public SVIdentifier Identifier => identifier;
+        public SARVIdentifier Identifier => identifier;
         
         protected SVArgument Argument;
 

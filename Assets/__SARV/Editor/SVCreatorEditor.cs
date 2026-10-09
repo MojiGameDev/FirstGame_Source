@@ -1,6 +1,7 @@
 ﻿using __SARV.Core.Base;
 using __SARV.Core.Extension;
 using __SARV.Framework;
+using __SARV.Indicator;
 using __SARV.Variable;
 using UnityEditor;
 using UnityEngine;
@@ -39,6 +40,12 @@ namespace __SARV.Editor
             CreateSARVGameObject<SARVScalarVariable>(command, "ScalarVariable");
         }
 
+        [MenuItem("GameObject/SARV/Create Indicator", false, 10)]
+        private static void CreateIndicator(MenuCommand command)
+        {
+            CreateSARVGameObject<SARVIndicator>(command, "Indicator");
+        }
+
         [MenuItem("CONTEXT/SARV/Create Trigger", true)]
         private static bool ValidateCreateSARVTrigger(MenuCommand command)
         {
@@ -65,6 +72,12 @@ namespace __SARV.Editor
 
         [MenuItem("CONTEXT/SARV/Create Scalar Variable", true)]
         private static bool ValidateCreateScalarVariable(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
+
+        [MenuItem("CONTEXT/SARV/Create Indicator", true)]
+        private static bool ValidateCreateIndicator(MenuCommand command)
         {
             return command.context is GameObject;
         }

@@ -17,7 +17,7 @@ namespace __SARV.Editor
             // Close all current scenes first
             CloseAllScenes();
 
-            EditorSceneManager.OpenScene($"{PLAY_SCENE}World.unity", OpenSceneMode.Single);
+            EditorSceneManager.OpenScene($"{PLAY_SCENE}Game.unity", OpenSceneMode.Single);
             EditorSceneManager.OpenScene($"{PLAY_SCENE}Controller.unity", OpenSceneMode.Additive);
             EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Gameplay.unity", OpenSceneMode.Additive);
         }
