@@ -1,6 +1,8 @@
-﻿namespace __SARV.Dialogue
+﻿using __SARV.Dialogue.SubDialogue;
+
+namespace __SARV.Dialogue
 {
-    public class SARVDialogue
+    public class SARVDialogue : SVSubDialogueNode
     {
         
     }
