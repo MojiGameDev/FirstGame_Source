@@ -5,6 +5,7 @@
         public static class Signal
         {
             public const string LIFECYCLE = "Lifecycle";
+            public const string PHYSICS = "Physics";
         }
 
         public static class Instruction

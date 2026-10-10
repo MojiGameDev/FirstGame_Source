@@ -14,7 +14,7 @@ namespace __SARV.Framework.Property
     {
         public override string ToString()
         {
-            return Value.ToString();
+            return propertyComponent.ToString();
         }
     }
 }
