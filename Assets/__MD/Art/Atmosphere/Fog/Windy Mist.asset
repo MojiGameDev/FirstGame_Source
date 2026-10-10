@@ -23,15 +23,15 @@ MonoBehaviour:
   constantDensity: 0
   noiseTexture: {fileID: 2800000, guid: 9c79340e1a1054275ba04070a27de306, type: 3}
   noiseTextureOptimizedSize: 256
-  noiseStrength: 0.5
-  noiseScale: 25
+  noiseStrength: 0.19
+  noiseScale: 50
   noiseFinalMultiplier: 0.3
   useDetailNoise: 1
   detailTexture: {fileID: 11700000, guid: 950add8d241c6479bbab1f10e1035d60, type: 2}
   detailScale: 0.5
   detailStrength: 0.5
   detailOffset: -0.5
-  density: 0.25
+  density: 0.4
   shape: 0
   scaleNoiseWithHeight: 0
   border: 0.061
@@ -50,7 +50,7 @@ MonoBehaviour:
   terrainFogHeight: 25
   terrainFogMinAltitude: 0
   terrainFogMaxAltitude: 150
-  albedo: {r: 0.2784314, g: 0.39215687, b: 0.5764706, a: 0.85}
+  albedo: {r: 0.3764685, g: 0.44880414, b: 0.5660378, a: 0.787}
   enableDepthGradient: 0
   depthGradient:
     serializedVersion: 2
@@ -120,9 +120,9 @@ MonoBehaviour:
   specularThreshold: 0.6
   specularIntensity: 0.1
   turbulence: 0
-  windDirection: {x: 0.006, y: 0, z: -0.006}
+  windDirection: {x: 0.002, y: 0, z: -0.002}
   useCustomDetailNoiseWindDirection: 1
-  detailNoiseWindDirection: {x: 0.02, y: 0.002, z: 0}
+  detailNoiseWindDirection: {x: 0.01, y: 0.001, z: 0}
   dayNightCycle: 0
   sunDirection: {x: 0, y: 0, z: 0}
   sunColor: {r: 1, g: 1, b: 1, a: 1}
