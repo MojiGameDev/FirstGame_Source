@@ -493,32 +493,20 @@ MonoBehaviour:
       data:
         type: 10
         state: 10
-        text: 
-        nodes:
-        - rid: 4447245496261017750
-        - rid: 4447245496261017751
-        - rid: 4447245496261017752
-    - rid: 4447245496261017750
-      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
-      data:
-        type: 10
-        state: 10
+        advanceMode: 10
+        delay:
+          rid: 4447245496261017756
         text: 
         nodes: []
-    - rid: 4447245496261017751
-      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
+    - rid: 4447245496261017756
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
-        type: 10
-        state: 10
-        text: 
-        nodes: []
-    - rid: 4447245496261017752
-      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
-      data:
-        type: 10
-        state: 10
-        text: 
-        nodes: []
+        property: 
+        propertyComponent:
+          rid: 4447245496261017760
+    - rid: 4447245496261017760
+      type: {class: 'SVNullProperty`1[[System.Single, mscorlib]]', ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0
