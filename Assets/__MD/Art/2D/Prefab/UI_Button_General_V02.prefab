@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
-    m_HighlightedColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
-    m_PressedColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.5681737, b: 0.19090424, a: 1}
+    m_PressedColor: {r: 0.7372549, g: 0.5686275, b: 0.19607843, a: 1}
     m_SelectedColor: {r: 0.8392157, g: 0.6509804, b: 0.22745098, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -104,107 +104,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  betterTransitions:
-  - mode: 1
-    stateNames:
-    - Normal
-    - Highlighted
-    - Pressed
-    - Selected
-    - Disabled
-    colorTransitions:
-      target: {fileID: 8936991771859169710}
-      colorMultiplier: 1
-      fadeDuration: 0.1
-      affectedColor: 0
-      states:
-      - Name: Normal
-        StateObject: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
-      - Name: Highlighted
-        StateObject: {r: 0, g: 0, b: 0, a: 1}
-      - Name: Pressed
-        StateObject: {r: 0, g: 0, b: 0, a: 1}
-      - Name: Selected
-        StateObject: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
-      - Name: Disabled
-        StateObject: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    color32Transitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-    spriteSwapTransitions:
-      target: {fileID: 0}
-      states: []
-    animationTransitions:
-      target: {fileID: 0}
-      states: []
-    activenessTransitions:
-      target: {fileID: 0}
-      states: []
-    alphaTransitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-    materialPropertyTransitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-      propertyIndex: 0
-    locationAnimationTransitions:
-      target: {fileID: 0}
-      states: []
-    customTransitions:
-      states: []
-  - mode: 1
-    stateNames:
-    - Normal
-    - Highlighted
-    - Pressed
-    - Selected
-    - Disabled
-    colorTransitions:
-      target: {fileID: 5641813897550389413}
-      colorMultiplier: 1
-      fadeDuration: 0.1
-      affectedColor: 0
-      states:
-      - Name: Normal
-        StateObject: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
-      - Name: Highlighted
-        StateObject: {r: 0, g: 0, b: 0, a: 1}
-      - Name: Pressed
-        StateObject: {r: 0, g: 0, b: 0, a: 1}
-      - Name: Selected
-        StateObject: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
-      - Name: Disabled
-        StateObject: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    color32Transitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-    spriteSwapTransitions:
-      target: {fileID: 0}
-      states: []
-    animationTransitions:
-      target: {fileID: 0}
-      states: []
-    activenessTransitions:
-      target: {fileID: 0}
-      states: []
-    alphaTransitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-    materialPropertyTransitions:
-      target: {fileID: 0}
-      fadeDuration: 0
-      states: []
-      propertyIndex: 0
-    locationAnimationTransitions:
-      target: {fileID: 0}
-      states: []
-    customTransitions:
-      states: []
+  betterTransitions: []
 --- !u!1 &183417143233824926
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -700,7 +600,7 @@ MonoBehaviour:
   fallbackSpriteSettings:
     Sprite: {fileID: 21300000, guid: e3751614a47fd426c9bd74dba8c47971, type: 3}
     ColorMode: 0
-    PrimaryColor: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+    PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 

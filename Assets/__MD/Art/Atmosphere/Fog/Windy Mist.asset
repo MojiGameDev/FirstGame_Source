@@ -23,25 +23,25 @@ MonoBehaviour:
   constantDensity: 0
   noiseTexture: {fileID: 2800000, guid: 9c79340e1a1054275ba04070a27de306, type: 3}
   noiseTextureOptimizedSize: 256
-  noiseStrength: 0.19
+  noiseStrength: 0.15
   noiseScale: 50
   noiseFinalMultiplier: 0.3
   useDetailNoise: 1
   detailTexture: {fileID: 11700000, guid: 950add8d241c6479bbab1f10e1035d60, type: 2}
   detailScale: 0.5
-  detailStrength: 0.5
+  detailStrength: 0.3
   detailOffset: -0.5
-  density: 0.4
+  density: 0.22
   shape: 0
   scaleNoiseWithHeight: 0
-  border: 0.061
+  border: 0.1
   customHeight: 1
   height: 20
   verticalOffset: 0
   distance: 0
   distanceFallOff: 1
   maxDistance: 500
-  maxDistanceFallOff: 0
+  maxDistanceFallOff: 0.15
   terrainFit: 0
   terrainFitResolution: 128
   terrainLayerMask:
@@ -50,7 +50,7 @@ MonoBehaviour:
   terrainFogHeight: 25
   terrainFogMinAltitude: 0
   terrainFogMaxAltitude: 150
-  albedo: {r: 0.3764685, g: 0.44880414, b: 0.5660378, a: 0.787}
+  albedo: {r: 0.39215687, g: 0.47058824, b: 0.5803922, a: 0.7}
   enableDepthGradient: 0
   depthGradient:
     serializedVersion: 2
@@ -114,12 +114,12 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  brightness: 1.4
-  deepObscurance: 1
+  brightness: 1.15
+  deepObscurance: 0.65
   specularColor: {r: 1, g: 1, b: 0.8, a: 1}
-  specularThreshold: 0.6
-  specularIntensity: 0.1
-  turbulence: 0
+  specularThreshold: 0.7
+  specularIntensity: 0.08
+  turbulence: 0.05
   windDirection: {x: 0.002, y: 0, z: -0.002}
   useCustomDetailNoiseWindDirection: 1
   detailNoiseWindDirection: {x: 0.01, y: 0.001, z: 0}
@@ -127,11 +127,11 @@ MonoBehaviour:
   sunDirection: {x: 0, y: 0, z: 0}
   sunColor: {r: 1, g: 1, b: 1, a: 1}
   sunIntensity: 1
-  ambientLightMultiplier: 0
+  ambientLightMultiplier: 0.05
   lightDiffusionModel: 0
   lightDiffusionPower: 32
-  lightDiffusionIntensity: 0.4
-  lightDiffusionNearDepthAtten: 0
+  lightDiffusionIntensity: 0.3
+  lightDiffusionNearDepthAtten: 0.15
   receiveShadows: 1
   shadowIntensity: 0.5
   shadowCancellation: 0
