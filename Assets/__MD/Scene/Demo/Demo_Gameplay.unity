@@ -243,6 +243,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 29914754}
+  - {fileID: 410139902}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -88.214, z: 0}
 --- !u!114 &35189043
@@ -438,6 +439,86 @@ MonoBehaviour:
     bakeMode: 20
     bakeTexture: 256
     bakeMaterial: {fileID: 0}
+--- !u!1 &410139901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410139902}
+  - component: {fileID: 410139903}
+  m_Layer: 0
+  m_Name: New Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &410139902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410139901}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 35189042}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &410139903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410139901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2896ebe1d9714edc8d9b9cb563ff14bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 4447245496261017749
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245496261017749
+      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
+      data:
+        type: 10
+        state: 10
+        text: 
+        nodes:
+        - rid: 4447245496261017750
+        - rid: 4447245496261017751
+        - rid: 4447245496261017752
+    - rid: 4447245496261017750
+      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
+      data:
+        type: 10
+        state: 10
+        text: 
+        nodes: []
+    - rid: 4447245496261017751
+      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
+      data:
+        type: 10
+        state: 10
+        text: 
+        nodes: []
+    - rid: 4447245496261017752
+      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
+      data:
+        type: 10
+        state: 10
+        text: 
+        nodes: []
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0

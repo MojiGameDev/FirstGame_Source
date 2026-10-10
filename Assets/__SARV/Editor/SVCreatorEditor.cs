@@ -1,5 +1,6 @@
 ﻿using __SARV.Core.Base;
 using __SARV.Core.Extension;
+using __SARV.Dialogue;
 using __SARV.Framework;
 using __SARV.Indicator;
 using __SARV.Variable;
@@ -40,14 +41,20 @@ namespace __SARV.Editor
         //     CreateSARVGameObject<SARVStateAgent>(command, "StateAgent");
         // }
 
+        [MenuItem("GameObject/SARV/Create Dialogue", false, 10)]
+        private static void CreateSARVDialogue(MenuCommand command)
+        {
+            CreateSARVGameObject<SARVDialogue>(command, "Dialogue");
+        }
+
         [MenuItem("GameObject/SARV/Create Scalar Variable", false, 10)]
-        private static void CreateScalarVariable(MenuCommand command)
+        private static void CreateSARVScalarVariable(MenuCommand command)
         {
             CreateSARVGameObject<SARVScalarVariable>(command, "ScalarVariable");
         }
 
         [MenuItem("GameObject/SARV/Create Indicator", false, 10)]
-        private static void CreateIndicator(MenuCommand command)
+        private static void CreateSARVIndicator(MenuCommand command)
         {
             CreateSARVGameObject<SARVIndicator>(command, "Indicator");
         }
@@ -76,20 +83,26 @@ namespace __SARV.Editor
             return command.context is GameObject;
         }
 
-        // [MenuItem("CONTEXT/SARV/Create State Agent", true)]
-        // private static bool ValidateCreateSARVStateAgent(MenuCommand command)
-        // {
-        //     return command.context is GameObject;
-        // }
+        [MenuItem("CONTEXT/SARV/Create State Agent", true)]
+        private static bool ValidateCreateSARVStateAgent(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
 
         [MenuItem("CONTEXT/SARV/Create Scalar Variable", true)]
-        private static bool ValidateCreateScalarVariable(MenuCommand command)
+        private static bool ValidateCreateSARVScalarVariable(MenuCommand command)
         {
             return command.context is GameObject;
         }
 
         [MenuItem("CONTEXT/SARV/Create Indicator", true)]
-        private static bool ValidateCreateIndicator(MenuCommand command)
+        private static bool ValidateCreateSARVIndicator(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
+
+        [MenuItem("CONTEXT/SARV/Create Dialogue", true)]
+        private static bool ValidateCreateSARVDialogue(MenuCommand command)
         {
             return command.context is GameObject;
         }
