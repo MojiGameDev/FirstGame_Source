@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.011764706, g: 0.011764706, b: 0.011764706, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.06
@@ -63061,110 +63061,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068877002681856876, guid: 11d1fe852fe6cdb4cb2397bee52b2ba7, type: 3}
   m_PrefabInstance: {fileID: 222229818}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &222504597
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - TVE_ELEMENT_POS
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    ElementType: Atmo
-  disabledShaderPasses:
-  - VolumePass
-  - VolumePass1
-  - VolumePass2
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _ElementMaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainNormalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AdditionalValue1: 1
-    - _AdditionalValue2: 1
-    - _AdditionalValue3: 1
-    - _AdditionalValue4: 1
-    - _BoundsCategory: 1
-    - _BoundsEnd: 0
-    - _ElementCategory: 1
-    - _ElementEnd: 0
-    - _ElementIntensity: 0.3
-    - _ElementLayerMask: 1
-    - _ElementLayerMessage: 0
-    - _ElementLayerWarning: 0
-    - _ElementMaskCoordMode: 0
-    - _ElementMaskMode: 0
-    - _ElementMaskValue: 0
-    - _ElementMessage: 0
-    - _ElementMode: 0
-    - _ElementPosMaxValue: 0
-    - _ElementPosMinValue: 0
-    - _ElementPosValue: 1
-    - _ElementProjValue: 0
-    - _ElementRaycastMode: 0
-    - _ElementUVsMode: 0
-    - _ElementVolumeFadeMode: 0
-    - _ElementVolumeFadeValue: 0.75
-    - _IsElementShader: 1
-    - _IsIdentifier: -60
-    - _IsVersion: 2030
-    - _MainValue: 1
-    - _MaskingCategory: 1
-    - _MaskingEnd: 0
-    - _MaskingModelInfo: 0
-    - _MaskingTerrainInfo: 0
-    - _RaycastCategory: 1
-    - _RaycastDistanceCheckValue: 20
-    - _RaycastDistanceMaxValue: 2
-    - _RaycastDistanceMinValue: 0
-    - _RaycastEnd: 0
-    - _RaycastLayerMask: 1
-    - _RenderCategory: 1
-    - _RenderEnd: 0
-    - _SpaceTexture: 0
-    - _SpeedTresholdValue: 10
-    - _TerrainInputMode: 1
-    m_Colors:
-    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
-    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
-    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
-    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &222606266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93072,110 +92968,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068877002681856876, guid: 11d1fe852fe6cdb4cb2397bee52b2ba7, type: 3}
   m_PrefabInstance: {fileID: 332618709}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &332931195
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - TVE_ELEMENT_POS
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    ElementType: Atmo
-  disabledShaderPasses:
-  - VolumePass
-  - VolumePass1
-  - VolumePass2
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _ElementMaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainNormalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AdditionalValue1: 1
-    - _AdditionalValue2: 1
-    - _AdditionalValue3: 1
-    - _AdditionalValue4: 1
-    - _BoundsCategory: 1
-    - _BoundsEnd: 0
-    - _ElementCategory: 1
-    - _ElementEnd: 0
-    - _ElementIntensity: 0.3
-    - _ElementLayerMask: 1
-    - _ElementLayerMessage: 0
-    - _ElementLayerWarning: 0
-    - _ElementMaskCoordMode: 0
-    - _ElementMaskMode: 0
-    - _ElementMaskValue: 0
-    - _ElementMessage: 0
-    - _ElementMode: 0
-    - _ElementPosMaxValue: 0
-    - _ElementPosMinValue: 0
-    - _ElementPosValue: 1
-    - _ElementProjValue: 0
-    - _ElementRaycastMode: 0
-    - _ElementUVsMode: 0
-    - _ElementVolumeFadeMode: 0
-    - _ElementVolumeFadeValue: 0.75
-    - _IsElementShader: 1
-    - _IsIdentifier: -60
-    - _IsVersion: 2030
-    - _MainValue: 1
-    - _MaskingCategory: 1
-    - _MaskingEnd: 0
-    - _MaskingModelInfo: 0
-    - _MaskingTerrainInfo: 0
-    - _RaycastCategory: 1
-    - _RaycastDistanceCheckValue: 20
-    - _RaycastDistanceMaxValue: 2
-    - _RaycastDistanceMinValue: 0
-    - _RaycastEnd: 0
-    - _RaycastLayerMask: 1
-    - _RenderCategory: 1
-    - _RenderEnd: 0
-    - _SpaceTexture: 0
-    - _SpeedTresholdValue: 10
-    - _TerrainInputMode: 1
-    m_Colors:
-    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
-    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
-    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
-    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &332958347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121925,7 +121717,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1405459373}
+  - {fileID: 678963297}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147367,6 +147159,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068877002681856876, guid: 11d1fe852fe6cdb4cb2397bee52b2ba7, type: 3}
   m_PrefabInstance: {fileID: 531996882}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &532720125
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Element
+  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - TVE_ELEMENT_POS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    ElementType: Atmo
+  disabledShaderPasses:
+  - VolumePass
+  - VolumePass1
+  - VolumePass2
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ElementMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalValue1: 1
+    - _AdditionalValue2: 1
+    - _AdditionalValue3: 1
+    - _AdditionalValue4: 1
+    - _BoundsCategory: 1
+    - _BoundsEnd: 0
+    - _ElementCategory: 1
+    - _ElementEnd: 0
+    - _ElementIntensity: 0.3
+    - _ElementLayerMask: 1
+    - _ElementLayerMessage: 0
+    - _ElementLayerWarning: 0
+    - _ElementMaskCoordMode: 0
+    - _ElementMaskMode: 0
+    - _ElementMaskValue: 0
+    - _ElementMessage: 0
+    - _ElementMode: 0
+    - _ElementPosMaxValue: 0
+    - _ElementPosMinValue: 0
+    - _ElementPosValue: 1
+    - _ElementProjValue: 0
+    - _ElementRaycastMode: 0
+    - _ElementUVsMode: 0
+    - _ElementVolumeFadeMode: 0
+    - _ElementVolumeFadeValue: 0.75
+    - _IsElementShader: 1
+    - _IsIdentifier: -60
+    - _IsVersion: 2030
+    - _MainValue: 1
+    - _MaskingCategory: 1
+    - _MaskingEnd: 0
+    - _MaskingModelInfo: 0
+    - _MaskingTerrainInfo: 0
+    - _RaycastCategory: 1
+    - _RaycastDistanceCheckValue: 20
+    - _RaycastDistanceMaxValue: 2
+    - _RaycastDistanceMinValue: 0
+    - _RaycastEnd: 0
+    - _RaycastLayerMask: 1
+    - _RenderCategory: 1
+    - _RenderEnd: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
+    - _TerrainInputMode: 1
+    m_Colors:
+    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
+    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
+    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &532795886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172505,7 +172401,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 653432850}
+  - {fileID: 1954361608}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -184877,110 +184773,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1797829201767713789, guid: 53b1962f9c02e417d92057ef4a34003e, type: 3}
   m_PrefabInstance: {fileID: 653418119}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &653432850
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - TVE_ELEMENT_POS
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    ElementType: Atmo
-  disabledShaderPasses:
-  - VolumePass
-  - VolumePass1
-  - VolumePass2
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _ElementMaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainNormalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AdditionalValue1: 1
-    - _AdditionalValue2: 1
-    - _AdditionalValue3: 1
-    - _AdditionalValue4: 1
-    - _BoundsCategory: 1
-    - _BoundsEnd: 0
-    - _ElementCategory: 1
-    - _ElementEnd: 0
-    - _ElementIntensity: 0.3
-    - _ElementLayerMask: 1
-    - _ElementLayerMessage: 0
-    - _ElementLayerWarning: 0
-    - _ElementMaskCoordMode: 0
-    - _ElementMaskMode: 0
-    - _ElementMaskValue: 0
-    - _ElementMessage: 0
-    - _ElementMode: 0
-    - _ElementPosMaxValue: 0
-    - _ElementPosMinValue: 0
-    - _ElementPosValue: 1
-    - _ElementProjValue: 0
-    - _ElementRaycastMode: 0
-    - _ElementUVsMode: 0
-    - _ElementVolumeFadeMode: 0
-    - _ElementVolumeFadeValue: 0.75
-    - _IsElementShader: 1
-    - _IsIdentifier: -60
-    - _IsVersion: 2030
-    - _MainValue: 1
-    - _MaskingCategory: 1
-    - _MaskingEnd: 0
-    - _MaskingModelInfo: 0
-    - _MaskingTerrainInfo: 0
-    - _RaycastCategory: 1
-    - _RaycastDistanceCheckValue: 20
-    - _RaycastDistanceMaxValue: 2
-    - _RaycastDistanceMinValue: 0
-    - _RaycastEnd: 0
-    - _RaycastLayerMask: 1
-    - _RenderCategory: 1
-    - _RenderEnd: 0
-    - _SpaceTexture: 0
-    - _SpeedTresholdValue: 10
-    - _TerrainInputMode: 1
-    m_Colors:
-    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
-    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
-    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
-    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &653592055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192090,6 +191882,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7370835621462077047, guid: ad7fd13d3130f408e85acf43f626464a, type: 3}
   m_PrefabInstance: {fileID: 678920537}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &678963297
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Element
+  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - TVE_ELEMENT_POS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    ElementType: Atmo
+  disabledShaderPasses:
+  - VolumePass
+  - VolumePass1
+  - VolumePass2
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ElementMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalValue1: 1
+    - _AdditionalValue2: 1
+    - _AdditionalValue3: 1
+    - _AdditionalValue4: 1
+    - _BoundsCategory: 1
+    - _BoundsEnd: 0
+    - _ElementCategory: 1
+    - _ElementEnd: 0
+    - _ElementIntensity: 0.3
+    - _ElementLayerMask: 1
+    - _ElementLayerMessage: 0
+    - _ElementLayerWarning: 0
+    - _ElementMaskCoordMode: 0
+    - _ElementMaskMode: 0
+    - _ElementMaskValue: 0
+    - _ElementMessage: 0
+    - _ElementMode: 0
+    - _ElementPosMaxValue: 0
+    - _ElementPosMinValue: 0
+    - _ElementPosValue: 1
+    - _ElementProjValue: 0
+    - _ElementRaycastMode: 0
+    - _ElementUVsMode: 0
+    - _ElementVolumeFadeMode: 0
+    - _ElementVolumeFadeValue: 0.75
+    - _IsElementShader: 1
+    - _IsIdentifier: -60
+    - _IsVersion: 2030
+    - _MainValue: 1
+    - _MaskingCategory: 1
+    - _MaskingEnd: 0
+    - _MaskingModelInfo: 0
+    - _MaskingTerrainInfo: 0
+    - _RaycastCategory: 1
+    - _RaycastDistanceCheckValue: 20
+    - _RaycastDistanceMaxValue: 2
+    - _RaycastDistanceMinValue: 0
+    - _RaycastEnd: 0
+    - _RaycastLayerMask: 1
+    - _RenderCategory: 1
+    - _RenderEnd: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
+    - _TerrainInputMode: 1
+    m_Colors:
+    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
+    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
+    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &679505333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216576,6 +216472,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7119102064118401758, guid: 745071b1431e20b42be75f7f8b9be6c7, type: 3}
   m_PrefabInstance: {fileID: 760333699}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &760437640
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Element
+  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - TVE_ELEMENT_POS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    ElementType: Atmo
+  disabledShaderPasses:
+  - VolumePass
+  - VolumePass1
+  - VolumePass2
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ElementMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalValue1: 1
+    - _AdditionalValue2: 1
+    - _AdditionalValue3: 1
+    - _AdditionalValue4: 1
+    - _BoundsCategory: 1
+    - _BoundsEnd: 0
+    - _ElementCategory: 1
+    - _ElementEnd: 0
+    - _ElementIntensity: 0.3
+    - _ElementLayerMask: 1
+    - _ElementLayerMessage: 0
+    - _ElementLayerWarning: 0
+    - _ElementMaskCoordMode: 0
+    - _ElementMaskMode: 0
+    - _ElementMaskValue: 0
+    - _ElementMessage: 0
+    - _ElementMode: 0
+    - _ElementPosMaxValue: 0
+    - _ElementPosMinValue: 0
+    - _ElementPosValue: 1
+    - _ElementProjValue: 0
+    - _ElementRaycastMode: 0
+    - _ElementUVsMode: 0
+    - _ElementVolumeFadeMode: 0
+    - _ElementVolumeFadeValue: 0.75
+    - _IsElementShader: 1
+    - _IsIdentifier: -60
+    - _IsVersion: 2030
+    - _MainValue: 1
+    - _MaskingCategory: 1
+    - _MaskingEnd: 0
+    - _MaskingModelInfo: 0
+    - _MaskingTerrainInfo: 0
+    - _RaycastCategory: 1
+    - _RaycastDistanceCheckValue: 20
+    - _RaycastDistanceMaxValue: 2
+    - _RaycastDistanceMinValue: 0
+    - _RaycastEnd: 0
+    - _RaycastLayerMask: 1
+    - _RenderCategory: 1
+    - _RenderEnd: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
+    - _TerrainInputMode: 1
+    m_Colors:
+    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
+    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
+    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &760583714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262232,11 +262232,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1674954250}
+  - {fileID: 1873601472108468539}
   - {fileID: 1277475596}
   - {fileID: 1449263972}
   - {fileID: 814109138}
   - {fileID: 5765359244853783732}
-  - {fileID: 1873601472108468539}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &925001387
@@ -274897,110 +274897,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6659741184050686879, guid: 64f8280a227414e6cbad852aa32b262a, type: 3}
   m_PrefabInstance: {fileID: 971221025}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &971422886
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - TVE_ELEMENT_POS
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    ElementType: Atmo
-  disabledShaderPasses:
-  - VolumePass
-  - VolumePass1
-  - VolumePass2
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _ElementMaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainNormalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AdditionalValue1: 1
-    - _AdditionalValue2: 1
-    - _AdditionalValue3: 1
-    - _AdditionalValue4: 1
-    - _BoundsCategory: 1
-    - _BoundsEnd: 0
-    - _ElementCategory: 1
-    - _ElementEnd: 0
-    - _ElementIntensity: 0.3
-    - _ElementLayerMask: 1
-    - _ElementLayerMessage: 0
-    - _ElementLayerWarning: 0
-    - _ElementMaskCoordMode: 0
-    - _ElementMaskMode: 0
-    - _ElementMaskValue: 0
-    - _ElementMessage: 0
-    - _ElementMode: 0
-    - _ElementPosMaxValue: 0
-    - _ElementPosMinValue: 0
-    - _ElementPosValue: 1
-    - _ElementProjValue: 0
-    - _ElementRaycastMode: 0
-    - _ElementUVsMode: 0
-    - _ElementVolumeFadeMode: 0
-    - _ElementVolumeFadeValue: 0.75
-    - _IsElementShader: 1
-    - _IsIdentifier: -60
-    - _IsVersion: 2030
-    - _MainValue: 1
-    - _MaskingCategory: 1
-    - _MaskingEnd: 0
-    - _MaskingModelInfo: 0
-    - _MaskingTerrainInfo: 0
-    - _RaycastCategory: 1
-    - _RaycastDistanceCheckValue: 20
-    - _RaycastDistanceMaxValue: 2
-    - _RaycastDistanceMinValue: 0
-    - _RaycastEnd: 0
-    - _RaycastLayerMask: 1
-    - _RenderCategory: 1
-    - _RenderEnd: 0
-    - _SpaceTexture: 0
-    - _SpeedTresholdValue: 10
-    - _TerrainInputMode: 1
-    m_Colors:
-    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
-    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
-    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
-    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &972009750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -277084,7 +276980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576196248658815867, guid: 65932e479cd3f4a41ab2f810de24c000, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.77833
+      value: -0.18997972
       objectReference: {fileID: 0}
     - target: {fileID: 3576196248658815867, guid: 65932e479cd3f4a41ab2f810de24c000, type: 3}
       propertyPath: m_LocalPosition.z
@@ -277092,11 +276988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576196248658815867, guid: 65932e479cd3f4a41ab2f810de24c000, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99999934
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3576196248658815867, guid: 65932e479cd3f4a41ab2f810de24c000, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00093116576
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3576196248658815867, guid: 65932e479cd3f4a41ab2f810de24c000, type: 3}
       propertyPath: m_LocalRotation.y
@@ -277104,7 +277000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576196248658815867, guid: 65932e479cd3f4a41ab2f810de24c000, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0007293687
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3576196248658815867, guid: 65932e479cd3f4a41ab2f810de24c000, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -299385,110 +299281,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068877002681856876, guid: 11d1fe852fe6cdb4cb2397bee52b2ba7, type: 3}
   m_PrefabInstance: {fileID: 1061247291}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1061362983
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - TVE_ELEMENT_POS
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    ElementType: Atmo
-  disabledShaderPasses:
-  - VolumePass
-  - VolumePass1
-  - VolumePass2
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _ElementMaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainNormalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AdditionalValue1: 1
-    - _AdditionalValue2: 1
-    - _AdditionalValue3: 1
-    - _AdditionalValue4: 1
-    - _BoundsCategory: 1
-    - _BoundsEnd: 0
-    - _ElementCategory: 1
-    - _ElementEnd: 0
-    - _ElementIntensity: 0.3
-    - _ElementLayerMask: 1
-    - _ElementLayerMessage: 0
-    - _ElementLayerWarning: 0
-    - _ElementMaskCoordMode: 0
-    - _ElementMaskMode: 0
-    - _ElementMaskValue: 0
-    - _ElementMessage: 0
-    - _ElementMode: 0
-    - _ElementPosMaxValue: 0
-    - _ElementPosMinValue: 0
-    - _ElementPosValue: 1
-    - _ElementProjValue: 0
-    - _ElementRaycastMode: 0
-    - _ElementUVsMode: 0
-    - _ElementVolumeFadeMode: 0
-    - _ElementVolumeFadeValue: 0.75
-    - _IsElementShader: 1
-    - _IsIdentifier: -60
-    - _IsVersion: 2030
-    - _MainValue: 1
-    - _MaskingCategory: 1
-    - _MaskingEnd: 0
-    - _MaskingModelInfo: 0
-    - _MaskingTerrainInfo: 0
-    - _RaycastCategory: 1
-    - _RaycastDistanceCheckValue: 20
-    - _RaycastDistanceMaxValue: 2
-    - _RaycastDistanceMinValue: 0
-    - _RaycastEnd: 0
-    - _RaycastLayerMask: 1
-    - _RenderCategory: 1
-    - _RenderEnd: 0
-    - _SpaceTexture: 0
-    - _SpeedTresholdValue: 10
-    - _TerrainInputMode: 1
-    m_Colors:
-    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
-    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
-    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
-    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &1061451539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311797,7 +311589,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 971422886}
+  - {fileID: 760437640}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -354232,6 +354024,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 551992588127572835, guid: 2779055ad33ab48bc8270e0148bdf2a0, type: 3}
   m_PrefabInstance: {fileID: 1256626547}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1256683944
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Element
+  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - TVE_ELEMENT_POS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    ElementType: Atmo
+  disabledShaderPasses:
+  - VolumePass
+  - VolumePass1
+  - VolumePass2
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ElementMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalValue1: 1
+    - _AdditionalValue2: 1
+    - _AdditionalValue3: 1
+    - _AdditionalValue4: 1
+    - _BoundsCategory: 1
+    - _BoundsEnd: 0
+    - _ElementCategory: 1
+    - _ElementEnd: 0
+    - _ElementIntensity: 0.3
+    - _ElementLayerMask: 1
+    - _ElementLayerMessage: 0
+    - _ElementLayerWarning: 0
+    - _ElementMaskCoordMode: 0
+    - _ElementMaskMode: 0
+    - _ElementMaskValue: 0
+    - _ElementMessage: 0
+    - _ElementMode: 0
+    - _ElementPosMaxValue: 0
+    - _ElementPosMinValue: 0
+    - _ElementPosValue: 1
+    - _ElementProjValue: 0
+    - _ElementRaycastMode: 0
+    - _ElementUVsMode: 0
+    - _ElementVolumeFadeMode: 0
+    - _ElementVolumeFadeValue: 0.75
+    - _IsElementShader: 1
+    - _IsIdentifier: -60
+    - _IsVersion: 2030
+    - _MainValue: 1
+    - _MaskingCategory: 1
+    - _MaskingEnd: 0
+    - _MaskingModelInfo: 0
+    - _MaskingTerrainInfo: 0
+    - _RaycastCategory: 1
+    - _RaycastDistanceCheckValue: 20
+    - _RaycastDistanceMaxValue: 2
+    - _RaycastDistanceMinValue: 0
+    - _RaycastEnd: 0
+    - _RaycastLayerMask: 1
+    - _RenderCategory: 1
+    - _RenderEnd: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
+    - _TerrainInputMode: 1
+    m_Colors:
+    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
+    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
+    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1256723252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364268,6 +364164,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068877002681856876, guid: 11d1fe852fe6cdb4cb2397bee52b2ba7, type: 3}
   m_PrefabInstance: {fileID: 1292800964}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1292940015
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Element
+  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - TVE_ELEMENT_POS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    ElementType: Atmo
+  disabledShaderPasses:
+  - VolumePass
+  - VolumePass1
+  - VolumePass2
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ElementMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalValue1: 1
+    - _AdditionalValue2: 1
+    - _AdditionalValue3: 1
+    - _AdditionalValue4: 1
+    - _BoundsCategory: 1
+    - _BoundsEnd: 0
+    - _ElementCategory: 1
+    - _ElementEnd: 0
+    - _ElementIntensity: 0.3
+    - _ElementLayerMask: 1
+    - _ElementLayerMessage: 0
+    - _ElementLayerWarning: 0
+    - _ElementMaskCoordMode: 0
+    - _ElementMaskMode: 0
+    - _ElementMaskValue: 0
+    - _ElementMessage: 0
+    - _ElementMode: 0
+    - _ElementPosMaxValue: 0
+    - _ElementPosMinValue: 0
+    - _ElementPosValue: 1
+    - _ElementProjValue: 0
+    - _ElementRaycastMode: 0
+    - _ElementUVsMode: 0
+    - _ElementVolumeFadeMode: 0
+    - _ElementVolumeFadeValue: 0.75
+    - _IsElementShader: 1
+    - _IsIdentifier: -60
+    - _IsVersion: 2030
+    - _MainValue: 1
+    - _MaskingCategory: 1
+    - _MaskingEnd: 0
+    - _MaskingModelInfo: 0
+    - _MaskingTerrainInfo: 0
+    - _RaycastCategory: 1
+    - _RaycastDistanceCheckValue: 20
+    - _RaycastDistanceMaxValue: 2
+    - _RaycastDistanceMinValue: 0
+    - _RaycastEnd: 0
+    - _RaycastLayerMask: 1
+    - _RenderCategory: 1
+    - _RenderEnd: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
+    - _TerrainInputMode: 1
+    m_Colors:
+    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
+    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
+    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1293083761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -385903,7 +385903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069350359635758416, guid: 2dbf2018fb79f4741977f93dc98af20e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.880337
+      value: -0.1299797
       objectReference: {fileID: 0}
     - target: {fileID: 1069350359635758416, guid: 2dbf2018fb79f4741977f93dc98af20e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -385911,19 +385911,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069350359635758416, guid: 2dbf2018fb79f4741977f93dc98af20e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.99999833
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1069350359635758416, guid: 2dbf2018fb79f4741977f93dc98af20e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0017043983
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1069350359635758416, guid: 2dbf2018fb79f4741977f93dc98af20e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000008742263
+      value: -0.00000008742278
       objectReference: {fileID: 0}
     - target: {fileID: 1069350359635758416, guid: 2dbf2018fb79f4741977f93dc98af20e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00064773264
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1069350359635758416, guid: 2dbf2018fb79f4741977f93dc98af20e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -399191,110 +399191,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6202083129784452157, guid: 0cb37a68ad72ae1429a0761fd888aefb, type: 3}
   m_PrefabInstance: {fileID: 1405315612}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1405459373
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - TVE_ELEMENT_POS
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    ElementType: Atmo
-  disabledShaderPasses:
-  - VolumePass
-  - VolumePass1
-  - VolumePass2
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _ElementMaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainNormalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AdditionalValue1: 1
-    - _AdditionalValue2: 1
-    - _AdditionalValue3: 1
-    - _AdditionalValue4: 1
-    - _BoundsCategory: 1
-    - _BoundsEnd: 0
-    - _ElementCategory: 1
-    - _ElementEnd: 0
-    - _ElementIntensity: 0.3
-    - _ElementLayerMask: 1
-    - _ElementLayerMessage: 0
-    - _ElementLayerWarning: 0
-    - _ElementMaskCoordMode: 0
-    - _ElementMaskMode: 0
-    - _ElementMaskValue: 0
-    - _ElementMessage: 0
-    - _ElementMode: 0
-    - _ElementPosMaxValue: 0
-    - _ElementPosMinValue: 0
-    - _ElementPosValue: 1
-    - _ElementProjValue: 0
-    - _ElementRaycastMode: 0
-    - _ElementUVsMode: 0
-    - _ElementVolumeFadeMode: 0
-    - _ElementVolumeFadeValue: 0.75
-    - _IsElementShader: 1
-    - _IsIdentifier: -60
-    - _IsVersion: 2030
-    - _MainValue: 1
-    - _MaskingCategory: 1
-    - _MaskingEnd: 0
-    - _MaskingModelInfo: 0
-    - _MaskingTerrainInfo: 0
-    - _RaycastCategory: 1
-    - _RaycastDistanceCheckValue: 20
-    - _RaycastDistanceMaxValue: 2
-    - _RaycastDistanceMinValue: 0
-    - _RaycastEnd: 0
-    - _RaycastLayerMask: 1
-    - _RenderCategory: 1
-    - _RenderEnd: 0
-    - _SpaceTexture: 0
-    - _SpeedTresholdValue: 10
-    - _TerrainInputMode: 1
-    m_Colors:
-    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
-    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
-    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
-    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &1405500926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416690,6 +416586,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068877002681856876, guid: 11d1fe852fe6cdb4cb2397bee52b2ba7, type: 3}
   m_PrefabInstance: {fileID: 1468489243}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1469052704
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Element
+  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - TVE_ELEMENT_POS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    ElementType: Atmo
+  disabledShaderPasses:
+  - VolumePass
+  - VolumePass1
+  - VolumePass2
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ElementMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalValue1: 1
+    - _AdditionalValue2: 1
+    - _AdditionalValue3: 1
+    - _AdditionalValue4: 1
+    - _BoundsCategory: 1
+    - _BoundsEnd: 0
+    - _ElementCategory: 1
+    - _ElementEnd: 0
+    - _ElementIntensity: 0.3
+    - _ElementLayerMask: 1
+    - _ElementLayerMessage: 0
+    - _ElementLayerWarning: 0
+    - _ElementMaskCoordMode: 0
+    - _ElementMaskMode: 0
+    - _ElementMaskValue: 0
+    - _ElementMessage: 0
+    - _ElementMode: 0
+    - _ElementPosMaxValue: 0
+    - _ElementPosMinValue: 0
+    - _ElementPosValue: 1
+    - _ElementProjValue: 0
+    - _ElementRaycastMode: 0
+    - _ElementUVsMode: 0
+    - _ElementVolumeFadeMode: 0
+    - _ElementVolumeFadeValue: 0.75
+    - _IsElementShader: 1
+    - _IsIdentifier: -60
+    - _IsVersion: 2030
+    - _MainValue: 1
+    - _MaskingCategory: 1
+    - _MaskingEnd: 0
+    - _MaskingModelInfo: 0
+    - _MaskingTerrainInfo: 0
+    - _RaycastCategory: 1
+    - _RaycastDistanceCheckValue: 20
+    - _RaycastDistanceMaxValue: 2
+    - _RaycastDistanceMinValue: 0
+    - _RaycastEnd: 0
+    - _RaycastLayerMask: 1
+    - _RenderCategory: 1
+    - _RenderEnd: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
+    - _TerrainInputMode: 1
+    m_Colors:
+    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
+    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
+    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1469243630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -460773,110 +460773,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068877002681856876, guid: 11d1fe852fe6cdb4cb2397bee52b2ba7, type: 3}
   m_PrefabInstance: {fileID: 1598685266}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1598693119
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - TVE_ELEMENT_POS
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    ElementType: Atmo
-  disabledShaderPasses:
-  - VolumePass
-  - VolumePass1
-  - VolumePass2
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _ElementMaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TerrainNormalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AdditionalValue1: 1
-    - _AdditionalValue2: 1
-    - _AdditionalValue3: 1
-    - _AdditionalValue4: 1
-    - _BoundsCategory: 1
-    - _BoundsEnd: 0
-    - _ElementCategory: 1
-    - _ElementEnd: 0
-    - _ElementIntensity: 0.3
-    - _ElementLayerMask: 1
-    - _ElementLayerMessage: 0
-    - _ElementLayerWarning: 0
-    - _ElementMaskCoordMode: 0
-    - _ElementMaskMode: 0
-    - _ElementMaskValue: 0
-    - _ElementMessage: 0
-    - _ElementMode: 0
-    - _ElementPosMaxValue: 0
-    - _ElementPosMinValue: 0
-    - _ElementPosValue: 1
-    - _ElementProjValue: 0
-    - _ElementRaycastMode: 0
-    - _ElementUVsMode: 0
-    - _ElementVolumeFadeMode: 0
-    - _ElementVolumeFadeValue: 0.75
-    - _IsElementShader: 1
-    - _IsIdentifier: -60
-    - _IsVersion: 2030
-    - _MainValue: 1
-    - _MaskingCategory: 1
-    - _MaskingEnd: 0
-    - _MaskingModelInfo: 0
-    - _MaskingTerrainInfo: 0
-    - _RaycastCategory: 1
-    - _RaycastDistanceCheckValue: 20
-    - _RaycastDistanceMaxValue: 2
-    - _RaycastDistanceMinValue: 0
-    - _RaycastEnd: 0
-    - _RaycastLayerMask: 1
-    - _RenderCategory: 1
-    - _RenderEnd: 0
-    - _SpaceTexture: 0
-    - _SpeedTresholdValue: 10
-    - _TerrainInputMode: 1
-    m_Colors:
-    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
-    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
-    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
-    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
-    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &1598715504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -482317,7 +482213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2442600334785640620, guid: 90bb9fcf36408b94fa64429126cec409, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.775455
+      value: -0.19997972
       objectReference: {fileID: 0}
     - target: {fileID: 2442600334785640620, guid: 90bb9fcf36408b94fa64429126cec409, type: 3}
       propertyPath: m_LocalPosition.z
@@ -482325,19 +482221,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2442600334785640620, guid: 90bb9fcf36408b94fa64429126cec409, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7933529
+      value: 0.7933533
       objectReference: {fileID: 0}
     - target: {fileID: 2442600334785640620, guid: 90bb9fcf36408b94fa64429126cec409, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0002676683
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2442600334785640620, guid: 90bb9fcf36408b94fa64429126cec409, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.60876113
+      value: 0.6087614
       objectReference: {fileID: 0}
     - target: {fileID: 2442600334785640620, guid: 90bb9fcf36408b94fa64429126cec409, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0009977991
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2442600334785640620, guid: 90bb9fcf36408b94fa64429126cec409, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -550396,7 +550292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1598693119}
+  - {fileID: 532720125}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -558476,7 +558372,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 332931195}
+  - {fileID: 1292940015}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -561043,7 +560939,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 222504597}
+  - {fileID: 1469052704}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -563171,6 +563067,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5218670586739977353, guid: 5afbf481ccf3c4763a32844a808f0e66, type: 3}
   m_PrefabInstance: {fileID: 1953532829}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1954361608
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Element
+  m_Shader: {fileID: 4800000, guid: 3a8db8eb5154b6c44940a6c8616408d8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - TVE_ELEMENT_POS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    ElementType: Atmo
+  disabledShaderPasses:
+  - VolumePass
+  - VolumePass1
+  - VolumePass2
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ElementMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalValue1: 1
+    - _AdditionalValue2: 1
+    - _AdditionalValue3: 1
+    - _AdditionalValue4: 1
+    - _BoundsCategory: 1
+    - _BoundsEnd: 0
+    - _ElementCategory: 1
+    - _ElementEnd: 0
+    - _ElementIntensity: 0.3
+    - _ElementLayerMask: 1
+    - _ElementLayerMessage: 0
+    - _ElementLayerWarning: 0
+    - _ElementMaskCoordMode: 0
+    - _ElementMaskMode: 0
+    - _ElementMaskValue: 0
+    - _ElementMessage: 0
+    - _ElementMode: 0
+    - _ElementPosMaxValue: 0
+    - _ElementPosMinValue: 0
+    - _ElementPosValue: 1
+    - _ElementProjValue: 0
+    - _ElementRaycastMode: 0
+    - _ElementUVsMode: 0
+    - _ElementVolumeFadeMode: 0
+    - _ElementVolumeFadeValue: 0.75
+    - _IsElementShader: 1
+    - _IsIdentifier: -60
+    - _IsVersion: 2030
+    - _MainValue: 1
+    - _MaskingCategory: 1
+    - _MaskingEnd: 0
+    - _MaskingModelInfo: 0
+    - _MaskingTerrainInfo: 0
+    - _RaycastCategory: 1
+    - _RaycastDistanceCheckValue: 20
+    - _RaycastDistanceMaxValue: 2
+    - _RaycastDistanceMinValue: 0
+    - _RaycastEnd: 0
+    - _RaycastLayerMask: 1
+    - _RenderCategory: 1
+    - _RenderEnd: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
+    - _TerrainInputMode: 1
+    m_Colors:
+    - _ElementMaskCoordValue: {r: 1, g: 1, b: 0, a: 0}
+    - _ElementMaskRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
+    - _ElementProjRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexAlphaRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _MainTexFalloffRemap: {r: 0, g: 0.21383648, b: 4.6764708, a: 0}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _TerrainPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _TerrainSize: {r: 500, g: 300, b: 500, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1954376896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -565236,7 +565236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quickCategory: 1
   motionControl: 0
-  seasonControl: 2.192
+  seasonControl: 2.477
   quickEnd: 1
   mainCategory: 1
   styledCameraMessaage: 0
@@ -578755,7 +578755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210718126973189828, guid: 7840399ac88404d178c74b3cad5328df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.816185
+      value: -0.04997532
       objectReference: {fileID: 0}
     - target: {fileID: 9210718126973189828, guid: 7840399ac88404d178c74b3cad5328df, type: 3}
       propertyPath: m_LocalPosition.z
@@ -625712,7 +625712,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1061362983}
+  - {fileID: 1256683944}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
