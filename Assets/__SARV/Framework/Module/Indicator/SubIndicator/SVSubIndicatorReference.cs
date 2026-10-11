@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SubSARVIndicatorReference : SVOverrideMonoBehaviour
+    public abstract class SVSubIndicatorReference : SVOverrideMonoBehaviour
     {
         [FoldoutGroup("Reference")] [Title("Target")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
         protected SVPropertyComponent<GameObject> target = new SVGameObjectProperty();

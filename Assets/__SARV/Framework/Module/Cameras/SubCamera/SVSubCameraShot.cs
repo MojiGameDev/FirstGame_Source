@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Cameras.SubCamera
 {
-    public abstract class SVSubSARVCameraShot : SVSubSARVCameraReference
+    public abstract class SVSubCameraShot : SVSubCameraReference
     {
         [FoldoutGroup("Shot")] [SerializeField] [RequiredListLength(1, 10)]
         protected List<SVCameraShot> cameraShots = new();

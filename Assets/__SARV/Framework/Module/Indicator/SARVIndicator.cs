@@ -2,7 +2,7 @@
 
 namespace __SARV.Framework.Module.Indicator
 {
-    public class SARVIndicator : SubSARVIndicatorShow
+    public class SARVIndicator : SVSubIndicatorShow
     {
         
     }

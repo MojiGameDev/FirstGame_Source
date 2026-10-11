@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Cameras.SubCamera
 {
-    public abstract class SVSubSARVCameraReference : SVOverrideMonoBehaviour
+    public abstract class SVSubCameraReference : SVOverrideMonoBehaviour
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
         protected Camera mainCamera;

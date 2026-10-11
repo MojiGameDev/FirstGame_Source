@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SubSARVIndicatorData : SubSARVIndicatorReference
+    public abstract class SVSubIndicatorData : SVSubIndicatorReference
     {
         [FoldoutGroup("Data")] [Title("FocusUIPosition")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
         protected SVPropertyComponent<Vector3> focusUIPosition = new SVVector3Property();
