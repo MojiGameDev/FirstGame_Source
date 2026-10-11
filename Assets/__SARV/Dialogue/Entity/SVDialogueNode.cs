@@ -16,32 +16,35 @@ namespace __SARV.Dialogue.Entity
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("Type")]
         private SVDialogueNodeType type = SVDialogueNodeType.Text;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("State")]
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("State")] [HideIf(nameof(IsTypeRandom))]
         private SVDialogueNodeState state = SVDialogueNodeState.Continue;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("AdvanceMode")]
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("AdvanceMode")] [HideIf(nameof(IsTypeRandom))]
         private SVDialogueNodeAdvanceMode advanceMode = SVDialogueNodeAdvanceMode.InputKey;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel] [Title("Delay")] [ShowIf(nameof(IsAdvanceModeDelay))]
+        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel] [Title("Delay")] [ShowIf(nameof(IsAdvanceModeDelay))] [HideIf(nameof(IsTypeRandom))]
         private SVPropertyComponent<float> delay = new SVFloatProperty();
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("Text")]
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("Text")] [HideIf(nameof(IsTypeRandom))]
         private string text;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [HideIf(nameof(IsNodeStateComplete))]
-        private List<SVDialogueNode> nodes = new();
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)] [HideIf(nameof(IsStateComplete))]
+        private List<SVDialogueNode> dialogues = new();
 
         public string Text => text;
         public SVDialogueNodeState State => state;
         public SVDialogueNodeType Type => type;
+        public SVDialogueNodeAdvanceMode AdvanceMode => advanceMode;
+        public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;
 
-        private string GroupTitle => $"{type.ToReadableString()} - {state.ToReadableString()} - {advanceMode.ToReadableString()} - {(string.IsNullOrEmpty(Text) ? "..." : Text)}";
-        private bool IsNodeStateComplete => state == SVDialogueNodeState.Complete;
-        private bool IsAdvanceModeDelay => advanceMode == SVDialogueNodeAdvanceMode.Delay;
+        private string GroupTitle => $"{Type.ToReadableString()} - {State.ToReadableString()} - {AdvanceMode.ToReadableString()} - {(string.IsNullOrEmpty(Text) ? "..." : Text)}";
+        private bool IsStateComplete => State == SVDialogueNodeState.Complete;
+        private bool IsAdvanceModeDelay => AdvanceMode == SVDialogueNodeAdvanceMode.Delay;
+        private bool IsTypeRandom => Type == SVDialogueNodeType.Random;
 
         private void CreateNode()
         {
-            nodes.Add(new SVDialogueNode());
+            dialogues.Add(new SVDialogueNode());
         }
     }
 }

@@ -17,23 +17,23 @@ namespace __SARV.Framework.Instruction
     public class SVFrameworkInstructionRunAction : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Action")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SARVAction sarvAction;
+        private SARVAction action;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("WaitToFinish")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<bool> waitToFinish = new SVBoolPropertyManual();
 
-        private bool IsActionPropertyNull => sarvAction == null || sarvAction == null;
+        private bool IsActionNull => action == null || action == null;
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsActionPropertyNull ? "..." : sarvAction)}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Execute the instructions for the {(IsActionNull ? "..." : action)}";
 
         protected override async Task ExecuteInternal(SVArgument argument)
         {
             if (waitToFinish.Value)
             {
-                await sarvAction.RunAction(argument);
+                await action.RunAction(argument);
                 return;
             }
-            _ = sarvAction.RunAction(argument);
+            _ = action.RunAction(argument);
         }
     }
 }

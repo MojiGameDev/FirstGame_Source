@@ -8,12 +8,14 @@ namespace __SARV.Dialogue.SubDialogue
 {
     public abstract class SVSubDialogueNode : SVMonoBehaviour
     {
-        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))]
-        private List<SVDialogueNode> nodes = new();
+        [SerializeField] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))]
+        private List<SVDialogueNode> dialogues = new();
+
+        public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;
 
         private void CreateNode()
         {
-            nodes.Add(new SVDialogueNode());
+            dialogues.Add(new SVDialogueNode());
         }
     }
 }

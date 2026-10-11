@@ -4,6 +4,5 @@
     {
         InputKey = 10,
         Delay = 20,
-        FinishedAudio = 30
     }
 }

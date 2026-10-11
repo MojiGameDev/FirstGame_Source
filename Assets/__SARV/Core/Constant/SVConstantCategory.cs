@@ -12,6 +12,7 @@
         {
             public const string DEBUG = "Debug";
             public const string FRAMEWORK = "Framework";
+            public const string DIALOGUE = "Dialogue";
         }
 
         public static class Branch

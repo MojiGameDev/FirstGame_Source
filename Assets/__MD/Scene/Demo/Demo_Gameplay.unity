@@ -238,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 35189041}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.69600046, z: 0, w: 0.7180413}
-  m_LocalPosition: {x: 6.7, y: 50, z: 7.13}
+  m_LocalPosition: {x: 4.98, y: 50, z: 3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instruction: 
   instructions:
-  - rid: 4447245475530145954
+  - rid: -2
   description: 
   signal: Physics/OnTriggerEnter
   signalComponent:
@@ -269,24 +269,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 4447245475530145953
       type: {class: SVPhysicsSignalOnTriggerEnter, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
-      data: 
-    - rid: 4447245475530145954
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        logLevel: 10
-        text:
-          rid: 4447245475530145955
-    - rid: 4447245475530145955
-      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        property: Random
-        propertyComponent:
-          rid: 4447245475530145957
-    - rid: 4447245475530145957
-      type: {class: SVStringPropertyRandom, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data: 
 --- !u!65 &35189044
 BoxCollider:
@@ -483,28 +469,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2896ebe1d9714edc8d9b9cb563ff14bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - rid: 4447245496261017749
+  dialogues:
+  - rid: 4447245496261017778
   references:
     version: 2
     RefIds:
-    - rid: 4447245496261017749
+    - rid: 4447245496261017778
       type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
       data:
         type: 10
         state: 10
         advanceMode: 10
         delay:
-          rid: 4447245496261017756
-        text: 
-        nodes: []
-    - rid: 4447245496261017756
+          rid: 4447245496261017779
+        text: Hi, I am a green cube and this is a simple text
+        dialogues: []
+    - rid: 4447245496261017779
       type: {class: SVFloatProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
         property: 
         propertyComponent:
-          rid: 4447245496261017760
-    - rid: 4447245496261017760
+          rid: 4447245496261017780
+    - rid: 4447245496261017780
       type: {class: 'SVNullProperty`1[[System.Single, mscorlib]]', ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data: 
 --- !u!1 &881802754
