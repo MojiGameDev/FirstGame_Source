@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using __SARV.WeeklyMap.Editor.Entity;
+using __SARV.Misc.WeeklyMap.Editor.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.WeeklyMap.Editor.SubWeeklyMap
+namespace __SARV.Misc.WeeklyMap.Editor.SubWeeklyMap
 {
     public abstract class MDSubWeeklyMapTask : MDSubWeeklyMapOwner
     {

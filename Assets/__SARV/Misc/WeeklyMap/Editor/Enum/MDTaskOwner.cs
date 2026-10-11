@@ -1,4 +1,4 @@
-﻿namespace __SARV.WeeklyMap.Editor.Enum
+﻿namespace __SARV.Misc.WeeklyMap.Editor.Enum
 {
     public enum MDTaskOwner
     {

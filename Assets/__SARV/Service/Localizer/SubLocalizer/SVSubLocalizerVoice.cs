@@ -1,8 +1,8 @@
-﻿using __SARV.Identifier;
+﻿using __SARV.Service.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Localizer.SubLocalizer
+namespace __SARV.Service.Localizer.SubLocalizer
 {
     public abstract class SVSubLocalizerVoice : SVSubLocalizerText
     {

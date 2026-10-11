@@ -1,7 +1,7 @@
-﻿using __SARV.Localizer.SubLocalizer;
+﻿using __SARV.Service.Localizer.SubLocalizer;
 using UnityEngine;
 
-namespace __SARV.Localizer
+namespace __SARV.Service.Localizer
 {
     [CreateAssetMenu(fileName = "Localizer", menuName = "SARV/Localizer/New")]
     public class SARVLocalizer : SVSubLocalizerVoice

@@ -1,6 +1,6 @@
 ﻿using __SARV.Core.Access;
 using __SARV.Core.Extension;
-using __SARV.Play;
+using __SARV.SceneControl.Game;
 using UnityEngine;
 
 namespace __SARV.Indicator.SubIndicator

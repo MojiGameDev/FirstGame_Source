@@ -1,8 +1,8 @@
 ﻿using System;
 using __SARV.Core.Attributes;
-using __SARV.Variable.Base;
+using __SARV.Service.Variable.Base;
 
-namespace __SARV.Variable.Value
+namespace __SARV.Service.Variable.Value
 {
     [SVIgnore]
     [Serializable]

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using __SARV.Identifier.Contract;
+using __SARV.Service.Identifier.Contract;
 
-namespace __SARV.Identifier
+namespace __SARV.Service.Identifier.Entity
 {
     /// <summary>
     /// A <see cref="string"/> wrapper which allows fast reference equality checks and dictionary usage

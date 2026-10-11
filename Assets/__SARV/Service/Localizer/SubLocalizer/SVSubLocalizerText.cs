@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Localizer.SubLocalizer
+namespace __SARV.Service.Localizer.SubLocalizer
 {
     public abstract class SVSubLocalizerText : SVScriptableObject
     {

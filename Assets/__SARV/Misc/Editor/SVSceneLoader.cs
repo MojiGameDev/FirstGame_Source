@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace __SARV.Editor
+namespace __SARV.Misc.Editor
 {
     public static class SVSceneLoader
     {

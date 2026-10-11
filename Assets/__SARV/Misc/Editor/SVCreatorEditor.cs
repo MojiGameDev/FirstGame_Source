@@ -3,11 +3,11 @@ using __SARV.Core.Extension;
 using __SARV.Dialogue;
 using __SARV.Framework;
 using __SARV.Indicator;
-using __SARV.Variable;
+using __SARV.Service.Variable;
 using UnityEditor;
 using UnityEngine;
 
-namespace __SARV.Editor
+namespace __SARV.Misc.Editor
 {
     public static class SVCreatorEditor
     {

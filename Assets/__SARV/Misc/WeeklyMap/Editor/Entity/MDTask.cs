@@ -1,10 +1,10 @@
 ﻿using System;
 using __SARV.Core.Base;
-using __SARV.WeeklyMap.Editor.Enum;
+using __SARV.Misc.WeeklyMap.Editor.Enum;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.WeeklyMap.Editor.Entity
+namespace __SARV.Misc.WeeklyMap.Editor.Entity
 {
     [Serializable]
     public class MDTask : SVSerializable

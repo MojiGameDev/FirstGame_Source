@@ -1,7 +1,7 @@
 ﻿using System;
 using __SARV.Core.Base;
 
-namespace __SARV.Variable.Base
+namespace __SARV.Service.Variable.Base
 {
     [Serializable]
     public abstract class SVVariableValue : SVSerializable
