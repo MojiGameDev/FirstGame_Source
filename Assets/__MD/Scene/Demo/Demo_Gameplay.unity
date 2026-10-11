@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instruction: 
   instructions:
-  - rid: -2
+  - rid: 4447245508508909665
   description: 
   signal: Physics/OnTriggerEnter
   signalComponent:
@@ -269,11 +269,20 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 4447245475530145953
       type: {class: SVPhysicsSignalOnTriggerEnter, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
       data: 
+    - rid: 4447245508508909665
+      type: {class: SVDialogueInstructionRun, ns: __SARV.Framework.Instruction.Dialogue, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        dialogue: {fileID: 410139903}
+        waitToFinish:
+          rid: 4447245508508909666
+    - rid: 4447245508508909666
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: 1
 --- !u!65 &35189044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -470,29 +479,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - rid: 4447245496261017778
+  - type: 10
+    state: 10
+    advanceMode: 20
+    delay:
+      rid: 4447245508508909568
+    text: Hi, I am a green cube and this is a simple text
+    dialogues: []
+  - type: 10
+    state: 10
+    advanceMode: 20
+    delay:
+      rid: 4447245508508909669
+    text: Hello friend! Welcome to my humble store!
+    dialogues: []
   references:
     version: 2
     RefIds:
-    - rid: 4447245496261017778
-      type: {class: SVDialogueNode, ns: __SARV.Dialogue.Entity, asm: Assembly-CSharp}
+    - rid: 4447245508508909568
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
-        type: 10
-        state: 10
-        advanceMode: 10
-        delay:
-          rid: 4447245496261017779
-        text: Hi, I am a green cube and this is a simple text
-        dialogues: []
-    - rid: 4447245496261017779
+        property: Manual
+        propertyComponent:
+          rid: 4447245508508909671
+    - rid: 4447245508508909669
       type: {class: SVFloatProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
         property: 
         propertyComponent:
-          rid: 4447245496261017780
-    - rid: 4447245496261017780
+          rid: 4447245508508909670
+    - rid: 4447245508508909670
       type: {class: 'SVNullProperty`1[[System.Single, mscorlib]]', ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data: 
+    - rid: 4447245508508909671
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: 5
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0

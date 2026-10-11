@@ -22,13 +22,13 @@ namespace __SARV.Dialogue.Entity
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("AdvanceMode")] [HideIf(nameof(IsTypeRandom))]
         private SVDialogueNodeAdvanceMode advanceMode = SVDialogueNodeAdvanceMode.InputKey;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel] [Title("Delay")] [ShowIf(nameof(IsAdvanceModeDelay))] [HideIf(nameof(IsTypeRandom))]
+        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel] [Title("Delay")] [ShowIf(nameof(IsDelayMustShowed))]
         private SVPropertyComponent<float> delay = new SVFloatProperty();
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("Text")] [HideIf(nameof(IsTypeRandom))]
         private string text;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)] [HideIf(nameof(IsStateComplete))]
+        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)] [HideIf(nameof(IsStateComplete))]
         private List<SVDialogueNode> dialogues = new();
 
         public string Text => text;
@@ -36,10 +36,11 @@ namespace __SARV.Dialogue.Entity
         public SVDialogueNodeType Type => type;
         public SVDialogueNodeAdvanceMode AdvanceMode => advanceMode;
         public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;
+        public float Delay => delay.Value;
 
         private string GroupTitle => $"{Type.ToReadableString()} - {State.ToReadableString()} - {AdvanceMode.ToReadableString()} - {(string.IsNullOrEmpty(Text) ? "..." : Text)}";
         private bool IsStateComplete => State == SVDialogueNodeState.Complete;
-        private bool IsAdvanceModeDelay => AdvanceMode == SVDialogueNodeAdvanceMode.Delay;
+        private bool IsDelayMustShowed => AdvanceMode == SVDialogueNodeAdvanceMode.Delay && !IsTypeRandom;
         private bool IsTypeRandom => Type == SVDialogueNodeType.Random;
 
         private void CreateNode()
