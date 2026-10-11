@@ -709,17 +709,17 @@ MonoBehaviour:
   playerComboSwitchCKey: PlayerComboSwitchC
   playerComboSwitchDKey: PlayerComboSwitchD
   inputMovementDirection: {x: 0, y: 0, z: 0}
-  sharedAnimancer:
+  animancer:
     wrappers:
     - identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
       alias: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
     - identifier: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
       alias: {fileID: 11400000, guid: 804658efca7a0e848999f95926f94d30, type: 2}
-  sharedStateMachine:
+  stateMachine:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
     states:
-    - {fileID: 4721528133828972456}
+    - {fileID: 1064174925218950400}
   healthAttribute: {fileID: 11400000, guid: 16b3563ce89cc9247aaf9249bd2603cf, type: 2}
   staminaAttribute: {fileID: 11400000, guid: 0ec85cf0e4c9f0142bc290841add215c, type: 2}
   movementSpeed: 0
@@ -1030,7 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864190903536386724}
-  - component: {fileID: 4721528133828972456}
+  - component: {fileID: 1064174925218950400}
   m_Layer: 0
   m_Name: New StatePlayer
   m_TagString: Untagged
@@ -1053,7 +1053,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6112998586163153568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4721528133828972456
+--- !u!114 &1064174925218950400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1068,12 +1068,12 @@ MonoBehaviour:
   description: 
   behavior: FreeMovement
   behaviorComponent:
-    rid: 4447245475530145919
+    rid: 4447245521617158297
   references:
     version: 2
     RefIds:
-    - rid: 4447245475530145919
-      type: {class: SVPlayerBehaviorFreeMovement, ns: __SARV.Framework.Behavior, asm: Assembly-CSharp}
+    - rid: 4447245521617158297
+      type: {class: SVPlayerBehaviorFreeMovement, ns: __SARV.Framework.Module.State.Behavior, asm: Assembly-CSharp}
       data:
         identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
         runSpeed: 8
@@ -3326,38 +3326,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: 
-  variables:
-  - rid: 4447245432690573427
-  - rid: 4447245432690573435
+  variables: []
   references:
     version: 2
-    RefIds:
-    - rid: 4447245432690573427
-      type: {class: SVVariable, ns: __SARV.Variable.Entity, asm: Assembly-CSharp}
-      data:
-        identifier: {fileID: 0}
-        title: dddsad
-        canSave: 0
-        valueType: Bool
-        variableValue:
-          rid: 4447245432690573434
-    - rid: 4447245432690573434
-      type: {class: SVVariableValueBool, ns: __SARV.Variable.Value, asm: Assembly-CSharp}
-      data:
-        value: 1
-    - rid: 4447245432690573435
-      type: {class: SVVariable, ns: __SARV.Variable.Entity, asm: Assembly-CSharp}
-      data:
-        identifier: {fileID: 0}
-        title: nnbvn
-        canSave: 0
-        valueType: String
-        variableValue:
-          rid: 4447245432690573441
-    - rid: 4447245432690573441
-      type: {class: SVVariableValueString, ns: __SARV.Variable.Value, asm: Assembly-CSharp}
-      data:
-        value: 
+    RefIds: []
 --- !u!1 &4397715676547438527
 GameObject:
   m_ObjectHideFlags: 0

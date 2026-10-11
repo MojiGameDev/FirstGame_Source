@@ -3024,7 +3024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 135545480197570509}
-  - component: {fileID: 8511518198279665743}
+  - component: {fileID: 3364447098730768849}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -3032,6 +3032,70 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3364447098730768849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3364447098730768848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc627b6de74648739d0bd276d844fa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target:
+    rid: 4447245521617158298
+  focusUIIdentifier: {fileID: 11400000, guid: c9bb5f1cd6d178241afac842ffdcaeca, type: 2}
+  distanceUIIdentifier: {fileID: 11400000, guid: 2fe038b3c94c4084f9fe2d66839b023b, type: 2}
+  focusUIPosition:
+    rid: 4447245521617158299
+  distanceUIPosition:
+    rid: 4447245521617158300
+  rotationSpeed:
+    rid: 4447245521617158301
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245521617158298
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: 
+        propertyComponent:
+          rid: 4447245521617158302
+    - rid: 4447245521617158299
+      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Transform
+        propertyComponent:
+          rid: 4447245521617158306
+    - rid: 4447245521617158300
+      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Transform
+        propertyComponent:
+          rid: 4447245521617158307
+    - rid: 4447245521617158301
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245521617158308
+    - rid: 4447245521617158302
+      type: {class: 'SVNullProperty`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245521617158306
+      type: {class: SVVector3PropertyTransform, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 9025184441163181485}
+    - rid: 4447245521617158307
+      type: {class: SVVector3PropertyTransform, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 4464548400096993389}
+    - rid: 4447245521617158308
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 6
 --- !u!1001 &3491106382170347399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3243,70 +3307,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8511518198279665743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3364447098730768848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc627b6de74648739d0bd276d844fa8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target:
-    rid: 4447245451569135730
-  focusUIIdentifier: {fileID: 11400000, guid: c9bb5f1cd6d178241afac842ffdcaeca, type: 2}
-  distanceUIIdentifier: {fileID: 11400000, guid: 2fe038b3c94c4084f9fe2d66839b023b, type: 2}
-  focusUIPosition:
-    rid: 4447245451569135737
-  distanceUIPosition:
-    rid: 4447245451569135738
-  rotationSpeed:
-    rid: 4447245451569135751
-  references:
-    version: 2
-    RefIds:
-    - rid: 4447245451569135730
-      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        property: Player
-        propertyComponent:
-          rid: 4447245451569135736
-    - rid: 4447245451569135736
-      type: {class: SVGameObjectPropertyPlayer, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data: 
-    - rid: 4447245451569135737
-      type: {class: SVVector3Property, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        property: Transform
-        propertyComponent:
-          rid: 4447245451569135741
-    - rid: 4447245451569135738
-      type: {class: SVVector3Property, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        property: Transform
-        propertyComponent:
-          rid: 4447245451569135742
-    - rid: 4447245451569135741
-      type: {class: SVVector3PropertyTransform, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 9025184441163181485}
-    - rid: 4447245451569135742
-      type: {class: SVVector3PropertyTransform, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 4464548400096993389}
-    - rid: 4447245451569135751
-      type: {class: SVFloatProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245451569135753
-    - rid: 4447245451569135753
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data:
-        value: 7
 --- !u!4 &9025184441163181485
 Transform:
   m_ObjectHideFlags: 0

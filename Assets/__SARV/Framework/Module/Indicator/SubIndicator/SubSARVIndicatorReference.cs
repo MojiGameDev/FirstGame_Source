@@ -1,13 +1,13 @@
-﻿using __SARV.Framework.Common.Component;
+﻿using __SARV.Common.Base;
+using __SARV.Framework.Common.Component;
 using __SARV.Framework.Kernal.Property;
-using __SARV.Framework.Module.State;
 using __SARV.Service.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SubSARVIndicatorReference : SARV
+    public abstract class SubSARVIndicatorReference : SVOverrideMonoBehaviour
     {
         [FoldoutGroup("Reference")] [Title("Target")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
         protected SVPropertyComponent<GameObject> target = new SVGameObjectProperty();
