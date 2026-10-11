@@ -7,13 +7,14 @@ using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Enum;
 using __SARV.Core.Reflection;
+using __SARV.Core.Shared;
 using __SARV.Framework.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public class SARVCondition : SVInstructionMonoBehaviour
+    public class SARVCondition : SVMonoBehaviour
     {
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
@@ -46,6 +47,8 @@ namespace __SARV.Framework
         [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the branches above are true", InfoMessageType.Info)]
         private string tooltip = "";
 
+        [SerializeField] [HideLabel] private SVSharedInstruction sharedInstruction;
+        
         public List<SVBranchComponent> Branches => branches;
         private bool IsBranchValid => !string.IsNullOrEmpty(branch);
 
@@ -53,7 +56,7 @@ namespace __SARV.Framework
         {
             if (IsBranchesPassed(argument))
             {
-                await ExecuteInstructions(argument);
+                await sharedInstruction.ExecuteInstructions(argument);
             }
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
+using __SARV.Core.Shared;
 using __SARV.Dialogue.Enum;
 using __SARV.Framework.Property;
 using Sirenix.OdinInspector;
@@ -25,6 +26,12 @@ namespace __SARV.Dialogue.Entity
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("Text")] [HideIf(nameof(IsTypeRandom))]
         private string text;
 
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("OnEnter")]
+        private SVSharedInstruction onEnterSharedInstruction;
+
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("OnExit")]
+        private SVSharedInstruction onExitSharedInstruction;
+
         [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)]
         private List<SVDialogueNode> dialogues = new();
 
@@ -33,6 +40,8 @@ namespace __SARV.Dialogue.Entity
         public SVDialogueNodeAdvanceMode AdvanceMode => advanceMode;
         public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;
         public float Delay => delay.Value;
+        public SVSharedInstruction OnEnterSharedInstruction => onEnterSharedInstruction;
+        public SVSharedInstruction OnExitSharedInstruction => onExitSharedInstruction;
 
         private string GroupTitle => $"{Type.ToReadableString()} - {AdvanceMode.ToReadableString()} - {(string.IsNullOrEmpty(Text) ? "..." : Text)}";
         private bool IsDelayMustShowed => AdvanceMode == SVDialogueNodeAdvanceMode.Delay && !IsTypeRandom;

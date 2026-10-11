@@ -5,13 +5,14 @@ using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Extension;
 using __SARV.Core.Reflection;
+using __SARV.Core.Shared;
 using __SARV.Framework.Signal;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework
 {
-    public class SARVTrigger : SVInstructionMonoBehaviour
+    public class SARVTrigger : SVMonoBehaviour
     {
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";
@@ -25,13 +26,15 @@ namespace __SARV.Framework
         [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the event above is raised")]
         private string tooltip = "";
 
+        [SerializeField] [HideLabel] private SVSharedInstruction sharedInstruction;
+
         public SVSignalComponent Signal => IsSignalComponentNull ? null : signalComponent;
         public bool IsSignalComponentNull => signalComponent is SVNullSignal or null;
         public string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetType().GetTitle())}";
 
         private void Awake()
         {
-            signalComponent.SetHandler(d=>_ = ExecuteInstructions(d));
+            signalComponent.SetHandler(d => _ = sharedInstruction.ExecuteInstructions(d));
             Signal.HandleAwake();
         }
 

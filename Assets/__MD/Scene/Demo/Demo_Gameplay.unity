@@ -258,31 +258,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instruction: 
-  instructions:
-  - rid: 4447245508508909665
   description: 
   signal: Physics/OnTriggerEnter
   signalComponent:
     rid: 4447245475530145953
   tooltip: 
+  sharedInstruction:
+    instruction: 
+    instructions:
+    - rid: 4447245508508909704
   references:
     version: 2
     RefIds:
     - rid: 4447245475530145953
       type: {class: SVPhysicsSignalOnTriggerEnter, ns: __SARV.Framework.Signal, asm: Assembly-CSharp}
       data: 
-    - rid: 4447245508508909665
+    - rid: 4447245508508909704
       type: {class: SVDialogueInstructionRun, ns: __SARV.Framework.Instruction.Dialogue, asm: Assembly-CSharp}
       data:
         disabled: 0
         dialogue: {fileID: 410139903}
         waitToFinish:
-          rid: 4447245508508909666
-    - rid: 4447245508508909666
+          rid: 4447245508508909705
+    - rid: 4447245508508909705
       type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
-        value: 1
+        value: 0
 --- !u!65 &35189044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -480,18 +481,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - type: 10
-    state: 10
     advanceMode: 20
     delay:
       rid: 4447245508508909568
     text: Hi, I am a green cube and this is a simple text
+    onEnterSharedInstruction:
+      instruction: 
+      instructions:
+      - rid: 4447245508508909707
+    onExitSharedInstruction:
+      instruction: 
+      instructions:
+      - rid: 4447245508508909712
     dialogues: []
   - type: 10
-    state: 10
     advanceMode: 20
     delay:
       rid: 4447245508508909669
     text: Hello friend! Welcome to my humble store!
+    onEnterSharedInstruction:
+      instruction: 
+      instructions:
+      - rid: 4447245508508909690
+    onExitSharedInstruction:
+      instruction: 
+      instructions: []
     dialogues: []
   references:
     version: 2
@@ -505,16 +519,68 @@ MonoBehaviour:
     - rid: 4447245508508909669
       type: {class: SVFloatProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
-        property: 
+        property: Manual
         propertyComponent:
-          rid: 4447245508508909670
-    - rid: 4447245508508909670
-      type: {class: 'SVNullProperty`1[[System.Single, mscorlib]]', ns: __SARV.Framework.Property, asm: Assembly-CSharp}
-      data: 
+          rid: 4447245508508909706
     - rid: 4447245508508909671
       type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
       data:
         value: 5
+    - rid: 4447245508508909690
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevel: 10
+        text:
+          rid: 4447245508508909691
+    - rid: 4447245508508909691
+      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245508508909693
+    - rid: 4447245508508909693
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: perfect wating
+    - rid: 4447245508508909706
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 4447245508508909707
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevel: 10
+        text:
+          rid: 4447245508508909708
+    - rid: 4447245508508909708
+      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245508508909711
+    - rid: 4447245508508909711
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: Wait 5 sec
+    - rid: 4447245508508909712
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevel: 10
+        text:
+          rid: 4447245508508909713
+    - rid: 4447245508508909713
+      type: {class: SVStringProperty, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245508508909716
+    - rid: 4447245508508909716
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Property, asm: Assembly-CSharp}
+      data:
+        value: done 5 sec
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,10 +17,22 @@ namespace __SARV.Dialogue.SubDialogue
 
         private async Task RunDialogueNode(SVDialogueNode node)
         {
+            await RunDialogueOnEnter(node);
             RunDialogueNodeType(node);
             await RunDialogueNodeAdvanceMode(node);
 
+            await RunDialogueOnExit(node);
             await RunDialogueChildrenNode(node.Dialogues);
+        }
+
+        private async Task RunDialogueOnEnter(SVDialogueNode node)
+        {
+            await node.OnEnterSharedInstruction.ExecuteInstructions(SVArgument.Empty());
+        }
+
+        private async Task RunDialogueOnExit(SVDialogueNode node)
+        {
+            await node.OnExitSharedInstruction.ExecuteInstructions(SVArgument.Empty());
         }
 
         private async Task RunDialogueNodeAdvanceMode(SVDialogueNode node)
@@ -62,14 +74,6 @@ namespace __SARV.Dialogue.SubDialogue
         }
 
         private void RunDialogueNodeTypeRandom(SVDialogueNode node)
-        {
-        }
-
-        private void RunDialogueNodeStateContinue(SVDialogueNode node)
-        {
-        }
-
-        private void RunDialogueNodeStateComplete(SVDialogueNode node)
         {
         }
 

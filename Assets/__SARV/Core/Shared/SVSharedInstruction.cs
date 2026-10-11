@@ -3,15 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using __SARV.Core.Base;
 using __SARV.Core.Component;
 using __SARV.Core.Reflection;
 using __SARV.Framework.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Core.Base
+namespace __SARV.Core.Shared
 {
-    public class SVInstructionMonoBehaviour : SVMonoBehaviour
+    [Serializable]
+    public class SVSharedInstruction : SVSerializable
     {
         [BoxGroup("ActionRow01", showLabel: false)] [HorizontalGroup("ActionRow01/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllInstructionComponents))] [OnValueChanged(nameof(OnInstructionChanged), InvokeOnInitialize = true)] [PropertyOrder(int.MaxValue)]
         protected string instruction = "";
@@ -38,10 +40,10 @@ namespace __SARV.Core.Base
 
         public List<SVInstructionComponent> Instructions => instructions;
         private bool IsInstructionValid => !string.IsNullOrEmpty(instruction);
-
-        protected async Task ExecuteInstructions(SVArgument argument)
+        
+        public async Task ExecuteInstructions(SVArgument argument)
         {
-            foreach (var instructionComponent in instructions)
+            foreach (var instructionComponent in Instructions)
             {
                 await instructionComponent.Execute(argument);
             }
