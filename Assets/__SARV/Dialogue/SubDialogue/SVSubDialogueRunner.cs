@@ -18,7 +18,6 @@ namespace __SARV.Dialogue.SubDialogue
         private async Task RunDialogueNode(SVDialogueNode node)
         {
             RunDialogueNodeType(node);
-            RunDialogueNodeState(node);
             await RunDialogueNodeAdvanceMode(node);
 
             await RunDialogueChildrenNode(node.Dialogues);
@@ -33,19 +32,6 @@ namespace __SARV.Dialogue.SubDialogue
                     break;
                 case SVDialogueNodeAdvanceMode.Delay:
                     await RunDialogueNodeAdvanceModeDelay(node);
-                    break;
-            }
-        }
-
-        private void RunDialogueNodeState(SVDialogueNode node)
-        {
-            switch (node.State)
-            {
-                case SVDialogueNodeState.Continue:
-                    RunDialogueNodeStateContinue(node);
-                    break;
-                case SVDialogueNodeState.Complete:
-                    RunDialogueNodeStateComplete(node);
                     break;
             }
         }
