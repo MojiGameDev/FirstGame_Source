@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace __SARV.Core.Base
+namespace __SARV.Common.Base
 {
     [Serializable]
     public abstract class SVSerializable

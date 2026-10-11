@@ -1,9 +1,9 @@
-﻿using __SARV.Core.Access;
-using __SARV.Player.SubPlayer;
+﻿using __SARV.Actor.Player.SubPlayer;
+using __SARV.Common.Access;
 
-namespace __SARV.Player
+namespace __SARV.Actor.Player
 {
-    public class SARVPlayer : SVSubSARVPlayerCharacter
+    public class SARVPlayer : SVSubPlayerCharacter
     {
         protected override void Awake()
         {

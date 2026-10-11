@@ -1,7 +1,7 @@
-﻿using __SARV.Cameras;
-using __SARV.Core.Base;
+﻿using __SARV.Common.Base;
+using __SARV.Framework.Module.Cameras;
 
-namespace __SARV.Core.Access
+namespace __SARV.Common.Access
 {
     public class SVAccessCamera : SVAccess<SARVCamera>
     {

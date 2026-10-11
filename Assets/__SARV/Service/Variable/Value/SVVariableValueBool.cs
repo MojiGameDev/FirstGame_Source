@@ -1,6 +1,6 @@
 ﻿using System;
-using __SARV.Core.Attributes;
-using __SARV.Core.Extension;
+using __SARV.Common.Extension;
+using __SARV.Framework.Common.Attributes;
 using __SARV.Service.Variable.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;

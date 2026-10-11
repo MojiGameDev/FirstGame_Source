@@ -1,7 +1,6 @@
-﻿using __SARV.Core.Base;
-using __SARV.Core.Shared;
+﻿using __SARV.Common.Base;
 
-namespace __SARV.Agent
+namespace __SARV.Actor.Agent
 {
     public class SARVAgent : SVOverrideMonoBehaviour
     {

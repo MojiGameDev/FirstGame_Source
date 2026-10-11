@@ -1,9 +1,9 @@
 ﻿using System;
-using __SARV.Core.Base;
+using __SARV.Common.Base;
 using __SARV.Service.Identifier;
 using UnityEngine;
 
-namespace __SARV.Core.Wrapper
+namespace __SARV.Common.Wrapper
 {
     [Serializable]
     public class SVWrapperPoolKitIdentifier : SVSerializable

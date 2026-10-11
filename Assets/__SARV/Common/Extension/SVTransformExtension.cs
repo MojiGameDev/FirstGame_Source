@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace __SARV.Core.Extension
+namespace __SARV.Common.Extension
 {
     public static class SVTransformExtension
     {

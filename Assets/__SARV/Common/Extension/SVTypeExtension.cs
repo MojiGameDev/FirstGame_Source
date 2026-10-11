@@ -1,9 +1,8 @@
 ﻿using System;
-using __SARV.Core.Attributes;
-using __SARV.Core.Component.Base;
+using __SARV.Framework.Common.Attributes;
 using Sirenix.Utilities;
 
-namespace __SARV.Core.Extension
+namespace __SARV.Common.Extension
 {
     public static class SVTypeExtension
     {

@@ -1,8 +1,10 @@
-﻿using __SARV.Core.Base;
-using __SARV.Core.Extension;
-using __SARV.Dialogue;
+﻿using __SARV.Common.Base;
+using __SARV.Common.Extension;
 using __SARV.Framework;
-using __SARV.Indicator;
+using __SARV.Framework.Kernal;
+using __SARV.Framework.Module.Dialogue;
+using __SARV.Framework.Module.Indicator;
+using __SARV.Framework.Module.State;
 using __SARV.Service.Variable;
 using UnityEditor;
 using UnityEngine;

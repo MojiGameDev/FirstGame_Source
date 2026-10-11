@@ -1,5 +1,5 @@
 ﻿using System;
-using __SARV.Core.Base;
+using __SARV.Common.Base;
 
 namespace __SARV.Service.Variable.Base
 {

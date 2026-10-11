@@ -1,4 +1,4 @@
-﻿namespace __SARV.Core.Base
+﻿namespace __SARV.Common.Base
 {
     public abstract class SVSingletonGlobalMonoBehaviour<T> : SVSingleton<T> where T : SVOverrideMonoBehaviour
     {

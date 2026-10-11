@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using __SARV.Core.Base;
+using __SARV.Common.Base;
 using __SARV.Service.Variable.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;

@@ -1,7 +1,7 @@
-﻿using __SARV.Framework;
+﻿using __SARV.Framework.Module.State;
 using UnityEngine;
 
-namespace __SARV.Core.Base
+namespace __SARV.Common.Base
 {
     public class SVAccess<TType> where TType : SARV
     {

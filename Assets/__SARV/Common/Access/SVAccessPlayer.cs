@@ -1,7 +1,7 @@
-﻿using __SARV.Core.Base;
-using __SARV.Player;
+﻿using __SARV.Actor.Player;
+using __SARV.Common.Base;
 
-namespace __SARV.Core.Access
+namespace __SARV.Common.Access
 {
     public class SVAccessPlayer : SVAccess<SARVPlayer>
     {

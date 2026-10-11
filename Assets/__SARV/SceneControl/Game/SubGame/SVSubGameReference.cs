@@ -1,4 +1,4 @@
-﻿using __SARV.Core.Base;
+﻿using __SARV.Common.Base;
 
 namespace __SARV.SceneControl.Game.SubGame
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
-using __SARV.Core.Base;
-using __SARV.Core.Reflection;
+using __SARV.Common.Base;
+using __SARV.Framework.Common.Reflection;
 using __SARV.Service.Identifier;
 using __SARV.Service.Variable.Base;
 using __SARV.Service.Variable.Value;

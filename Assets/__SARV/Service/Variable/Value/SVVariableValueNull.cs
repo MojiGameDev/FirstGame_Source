@@ -1,5 +1,5 @@
 ﻿using System;
-using __SARV.Core.Attributes;
+using __SARV.Framework.Common.Attributes;
 using __SARV.Service.Variable.Base;
 
 namespace __SARV.Service.Variable.Value

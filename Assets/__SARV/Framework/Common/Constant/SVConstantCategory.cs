@@ -1,0 +1,38 @@
+﻿namespace __SARV.Framework.Common.Constant
+{
+    public static class SVConstantCategory
+    {
+        public static class Signal
+        {
+            public const string LIFECYCLE = "Lifecycle";
+            public const string PHYSICS = "Physics";
+        }
+
+        public static class Instruction
+        {
+            public const string DEBUG = "Debug";
+            public const string KERNAL = "Kernal";
+            public const string DIALOGUE = "Dialogue";
+        }
+
+        public static class Branch
+        {
+            public const string LOGIC = "Logic";
+        }
+
+        public static class Property
+        {
+            public const string EXTERNAL = "External";
+            public const string STRING = "String";
+            public const string BOOL = "Bool";
+            public const string VECTOR3 = "Vector3";
+            public const string GAME_OBJECT = "GameObject";
+            public const string FLOAT = "Float";
+        }
+
+        public static class Behavior
+        {
+            public const string PLAYER = "Player";
+        }
+    }
+}
