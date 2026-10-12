@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using __SARV.Common.Base;
-using __SARV.Service.Variable.Entity;
+using __SARV.Framework.Module.Variable.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Service.Variable
+namespace __SARV.Framework.Module.Variable
 {
     public class SARVScalarVariable : SVMonoBehaviour
     {

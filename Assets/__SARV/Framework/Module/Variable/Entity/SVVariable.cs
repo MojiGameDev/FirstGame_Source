@@ -2,13 +2,13 @@
 using System.Collections;
 using __SARV.Common.Base;
 using __SARV.Framework.Common.Reflection;
+using __SARV.Framework.Module.Variable.Base;
+using __SARV.Framework.Module.Variable.Value;
 using __SARV.Service.Identifier;
-using __SARV.Service.Variable.Base;
-using __SARV.Service.Variable.Value;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Service.Variable.Entity
+namespace __SARV.Framework.Module.Variable.Entity
 {
     [Serializable]
     public class SVVariable : SVSerializable

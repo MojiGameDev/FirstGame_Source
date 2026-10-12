@@ -1,16 +1,16 @@
 ﻿using System;
 using __SARV.Framework.Common.Attributes;
-using __SARV.Service.Variable.Base;
+using __SARV.Framework.Module.Variable.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Service.Variable.Value
+namespace __SARV.Framework.Module.Variable.Value
 {
-    [SVTitle("Int")]
+    [SVTitle("String")]
     [Serializable]
-    public class SVVariableValueInt : SVVariableValue
+    public class SVVariableValueString : SVVariableValue
     {
-        [SerializeField] [HideLabel] private int value;
+        [SerializeField] [HideLabel] private string value;
 
         protected override object GetValue()
         {
@@ -19,12 +19,12 @@ namespace __SARV.Service.Variable.Value
 
         protected override void SetValue(object newValue)
         {
-            value = (int)newValue;
+            value = value?.ToString() ?? string.Empty;
         }
 
         public override string ToString()
         {
-            return value.ToString();
+            return value;
         }
     }
 }

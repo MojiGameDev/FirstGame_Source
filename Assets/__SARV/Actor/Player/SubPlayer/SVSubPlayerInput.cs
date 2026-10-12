@@ -1,4 +1,5 @@
-﻿using __SARV.SceneControl.Game;
+﻿using System.Threading.Tasks;
+using __SARV.SceneControl.Game;
 using Rewired;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -66,7 +67,8 @@ namespace __SARV.Actor.Player.SubPlayer
         private float InputMoveHorizontal => SARVGame.Instance.Player.GetAxisRaw(_playerMoveHorizontalId);
         private float InputMoveVertical => SARVGame.Instance.Player.GetAxisRaw(_playerMoveVerticalId);
         public bool InputSprint => SARVGame.Instance.Player.GetButton(_playerSprintId);
-        // public bool InputInteract => SARVGame.Instance.Player.GetButtonDown(_playerInteractId);
+
+        public bool InputInteract => SARVGame.Instance.Player.GetButtonDown(_playerInteractId);
         // public bool InputRoll => SARVGame.Instance.Player.GetButtonDown(_playerRollId);
         // public bool InputAttackSword => SARVGame.Instance.Player.GetButtonDown(_playerAttackSwordId);
         // public bool InputAttackBow => SARVGame.Instance.Player.GetButtonDown(_playerAttackBowId);
@@ -79,13 +81,15 @@ namespace __SARV.Actor.Player.SubPlayer
 
         public Vector3 InputMovementDirection => inputMovementDirection;
 
+        private TaskCompletionSource<bool> _interactPressed;
+
         protected override void Awake()
         {
             base.Awake();
             _playerMoveHorizontalId = ReInput.mapping.GetActionId(playerMoveHorizontalKey);
             _playerMoveVerticalId = ReInput.mapping.GetActionId(playerMoveVerticalKey);
             _playerSprintId = ReInput.mapping.GetActionId(playerSprintKey);
-            // _playerInteractId = ReInput.mapping.GetActionId(playerInteractKey);
+            _playerInteractId = ReInput.mapping.GetActionId(playerInteractKey);
             // _playerRollId = ReInput.mapping.GetActionId(playerRollKey);
             // _playerAttackSwordId = ReInput.mapping.GetActionId(playerAttackSwordKey);
             // _playerAttackBowId = ReInput.mapping.GetActionId(playerAttackBowKey);
@@ -101,6 +105,21 @@ namespace __SARV.Actor.Player.SubPlayer
         {
             base.Update();
             HandleMovementDirection();
+            HandleInteractPressed();
+        }
+        
+        public Task WaitForInteract()
+        {
+            _interactPressed = new TaskCompletionSource<bool>();
+            return _interactPressed.Task;
+        }
+
+        private void HandleInteractPressed()
+        {
+            if (InputInteract)
+            {
+                _interactPressed?.TrySetResult(true);
+            }
         }
 
         private void HandleMovementDirection()

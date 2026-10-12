@@ -481,9 +481,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - type: 10
-    advanceMode: 20
+    advanceMode: 10
     delay:
-      rid: -2
+      rid: 4447245521617158310
     text: Hi, I am a green cube and this is a simple text
     onEnterInstruction:
       instruction: 
@@ -502,14 +502,11 @@ MonoBehaviour:
       instructions: []
     onExitInstruction:
       instruction: 
-      instructions:
-      - rid: 4447245521617158289
+      instructions: []
     dialogues: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 4447245521617158286
       type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
@@ -520,22 +517,16 @@ MonoBehaviour:
       type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         value: 5
-    - rid: 4447245521617158289
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+    - rid: 4447245521617158310
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        disabled: 0
-        logLevel: 10
-        text:
-          rid: 4447245521617158290
-    - rid: 4447245521617158290
-      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Random
+        property: Manual
         propertyComponent:
-          rid: 4447245521617158292
-    - rid: 4447245521617158292
-      type: {class: SVStringPropertyRandom, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
+          rid: 4447245521617158312
+    - rid: 4447245521617158312
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 0
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0

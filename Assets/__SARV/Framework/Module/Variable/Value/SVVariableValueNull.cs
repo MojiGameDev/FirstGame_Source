@@ -1,8 +1,8 @@
 ﻿using System;
 using __SARV.Framework.Common.Attributes;
-using __SARV.Service.Variable.Base;
+using __SARV.Framework.Module.Variable.Base;
 
-namespace __SARV.Service.Variable.Value
+namespace __SARV.Framework.Module.Variable.Value
 {
     [SVIgnore]
     [Serializable]

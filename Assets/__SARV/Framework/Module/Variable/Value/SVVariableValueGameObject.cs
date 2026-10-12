@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Globalization;
 using __SARV.Framework.Common.Attributes;
-using __SARV.Service.Variable.Base;
+using __SARV.Framework.Module.Variable.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Service.Variable.Value
+namespace __SARV.Framework.Module.Variable.Value
 {
-    [SVTitle("Float")]
+    [SVTitle("GameObject")]
     [Serializable]
-    public class SVVariableValueFloat : SVVariableValue
+    public class SVVariableValueGameObject : SVVariableValue
     {
-        [SerializeField] [HideLabel] private float value;
+        [SerializeField] [HideLabel] private GameObject value;
 
         protected override object GetValue()
         {
@@ -20,12 +19,12 @@ namespace __SARV.Service.Variable.Value
 
         protected override void SetValue(object newValue)
         {
-            value = (float)newValue;
+            value = value as GameObject;
         }
 
         public override string ToString()
         {
-            return value.ToString(CultureInfo.InvariantCulture);
+            return value != null ? value.name : "(none)";
         }
     }
 }

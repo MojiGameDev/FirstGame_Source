@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using __SARV.Common.Access;
 using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Kernal.Argument;
 using __SARV.Framework.Module.Dialogue.Entity;
@@ -18,10 +19,12 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
         private async Task RunDialogueNode(SVDialogueNode node)
         {
             await RunDialogueOnEnter(node);
+
             RunDialogueNodeType(node);
             await RunDialogueNodeAdvanceMode(node);
 
             await RunDialogueOnExit(node);
+
             await RunDialogueChildrenNode(node.Dialogues);
         }
 
@@ -40,7 +43,7 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
             switch (node.AdvanceMode)
             {
                 case SVDialogueNodeAdvanceMode.InputKey:
-                    RunDialogueNodeAdvanceModeInputKey(node);
+                    await RunDialogueNodeAdvanceModeInputKey(node);
                     break;
                 case SVDialogueNodeAdvanceMode.Delay:
                     await RunDialogueNodeAdvanceModeDelay(node);
@@ -77,8 +80,9 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
         {
         }
 
-        private void RunDialogueNodeAdvanceModeInputKey(SVDialogueNode node)
+        private async Task RunDialogueNodeAdvanceModeInputKey(SVDialogueNode node)
         {
+            await SVAccessPlayer.Instance.WaitForInteract();
         }
 
         private async Task RunDialogueNodeAdvanceModeDelay(SVDialogueNode node)

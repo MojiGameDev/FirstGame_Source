@@ -5,7 +5,7 @@ using __SARV.Framework.Kernal;
 using __SARV.Framework.Module.Dialogue;
 using __SARV.Framework.Module.Indicator;
 using __SARV.Framework.Module.State;
-using __SARV.Service.Variable;
+using __SARV.Framework.Module.Variable;
 using UnityEditor;
 using UnityEngine;
 

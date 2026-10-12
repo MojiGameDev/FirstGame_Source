@@ -1,16 +1,17 @@
 ﻿using System;
+using __SARV.Common.Extension;
 using __SARV.Framework.Common.Attributes;
-using __SARV.Service.Variable.Base;
+using __SARV.Framework.Module.Variable.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Service.Variable.Value
+namespace __SARV.Framework.Module.Variable.Value
 {
-    [SVTitle("Vector3")]
+    [SVTitle("Bool")]
     [Serializable]
-    public class SVVariableValueVector3 : SVVariableValue
+    public class SVVariableValueBool : SVVariableValue
     {
-        [SerializeField] [HideLabel] private Vector3 value;
+        [SerializeField] [HideLabel] private bool value;
 
         protected override object GetValue()
         {
@@ -19,12 +20,12 @@ namespace __SARV.Service.Variable.Value
 
         protected override void SetValue(object newValue)
         {
-            value = value is var cast ? cast : Vector3.zero;
+            value = newValue is true;
         }
 
         public override string ToString()
         {
-            return value.ToString();
+            return value.ToName();
         }
     }
 }

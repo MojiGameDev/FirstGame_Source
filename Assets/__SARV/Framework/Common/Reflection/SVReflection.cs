@@ -4,7 +4,7 @@ using System.Linq;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
-using __SARV.Service.Variable.Base;
+using __SARV.Framework.Module.Variable.Base;
 using Unity.VisualScripting;
 
 namespace __SARV.Framework.Common.Reflection
