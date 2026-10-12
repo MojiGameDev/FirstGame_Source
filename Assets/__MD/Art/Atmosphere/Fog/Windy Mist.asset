@@ -23,34 +23,34 @@ MonoBehaviour:
   constantDensity: 0
   noiseTexture: {fileID: 2800000, guid: 9c79340e1a1054275ba04070a27de306, type: 3}
   noiseTextureOptimizedSize: 256
-  noiseStrength: 0.15
+  noiseStrength: 0.2
   noiseScale: 50
   noiseFinalMultiplier: 0.3
   useDetailNoise: 1
   detailTexture: {fileID: 11700000, guid: 950add8d241c6479bbab1f10e1035d60, type: 2}
   detailScale: 0.5
-  detailStrength: 0.3
+  detailStrength: 0.35
   detailOffset: -0.5
-  density: 0.22
+  density: 0.3
   shape: 0
   scaleNoiseWithHeight: 0
   border: 0.1
-  customHeight: 1
+  customHeight: 0
   height: 20
   verticalOffset: 0
   distance: 0
   distanceFallOff: 1
-  maxDistance: 500
+  maxDistance: 350
   maxDistanceFallOff: 0.15
-  terrainFit: 0
-  terrainFitResolution: 128
+  terrainFit: 1
+  terrainFitResolution: 1024
   terrainLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967293
-  terrainFogHeight: 25
-  terrainFogMinAltitude: 0
-  terrainFogMaxAltitude: 150
-  albedo: {r: 0.39215687, g: 0.47058824, b: 0.5803922, a: 0.7}
+    m_Bits: 4294965885
+  terrainFogHeight: 5
+  terrainFogMinAltitude: 40
+  terrainFogMaxAltitude: 60
+  albedo: {r: 0.44313726, g: 0.54509807, b: 0.6666667, a: 0.6}
   enableDepthGradient: 0
   depthGradient:
     serializedVersion: 2
@@ -114,15 +114,15 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  brightness: 1.15
-  deepObscurance: 0.65
-  specularColor: {r: 1, g: 1, b: 0.8, a: 1}
-  specularThreshold: 0.7
-  specularIntensity: 0.08
+  brightness: 0.8
+  deepObscurance: 0.8
+  specularColor: {r: 0.8627451, g: 0.9098039, b: 1, a: 1}
+  specularThreshold: 0.65
+  specularIntensity: 0.12
   turbulence: 0.05
-  windDirection: {x: 0.002, y: 0, z: -0.002}
+  windDirection: {x: 0.001, y: 0, z: -0.001}
   useCustomDetailNoiseWindDirection: 1
-  detailNoiseWindDirection: {x: 0.01, y: 0.001, z: 0}
+  detailNoiseWindDirection: {x: 0.005, y: 0.001, z: 0}
   dayNightCycle: 0
   sunDirection: {x: 0, y: 0, z: 0}
   sunColor: {r: 1, g: 1, b: 1, a: 1}
@@ -130,8 +130,8 @@ MonoBehaviour:
   ambientLightMultiplier: 0.05
   lightDiffusionModel: 0
   lightDiffusionPower: 32
-  lightDiffusionIntensity: 0.3
-  lightDiffusionNearDepthAtten: 0.15
+  lightDiffusionIntensity: 0.4
+  lightDiffusionNearDepthAtten: 0.1
   receiveShadows: 1
   shadowIntensity: 0.5
   shadowCancellation: 0
