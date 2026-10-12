@@ -1,4 +1,5 @@
-﻿using __SARV.Service.Identifier;
+﻿using __SARV.Framework.Integration.OdinInspector.Runtime;
+using __SARV.Service.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -6,14 +7,14 @@ namespace __SARV.Service.Localizer.SubLocalizer
 {
     public abstract class SVSubLocalizerVoice : SVSubLocalizerText
     {
-        [FoldoutGroup("Text")] [Title("HasVoice?")] [SerializeField] [HideLabel]
-        private bool hasVoice;
+        [FoldoutGroup("Text")] [SerializeField]
+        protected bool hasVoice;
 
-        [FoldoutGroup("Text")] [Title("PersianVoice")] [SerializeField] [HideLabel]
-        private SARVIdentifier persianVoiceIdentifier;
+        [FoldoutGroup("Text")] [SerializeField] [ShowIf(nameof(HasVoice))]
+        protected SARVIdentifier persianVoiceIdentifier;
 
-        [FoldoutGroup("Text")] [Title("EnglishVoice")] [SerializeField] [HideLabel]
-        private SARVIdentifier englishVoiceIdentifier;
+        [FoldoutGroup("Text")] [SerializeField] [ShowIf(nameof(HasVoice))]
+        protected SARVIdentifier englishVoiceIdentifier;
 
         public bool HasVoice => hasVoice;
         public SARVIdentifier PersianVoiceIdentifier => persianVoiceIdentifier;
