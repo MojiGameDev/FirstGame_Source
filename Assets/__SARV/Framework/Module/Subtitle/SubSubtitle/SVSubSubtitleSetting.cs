@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Subtitle.SVSubSubtitle
+namespace __SARV.Framework.Module.Subtitle.SubSubtitle
 {
     public abstract class SVSubSubtitleSetting : SVSubSubtitleReference
     {

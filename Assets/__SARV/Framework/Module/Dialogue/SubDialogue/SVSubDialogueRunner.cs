@@ -5,6 +5,7 @@ using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Kernal.Argument;
 using __SARV.Framework.Module.Dialogue.Entity;
 using __SARV.Framework.Module.Dialogue.Enum;
+using __SARV.Framework.Module.Subtitle;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Dialogue.SubDialogue
@@ -69,7 +70,7 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
 
         private void RunDialogueNodeTypeText(SVDialogueNode node)
         {
-            Debug.Log(node.Text);
+            SARVSubtitle.Instance.ShowSubtitle(node.SpeakerText);
         }
 
         private void RunDialogueNodeTypeChoice(SVDialogueNode node)

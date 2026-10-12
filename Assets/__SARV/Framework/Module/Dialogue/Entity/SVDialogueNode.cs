@@ -26,6 +26,9 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("Text")] [HideIf(nameof(IsTypeRandom))]
         private string text;
 
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("Speaker")] [HideIf(nameof(IsTypeRandom))]
+        private SARVSpeaker speaker;
+
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideLabel] [Title("OnEnter")]
         private SVInstruction onEnterInstruction;
 
@@ -40,12 +43,14 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         public SVDialogueNodeAdvanceMode AdvanceMode => advanceMode;
         public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;
         public float Delay => delay.Value;
+        public SARVSpeaker Speaker => speaker;
         public SVInstruction OnEnterInstruction => onEnterInstruction;
         public SVInstruction OnExitInstruction => onExitInstruction;
 
         private string GroupTitle => $"{Type.ToReadableString()} - {AdvanceMode.ToReadableString()} - {(string.IsNullOrEmpty(Text) ? "..." : Text)}";
         private bool IsDelayMustShowed => AdvanceMode == SVDialogueNodeAdvanceMode.Delay && !IsTypeRandom;
         private bool IsTypeRandom => Type == SVDialogueNodeType.Random;
+        public string SpeakerText => $"<color=#{speaker.TextColor}>{speaker.Speaker}:</color> {text}";
 
         private void CreateNode()
         {

@@ -1,5 +1,5 @@
 ﻿using __SARV.Common.Base;
-using __SARV.Framework.Module.Subtitle.SVSubSubtitle;
+using __SARV.Framework.Module.Subtitle.SubSubtitle;
 using Sirenix.OdinInspector;
 
 namespace __SARV.Framework.Module.Subtitle

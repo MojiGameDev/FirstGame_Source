@@ -4,26 +4,25 @@ using MEC;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace __SARV.Framework.Module.Subtitle.SVSubSubtitle
+namespace __SARV.Framework.Module.Subtitle.SubSubtitle
 {
     public abstract class SVSubSubtitleManager : SVSubSubtitleSetting
     {
         // Index 0 is always the newest subtitle.
-        private readonly List<SARVSubtitleView> subtitles = new();
-
-        private readonly Dictionary<SARVSubtitleView, CoroutineHandle> removalHandles = new();
+        private readonly List<SARVSubtitleView> _subtitles = new();
+        private readonly Dictionary<SARVSubtitleView, CoroutineHandle> _removalHandles = new();
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            foreach (var handle in removalHandles.Values)
+            foreach (var handle in _removalHandles.Values)
             {
                 Timing.KillCoroutines(handle);
             }
 
-            removalHandles.Clear();
+            _removalHandles.Clear();
 
-            foreach (var subtitle in subtitles)
+            foreach (var subtitle in _subtitles)
             {
                 if (subtitle == null)
                 {
@@ -33,7 +32,7 @@ namespace __SARV.Framework.Module.Subtitle.SVSubSubtitle
                 subtitle.RectTransform.DOKill();
             }
 
-            subtitles.Clear();
+            _subtitles.Clear();
         }
 
         /// <summary>
@@ -41,18 +40,12 @@ namespace __SARV.Framework.Module.Subtitle.SVSubSubtitle
         /// </summary>
         public void ShowSubtitle(string text)
         {
-            if (string.IsNullOrWhiteSpace(text))
+            if (string.IsNullOrEmpty(text))
             {
                 return;
             }
 
-            if (subtitleContainer == null || subtitlePrefab == null)
-            {
-                Debug.LogError("SVSubtitleSystem: Container or prefab is not assigned.", this);
-                return;
-            }
-
-            SARVSubtitleView subtitle = Instantiate(subtitlePrefab, subtitleContainer, false);
+            var subtitle = Instantiate(subtitlePrefab, subtitleContainer, false);
 
             subtitle.SetText(text);
 
@@ -62,13 +55,13 @@ namespace __SARV.Framework.Module.Subtitle.SVSubSubtitle
 
             subtitle.RectTransform.anchoredPosition = Vector2.zero;
 
-            subtitles.Insert(0, subtitle);
+            _subtitles.Insert(0, subtitle);
 
             RepositionSubtitles();
 
-            CoroutineHandle handle = Timing.RunCoroutine(RemoveAfterDuration(subtitle), Segment.Update);
+            var handle = Timing.RunCoroutine(RemoveAfterDuration(subtitle), Segment.Update);
 
-            removalHandles[subtitle] = handle;
+            _removalHandles[subtitle] = handle;
         }
 
         /// <summary>
@@ -77,22 +70,22 @@ namespace __SARV.Framework.Module.Subtitle.SVSubSubtitle
         /// </summary>
         private void RepositionSubtitles()
         {
-            float y = 0f;
+            var y = 0f;
 
-            for (int i = 0; i < subtitles.Count; i++)
+            foreach (var subtitle in _subtitles)
             {
-                SARVSubtitleView subtitle = subtitles[i];
-
                 if (subtitle == null)
+                {
                     continue;
+                }
 
-                RectTransform rect = subtitle.RectTransform;
+                var rectTransform = subtitle.RectTransform;
 
-                Vector2 targetPosition = new Vector2(0f, y);
+                var targetPosition = new Vector2(0f, y);
 
-                rect.DOKill();
+                rectTransform.DOKill();
 
-                rect.DOAnchorPos(targetPosition, moveDuration)
+                rectTransform.DOAnchorPos(targetPosition, moveDuration)
                     .SetEase(moveEase)
                     .SetLink(subtitle.gameObject);
 
@@ -109,12 +102,12 @@ namespace __SARV.Framework.Module.Subtitle.SVSubSubtitle
 
             if (subtitle == null)
             {
-                removalHandles.Remove(subtitle);
+                _removalHandles.Remove(subtitle);
                 yield break;
             }
 
-            subtitles.Remove(subtitle);
-            removalHandles.Remove(subtitle);
+            _subtitles.Remove(subtitle);
+            _removalHandles.Remove(subtitle);
 
             subtitle.RectTransform.DOKill();
 
