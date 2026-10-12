@@ -5,6 +5,7 @@ using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Common.Enum;
 using __SARV.Framework.Common.Utils;
+using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Argument;
 using __SARV.Framework.Kernal.Property;
 using Sirenix.OdinInspector;
@@ -21,7 +22,7 @@ namespace __SARV.Framework.Kernal.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [Title("LogLevel")] [SerializeField] [HideLabel] [HideReferenceObjectPicker]
         private SVLogLevel logLevel = SVLogLevel.Info;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Text")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<string> text = new SVStringProperty();
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Sends {text} to the console";

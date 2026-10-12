@@ -2,6 +2,7 @@
 using System.Collections;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Reflection;
+using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace __SARV.Framework.Common.Base
     [Serializable]
     public abstract class SVParentProperty<TType> : SVPropertyComponent<TType>
     {
-        [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllProperties))] [OnValueChanged(nameof(OnPropertyChanged))]
+        [SerializeField] [SVLabel] [ValueDropdown(nameof(GetAllProperties))] [OnValueChanged(nameof(OnPropertyChanged))]
         protected string property = "";
 
         [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [ShowIf(nameof(IsPropertyHasValue))]
