@@ -5,11 +5,11 @@ namespace __SARV.Misc.Editor
 {
     public static class SVSceneLoader
     {
-        private const string DEMO_SCENE = @"Assets\__MD\Scene\Demo\";
-        private const string PLAY_SCENE = @"Assets\__MD\Scene\Play\";
-        private const string MENU_SCENE = @"Assets\__MD\Scene\Menu\";
-        private const string ACT_01_SECTION_01 = @"Assets\__MD\Scene\Landscape\Act_01\Section_01\";
-        private const string ACT_01_SECTION_02 = @"Assets\__MD\Scene\Landscape\Act_01\Section_02\";
+        private const string DEMO_SCENE = @"Assets\__Content\Scene\Demo\";
+        private const string PLAY_SCENE = @"Assets\__Content\Scene\Play\";
+        private const string MENU_SCENE = @"Assets\__Content\Scene\Menu\";
+        private const string ACT_01_SECTION_01 = @"Assets\__Content\Scene\Landscape\Act_01\Section_01\";
+        private const string ACT_01_SECTION_02 = @"Assets\__Content\Scene\Landscape\Act_01\Section_02\";
 
         [MenuItem("SARV/Scene/Play")]
         public static void LoadPlay()
