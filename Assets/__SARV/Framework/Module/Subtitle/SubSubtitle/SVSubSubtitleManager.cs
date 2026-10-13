@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using __SARV.Common.Extension;
 using DG.Tweening;
 using MEC;
 using UnityEngine;
@@ -38,11 +39,16 @@ namespace __SARV.Framework.Module.Subtitle.SubSubtitle
         /// <summary>
         /// Displays a subtitle at the bottom of the subtitle stack.
         /// </summary>
-        public void ShowSubtitle(string text)
+        public void ShowSubtitle(string text, float duration = -1)
         {
             if (string.IsNullOrEmpty(text))
             {
                 return;
+            }
+
+            if (duration.ApproximatelyEquals(-1))
+            {
+                duration = defaultDuration;
             }
 
             var subtitle = Instantiate(subtitlePrefab, subtitleContainer, false);
@@ -59,7 +65,7 @@ namespace __SARV.Framework.Module.Subtitle.SubSubtitle
 
             RepositionSubtitles();
 
-            var handle = Timing.RunCoroutine(RemoveAfterDuration(subtitle), Segment.Update);
+            var handle = Timing.RunCoroutine(RemoveAfterDuration(subtitle, duration), Segment.Update);
 
             _removalHandles[subtitle] = handle;
         }
@@ -96,7 +102,7 @@ namespace __SARV.Framework.Module.Subtitle.SubSubtitle
         /// <summary>
         /// Removes a subtitle after the configured duration.
         /// </summary>
-        private IEnumerator<float> RemoveAfterDuration(SARVSubtitleView subtitle)
+        private IEnumerator<float> RemoveAfterDuration(SARVSubtitleView subtitle, float duration)
         {
             yield return Timing.WaitForSeconds(duration);
 

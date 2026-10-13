@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using __SARV.Service.Identifier.Contract;
-using __SARV.Service.Identifier.Entity;
+using __SARV.Framework.Module.Identifier.Contract;
+using __SARV.Framework.Module.Identifier.Entity;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace __SARV.Service.Identifier
+namespace __SARV.Framework.Module.Identifier
 {
     /// <summary>
     /// A <see cref="ScriptableObject"/> which holds a <see cref="SVIdentifierReference"/>

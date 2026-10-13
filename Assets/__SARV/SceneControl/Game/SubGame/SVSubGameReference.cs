@@ -2,8 +2,7 @@
 
 namespace __SARV.SceneControl.Game.SubGame
 {
-    public class SVSubGameReference: SVSingletonGlobalMonoBehaviour<SARVGame>
+    public abstract class SVSubGameReference : SVSingletonGlobalMonoBehaviour<SARVGame>
     {
-        
     }
 }

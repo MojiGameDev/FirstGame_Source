@@ -6,13 +6,12 @@ using UnityEngine;
 namespace __SARV.Framework.Integration.OdinInspector.Editor
 {
     [DrawerPriority(DrawerPriorityLevel.SuperPriority)]
-    public sealed class SVLabelDrawer : OdinAttributeDrawer<SVLabelAttribute>
+    public sealed class SVLabelAttributeDrawer : OdinAttributeDrawer<SVLabelAttribute>
     {
         protected override void DrawPropertyLayout(GUIContent label)
         {
-            var subtitleProperty = Property.Parent;
-            Debug.Log(Property.ParentType.Name);
-            CallNextDrawer(new GUIContent(subtitleProperty.Name.ToPascalCase()));
+            var inspectorProperty = Property.Parent;
+            CallNextDrawer(new GUIContent(inspectorProperty?.Name.ToPascalCase()));
         }
     }
 }

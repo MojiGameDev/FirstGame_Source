@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using __SARV.Common.Wrapper;
-using __SARV.Service.Identifier;
+using __SARV.Framework.Module.Identifier;
 using DarkTonic.PoolBoss;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.SceneControl.Game.SubGame
 {
-    public class SVSubGamePool : SVSubGameInput
+    public abstract class SVSubGamePool : SVSubGameInput
     {
         [FoldoutGroup("Pool")] [SerializeField] [TableList]
         private List<SVWrapperPoolKitIdentifier> wrappers = new();

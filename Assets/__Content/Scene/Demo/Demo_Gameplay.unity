@@ -481,10 +481,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - type: 10
-    advanceMode: 10
+    advanceMode: 20
     delay:
-      rid: 4447245521617158310
-    text: Hi, I am a green cube and this is a simple text
+      rid: 4447245550010761330
+    text: {fileID: 11400000, guid: e4a59d02869c5d54bbc497428ff5b58d, type: 2}
+    subtitleDelay:
+      rid: 4447245550010761339
     speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
     onEnterInstruction:
       instruction: 
@@ -496,8 +498,25 @@ MonoBehaviour:
   - type: 10
     advanceMode: 20
     delay:
-      rid: 4447245521617158286
-    text: Hello friend! Welcome to my humble store!
+      rid: 4447245550010761331
+    text: {fileID: 11400000, guid: 03d6e3d2bec83af49af32dee11b7f91f, type: 2}
+    subtitleDelay:
+      rid: 4447245550010761340
+    speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
+    onEnterInstruction:
+      instruction: 
+      instructions: []
+    onExitInstruction:
+      instruction: 
+      instructions: []
+    dialogues: []
+  - type: 10
+    advanceMode: 20
+    delay:
+      rid: 4447245550010761345
+    text: {fileID: 11400000, guid: 4496cb6602ed8b94885710d28c5bff92, type: 2}
+    subtitleDelay:
+      rid: 4447245550010761346
     speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
     onEnterInstruction:
       instruction: 
@@ -509,26 +528,66 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4447245521617158286
+    - rid: 4447245550010761330
       type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Manual
         propertyComponent:
-          rid: 4447245521617158288
-    - rid: 4447245521617158288
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 5
-    - rid: 4447245521617158310
+          rid: 4447245550010761337
+    - rid: 4447245550010761331
       type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Manual
         propertyComponent:
-          rid: 4447245521617158312
-    - rid: 4447245521617158312
+          rid: 4447245550010761338
+    - rid: 4447245550010761337
       type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        value: 0
+        value: 3
+    - rid: 4447245550010761338
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 4
+    - rid: 4447245550010761339
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245550010761343
+    - rid: 4447245550010761340
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245550010761344
+    - rid: 4447245550010761343
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 3
+    - rid: 4447245550010761344
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 4
+    - rid: 4447245550010761345
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245550010761347
+    - rid: 4447245550010761346
+      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyComponent:
+          rid: 4447245550010761348
+    - rid: 4447245550010761347
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 4
+    - rid: 4447245550010761348
+      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 4
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0

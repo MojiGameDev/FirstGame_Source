@@ -11,7 +11,7 @@ namespace __SARV.Framework.Module.Subtitle.SubSubtitle
         protected float spacing = 8f;
 
         [FoldoutGroup("Setting")] [SerializeField] [PropertyRange(0f, 5f)] [HideLabel]
-        protected float duration = 3f;
+        protected float defaultDuration = 3f;
 
         [FoldoutGroup("Setting")] [SerializeField] [PropertyRange(0f, 0.5f)] [HideLabel]
         protected float moveDuration = 0.25f;

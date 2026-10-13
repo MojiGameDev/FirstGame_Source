@@ -1,7 +1,7 @@
 ﻿using __SARV.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Kernal.Property;
-using __SARV.Service.Identifier;
+using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

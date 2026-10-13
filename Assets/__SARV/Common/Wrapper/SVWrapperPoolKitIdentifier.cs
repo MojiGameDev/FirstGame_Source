@@ -1,6 +1,6 @@
 ﻿using System;
 using __SARV.Common.Base;
-using __SARV.Service.Identifier;
+using __SARV.Framework.Module.Identifier;
 using UnityEngine;
 
 namespace __SARV.Common.Wrapper

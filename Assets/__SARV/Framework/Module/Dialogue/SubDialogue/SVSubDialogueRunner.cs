@@ -70,7 +70,7 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
 
         private void RunDialogueNodeTypeText(SVDialogueNode node)
         {
-            SARVSubtitle.Instance.ShowSubtitle(node.SpeakerText);
+            SARVSubtitle.Instance.ShowSubtitle(node.SubtitleText, node.SubtitleDelay);
         }
 
         private void RunDialogueNodeTypeChoice(SVDialogueNode node)

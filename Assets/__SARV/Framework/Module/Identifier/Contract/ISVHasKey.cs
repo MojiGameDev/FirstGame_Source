@@ -1,4 +1,4 @@
-﻿namespace __SARV.Service.Identifier.Contract
+﻿namespace __SARV.Framework.Module.Identifier.Contract
 {
     public interface ISVHasKey
     {
