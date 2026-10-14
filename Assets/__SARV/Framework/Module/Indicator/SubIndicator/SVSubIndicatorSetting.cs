@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SVSubIndicatorData : SVSubIndicatorReference
+    public abstract class SVSubIndicatorSetting : SVSubIndicatorReference
     {
-        [FoldoutGroup("Data")] [SerializeField] [PropertyRange(1, 10)]
+        [FoldoutGroup("Setting")] [SerializeField] [PropertyRange(1, 10)]
         protected float rotationSpeed = 4f;
     }
 }

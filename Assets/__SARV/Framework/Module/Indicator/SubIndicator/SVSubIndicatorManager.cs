@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SVSubIndicatorManager : SVSubIndicatorData
+    public abstract class SVSubIndicatorManager : SVSubIndicatorSetting
     {
         private Transform _focusUI;
         private Transform _distanceUI;

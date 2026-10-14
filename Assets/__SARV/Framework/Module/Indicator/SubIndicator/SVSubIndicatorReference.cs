@@ -11,10 +11,10 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         [FoldoutGroup("Reference")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
         protected SVPropertyComponent<GameObject> target = new SVGameObjectProperty();
 
-        [FoldoutGroup("Reference")] [SerializeField] [AssetsOnly] [Required]
+        [FoldoutGroup("Reference")] [SerializeField] [ChildGameObjectsOnly] [Required]
         protected GameObject focusUI;
 
-        [FoldoutGroup("Reference")] [SerializeField] [AssetsOnly] [Required]
+        [FoldoutGroup("Reference")] [SerializeField] [ChildGameObjectsOnly] [Required]
         protected GameObject distanceUI;
     }
 }

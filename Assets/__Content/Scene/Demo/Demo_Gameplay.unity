@@ -482,11 +482,9 @@ MonoBehaviour:
   dialogues:
   - type: 10
     advanceMode: 20
-    delay:
-      rid: 4447245550010761330
+    delay: 4
     text: {fileID: 11400000, guid: e4a59d02869c5d54bbc497428ff5b58d, type: 2}
-    subtitleDelay:
-      rid: 4447245550010761339
+    subtitleDelay: 2
     speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
     onEnterInstruction:
       instruction: 
@@ -497,11 +495,9 @@ MonoBehaviour:
     dialogues: []
   - type: 10
     advanceMode: 20
-    delay:
-      rid: 4447245550010761331
+    delay: 4
     text: {fileID: 11400000, guid: 03d6e3d2bec83af49af32dee11b7f91f, type: 2}
-    subtitleDelay:
-      rid: 4447245550010761340
+    subtitleDelay: 2
     speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
     onEnterInstruction:
       instruction: 
@@ -512,11 +508,9 @@ MonoBehaviour:
     dialogues: []
   - type: 10
     advanceMode: 20
-    delay:
-      rid: 4447245550010761345
+    delay: 4
     text: {fileID: 11400000, guid: 4496cb6602ed8b94885710d28c5bff92, type: 2}
-    subtitleDelay:
-      rid: 4447245550010761346
+    subtitleDelay: 2
     speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
     onEnterInstruction:
       instruction: 
@@ -527,67 +521,7 @@ MonoBehaviour:
     dialogues: []
   references:
     version: 2
-    RefIds:
-    - rid: 4447245550010761330
-      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245550010761337
-    - rid: 4447245550010761331
-      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245550010761338
-    - rid: 4447245550010761337
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 3
-    - rid: 4447245550010761338
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 4
-    - rid: 4447245550010761339
-      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245550010761343
-    - rid: 4447245550010761340
-      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245550010761344
-    - rid: 4447245550010761343
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 3
-    - rid: 4447245550010761344
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 4
-    - rid: 4447245550010761345
-      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245550010761347
-    - rid: 4447245550010761346
-      type: {class: SVFloatProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245550010761348
-    - rid: 4447245550010761347
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 4
-    - rid: 4447245550010761348
-      type: {class: SVFloatPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 4
+    RefIds: []
 --- !u!1001 &463123356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -596,6 +530,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 339377927176390511, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: focusUI
+      value: 
+      objectReference: {fileID: 463123357}
+    - target: {fileID: 339377927176390511, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: distanceUI
+      value: 
+      objectReference: {fileID: 463123358}
     - target: {fileID: 4670706366902599584, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: m_Name
       value: NPC_Girl_01_Dead
@@ -645,6 +587,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+--- !u!1 &463123357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4036335340775341490, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+  m_PrefabInstance: {fileID: 463123356}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &463123358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984808824407255984, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+  m_PrefabInstance: {fileID: 463123356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,12 +766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     rid: 4447245521617158298
-  focusUIIdentifier: {fileID: 11400000, guid: c9bb5f1cd6d178241afac842ffdcaeca, type: 2}
-  distanceUIIdentifier: {fileID: 11400000, guid: 2fe038b3c94c4084f9fe2d66839b023b, type: 2}
-  focusUIPosition:
-    rid: 4447245521617158299
-  distanceUIPosition:
-    rid: 4447245521617158300
+  focusUI: {fileID: 0}
+  distanceUI: {fileID: 0}
   rotationSpeed: 4
   references:
     version: 2
@@ -828,31 +776,11 @@ MonoBehaviour:
       type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: 
-        propertyComponent:
-          rid: 4447245521617158302
-    - rid: 4447245521617158299
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Transform
-        propertyComponent:
-          rid: 4447245521617158306
-    - rid: 4447245521617158300
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Transform
-        propertyComponent:
-          rid: 4447245521617158307
-    - rid: 4447245521617158302
+        propertyType:
+          rid: 4447245586622578795
+    - rid: 4447245586622578795
       type: {class: 'SVNullProperty`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
-    - rid: 4447245521617158306
-      type: {class: SVVector3PropertyTransform, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 9025184441163181485}
-    - rid: 4447245521617158307
-      type: {class: SVVector3PropertyTransform, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 4464548400096993389}
 --- !u!4 &4423297675174448548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4788027265893822865, guid: 9f865a683fc3b424987dfdac206fa7e8, type: 3}
