@@ -5,6 +5,7 @@ using __SARV.Common.Base;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Reflection;
+using __SARV.Framework.Kernal.Argument;
 using __SARV.Framework.Kernal.Shared;
 using __SARV.Framework.Kernal.Signal;
 using Sirenix.OdinInspector;
@@ -34,53 +35,57 @@ namespace __SARV.Framework.Kernal
 
         private void Awake()
         {
-            signalComponent.SetHandler(d => _ = instruction.ExecuteInstructions(d));
-            Signal.HandleAwake();
+            Signal.HandleAwake(this);
         }
 
         private void Start()
         {
-            Signal.HandleStart();
+            Signal.HandleStart(this);
         }
 
         private void OnEnable()
         {
-            Signal.HandleOnEnable();
+            Signal.HandleOnEnable(this);
         }
 
         private void Update()
         {
-            Signal.HandleUpdate(Time.deltaTime);
+            Signal.HandleUpdate(this);
         }
 
         private void FixedUpdate()
         {
-            Signal.HandleFixedUpdate(Time.fixedDeltaTime);
+            Signal.HandleFixedUpdate(this);
         }
 
         private void OnDisable()
         {
-            Signal.HandleOnDisable();
+            Signal.HandleOnDisable(this);
         }
 
         private void OnDestroy()
         {
-            Signal.HandleOnDestroy();
+            Signal.HandleOnDestroy(this);
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            Signal.HandleOnTriggerEnter(other);
+            Signal.HandleOnTriggerEnter(this, other);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            Signal.HandleOnTriggerStay(other);
+            Signal.HandleOnTriggerStay(this, other);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            Signal.HandleOnTriggerExit(other);
+            Signal.HandleOnTriggerExit(this, other);
+        }
+
+        public void Invoke()
+        {
+            
         }
 
         private IEnumerable GetAllSignalComponents()

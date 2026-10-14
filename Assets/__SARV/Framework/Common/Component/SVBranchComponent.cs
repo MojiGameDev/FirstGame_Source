@@ -7,7 +7,7 @@ using UnityEngine;
 namespace __SARV.Framework.Common.Component
 {
     [Serializable]
-    public class SVBranchComponent : SVComponent
+    public abstract class SVBranchComponent : SVComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [HorizontalGroup("$" + nameof(GroupTitle) + "/HorizontalGroup", 90)] [SerializeField] [LabelText("Not?")]
         private bool not;

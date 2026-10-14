@@ -11,6 +11,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVLifecycleSignalOnDisable : SVSignalComponent
     {
-        
+        public override void HandleOnDisable(SARVTrigger trigger)
+        {
+            trigger.Invoke();
+        }
     }
 }

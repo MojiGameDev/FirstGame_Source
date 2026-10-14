@@ -1,12 +1,14 @@
 ﻿using System;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
+using __SARV.Framework.Kernal.Argument;
 
 namespace __SARV.Framework.Common.Component
 {
     [Serializable]
-    public class SVPropertyComponent<TType> : SVComponent
+    public abstract class SVPropertyComponent<TType> : SVComponent
     {
-        public virtual TType Value { get; }
+        public abstract TType GetValue();
+        public abstract TType GetValue(SVArgument argument);
     }
 }

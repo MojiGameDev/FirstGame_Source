@@ -11,6 +11,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVLifecycleSignalOnDestroy : SVSignalComponent
     {
-        
+        public override void HandleOnDestroy(SARVTrigger trigger)
+        {
+            trigger.Invoke();
+        }
     }
 }

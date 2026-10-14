@@ -13,9 +13,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVPhysicsSignalOnTriggerStay : SVSignalComponent
     {
-        public override void HandleOnTriggerStay(Collider other)
+        public override void HandleOnTriggerStay(SARVTrigger trigger, Collider other)
         {
-            Handler.Invoke(SVArgument.FromCollider(other));
+            trigger.Invoke();
         }
     }
 }

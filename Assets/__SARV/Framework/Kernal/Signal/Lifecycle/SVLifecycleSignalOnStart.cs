@@ -11,6 +11,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVLifecycleSignalOnStart : SVSignalComponent
     {
-        
+        public override void HandleStart(SARVTrigger trigger)
+        {
+            trigger.Invoke();
+        }
     }
 }

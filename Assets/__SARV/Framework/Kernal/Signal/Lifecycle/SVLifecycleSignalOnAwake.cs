@@ -12,9 +12,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVLifecycleSignalOnAwake : SVSignalComponent
     {
-        public override void HandleAwake()
+        public override void HandleAwake(SARVTrigger trigger)
         {
-            Handler.Invoke(SVArgument.Empty());
+            trigger.Invoke();
         }
     }
 }

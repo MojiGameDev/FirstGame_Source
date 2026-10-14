@@ -74,15 +74,6 @@ namespace __SARV.Actor.Common.Shared
             _isStateChanged = true;
         }
 
-        public void SetArgument<TCharacter>(TCharacter character)
-        {
-            foreach (var state in states)
-            {
-                var fromArgument = SVArgument.FromArgument(character);
-                state.Behavior.SetArgument(fromArgument);
-            }
-        }
-
         protected void OnBehaviorsChanged()
         {
         }

@@ -11,6 +11,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVLifecycleSignalOnFixedUpdate : SVSignalComponent
     {
-        
+        public override void HandleFixedUpdate(SARVTrigger trigger)
+        {
+            trigger.Invoke();
+        }
     }
 }

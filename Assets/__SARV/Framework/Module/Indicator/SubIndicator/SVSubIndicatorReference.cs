@@ -9,13 +9,13 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
     public abstract class SVSubIndicatorReference : SVOverrideMonoBehaviour
     {
-        [FoldoutGroup("Reference")] [Title("Target")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
+        [FoldoutGroup("Reference")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
         protected SVPropertyComponent<GameObject> target = new SVGameObjectProperty();
 
-        [FoldoutGroup("Reference")] [Title("FocusUIIdentifier")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
+        [FoldoutGroup("Reference")] [SerializeReference] [HideReferenceObjectPicker]
         protected SARVIdentifier focusUIIdentifier;
 
-        [FoldoutGroup("Reference")] [Title("DistanceUIIdentifier")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
+        [FoldoutGroup("Reference")] [SerializeReference] [HideReferenceObjectPicker]
         protected SARVIdentifier distanceUIIdentifier;
     }
 }

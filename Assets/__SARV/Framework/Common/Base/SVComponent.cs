@@ -4,7 +4,7 @@ using __SARV.Common.Base;
 namespace __SARV.Framework.Common.Base
 {
     [Serializable]
-    public class SVComponent : SVSerializable
+    public abstract class SVComponent : SVSerializable
     {
     }
 }

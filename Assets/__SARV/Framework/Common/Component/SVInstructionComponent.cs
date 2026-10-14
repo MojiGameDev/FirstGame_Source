@@ -9,7 +9,7 @@ using UnityEngine;
 namespace __SARV.Framework.Common.Component
 {
     [Serializable]
-    public class SVInstructionComponent : SVComponent
+    public abstract class SVInstructionComponent : SVComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [LabelText("Disabled?")]
         private bool disabled;

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace __SARV.Framework.Common.Component
 {
     [Serializable]
-    public class SVBehaviorComponent : SVComponent
+    public abstract class SVBehaviorComponent : SVComponent
     {
         [BoxGroup("Identifier")] [SerializeField] [HideLabel]
         private SARVIdentifier identifier;

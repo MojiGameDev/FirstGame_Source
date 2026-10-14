@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SVSubIndicatorShow : SVSubIndicatorData
+    public abstract class SVSubIndicatorManager : SVSubIndicatorData
     {
         private Transform _focusUI;
         private Transform _distanceUI;
@@ -45,7 +45,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
                 targetTransform.rotation = Quaternion.Slerp(
                     targetTransform.rotation,
                     targetRotation,
-                    rotationSpeed.Value * Time.deltaTime
+                    rotationSpeed * Time.deltaTime
                 );
             }
         }

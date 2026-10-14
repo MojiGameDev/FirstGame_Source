@@ -6,7 +6,6 @@ using __SARV.Framework.Kernal.Argument;
 using __SARV.Framework.Module.Dialogue.Entity;
 using __SARV.Framework.Module.Dialogue.Enum;
 using __SARV.Framework.Module.Subtitle;
-using UnityEngine;
 
 namespace __SARV.Framework.Module.Dialogue.SubDialogue
 {
@@ -31,12 +30,12 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
 
         private async Task RunDialogueOnEnter(SVDialogueNode node)
         {
-            await node.OnEnterInstruction.ExecuteInstructions(SVArgument.Empty());
+            await node.OnEnterInstruction.ExecuteInstructions(SVArgument.Create(gameObject));
         }
 
         private async Task RunDialogueOnExit(SVDialogueNode node)
         {
-            await node.OnExitInstruction.ExecuteInstructions(SVArgument.Empty());
+            await node.OnExitInstruction.ExecuteInstructions(SVArgument.Create(gameObject));
         }
 
         private async Task RunDialogueNodeAdvanceMode(SVDialogueNode node)

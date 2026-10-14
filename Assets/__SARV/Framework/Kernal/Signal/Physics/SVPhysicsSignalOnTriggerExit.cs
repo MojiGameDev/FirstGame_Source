@@ -13,9 +13,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVPhysicsSignalOnTriggerExit : SVSignalComponent
     {
-        public override void HandleOnTriggerExit(Collider other)
+        public override void HandleOnTriggerExit(SARVTrigger trigger, Collider other)
         {
-            Handler.Invoke(SVArgument.FromCollider(other));
+            trigger.Invoke();
         }
     }
 }

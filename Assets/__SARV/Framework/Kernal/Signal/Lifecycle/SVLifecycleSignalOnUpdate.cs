@@ -12,9 +12,9 @@ namespace __SARV.Framework.Kernal.Signal
     [Serializable]
     public class SVLifecycleSignalOnUpdate : SVSignalComponent
     {
-        public override void HandleUpdate(float deltaTime)
+        public override void HandleUpdate(SARVTrigger trigger)
         {
-            Handler.Invoke(SVArgument.FromDeltaTime(deltaTime));
+            trigger.Invoke();
         }
     }
 }
