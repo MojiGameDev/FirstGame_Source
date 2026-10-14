@@ -49,6 +49,15 @@ namespace __SARV.Misc.Editor
             EditorSceneManager.OpenScene($"{ACT_01_SECTION_02}Act_01_Section_02.unity", OpenSceneMode.Single);
         }
 
+        [MenuItem("SARV/Scene/Demo_Character")]
+        public static void DemoCharacter()
+        {
+            // Close all current scenes first
+            CloseAllScenes();
+
+            EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Character.unity", OpenSceneMode.Single);
+        }
+
         private static void CloseAllScenes()
         {
             // Close all currently open scenes
