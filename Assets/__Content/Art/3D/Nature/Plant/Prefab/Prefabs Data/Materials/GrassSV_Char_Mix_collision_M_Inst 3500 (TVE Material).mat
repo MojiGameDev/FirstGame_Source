@@ -12,7 +12,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - TVE_CLIPPING
   - TVE_DITHER_NOISE_BAYER
   - TVE_EMISSIVE_SAMPLE_MAIN_UV
   - TVE_FILTER_DEFAULT
@@ -20,6 +19,7 @@ Material:
   - TVE_FOURTH_SAMPLE_MAIN_UV
   - TVE_MAIN_SAMPLE_MAIN_UV
   - TVE_MOTION
+  - TVE_MOTION_ELEMENT
   - TVE_OVERLAY_SAMPLE_PLANAR_2D
   - TVE_PIVOT_BAKED
   - TVE_SECOND_MASK_SAMPLE_MAIN_UV
@@ -34,7 +34,7 @@ Material:
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: 2000
   stringTagMap:
     NatureRendererInstancing: true
     RenderType: TransparentCutout
@@ -168,7 +168,7 @@ Material:
     - _ColormapEnd: 1
     - _ColormapInfo: 0
     - _ColormapIntensityValue: 0
-    - _Cutoff: 0.5
+    - _Cutoff: 0.1
     - _CutoutAlphaValue: 0
     - _CutoutBakeMode: 0
     - _CutoutCategory: 0
@@ -306,17 +306,17 @@ Material:
     - _IsTVEShader: 1
     - _IsVersion: 2160
     - _MainAlbedoValue: 1
-    - _MainAlphaClipValue: 0.5
+    - _MainAlphaClipValue: 0.1
     - _MainCategory: 1
     - _MainColorMode: 0
     - _MainCoordMode: 0
     - _MainEnd: 1
-    - _MainMetallicValue: 1
+    - _MainMetallicValue: 0
     - _MainMultiMode: 5
     - _MainNormalValue: 1
     - _MainOcclusionValue: 1
     - _MainSampleMode: 0
-    - _MainSmoothnessValue: 0.55
+    - _MainSmoothnessValue: 0.3
     - _MetaAlbedoValue: 1
     - _MetaCategory: 0
     - _MetaCutoutValue: 1
@@ -346,9 +346,9 @@ Material:
     - _MotionBaseTillingValue: 4
     - _MotionCategory: 1
     - _MotionDistValue: 100
-    - _MotionElementMode: 0
+    - _MotionElementMode: 1
     - _MotionEnd: 1
-    - _MotionHighlightValue: 0.3
+    - _MotionHighlightValue: 0.2
     - _MotionIntensityValue: 1
     - _MotionPushInfo: 0
     - _MotionSmallDelayValue: 0
@@ -409,7 +409,7 @@ Material:
     - _ReceiveShadows: 1
     - _RenderBakeGI: 0
     - _RenderCategory: 1
-    - _RenderClip: 1
+    - _RenderClip: 0
     - _RenderCull: 0
     - _RenderEnd: 1
     - _RenderFilter: 0
@@ -604,7 +604,7 @@ Material:
     - _MainCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MainMultiRemap: {r: 0, g: 1, b: 1, a: 0}
     - _MainOcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
-    - _MainSmoothnessRemap: {r: 0, g: 0.45903075, b: 2.1785033, a: 0}
+    - _MainSmoothnessRemap: {r: 0, g: 0.5247992, b: 1.9054906, a: 0}
     - _MetaAlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _MetaCoordValue: {r: 1, g: 1, b: 0, a: 0}
     - _MotionBaseMaskRemap: {r: 0, g: 1, b: 1, a: 0}
