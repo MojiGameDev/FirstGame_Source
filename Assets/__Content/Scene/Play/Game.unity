@@ -214,19 +214,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: poolItems.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: poolItems.Array.data[0].isExpanded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: poolItems.Array.data[1].isExpanded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: poolItems.Array.data[2].isExpanded
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
+      propertyPath: poolItems.Array.data[3].isExpanded
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: _categories.Array.data[0].IsExpanded
@@ -237,7 +241,15 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
+      propertyPath: poolItems.Array.data[3].categoryName
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: poolItems.Array.data[2].itemHardLimit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
+      propertyPath: poolItems.Array.data[3].itemHardLimit
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
@@ -253,6 +265,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8726102352483699156, guid: 10164736af83f7840981ffa0a7628232, type: 3}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
+      propertyPath: poolItems.Array.data[3].prefabTransform
+      value: 
+      objectReference: {fileID: 5553544702140739492, guid: dffa9e030d02d3a4488f5e1a6aab1b01, type: 3}
+    - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: poolItems.Array.data[0].instancesToPreload
       value: 3
       objectReference: {fileID: 0}
@@ -261,7 +277,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
+      propertyPath: poolItems.Array.data[3].instancesToPreload
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: poolItems.Array.data[2].delayNavMeshEnableByFrames
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259677647563271880, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
+      propertyPath: poolItems.Array.data[3].delayNavMeshEnableByFrames
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7079208377001585600, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
@@ -270,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8862835193342723060, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.952385
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8862835193342723060, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -278,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8862835193342723060, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 293.73053
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8862835193342723060, guid: a458283cf0423fe4da303ec64d8d625d, type: 3}
       propertyPath: m_LocalRotation.w

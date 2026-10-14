@@ -33,10 +33,10 @@ namespace __SARV.Framework.Kernal.Branch
             switch (operatorType)
             {
                 case SVEqualityOperatorType.Equal:
-                    result = leftSideBool.Value == rightSideBool.Value;
+                    result = leftSideBool.GetValue(argument) == rightSideBool.GetValue(argument);
                     break;
                 case SVEqualityOperatorType.NotEqual:
-                    result = leftSideBool.Value != rightSideBool.Value;
+                    result = leftSideBool.GetValue(argument) != rightSideBool.GetValue(argument);
                     break;
             }
 

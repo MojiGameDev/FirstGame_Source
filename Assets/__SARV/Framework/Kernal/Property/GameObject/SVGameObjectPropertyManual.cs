@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Kernal.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -15,12 +16,15 @@ namespace __SARV.Framework.Kernal.Property
     {
         [SerializeField] [HideLabel]
         private GameObject value;
-
-        public override GameObject Value => value;
-
+        
         public override string ToString()
         {
-            return $"Manual({Value.name})";
+            return $"Manual({value})";
+        }
+
+        public override GameObject GetValue(SVArgument argument)
+        {
+            return value;
         }
     }
 }

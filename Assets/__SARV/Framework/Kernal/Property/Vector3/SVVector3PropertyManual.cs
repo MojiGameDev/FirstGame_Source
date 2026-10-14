@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Kernal.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -15,12 +16,15 @@ namespace __SARV.Framework.Kernal.Property
     {
         [SerializeField] [HideLabel]
         private Vector3 value = Vector3.zero;
-
-        public override Vector3 Value => value;
-
+        
         public override string ToString()
         {
-            return $"Manual({Value})";
+            return $"Manual({value})";
+        }
+
+        public override Vector3 GetValue(SVArgument argument)
+        {
+            return value;
         }
     }
 }

@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Kernal.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,13 +14,16 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVFloatPropertyManual : SVPropertyComponent<float>
     {
-        [SerializeField] [HideLabel] private float value = 0f;
-
-        public override float Value => value;
-
+        [SerializeField] [HideLabel] private float value;
+        
         public override string ToString()
         {
-            return $"Manual({Value})";
+            return $"Manual({value})";
+        }
+
+        public override float GetValue(SVArgument argument)
+        {
+            return value;
         }
     }
 }

@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Kernal.Argument;
 using UnityEngine;
 
 namespace __SARV.Framework.Kernal.Property
@@ -12,11 +13,14 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVVector3PropertyUp : SVPropertyComponent<Vector3>
     {
-        public override Vector3 Value => Vector3.up;
-
         public override string ToString()
         {
-            return Value.ToString();
+            return Vector3.up.ToString();
+        }
+
+        public override Vector3 GetValue(SVArgument argument)
+        {
+            return Vector3.up;
         }
     }
 }

@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Kernal.Argument;
 using Random = UnityEngine.Random;
 
 namespace __SARV.Framework.Kernal.Property
@@ -12,15 +13,18 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVStringPropertyRandom : SVPropertyComponent<string>
     {
-        public override string Value => Generate(10);
-
         private const string CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         public override string ToString()
         {
-            return "RandomText";
+            return "RandomString";
         }
-        
+
+        public override string GetValue(SVArgument argument)
+        {
+            return Generate(10);
+        }
+
         public static string Generate(int length)
         {
             var result = new char[length];
@@ -28,6 +32,7 @@ namespace __SARV.Framework.Kernal.Property
             {
                 result[i] = CHARS[Random.Range(0, CHARS.Length)];
             }
+
             return new string(result);
         }
     }

@@ -17,7 +17,7 @@ namespace __SARV.Framework.Kernal.Property
         {
             if (IsPropertyHasValue && !IsPropertyComponentNull)
             {
-                return IsPropertyHasValue ? $"{property} ({Value.ToName()})" : "...";
+                return IsPropertyHasValue ? $"{property} ({GetValue(default).ToName()})" : "...";
             }
 
             return IsPropertyHasValue ? property : "...";

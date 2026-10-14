@@ -14,7 +14,7 @@ namespace __SARV.Framework.Kernal.Property
     {
         public override string ToString()
         {
-            return propertyComponent.ToString();
+            return propertyType.ToString();
         }
     }
 }

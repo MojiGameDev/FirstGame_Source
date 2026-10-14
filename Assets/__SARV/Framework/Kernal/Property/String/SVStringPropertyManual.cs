@@ -2,7 +2,7 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
-using __SARV.Framework.Integration.OdinInspector.Runtime;
+using __SARV.Framework.Kernal.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -16,11 +16,14 @@ namespace __SARV.Framework.Kernal.Property
     {
         [SerializeField] [HideLabel] private string value;
 
-        public override string Value => value;
-
         public override string ToString()
         {
-            return $"Manual({Value})";
+            return value;
+        }
+
+        public override string GetValue(SVArgument argument)
+        {
+            return value;
         }
     }
 }

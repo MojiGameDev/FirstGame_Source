@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using __SARV.Common.Base;
 using __SARV.Common.Extension;
-using __SARV.Framework.Common.Component;
-using __SARV.Framework.Integration.OdinInspector.Runtime;
-using __SARV.Framework.Kernal.Property;
 using __SARV.Framework.Kernal.Shared;
 using __SARV.Framework.Module.Dialogue.Enum;
 using __SARV.Framework.Module.Localizer;
@@ -22,14 +19,14 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))]
         private SVDialogueNodeAdvanceMode advanceMode = SVDialogueNodeAdvanceMode.InputKey;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [ShowIf(nameof(IsDelayMustShowed))]
-        private SVPropertyComponent<float> delay = new SVFloatProperty();
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [ShowIf(nameof(IsDelayMustShowed))] [PropertyRange(0f, 15f)]
+        private float delay = 4f;
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))]
         private SARVLocalizer text;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsTypeRandom))]
-        private SVPropertyComponent<float> subtitleDelay = new SVFloatProperty();
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [PropertyRange(0f, 15f)]
+        private float subtitleDelay = 2f;
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))]
         private SARVSpeaker speaker;
@@ -47,7 +44,7 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         public SVDialogueNodeType Type => type;
         public SVDialogueNodeAdvanceMode AdvanceMode => advanceMode;
         public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;
-        public float Delay => delay.Value;
+        public float Delay => delay;
         public SARVSpeaker Speaker => speaker;
         public SVInstruction OnEnterInstruction => onEnterInstruction;
         public SVInstruction OnExitInstruction => onExitInstruction;
@@ -56,7 +53,7 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         private bool IsDelayMustShowed => AdvanceMode == SVDialogueNodeAdvanceMode.Delay && !IsTypeRandom;
         private bool IsTypeRandom => Type == SVDialogueNodeType.Random;
         public string SubtitleText => $"<color=#{speaker.TextColor}>{speaker.SpeakerName}:</color> {Text}";
-        public float SubtitleDelay => subtitleDelay.Value;
+        public float SubtitleDelay => subtitleDelay;
 
         private void CreateNode()
         {

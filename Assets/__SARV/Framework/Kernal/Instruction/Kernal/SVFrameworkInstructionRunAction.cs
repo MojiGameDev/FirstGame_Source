@@ -28,7 +28,7 @@ namespace __SARV.Framework.Kernal.Instruction
 
         protected override async Task ExecuteInternal(SVArgument argument)
         {
-            if (waitToFinish.Value)
+            if (waitToFinish.GetValue(argument))
             {
                 await action.RunAction(argument);
                 return;

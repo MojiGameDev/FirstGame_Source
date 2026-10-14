@@ -15,7 +15,7 @@ namespace __SARV.Framework.Kernal.Property
     {
         public override string ToString()
         {
-            return Value.name;
+            return GetValue(default).name;
         }
     }
 }

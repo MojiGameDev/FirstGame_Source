@@ -1,7 +1,9 @@
 ﻿using System;
+using __SARV.Common.Extension;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Kernal.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,14 +15,16 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVBoolPropertyManual : SVPropertyComponent<bool>
     {
-        [SerializeField] [HideLabel]
-        private bool value;
-
-        public override bool Value => value;
+        [SerializeField] [HideLabel] private bool value;
 
         public override string ToString()
         {
-            return Value ? "true" : "false";
+            return value.ToName();
+        }
+
+        public override bool GetValue(SVArgument argument)
+        {
+            return value;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace __SARV.Framework.Kernal.Instruction
 
         protected override Task ExecuteInternal(SVArgument argument)
         {
-            SVComponentUtils.DebugLog(logLevel, text.Value);
+            SVComponentUtils.DebugLog(logLevel, text.GetValue(argument));
             return SVTaskUtils.OK_RESULT;
         }
     }
