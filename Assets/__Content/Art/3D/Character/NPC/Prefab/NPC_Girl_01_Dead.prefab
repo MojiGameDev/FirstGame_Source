@@ -1380,44 +1380,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     rid: 4447245566252679275
-  focusUIIdentifier: {fileID: 11400000, guid: f174a4cbb80303b469d3185f17e3b540, type: 2}
-  distanceUIIdentifier: {fileID: 11400000, guid: 2e9ff1b5e27e4f641abb36d55b260cb2, type: 2}
-  focusUIPosition:
-    rid: 4447245566252679276
-  distanceUIPosition:
-    rid: 4447245566252679277
+  focusUI: {fileID: 0}
+  distanceUI: {fileID: 0}
   rotationSpeed: 4
   references:
     version: 2
     RefIds:
+    - rid: 1000
+      type: {class: 'SVNullProperty`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
     - rid: 4447245566252679275
       type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Player
-        propertyComponent:
-          rid: 4447245566252679283
-    - rid: 4447245566252679276
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyComponent:
-          rid: 4447245566252679285
-    - rid: 4447245566252679277
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Up
-        propertyComponent:
-          rid: 4447245566252679289
-    - rid: 4447245566252679283
-      type: {class: SVGameObjectPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
-    - rid: 4447245566252679285
-      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {x: 0, y: 1, z: 0}
-    - rid: 4447245566252679289
-      type: {class: SVVector3PropertyUp, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
+        propertyType:
+          rid: 1000
 --- !u!1 &3786369396632455439
 GameObject:
   m_ObjectHideFlags: 0

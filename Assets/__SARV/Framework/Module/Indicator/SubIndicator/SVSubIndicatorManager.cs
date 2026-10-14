@@ -1,7 +1,5 @@
 ﻿using __SARV.Common.Access;
 using __SARV.Common.Extension;
-using __SARV.Framework.Kernal.Argument;
-using __SARV.SceneControl.Game;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
@@ -14,8 +12,6 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         protected override void Start()
         {
             base.Start();
-            _focusUI = SARVGame.Instance.SpawnInPool(focusUIIdentifier, focusUIPosition.GetValue(SVArgument.Create(gameObject)));
-            _distanceUI = SARVGame.Instance.SpawnInPool(distanceUIIdentifier, distanceUIPosition.GetValue(SVArgument.Create(gameObject)));
         }
 
         protected override void LateUpdate()
@@ -28,11 +24,6 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            if (SARVGame.IsAvailable)
-            {
-                SARVGame.Instance.Despawn(focusUIIdentifier);
-                SARVGame.Instance.Despawn(distanceUIIdentifier);
-            }
         }
 
         private void HandleIndicatorMovement(Transform targetTransform)
