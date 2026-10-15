@@ -111,15 +111,15 @@ MonoBehaviour:
   outlineVisibility: 2
   outlineIndependent: 0
   outlineMaskMode: 0
-  glow: 0.25
-  glowWidth: 0.13
-  glowQuality: 0
+  glow: 0.1
+  glowWidth: 0.05
+  glowQuality: 3
   glowBlurMethod: 0
   glowHighPrecision: 1
   glowDistanceScaleBias: 25
   glowDownsampling: 2
   glowHQColor: {r: 1, g: 0.52205884, b: 0.52205884, a: 1}
-  glowDithering: 0.5
+  glowDithering: 0.25
   glowDitheringStyle: 0
   glowMagicNumber1: 0.75
   glowMagicNumber2: 0.5
@@ -180,6 +180,11 @@ MonoBehaviour:
   targetFXStayDuration: 2
   targetFXVisibility: 1
   targetFXGroundMinAltitude: -1000
+  targetFXOffScreenIndicator: 0
+  targetFXOffScreenIndicatorTexture: {fileID: 0}
+  targetFXScreenMargin: 0.05
+  targetFXPointToTarget: 1
+  targetFXScreenSize: 0.06
   iconFX: 0
   iconFXAssetType: 0
   iconFXPrefab: {fileID: 0}
