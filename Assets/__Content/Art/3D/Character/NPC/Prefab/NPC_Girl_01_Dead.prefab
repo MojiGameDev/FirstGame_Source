@@ -78,6 +78,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6626651272480268679}
+  - component: {fileID: 1732733409108746694}
+  - component: {fileID: 7127323950158427594}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -93,15 +95,69 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431201281883616121}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8456150673763706856}
   - {fileID: 9182062302893941084}
-  m_Father: {fileID: 4300405392647022063}
+  m_Father: {fileID: 4718912953629771953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1732733409108746694
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431201281883616121}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5.56
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7127323950158427594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431201281883616121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc627b6de74648739d0bd276d844fa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target:
+    rid: 4447245566252679275
+  focusUI: {fileID: 8899908943861929430}
+  distanceUI: {fileID: 984808824407255984}
+  sphereCollider: {fileID: 0}
+  distanceDetectorRange: 5.56
+  uiRotationSpeed: 4
+  showGizmos: 1
+  gizmosOnSelect: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: 'SVNullProperty`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245566252679275
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 1000
 --- !u!1 &515327084714880903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1447,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4300405392647022063}
-  - component: {fileID: 339377927176390511}
   - component: {fileID: 1127992801113546996}
   m_Layer: 0
   m_Name: Interaction
@@ -1413,39 +1468,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6626651272480268679}
   - {fileID: 2861967818524555462}
   m_Father: {fileID: 4718912953629771953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &339377927176390511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3668066728641502408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc627b6de74648739d0bd276d844fa8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target:
-    rid: 4447245566252679275
-  focusUI: {fileID: 8899908943861929430}
-  distanceUI: {fileID: 984808824407255984}
-  rotationSpeed: 4
-  references:
-    version: 2
-    RefIds:
-    - rid: 1000
-      type: {class: 'SVNullProperty`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
-    - rid: 4447245566252679275
-      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Player
-        propertyType:
-          rid: 1000
 --- !u!114 &1127992801113546996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,7 +1501,6 @@ MonoBehaviour:
   showGizmos: 1
   gizmosOnSelect: 1
   gizmoRadius: 0.15
-  gizmoSegments: 32
   references:
     version: 2
     RefIds:
@@ -1770,6 +1794,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1586192151064742186}
+  - {fileID: 6626651272480268679}
   - {fileID: 4300405392647022063}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

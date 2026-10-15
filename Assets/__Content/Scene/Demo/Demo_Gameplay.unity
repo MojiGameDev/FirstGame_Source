@@ -530,30 +530,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 339377927176390511, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-      propertyPath: showGizmos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 339377927176390511, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-      propertyPath: gizmosOnSelect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 339377927176390511, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-      propertyPath: sphereCollider
-      value: 
-      objectReference: {fileID: 1585168873}
-    - target: {fileID: 339377927176390511, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-      propertyPath: distanceDetectorRange
-      value: 5.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 339377927176390511, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-      propertyPath: distanceUIDetectorRadius
-      value: 3.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127992801113546996, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-      propertyPath: showGizmos
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4670706366902599584, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: m_Name
       value: NPC_Girl_01_Dead
@@ -601,10 +577,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3668066728641502408, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1585168873}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
 --- !u!1 &881802754
 GameObject:
@@ -638,32 +611,6 @@ Transform:
   - {fileID: 390525326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1585168869 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3668066728641502408, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
-  m_PrefabInstance: {fileID: 463123356}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &1585168873
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585168869}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 5.56
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &135545480197570509
 Transform:
   m_ObjectHideFlags: 0
