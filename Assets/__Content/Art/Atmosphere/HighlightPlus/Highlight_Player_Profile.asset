@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9253636bf2648bd813257f451f8486, type: 3}
-  m_Name: Highlight_Player
+  m_Name: Highlight_Player_Profile
   m_EditorClassIdentifier: 
   effectGroup: 0
   effectGroupLayer:
@@ -111,7 +111,7 @@ MonoBehaviour:
   outlineVisibility: 2
   outlineIndependent: 0
   outlineMaskMode: 0
-  glow: 0.1
+  glow: 0
   glowWidth: 0.05
   glowQuality: 3
   glowBlurMethod: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   labelScaleMin: 1
   labelScaleMax: 1
   labelWorldSpaceScale: 0.005
-  seeThrough: 2
+  seeThrough: 1
   seeThroughOccluderMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -229,15 +229,15 @@ MonoBehaviour:
   seeThroughOccluderThreshold: 0.3
   seeThroughOccluderCheckInterval: 1
   seeThroughOccluderCheckIndividualObjects: 0
-  seeThroughDepthOffset: 0
+  seeThroughDepthOffset: 0.3
   seeThroughMaxDepth: 0
   seeThroughFadeRange: 0
   seeThroughIntensity: 5
   seeThroughTintAlpha: 0.5
   seeThroughTintColor: {r: 1, g: 1, b: 1, a: 0}
   seeThroughNoise: 1
-  seeThroughBorder: 0
-  seeThroughBorderColor: {r: 1, g: 1, b: 1, a: 1}
+  seeThroughBorder: 0.1
+  seeThroughBorderColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   seeThroughBorderWidth: 0.1
   seeThroughBorderOnly: 1
   seeThroughOrdered: 0
