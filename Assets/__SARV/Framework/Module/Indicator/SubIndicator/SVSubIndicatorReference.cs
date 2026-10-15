@@ -11,10 +11,22 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         [FoldoutGroup("Reference")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
         protected SVPropertyComponent<GameObject> target = new SVGameObjectProperty();
 
-        [FoldoutGroup("Reference")] [SerializeField] [ChildGameObjectsOnly] [Required]
+        [FoldoutGroup("Reference")] [SerializeField] [Required]
         protected GameObject focusUI;
 
-        [FoldoutGroup("Reference")] [SerializeField] [ChildGameObjectsOnly] [Required]
+        [FoldoutGroup("Reference")] [SerializeField] [Required]
         protected GameObject distanceUI;
+
+        [FoldoutGroup("Reference")] [SerializeField] [Required]
+        protected SphereCollider sphereCollider;
+
+        [OnInspectorInit]
+        private void InitialReference()
+        {
+            if (sphereCollider == null)
+            {
+                sphereCollider = GetComponent<SphereCollider>();
+            }
+        }
     }
 }

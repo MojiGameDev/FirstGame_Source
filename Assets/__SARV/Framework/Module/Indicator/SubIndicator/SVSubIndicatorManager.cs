@@ -4,11 +4,8 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SVSubIndicatorManager : SVSubIndicatorSetting
+    public abstract class SVSubIndicatorManager : SVSubIndicatorDebug
     {
-        private Transform _focusUI;
-        private Transform _distanceUI;
-
         protected override void Start()
         {
             base.Start();
@@ -17,8 +14,8 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         protected override void LateUpdate()
         {
             base.LateUpdate();
-            HandleIndicatorMovement(_focusUI);
-            HandleIndicatorMovement(_distanceUI);
+            HandleIndicatorMovement(focusUI.transform);
+            HandleIndicatorMovement(distanceUI.transform);
         }
 
         protected override void OnDestroy()
@@ -28,16 +25,15 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
 
         private void HandleIndicatorMovement(Transform targetTransform)
         {
-            var directionToFocusUI = SVAccessCamera.Transform.position - targetTransform.position;
-            directionToFocusUI.y = 0f;
+            var directionToCamera = SVAccessCamera.Transform.position - targetTransform.position;
 
-            if (directionToFocusUI.sqrMagnitude.HasValue())
+            if (directionToCamera.sqrMagnitude.HasValue())
             {
-                var targetRotation = Quaternion.LookRotation(directionToFocusUI) * Quaternion.Euler(0f, 180f, 0f);
+                var targetRotation = Quaternion.LookRotation(directionToCamera) * Quaternion.Euler(0f, 180f, 0f);
                 targetTransform.rotation = Quaternion.Slerp(
                     targetTransform.rotation,
                     targetRotation,
-                    rotationSpeed * Time.deltaTime
+                    uiRotationSpeed * Time.deltaTime
                 );
             }
         }
