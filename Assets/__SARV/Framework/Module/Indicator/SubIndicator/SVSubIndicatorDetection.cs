@@ -51,12 +51,21 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
             interactor.OnInteractionAvailabilityChanged.RemoveListener(OnInteractionAvailabilityChangedHandler);
         }
 
-        private void OnInteractionAvailabilityChangedHandler(bool canDoInteract, Vector3 targetPosition, Quaternion targetRotation)
+        private void OnInteractionAvailabilityChangedHandler(bool canDoInteract)
         {
             canInteract = canDoInteract;
             if (canInteract)
             {
                 HandleInactiveAndScaleDistanceUI();
+                HandleActiveAndScaleFocusUI();
+            }
+            else
+            {
+                HandleInactiveAndScaleFocusUI();
+                if (isTargetDetected)
+                {
+                    HandleActiveAndScaleDistanceUI();
+                }
             }
         }
 
@@ -77,6 +86,18 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
                 .SetEase(distanceUIScaleEase);
         }
 
+        private void HandleActiveAndScaleFocusUI()
+        {
+            HandleSnapRotationToTarget(focusUI.transform);
+            _focusUIScaleTween?.Kill();
+            focusUI.Active();
+            focusUI.LocalScaleToZero();
+
+            _focusUIScaleTween = focusUI.transform
+                .DOScale(focusUIScale, focusUIScaleDuration)
+                .SetEase(focusUIScaleEase);
+        }
+
         protected void HandleInactiveAndScaleDistanceUI()
         {
             _distanceUIScaleTween?.Kill();
@@ -88,6 +109,20 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
                 {
                     distanceUI.Inactive();
                     distanceUI.LocalScaleToZero();
+                });
+        }
+
+        protected void HandleInactiveAndScaleFocusUI()
+        {
+            _focusUIScaleTween?.Kill();
+
+            _focusUIScaleTween = focusUI.transform
+                .DOScale(Vector3.zero, focusUIScaleDuration)
+                .SetEase(focusUIScaleEase)
+                .OnComplete(() =>
+                {
+                    focusUI.Inactive();
+                    focusUI.LocalScaleToZero();
                 });
         }
 

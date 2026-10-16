@@ -56,6 +56,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
             if (sphereCollider != null)
             {
                 sphereCollider.radius = distanceDetectorRange;
+                sphereCollider.isTrigger = true;
             }
         }
     }

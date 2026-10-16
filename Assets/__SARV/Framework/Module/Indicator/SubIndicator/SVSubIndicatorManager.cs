@@ -18,19 +18,28 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         {
             base.LateUpdate();
             HandleShowDistanceUI();
-        }
-
-        private void HandleShowDistanceUI()
-        {
-            if (isTargetDetected)
-            {
-                HandleIndicatorMovement(distanceUI.transform);
-            }
+            HandleShowFocusUI();
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
+        }
+
+        private void HandleShowDistanceUI()
+        {
+            if (isTargetDetected && !canInteract)
+            {
+                HandleIndicatorMovement(distanceUI.transform);
+            }
+        }
+
+        private void HandleShowFocusUI()
+        {
+            if (isTargetDetected && canInteract)
+            {
+                HandleIndicatorMovement(focusUI.transform);
+            }
         }
 
         private void HandleIndicatorMovement(Transform targetTransform)

@@ -1,9 +1,5 @@
-﻿using __SARV.Common.Extension;
-using __SARV.Common.Utils;
+﻿using __SARV.Common.Utils;
 using Sirenix.OdinInspector;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Interactor.SubInteractor
@@ -26,7 +22,13 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
         private Color gizmoArchColor = Color.cyan;
 
         [FoldoutGroup("Gizmos")] [SerializeField] [ColorPalette]
+        private Color gizmoArchCurrentColor = Color.red;
+
+        [FoldoutGroup("Gizmos")] [SerializeField] [ColorPalette]
         private Color gizmoArchPointColor = Color.magenta;
+
+        [FoldoutGroup("Gizmos")] [SerializeField] [ColorPalette]
+        private Color gizmoArchCurrentPointColor = Color.yellow;
 
         protected override void OnDrawGizmos()
         {
@@ -59,7 +61,9 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
                     continue;
                 }
 
-                SVGizmosUtils.DrawArch(point, interactionAngle, gizmoArchPointRadius, gizmoArchPointColor, interactionRange, gizmoArchColor);
+                var pointColor = _closestPoint != null && isTargetDetected && point == _closestPoint ? gizmoArchCurrentPointColor : gizmoArchPointColor;
+                var archColor = _closestPoint != null && isTargetDetected && point == _closestPoint ? gizmoArchCurrentColor : gizmoArchColor;
+                SVGizmosUtils.DrawArch(point, interactionAngle, gizmoArchPointRadius, pointColor, interactionRange, archColor);
             }
         }
     }

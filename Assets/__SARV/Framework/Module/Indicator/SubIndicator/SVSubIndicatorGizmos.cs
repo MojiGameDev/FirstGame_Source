@@ -1,7 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEditor;
-#endif
-using __SARV.Common.Utils;
+﻿using __SARV.Common.Utils;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

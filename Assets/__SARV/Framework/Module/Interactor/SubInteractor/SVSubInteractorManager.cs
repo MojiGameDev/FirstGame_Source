@@ -9,6 +9,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
     public abstract class SVSubInteractorManager : SVSubInteractorDetection
     {
         private bool _initialized;
+        protected Transform _closestPoint;
 
         protected override void Update()
         {
@@ -22,30 +23,38 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 
         private void HandleInteractionAvailability()
         {
-            var closestPoint = FindClosestInteractionPoint();
-
-            if (closestPoint == null)
+            _closestPoint = FindClosestInteractionPoint();
+            if (_closestPoint == null)
             {
+                if (CanInteract)
+                {
+                    OnInteractionAvailabilityChanged?.Invoke(false);
+                }
+
                 CanInteract = false;
+                CurrentInteractionPoint = null;
                 return;
             }
 
-            var isInteractionPointChanged = closestPoint != CurrentInteractionPoint;
+            var isInteractionPointChanged = _closestPoint != CurrentInteractionPoint;
 
             if (!isInteractionPointChanged)
             {
                 return;
             }
 
-            CanInteract = true;
-            CurrentInteractionPoint = closestPoint;
+            CurrentInteractionPoint = _closestPoint;
 
-            OnInteractionAvailabilityChanged?.Invoke(CanInteract, CurrentInteractionPoint.position, CurrentInteractionPoint.rotation);
+            if (!CanInteract)
+            {
+                CanInteract = true;
+                OnInteractionAvailabilityChanged?.Invoke(CanInteract);
+            }
         }
 
         private Transform FindClosestInteractionPoint()
         {
-            if (interactionPoints == null || !interactionPoints.Any())
+            if (!interactionPoints.Any() || Target == null)
             {
                 return null;
             }
@@ -53,7 +62,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
             Transform closestPoint = null;
             var closestDistanceSqr = float.PositiveInfinity;
 
-            var characterForward = transform.forward;
+            var characterForward = Target.transform.forward;
             characterForward.y = 0f;
 
             if (!characterForward.sqrMagnitude.HasValue())
@@ -72,7 +81,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
                     continue;
                 }
 
-                var offset = point.position - transform.position;
+                var offset = point.position - Target.transform.position;
                 offset.y = 0f;
 
                 var distanceSqr = offset.sqrMagnitude;

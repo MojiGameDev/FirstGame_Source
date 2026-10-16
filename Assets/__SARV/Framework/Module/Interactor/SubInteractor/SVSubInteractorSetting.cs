@@ -47,6 +47,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
             if (sphereCollider != null)
             {
                 sphereCollider.radius = interactionAvailabilityRange;
+                sphereCollider.isTrigger = true;
             }
         }
     }

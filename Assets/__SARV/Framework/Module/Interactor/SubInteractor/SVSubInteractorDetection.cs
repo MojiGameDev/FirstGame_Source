@@ -9,11 +9,14 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
         [FoldoutGroup("Detection")] [SerializeField] [ReadOnly]
         protected bool isTargetDetected;
 
+        protected GameObject Target;
+        
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
             if (other.IsLayerDetected(TargetLayer))
             {
+                Target = other.gameObject;
                 isTargetDetected = true;
             }
         }
@@ -23,6 +26,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
             base.OnTriggerExit(other);
             if (other.IsLayerDetected(TargetLayer))
             {
+                Target = null;
                 isTargetDetected = false;
             }
         }
