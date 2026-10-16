@@ -5,6 +5,7 @@
         Moni = 10,
         Mojo = 20,
         SocialMedia = 30,
-        Shared = 40
+        Shared = 40,
+        Reminder = 50
     }
 }
