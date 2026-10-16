@@ -5,6 +5,7 @@ namespace __SARV.Misc.Editor
 {
     public static class SVSceneLoader
     {
+        private const string CINEMATIC_SCENE = @"Assets\__Content\Scene\Cinematic\";
         private const string DEMO_SCENE = @"Assets\__Content\Scene\Demo\";
         private const string PLAY_SCENE = @"Assets\__Content\Scene\Play\";
         private const string MENU_SCENE = @"Assets\__Content\Scene\Menu\";
@@ -56,6 +57,16 @@ namespace __SARV.Misc.Editor
             CloseAllScenes();
 
             EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Character.unity", OpenSceneMode.Single);
+        }
+
+        [MenuItem("SARV/Scene/Cinematic_01")]
+        public static void Cinematic_01()
+        {
+            // Close all current scenes first
+            CloseAllScenes();
+
+            EditorSceneManager.OpenScene($"{CINEMATIC_SCENE}Cinematic_01.unity", OpenSceneMode.Single);
+            EditorSceneManager.OpenScene($"{CINEMATIC_SCENE}Cinematic_Landscape.unity", OpenSceneMode.Additive);
         }
 
         private static void CloseAllScenes()

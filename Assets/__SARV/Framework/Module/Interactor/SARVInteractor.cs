@@ -2,7 +2,7 @@
 
 namespace __SARV.Framework.Module.Interactor
 {
-    public class SARVInteractor : SVSubInteractorDebug
+    public class SARVInteractor : SVSubInteractorGizmos
     {
         
     }

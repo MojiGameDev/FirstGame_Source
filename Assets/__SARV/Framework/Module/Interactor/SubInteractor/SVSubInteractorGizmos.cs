@@ -7,15 +7,15 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Interactor.SubInteractor
 {
-    public abstract class SVSubInteractorDebug : SVSubInteractorSetting
+    public abstract class SVSubInteractorGizmos : SVSubInteractorSetting
     {
-        [FoldoutGroup("Debug")] [SerializeField]
+        [FoldoutGroup("Gizmos")] [SerializeField]
         private bool showGizmos = true;
 
-        [FoldoutGroup("Debug")] [SerializeField]
+        [FoldoutGroup("Gizmos")] [SerializeField]
         private bool gizmosOnSelect = true;
 
-        [FoldoutGroup("Debug")] [SerializeField] [PropertyRange(0.1f, 0.5)]
+        [FoldoutGroup("Gizmos")] [SerializeField] [PropertyRange(0.1f, 0.5)]
         private float gizmoRadius = 0.15f;
         
         private bool _initialized;
@@ -155,7 +155,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 
             forward.Normalize();
 
-            float halfAngle = interactionAngle;
+            var halfAngle = interactionAngle;
 
             var left = Quaternion.AngleAxis(-halfAngle, Vector3.up) * forward;
 

@@ -10,6 +10,8 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
     {
         [FoldoutGroup("Detection")] [SerializeField] [ReadOnly]
         protected bool isTargetDetected;
+        [FoldoutGroup("Detection")] [SerializeField] [ReadOnly]
+        protected bool canInteract;
 
         private Tween _distanceUIScaleTween;
         private Tween _focusUIScaleTween;
@@ -53,7 +55,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
                 .SetEase(distanceUIScaleEase);
         }
 
-        private void HandleInactiveAndScaleDistanceUI()
+        protected void HandleInactiveAndScaleDistanceUI()
         {
             _distanceUIScaleTween?.Kill();
             
