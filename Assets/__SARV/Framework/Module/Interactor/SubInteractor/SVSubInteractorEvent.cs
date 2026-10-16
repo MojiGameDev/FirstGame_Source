@@ -7,7 +7,6 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 {
     public abstract class SVSubInteractorEvent : SVOverrideMonoBehaviour
     {
-        [SerializeField]
-        public SVOnInteractionAvailabilityEventHandler OnInteractionAvailabilityChanged;
+        [HideInInspector] public SVOnInteractionAvailabilityEventHandler OnInteractionAvailabilityChanged;
     }
 }
