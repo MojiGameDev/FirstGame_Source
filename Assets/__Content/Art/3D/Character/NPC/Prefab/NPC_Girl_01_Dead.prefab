@@ -79,7 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6626651272480268679}
   - component: {fileID: 1732733409108746694}
-  - component: {fileID: 7127323950158427594}
+  - component: {fileID: 3923873125575395765}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -123,9 +123,9 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.56
+  m_Radius: 10.35
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7127323950158427594
+--- !u!114 &3923873125575395765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,27 +137,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc627b6de74648739d0bd276d844fa8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target:
-    rid: 4447245566252679275
   focusUI: {fileID: 8899908943861929430}
   distanceUI: {fileID: 984808824407255984}
-  sphereCollider: {fileID: 0}
-  distanceDetectorRange: 5.56
+  sphereCollider: {fileID: 1732733409108746694}
+  target:
+    rid: 4447245618961973397
+  distanceDetectorRange: 10.35
   uiRotationSpeed: 4
+  distanceUIScale: {x: 0.002, y: 0.002, z: 0.002}
+  distanceUIScaleDuration: 0.25
+  distanceUIScaleEase: 28
+  focusUIScale: {x: 0.0025, y: 0.0025, z: 0.0025}
+  focusUIScaleDuration: 0.25
+  focusUIScaleEase: 28
+  isTargetDetected: 0
   showGizmos: 1
-  gizmosOnSelect: 0
+  gizmosOnSelect: 1
   references:
     version: 2
     RefIds:
-    - rid: 1000
-      type: {class: 'SVNullProperty`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
-    - rid: 4447245566252679275
-      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+    - rid: 4447245618961973397
+      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Player
+        property: Layer
         propertyType:
-          rid: 1000
+          rid: 4447245618961973399
+    - rid: 4447245618961973399
+      type: {class: SVStringPropertyLayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: Player
 --- !u!1 &515327084714880903
 GameObject:
   m_ObjectHideFlags: 0

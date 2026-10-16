@@ -8,9 +8,6 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
     public abstract class SVSubIndicatorReference : SVOverrideMonoBehaviour
     {
-        [FoldoutGroup("Reference")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        protected SVPropertyComponent<GameObject> target = new SVGameObjectProperty();
-
         [FoldoutGroup("Reference")] [SerializeField] [Required]
         protected GameObject focusUI;
 

@@ -1,21 +1,31 @@
 ﻿using __SARV.Common.Access;
 using __SARV.Common.Extension;
+using DG.Tweening;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SVSubIndicatorManager : SVSubIndicatorDebug
+    public abstract class SVSubIndicatorManager : SVSubIndicatorDetection
     {
         protected override void Start()
         {
             base.Start();
+            distanceUI.Inactive();
+            focusUI.Inactive();
         }
 
         protected override void LateUpdate()
         {
             base.LateUpdate();
-            HandleIndicatorMovement(focusUI.transform);
-            HandleIndicatorMovement(distanceUI.transform);
+            HandleShowDistanceUI();
+        }
+
+        private void HandleShowDistanceUI()
+        {
+            if (isTargetDetected)
+            {
+                HandleIndicatorMovement(distanceUI.transform);
+            }
         }
 
         protected override void OnDestroy()
@@ -25,11 +35,8 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
 
         private void HandleIndicatorMovement(Transform targetTransform)
         {
-            var directionToCamera = SVAccessCamera.Transform.position - targetTransform.position;
-
-            if (directionToCamera.sqrMagnitude.HasValue())
+            if (TryToGetTargetRotation(targetTransform, out var targetRotation))
             {
-                var targetRotation = Quaternion.LookRotation(directionToCamera) * Quaternion.Euler(0f, 180f, 0f);
                 targetTransform.rotation = Quaternion.Slerp(
                     targetTransform.rotation,
                     targetRotation,

@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
-    public abstract class SVSubIndicatorDebug : SVSubIndicatorSetting
+    public abstract class SVSubIndicatorGizmos : SVSubIndicatorManager
     {
-        [FoldoutGroup("Debug")] [SerializeField]
+        [FoldoutGroup("Gizmos")] [SerializeField]
         private bool showGizmos = true;
 
-        [FoldoutGroup("Debug")] [SerializeField]
+        [FoldoutGroup("Gizmos")] [SerializeField]
         private bool gizmosOnSelect = true;
 
         protected override void OnDrawGizmos()
