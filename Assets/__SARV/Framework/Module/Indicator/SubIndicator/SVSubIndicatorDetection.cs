@@ -10,17 +10,17 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
     {
         [FoldoutGroup("Detection")] [SerializeField] [ReadOnly]
         protected bool isTargetDetected;
+
         [FoldoutGroup("Detection")] [SerializeField] [ReadOnly]
         protected bool canInteract;
 
         private Tween _distanceUIScaleTween;
         private Tween _focusUIScaleTween;
 
-        protected override void OnDestroy()
+        protected override void Start()
         {
-            base.OnDestroy();
-            _distanceUIScaleTween?.Kill();
-            _focusUIScaleTween?.Kill();
+            base.Start();
+            interactor.OnInteractionAvailabilityChanged.AddListener(OnInteractionAvailabilityChangedHandler);
         }
 
         protected override void OnTriggerEnter(Collider other)
@@ -43,8 +43,30 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
             }
         }
 
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            _distanceUIScaleTween?.Kill();
+            _focusUIScaleTween?.Kill();
+            interactor.OnInteractionAvailabilityChanged.RemoveListener(OnInteractionAvailabilityChangedHandler);
+        }
+
+        private void OnInteractionAvailabilityChangedHandler(bool canDoInteract, Vector3 targetPosition, Quaternion targetRotation)
+        {
+            canInteract = canDoInteract;
+            if (canInteract)
+            {
+                HandleInactiveAndScaleDistanceUI();
+            }
+        }
+
         private void HandleActiveAndScaleDistanceUI()
         {
+            if (canInteract)
+            {
+                return;
+            }
+
             HandleSnapRotationToTarget(distanceUI.transform);
             _distanceUIScaleTween?.Kill();
             distanceUI.Active();
@@ -58,7 +80,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         protected void HandleInactiveAndScaleDistanceUI()
         {
             _distanceUIScaleTween?.Kill();
-            
+
             _distanceUIScaleTween = distanceUI.transform
                 .DOScale(Vector3.zero, distanceUIScaleDuration)
                 .SetEase(distanceUIScaleEase)

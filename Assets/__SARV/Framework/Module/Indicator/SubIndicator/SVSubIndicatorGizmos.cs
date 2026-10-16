@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using UnityEditor;
 #endif
+using __SARV.Common.Utils;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,6 +14,9 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
 
         [FoldoutGroup("Gizmos")] [SerializeField]
         private bool gizmosOnSelect = true;
+
+        [FoldoutGroup("Gizmos")] [SerializeField] [ColorPalette]
+        private Color gizmoCircleColor = Color.green;
 
         protected override void OnDrawGizmos()
         {
@@ -36,20 +40,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
                 return;
             }
 
-            var center = transform.TransformPoint(sphereCollider.center);
-            var radius = sphereCollider.radius * Mathf.Max(
-                transform.lossyScale.x,
-                transform.lossyScale.y,
-                transform.lossyScale.z
-            );
-
-#if UNITY_EDITOR
-            Handles.color = new Color(0f, 1f, 0f, 0.2f);
-            Handles.DrawSolidDisc(center, Vector3.up, radius);
-
-            Handles.color = Color.green;
-            Handles.DrawWireDisc(center, Vector3.up, radius);
-#endif
+            SVGizmosUtils.DrawCircle(transform, sphereCollider.center, sphereCollider.radius, gizmoCircleColor);
         }
     }
 }

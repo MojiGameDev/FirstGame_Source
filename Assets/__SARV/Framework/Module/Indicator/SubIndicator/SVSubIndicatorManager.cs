@@ -12,7 +12,6 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
             base.Start();
             distanceUI.Inactive();
             focusUI.Inactive();
-            interactor.OnInteractionAvailabilityChanged.AddListener(OnInteractionAvailabilityChangedHandler);
         }
 
         protected override void LateUpdate()
@@ -32,16 +31,6 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            interactor.OnInteractionAvailabilityChanged.RemoveListener(OnInteractionAvailabilityChangedHandler);
-        }
-
-        private void OnInteractionAvailabilityChangedHandler(bool canDoInteract, Vector3 targetPosition, Quaternion targetRotation)
-        {
-            canInteract = canDoInteract;
-            if (canInteract)
-            {
-                HandleInactiveAndScaleDistanceUI();
-            }
         }
 
         private void HandleIndicatorMovement(Transform targetTransform)

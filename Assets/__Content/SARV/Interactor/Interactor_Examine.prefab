@@ -102,7 +102,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8833215221320404227}
-  - component: {fileID: 7973559599156518117}
+  - component: {fileID: 333289561760869307}
+  - component: {fileID: 1859644349441081118}
   m_Layer: 0
   m_Name: Interactor_Examine
   m_TagString: Untagged
@@ -126,7 +127,28 @@ Transform:
   - {fileID: 3151693072020973504}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7973559599156518117
+--- !u!135 &333289561760869307
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784487378079281364}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1859644349441081118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,35 +160,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822ca56c3b3347bab90c21c28c00794e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphereCollider: {fileID: 333289561760869307}
   OnInteractionAvailabilityChanged:
     m_PersistentCalls:
       m_Calls: []
   target:
-    rid: 4447245586622578833
+    rid: 4447245631436882048
   interactionPoints:
   - {fileID: 464756469739844130}
   - {fileID: 9191995057733341823}
   - {fileID: 1216632634698626278}
+  - {fileID: 3156733422479656201}
   - {fileID: 6776552641414306044}
   - {fileID: 8555114554871497359}
   - {fileID: 1813932836274715741}
-  - {fileID: 3156733422479656201}
   interactionRange: 1
-  interactionAngle: 60
+  interactionAngle: 45
+  isTargetDetected: 0
   showGizmos: 1
   gizmosOnSelect: 1
   gizmoRadius: 0.15
   references:
     version: 2
     RefIds:
-    - rid: 4447245586622578833
-      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+    - rid: 4447245631436882048
+      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Player
+        property: 
         propertyType:
-          rid: 4447245586622578835
-    - rid: 4447245586622578835
-      type: {class: SVGameObjectPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+          rid: 4447245631436882049
+    - rid: 4447245631436882049
+      type: {class: 'SVNullProperty`1[[System.String, mscorlib]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
 --- !u!1 &4967879761126795297
 GameObject:
