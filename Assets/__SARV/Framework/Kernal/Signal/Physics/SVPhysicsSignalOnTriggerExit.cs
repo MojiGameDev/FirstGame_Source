@@ -15,7 +15,7 @@ namespace __SARV.Framework.Kernal.Signal
     {
         public override void HandleOnTriggerExit(SARVTrigger trigger, Collider other)
         {
-            trigger.Invoke();
+            trigger.Execute();
         }
     }
 }

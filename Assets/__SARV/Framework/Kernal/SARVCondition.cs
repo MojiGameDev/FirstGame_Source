@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using __SARV.Common.Base;
+using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Enum;
 using __SARV.Framework.Common.Reflection;
@@ -14,11 +15,8 @@ using UnityEngine;
 
 namespace __SARV.Framework.Kernal
 {
-    public class SARVCondition : SVMonoBehaviour
+    public class SARVCondition : SVKernal
     {
-        [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
-        private string description = "";
-
         [BoxGroup("Row02", showLabel: false)] [HorizontalGroup("Row02/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBranchComponents))] [OnValueChanged(nameof(OnBranchChanged), InvokeOnInitialize = true)]
         private string branch = "";
 
@@ -33,7 +31,7 @@ namespace __SARV.Framework.Kernal
             {
                 var selectedComponentType = SVReflection.GetBranchByPath(branch);
                 var instructionComponent = (SVBranchComponent)Activator.CreateInstance(selectedComponentType);
-                Branches.Add(instructionComponent);
+                branches.Add(instructionComponent);
                 branch = "";
             }
         }
@@ -42,7 +40,7 @@ namespace __SARV.Framework.Kernal
         private SVConditionJoinType conditionJoinType = SVConditionJoinType.And;
 
         [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("Not?")]
-        private bool not = false;
+        private bool not;
 
         [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
         private List<SVBranchComponent> branches = new();
@@ -57,7 +55,6 @@ namespace __SARV.Framework.Kernal
 
         [SerializeField] [HideLabel] private SVInstruction falseInstruction;
 
-        public List<SVBranchComponent> Branches => branches;
         private bool IsBranchValid => !string.IsNullOrEmpty(branch);
 
         public async Task RunCondition(SVArgument argument)

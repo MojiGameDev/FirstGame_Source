@@ -14,7 +14,7 @@ namespace __SARV.Framework.Kernal.Signal
     {
         public override void HandleUpdate(SARVTrigger trigger)
         {
-            trigger.Invoke();
+            trigger.Execute();
         }
     }
 }

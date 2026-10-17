@@ -22,7 +22,7 @@ namespace __SARV.Framework.Kernal.Signal.Input
         {
             if (interactor.CanInteract && SVAccessPlayer.Instance.InputInteract)
             {
-                trigger.Invoke();
+                trigger.Execute();
             }
         }
     }

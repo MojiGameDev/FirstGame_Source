@@ -30,7 +30,7 @@ namespace __SARV.Framework.Kernal.Shared
             {
                 var selectedComponentType = SVReflection.GetInstructionByPath(instruction);
                 var instructionComponent = (SVInstructionComponent)Activator.CreateInstance(selectedComponentType);
-                Instructions.Add(instructionComponent);
+                instructions.Add(instructionComponent);
                 instruction = "";
             }
         }
@@ -38,12 +38,11 @@ namespace __SARV.Framework.Kernal.Shared
         [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnInstructionsChanged))] [PropertyOrder(int.MaxValue)]
         protected List<SVInstructionComponent> instructions = new();
 
-        public List<SVInstructionComponent> Instructions => instructions;
         private bool IsInstructionValid => !string.IsNullOrEmpty(instruction);
         
         public async Task ExecuteInstructions(SVArgument argument)
         {
-            foreach (var instructionComponent in Instructions)
+            foreach (var instructionComponent in instructions)
             {
                 await instructionComponent.Execute(argument);
             }

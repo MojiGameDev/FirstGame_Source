@@ -13,7 +13,7 @@ namespace __SARV.Framework.Kernal.Signal
     {
         public override void HandleOnDisable(SARVTrigger trigger)
         {
-            trigger.Invoke();
+            trigger.Execute();
         }
     }
 }
