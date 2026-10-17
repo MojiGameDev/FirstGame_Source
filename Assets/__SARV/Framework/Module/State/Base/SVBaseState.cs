@@ -9,11 +9,11 @@ using __SARV.Framework.Module.State.Behavior;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Common.Base
+namespace __SARV.Framework.Module.State.Base
 {
     public abstract class SVBaseState : SVMonoBehaviour
     {
-        [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
+        [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnDescriptionChanged), InvokeOnInitialize = true)]
         protected string description = "";
 
         [BoxGroup("$" + nameof(BehaviorTitle), showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBehaviorComponents))] [OnValueChanged(nameof(OnBehaviorChanged), InvokeOnInitialize = true)]
@@ -28,6 +28,8 @@ namespace __SARV.Framework.Common.Base
 
         protected abstract List<string> GetAllBehaviorComponentPaths();
         protected abstract Type GetBehaviorComponentByPath(string behaviorName);
+
+        private const string UNKNOWN_STATE_NAME = "Unknown State";
 
         private IEnumerable GetAllBehaviorComponents()
         {
@@ -49,12 +51,36 @@ namespace __SARV.Framework.Common.Base
                 return;
             }
 
+            OnDescriptionChanged();
             behaviorComponent = (SVBehaviorComponent)Activator.CreateInstance(selectedComponent);
         }
 
         private void OnBehaviorComponentChanged()
         {
             Debug.Log("ChildOrSelf Changed");
+        }
+
+        private void OnDescriptionChanged()
+        {
+            if (!string.IsNullOrEmpty(description) && description.Equals(UNKNOWN_STATE_NAME) && !string.IsNullOrEmpty(behavior))
+            {
+                description = behavior;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(description))
+            {
+                if (string.IsNullOrEmpty(behavior))
+                {
+                    gameObject.name = description = UNKNOWN_STATE_NAME;
+                    return;
+                }
+
+                gameObject.name = description = behavior;
+                return;
+            }
+
+            gameObject.name = description;
         }
     }
 }

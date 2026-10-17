@@ -1,4 +1,5 @@
-﻿using __SARV.Actor.Common.Shared;
+﻿using __SARV.Framework.Module.Identifier;
+using __SARV.Framework.Module.State;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -27,6 +28,11 @@ namespace __SARV.Actor.Player.SubPlayer
         {
             base.Update();
             StateMachine.HandleUpdate(Time.deltaTime);
+        }
+
+        public override void ChangeBehaviorTo(SARVIdentifier stateIdentifier)
+        {
+            StateMachine.ChangeBehaviorTo(stateIdentifier);
         }
     }
 }

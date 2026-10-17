@@ -1,4 +1,5 @@
-﻿using __SARV.Common.Utils;
+﻿using System.Linq;
+using __SARV.Common.Utils;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 
         private void HandleShowGizmos()
         {
-            if (!showGizmos || interactionPoints == null)
+            if (!showGizmos || !interactionPoints.Any() || sphereCollider == null)
             {
                 return;
             }

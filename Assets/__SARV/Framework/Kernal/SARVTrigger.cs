@@ -85,7 +85,7 @@ namespace __SARV.Framework.Kernal
 
         public void Invoke()
         {
-            
+            _ = instruction.ExecuteInstructions(SVArgument.Create(gameObject));
         }
 
         private IEnumerable GetAllSignalComponents()

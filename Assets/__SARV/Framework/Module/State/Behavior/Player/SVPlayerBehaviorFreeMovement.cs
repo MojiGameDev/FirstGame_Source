@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using __SARV.Actor.Common.Enum;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Attributes;
@@ -39,8 +40,9 @@ namespace __SARV.Framework.Module.State.Behavior
         private const int PARAMETER_MOVEMENT_SPEED_SPRINT = 2;
         private const float PARAMETER_MOVEMENT_SPEED_SMOOTH_TIME = 0.15f;
 
-        public override void Enter()
+        public override async Task Enter()
         {
+            await base.Enter();
             _smoothedFloatParameterMovementSpeed = new SmoothedFloatParameter(
                 Player.AnimancerComponent,
                 Player.Animancer.RuntimeAlias[parameterMovementSpeed],
@@ -57,8 +59,9 @@ namespace __SARV.Framework.Module.State.Behavior
             HandleCharacterSpeed();
         }
 
-        public override void Exit()
+        public override async Task Exit()
         {
+            await base.Exit();
             Player.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.Dispose();
         }

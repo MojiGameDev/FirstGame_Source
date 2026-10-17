@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 864190903536386724}
   - component: {fileID: 1064174925218950400}
   m_Layer: 0
-  m_Name: New StatePlayer
+  m_Name: FreeMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c0c7e88041482d866f0617e8bed555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: FreeMovement
   behavior: FreeMovement
   behaviorComponent:
     rid: 4447245521617158297
@@ -1076,6 +1076,12 @@ MonoBehaviour:
       type: {class: SVPlayerBehaviorFreeMovement, ns: __SARV.Framework.Module.State.Behavior, asm: Assembly-CSharp}
       data:
         identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
+        onEnterInstruction:
+          instruction: 
+          instructions: []
+        onExitInstruction:
+          instruction: 
+          instructions: []
         runSpeed: 8
         runRotationRate: 540
         sprintSpeed: 11
@@ -5197,6 +5203,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 864190903536386724}
+  - {fileID: 5373488589364776756}
   m_Father: {fileID: 6313901982196763450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7096266175959367989
@@ -6398,6 +6405,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4226493538703614764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8334268101526521178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5373488589364776756}
+  - component: {fileID: 6054643402486404247}
+  m_Layer: 0
+  m_Name: Examine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5373488589364776756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334268101526521178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6112998586163153568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6054643402486404247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334268101526521178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c0c7e88041482d866f0617e8bed555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Examine
+  behavior: Examine
+  behaviorComponent:
+    rid: 4447245654144843889
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245654144843889
+      type: {class: SVPlayerBehaviorExamine, ns: __SARV.Framework.Module.State.Behavior, asm: Assembly-CSharp}
+      data:
+        identifier: {fileID: 11400000, guid: af8cc05eb10d3a447b392f849c4a70de, type: 2}
+        onEnterInstruction:
+          instruction: 
+          instructions: []
+        onExitInstruction:
+          instruction: 
+          instructions: []
 --- !u!1 &8335551431749314332
 GameObject:
   m_ObjectHideFlags: 0

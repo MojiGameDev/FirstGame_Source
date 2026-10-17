@@ -3,7 +3,7 @@
 namespace __SARV.Common.Base
 {
     [Serializable]
-    public abstract class SVSerializableMonoBehaviour : SVSerializable
+    public abstract class SVSerializableLifeCycle : SVSerializable
     {
         public virtual void HandleAwake()
         {

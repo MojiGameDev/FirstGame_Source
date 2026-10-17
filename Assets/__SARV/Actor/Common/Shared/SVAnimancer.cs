@@ -10,7 +10,7 @@ using UnityEngine;
 namespace __SARV.Actor.Common.Shared
 {
     [Serializable]
-    public class SVAnimancer : SVSerializableMonoBehaviour
+    public class SVAnimancer : SVSerializableLifeCycle
     {
         [SerializeField] [TableList]
         private List<SVWrapperAnimancerIdentifier> wrappers = new();

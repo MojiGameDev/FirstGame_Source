@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using __SARV.Common.Base;
-using __SARV.Framework.Common.Base;
-using __SARV.Framework.Kernal.Argument;
 using __SARV.Framework.Module.Identifier;
+using __SARV.Framework.Module.State.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace __SARV.Actor.Common.Shared
+namespace __SARV.Framework.Module.State
 {
     [Serializable]
-    public class SVStateMachine : SVSerializableMonoBehaviour
+    public class SVStateMachine : SVSerializableLifeCycle
     {
         [BoxGroup("Debug")] [SerializeField] [ReadOnly]
         private SARVIdentifier currentStateIdentifier;
@@ -56,17 +56,31 @@ namespace __SARV.Actor.Common.Shared
 
         private void HandleDefaultState()
         {
-            ChangeStateTo(_runtimeStates.First().Key);
+            _ = EnterToNewState(_runtimeStates.First().Key);
         }
 
-        public void ChangeStateTo(SARVIdentifier stateIdentifier)
+        public void ChangeBehaviorTo(SARVIdentifier stateIdentifier)
+        {
+            _ = ChangeStateToInternal(stateIdentifier);
+        }
+
+        private async Task ChangeStateToInternal(SARVIdentifier stateIdentifier)
+        {
+            await ExitFromOldState();
+            await EnterToNewState(stateIdentifier);
+        }
+
+        private async Task ExitFromOldState()
         {
             _previousState = _currentState;
-            _previousState?.Behavior.Exit();
+            await _previousState.Behavior.Exit();
             OnExitState?.Invoke(currentStateIdentifier);
+        }
 
+        private async Task EnterToNewState(SARVIdentifier stateIdentifier)
+        {
             _currentState = _runtimeStates[stateIdentifier];
-            _currentState?.Behavior.Enter();
+            await _currentState.Behavior.Enter();
             OnEnterState?.Invoke(stateIdentifier);
             OnChangeState?.Invoke(currentStateIdentifier, stateIdentifier);
             currentStateIdentifier = stateIdentifier;

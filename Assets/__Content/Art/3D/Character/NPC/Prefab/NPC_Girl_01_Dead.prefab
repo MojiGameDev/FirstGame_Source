@@ -1532,6 +1532,7 @@ Transform:
   - {fileID: 1586192151064742186}
   - {fileID: 36363692269026699}
   - {fileID: 2172223891641009709}
+  - {fileID: 4504010663809417834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4926966575005826404
@@ -2238,6 +2239,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3180127619299129274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7944856915606215428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4504010663809417834}
+  - component: {fileID: 10503460541968492}
+  m_Layer: 0
+  m_Name: Interact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4504010663809417834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944856915606215428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4718912953629771953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &10503460541968492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944856915606215428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  signal: Input/Interact
+  signalComponent:
+    rid: 4447245640774189349
+  tooltip: 
+  instruction:
+    instruction: 
+    instructions:
+    - rid: 4447245640774189350
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245640774189349
+      type: {class: SVInputSignalInteract, ns: __SARV.Framework.Kernal.Signal.Input, asm: Assembly-CSharp}
+      data:
+        interactor: {fileID: 7195092262961123222}
+    - rid: 4447245640774189350
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevel: 10
+        text:
+          rid: 4447245640774189351
+    - rid: 4447245640774189351
+      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Random
+        propertyType:
+          rid: 4447245640774189354
+    - rid: 4447245640774189354
+      type: {class: SVStringPropertyRandom, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &8114939955890265525
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,27 @@ MonoBehaviour:
       type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
       data:
         _Asset: {fileID: 11400000, guid: ece3c0b1d2cfe8b46ad311cdadb1473e, type: 2}
+--- !u!114 &-1291670709009215659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: Examine
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 4447245654144843853
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245654144843853
+      type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _Asset: {fileID: 11400000, guid: 332964aa880286f45a38ecba6d016f86, type: 2}
 --- !u!114 &-1168877199125708843
 MonoBehaviour:
   m_ObjectHideFlags: 17
@@ -52,8 +73,11 @@ MonoBehaviour:
   _Definition:
     _Transitions:
     - {fileID: -4907967575176111112}
+    - {fileID: -1291670709009215659}
     _Modifiers: []
     _Aliases:
     - _Name: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
       _Index: 0
+    - _Name: {fileID: 11400000, guid: 31bf7a31fd4d0a1449d340a69ba2bd19, type: 2}
+      _Index: 1
     _AliasAllTransitions: 0

@@ -1,5 +1,6 @@
 ﻿using __SARV.Common.Base;
 using __SARV.Framework;
+using __SARV.Framework.Common.Base;
 using __SARV.Framework.Module.State;
 using Animancer;
 using ECM2;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace __SARV.Actor.Player.SubPlayer
 {
-    public abstract class SVSubPlayerReference : SVOverrideMonoBehaviour
+    public abstract class SVSubPlayerReference : SVActor
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
         private Character character;

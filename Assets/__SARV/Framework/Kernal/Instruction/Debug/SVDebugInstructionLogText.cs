@@ -19,7 +19,7 @@ namespace __SARV.Framework.Kernal.Instruction
     [Serializable]
     public class SVDebugInstructionLogText : SVInstructionComponent
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("LogLevel")] [SerializeField] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField]
         private SVLogLevel logLevel = SVLogLevel.Info;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]

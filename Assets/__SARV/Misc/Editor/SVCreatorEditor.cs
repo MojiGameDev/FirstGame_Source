@@ -4,6 +4,7 @@ using __SARV.Framework;
 using __SARV.Framework.Kernal;
 using __SARV.Framework.Module.Dialogue;
 using __SARV.Framework.Module.Indicator;
+using __SARV.Framework.Module.Interactor;
 using __SARV.Framework.Module.State;
 using __SARV.Framework.Module.Variable;
 using UnityEditor;
@@ -61,6 +62,12 @@ namespace __SARV.Misc.Editor
             CreateSARVGameObject<SARVIndicator>(command, "Indicator");
         }
 
+        [MenuItem("GameObject/SARV/Create Interactor", false, 10)]
+        private static void CreateSARVInteractor(MenuCommand command)
+        {
+            CreateSARVGameObject<SARVInteractor>(command, "Interactor");
+        }
+
         [MenuItem("CONTEXT/SARV/Create Trigger", true)]
         private static bool ValidateCreateSARVTrigger(MenuCommand command)
         {
@@ -99,6 +106,12 @@ namespace __SARV.Misc.Editor
 
         [MenuItem("CONTEXT/SARV/Create Indicator", true)]
         private static bool ValidateCreateSARVIndicator(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
+
+        [MenuItem("CONTEXT/SARV/Create Interactor", true)]
+        private static bool ValidateCreateSARVInteractor(MenuCommand command)
         {
             return command.context is GameObject;
         }
