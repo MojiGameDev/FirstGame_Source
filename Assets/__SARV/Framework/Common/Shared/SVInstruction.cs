@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using __SARV.Common.Base;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Reflection;
-using __SARV.Framework.Kernal.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Shared
+namespace __SARV.Framework.Common.Shared
 {
     [Serializable]
     public class SVInstruction : SVSerializable

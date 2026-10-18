@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using __SARV.Common.Base;
-using __SARV.Common.Wrapper;
+using __SARV.Framework.Integration.Animancer.Wrapper;
 using __SARV.Framework.Module.Identifier;
 using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Actor.Common.Shared
+namespace __SARV.Framework.Integration.Animancer
 {
     [Serializable]
     public class SVAnimancer : SVSerializableLifeCycle

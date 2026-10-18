@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using __SARV.Common.Wrapper;
+using __SARV.Framework.Integration.PoolKit.Wrapper;
 using __SARV.Framework.Module.Identifier;
 using DarkTonic.PoolBoss;
 using Sirenix.OdinInspector;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using __SARV.Common.Base;
 using __SARV.Common.Extension;
-using __SARV.Framework.Kernal.Shared;
+using __SARV.Framework.Common.Shared;
 using __SARV.Framework.Module.Dialogue.Enum;
 using __SARV.Framework.Module.Localizer;
 using Sirenix.OdinInspector;

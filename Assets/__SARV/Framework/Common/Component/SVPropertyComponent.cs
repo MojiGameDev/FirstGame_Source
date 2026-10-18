@@ -1,6 +1,6 @@
 ﻿using System;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Base;
-using __SARV.Framework.Kernal.Argument;
 
 namespace __SARV.Framework.Common.Component
 {

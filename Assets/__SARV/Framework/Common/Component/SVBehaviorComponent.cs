@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Base;
-using __SARV.Framework.Kernal.Argument;
-using __SARV.Framework.Kernal.Shared;
+using __SARV.Framework.Common.Shared;
 using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;

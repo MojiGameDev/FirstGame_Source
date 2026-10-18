@@ -1,4 +1,4 @@
-﻿using __SARV.Actor.Common.Shared;
+﻿using __SARV.Framework.Integration.Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

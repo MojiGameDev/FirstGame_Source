@@ -1,9 +1,9 @@
 ﻿using System;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
-using __SARV.Framework.Kernal.Argument;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ namespace __SARV.Framework.Kernal.Property.Actor
     [SVCategory(SVConstantCategory.Property.ACTOR)]
     [SVDescription("Enter a actor")]
     [Serializable]
-    public class SVBoolPropertyManual : SVPropertyComponent<SVActor>
+    public class SVActorPropertyManual : SVPropertyComponent<SVActor>
     {
         [SerializeField] [HideLabel] private SVActor value;
 

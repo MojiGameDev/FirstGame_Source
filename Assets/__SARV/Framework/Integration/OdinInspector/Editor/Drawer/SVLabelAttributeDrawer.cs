@@ -3,7 +3,7 @@ using __SARV.Framework.Integration.OdinInspector.Runtime;
 using Sirenix.OdinInspector.Editor;
 using UnityEngine;
 
-namespace __SARV.Framework.Integration.OdinInspector.Editor
+namespace __SARV.Framework.Integration.OdinInspector.Editor.Drawer
 {
     [DrawerPriority(DrawerPriorityLevel.SuperPriority)]
     public sealed class SVLabelAttributeDrawer : OdinAttributeDrawer<SVLabelAttribute>

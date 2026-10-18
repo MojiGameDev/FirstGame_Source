@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using __SARV.Common.Base;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Base;
-using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Enum;
-using __SARV.Framework.Common.Reflection;
-using __SARV.Framework.Kernal.Argument;
-using __SARV.Framework.Kernal.Shared;
+using __SARV.Framework.Common.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -17,101 +11,45 @@ namespace __SARV.Framework.Kernal
 {
     public class SARVCondition : SVKernal
     {
-        [BoxGroup("Row02", showLabel: false)] [HorizontalGroup("Row02/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBranchComponents))] [OnValueChanged(nameof(OnBranchChanged), InvokeOnInitialize = true)]
-        private string branch = "";
+        [SerializeField] private SVConditionType conditionType = SVConditionType.FirstIf;
 
-        [BoxGroup("Row02", showLabel: false)]
-        [HorizontalGroup("Row02/Group01", Width = 21)]
-        [HideLabel]
-        [Button(ButtonSizes.Medium, Icon = SdfIconType.Plus, ButtonHeight = 21)]
-        [EnableIf(nameof(IsBranchValid))]
-        private void AddNewBranch()
-        {
-            if (IsBranchValid)
-            {
-                var selectedComponentType = SVReflection.GetBranchByPath(branch);
-                var instructionComponent = (SVBranchComponent)Activator.CreateInstance(selectedComponentType);
-                branches.Add(instructionComponent);
-                branch = "";
-            }
-        }
+        [SerializeField] private bool hasElse;
 
-        [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
-        private SVConditionJoinType conditionJoinType = SVConditionJoinType.And;
+        [SerializeField] [Title("Branches")] [LabelText("$BranchesLabels")]
+        private List<SVBranch> branches = new();
 
-        [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("Not?")]
-        private bool not;
+        [SerializeField] [Title("Else")] [HideLabel] [ShowIf(nameof(hasElse))]
+        private SVInstruction elseInstruction;
 
-        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
-        private List<SVBranchComponent> branches = new();
-
-        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Executes when the branches are true", InfoMessageType.Info)]
-        private string trueTooltip = "";
-
-        [SerializeField] [HideLabel] private SVInstruction trueInstruction;
-
-        [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Executes when the branches are false", InfoMessageType.Info)]
-        private string falseTooltip = "";
-
-        [SerializeField] [HideLabel] private SVInstruction falseInstruction;
-
-        private bool IsBranchValid => !string.IsNullOrEmpty(branch);
+        private string BranchesLabels => $"{branches.Count} Conditions";
 
         public async Task RunCondition(SVArgument argument)
         {
-            if (not)
+            var isInstructionExecute = false;
+            foreach (var branch in branches)
             {
-                if (IsBranchesPassed(argument))
+                var isBranchesPassed = branch.IsBranchesPassed(argument);
+                if (isBranchesPassed && !branch.Not)
                 {
-                    await falseInstruction.ExecuteInstructions(argument);
+                    isInstructionExecute = true;
+                    await branch.Instruction.ExecuteInstructions(argument);
                 }
-                else
+                else if (!isBranchesPassed && branch.Not)
                 {
-                    await trueInstruction.ExecuteInstructions(argument);
+                    isInstructionExecute = true;
+                    await branch.Instruction.ExecuteInstructions(argument);
                 }
-            }
-            else
-            {
-                if (IsBranchesPassed(argument))
-                {
-                    await trueInstruction.ExecuteInstructions(argument);
-                }
-                else
-                {
-                    await falseInstruction.ExecuteInstructions(argument);
-                }
-            }
-        }
 
-        private bool IsBranchesPassed(SVArgument argument)
-        {
-            foreach (var branchComponent in branches.Where(d => !d.Disabled))
-            {
-                if (conditionJoinType == SVConditionJoinType.And && !branchComponent.IsTrue(argument))
+                if (conditionType == SVConditionType.FirstIf && isInstructionExecute)
                 {
-                    return false;
+                    return;
                 }
             }
 
-            return true;
-        }
-
-        private void OnBranchChanged()
-        {
-        }
-
-        private void OnBranchesChanged()
-        {
-        }
-
-        private void OnConditionJoinChanged()
-        {
-        }
-
-        private IEnumerable GetAllBranchComponents()
-        {
-            var components = SVReflection.GetAllBranchComponentPaths();
-            return components.Select(d => new ValueDropdownItem(d, d));
+            if (hasElse && !isInstructionExecute)
+            {
+                await elseInstruction.ExecuteInstructions(argument);
+            }
         }
     }
 }

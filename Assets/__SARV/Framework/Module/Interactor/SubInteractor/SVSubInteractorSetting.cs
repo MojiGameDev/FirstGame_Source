@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Component;
-using __SARV.Framework.Kernal.Argument;
 using __SARV.Framework.Kernal.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;

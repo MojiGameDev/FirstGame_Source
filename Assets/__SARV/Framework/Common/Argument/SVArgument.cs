@@ -1,9 +1,6 @@
-﻿using System;
-using System.Reflection;
-using __SARV.Actor.Agent;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Argument
+namespace __SARV.Framework.Common.Argument
 {
     public readonly struct SVArgument
     {

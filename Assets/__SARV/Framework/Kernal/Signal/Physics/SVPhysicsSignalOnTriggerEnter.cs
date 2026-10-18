@@ -2,7 +2,6 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
-using __SARV.Framework.Kernal.Argument;
 using UnityEngine;
 
 namespace __SARV.Framework.Kernal.Signal

@@ -4,7 +4,7 @@ using __SARV.Framework.Module.Identifier;
 using Animancer;
 using UnityEngine;
 
-namespace __SARV.Common.Wrapper
+namespace __SARV.Framework.Integration.Animancer.Wrapper
 {
     [Serializable]
     public class SVWrapperAnimancerIdentifier : SVSerializable

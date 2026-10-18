@@ -1,7 +1,6 @@
 ﻿using System;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Kernal;
-using __SARV.Framework.Kernal.Argument;
 using UnityEngine;
 
 namespace __SARV.Framework.Common.Component

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Common.Utils;
-using __SARV.Framework.Kernal.Argument;
+using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property.Actor;
 using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
@@ -19,17 +20,17 @@ namespace __SARV.Framework.Kernal.Instruction.Actor
     [Serializable]
     public class SVActorInstructionChangeBehavior : SVInstructionComponent
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<SVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
-        private SARVIdentifier behavior ;
+        private SARVIdentifier behavior;
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Change behavior to the {(behavior == null ? "..." : behavior)}";
 
         protected override Task ExecuteInternal(SVArgument argument)
         {
-            actor.GetValue(argument).ChangeBehaviorTo(behavior );
+            actor.GetValue(argument).ChangeBehaviorTo(behavior);
             return SVTaskUtils.OK_RESULT;
         }
     }
