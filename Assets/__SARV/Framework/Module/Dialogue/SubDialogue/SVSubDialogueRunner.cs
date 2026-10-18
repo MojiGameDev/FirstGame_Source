@@ -6,6 +6,8 @@ using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Module.Dialogue.Entity;
 using __SARV.Framework.Module.Dialogue.Enum;
 using __SARV.Framework.Module.Subtitle;
+using __SARV.SceneControl.Game;
+using __SARV.SceneControl.World;
 
 namespace __SARV.Framework.Module.Dialogue.SubDialogue
 {
@@ -13,7 +15,7 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
     {
         public async Task RunDialogue(SVArgument argument)
         {
-            await RunDialogueChildrenNode(Dialogues);
+            await RunDialogueChildrenNode(dialogues);
         }
 
         private async Task RunDialogueNode(SVDialogueNode node)
@@ -42,7 +44,7 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
         {
             switch (node.AdvanceMode)
             {
-                case SVDialogueNodeAdvanceMode.InputKey:
+                case SVDialogueNodeAdvanceMode.Interact:
                     await RunDialogueNodeAdvanceModeInputKey(node);
                     break;
                 case SVDialogueNodeAdvanceMode.Delay:
@@ -70,6 +72,7 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
         private void RunDialogueNodeTypeText(SVDialogueNode node)
         {
             SARVSubtitle.Instance.ShowSubtitle(node.SubtitleText, node.SubtitleDelay);
+            SARVGame.Instance.PlayDialogue(node.Voice);
         }
 
         private void RunDialogueNodeTypeChoice(SVDialogueNode node)

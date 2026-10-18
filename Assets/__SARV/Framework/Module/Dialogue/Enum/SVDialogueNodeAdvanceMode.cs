@@ -2,7 +2,7 @@
 {
     public enum SVDialogueNodeAdvanceMode
     {
-        InputKey = 10,
+        Interact = 10,
         Delay = 20,
     }
 }

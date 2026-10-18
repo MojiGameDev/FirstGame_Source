@@ -16,7 +16,7 @@ namespace __SARV.Framework.Kernal.Property.Actor
         {
             if (IsPropertyHasValue && !IsPropertyComponentNull)
             {
-                return IsPropertyHasValue ? $"{GetValue(default).gameObject.name}" : "...";
+                return IsPropertyHasValue ? $"{property}" : "...";
             }
 
             return IsPropertyHasValue ? property : "...";

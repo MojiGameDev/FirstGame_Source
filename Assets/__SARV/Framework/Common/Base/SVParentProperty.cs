@@ -22,6 +22,11 @@ namespace __SARV.Framework.Common.Base
         protected bool IsPropertyHasValue => !string.IsNullOrEmpty(property);
         protected bool IsPropertyComponentNull => propertyType is null or SVNullProperty<TType>;
 
+        public override string ToString()
+        {
+            return propertyType.ToString();
+        }
+
         public override TType GetValue(SVArgument argument)
         {
             return IsPropertyComponentNull ? default : propertyType.GetValue(argument);

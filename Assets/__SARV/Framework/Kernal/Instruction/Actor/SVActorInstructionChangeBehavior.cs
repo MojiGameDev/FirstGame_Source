@@ -26,7 +26,7 @@ namespace __SARV.Framework.Kernal.Instruction.Actor
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVIdentifier behavior;
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Change behavior to the {(behavior == null ? "..." : behavior)}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Change the {actor} behavior to the {(behavior == null ? "..." : behavior.SkipWords(2))}";
 
         protected override Task ExecuteInternal(SVArgument argument)
         {

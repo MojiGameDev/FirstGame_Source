@@ -1,8 +1,10 @@
-﻿using __SARV.Common.Base;
+﻿using System.IO;
+using __SARV.Common.Base;
 using __SARV.Common.Extension;
 using __SARV.Framework;
 using __SARV.Framework.Kernal;
 using __SARV.Framework.Module.Dialogue;
+using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Indicator;
 using __SARV.Framework.Module.Interactor;
 using __SARV.Framework.Module.State;
@@ -66,6 +68,37 @@ namespace __SARV.Misc.Editor
         private static void CreateSARVInteractor(MenuCommand command)
         {
             CreateSARVGameObject<SARVInteractor>(command, "Interactor");
+        }
+
+        [MenuItem("Assets/SARV/Create AudioIdentifier", false, 10)]
+        private static void CreateSARVAudioIdentifier(MenuCommand command)
+        {
+            var clip = Selection.activeObject as AudioClip;
+
+            if (clip == null)
+            {
+                return;
+            }
+
+            var data = ScriptableObject.CreateInstance<SARVIdentifier>();
+            
+            var path = AssetDatabase.GetAssetPath(clip);
+            var directory = Path.GetDirectoryName(path);
+            var assetPath = AssetDatabase.GenerateUniqueAssetPath(
+                $"{directory}/{clip.name}.asset"
+            );
+
+            AssetDatabase.CreateAsset(data, assetPath);
+            AssetDatabase.SaveAssets();
+
+            EditorUtility.FocusProjectWindow();
+            Selection.activeObject = data;
+        }
+        
+        [MenuItem("Assets/SARV/Create AudioIdentifier", true)]
+        private static bool ValidateCreateSARVAudioIdentifier()
+        {
+            return Selection.activeObject is AudioClip;
         }
 
         [MenuItem("CONTEXT/SARV/Create Trigger", true)]

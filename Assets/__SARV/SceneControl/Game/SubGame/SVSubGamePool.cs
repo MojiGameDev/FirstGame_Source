@@ -9,8 +9,8 @@ namespace __SARV.SceneControl.Game.SubGame
 {
     public abstract class SVSubGamePool : SVSubGameInput
     {
-        [FoldoutGroup("Pool")] [SerializeField] [TableList]
-        private List<SVWrapperPoolKitIdentifier> wrappers = new();
+        [FoldoutGroup("Pool")] [SerializeField] [TableList] [LabelText("Wrappers")]
+        private List<SVWrapperPoolKitIdentifier> poolWrappers = new();
 
         private readonly Dictionary<SARVIdentifier, Transform> RuntimePoolTransform = new();
 
@@ -47,7 +47,7 @@ namespace __SARV.SceneControl.Game.SubGame
 
         private void HandleWrappersToDictionary()
         {
-            foreach (var wrapper in wrappers)
+            foreach (var wrapper in poolWrappers)
             {
                 RuntimePoolTransform.Add(wrapper.Identifier, wrapper.Target);
             }

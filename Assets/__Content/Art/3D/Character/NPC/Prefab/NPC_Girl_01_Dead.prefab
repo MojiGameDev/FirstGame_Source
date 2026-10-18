@@ -1533,6 +1533,7 @@ Transform:
   - {fileID: 36363692269026699}
   - {fileID: 2172223891641009709}
   - {fileID: 4504010663809417834}
+  - {fileID: 8333839699262700667}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4926966575005826404
@@ -2291,7 +2292,10 @@ MonoBehaviour:
   instruction:
     instruction: 
     instructions:
-    - rid: 4447245640774189350
+    - rid: 4447245654144843911
+    - rid: 4447245677697171619
+    - rid: 4447245677697171624
+    - rid: 4447245677697171620
   references:
     version: 2
     RefIds:
@@ -2299,22 +2303,56 @@ MonoBehaviour:
       type: {class: SVInputSignalInteract, ns: __SARV.Framework.Kernal.Signal.Input, asm: Assembly-CSharp}
       data:
         interactor: {fileID: 7195092262961123222}
-    - rid: 4447245640774189350
+    - rid: 4447245654144843911
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245654144843912
+        behavior: {fileID: 11400000, guid: af8cc05eb10d3a447b392f849c4a70de, type: 2}
+    - rid: 4447245654144843912
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245677697171552
+    - rid: 4447245677697171552
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245677697171619
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        duration: 2
+        realTime: 0
+    - rid: 4447245677697171620
       type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         logLevel: 10
         text:
-          rid: 4447245640774189351
-    - rid: 4447245640774189351
+          rid: 4447245677697171621
+    - rid: 4447245677697171621
       type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Random
+        property: Manual
         propertyType:
-          rid: 4447245640774189354
-    - rid: 4447245640774189354
-      type: {class: SVStringPropertyRandom, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
+          rid: 4447245677697171623
+    - rid: 4447245677697171623
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 2 sec
+    - rid: 4447245677697171624
+      type: {class: SVDialogueInstructionRun, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        dialogue: {fileID: 7264043201672733933}
+        waitToFinish:
+          rid: 4447245677697171625
+    - rid: 4447245677697171625
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 0
 --- !u!1 &8114939955890265525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,6 +2447,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2228085014929762572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8614082169623037070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8333839699262700667}
+  - component: {fileID: 7264043201672733933}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8333839699262700667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8614082169623037070}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4718912953629771953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7264043201672733933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8614082169623037070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2896ebe1d9714edc8d9b9cb563ff14bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  dialogues:
+  - type: 10
+    advanceMode: 20
+    delay: 4
+    text: {fileID: 11400000, guid: e4a59d02869c5d54bbc497428ff5b58d, type: 2}
+    subtitleDelay: 4
+    speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
+    onEnterInstruction:
+      instruction: 
+      instructions: []
+    onExitInstruction:
+      instruction: 
+      instructions: []
+    dialogues: []
+  - type: 10
+    advanceMode: 20
+    delay: 4
+    text: {fileID: 11400000, guid: 03d6e3d2bec83af49af32dee11b7f91f, type: 2}
+    subtitleDelay: 4
+    speaker: {fileID: 11400000, guid: 740e2236b1f2cc74fbbc2236b17fda98, type: 2}
+    onEnterInstruction:
+      instruction: 
+      instructions: []
+    onExitInstruction:
+      instruction: 
+      instructions: []
+    dialogues: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &8722683793125445337
 GameObject:
   m_ObjectHideFlags: 0

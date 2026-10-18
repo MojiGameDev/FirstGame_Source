@@ -17,18 +17,18 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         private SVDialogueNodeType type = SVDialogueNodeType.Text;
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))]
-        private SVDialogueNodeAdvanceMode advanceMode = SVDialogueNodeAdvanceMode.InputKey;
+        private SVDialogueNodeAdvanceMode advanceMode = SVDialogueNodeAdvanceMode.Interact;
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [ShowIf(nameof(IsDelayMustShowed))] [PropertyRange(0f, 15f)]
         private float delay = 4f;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))]
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
         private SARVLocalizer text;
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [PropertyRange(0f, 15f)]
         private float subtitleDelay = 2f;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))]
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
         private SARVSpeaker speaker;
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [Title("OnEnter")] [HideLabel]
@@ -37,10 +37,12 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         [FoldoutGroup("$GroupTitle")] [SerializeField] [Title("OnExit")] [HideLabel]
         private SVInstruction onExitInstruction;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)]
+        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [LabelText("$DialoguesLabel")] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)]
         private List<SVDialogueNode> dialogues = new();
 
+        private string DialoguesLabel => $"{dialogues.Count} Sub Dialogues";
         public string Text => text.TranslateText();
+        public AudioClip Voice => text.TranslateVoice();
         public SVDialogueNodeType Type => type;
         public SVDialogueNodeAdvanceMode AdvanceMode => advanceMode;
         public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;

@@ -22,7 +22,7 @@ namespace __SARV.Framework.Kernal.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField]
         private SVLogLevel logLevel = SVLogLevel.Info;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<string> text = new SVStringProperty();
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Sends {text} to the console";

@@ -30,53 +30,53 @@ namespace __SARV.Framework.Kernal
         public SVSignalComponent Signal => IsSignalComponentNull ? null : signalComponent;
         public bool IsSignalComponentNull => signalComponent is SVNullSignal or null;
         public string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetType().GetTitle())}";
-        
-        private void Awake()
+
+        protected override void Awake()
         {
             Signal.HandleAwake(this);
         }
 
-        private void Start()
+        protected override void Start()
         {
             Signal.HandleStart(this);
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
             Signal.HandleOnEnable(this);
         }
 
-        private void Update()
+        protected override void Update()
         {
             Signal.HandleUpdate(this);
         }
 
-        private void FixedUpdate()
+        protected override void FixedUpdate()
         {
             Signal.HandleFixedUpdate(this);
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
             Signal.HandleOnDisable(this);
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
             Signal.HandleOnDestroy(this);
         }
 
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
             Signal.HandleOnTriggerEnter(this, other);
         }
 
-        private void OnTriggerStay(Collider other)
+        protected override void OnTriggerStay(Collider other)
         {
             Signal.HandleOnTriggerStay(this, other);
         }
 
-        private void OnTriggerExit(Collider other)
+        protected override void OnTriggerExit(Collider other)
         {
             Signal.HandleOnTriggerExit(this, other);
         }

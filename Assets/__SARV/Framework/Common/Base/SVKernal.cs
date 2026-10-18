@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Common.Base
 {
-    public class SVKernal : SVMonoBehaviour
+    public class SVKernal : SVOverrideMonoBehaviour
     {
         [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
         private string description = "";

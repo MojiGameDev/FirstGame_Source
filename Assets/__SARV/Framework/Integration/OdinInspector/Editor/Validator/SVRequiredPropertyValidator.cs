@@ -63,6 +63,11 @@ namespace __SARV.Framework.Integration.OdinInspector.Editor.Validator
                 return unityObject != null;
             }
 
+            if (value is string)
+            {
+                return !string.IsNullOrEmpty(value.ToString());
+            }
+            
             return value != null;
         }
     }
