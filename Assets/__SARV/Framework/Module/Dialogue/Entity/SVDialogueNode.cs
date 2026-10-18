@@ -25,7 +25,7 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
         private SARVLocalizer text;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [PropertyRange(0f, 15f)]
+        [FoldoutGroup("$GroupTitle")] [SerializeField] [ShowIf(nameof(IsDelayMustShowed))] [PropertyRange(0f, 15f)]
         private float subtitleDelay = 2f;
 
         [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
@@ -42,7 +42,7 @@ namespace __SARV.Framework.Module.Dialogue.Entity
 
         private string DialoguesLabel => $"{dialogues.Count} Sub Dialogues";
         public string Text => text.TranslateText();
-        public AudioClip Voice => text.TranslateVoice();
+        public AudioClip Audio => text.TranslateVoice();
         public SVDialogueNodeType Type => type;
         public SVDialogueNodeAdvanceMode AdvanceMode => advanceMode;
         public IReadOnlyList<SVDialogueNode> Dialogues => dialogues;
@@ -56,6 +56,7 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         private bool IsTypeRandom => Type == SVDialogueNodeType.Random;
         public string SubtitleText => $"<color=#{speaker.TextColor}>{speaker.SpeakerName}:</color> {Text}";
         public float SubtitleDelay => subtitleDelay;
+        public bool IsAdvanceModeFinishAudio => AdvanceMode == SVDialogueNodeAdvanceMode.FinishAudio;
 
         private void CreateNode()
         {

@@ -4,5 +4,6 @@
     {
         Interact = 10,
         Delay = 20,
+        FinishAudio = 30,
     }
 }

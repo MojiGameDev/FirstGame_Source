@@ -2251,7 +2251,7 @@ GameObject:
   - component: {fileID: 4504010663809417834}
   - component: {fileID: 10503460541968492}
   m_Layer: 0
-  m_Name: Interact
+  m_Name: Interact to the body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2284,7 +2284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: Interact to the body
   signal: Input/Interact
   signalComponent:
     rid: 4447245640774189349
@@ -2293,9 +2293,8 @@ MonoBehaviour:
     instruction: 
     instructions:
     - rid: 4447245654144843911
-    - rid: 4447245677697171619
+    - rid: 4447245677697171637
     - rid: 4447245677697171624
-    - rid: 4447245677697171620
   references:
     version: 2
     RefIds:
@@ -2319,40 +2318,18 @@ MonoBehaviour:
     - rid: 4447245677697171552
       type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
       data: 
-    - rid: 4447245677697171619
-      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        duration: 2
-        realTime: 0
-    - rid: 4447245677697171620
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        logLevel: 10
-        text:
-          rid: 4447245677697171621
-    - rid: 4447245677697171621
-      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 4447245677697171623
-    - rid: 4447245677697171623
-      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 2 sec
     - rid: 4447245677697171624
       type: {class: SVDialogueInstructionRun, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         dialogue: {fileID: 7264043201672733933}
-        waitToFinish:
-          rid: 4447245677697171625
-    - rid: 4447245677697171625
-      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+        waitToFinish: 0
+    - rid: 4447245677697171637
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
       data:
-        value: 0
+        disabled: 0
+        duration: 0.89
+        realTime: 0
 --- !u!1 &8114939955890265525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,7 +2435,7 @@ GameObject:
   - component: {fileID: 8333839699262700667}
   - component: {fileID: 7264043201672733933}
   m_Layer: 0
-  m_Name: Dialogue
+  m_Name: Play dialogue when Interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2491,10 +2468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2896ebe1d9714edc8d9b9cb563ff14bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: Play dialogue when Interact
   dialogues:
   - type: 10
-    advanceMode: 20
+    advanceMode: 30
     delay: 4
     text: {fileID: 11400000, guid: e4a59d02869c5d54bbc497428ff5b58d, type: 2}
     subtitleDelay: 4
@@ -2504,10 +2481,11 @@ MonoBehaviour:
       instructions: []
     onExitInstruction:
       instruction: 
-      instructions: []
+      instructions:
+      - rid: 4447245677697171636
     dialogues: []
   - type: 10
-    advanceMode: 20
+    advanceMode: 30
     delay: 4
     text: {fileID: 11400000, guid: 03d6e3d2bec83af49af32dee11b7f91f, type: 2}
     subtitleDelay: 4
@@ -2521,7 +2499,13 @@ MonoBehaviour:
     dialogues: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4447245677697171636
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        duration: 0.6
+        realTime: 0
 --- !u!1 &8722683793125445337
 GameObject:
   m_ObjectHideFlags: 0

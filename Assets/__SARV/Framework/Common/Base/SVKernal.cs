@@ -6,7 +6,15 @@ namespace __SARV.Framework.Common.Base
 {
     public class SVKernal : SVOverrideMonoBehaviour
     {
-        [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel]
+        [BoxGroup("Purpose", showLabel: false)] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnDescriptionChanged))]
         private string description = "";
+
+        private void OnDescriptionChanged()
+        {
+            if (!string.IsNullOrEmpty(description))
+            {
+                gameObject.name = description;
+            }
+        }
     }
 }

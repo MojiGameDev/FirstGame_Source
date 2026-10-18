@@ -4,6 +4,7 @@ using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
 using __SARV.Framework.Module.Dialogue;
 using Sirenix.OdinInspector;
@@ -17,11 +18,11 @@ namespace __SARV.Framework.Kernal.Instruction
     [Serializable]
     public class SVDialogueInstructionRun : SVInstructionComponent
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Dialogue")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideReferenceObjectPicker] [SVRequired]
         private SARVDialogue dialogue;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("WaitToFinish")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
-        private SVPropertyComponent<bool> waitToFinish = new SVBoolPropertyManual();
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField]
+        private bool waitToFinish = false;
 
         private bool IsDialogueNull => dialogue == null;
 
@@ -29,11 +30,12 @@ namespace __SARV.Framework.Kernal.Instruction
 
         protected override async Task ExecuteInternal(SVArgument argument)
         {
-            if (waitToFinish.GetValue(argument))
+            if (waitToFinish)
             {
                 await dialogue.RunDialogue(argument);
                 return;
             }
+
             _ = dialogue.RunDialogue(argument);
         }
     }

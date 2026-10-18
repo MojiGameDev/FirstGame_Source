@@ -7,7 +7,6 @@ using __SARV.Framework.Module.Dialogue.Entity;
 using __SARV.Framework.Module.Dialogue.Enum;
 using __SARV.Framework.Module.Subtitle;
 using __SARV.SceneControl.Game;
-using __SARV.SceneControl.World;
 
 namespace __SARV.Framework.Module.Dialogue.SubDialogue
 {
@@ -22,7 +21,7 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
         {
             await RunDialogueOnEnter(node);
 
-            RunDialogueNodeType(node);
+            await RunDialogueNodeType(node);
             await RunDialogueNodeAdvanceMode(node);
 
             await RunDialogueOnExit(node);
@@ -53,12 +52,12 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
             }
         }
 
-        private void RunDialogueNodeType(SVDialogueNode node)
+        private async Task RunDialogueNodeType(SVDialogueNode node)
         {
             switch (node.Type)
             {
                 case SVDialogueNodeType.Text:
-                    RunDialogueNodeTypeText(node);
+                    await RunDialogueNodeTypeText(node);
                     break;
                 case SVDialogueNodeType.Choice:
                     RunDialogueNodeTypeChoice(node);
@@ -69,10 +68,10 @@ namespace __SARV.Framework.Module.Dialogue.SubDialogue
             }
         }
 
-        private void RunDialogueNodeTypeText(SVDialogueNode node)
+        private async Task RunDialogueNodeTypeText(SVDialogueNode node)
         {
-            SARVSubtitle.Instance.ShowSubtitle(node.SubtitleText, node.SubtitleDelay);
-            SARVGame.Instance.PlayDialogue(node.Voice);
+            SARVSubtitle.Instance.ShowSubtitle(node.SubtitleText, node.IsAdvanceModeFinishAudio ? node.Audio.length : node.SubtitleDelay);
+            await SARVGame.Instance.PlayDialogue(node.Audio, node.IsAdvanceModeFinishAudio);
         }
 
         private void RunDialogueNodeTypeChoice(SVDialogueNode node)
