@@ -2295,6 +2295,8 @@ MonoBehaviour:
     - rid: 4447245654144843911
     - rid: 4447245677697171637
     - rid: 4447245677697171624
+    - rid: 4447245677697171648
+    - rid: 4447245677697171649
   references:
     version: 2
     RefIds:
@@ -2323,13 +2325,35 @@ MonoBehaviour:
       data:
         disabled: 0
         dialogue: {fileID: 7264043201672733933}
-        waitToFinish: 0
+        waitToFinish: 1
     - rid: 4447245677697171637
       type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
       data:
         disabled: 0
-        duration: 0.89
+        duration: 0.8
         realTime: 0
+    - rid: 4447245677697171648
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        duration: 1
+        realTime: 0
+    - rid: 4447245677697171649
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245677697171650
+        behavior: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
+    - rid: 4447245677697171650
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245677697171652
+    - rid: 4447245677697171652
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &8114939955890265525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,7 +2528,7 @@ MonoBehaviour:
       type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
       data:
         disabled: 0
-        duration: 0.6
+        duration: 0.3
         realTime: 0
 --- !u!1 &8722683793125445337
 GameObject:

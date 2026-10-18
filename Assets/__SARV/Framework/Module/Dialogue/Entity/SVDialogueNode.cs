@@ -51,7 +51,7 @@ namespace __SARV.Framework.Module.Dialogue.Entity
         public SVInstruction OnEnterInstruction => onEnterInstruction;
         public SVInstruction OnExitInstruction => onExitInstruction;
 
-        private string GroupTitle => $"{Type.ToReadableString()} - {AdvanceMode.ToReadableString()} - {(text == null ? "..." : text.name)}";
+        private string GroupTitle => $"{Type.ToReadableString()} - {AdvanceMode.ToReadableString()} - {(speaker == null ? "..." : speaker.name)}";
         private bool IsDelayMustShowed => AdvanceMode == SVDialogueNodeAdvanceMode.Delay && !IsTypeRandom;
         private bool IsTypeRandom => Type == SVDialogueNodeType.Random;
         public string SubtitleText => $"<color=#{speaker.TextColor}>{speaker.SpeakerName}:</color> {Text}";
