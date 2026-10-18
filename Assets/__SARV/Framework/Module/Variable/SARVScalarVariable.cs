@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using __SARV.Common.Base;
+using __SARV.Framework.Common.Base;
 using __SARV.Framework.Module.Variable.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Variable
 {
-    public class SARVScalarVariable : SVMonoBehaviour
+    public class SARVScalarVariable : SVKernal
     {
         [BoxGroup("Row01", showLabel: false)] [HorizontalGroup("Row01/Group01")] [SerializeField] [HideLabel]
         private string title = "";

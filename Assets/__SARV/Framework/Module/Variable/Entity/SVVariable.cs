@@ -14,7 +14,7 @@ namespace __SARV.Framework.Module.Variable.Entity
     public class SVVariable : SVSerializable
     {
         [FoldoutGroup("$GroupTitle")] [BoxGroup("$GroupTitle/Identifier")] [SerializeField] [HideLabel] [ShowIf(nameof(canSave))]
-        private SARVIdentifier identifier;
+        private string key;
 
         [FoldoutGroup("$GroupTitle")] [BoxGroup("$GroupTitle/Info", showLabel: false)] [HorizontalGroup("$GroupTitle/Info/Group01")] [SerializeField] [HideLabel]
         private string title;
@@ -28,7 +28,7 @@ namespace __SARV.Framework.Module.Variable.Entity
         [FoldoutGroup("$GroupTitle")] [BoxGroup("$GroupTitle/Value", showLabel: false)] [HorizontalGroup("$GroupTitle/Value/Group01")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVVariableValue variableValue = new SVVariableValueNull();
 
-        public SARVIdentifier Identifier => identifier;
+        public string Key => key;
         public bool CanSave => canSave;
         public string Title => title;
         public string GroupTitle => $"{(string.IsNullOrEmpty(Title) ? "..." : Title)} ({(string.IsNullOrEmpty(valueType) ? "..." : valueType)}) = {variableValue}";
