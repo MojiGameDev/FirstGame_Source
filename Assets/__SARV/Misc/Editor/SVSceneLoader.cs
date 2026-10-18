@@ -64,8 +64,10 @@ namespace __SARV.Misc.Editor
         {
             // Close all current scenes first
             CloseAllScenes();
-
-            EditorSceneManager.OpenScene($"{CINEMATIC_SCENE}Cinematic_01.unity", OpenSceneMode.Single);
+            
+            EditorSceneManager.OpenScene($"{PLAY_SCENE}Game.unity", OpenSceneMode.Single);
+            EditorSceneManager.OpenScene($"{PLAY_SCENE}Controller.unity", OpenSceneMode.Additive);
+            EditorSceneManager.OpenScene($"{CINEMATIC_SCENE}Cinematic_01.unity", OpenSceneMode.Additive);
             EditorSceneManager.OpenScene($"{CINEMATIC_SCENE}Cinematic_Landscape.unity", OpenSceneMode.Additive);
         }
 
