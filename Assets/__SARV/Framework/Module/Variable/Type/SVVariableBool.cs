@@ -12,29 +12,19 @@ namespace __SARV.Framework.Module.Variable
     [Serializable]
     public class SVVariableBool : SVVariable
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged), InvokeOnInitialize = true)]
         private bool value;
 
         public override Type Type => typeof(bool);
 
-        protected override object Get()
+        protected override object GetValue()
         {
             return value;
         }
 
-        protected override void Set(object newValue)
+        protected override void SetValue(object newValue)
         {
             value = newValue is true;
-        }
-
-        protected override void Save()
-        {
-            SVEasySave.Save(key, value);
-        }
-
-        protected override void Load()
-        {
-            Value = ES3.Load<bool>(key);
         }
 
         public override string ToString()

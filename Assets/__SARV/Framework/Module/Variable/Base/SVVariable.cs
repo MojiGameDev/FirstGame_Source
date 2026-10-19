@@ -27,41 +27,30 @@ namespace __SARV.Framework.Module.Variable.Base
         [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Info", showLabel: false)] [HorizontalGroup("$GroupTitle/Info/Group01")] [SerializeField] [HideLabel]
         private string title;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Info", showLabel: false)] [HorizontalGroup("$GroupTitle/Info/Group01")] [SerializeField] [LabelText("CanSave?")]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Info", showLabel: false)] [HorizontalGroup("$GroupTitle/Info/Group01")] [SerializeField] [LabelText("CanSave?")] [OnValueChanged(nameof(OnCanSaveChanged))]
         protected bool canSave;
 
         private bool MustShowGenerateKey => canSave;
         public string Title => title;
-        public string GroupTitle => $"{(canSave ? "Saved - " : "")}{(string.IsNullOrEmpty(Title) ? "..." : Title)} ({GetType().GetTitle()}) = {Get()}";
+        public string GroupTitle => $"{(canSave ? "Saved - " : "")}{(string.IsNullOrEmpty(Title) ? "..." : Title)} ({GetType().GetTitle()}) = {GetValue()}";
 
         public event Action<object> OnValueChanged;
 
         public object Value
         {
-            get
-            {
-                if (canSave)
-                {
-                    return SVEasySave.Load(key);
-                }
-
-                return Get();
-            }
+            get => GetValue();
             set
             {
-                if (Get() == value)
+                if (Equals(GetValue(), value))
                 {
                     return;
                 }
 
-                Set(value);
+                SetValue(value);
 
-                if (canSave)
-                {
-                    SVEasySave.Save(key, value);
-                }
+                OnValueChanged?.Invoke(GetValue());
 
-                OnValueChanged?.Invoke(Get());
+                Save();
             }
         }
 
@@ -72,10 +61,53 @@ namespace __SARV.Framework.Module.Variable.Base
             title = variableTitle;
         }
 
-        protected abstract object Get();
-        protected abstract void Set(object newValue);
-        protected abstract void Save();
-        protected abstract void Load();
+        public void Save()
+        {
+            if (!canSave || string.IsNullOrWhiteSpace(key))
+            {
+                return;
+            }
+
+            ES3.Save(key, Value);
+        }
+
+        public void Load()
+        {
+            if (!canSave || string.IsNullOrWhiteSpace(key))
+            {
+                return;
+            }
+
+            if (ES3.KeyExists(key))
+            {
+                Value = ES3.Load<object>(key);
+            }
+        }
+
+        protected abstract object GetValue();
+        protected abstract void SetValue(object newValue);
         public abstract override string ToString();
+
+        protected void OnInspectorValueChanged()
+        {
+            Save();
+        }
+
+        private void OnCanSaveChanged()
+        {
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                return;
+            }
+
+            if (canSave)
+            {
+                Save();
+            }
+            else if (ES3.KeyExists(key))
+            {
+                ES3.DeleteKey(key);
+            }
+        }
     }
 }

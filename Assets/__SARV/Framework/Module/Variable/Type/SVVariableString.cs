@@ -10,17 +10,17 @@ namespace __SARV.Framework.Module.Variable
     [Serializable]
     public class SVVariableString : SVVariable
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged), InvokeOnInitialize = true)]
         private string value;
 
         public override Type Type => typeof(string);
 
-        protected override object Get()
+        protected override object GetValue()
         {
             return value;
         }
 
-        protected override void Set(object newValue)
+        protected override void SetValue(object newValue)
         {
             value = value?.ToString() ?? string.Empty;
         }

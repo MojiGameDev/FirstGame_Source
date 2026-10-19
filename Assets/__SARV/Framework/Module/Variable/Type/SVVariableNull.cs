@@ -10,12 +10,12 @@ namespace __SARV.Framework.Module.Variable
     {
         public override Type Type => null;
         
-        protected override object Get()
+        protected override object GetValue()
         {
             return null;
         }
 
-        protected override void Set(object newValue)
+        protected override void SetValue(object newValue)
         {
             
         }
