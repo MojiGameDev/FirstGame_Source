@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using __SARV.Framework.Common.Base;
+using __SARV.Framework.Module.Variable.Base;
 using __SARV.Framework.Module.Variable.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -31,6 +33,21 @@ namespace __SARV.Framework.Module.Variable
 
         [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnVariablesChanged))]
         private List<SVLocalVariable> variables = new();
+
+        public void SetValue(string variableName, object value)
+        {
+            var selectedVariable = variables.First(d => d.Title == variableName);
+            selectedVariable.VariableValue.Value = value;
+        }
+
+        public List<string> GetAllNamesByValueType<TType>() where TType : SVVariableValue
+        {
+            var variableNames = variables
+                .Where(d => d.VariableValue.GetType() == typeof(TType))
+                .Select(d => d.Title)
+                .ToList();
+            return variableNames;
+        }
 
         private void OnVariablesChanged()
         {

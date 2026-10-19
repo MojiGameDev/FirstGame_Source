@@ -42,6 +42,7 @@ namespace __SARV.Framework.Module.Variable.Base
 
         public TSaveType Key => key;
         public bool CanSave => canSave;
+        public SVVariableValue VariableValue => variableValue;
         private bool MustShowGenerateKey => canSave && typeof(TSaveType) == typeof(string);
         public string Title => title;
         public string GroupTitle => $"{(canSave ? "Saved - " : "")}{(string.IsNullOrEmpty(Title) ? "..." : Title)} ({(string.IsNullOrEmpty(valueType) ? "..." : valueType)} = {variableValue})";

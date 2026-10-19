@@ -16,6 +16,7 @@
             public const string DIALOGUE = "Dialogue";
             public const string ACTOR = "Actor";
             public const string TIME = "Time";
+            public const string VARIABLE = "Variable";
         }
 
         public static class Branch
