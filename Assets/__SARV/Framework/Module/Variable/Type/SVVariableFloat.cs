@@ -5,20 +5,23 @@ using __SARV.Framework.Module.Variable.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Variable.Value
+namespace __SARV.Framework.Module.Variable
 {
     [SVTitle("Float")]
     [Serializable]
-    public class SVVariableValueFloat : SVVariableValue
+    public class SVVariableFloat : SVVariable
     {
-        [SerializeField] [HideLabel] private float value;
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
+        private float value;
 
-        protected override object GetValue()
+        public override Type Type => typeof(float);
+
+        protected override object Get()
         {
             return value;
         }
 
-        protected override void SetValue(object newValue)
+        protected override void Set(object newValue)
         {
             value = (float)newValue;
         }

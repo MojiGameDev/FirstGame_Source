@@ -2,18 +2,20 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Module.Variable.Base;
 
-namespace __SARV.Framework.Module.Variable.Value
+namespace __SARV.Framework.Module.Variable
 {
     [SVIgnore]
     [Serializable]
-    public class SVVariableValueNull : SVVariableValue
+    public class SVVariableNull : SVVariable
     {
-        protected override object GetValue()
+        public override Type Type => null;
+        
+        protected override object Get()
         {
             return null;
         }
 
-        protected override void SetValue(object newValue)
+        protected override void Set(object newValue)
         {
             
         }

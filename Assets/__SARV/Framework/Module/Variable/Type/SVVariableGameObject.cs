@@ -4,20 +4,23 @@ using __SARV.Framework.Module.Variable.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Variable.Value
+namespace __SARV.Framework.Module.Variable
 {
     [SVTitle("GameObject")]
     [Serializable]
-    public class SVVariableValueGameObject : SVVariableValue
+    public class SVVariableGameObject : SVVariable
     {
-        [SerializeField] [HideLabel] private GameObject value;
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
+        private GameObject value;
 
-        protected override object GetValue()
+        public override Type Type => typeof(GameObject);
+
+        protected override object Get()
         {
             return value;
         }
 
-        protected override void SetValue(object newValue)
+        protected override void Set(object newValue)
         {
             value = value as GameObject;
         }

@@ -11,6 +11,13 @@ namespace __SARV.Framework.Common.Reflection
 {
     public static class SVReflection
     {
+        public static List<string> GetAllVariableTypes()
+        {
+            return GetAllSARVTypes<SVVariable>()
+                .Select(d=>d.GetTitle())
+                .ToList();
+        }
+        
         public static List<string> GetAllSignalComponentPaths()
         {
             return GetAllSARVTypes<SVSignalComponent>()
@@ -41,7 +48,7 @@ namespace __SARV.Framework.Common.Reflection
 
         public static List<string> GetVariableValueTitles()
         {
-            return GetAllSARVTypes<SVVariableValue>()
+            return GetAllSARVTypes<SVVariable>()
                 .Select(d => d.GetTitle())
                 .ToList();
         }
@@ -51,6 +58,12 @@ namespace __SARV.Framework.Common.Reflection
             return GetAllSARVTypes<SVPropertyComponent<TType>>()
                 .Select(d => d.GetTitle())
                 .ToList();
+        }
+
+        public static Type GetVariableTypeByPath(string path)
+        {
+            return GetAllSARVTypes<SVVariable>()
+                .FirstOrDefault(t => t.GetTitle() == path);
         }
 
         public static Type GetSignalByPath(string path)
@@ -85,7 +98,7 @@ namespace __SARV.Framework.Common.Reflection
 
         public static Type GetVariableValueByTitle(string title)
         {
-            return GetAllSARVTypes<SVVariableValue>()
+            return GetAllSARVTypes<SVVariable>()
                 .FirstOrDefault(d => d.GetTitle() == title);
         }
 

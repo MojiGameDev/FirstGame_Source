@@ -4,20 +4,23 @@ using __SARV.Framework.Module.Variable.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Variable.Value
+namespace __SARV.Framework.Module.Variable
 {
     [SVTitle("String")]
     [Serializable]
-    public class SVVariableValueString : SVVariableValue
+    public class SVVariableString : SVVariable
     {
-        [SerializeField] [HideLabel] private string value;
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
+        private string value;
 
-        protected override object GetValue()
+        public override Type Type => typeof(string);
+
+        protected override object Get()
         {
             return value;
         }
 
-        protected override void SetValue(object newValue)
+        protected override void Set(object newValue)
         {
             value = value?.ToString() ?? string.Empty;
         }

@@ -10,7 +10,6 @@ using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
 using __SARV.Framework.Module.Variable;
-using __SARV.Framework.Module.Variable.Value;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -47,7 +46,7 @@ namespace __SARV.Framework.Kernal.Instruction.Variable
                 return null;
             }
 
-            var variableNames = variable.GetAllNamesByValueType<SVVariableValueBool>();
+            var variableNames = variable.GetAllNamesByValueType<SVVariableBool>();
             return variableNames;
         }
     }

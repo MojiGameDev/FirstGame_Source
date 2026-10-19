@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using __SARV.Framework.Common.Base;
+using __SARV.Framework.Common.Reflection;
 using __SARV.Framework.Module.Variable.Base;
-using __SARV.Framework.Module.Variable.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,37 +15,42 @@ namespace __SARV.Framework.Module.Variable
         [BoxGroup("Row01", showLabel: false)] [HorizontalGroup("Row01/Group01")] [SerializeField] [HideLabel]
         private string title = "";
 
+        [BoxGroup("Row01", showLabel: false)] [HorizontalGroup("Row01/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllVariableTypes))]
+        private string type = "";
+
         [BoxGroup("Row01", showLabel: false)]
         [HorizontalGroup("Row01/Group01", Width = 21)]
         [HideLabel]
         [Button(ButtonSizes.Medium, Icon = SdfIconType.Plus, ButtonHeight = 21)]
-        [EnableIf(nameof(IsVariableTitleValid))]
+        [EnableIf(nameof(IsCreateVariableFormValid))]
         private void AddNewVariable()
         {
-            if (IsVariableTitleValid)
+            if (IsCreateVariableFormValid)
             {
-                var variable = new SVLocalVariable();
-                variable.SetTitle(title);
-                variables.Add(variable);
+                var variableType = SVReflection.GetVariableTypeByPath(type);
+                var variableInstance = (SVVariable)Activator.CreateInstance(variableType);
+                variableInstance.SetTitle(title);
+                variables.Add(variableInstance);
                 title = "";
+                type = "";
             }
         }
 
-        private bool IsVariableTitleValid => !string.IsNullOrEmpty(title);
+        private bool IsCreateVariableFormValid => !string.IsNullOrEmpty(title) && !string.IsNullOrEmpty(type);
 
         [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnVariablesChanged))]
-        private List<SVLocalVariable> variables = new();
+        private List<SVVariable> variables = new();
 
         public void SetValue(string variableName, object value)
         {
             var selectedVariable = variables.First(d => d.Title == variableName);
-            selectedVariable.VariableValue.Value = value;
+            selectedVariable.Value = value;
         }
 
-        public List<string> GetAllNamesByValueType<TType>() where TType : SVVariableValue
+        public List<string> GetAllNamesByValueType<TType>() where TType : SVVariable
         {
             var variableNames = variables
-                .Where(d => d.VariableValue.GetType() == typeof(TType))
+                .Where(d => d.GetType() == typeof(TType))
                 .Select(d => d.Title)
                 .ToList();
             return variableNames;
@@ -51,6 +58,12 @@ namespace __SARV.Framework.Module.Variable
 
         private void OnVariablesChanged()
         {
+        }
+
+        private IEnumerable GetAllVariableTypes()
+        {
+            var variableTypes = SVReflection.GetAllVariableTypes();
+            return variableTypes.Select(d => new ValueDropdownItem(d, d));
         }
     }
 }

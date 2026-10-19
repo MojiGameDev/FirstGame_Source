@@ -1723,7 +1723,7 @@ Light:
   m_InnerSpotAngle: 35.457207
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.75
@@ -5522,6 +5522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5916954829686717409}
+  - component: {fileID: 8483161195716763704}
   m_Layer: 7
   m_Name: Kian
   m_TagString: Untagged
@@ -5546,6 +5547,20 @@ Transform:
   - {fileID: 6112998586163153568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8483161195716763704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7260924975195049022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca04322bc4804b448df5c057dac8e966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions:
+  - title: Play Scene
 --- !u!1 &7525479398307775012
 GameObject:
   m_ObjectHideFlags: 0
