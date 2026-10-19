@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using __SARV.Common.Base;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Module.Variable.Entity;
 using Sirenix.OdinInspector;
@@ -21,7 +20,7 @@ namespace __SARV.Framework.Module.Variable
         {
             if (IsVariableTitleValid)
             {
-                var variable = new SVVariable();
+                var variable = new SVLocalVariable();
                 variable.SetTitle(title);
                 variables.Add(variable);
                 title = "";
@@ -31,7 +30,7 @@ namespace __SARV.Framework.Module.Variable
         private bool IsVariableTitleValid => !string.IsNullOrEmpty(title);
 
         [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnVariablesChanged))]
-        private List<SVVariable> variables = new();
+        private List<SVLocalVariable> variables = new();
 
         private void OnVariablesChanged()
         {
