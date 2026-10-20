@@ -6,6 +6,7 @@ using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
@@ -32,11 +33,11 @@ namespace __SARV.Framework.Kernal.Instruction.Variable
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Set {variableValue} to {variableName}";
 
-        protected override Task ExecuteInternal(SVArgument argument)
+        protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             var value = variableValue.GetValue(argument);
             variable.SetValue(variableName, value);
-            return SVTaskUtils.OK_RESULT;
+            return SVInstructionResult.DEFAULT_RESULT;
         }
 
         private IEnumerable GetAllVariableNames()

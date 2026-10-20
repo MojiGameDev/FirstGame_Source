@@ -5,6 +5,7 @@ using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property.Actor;
@@ -28,10 +29,10 @@ namespace __SARV.Framework.Kernal.Instruction.Actor
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Change {actor} behavior to {(behavior == null ? "..." : behavior.SkipWords(2))}";
 
-        protected override Task ExecuteInternal(SVArgument argument)
+        protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             actor.GetValue(argument).ChangeBehaviorTo(behavior);
-            return SVTaskUtils.OK_RESULT;
+            return SVInstructionResult.DEFAULT_RESULT;
         }
     }
 }

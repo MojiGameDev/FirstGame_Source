@@ -4,6 +4,7 @@ using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Common.Enum;
+using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -16,13 +17,13 @@ namespace __SARV.Framework.Kernal.Branch
     [Serializable]
     public class SVLogicBranchCompareBool : SVBranchComponent
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("LeftSide")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<bool> leftSideBool = new SVBoolProperty();
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("Operator")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [LabelText("Operator")]
         private SVEqualityOperatorType operatorType = SVEqualityOperatorType.Equal;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [Title("RightSide")] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<bool> rightSideBool = new SVBoolProperty();
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftSideBool} {(Not ? "Is not" : "Is")} {operatorType} to {rightSideBool}";

@@ -4,6 +4,7 @@ using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
 using __SARV.Framework.Module.Dialogue;
@@ -28,15 +29,18 @@ namespace __SARV.Framework.Kernal.Instruction
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Executes the {(IsDialogueNull ? "..." : dialogue)}";
 
-        protected override async Task ExecuteInternal(SVArgument argument)
+        protected override async Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             if (waitToFinish)
             {
                 await dialogue.RunDialogue(argument);
-                return;
+            }
+            else
+            {
+                _ = dialogue.RunDialogue(argument);
             }
 
-            _ = dialogue.RunDialogue(argument);
+            return await SVInstructionResult.DEFAULT_RESULT;
         }
     }
 }

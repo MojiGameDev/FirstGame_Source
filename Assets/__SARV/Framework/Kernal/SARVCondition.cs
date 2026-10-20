@@ -16,28 +16,28 @@ namespace __SARV.Framework.Kernal
         [SerializeField] private bool hasElse;
 
         [SerializeField] [Title("Branches")] [LabelText("$BranchesLabels")]
-        private List<SVBranch> branches = new();
+        private List<SVInstructionBranch> instructionBranches = new();
 
         [SerializeField] [Title("Else")] [HideLabel] [ShowIf(nameof(hasElse))]
         private SVInstruction elseInstruction;
 
-        private string BranchesLabels => $"{branches.Count} Conditions";
+        private string BranchesLabels => $"{instructionBranches.Count} Conditions";
 
         public async Task RunCondition(SVArgument argument)
         {
             var isInstructionExecute = false;
-            foreach (var branch in branches)
+            foreach (var instructionBranch in instructionBranches)
             {
-                var isBranchesPassed = branch.IsBranchesPassed(argument);
-                if (isBranchesPassed && !branch.Not)
+                var isBranchesPassed = instructionBranch.Branch.IsBranchesPassed(argument);
+                if (isBranchesPassed && !instructionBranch.Branch.Not)
                 {
                     isInstructionExecute = true;
-                    await branch.Instruction.ExecuteInstructions(argument);
+                    await instructionBranch.Instruction.ExecuteInstructions(argument);
                 }
-                else if (!isBranchesPassed && branch.Not)
+                else if (!isBranchesPassed && instructionBranch.Branch.Not)
                 {
                     isInstructionExecute = true;
-                    await branch.Instruction.ExecuteInstructions(argument);
+                    await instructionBranch.Instruction.ExecuteInstructions(argument);
                 }
 
                 if (conditionType == SVConditionType.FirstIf && isInstructionExecute)

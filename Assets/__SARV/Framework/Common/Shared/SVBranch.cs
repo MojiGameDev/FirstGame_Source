@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using __SARV.Common.Base;
-using __SARV.Common.Extension;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Enum;
@@ -16,12 +15,11 @@ namespace __SARV.Framework.Common.Shared
     [Serializable]
     public class SVBranch : SVSerializable
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Row02", showLabel: false)] [HorizontalGroup("$GroupTitle/Row02/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBranchComponents))] [OnValueChanged(nameof(OnBranchChanged), InvokeOnInitialize = true)]
+        [BoxGroup("Row02", showLabel: false)] [HorizontalGroup("Row02/Group01")] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllBranchComponents))] [OnValueChanged(nameof(OnBranchChanged), InvokeOnInitialize = true)]
         private string branch = "";
 
-        [FoldoutGroup("$" + nameof(GroupTitle))]
-        [BoxGroup("$" + nameof(GroupTitle) + "/Row02", showLabel: false)]
-        [HorizontalGroup("$" + nameof(GroupTitle) + "/Row02/Group01", Width = 21)]
+        [BoxGroup("Row02", showLabel: false)]
+        [HorizontalGroup("Row02/Group01", Width = 21)]
         [HideLabel]
         [Button(ButtonSizes.Medium, Icon = SdfIconType.Plus, ButtonHeight = 21)]
         [EnableIf(nameof(IsBranchValid))]
@@ -36,25 +34,19 @@ namespace __SARV.Framework.Common.Shared
             }
         }
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Row03", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
+        [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
         private SVConditionJoinType conditionJoinType = SVConditionJoinType.And;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Row03", showLabel: false)] [SerializeField] [LabelText("Not?")]
+        [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("Not?")]
         private bool not;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
+        [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
         private List<SVBranchComponent> branches = new();
-
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Executes when the branches are true", InfoMessageType.Info)]
-        private string trueTooltip = "";
-
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
-        private SVInstruction instruction;
-
+        
         private bool IsBranchValid => !string.IsNullOrEmpty(branch);
-        private string GroupTitle => $"Type : {conditionJoinType.ToReadableString()} - Not? {Not.ToName()} - {branches.Count} Branches";
         public bool Not => not;
-        public SVInstruction Instruction => instruction;
+        public SVConditionJoinType ConditionJoinType => conditionJoinType;
+        public int BranchesCount => branches.Count;
 
         public bool IsBranchesPassed(SVArgument argument)
         {

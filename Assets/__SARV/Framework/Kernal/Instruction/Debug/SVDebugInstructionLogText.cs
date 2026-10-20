@@ -4,6 +4,7 @@ using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Common.Enum;
 using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
@@ -27,10 +28,10 @@ namespace __SARV.Framework.Kernal.Instruction
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Sends {text} to the console";
 
-        protected override Task ExecuteInternal(SVArgument argument)
+        protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             SVComponentUtils.DebugLog(logLevel, text.GetValue(argument));
-            return SVTaskUtils.OK_RESULT;
+            return SVInstructionResult.DEFAULT_RESULT;
         }
     }
 }

@@ -4,6 +4,7 @@ using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Common.Enum;
 using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Kernal.Property;
@@ -26,9 +27,10 @@ namespace __SARV.Framework.Kernal.Instruction.Time
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Wait {duration} seconds";
 
-        protected override async Task ExecuteInternal(SVArgument argument)
+        protected override async Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             await SVTaskUtils.Wait(duration, realTime);
+            return await SVInstructionResult.DEFAULT_RESULT;
         }
     }
 }

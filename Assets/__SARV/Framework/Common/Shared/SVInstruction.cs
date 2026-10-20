@@ -39,12 +39,18 @@ namespace __SARV.Framework.Common.Shared
         protected List<SVInstructionComponent> instructions = new();
 
         private bool IsInstructionValid => !string.IsNullOrEmpty(instruction);
-        
+        public int InstructionsCount => instructions.Count;
+
         public async Task ExecuteInstructions(SVArgument argument)
         {
-            foreach (var instructionComponent in instructions)
+            for (var index = 0; index < instructions.Count; index++)
             {
-                await instructionComponent.Execute(argument);
+                var instructionComponent = instructions[index];
+                var result = await instructionComponent.Execute(argument);
+                if (result.Break)
+                {
+                    break;
+                }
             }
         }
 

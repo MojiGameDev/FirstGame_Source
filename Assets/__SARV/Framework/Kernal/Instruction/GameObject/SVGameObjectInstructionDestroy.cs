@@ -4,6 +4,7 @@ using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
@@ -34,7 +35,7 @@ namespace __SARV.Framework.Kernal.Instruction
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Destroy {target}";
         private bool IsWaitToFinishMustShowed => delay > 0f;
 
-        protected override async Task ExecuteInternal(SVArgument argument)
+        protected override async Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             var gameObject = target.GetValue(argument);
             if (delay <= 0)
@@ -54,6 +55,8 @@ namespace __SARV.Framework.Kernal.Instruction
             {
                 gameObject.transform.DetachChildren();
             }
+            
+            return await SVInstructionResult.DEFAULT_RESULT;
         }
     }
 }
