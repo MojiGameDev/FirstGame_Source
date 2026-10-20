@@ -18,15 +18,15 @@ namespace __SARV.Framework.Kernal.Branch
     public class SVLogicBranchCompareBool : SVBranchComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
-        private SVPropertyComponent<bool> leftSideBool = new SVBoolProperty();
+        private SVPropertyComponent<bool> leftOperand = new SVBoolProperty();
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [LabelText("Operator")]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideReferenceObjectPicker] [LabelText("Operator")]
         private SVEqualityOperatorType operatorType = SVEqualityOperatorType.Equal;
 
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideReferenceObjectPicker] [SVRequired]
-        private SVPropertyComponent<bool> rightSideBool = new SVBoolProperty();
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
+        private SVPropertyComponent<bool> rightOperand = new SVBoolProperty();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftSideBool} {(Not ? "Is not" : "Is")} {operatorType} to {rightSideBool}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftOperand} {(Not ? "Is not" : "Is")} {operatorType} to {rightOperand}";
 
         public override bool IsTrue(SVArgument argument)
         {
@@ -34,10 +34,10 @@ namespace __SARV.Framework.Kernal.Branch
             switch (operatorType)
             {
                 case SVEqualityOperatorType.Equal:
-                    result = leftSideBool.GetValue(argument) == rightSideBool.GetValue(argument);
+                    result = leftOperand.GetValue(argument) == rightOperand.GetValue(argument);
                     break;
                 case SVEqualityOperatorType.NotEqual:
-                    result = leftSideBool.GetValue(argument) != rightSideBool.GetValue(argument);
+                    result = leftOperand.GetValue(argument) != rightOperand.GetValue(argument);
                     break;
             }
 
