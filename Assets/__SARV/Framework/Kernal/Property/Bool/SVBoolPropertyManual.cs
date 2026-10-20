@@ -19,7 +19,7 @@ namespace __SARV.Framework.Kernal.Property
 
         public override string ToString()
         {
-            return value.ToName();
+            return $"Manual ({value.ToName()})";
         }
 
         public override bool GetValue(SVArgument argument)

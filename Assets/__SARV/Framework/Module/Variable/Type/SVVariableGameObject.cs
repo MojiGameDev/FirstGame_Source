@@ -11,7 +11,7 @@ namespace __SARV.Framework.Module.Variable
     [Serializable]
     public class SVVariableGameObject : SVVariable
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged), InvokeOnInitialize = true)]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged))]
         private GameObject value;
 
         public override Type Type => typeof(GameObject);

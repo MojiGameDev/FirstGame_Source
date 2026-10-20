@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using __SARV.Common.Base;
+using System.Threading.Tasks;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Base;
@@ -19,7 +19,7 @@ namespace __SARV.Framework.Kernal
         [BoxGroup("$" + nameof(SignalTitle), showLabel: false)] [SerializeField] [HideLabel] [ValueDropdown(nameof(GetAllSignalComponents))] [OnValueChanged(nameof(OnSignalChanged), InvokeOnInitialize = true)]
         private string signal = "";
 
-        [BoxGroup("$" + nameof(SignalTitle), showLabel: false)] [BoxGroup("$" + nameof(SignalTitle) + "/InnerRow01", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [HideIf(nameof(IsSignalComponentNull))] [OnValueChanged(nameof(OnSignalComponentChanged), includeChildren: true)]
+        [BoxGroup("$" + nameof(SignalTitle), showLabel: false)] [BoxGroup("$" + nameof(SignalTitle) + "/InnerRow01", showLabel: false)] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [ShowIf(nameof(IsSignalComponentMustShowed))] [OnValueChanged(nameof(OnSignalComponentChanged), includeChildren: true)]
         private SVSignalComponent signalComponent = new SVNullSignal();
 
         [SerializeField] [HideLabel] [DisplayAsString] [PropertySpace(spaceBefore: 10, spaceAfter: -20)] [InfoBox("Execute the following instructions when the event above is raised")]
@@ -27,12 +27,17 @@ namespace __SARV.Framework.Kernal
 
         [SerializeField] [HideLabel] private SVInstruction instruction;
 
-        public SVSignalComponent Signal => IsSignalComponentNull ? null : signalComponent;
-        public bool IsSignalComponentNull => signalComponent is SVNullSignal or null;
-        public string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetType().GetTitle())}";
+        private SVSignalComponent Signal => IsSignalComponentNull ? null : signalComponent;
+        private bool IsSignalComponentNull => signalComponent is SVNullSignal or null;
+        private bool IsSignalComponentMustShowed => !IsSignalComponentNull && signalComponent.GetType().HasExposedFields();
+        private string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetType().GetTitle())}";
+
+        private bool _isExecuting;
+        private SVArgument _argument;
 
         protected override void Awake()
         {
+            _argument = SVArgument.Create(gameObject);
             Signal.HandleAwake(this);
         }
 
@@ -83,7 +88,26 @@ namespace __SARV.Framework.Kernal
 
         public void Execute()
         {
-            _ = instruction.ExecuteInstructions(SVArgument.Create(gameObject));
+            if (_isExecuting)
+            {
+                return;
+            }
+
+            _ = ExecuteInternal();
+        }
+
+        private async Task ExecuteInternal()
+        {
+            _isExecuting = true;
+
+            try
+            {
+                await instruction.ExecuteInstructions(_argument);
+            }
+            finally
+            {
+                _isExecuting = false;
+            }
         }
 
         private IEnumerable GetAllSignalComponents()

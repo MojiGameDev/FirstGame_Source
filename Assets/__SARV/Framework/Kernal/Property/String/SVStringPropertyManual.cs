@@ -18,7 +18,7 @@ namespace __SARV.Framework.Kernal.Property
 
         public override string ToString()
         {
-            return value;
+            return $"Manual ({(string.IsNullOrEmpty(value) ? "..." : value)})";
         }
 
         public override string GetValue(SVArgument argument)

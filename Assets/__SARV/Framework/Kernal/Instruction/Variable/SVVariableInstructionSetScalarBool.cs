@@ -30,7 +30,7 @@ namespace __SARV.Framework.Kernal.Instruction.Variable
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideReferenceObjectPicker] [HideLabel] [SVRequired]
         private SVPropertyComponent<bool> variableValue = new SVBoolProperty();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Set {variableValue} to";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Set {variableValue} to {variableName}";
 
         protected override Task ExecuteInternal(SVArgument argument)
         {

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using __SARV.Framework.Common.Attributes;
 using Sirenix.Utilities;
+using UnityEngine;
 
 namespace __SARV.Common.Extension
 {
@@ -39,7 +41,7 @@ namespace __SARV.Common.Extension
             var attribute = type.GetCustomAttribute<SVDescriptionAttribute>();
             return attribute?.Value ?? type.Name;
         }
-        
+
         public static bool IsNullProperty(this Type type)
         {
             while (type != null)
@@ -56,7 +58,7 @@ namespace __SARV.Common.Extension
 
             return false;
         }
-        
+
         public static FieldInfo GetFieldInHierarchy(this Type type, string fieldName)
         {
             while (type != null)
@@ -75,6 +77,16 @@ namespace __SARV.Common.Extension
             }
 
             return null;
+        }
+
+        public static bool HasExposedFields(this Type type)
+        {
+            return type.GetFields(
+                BindingFlags.Instance |
+                BindingFlags.Static |
+                BindingFlags.Public |
+                BindingFlags.NonPublic
+            ).Any(d => d.IsDefined(typeof(SerializeField), true) || d.IsDefined(typeof(SerializeReference), true));
         }
     }
 }

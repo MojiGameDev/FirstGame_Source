@@ -19,7 +19,7 @@ namespace __SARV.Framework.Kernal.Property
         
         public override string ToString()
         {
-            return $"Manual({value})";
+            return $"Manual ({value})";
         }
 
         public override Vector3 GetValue(SVArgument argument)

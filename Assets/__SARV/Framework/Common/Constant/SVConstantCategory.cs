@@ -17,6 +17,8 @@
             public const string ACTOR = "Actor";
             public const string TIME = "Time";
             public const string VARIABLE = "Variable";
+            public const string GAME_OBJECT = "GameObject";
+            public const string LOGIC = "Logic";
         }
 
         public static class Branch

@@ -13,9 +13,5 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVGameObjectProperty : SVParentProperty<GameObject>
     {
-        public override string ToString()
-        {
-            return GetValue(default).name;
-        }
     }
 }

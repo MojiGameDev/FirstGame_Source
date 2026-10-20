@@ -12,7 +12,7 @@ namespace __SARV.Framework.Module.Variable
     [Serializable]
     public class SVVariableFloat : SVVariable
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged), InvokeOnInitialize = true)]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged))]
         private float value;
 
         public override Type Type => typeof(float);

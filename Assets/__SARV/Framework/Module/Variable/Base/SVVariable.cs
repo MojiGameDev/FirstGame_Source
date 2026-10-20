@@ -3,6 +3,7 @@ using __SARV.Common.Base;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Utils;
 using __SARV.Framework.Integration.EasySave;
+using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -11,17 +12,25 @@ namespace __SARV.Framework.Module.Variable.Base
     [Serializable]
     public abstract class SVVariable : SVSerializable
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Key", showLabel: false)] [SerializeField] [HideLabel] [ShowIf(nameof(canSave))]
-        protected string key;
+        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Key", showLabel: false)] [SerializeField] [HideLabel] [Required] [ShowIf(nameof(IsLocalKeyMustShowed))]
+        protected string localKey;
+
+        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Key", showLabel: false)] [SerializeField] [HideLabel] [Required] [ShowIf(nameof(IsGlobalKeyMustShowed))] [OnValueChanged(nameof(OnGlobalKeyChanged))]
+        protected SARVIdentifier globalKey;
 
         [FoldoutGroup("$GroupTitle")]
         [BoxGroup("$GroupTitle/Key")]
-        [ShowIf(nameof(canSave))]
-        [Button]
-        [ShowIf(nameof(MustShowGenerateKey))]
-        private void GenerateKey()
+        [Button("GenerateKey")]
+        [ShowIf(nameof(IsLocalKeyMustShowed))]
+        private void GenerateLocalKey()
         {
-            key = SVGeneralUtils.NewSaveKey();
+            if (!string.IsNullOrEmpty(localKey) && SVSave.KeyExists(Key))
+            {
+                SVSave.DeleteKey(localKey);
+            }
+
+            localKey = SVGeneralUtils.NewSaveKey();
+            Save();
         }
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Info", showLabel: false)] [HorizontalGroup("$GroupTitle/Info/Group01")] [SerializeField] [HideLabel]
@@ -30,11 +39,15 @@ namespace __SARV.Framework.Module.Variable.Base
         [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Info", showLabel: false)] [HorizontalGroup("$GroupTitle/Info/Group01")] [SerializeField] [LabelText("CanSave?")] [OnValueChanged(nameof(OnCanSaveChanged))]
         protected bool canSave;
 
-        private bool MustShowGenerateKey => canSave;
-        public string Title => title;
-        public string GroupTitle => $"{(canSave ? "Saved - " : "")}{(string.IsNullOrEmpty(Title) ? "..." : Title)} ({GetType().GetTitle()}) = {GetValue()}";
+        [FoldoutGroup("$" + nameof(GroupTitle))] [BoxGroup("$" + nameof(GroupTitle) + "/Info", showLabel: false)] [HorizontalGroup("$GroupTitle/Info/Group01")] [SerializeField] [LabelText("IsGlobal?")] [ShowIf(nameof(canSave))] [OnValueChanged(nameof(OnIsGlobalChanged))]
+        protected bool isGlobal;
 
+        public string Title => title;
+        protected string GroupTitle => $"{(canSave ? "Saved - " : "")}{(isGlobal ? "Global - " : "Local - ")}{(string.IsNullOrEmpty(Title) ? "..." : Title)} ({GetType().GetTitle()}) = {GetValue()}";
+        private bool IsGlobalKeyMustShowed => canSave && isGlobal;
+        private bool IsLocalKeyMustShowed => canSave && !isGlobal;
         public event Action<object> OnValueChanged;
+        private string Key => isGlobal ? globalKey : localKey;
 
         public object Value
         {
@@ -63,24 +76,24 @@ namespace __SARV.Framework.Module.Variable.Base
 
         public void Save()
         {
-            if (!canSave || string.IsNullOrWhiteSpace(key))
+            if (!canSave || string.IsNullOrWhiteSpace(Key))
             {
                 return;
             }
 
-            ES3.Save(key, Value);
+            SVSave.Save(Key, Value);
         }
 
         public void Load()
         {
-            if (!canSave || string.IsNullOrWhiteSpace(key))
+            if (!canSave || string.IsNullOrEmpty(Key))
             {
                 return;
             }
 
-            if (ES3.KeyExists(key))
+            if (SVSave.KeyExists(Key))
             {
-                Value = ES3.Load<object>(key);
+                Value = SVSave.Load<object>(Key);
             }
         }
 
@@ -95,7 +108,7 @@ namespace __SARV.Framework.Module.Variable.Base
 
         private void OnCanSaveChanged()
         {
-            if (string.IsNullOrWhiteSpace(key))
+            if (Key == null || string.IsNullOrEmpty(Key))
             {
                 return;
             }
@@ -104,10 +117,31 @@ namespace __SARV.Framework.Module.Variable.Base
             {
                 Save();
             }
-            else if (ES3.KeyExists(key))
+            else if (SVSave.KeyExists(Key))
             {
-                ES3.DeleteKey(key);
+                SVSave.DeleteKey(Key);
             }
+        }
+
+        private void OnGlobalKeyChanged()
+        {
+            Save();
+        }
+
+        private void OnIsGlobalChanged()
+        {
+            Save();
+        }
+
+        [OnInspectorInit]
+        private void OnInspectorInit()
+        {
+            if (string.IsNullOrEmpty(localKey))
+            {
+                GenerateLocalKey();
+            }
+
+            Load();
         }
     }
 }

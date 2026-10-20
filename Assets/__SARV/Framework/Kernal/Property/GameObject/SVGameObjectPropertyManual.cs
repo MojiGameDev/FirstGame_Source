@@ -14,12 +14,11 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVGameObjectPropertyManual : SVPropertyComponent<GameObject>
     {
-        [SerializeField] [HideLabel]
-        private GameObject value;
-        
+        [SerializeField] [HideLabel] private GameObject value;
+
         public override string ToString()
         {
-            return $"Manual({value})";
+            return $"Manual ({(value == null ? "..." : value.gameObject.name)})";
         }
 
         public override GameObject GetValue(SVArgument argument)

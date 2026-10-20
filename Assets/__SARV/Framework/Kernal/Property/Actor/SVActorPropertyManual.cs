@@ -19,7 +19,7 @@ namespace __SARV.Framework.Kernal.Property.Actor
 
         public override string ToString()
         {
-            return value.gameObject.name;
+            return $"Manual ({(value == null ? "..." : value.gameObject.name)})";
         }
 
         public override SVActor GetValue(SVArgument argument)

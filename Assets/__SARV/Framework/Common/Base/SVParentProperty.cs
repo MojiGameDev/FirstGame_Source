@@ -19,8 +19,8 @@ namespace __SARV.Framework.Common.Base
         [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [ShowIf(nameof(IsPropertyHasValue))]
         protected SVPropertyComponent<TType> propertyType = new SVNullProperty<TType>();
 
-        protected bool IsPropertyHasValue => !string.IsNullOrEmpty(property);
-        protected bool IsPropertyComponentNull => propertyType is null or SVNullProperty<TType>;
+        public bool IsPropertyHasValue => !string.IsNullOrEmpty(property);
+        public bool IsPropertyComponentNull => propertyType is null or SVNullProperty<TType>;
 
         public override string ToString()
         {

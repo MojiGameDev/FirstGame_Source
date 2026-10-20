@@ -12,14 +12,5 @@ namespace __SARV.Framework.Kernal.Property.Actor
     [Serializable]
     public class SVActorProperty : SVParentProperty<SVActor>
     {
-        public override string ToString()
-        {
-            if (IsPropertyHasValue && !IsPropertyComponentNull)
-            {
-                return IsPropertyHasValue ? $"{property}" : "...";
-            }
-
-            return IsPropertyHasValue ? property : "...";
-        }
     }
 }

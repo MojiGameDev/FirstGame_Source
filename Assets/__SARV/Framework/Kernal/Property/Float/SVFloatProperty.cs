@@ -13,9 +13,5 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVFloatProperty : SVParentProperty<float>
     {
-        public override string ToString()
-        {
-            return GetValue(default).ToString(CultureInfo.InvariantCulture);
-        }
     }
 }

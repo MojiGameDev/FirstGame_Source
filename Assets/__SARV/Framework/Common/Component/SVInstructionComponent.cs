@@ -16,6 +16,7 @@ namespace __SARV.Framework.Common.Component
 
         protected virtual string GroupTitle => string.Empty;
         public bool Disabled => disabled;
+        public bool Break { get; private set; }
 
         public virtual Task Execute(SVArgument argument)
         {
@@ -23,12 +24,15 @@ namespace __SARV.Framework.Common.Component
             {
                 return SVTaskUtils.OK_RESULT;
             }
+
             return ExecuteInternal(argument);
         }
 
-        protected virtual Task ExecuteInternal(SVArgument argument)
+        protected abstract Task ExecuteInternal(SVArgument argument);
+        
+        protected void BreakExecution()
         {
-            return SVTaskUtils.OK_RESULT;
+            Break = true;
         }
     }
 }

@@ -13,9 +13,5 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVVector3Property : SVParentProperty<Vector3>
     {
-        public override string ToString()
-        {
-            return GetValue(default).ToString();
-        }
     }
 }

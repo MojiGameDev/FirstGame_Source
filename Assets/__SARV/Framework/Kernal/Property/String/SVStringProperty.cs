@@ -12,9 +12,5 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVStringProperty : SVParentProperty<string>
     {
-        public override string ToString()
-        {
-            return propertyType.ToString();
-        }
     }
 }

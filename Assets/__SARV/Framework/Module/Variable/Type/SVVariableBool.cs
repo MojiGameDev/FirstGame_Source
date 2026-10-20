@@ -12,7 +12,7 @@ namespace __SARV.Framework.Module.Variable
     [Serializable]
     public class SVVariableBool : SVVariable
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged), InvokeOnInitialize = true)]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel] [OnValueChanged(nameof(OnInspectorValueChanged))]
         private bool value;
 
         public override Type Type => typeof(bool);

@@ -13,14 +13,5 @@ namespace __SARV.Framework.Kernal.Property
     [Serializable]
     public class SVBoolProperty : SVParentProperty<bool>
     {
-        public override string ToString()
-        {
-            if (IsPropertyHasValue && !IsPropertyComponentNull)
-            {
-                return IsPropertyHasValue ? $"{property} ({GetValue(default).ToName()})" : "...";
-            }
-
-            return IsPropertyHasValue ? property : "...";
-        }
     }
 }
