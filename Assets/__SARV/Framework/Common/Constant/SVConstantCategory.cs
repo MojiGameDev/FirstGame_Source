@@ -37,6 +37,11 @@
             public const string FLOAT = "Float";
         }
 
+        public static class Setter
+        {
+            public const string VARIABLE = "Variable";
+        }
+
         public static class Behavior
         {
             public const string PLAYER = "Player";

@@ -8,5 +8,9 @@ namespace __SARV.Framework.Common.Component
     public abstract class SVPropertyComponent<TType> : SVComponent
     {
         public abstract TType GetValue(SVArgument argument);
+
+        public virtual void SetValue(SVArgument argument, TType value)
+        {
+        }
     }
 }

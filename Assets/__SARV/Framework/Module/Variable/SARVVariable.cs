@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Variable
 {
-    public class SARVScalarVariable : SVKernal
+    public class SARVVariable : SVKernal
     {
         [BoxGroup("Row01", showLabel: false)] [HorizontalGroup("Row01/Group01")] [SerializeField] [HideLabel]
         private string title = "";
@@ -45,6 +45,12 @@ namespace __SARV.Framework.Module.Variable
         {
             var selectedVariable = variables.First(d => d.Title == variableName);
             selectedVariable.Value = value;
+        }
+
+        public T GetValue<T>(string variableName)
+        {
+            var selectedVariable = variables.First(d => d.Title == variableName);
+            return (T)selectedVariable.Value;
         }
 
         public List<string> GetAllNamesByValueType<TType>() where TType : SVVariable

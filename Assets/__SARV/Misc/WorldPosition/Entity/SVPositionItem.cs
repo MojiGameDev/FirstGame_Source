@@ -16,19 +16,19 @@ namespace __SARV.Misc.WorldPosition.Entity
         [Button(ButtonSizes.Large)]
         public void Go()
         {
-            _target.transform.position = _position;
+            target.transform.position = position;
         }
 
-        private Vector3 _position;
-        private GameObject _target;
+        [SerializeField] [HideInInspector] private Vector3 position;
+        [SerializeField] [HideInInspector] private GameObject target;
 
-        private string GroupTitle => string.IsNullOrEmpty(title) ? "" : $"{title} ({_target.name})";
+        private string GroupTitle => string.IsNullOrEmpty(title) ? "" : $"{title} ({target.name})";
 
         public SVPositionItem(string positionTitle, GameObject target, Vector3 position)
         {
             title = positionTitle;
-            _target = target;
-            _position = position;
+            this.target = target;
+            this.position = position;
         }
     }
 }

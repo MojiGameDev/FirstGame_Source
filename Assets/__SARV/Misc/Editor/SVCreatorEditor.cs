@@ -55,7 +55,7 @@ namespace __SARV.Misc.Editor
         [MenuItem("GameObject/SARV/Create Scalar Variable", false, 10)]
         private static void CreateSARVScalarVariable(MenuCommand command)
         {
-            CreateSARVGameObject<SARVScalarVariable>(command, "ScalarVariable");
+            CreateSARVGameObject<SARVVariable>(command, "ScalarVariable");
         }
 
         [MenuItem("GameObject/SARV/Create Indicator", false, 10)]
