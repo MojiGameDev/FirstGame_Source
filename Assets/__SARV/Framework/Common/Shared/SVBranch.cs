@@ -36,29 +36,27 @@ namespace __SARV.Framework.Common.Shared
 
         [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("How to Join?")] [OnValueChanged(nameof(OnConditionJoinChanged))]
         private SVConditionJoinType conditionJoinType = SVConditionJoinType.And;
-
-        [BoxGroup("Row03", showLabel: false)] [SerializeField] [LabelText("Not?")]
-        private bool not;
-
+        
         [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnBranchesChanged))]
         private List<SVBranchComponent> branches = new();
-        
+
         private bool IsBranchValid => !string.IsNullOrEmpty(branch);
-        public bool Not => not;
-        public SVConditionJoinType ConditionJoinType => conditionJoinType;
         public int BranchesCount => branches.Count;
+        public SVConditionJoinType ConditionJoinType => conditionJoinType;
 
         public bool IsBranchesPassed(SVArgument argument)
         {
+            var result = true;
             foreach (var branchComponent in branches.Where(d => !d.Disabled))
             {
                 if (conditionJoinType == SVConditionJoinType.And && !branchComponent.IsTrue(argument))
                 {
-                    return false;
+                    result = false;
+                    break;
                 }
             }
 
-            return true;
+            return result;
         }
 
         private void OnBranchChanged()

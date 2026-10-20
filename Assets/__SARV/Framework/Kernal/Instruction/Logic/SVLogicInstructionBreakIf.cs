@@ -17,7 +17,7 @@ namespace __SARV.Framework.Kernal.Instruction.Logic
     [Serializable]
     public class SVLogicInstructionBreakIf : SVInstructionComponent
     {
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Title("Branches")] [HideLabel]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
         private SVBranch branch;
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Break instruction execution if condition result is True";

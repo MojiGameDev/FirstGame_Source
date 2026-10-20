@@ -41,6 +41,13 @@ namespace __SARV.Framework.Module.Variable
         [SerializeReference] [HideReferenceObjectPicker] [ListDrawerSettings(HideAddButton = true, ShowFoldout = false)] [OnValueChanged(nameof(OnVariablesChanged))]
         private List<SVVariable> variables = new();
 
+        protected override void Awake()
+        {
+            LoadAllVariables();
+
+            base.Awake();
+        }
+
         public void SetValue(string variableName, object value)
         {
             var selectedVariable = variables.First(d => d.Title == variableName);
@@ -60,6 +67,14 @@ namespace __SARV.Framework.Module.Variable
                 .Select(d => d.Title)
                 .ToList();
             return variableNames;
+        }
+
+        private void LoadAllVariables()
+        {
+            foreach (var variable in variables)
+            {
+                variable.Load();
+            }
         }
 
         private void OnVariablesChanged()

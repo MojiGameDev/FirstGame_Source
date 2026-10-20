@@ -22,7 +22,7 @@ namespace __SARV.Framework.Kernal.Property
 
         [SerializeField] [ValueDropdown(nameof(GetAllVariableNames))] [Required]
         private string variableName = "";
-        
+
         public override string ToString()
         {
             return $"Variable ({(string.IsNullOrEmpty(variableName) ? "..." : variableName)})";
@@ -31,6 +31,11 @@ namespace __SARV.Framework.Kernal.Property
         public override bool GetValue(SVArgument argument)
         {
             return variable.GetValue<bool>(variableName);
+        }
+
+        public override void SetValue(SVArgument argument, bool value)
+        {
+            variable.SetValue(variableName, value);
         }
 
         private IEnumerable GetAllVariableNames()

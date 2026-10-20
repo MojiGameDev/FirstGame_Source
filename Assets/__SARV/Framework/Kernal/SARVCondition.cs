@@ -29,12 +29,7 @@ namespace __SARV.Framework.Kernal
             foreach (var instructionBranch in instructionBranches)
             {
                 var isBranchesPassed = instructionBranch.Branch.IsBranchesPassed(argument);
-                if (isBranchesPassed && !instructionBranch.Branch.Not)
-                {
-                    isInstructionExecute = true;
-                    await instructionBranch.Instruction.ExecuteInstructions(argument);
-                }
-                else if (!isBranchesPassed && instructionBranch.Branch.Not)
+                if (isBranchesPassed)
                 {
                     isInstructionExecute = true;
                     await instructionBranch.Instruction.ExecuteInstructions(argument);

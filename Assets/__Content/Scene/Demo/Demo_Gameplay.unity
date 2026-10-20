@@ -257,9 +257,90 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'instruction.instructions.Array.data[6]'
+      value: 4447245722177241229
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241229]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Instruction.Variable.SVVariableInstructionSetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241230]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Setter.SVVariableSetterBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241231]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241232]'
+      value: 'Assembly-CSharp __SARV.Framework.Kernal.Property.SVNullProperty`1[[System.Boolean,
+        mscorlib]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241233]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolPropertyVariable
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241234]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolPropertyManual
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241235]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolPropertyVariable
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241234].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241229].disabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241229].variable
+      value: 4447245722177241235
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241230].variable
+      value: 
+      objectReference: {fileID: 1154005030}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241231].property
+      value: Manual
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241233].variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241235].variable
+      value: 
+      objectReference: {fileID: 1154005030}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241230].variableName
+      value: IsInteracted
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241231].propertyType
+      value: 4447245722177241234
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241233].variableName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241235].variableName
+      value: IsInteracted
+      objectReference: {fileID: 0}
+    - target: {fileID: 10503460541968492, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241229].variableValue
+      value: 4447245722177241231
+      objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: signal
-      value: Lifecycle/OnAwake
+      value: Lifecycle/OnStart
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: m_Enabled
@@ -271,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: signalComponent
-      value: 4447245722177241189
+      value: 4447245722177241241
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: 'managedReferences[-2]'
@@ -283,11 +364,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: instruction.instructions.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: 'instruction.instructions.Array.data[0]'
       value: 4447245722177241193
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'instruction.instructions.Array.data[1]'
+      value: 4447245722177241237
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: 'managedReferences[4447245722177241183]'
@@ -366,6 +451,78 @@ PrefabInstance:
         mscorlib]]'
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241206]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolPropertyVariable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241207]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241208]'
+      value: 'Assembly-CSharp __SARV.Framework.Kernal.Property.SVNullProperty`1[[System.Boolean,
+        mscorlib]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241215]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Instruction.Variable.SVVariableInstructionSetScalarBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241216]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241217]'
+      value: 'Assembly-CSharp __SARV.Framework.Kernal.Property.SVNullProperty`1[[System.Boolean,
+        mscorlib]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241224]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Instruction.Variable.SVVariableInstructionSetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241225]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Setter.SVVariableSetterBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241226]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241227]'
+      value: 'Assembly-CSharp __SARV.Framework.Kernal.Property.SVNullProperty`1[[System.Boolean,
+        mscorlib]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241228]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolPropertyManual
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241236]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolPropertyManual
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241237]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Instruction.SVGameObjectInstructionDestroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241238]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVGameObjectProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241239]'
+      value: 'Assembly-CSharp __SARV.Framework.Kernal.Property.SVNullProperty`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241240]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVGameObjectPropertyManual
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241241]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Signal.SVLifecycleSignalOnStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241193].not
       value: 0
       objectReference: {fileID: 0}
@@ -376,6 +533,26 @@ PrefabInstance:
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241199].not
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241228].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241236].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241237].delay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241240].value
+      value: 
+      objectReference: {fileID: 809228597}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241237].target
+      value: 4447245722177241238
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241193].disabled
@@ -399,11 +576,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241200].property
-      value: 
+      value: Variable
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241201].property
+      value: Manual
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241206].variable
       value: 
+      objectReference: {fileID: 1154005030}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241207].property
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241215].disabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241215].variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241216].property
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241224].disabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241224].variable
+      value: 4447245722177241225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241225].variable
+      value: 
+      objectReference: {fileID: 1154005030}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241226].property
+      value: Manual
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241237].disabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241238].property
+      value: Manual
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241185].interactor
@@ -455,11 +676,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241200].propertyType
-      value: 4447245722177241202
+      value: 4447245722177241206
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241201].propertyType
-      value: 4447245722177241203
+      value: 4447245722177241236
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241206].variableName
+      value: IsInteracted
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241207].propertyType
+      value: 4447245722177241208
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241215].variableName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241216].propertyType
+      value: 4447245722177241217
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241225].variableName
+      value: IsInteracted
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241226].propertyType
+      value: 4447245722177241228
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241237].waitToFinish
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241238].propertyType
+      value: 4447245722177241240
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241193].branch.branch
@@ -468,6 +721,22 @@ PrefabInstance:
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241194].rightSideBool
       value: 4447245722177241196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241206].variableValue
+      value: 4447245722177241207
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241215].variableValue
+      value: 4447245722177241216
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241224].variableValue
+      value: 4447245722177241226
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241237].detachChildren
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241193].branch.conditionJoinType
@@ -534,6 +803,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+--- !u!1 &809228597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 169995019471375795, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+  m_PrefabInstance: {fileID: 463123356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +840,17 @@ Transform:
   - {fileID: 390525326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1154005030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7797513572245356268, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+  m_PrefabInstance: {fileID: 463123356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8541990fae29b0c4f90e8e22a28f4d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

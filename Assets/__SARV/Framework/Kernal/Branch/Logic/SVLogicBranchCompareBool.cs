@@ -31,17 +31,20 @@ namespace __SARV.Framework.Kernal.Branch
         public override bool IsTrue(SVArgument argument)
         {
             var result = false;
+            var leftOperandValue = leftOperand.GetValue(argument);
+            var rightOperandValue = rightOperand.GetValue(argument);
+
             switch (operatorType)
             {
                 case SVEqualityOperatorType.Equal:
-                    result = leftOperand.GetValue(argument) == rightOperand.GetValue(argument);
+                    result = leftOperandValue == rightOperandValue;
                     break;
                 case SVEqualityOperatorType.NotEqual:
-                    result = leftOperand.GetValue(argument) != rightOperand.GetValue(argument);
+                    result = leftOperandValue != rightOperandValue;
                     break;
             }
 
-            return result;
+            return Not ? !result : result;
         }
     }
 }

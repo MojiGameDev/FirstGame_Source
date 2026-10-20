@@ -18,7 +18,7 @@ namespace __SARV.Framework.Common.Shared
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
         private SVInstruction instruction;
 
-        private string GroupTitle => $"Type : {branch.ConditionJoinType.ToReadableString()} - Not? {branch.Not.ToName()} - {branch.BranchesCount} Branches - {instruction.InstructionsCount} Instructions";
+        private string GroupTitle => $"Type : {branch.ConditionJoinType.ToReadableString()} - {branch.BranchesCount} Branches - {instruction.InstructionsCount} Instructions";
         public SVBranch Branch => branch;
         public SVInstruction Instruction => instruction;
     }
