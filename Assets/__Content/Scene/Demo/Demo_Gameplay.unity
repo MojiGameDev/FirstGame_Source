@@ -274,6 +274,18 @@ PrefabInstance:
       value: 4447245722177241189
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: instruction.instruction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: instruction.instructions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'instruction.instructions.Array.data[0]'
+      value: 4447245722177241193
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: 'managedReferences[4447245722177241183]'
       value: Assembly-CSharp __SARV.Framework.Kernal.Signal.SVNullSignal
       objectReference: {fileID: 0}
@@ -302,12 +314,102 @@ PrefabInstance:
       value: Assembly-CSharp __SARV.Framework.Kernal.Signal.SVLifecycleSignalOnAwake
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241193]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Instruction.Logic.SVLogicInstructionBreakIf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241194]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Branch.SVLogicBranchCompareBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241195]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241196]'
+      value: Assembly-CSharp __SARV.Framework.Kernal.Property.SVBoolProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241197]'
+      value: 'Assembly-CSharp __SARV.Framework.Kernal.Property.SVNullProperty`1[[System.Boolean,
+        mscorlib]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241198]'
+      value: 'Assembly-CSharp __SARV.Framework.Kernal.Property.SVNullProperty`1[[System.Boolean,
+        mscorlib]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241193].not
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241194].not
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241193].disabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241194].disabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241195].property
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241196].property
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241185].interactor
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: managedReferences[4447245722177241188].interactor
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241193].branch.not
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241194].leftSideBool
+      value: 4447245722177241195
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241194].operatorType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241195].propertyType
+      value: 4447245722177241197
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241196].propertyType
+      value: 4447245722177241198
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241193].branch.branch
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241194].rightSideBool
+      value: 4447245722177241196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241193].branch.conditionJoinType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: managedReferences[4447245722177241193].branch.branches.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219951284403303078, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+      propertyPath: 'managedReferences[4447245722177241193].branch.branches.Array.data[0]'
+      value: 4447245722177241194
       objectReference: {fileID: 0}
     - target: {fileID: 3907081073289953353, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
       propertyPath: m_Name

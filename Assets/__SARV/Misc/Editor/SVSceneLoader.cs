@@ -11,6 +11,7 @@ namespace __SARV.Misc.Editor
         private const string MENU_SCENE = @"Assets\__Content\Scene\Menu\";
         private const string ACT_01_SECTION_01 = @"Assets\__Content\Scene\Landscape\Act_01\Section_01\";
         private const string ACT_01_SECTION_02 = @"Assets\__Content\Scene\Landscape\Act_01\Section_02\";
+        private const string ACT_01_SECTION_03 = @"Assets\__Content\Scene\Landscape\Act_01\Section_03\";
 
         [MenuItem("SARV/Scene/Play")]
         public static void LoadPlay()
@@ -48,6 +49,15 @@ namespace __SARV.Misc.Editor
             CloseAllScenes();
 
             EditorSceneManager.OpenScene($"{ACT_01_SECTION_02}Act_01_Section_02.unity", OpenSceneMode.Single);
+        }
+
+        [MenuItem("SARV/Scene/Act01_Section03")]
+        public static void LoadAct01Section03()
+        {
+            // Close all current scenes first
+            CloseAllScenes();
+
+            EditorSceneManager.OpenScene($"{ACT_01_SECTION_03}Act_01_Section_03.unity", OpenSceneMode.Single);
         }
 
         [MenuItem("SARV/Scene/Demo_Character")]
