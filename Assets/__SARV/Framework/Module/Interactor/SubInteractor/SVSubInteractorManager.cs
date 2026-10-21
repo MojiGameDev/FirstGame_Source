@@ -9,7 +9,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
     public abstract class SVSubInteractorManager : SVSubInteractorDetection
     {
         private bool _initialized;
-        protected Transform _closestPoint;
+        protected Transform ClosestPoint;
 
         protected override void Update()
         {
@@ -23,8 +23,8 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 
         private void HandleInteractionAvailability()
         {
-            _closestPoint = FindClosestInteractionPoint();
-            if (_closestPoint == null)
+            ClosestPoint = FindClosestInteractionPoint();
+            if (ClosestPoint == null)
             {
                 if (CanInteract)
                 {
@@ -36,14 +36,14 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
                 return;
             }
 
-            var isInteractionPointChanged = _closestPoint != CurrentInteractionPoint;
+            var isInteractionPointChanged = ClosestPoint != CurrentInteractionPoint;
 
             if (!isInteractionPointChanged)
             {
                 return;
             }
 
-            CurrentInteractionPoint = _closestPoint;
+            CurrentInteractionPoint = ClosestPoint;
 
             if (!CanInteract)
             {

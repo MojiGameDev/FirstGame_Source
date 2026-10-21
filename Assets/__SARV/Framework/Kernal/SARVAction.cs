@@ -12,9 +12,9 @@ namespace __SARV.Framework.Kernal
     {
         [SerializeField] [HideLabel] private SVInstruction instruction;
         
-        public async Task RunAction(SVArgument argument)
+        public async Task RunAction()
         {
-            await instruction.ExecuteInstructions(argument);
+            await instruction.ExecuteInstructions(SVArgument.Create(gameObject));
         }
     }
 }

@@ -31,11 +31,11 @@ namespace __SARV.Framework.Kernal.Instruction
         {
             if (waitToFinish.GetValue(argument))
             {
-                await action.RunAction(argument);
+                await action.RunAction();
             }
             else
             {
-                _ = action.RunAction(argument);
+                _ = action.RunAction();
             }
             
             return await SVInstructionResult.DEFAULT_RESULT;
