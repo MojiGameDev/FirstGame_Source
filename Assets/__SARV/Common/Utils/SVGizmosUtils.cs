@@ -26,6 +26,13 @@ namespace __SARV.Common.Utils
 #endif
         }
 
+        public static void DrawRaycastGuide(Vector3 position, float radius, float distance, Color color)
+        {
+            Gizmos.color = color;
+            Gizmos.DrawLine(position, position + Vector3.down * distance);
+            Gizmos.DrawSphere(position, radius);
+        }
+
         public static void DrawArch(Transform startPoint, float halfAngle, float pointRadius, Color pointColor, float archRange, Color archColor)
         {
             var origin = startPoint.position;

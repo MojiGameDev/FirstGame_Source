@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9d78c68f3a4b67a54c9741e1c3c6d3, type: 3}
+  m_Name: SurfaceDatabase_Default
+  m_EditorClassIdentifier: 
+  surfaces:
+  - title: Grass
+    texture: {fileID: 2800000, guid: 7e59fd7520203a343b42586c18a6a02e, type: 3}
+    footStateIdentifier: {fileID: 11400000, guid: c91a62035ece6aa458a39a0bfcc0046b, type: 2}
+    effectIdentifier: {fileID: 11400000, guid: 696daf91bbc43d84b9a359a95c96dd05, type: 2}
+    particleLifetime: 0.3
+  - title: GroundDirt
+    texture: {fileID: 2800000, guid: b5f5d9ae44447544b87c8e88ffca7c6d, type: 3}
+    footStateIdentifier: {fileID: 11400000, guid: c91a62035ece6aa458a39a0bfcc0046b, type: 2}
+    effectIdentifier: {fileID: 11400000, guid: 913afe5b4bb5ab74c95af641fcc644f6, type: 2}
+    particleLifetime: 0.3
+  - title: DirtSoil
+    texture: {fileID: 2800000, guid: 16171219d94c90842a631969a7644bb2, type: 3}
+    footStateIdentifier: {fileID: 11400000, guid: c91a62035ece6aa458a39a0bfcc0046b, type: 2}
+    effectIdentifier: {fileID: 11400000, guid: da8bb25c40b1dfb41ad3226bd164b471, type: 2}
+    particleLifetime: 0.3
