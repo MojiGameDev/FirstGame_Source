@@ -2135,7 +2135,7 @@ MonoBehaviour:
         canSave: 1
         isGlobal: 0
         lastSavedKey: 8b4e381a-69ed-4c36-956e-f2127ebe8481
-        value: 1
+        value: 0
 --- !u!1 &7184777885002549513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,6 +2507,7 @@ MonoBehaviour:
   instruction:
     instruction: 
     instructions:
+    - rid: 4447245722177241286
     - rid: 4447245700635295903
     - rid: 4447245700635295907
     - rid: 4447245654144843911
@@ -2514,6 +2515,7 @@ MonoBehaviour:
     - rid: 4447245677697171624
     - rid: 4447245677697171648
     - rid: 4447245722177241229
+    - rid: 4447245722177241278
     - rid: 4447245700635295919
   references:
     version: 2
@@ -2559,7 +2561,7 @@ MonoBehaviour:
     - rid: 4447245700635295903
       type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
-        disabled: 0
+        disabled: 1
         target:
           rid: 4447245700635295904
         activate: 0
@@ -2576,7 +2578,7 @@ MonoBehaviour:
     - rid: 4447245700635295907
       type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
-        disabled: 0
+        disabled: 1
         target:
           rid: 4447245700635295908
         activate: 0
@@ -2593,10 +2595,10 @@ MonoBehaviour:
     - rid: 4447245700635295919
       type: {class: SVGameObjectInstructionDestroy, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
-        disabled: 0
+        disabled: 1
         target:
           rid: 4447245700635295920
-        delay: 1.05
+        delay: 0
         detachChildren: 0
         waitToFinish: 0
     - rid: 4447245700635295920
@@ -2612,7 +2614,7 @@ MonoBehaviour:
     - rid: 4447245722177241229
       type: {class: SVVariableInstructionSetBool, ns: __SARV.Framework.Kernal.Instruction.Variable, asm: Assembly-CSharp}
       data:
-        disabled: 0
+        disabled: 1
         variable:
           rid: 4447245722177241235
         variableValue:
@@ -2632,6 +2634,38 @@ MonoBehaviour:
       data:
         variable: {fileID: 7797513572245356268}
         variableName: IsInteracted
+    - rid: 4447245722177241278
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245722177241279
+        behavior: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
+    - rid: 4447245722177241279
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245722177241281
+    - rid: 4447245722177241281
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245722177241286
+      type: {class: SVActorInstructionSetInteractor, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245722177241287
+        interactor: {fileID: 7195092262961123222}
+    - rid: 4447245722177241287
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245722177241289
+    - rid: 4447245722177241289
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &8114939955890265525
 GameObject:
   m_ObjectHideFlags: 0

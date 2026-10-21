@@ -61,9 +61,9 @@ namespace __SARV.Framework.Module.State.Behavior
 
         public override async Task Exit()
         {
-            await base.Exit();
             Player.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.Dispose();
+            await base.Exit();
         }
 
         private void HandleCharacterSpeed()

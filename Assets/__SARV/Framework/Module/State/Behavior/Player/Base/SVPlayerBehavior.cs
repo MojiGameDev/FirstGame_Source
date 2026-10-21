@@ -6,7 +6,7 @@ using __SARV.Framework.Common.Component;
 namespace __SARV.Framework.Module.State.Behavior.Base
 {
     [Serializable]
-    public class SVPlayerBehavior : SVBehaviorComponent
+    public abstract class SVPlayerBehavior : SVBehaviorComponent
     {
         protected SARVPlayer Player => SVAccessPlayer.Instance;
     }

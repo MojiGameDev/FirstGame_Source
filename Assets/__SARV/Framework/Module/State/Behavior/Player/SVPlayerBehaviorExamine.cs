@@ -10,7 +10,7 @@ namespace __SARV.Framework.Module.State.Behavior
     [SVCategory(SVConstantCategory.Behavior.EXAMINE)]
     [SVDescription("Allows the player to examine the environment and interact with points of interest")]
     [Serializable]
-    public class SVPlayerBehaviorExamine : SVPlayerBehavior
+    public class SVPlayerBehaviorExamine : SVPlayerInteractBehavior
     {
         public override async Task Enter()
         {
