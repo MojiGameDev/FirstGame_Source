@@ -24,6 +24,6 @@ namespace __SARV.Framework.Module.Footstep.Entity
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField]
         private SARVIdentifier particleIdentifier;
 
-        private string GroupTitle => $"{title} - {(texture == null ? "..." : "texture.name")}";
+        private string GroupTitle => $"{(string.IsNullOrEmpty(title) ? "..." : title)} - {(texture == null ? "..." : texture.name)}";
     }
 }
