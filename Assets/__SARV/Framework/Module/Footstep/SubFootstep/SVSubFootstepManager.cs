@@ -23,6 +23,7 @@ namespace __SARV.Framework.Module.Footstep.SubFootstep
                     var texture = footstepSource.GetTextureAt(raycastResult);
                     var effectIdentifier = RuntimeSurfaces[texture].EffectIdentifier;
                     SARVGame.Instance.SpawnInPool(effectIdentifier, raycastResult.Point);
+                    SARVGame.Instance.PlaySound(effectIdentifier);
                 }
                 else
                 {
