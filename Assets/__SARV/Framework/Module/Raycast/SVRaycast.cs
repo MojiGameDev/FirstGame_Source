@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Raycast
 {
-    public class SVRaycast
+    public static class SVRaycast
     {
         public static bool Try(Vector3 position, float distance, LayerMask layerMask, out SVRaycastResult raycastResult)
         {

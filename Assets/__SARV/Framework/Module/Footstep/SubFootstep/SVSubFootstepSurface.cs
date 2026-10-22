@@ -13,14 +13,14 @@ namespace __SARV.Framework.Module.Footstep.SubFootstep
         [BoxGroup("Surface")] [SerializeField] [Required]
         private SARVSurfaceDatabase surfaceDatabase;
         
-        protected Dictionary<SARVIdentifier, SVSurface> RuntimeSurfaces = new();
+        protected Dictionary<Texture, SVSurface> RuntimeSurfaces = new();
 
         public override void HandleAwake()
         {
             base.HandleAwake();
             foreach (var surface in surfaceDatabase.Surfaces)
             {
-                RuntimeSurfaces.Add(surface.FootStateIdentifier, surface);
+                RuntimeSurfaces.Add(surface.Texture, surface);
             }
         }
     }

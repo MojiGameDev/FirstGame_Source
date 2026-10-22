@@ -131,7 +131,8 @@ GameObject:
   - component: {fileID: 390525328}
   - component: {fileID: 390525327}
   - component: {fileID: 390525329}
-  m_Layer: 0
+  - component: {fileID: 390525330}
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,6 +250,20 @@ MonoBehaviour:
     bakeMode: 20
     bakeTexture: 256
     bakeMaterial: {fileID: 0}
+--- !u!114 &390525330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390525325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25bf462bb5c4fd1ae1d9a3f72a626d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  terrain: {fileID: 390525328}
 --- !u!1001 &463123356
 PrefabInstance:
   m_ObjectHideFlags: 0

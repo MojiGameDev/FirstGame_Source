@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using __SARV.Common.Base;
 using __SARV.Framework.Common.Reflection;
-using __SARV.Framework.Module.Footstep.Source.Base;
+using __SARV.Framework.Module.Footstep.Entity;
+using __SARV.Framework.Module.Footstep.Enum;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -11,24 +13,20 @@ namespace __SARV.Framework.Module.Footstep.SubFootstepSource
 {
     public abstract class SubFootstepSourceSetting : SVOverrideMonoBehaviour
     {
-        [FoldoutGroup("Setting")] [BoxGroup("Setting/Row01", showLabel: false)] [SerializeField] [ValueDropdown(nameof(GetAllSourceTypes))] [OnValueChanged(nameof(OnFootstepSourceChanged))]
-        private string source = "";
+        [FoldoutGroup("Setting")] [SerializeField] [OnValueChanged(nameof(OnFootstepSourceTypeChanged))]
+        protected SVFootstepSourceType type = SVFootstepSourceType.Mesh;
 
-        [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [ShowIf(nameof(IsTypeValid))]
-        private SVFootstepSource footstepSource;
+        [FoldoutGroup("Setting")] [SerializeField] [Required] [ShowIf(nameof(IsFootstepSourceTypeTerrain))]
+        protected Terrain terrain;
 
-        private bool IsTypeValid => !string.IsNullOrEmpty(source);
+        private bool IsFootstepSourceTypeTerrain => type == SVFootstepSourceType.Terrain;
 
-        private void OnFootstepSourceChanged()
+        private void OnFootstepSourceTypeChanged()
         {
-            var footstepSourceType = SVReflection.GetFootstepSourceTypeByPath(source);
-            footstepSource = (SVFootstepSource)Activator.CreateInstance(footstepSourceType);
-        }
-
-        private IEnumerable GetAllSourceTypes()
-        {
-            var footstepSources = SVReflection.GetAllFootstepSources();
-            return footstepSources.Select(d => new ValueDropdownItem(d, d));
+            if (type == SVFootstepSourceType.Terrain)
+            {
+                terrain = gameObject.GetComponent<Terrain>();
+            }
         }
     }
 }
