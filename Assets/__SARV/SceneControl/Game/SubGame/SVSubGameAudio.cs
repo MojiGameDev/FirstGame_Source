@@ -26,12 +26,20 @@ namespace __SARV.SceneControl.Game.SubGame
             HandleWrappersToDictionary();
         }
 
+        public void PlaySound(SARVIdentifier identifier)
+        {
+            var audioName = RuntimeAudioNames[identifier];
+            MasterAudio.PlaySound(audioName);
+        }
+        
         public async Task PlayDialogue(AudioClip clip, bool waitForCompletion)
         {
             StopAudio(DIALOGUE_GROUP_NAME);
 
             if (clip == null)
+            {
                 return;
+            }
 
             MasterAudio.ChangeVariationClip(
                 DIALOGUE_GROUP_NAME,
