@@ -10,6 +10,8 @@ namespace __SARV.Framework.Module.Footstep.SubSurfaceDatabase
     {
         [FoldoutGroup("Data")] [SerializeField] [RequiredListLength(1, 15)] [OnValueChanged(nameof(OnSurfacesChanged))]
         private List<SVSurface> surfaces = new();
+        
+        public IReadOnlyList<SVSurface> Surfaces => surfaces;
 
         private void OnSurfacesChanged()
         {

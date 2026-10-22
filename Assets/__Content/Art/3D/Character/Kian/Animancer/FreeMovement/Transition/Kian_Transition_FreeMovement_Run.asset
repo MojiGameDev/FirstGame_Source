@@ -17,14 +17,38 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 4447245373899538440
       type: {class: ClipTransition, ns: Animancer, asm: Kybernetik.Animancer}
       data:
         _FadeDuration: 0.25
         _Speed: 1
         _Events:
-          _NormalizedTimes: []
-          _Callbacks: []
-          _Names: []
+          _NormalizedTimes:
+          - 0.0070945024
+          - 0.45337835
+          - 0.96993244
+          - NaN
+          _Callbacks:
+          - rid: -2
+          - rid: 4447245752055365740
+          - rid: 4447245752055365742
+          _Names:
+          - {fileID: 0}
+          - {fileID: 11400000, guid: 4febfff8e143229428045fe08c2d6226, type: 2}
+          - {fileID: 11400000, guid: 4febfff8e143229428045fe08c2d6226, type: 2}
         _Clip: {fileID: 7400000, guid: e6d38a7401966914fa5be105e1c7506d, type: 2}
         _NormalizedStartTime: NaN
+    - rid: 4447245752055365740
+      type: {class: SVFootstepParameter, ns: __SARV.Framework.Integration.Animancer.Parameter, asm: Assembly-CSharp}
+      data:
+        _Value:
+          footIdentifier: {fileID: 11400000, guid: 74422138b617d184baeed0ae3b2a9d46, type: 2}
+          footStateIdentifier: {fileID: 11400000, guid: c91a62035ece6aa458a39a0bfcc0046b, type: 2}
+    - rid: 4447245752055365742
+      type: {class: SVFootstepParameter, ns: __SARV.Framework.Integration.Animancer.Parameter, asm: Assembly-CSharp}
+      data:
+        _Value:
+          footIdentifier: {fileID: 11400000, guid: d7bb779eafd82f346a6a31c0d53306ba, type: 2}
+          footStateIdentifier: {fileID: 11400000, guid: c91a62035ece6aa458a39a0bfcc0046b, type: 2}

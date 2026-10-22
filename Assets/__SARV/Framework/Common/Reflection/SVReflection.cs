@@ -4,6 +4,8 @@ using System.Linq;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
+using __SARV.Framework.Module.Footstep.Entity;
+using __SARV.Framework.Module.Footstep.Source.Base;
 using __SARV.Framework.Module.Variable.Base;
 using Unity.VisualScripting;
 
@@ -14,6 +16,13 @@ namespace __SARV.Framework.Common.Reflection
         public static List<string> GetAllVariableTypes()
         {
             return GetAllSARVTypes<SVVariable>()
+                .Select(d=>d.GetTitle())
+                .ToList();
+        }
+        
+        public static List<string> GetAllFootstepSources()
+        {
+            return GetAllSARVTypes<SVFootstepSource>()
                 .Select(d=>d.GetTitle())
                 .ToList();
         }
@@ -63,6 +72,12 @@ namespace __SARV.Framework.Common.Reflection
         public static Type GetVariableTypeByPath(string path)
         {
             return GetAllSARVTypes<SVVariable>()
+                .FirstOrDefault(t => t.GetTitle() == path);
+        }
+
+        public static Type GetFootstepSourceTypeByPath(string path)
+        {
+            return GetAllSARVTypes<SVFootstepSource>()
                 .FirstOrDefault(t => t.GetTitle() == path);
         }
 

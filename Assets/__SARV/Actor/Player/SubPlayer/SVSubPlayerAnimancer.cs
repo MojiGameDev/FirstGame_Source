@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace __SARV.Actor.Player.SubPlayer
 {
-    public abstract class SVSubPlayerAnimancer : SVSubPlayerInput
+    public abstract class SVSubPlayerAnimancer : SVSubPlayerFootstep
     {
         [FoldoutGroup("Animancer")] [SerializeField] [HideLabel]
         private SVAnimancer animancer;
-
+        
         public SVAnimancer Animancer => animancer;
 
         protected override void Awake()

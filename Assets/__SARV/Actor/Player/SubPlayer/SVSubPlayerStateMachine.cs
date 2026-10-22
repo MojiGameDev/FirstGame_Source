@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace __SARV.Actor.Player.SubPlayer
 {
-    public abstract class SVSubPlayerStateMachine : SVSubPlayerFootstep
+    public abstract class SVSubPlayerStateMachine : SVSubPlayerAnimancer
     {
         [FoldoutGroup("StateMachine")] [SerializeField] [HideLabel]
         private SVStateMachine stateMachine;

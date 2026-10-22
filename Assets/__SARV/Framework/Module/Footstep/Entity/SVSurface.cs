@@ -25,5 +25,10 @@ namespace __SARV.Framework.Module.Footstep.Entity
         private float particleLifetime = 0.3f;
 
         private string GroupTitle => $"{(string.IsNullOrEmpty(title) ? "..." : title)} - {(string.IsNullOrEmpty(footStateIdentifier) ? "..." : footStateIdentifier.SkipWords(2))} - {(texture == null ? "..." : texture.name)}";
+        
+        public SARVIdentifier FootStateIdentifier => footStateIdentifier;
+        public SARVIdentifier EffectIdentifier => effectIdentifier;
+        public float ParticleLifetime => particleLifetime;
+        public Texture Texture => texture;
     }
 }

@@ -14,6 +14,7 @@ namespace __SARV.Framework.Module.Footstep.Entity
         [SerializeField] [Required] private Transform footTransform;
 
         private string GroupTitle => footTransform.gameObject.name;
+        public SARVIdentifier FootIdentifier => footIdentifier;
         public Transform FootTransform => footTransform;
     }
 }
