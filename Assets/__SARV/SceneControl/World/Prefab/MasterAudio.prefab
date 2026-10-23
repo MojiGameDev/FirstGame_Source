@@ -47,7 +47,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: fdee14b12931502448035c0e7c30f51d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -55,10 +55,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 100
+  MinDistance: 900
+  MaxDistance: 1000
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   shouldLogDestroys: 0
   showBusColors: 0
   showGroupImportance: 0
-  areGroupsExpanded: 1
+  areGroupsExpanded: 0
   soundGroupTemplate: {fileID: 400008, guid: 877a3a4bf0a4abf43aba41125e1d3101, type: 3}
   soundGroupVariationTemplate: {fileID: 400000, guid: 08eea2d8c4572c7479da53cfbc14bde6, type: 3}
   groupBuses:
@@ -1447,18 +1447,18 @@ MonoBehaviour:
   saveRuntimeChanges: 0
   prioritizeOnDistance: 0
   rePrioritizeEverySecIndex: 0
-  showOcclusion: 0
-  useOcclusion: 1
+  showOcclusion: 1
+  useOcclusion: 0
   occlusionMaxCutoffFreq: 0
   occlusionMinCutoffFreq: 15000
   occlusionFreqChangeSeconds: 0
   occlusionSelectType: 0
   occlusionMaxRayCastsPerFrame: 4
   occlusionRayCastOffset: 0
-  occlusionUseLayerMask: 0
+  occlusionUseLayerMask: 1
   occlusionLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 25
   occlusionShowRaycasts: 1
   occlusionShowCategories: 0
   occlusionRaycastMode: 0
@@ -2785,10 +2785,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
-  MaxDistance: 10
+  MinDistance: 1
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 2
+  weight: 1
   probabilityToPlay: 100
   importance: 5
   isUninterruptible: 0
@@ -3025,7 +3025,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 7358
+  frames: 7967
 --- !u!1 &7973204416871286822
 GameObject:
   m_ObjectHideFlags: 0
