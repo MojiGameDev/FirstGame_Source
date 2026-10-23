@@ -710,6 +710,22 @@ MonoBehaviour:
   playerComboSwitchCKey: PlayerComboSwitchC
   playerComboSwitchDKey: PlayerComboSwitchD
   inputMovementDirection: {x: 0, y: 0, z: 0}
+  footstepEvent: {fileID: 11400000, guid: 4febfff8e143229428045fe08c2d6226, type: 2}
+  footstep:
+    feet:
+    - footIdentifier: {fileID: 11400000, guid: d7bb779eafd82f346a6a31c0d53306ba, type: 2}
+      footTransform: {fileID: 4571757338774881146}
+    - footIdentifier: {fileID: 11400000, guid: 74422138b617d184baeed0ae3b2a9d46, type: 2}
+      footTransform: {fileID: 1473671427352486973}
+    surfaceDatabase: {fileID: 11400000, guid: 75aee7cd364991349b7f5287902f3bcf, type: 2}
+    raycastDistance: 0.2
+    groundLayer:
+      serializedVersion: 2
+      m_Bits: 8
+    showGizmos: 1
+    gizmosOnSelect: 0
+    gizmoCircleColor: {r: 0, g: 1, b: 0, a: 1}
+    gizmosRadius: 0.0738
   animancer:
     wrappers:
     - identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
@@ -718,17 +734,6 @@ MonoBehaviour:
       alias: {fileID: 11400000, guid: 804658efca7a0e848999f95926f94d30, type: 2}
     - identifier: {fileID: 11400000, guid: af8cc05eb10d3a447b392f849c4a70de, type: 2}
       alias: {fileID: 11400000, guid: 31bf7a31fd4d0a1449d340a69ba2bd19, type: 2}
-  footstep:
-    feet:
-    - footIdentifier: {fileID: 11400000, guid: d7bb779eafd82f346a6a31c0d53306ba, type: 2}
-      footTransform: {fileID: 4571757338774881146}
-    - footIdentifier: {fileID: 11400000, guid: 74422138b617d184baeed0ae3b2a9d46, type: 2}
-      footTransform: {fileID: 1473671427352486973}
-    raycastDistance: 0.15
-    showGizmos: 1
-    gizmosOnSelect: 0
-    gizmoCircleColor: {r: 0, g: 1, b: 0, a: 1}
-    gizmosRadius: 0.0738
   stateMachine:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
@@ -5637,6 +5642,9 @@ MonoBehaviour:
   positions:
   - title: PlayScene
     position: {x: -0.7, y: 50, z: -0.3}
+    target: {fileID: 7260924975195049022}
+  - title: Cinematic
+    position: {x: 31.3, y: 26.1, z: 46.42}
     target: {fileID: 7260924975195049022}
 --- !u!1 &7525479398307775012
 GameObject:

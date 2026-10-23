@@ -31,7 +31,13 @@ namespace __SARV.SceneControl.Game.SubGame
             var audioName = RuntimeAudioNames[identifier];
             MasterAudio.PlaySound(audioName);
         }
-        
+
+        public void PlaySoundAt(SARVIdentifier identifier, Vector3 position)
+        {
+            var audioName = RuntimeAudioNames[identifier];
+            MasterAudio.PlaySound3DAtVector3(audioName, position);
+        }
+
         public async Task PlayDialogue(AudioClip clip, bool waitForCompletion)
         {
             StopAudio(DIALOGUE_GROUP_NAME);
