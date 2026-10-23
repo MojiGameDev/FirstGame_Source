@@ -1,5 +1,4 @@
 ﻿using System;
-using __SARV.Framework.Integration.Animancer.Parameter.Type;
 using __SARV.Framework.Module.Identifier;
 using __SARV.SceneControl.Game;
 using UnityEngine;
@@ -23,7 +22,7 @@ namespace __SARV.Framework.Module.Footstep.SubFootstep
                     var texture = footstepSource.GetTextureAt(raycastResult);
                     var effectIdentifier = RuntimeSurfaces[texture].EffectIdentifier;
                     SARVGame.Instance.SpawnInPool(effectIdentifier, raycastResult.Point);
-                    SARVGame.Instance.PlaySound(effectIdentifier);
+                    SARVGame.Instance.PlaySoundAt(effectIdentifier, raycastResult.Point);
                 }
                 else
                 {
