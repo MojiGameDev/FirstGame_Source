@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7947198503760738199}
   - component: {fileID: 1444085844124865620}
   - component: {fileID: 3078304161078304668}
+  - component: {fileID: 2358476017871572293}
   m_Layer: 6
   m_Name: Cage_Enemy_01_Door
   m_TagString: Untagged
@@ -120,6 +121,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2358476017871572293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4195610388767361890}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.70376015, y: 0.82091653, z: 0.05473669}
+  m_Center: {x: 0.34629172, y: -0.033592984, z: -0.01992155}
 --- !u!1 &5137439491084752931
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +153,7 @@ GameObject:
   - component: {fileID: 4655458664297042585}
   - component: {fileID: 6227702826087898839}
   - component: {fileID: 7438459175712425233}
+  - component: {fileID: 6243765945934665464}
   m_Layer: 6
   m_Name: Cage_Enemy_01_Base
   m_TagString: Untagged
@@ -206,6 +229,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6243765945934665464
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137439491084752931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.88929355, y: 1.1639284, z: 0.8892937}
+  m_Center: {x: -0.014104966, y: 0.5819642, z: -0.015313376}
 --- !u!1 &7495044252948369257
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +261,7 @@ GameObject:
   - component: {fileID: 5235651091315077979}
   - component: {fileID: 8986562049831030570}
   - component: {fileID: 4768861130695128219}
+  - component: {fileID: 2060838979787321400}
   m_Layer: 6
   m_Name: Cage_Enemy_01_Chains
   m_TagString: Untagged
@@ -292,3 +337,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2060838979787321400
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495044252948369257}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4075941670780171296, guid: 5c50cbd2dde24194d82fa942430be4c0, type: 3}
