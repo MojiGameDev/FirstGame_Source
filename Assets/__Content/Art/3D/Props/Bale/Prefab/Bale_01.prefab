@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6284318844072623653}
   - component: {fileID: 7531391402508827460}
   - component: {fileID: 4521589012895949924}
-  - component: {fileID: 6275216006306265948}
+  - component: {fileID: 7567167682947623093}
   m_Layer: 6
   m_Name: Bale_01
   m_TagString: Untagged
@@ -87,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6275216006306265948
-BoxCollider:
+--- !u!64 &7567167682947623093
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,6 +105,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.84042907, y: 0.68181163, z: 0.70543396}
-  m_Center: {x: 0, y: 0.31558242, z: -0.0000006109476}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4727491585102411756, guid: 79fe6acd8e8ee154c8b5bf380856666b, type: 3}

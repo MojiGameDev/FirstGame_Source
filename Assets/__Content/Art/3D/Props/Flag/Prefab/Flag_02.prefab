@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4166986869538861232}
   - component: {fileID: 2870470757531568611}
   - component: {fileID: 684037312524583136}
+  - component: {fileID: 4164925500098861067}
   m_Layer: 0
   m_Name: PoleFlag_01
   m_TagString: Untagged
@@ -120,6 +121,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4164925500098861067
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291456283701219953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.10235355
+  m_Height: 5.956713
+  m_Direction: 1
+  m_Center: {x: -0.00000756979, y: 2.9783566, z: 0}
 --- !u!1 &5943931143116785616
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +241,7 @@ GameObject:
   - component: {fileID: 2715032393911510587}
   - component: {fileID: 2695543175105093294}
   - component: {fileID: 4352520705442667724}
+  - component: {fileID: 4952145850516624770}
   m_Layer: 0
   m_Name: HangingFlag_01
   m_TagString: Untagged
@@ -292,3 +317,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4952145850516624770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787613288597709756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1762064, y: 0.1369542, z: 0.13695459}
+  m_Center: {x: -0.056961283, y: -0.0017793778, z: -0.010223091}
