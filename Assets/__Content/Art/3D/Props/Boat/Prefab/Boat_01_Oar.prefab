@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5464329342893434029}
   - component: {fileID: 8321184528617479482}
   - component: {fileID: 2313520320895370139}
-  - component: {fileID: 335053131420087768}
+  - component: {fileID: 5488204237094850907}
+  - component: {fileID: 5800969533943324333}
   m_Layer: 0
   m_Name: Boat_01_Oar
   m_TagString: Untagged
@@ -87,8 +88,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &335053131420087768
-MeshCollider:
+--- !u!136 &5488204237094850907
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,7 +106,29 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3137200668995926531, guid: 9d2a44f16b22000478ab9669ee9197d5, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.025348654
+  m_Height: 0.8423939
+  m_Direction: 1
+  m_Center: {x: -0.0029985867, y: 0.81535816, z: -0.0012002289}
+--- !u!65 &5800969533943324333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8633918677105586641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.19045347, y: 0.41804886, z: 0.036840186}
+  m_Center: {x: 0.000007621944, y: 0.20902443, z: -1.0585327e-22}
