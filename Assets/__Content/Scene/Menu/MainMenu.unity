@@ -18102,10 +18102,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 935193696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 10, y: 0}
-  m_SizeDelta: {x: 0, y: 30}
+  m_SizeDelta: {x: 53.48, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &522002005
 MonoBehaviour:
@@ -26385,153 +26385,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766787362}
   m_CullTransparentMesh: 1
---- !u!1 &770179724
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 770179725}
-  - component: {fileID: 770179727}
-  - component: {fileID: 770179726}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &770179725
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770179724}
-  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 935193696}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 14.400024, y: 13.5}
-  m_SizeDelta: {x: 35, y: 35}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!114 &770179726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770179724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a132ebb16d23354b841b6618f4fa0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6784314, g: 0.1764706, b: 0.23137255, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d8a10c30c11143ccb54f045915163a0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
-  raycastPaddingFallback:
-    screenConfigName: 
-    OptimizedSize:
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-    MinSize:
-      left: -1000
-      right: -1000
-      top: -1000
-      bottom: -1000
-    MaxSize:
-      left: 1000
-      right: 1000
-      top: 1000
-      bottom: 1000
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModLeft:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModRight:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModTop:
-      ExponentialScale: 1
-      SizeModifiers: []
-    ModBottom:
-      ExponentialScale: 1
-      SizeModifiers: []
-  raycastPaddingSizers:
-    items: []
-  colorMode: 0
-  secondColor: {r: 1, g: 1, b: 1, a: 1}
-  flippingMode: 0
-  materialProperties:
-    FloatProperties: []
-  materialType: Default
-  materialEffect: 0
-  materialProperty1: 0
-  materialProperty2: 0
-  materialProperty3: 0
-  keepBorderAspectRatio: 0
-  spriteBorderScaleFallback:
-    screenConfigName: 
-    OptimizedSize: {x: 1, y: 1}
-    MinSize: {x: 0, y: 0}
-    MaxSize: {x: 3, y: 3}
-    UseMinSize: 0
-    UseMaxSize: 0
-    ModX:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-    ModY:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  customBorderScales:
-    items: []
-  fallbackSpriteSettings:
-    Sprite: {fileID: 21300000, guid: 1d8a10c30c11143ccb54f045915163a0, type: 3}
-    ColorMode: 0
-    PrimaryColor: {r: 0.6784314, g: 0.1764706, b: 0.23137255, a: 1}
-    SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
-    FlippingMode: 0
-    screenConfigName: 
-  customSpriteSettings:
-    items: []
---- !u!222 &770179727
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770179724}
-  m_CullTransparentMesh: 1
 --- !u!1001 &772428595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32803,7 +32656,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 770179725}
   - {fileID: 522002003}
   - {fileID: 1201937737}
   m_Father: {fileID: 1343547838}
@@ -32830,84 +32682,82 @@ MonoBehaviour:
   m_GameObject: {fileID: 935193695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc974e74779ea384fb2cc18b58d92e16, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b54b16f2fcdba244b49be1f398b6562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: 150
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
-  settingsFallback:
-    IgnoreLayout: 0
-    MinWidthEnabled: 0
-    MinHeightEnabled: 0
-    PreferredWidthEnabled: 1
-    PreferredHeightEnabled: 0
-    FlexibleWidthEnabled: 0
-    FlexibleHeightEnabled: 0
-    FlexibleWidth: 1
-    FlexibleHeight: 1
+  m_Padding:
+    m_Left: 10
+    m_Right: 10
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 3
+  m_Spacing: 60
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+  paddingSizerFallback:
     screenConfigName: 
-  customSettings:
-    items: []
-  minWidthSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 0
-    MinSize: 0
-    MaxSize: 5000
+    OptimizedSize:
+      left: 10
+      right: 10
+      top: 5
+      bottom: 5
+    MinSize:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+    MaxSize:
+      left: 1000
+      right: 1000
+      top: 1000
+      bottom: 1000
     UseMinSize: 0
     UseMaxSize: 0
-    Mod:
+    ModLeft:
       ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  customMinWidthSizers:
-    items: []
-  minHeightSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 0
-    MinSize: 0
-    MaxSize: 5000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
+      SizeModifiers: []
+    ModRight:
       ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  customMinHeightSizers:
+      SizeModifiers: []
+    ModTop:
+      ExponentialScale: 1
+      SizeModifiers: []
+    ModBottom:
+      ExponentialScale: 1
+      SizeModifiers: []
+  customPaddingSizers:
     items: []
-  preferredWidthSizerFallback:
+  spacingSizerFallback:
     screenConfigName: 
-    OptimizedSize: 150
+    OptimizedSize: 60
     MinSize: 0
-    MaxSize: 5000
+    MaxSize: 300
     UseMinSize: 0
     UseMaxSize: 0
     Mod:
       ExponentialScale: 1
       SizeModifiers: []
-  customPreferredWidthSizers:
+  customSpacingSizers:
     items: []
-  preferredHeightSizerFallback:
-    screenConfigName: 
-    OptimizedSize: 100
-    MinSize: 0
-    MaxSize: 5000
-    UseMinSize: 0
-    UseMaxSize: 0
-    Mod:
-      ExponentialScale: 1
-      SizeModifiers:
-      - Mode: 0
-        Impact: 1
-  customPreferredHeightSizers:
+  settingsFallback:
+    ChildAlignment: 3
+    ReverseArrangement: 0
+    ChildForceExpandHeight: 0
+    ChildForceExpandWidth: 1
+    ChildScaleWidth: 0
+    ChildScaleHeight: 0
+    ChildControlWidth: 0
+    ChildControlHeight: 0
+    Orientation: 0
+    screenConfigName: Fallback
+  customSettings:
     items: []
+  orientation: 0
 --- !u!1001 &936356748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43819,10 +43669,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 935193696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 0}
-  m_SizeDelta: {x: 0, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 224, y: 0}
+  m_SizeDelta: {x: 19.04, y: 30}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1201937739
 MonoBehaviour:
