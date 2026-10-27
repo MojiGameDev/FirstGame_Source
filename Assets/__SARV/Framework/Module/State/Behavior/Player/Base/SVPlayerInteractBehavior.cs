@@ -48,7 +48,7 @@ namespace __SARV.Framework.Module.State.Behavior.Base
         {
             if (IsSnapping)
             {
-                HandleSnap(deltaTime);
+                //HandleSnap(deltaTime);
             }
         }
 
