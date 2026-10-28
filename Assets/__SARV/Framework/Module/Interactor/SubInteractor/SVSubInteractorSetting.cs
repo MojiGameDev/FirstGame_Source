@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using __SARV.Framework.Common.Argument;
+using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Kernal.Property;
+using __SARV.Framework.Kernal.Property.Actor;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
@@ -12,7 +14,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
     public abstract class SVSubInteractorSetting : SVSubInteractorEvent
     {
         [FoldoutGroup("Setting")] [BoxGroup("Setting/General")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        private SVPropertyComponent<string> target = new SVStringProperty();
+        private SVPropertyComponent<SVActor> target = new SVActorProperty();
 
         [FoldoutGroup("Setting")] [SerializeField] [Required] [RequiredListLength(1, 20)]
         protected List<Transform> interactionPoints = new();
@@ -58,18 +60,18 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
         public bool CanInteract { get; protected set; }
         private bool HasInteractionPoints => interactionPoints.Any();
 
-        private string _cachedTargetLayer = "";
+        private SVActor _cachedActor;
 
-        public string TargetLayer
+        public SVActor Actor
         {
             get
             {
-                if (string.IsNullOrEmpty(_cachedTargetLayer))
+                if (_cachedActor == null)
                 {
-                    _cachedTargetLayer = target.GetValue(SVArgument.Create(gameObject));
+                    _cachedActor = target.GetValue(SVArgument.Create(gameObject));
                 }
 
-                return _cachedTargetLayer;
+                return _cachedActor;
             }
         }
 

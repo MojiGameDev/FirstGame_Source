@@ -56,7 +56,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 
         private Transform FindClosestInteractionPoint()
         {
-            if (!interactionPoints.Any() || Target == null)
+            if (!interactionPoints.Any() || Actor == null)
             {
                 return null;
             }
@@ -64,7 +64,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
             Transform closestPoint = null;
             var closestDistanceSqr = float.PositiveInfinity;
 
-            var characterForward = Target.transform.forward;
+            var characterForward = Actor.transform.forward;
             characterForward.y = 0f;
 
             if (!characterForward.sqrMagnitude.HasValue())
@@ -83,7 +83,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
                     continue;
                 }
 
-                var offset = point.position - Target.transform.position;
+                var offset = point.position - Actor.transform.position;
                 offset.y = 0f;
 
                 var distanceSqr = offset.sqrMagnitude;

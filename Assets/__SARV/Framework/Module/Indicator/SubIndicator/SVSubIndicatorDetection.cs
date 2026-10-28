@@ -26,7 +26,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
-            if (other.IsLayerDetected(TargetLayer))
+            if (other.gameObject == Actor.gameObject)
             {
                 HandleActiveAndScaleDistanceUI();
                 isTargetDetected = true;
@@ -36,7 +36,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         protected override void OnTriggerExit(Collider other)
         {
             base.OnTriggerExit(other);
-            if (other.IsLayerDetected(TargetLayer))
+            if (other.gameObject == Actor.gameObject)
             {
                 HandleInactiveAndScaleDistanceUI();
                 isTargetDetected = false;

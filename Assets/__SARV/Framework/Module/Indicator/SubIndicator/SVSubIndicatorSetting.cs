@@ -1,6 +1,8 @@
 ﻿using __SARV.Framework.Common.Argument;
+using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Kernal.Property;
+using __SARV.Framework.Kernal.Property.Actor;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -10,7 +12,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
     public abstract class SVSubIndicatorSetting : SVSubIndicatorReference
     {
         [FoldoutGroup("Setting")] [BoxGroup("Setting/General")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        private SVPropertyComponent<string> target = new SVStringProperty();
+        private SVPropertyComponent<SVActor> target = new SVActorProperty();
 
         [FoldoutGroup("Setting")] [BoxGroup("Setting/General")] [SerializeField] [PropertyRange(3f, 20f)] [OnValueChanged(nameof(OnDistanceDetectorRangeChanged), InvokeOnInitialize = true)]
         protected float distanceDetectorRange = 5f;
@@ -36,18 +38,18 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         [FoldoutGroup("Setting")] [BoxGroup("Setting/FocusAnimation")] [SerializeField]
         protected Ease focusUIScaleEase = Ease.InOutBack;
 
-        private string _cachedTargetLayer = "";
+        private SVActor _cachedActor;
 
-        public string TargetLayer
+        public SVActor Actor
         {
             get
             {
-                if (string.IsNullOrEmpty(_cachedTargetLayer))
+                if (_cachedActor == null)
                 {
-                    _cachedTargetLayer = target.GetValue(SVArgument.Create(gameObject));
+                    _cachedActor = target.GetValue(SVArgument.Create(gameObject));
                 }
 
-                return _cachedTargetLayer;
+                return _cachedActor;
             }
         }
 

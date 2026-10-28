@@ -1,4 +1,5 @@
 ﻿using __SARV.Common.Extension;
+using __SARV.Framework.Common.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -8,15 +9,12 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
     {
         [FoldoutGroup("Detection")] [SerializeField] [ReadOnly]
         protected bool isTargetDetected;
-
-        protected GameObject Target;
         
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
-            if (other.IsLayerDetected(TargetLayer))
+            if (other.gameObject == Actor.gameObject)
             {
-                Target = other.gameObject;
                 isTargetDetected = true;
             }
         }
@@ -24,9 +22,8 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
         protected override void OnTriggerExit(Collider other)
         {
             base.OnTriggerExit(other);
-            if (other.IsLayerDetected(TargetLayer))
+            if (other.gameObject == Actor.gameObject)
             {
-                Target = null;
                 isTargetDetected = false;
             }
         }
