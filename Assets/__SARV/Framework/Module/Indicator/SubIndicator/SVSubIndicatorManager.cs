@@ -7,9 +7,9 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
 {
     public abstract class SVSubIndicatorManager : SVSubIndicatorDetection
     {
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
             distanceUI.Inactive();
             focusUI.Inactive();
         }

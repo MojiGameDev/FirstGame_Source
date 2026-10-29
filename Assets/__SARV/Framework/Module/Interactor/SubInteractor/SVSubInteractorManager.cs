@@ -1,7 +1,5 @@
 ﻿using System.Linq;
 using __SARV.Common.Extension;
-using Sirenix.OdinInspector;
-using UnityEditor;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Interactor.SubInteractor
@@ -9,9 +7,6 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
     public abstract class SVSubInteractorManager : SVSubInteractorDetection
     {
         private bool _initialized;
-        protected Transform _closestPoint;
-
-        public Transform ClosestPoint => _closestPoint;
 
         protected override void Update()
         {
@@ -25,8 +20,8 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 
         private void HandleInteractionAvailability()
         {
-            _closestPoint = FindClosestInteractionPoint();
-            if (_closestPoint == null)
+            var closestPoint = FindClosestInteractionPoint();
+            if (closestPoint == null)
             {
                 if (CanInteract)
                 {
@@ -38,14 +33,14 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
                 return;
             }
 
-            var isInteractionPointChanged = _closestPoint != CurrentInteractionPoint;
+            var isInteractionPointChanged = closestPoint != CurrentInteractionPoint;
 
             if (!isInteractionPointChanged)
             {
                 return;
             }
 
-            CurrentInteractionPoint = _closestPoint;
+            CurrentInteractionPoint = closestPoint;
 
             if (!CanInteract)
             {
@@ -64,26 +59,21 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
             Transform closestPoint = null;
             var closestDistanceSqr = float.PositiveInfinity;
 
-            var characterForward = Actor.transform.forward;
-            characterForward.y = 0f;
+            var actorForward = Actor.Forward;
+            actorForward.y = 0f;
 
-            if (!characterForward.sqrMagnitude.HasValue())
+            if (!actorForward.sqrMagnitude.HasValue())
             {
                 return null;
             }
 
-            characterForward.Normalize();
+            actorForward.Normalize();
 
             var rangeSqr = interactionRange * interactionRange;
 
-            foreach (var point in interactionPoints)
+            foreach (var interactionPoint in interactionPoints)
             {
-                if (point == null)
-                {
-                    continue;
-                }
-
-                var offset = point.position - Actor.transform.position;
+                var offset = interactionPoint.position - Actor.Position;
                 offset.y = 0f;
 
                 var distanceSqr = offset.sqrMagnitude;
@@ -93,7 +83,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
                     continue;
                 }
 
-                var requiredForward = point.forward;
+                var requiredForward = interactionPoint.forward;
                 requiredForward.y = 0f;
 
                 if (!requiredForward.sqrMagnitude.HasValue())
@@ -103,13 +93,13 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
 
                 requiredForward.Normalize();
 
-                if (Vector3.Angle(characterForward, requiredForward) > interactionAngle)
+                if (Vector3.Angle(actorForward, requiredForward) > interactionAngle)
                 {
                     continue;
                 }
 
                 closestDistanceSqr = distanceSqr;
-                closestPoint = point;
+                closestPoint = interactionPoint;
             }
 
             return closestPoint;

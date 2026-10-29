@@ -7,7 +7,7 @@ using __SARV.Framework.Common.Constant;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Property.Actor
+namespace __SARV.Framework.Kernal.Property
 {
     [SVTitle("Manual")]
     [SVCategory(SVConstantCategory.Property.ACTOR)]

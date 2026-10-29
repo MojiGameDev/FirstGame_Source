@@ -50,6 +50,7 @@ namespace __SARV.Framework.Module.State.Behavior
             Player.Animancer.Play(Identifier);
             Player.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
+            Player.SetMovementSpeed(SVCharacterMovementSpeed.Idle);
         }
 
         public override void Tick(float deltaTime)

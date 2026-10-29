@@ -2,7 +2,6 @@
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Kernal.Property;
-using __SARV.Framework.Kernal.Property.Actor;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -12,7 +11,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
     public abstract class SVSubIndicatorSetting : SVSubIndicatorReference
     {
         [FoldoutGroup("Setting")] [BoxGroup("Setting/General")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        private SVPropertyComponent<SVActor> target = new SVActorProperty();
+        private SVPropertyComponent<SVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("Setting")] [BoxGroup("Setting/General")] [SerializeField] [PropertyRange(3f, 20f)] [OnValueChanged(nameof(OnDistanceDetectorRangeChanged), InvokeOnInitialize = true)]
         protected float distanceDetectorRange = 5f;
@@ -46,7 +45,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
             {
                 if (_cachedActor == null)
                 {
-                    _cachedActor = target.GetValue(SVArgument.Create(gameObject));
+                    _cachedActor = actor.GetValue(SVArgument.Create(gameObject));
                 }
 
                 return _cachedActor;

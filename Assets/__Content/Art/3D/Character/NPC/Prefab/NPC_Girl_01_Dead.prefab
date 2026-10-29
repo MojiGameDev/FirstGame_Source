@@ -1425,78 +1425,78 @@ MonoBehaviour:
   description: Destroy interact if already interacted with
   signal: Lifecycle/OnStart
   signalComponent:
-    rid: 4447245722177241241
+    rid: 4447245901782581535
   tooltip: 
   instruction:
     instruction: 
     instructions:
-    - rid: 4447245722177241193
-    - rid: 4447245722177241237
+    - rid: 4447245901782581536
+    - rid: 4447245901782581544
   references:
     version: 2
     RefIds:
-    - rid: 4447245722177241193
-      type: {class: SVLogicInstructionBreakIf, ns: __SARV.Framework.Kernal.Instruction.Logic, asm: Assembly-CSharp}
+    - rid: 4447245901782581535
+      type: {class: SVLifecycleSignalOnStart, ns: __SARV.Framework.Kernal.Signal, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245901782581536
+      type: {class: SVLogicInstructionBreakIf, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         branch:
           branch: 
           conditionJoinType: 10
           branches:
-          - rid: 4447245722177241199
-    - rid: 4447245722177241199
+          - rid: 4447245901782581537
+    - rid: 4447245901782581537
       type: {class: SVLogicBranchCompareBool, ns: __SARV.Framework.Kernal.Branch, asm: Assembly-CSharp}
       data:
         not: 0
         disabled: 0
         leftOperand:
-          rid: 4447245722177241200
+          rid: 4447245901782581538
         operatorType: 10
         rightOperand:
-          rid: 4447245722177241201
-    - rid: 4447245722177241200
+          rid: 4447245901782581539
+    - rid: 4447245901782581538
       type: {class: SVBoolProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Variable
         propertyType:
-          rid: 4447245722177241206
-    - rid: 4447245722177241201
+          rid: 4447245901782581542
+    - rid: 4447245901782581539
       type: {class: SVBoolProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Manual
         propertyType:
-          rid: 4447245722177241236
-    - rid: 4447245722177241206
+          rid: 4447245901782581543
+    - rid: 4447245901782581542
       type: {class: SVBoolPropertyVariable, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         variable: {fileID: 7797513572245356268}
         variableName: IsInteracted
-    - rid: 4447245722177241236
+    - rid: 4447245901782581543
       type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         value: 0
-    - rid: 4447245722177241237
+    - rid: 4447245901782581544
       type: {class: SVGameObjectInstructionDestroy, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         target:
-          rid: 4447245722177241238
-        delay: 0
+          rid: 4447245901782581545
+        delay: 1
         detachChildren: 0
         waitToFinish: 0
-    - rid: 4447245722177241238
+    - rid: 4447245901782581545
       type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Manual
         propertyType:
-          rid: 4447245722177241240
-    - rid: 4447245722177241240
+          rid: 4447245901782581547
+    - rid: 4447245901782581547
       type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         value: {fileID: 169995019471375795}
-    - rid: 4447245722177241241
-      type: {class: SVLifecycleSignalOnStart, ns: __SARV.Framework.Kernal.Signal, asm: Assembly-CSharp}
-      data: 
 --- !u!1 &4162449219636990334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,170 +2502,170 @@ MonoBehaviour:
   description: Interact to the body
   signal: Input/Interact
   signalComponent:
-    rid: 4447245640774189349
+    rid: 4447245901782581528
   tooltip: 
   instruction:
     instruction: 
     instructions:
-    - rid: 4447245722177241286
-    - rid: 4447245700635295903
-    - rid: 4447245700635295907
-    - rid: 4447245654144843911
-    - rid: 4447245677697171637
-    - rid: 4447245677697171624
-    - rid: 4447245677697171648
-    - rid: 4447245722177241229
-    - rid: 4447245722177241278
-    - rid: 4447245700635295919
+    - rid: 4447245911618748416
+    - rid: 4447245911618748420
+    - rid: 4447245901782581529
+    - rid: 4447245911618748532
+    - rid: 4447245911618748522
+    - rid: 4447245911618748501
+    - rid: 4447245911618748539
+    - rid: 4447245911618748536
+    - rid: 4447245911618748527
+    - rid: 4447245911618748523
   references:
     version: 2
     RefIds:
-    - rid: 4447245640774189349
-      type: {class: SVInputSignalInteract, ns: __SARV.Framework.Kernal.Signal.Input, asm: Assembly-CSharp}
+    - rid: 4447245901782581528
+      type: {class: SVInputSignalInteract, ns: __SARV.Framework.Kernal.Signal, asm: Assembly-CSharp}
       data:
         interactor: {fileID: 7195092262961123222}
-    - rid: 4447245654144843911
-      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
+    - rid: 4447245901782581529
+      type: {class: SVActorInstructionSetInteractor, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         actor:
-          rid: 4447245654144843912
-        behavior: {fileID: 11400000, guid: af8cc05eb10d3a447b392f849c4a70de, type: 2}
-    - rid: 4447245654144843912
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+          rid: 4447245901782581530
+        interactor: {fileID: 7195092262961123222}
+    - rid: 4447245901782581530
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Player
         propertyType:
-          rid: 4447245677697171552
-    - rid: 4447245677697171552
-      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+          rid: 4447245901782581532
+    - rid: 4447245901782581532
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
-    - rid: 4447245677697171624
-      type: {class: SVDialogueInstructionRun, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+    - rid: 4447245911618748416
+      type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        target:
+          rid: 4447245911618748417
+        activate: 0
+    - rid: 4447245911618748417
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245911618748419
+    - rid: 4447245911618748419
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 4067096876951502940}
+    - rid: 4447245911618748420
+      type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        target:
+          rid: 4447245911618748421
+        activate: 0
+    - rid: 4447245911618748421
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245911618748422
+    - rid: 4447245911618748422
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 3192215957941721016}
+    - rid: 4447245911618748501
+      type: {class: SVDialogueInstructionPlay, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         dialogue: {fileID: 7264043201672733933}
         waitToFinish: 1
-    - rid: 4447245677697171637
-      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        duration: 0.8
-        realTime: 0
-    - rid: 4447245677697171648
-      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
+    - rid: 4447245911618748522
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         duration: 1
         realTime: 0
-    - rid: 4447245700635295903
-      type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 1
-        target:
-          rid: 4447245700635295904
-        activate: 0
-    - rid: 4447245700635295904
-      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 4447245700635295906
-    - rid: 4447245700635295906
-      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 4067096876951502940}
-    - rid: 4447245700635295907
-      type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 1
-        target:
-          rid: 4447245700635295908
-        activate: 0
-    - rid: 4447245700635295908
-      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 4447245700635295911
-    - rid: 4447245700635295911
-      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {fileID: 3192215957941721016}
-    - rid: 4447245700635295919
+    - rid: 4447245911618748523
       type: {class: SVGameObjectInstructionDestroy, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
-        disabled: 1
+        disabled: 0
         target:
-          rid: 4447245700635295920
+          rid: 4447245911618748524
         delay: 0
         detachChildren: 0
         waitToFinish: 0
-    - rid: 4447245700635295920
+    - rid: 4447245911618748524
       type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Manual
         propertyType:
-          rid: 4447245700635295922
-    - rid: 4447245700635295922
+          rid: 4447245911618748526
+    - rid: 4447245911618748526
       type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         value: {fileID: 169995019471375795}
-    - rid: 4447245722177241229
-      type: {class: SVVariableInstructionSetBool, ns: __SARV.Framework.Kernal.Instruction.Variable, asm: Assembly-CSharp}
+    - rid: 4447245911618748527
+      type: {class: SVVariableInstructionSetBool, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
-        disabled: 1
+        disabled: 0
         variable:
-          rid: 4447245722177241235
+          rid: 4447245911618748528
         variableValue:
-          rid: 4447245722177241231
-    - rid: 4447245722177241231
-      type: {class: SVBoolProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 4447245722177241234
-    - rid: 4447245722177241234
-      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: 1
-    - rid: 4447245722177241235
+          rid: 4447245911618748529
+    - rid: 4447245911618748528
       type: {class: SVBoolPropertyVariable, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         variable: {fileID: 7797513572245356268}
         variableName: IsInteracted
-    - rid: 4447245722177241278
-      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
+    - rid: 4447245911618748529
+      type: {class: SVBoolProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245911618748531
+    - rid: 4447245911618748531
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 4447245911618748532
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         actor:
-          rid: 4447245722177241279
+          rid: 4447245911618748533
+        behavior: {fileID: 11400000, guid: af8cc05eb10d3a447b392f849c4a70de, type: 2}
+    - rid: 4447245911618748533
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245911618748535
+    - rid: 4447245911618748535
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245911618748536
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245911618748537
         behavior: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
-    - rid: 4447245722177241279
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+    - rid: 4447245911618748537
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Player
         propertyType:
-          rid: 4447245722177241281
-    - rid: 4447245722177241281
-      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
+          rid: 4447245911618748538
+    - rid: 4447245911618748538
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
-    - rid: 4447245722177241286
-      type: {class: SVActorInstructionSetInteractor, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
+    - rid: 4447245911618748539
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
-        actor:
-          rid: 4447245722177241287
-        interactor: {fileID: 7195092262961123222}
-    - rid: 4447245722177241287
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
-      data:
-        property: Player
-        propertyType:
-          rid: 4447245722177241289
-    - rid: 4447245722177241289
-      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
-      data: 
+        duration: 0.5
+        realTime: 0
 --- !u!1 &8114939955890265525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,7 +2771,7 @@ GameObject:
   - component: {fileID: 8333839699262700667}
   - component: {fileID: 7264043201672733933}
   m_Layer: 0
-  m_Name: Play the dialogue when interacted with
+  m_Name: 'Dialogue : Greeks Spared No One'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2804,7 +2804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2896ebe1d9714edc8d9b9cb563ff14bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Play the dialogue when interacted with
+  description: 'Dialogue : Greeks Spared No One'
   dialogues:
   - type: 10
     advanceMode: 30
@@ -2818,7 +2818,7 @@ MonoBehaviour:
     onExitInstruction:
       instruction: 
       instructions:
-      - rid: 4447245677697171636
+      - rid: 4447245901782581533
     dialogues: []
   - type: 10
     advanceMode: 30
@@ -2836,8 +2836,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4447245677697171636
-      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
+    - rid: 4447245901782581533
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         duration: 0.3
@@ -3114,89 +3114,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6385949768836307698}
     m_Modifications:
-    - target: {fileID: 464756469739844130, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.93499786
-      objectReference: {fileID: 0}
-    - target: {fileID: 464756469739844130, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.9579996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216632634698626278, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.1059964
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216632634698626278, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216632634698626278, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.92799896
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813932836274715741, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.3420079
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813932836274715741, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813932836274715741, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.37300354
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156733422479656201, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.93201107
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156733422479656201, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156733422479656201, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.0099934
-      objectReference: {fileID: 0}
     - target: {fileID: 4784487378079281364, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
       propertyPath: m_Name
       value: Interactor_Examine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6776552641414306044, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.1099967
-      objectReference: {fileID: 0}
-    - target: {fileID: 6776552641414306044, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6776552641414306044, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.6390079
-      objectReference: {fileID: 0}
-    - target: {fileID: 7854416586523328875, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.3190029
-      objectReference: {fileID: 0}
-    - target: {fileID: 7854416586523328875, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7854416586523328875, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.52699655
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555114554871497359, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.293994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555114554871497359, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555114554871497359, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.06600022
       objectReference: {fileID: 0}
     - target: {fileID: 8833215221320404227, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3237,18 +3157,6 @@ PrefabInstance:
     - target: {fileID: 8833215221320404227, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9191995057733341823, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.2920035
-      objectReference: {fileID: 0}
-    - target: {fileID: 9191995057733341823, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9191995057733341823, guid: b94882a02f2a74148b54e2569ad23ddb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.40999222
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

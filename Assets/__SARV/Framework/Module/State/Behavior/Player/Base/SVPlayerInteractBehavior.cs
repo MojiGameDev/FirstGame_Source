@@ -30,8 +30,8 @@ namespace __SARV.Framework.Module.State.Behavior.Base
             IsSnapping = true;
             SnapTimer = 0f;
 
-            TargetPosition = Player.LastInteractor.ClosestPoint.position;
-            TargetRotation = Player.LastInteractor.ClosestPoint.rotation;
+            TargetPosition = Player.LastInteractor.CurrentInteractionPoint.position;
+            TargetRotation = Player.LastInteractor.CurrentInteractionPoint.rotation;
 
             // Store start values
             StartPosition = Player.transform.position;
@@ -48,7 +48,7 @@ namespace __SARV.Framework.Module.State.Behavior.Base
         {
             if (IsSnapping)
             {
-                //HandleSnap(deltaTime);
+                HandleSnap(deltaTime);
             }
         }
 

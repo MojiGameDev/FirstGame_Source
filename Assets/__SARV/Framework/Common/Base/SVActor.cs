@@ -1,5 +1,4 @@
-﻿using System;
-using __SARV.Common.Base;
+﻿using __SARV.Common.Base;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Interactor;
 using UnityEngine;
@@ -11,6 +10,8 @@ namespace __SARV.Framework.Common.Base
         private SARVInteractor _lastInteractor;
 
         public SARVInteractor LastInteractor => _lastInteractor;
+        public Vector3 Position => transform.position;
+        public Vector3 Forward => transform.forward;
 
         public virtual void ChangeBehaviorTo(SARVIdentifier stateIdentifier)
         {

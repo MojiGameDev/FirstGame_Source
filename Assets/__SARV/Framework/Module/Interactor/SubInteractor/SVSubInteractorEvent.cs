@@ -1,5 +1,4 @@
-﻿using System;
-using __SARV.Framework.Module.Interactor.Event;
+﻿using __SARV.Framework.Module.Interactor.Event;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Interactor.SubInteractor

@@ -7,12 +7,12 @@ using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
-using __SARV.Framework.Kernal.Property.Actor;
+using __SARV.Framework.Kernal.Property;
 using __SARV.Framework.Module.Interactor;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Instruction.Actor
+namespace __SARV.Framework.Kernal.Instruction
 {
     [SVTitle("SetInteractor")]
     [SVCategory(SVConstantCategory.Instruction.ACTOR)]

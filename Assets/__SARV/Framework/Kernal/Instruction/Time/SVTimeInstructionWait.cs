@@ -11,7 +11,7 @@ using __SARV.Framework.Kernal.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Instruction.Time
+namespace __SARV.Framework.Kernal.Instruction
 {
     [SVTitle("Wait")]
     [SVCategory(SVConstantCategory.Instruction.TIME)]

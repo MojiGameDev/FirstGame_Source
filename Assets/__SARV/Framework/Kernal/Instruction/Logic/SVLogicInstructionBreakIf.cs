@@ -9,7 +9,7 @@ using __SARV.Framework.Common.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Instruction.Logic
+namespace __SARV.Framework.Kernal.Instruction
 {
     [SVTitle("BreakIf")]
     [SVCategory(SVConstantCategory.Instruction.LOGIC)]

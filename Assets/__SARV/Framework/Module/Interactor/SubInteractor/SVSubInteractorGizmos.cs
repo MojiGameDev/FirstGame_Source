@@ -62,8 +62,8 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
                     continue;
                 }
 
-                var pointColor = _closestPoint != null && isTargetDetected && point == _closestPoint ? gizmoArchCurrentPointColor : gizmoArchPointColor;
-                var archColor = _closestPoint != null && isTargetDetected && point == _closestPoint ? gizmoArchCurrentColor : gizmoArchColor;
+                var pointColor = CurrentInteractionPoint != null && isTargetDetected && point == CurrentInteractionPoint ? gizmoArchCurrentPointColor : gizmoArchPointColor;
+                var archColor = CurrentInteractionPoint != null && isTargetDetected && point == CurrentInteractionPoint ? gizmoArchCurrentColor : gizmoArchColor;
                 SVGizmosUtils.DrawArch(point, interactionAngle, gizmoArchPointRadius, pointColor, interactionRange, archColor);
             }
         }

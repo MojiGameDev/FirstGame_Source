@@ -7,7 +7,7 @@ using __SARV.Framework.Module.Interactor;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Signal.Input
+namespace __SARV.Framework.Kernal.Signal
 {
     [SVTitle("Interact")]
     [SVCategory(SVConstantCategory.Signal.INPUT)]

@@ -10,7 +10,7 @@ using __SARV.Framework.Kernal.Property;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Instruction.Variable
+namespace __SARV.Framework.Kernal.Instruction
 {
     [SVTitle("SetBool")]
     [SVCategory(SVConstantCategory.Instruction.VARIABLE)]

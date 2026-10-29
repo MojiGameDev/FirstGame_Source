@@ -6,7 +6,7 @@ using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
 
-namespace __SARV.Framework.Kernal.Property.Actor
+namespace __SARV.Framework.Kernal.Property
 {
     [SVTitle("Player")]
     [SVCategory(SVConstantCategory.Property.ACTOR)]
