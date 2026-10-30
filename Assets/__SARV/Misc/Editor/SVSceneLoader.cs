@@ -87,6 +87,15 @@ namespace __SARV.Misc.Editor
             EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Architecture.unity", OpenSceneMode.Single);
         }
 
+        [MenuItem("SARV/Scene/Demo_Atmosphere")]
+        public static void DemoAtmosphere()
+        {
+            // Close all current scenes first
+            CloseAllScenes();
+
+            EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Atmosphere.unity", OpenSceneMode.Single);
+        }
+
         [MenuItem("SARV/Scene/Demo_Animation")]
         public static void DemoAnimation()
         {

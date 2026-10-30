@@ -33,11 +33,11 @@ namespace __SARV.Framework.Kernal
         private string SignalTitle => $"{(IsSignalComponentNull ? "..." : signalComponent.GetType().GetTitle())}";
 
         private bool _isExecuting;
-        private SVArgument _argument;
+        public SVArgument Argument;
 
         protected override void Awake()
         {
-            _argument = SVArgument.Create(gameObject);
+            Argument = SVArgument.Create(gameObject);
             Signal.HandleAwake(this);
         }
 
@@ -102,7 +102,7 @@ namespace __SARV.Framework.Kernal
 
             try
             {
-                await instruction.ExecuteInstructions(_argument);
+                await instruction.ExecuteInstructions(Argument);
             }
             finally
             {
