@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Module.Actor;
 
 namespace __SARV.Framework.Kernal.Property
 {

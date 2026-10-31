@@ -13,31 +13,31 @@ namespace __SARV.Framework.Module.Dialogue.Entity
     [Serializable]
     public class SVDialogueNode : SVSerializable
     {
-        [FoldoutGroup("$GroupTitle")] [SerializeField]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField]
         private SVDialogueNodeType type = SVDialogueNodeType.Text;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideIf(nameof(IsTypeRandom))]
         private SVDialogueNodeAdvanceMode advanceMode = SVDialogueNodeAdvanceMode.Interact;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [ShowIf(nameof(IsDelayMustShowed))] [PropertyRange(0f, 15f)]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [ShowIf(nameof(IsDelayMustShowed))] [PropertyRange(0f, 15f)]
         private float delay = 4f;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
         private SARVLocalizer text;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [ShowIf(nameof(IsDelayMustShowed))] [PropertyRange(0f, 15f)]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [ShowIf(nameof(IsDelayMustShowed))] [PropertyRange(0f, 15f)]
         private float subtitleDelay = 2f;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideIf(nameof(IsTypeRandom))] [Required]
         private SARVSpeaker speaker;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [Title("OnEnter")] [HideLabel]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Title("OnEnter")] [HideLabel]
         private SVInstruction onEnterInstruction;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeField] [Title("OnExit")] [HideLabel]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Title("OnExit")] [HideLabel]
         private SVInstruction onExitInstruction;
 
-        [FoldoutGroup("$GroupTitle")] [SerializeReference] [HideReferenceObjectPicker] [LabelText("$DialoguesLabel")] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)]
+        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideReferenceObjectPicker] [LabelText("$" + nameof(DialoguesLabel))] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [Title("")] [PropertySpace(spaceBefore: -15)]
         private List<SVDialogueNode> dialogues = new();
 
         private string DialoguesLabel => $"{dialogues.Count} Sub Dialogues";

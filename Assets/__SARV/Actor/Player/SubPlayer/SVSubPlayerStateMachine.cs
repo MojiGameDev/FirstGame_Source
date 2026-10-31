@@ -29,10 +29,5 @@ namespace __SARV.Actor.Player.SubPlayer
             base.Update();
             StateMachine.HandleUpdate(Time.deltaTime);
         }
-
-        public override void ChangeBehaviorTo(SARVIdentifier stateIdentifier)
-        {
-            StateMachine.ChangeBehaviorTo(stateIdentifier);
-        }
     }
 }

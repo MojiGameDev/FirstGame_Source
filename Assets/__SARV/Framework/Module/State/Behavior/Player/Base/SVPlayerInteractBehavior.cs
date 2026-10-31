@@ -30,18 +30,18 @@ namespace __SARV.Framework.Module.State.Behavior.Base
             IsSnapping = true;
             SnapTimer = 0f;
 
-            TargetPosition = Player.LastInteractor.CurrentInteractionPoint.position;
-            TargetRotation = Player.LastInteractor.CurrentInteractionPoint.rotation;
+            TargetPosition = Player.Character.CurrentInteractor.CurrentInteractionPoint.position;
+            TargetRotation = Player.Character.CurrentInteractor.CurrentInteractionPoint.rotation;
 
             // Store start values
             StartPosition = Player.transform.position;
             StartRotation = Player.transform.rotation;
 
-            PreviousMovementMode = Player.Character.GetMovementMode();
-            PreviousRotationMode = Player.Character.GetRotationMode();
+            PreviousMovementMode = Player.ECMCharacter.GetMovementMode();
+            PreviousRotationMode = Player.ECMCharacter.GetRotationMode();
 
-            Player.Character.SetMovementMode(ECM2.Character.MovementMode.None);
-            Player.Character.SetRotationMode(ECM2.Character.RotationMode.None);
+            Player.ECMCharacter.SetMovementMode(ECM2.Character.MovementMode.None);
+            Player.ECMCharacter.SetRotationMode(ECM2.Character.RotationMode.None);
         }
 
         public override void Tick(float deltaTime)
@@ -54,8 +54,8 @@ namespace __SARV.Framework.Module.State.Behavior.Base
 
         public override async Task Exit()
         {
-            Player.Character.SetMovementMode(PreviousMovementMode);
-            Player.Character.SetRotationMode(PreviousRotationMode);
+            Player.ECMCharacter.SetMovementMode(PreviousMovementMode);
+            Player.ECMCharacter.SetRotationMode(PreviousRotationMode);
             await base.Exit();
         }
 

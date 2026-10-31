@@ -1,7 +1,4 @@
-﻿using __SARV.Common.Base;
-using __SARV.Framework;
-using __SARV.Framework.Common.Base;
-using __SARV.Framework.Module.State;
+﻿using __SARV.Framework.Module.Actor;
 using Animancer;
 using ECM2;
 using Sirenix.OdinInspector;
@@ -12,14 +9,12 @@ namespace __SARV.Actor.Player.SubPlayer
     public abstract class SVSubPlayerReference : SVActor
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
-        private Character character;
+        protected Character ecmCharacter;
 
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
-        private AnimancerComponent animancerComponent;
+        protected AnimancerComponent animancerComponent;
 
-        public Vector3 Position => transform.position;
-        public Vector3 Forward => transform.forward;
         public AnimancerComponent AnimancerComponent => animancerComponent;
-        public Character Character => character;
+        public Character ECMCharacter => ecmCharacter;
     }
 }

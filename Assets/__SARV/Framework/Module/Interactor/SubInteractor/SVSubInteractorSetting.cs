@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Kernal.Property;
+using __SARV.Framework.Module.Actor;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

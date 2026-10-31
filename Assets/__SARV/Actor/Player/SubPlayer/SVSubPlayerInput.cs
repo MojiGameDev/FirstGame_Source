@@ -23,30 +23,9 @@ namespace __SARV.Actor.Player.SubPlayer
         [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Roll")]
         private string playerRollKey = "PlayerRoll";
 
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("AttackSword")]
-        private string playerAttackSwordKey = "PlayerAttackSword";
-
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("AttackBow")]
-        private string playerAttackBowKey = "PlayerAttackBow";
-
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("AttackSpear")]
-        private string playerAttackSpearKey = "PlayerAttackSpear";
-
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("AttackDualSword")]
-        private string playerAttackDualSwordKey = "PlayerAttackDualSword";
-
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("ComboSwitchA")]
-        private string playerComboSwitchAKey = "PlayerComboSwitchA";
-
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("ComboSwitchB")]
-        private string playerComboSwitchBKey = "PlayerComboSwitchB";
-
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("ComboSwitchC")]
-        private string playerComboSwitchCKey = "PlayerComboSwitchC";
-
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("ComboSwitchD")]
-        private string playerComboSwitchDKey = "PlayerComboSwitchD";
-
+        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Attack")]
+        private string playerAttackKey = "PlayerAttack";
+        
         [FoldoutGroup("Input")] [BoxGroup("Input/Debug")] [HorizontalGroup("Input/Debug/MovementDirection")] [SerializeField] [ReadOnly]
         private Vector3 inputMovementDirection;
 
@@ -55,14 +34,7 @@ namespace __SARV.Actor.Player.SubPlayer
         private int _playerSprintId;
         private int _playerInteractId;
         private int _playerRollId;
-        private int _playerAttackSwordId;
-        private int _playerAttackBowId;
-        private int _playerAttackSpearId;
-        private int _playerAttackDualSwordId;
-        private int _playerComboSwitchAId;
-        private int _playerComboSwitchBId;
-        private int _playerComboSwitchCId;
-        private int _playerComboSwitchDId;
+        private int _playerAttackId;
 
         private float InputMoveHorizontal => SARVGame.Instance.Player.GetAxisRaw(_playerMoveHorizontalId);
         private float InputMoveVertical => SARVGame.Instance.Player.GetAxisRaw(_playerMoveVerticalId);
@@ -70,14 +42,7 @@ namespace __SARV.Actor.Player.SubPlayer
 
         public bool InputInteract => SARVGame.Instance.Player.GetButtonDown(_playerInteractId);
         // public bool InputRoll => SARVGame.Instance.Player.GetButtonDown(_playerRollId);
-        // public bool InputAttackSword => SARVGame.Instance.Player.GetButtonDown(_playerAttackSwordId);
-        // public bool InputAttackBow => SARVGame.Instance.Player.GetButtonDown(_playerAttackBowId);
-        // public bool InputAttackSpear => SARVGame.Instance.Player.GetButtonDown(_playerAttackSpearId);
-        // public bool InputAttackDualSword => SARVGame.Instance.Player.GetButtonDown(_playerAttackDualSwordId);
-        // public bool InputComboSwitchA => SARVGame.Instance.Player.GetButtonDown(_playerComboSwitchAId);
-        // public bool InputComboSwitchB => SARVGame.Instance.Player.GetButtonDown(_playerComboSwitchBId);
-        // public bool InputComboSwitchC => SARVGame.Instance.Player.GetButtonDown(_playerComboSwitchCId);
-        // public bool InputComboSwitchD => SARVGame.Instance.Player.GetButtonDown(_playerComboSwitchDId);
+        // public bool InputAttack => SARVGame.Instance.Player.GetButtonDown(_playerAttackId);
 
         public Vector3 InputMovementDirection => inputMovementDirection;
 
@@ -91,14 +56,7 @@ namespace __SARV.Actor.Player.SubPlayer
             _playerSprintId = ReInput.mapping.GetActionId(playerSprintKey);
             _playerInteractId = ReInput.mapping.GetActionId(playerInteractKey);
             // _playerRollId = ReInput.mapping.GetActionId(playerRollKey);
-            // _playerAttackSwordId = ReInput.mapping.GetActionId(playerAttackSwordKey);
-            // _playerAttackBowId = ReInput.mapping.GetActionId(playerAttackBowKey);
-            // _playerAttackSpearId = ReInput.mapping.GetActionId(playerAttackSpearKey);
-            // _playerAttackDualSwordId = ReInput.mapping.GetActionId(playerAttackDualSwordKey);
-            // _playerComboSwitchAId = ReInput.mapping.GetActionId(playerComboSwitchAKey);
-            // _playerComboSwitchBId = ReInput.mapping.GetActionId(playerComboSwitchBKey);
-            // _playerComboSwitchCId = ReInput.mapping.GetActionId(playerComboSwitchCKey);
-            // _playerComboSwitchDId = ReInput.mapping.GetActionId(playerComboSwitchDKey);
+            // _playerAttackId = ReInput.mapping.GetActionId(playerAttackKey);
         }
 
         protected override void Update()

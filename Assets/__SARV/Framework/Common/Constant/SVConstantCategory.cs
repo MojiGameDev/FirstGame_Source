@@ -19,6 +19,7 @@
             public const string VARIABLE = "Variable";
             public const string GAME_OBJECT = "GameObject";
             public const string LOGIC = "Logic";
+            public const string MELEE = "Melee";
         }
 
         public static class Branch
@@ -35,6 +36,7 @@
             public const string VECTOR3 = "Vector3";
             public const string GAME_OBJECT = "GameObject";
             public const string FLOAT = "Float";
+            public const string INPUT = "Input";
         }
 
         public static class Setter
