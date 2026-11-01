@@ -4,7 +4,7 @@ using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Actor.SubCharacter
+namespace __SARV.Framework.Module.Actor.SubActor
 {
     public abstract class SVSubActorFootstep : SVSubActorStateMachine
     {

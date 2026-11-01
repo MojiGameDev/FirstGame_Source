@@ -4,6 +4,7 @@ using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Module.Actor.Access;
 using UnityEngine;
 
 namespace __SARV.Framework.Kernal.Property

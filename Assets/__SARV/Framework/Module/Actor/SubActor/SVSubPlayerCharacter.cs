@@ -1,10 +1,8 @@
-﻿using __SARV.Framework.Module.Identifier;
-using DG.Tweening;
-using ECM2;
+﻿using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Actor.Player.SubPlayer
+namespace __SARV.Framework.Module.Actor.SubActor
 {
     public abstract class SVSubPlayerCharacter : SVSubPlayerTrait
     {

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using __SARV.Common.Access;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Utils;
+using __SARV.Framework.Module.Actor.Access;
 using __SARV.Framework.Module.Dialogue.Entity;
 using __SARV.Framework.Module.Dialogue.Enum;
 using __SARV.Framework.Module.Subtitle;

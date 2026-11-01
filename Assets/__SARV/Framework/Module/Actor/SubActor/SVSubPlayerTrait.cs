@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Actor.Player.SubPlayer
+namespace __SARV.Framework.Module.Actor.SubActor
 {
     public abstract class SVSubPlayerTrait : SVSubPlayerInput
     {

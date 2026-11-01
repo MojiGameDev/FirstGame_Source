@@ -1,11 +1,20 @@
-﻿using __SARV.Framework.Module.Actor.SubCharacter;
+﻿using __SARV.Common.Access;
+using __SARV.Framework.Module.Actor.Access;
+using __SARV.Framework.Module.Actor.Enum;
+using __SARV.Framework.Module.Actor.SubActor;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor
 {
-    public abstract class SVActor : SVSubActorGeneral
+    public class SVActor : SVSubActorInstruction
     {
-        public Vector3 Position => transform.position;
-        public Vector3 Forward => transform.forward;
+        protected override void Awake()
+        {
+            if (type == SVActorType.Player)
+            {
+                SVAccessPlayer.Initial(this);
+            }
+            base.Awake();
+        }
     }
 }

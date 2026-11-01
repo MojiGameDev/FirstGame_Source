@@ -4,7 +4,7 @@ using __SARV.Framework.Module.Actor.Enum;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Actor.SubCharacter
+namespace __SARV.Framework.Module.Actor.SubActor
 {
     [Serializable]
     public abstract class SVSubActorType : SVOverrideMonoBehaviour

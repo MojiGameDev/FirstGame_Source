@@ -15,7 +15,7 @@ namespace __SARV.Framework.Module.State.Behavior
         public override async Task Enter()
         {
             await base.Enter();
-            Player.Animancer.Play(Identifier);
+            Player.PlayAnimancer(Identifier);
         }
     }
 }

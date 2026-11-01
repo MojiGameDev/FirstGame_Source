@@ -1,6 +1,6 @@
-﻿namespace __SARV.Actor.Common.Enum
+﻿namespace __SARV.Framework.Module.Actor.Enum
 {
-    public enum SVCharacterMovementSpeed
+    public enum SVActorSpeed
     {
         NotMoving = 0,
         Idle = 10,

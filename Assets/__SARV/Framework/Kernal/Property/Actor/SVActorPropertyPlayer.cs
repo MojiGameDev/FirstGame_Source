@@ -6,6 +6,7 @@ using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Component;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Module.Actor;
+using __SARV.Framework.Module.Actor.Access;
 
 namespace __SARV.Framework.Kernal.Property
 {

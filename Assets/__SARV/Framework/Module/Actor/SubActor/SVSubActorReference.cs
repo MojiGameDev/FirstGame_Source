@@ -5,7 +5,7 @@ using ECM2;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Actor.SubCharacter
+namespace __SARV.Framework.Module.Actor.SubActor
 {
     [Serializable]
     public abstract class SVSubActorReference : SVSubActorType
@@ -19,6 +19,8 @@ namespace __SARV.Framework.Module.Actor.SubCharacter
         public Character ECMCharacter => ecmCharacter;
         public AnimancerComponent AnimancerComponent => animancerComponent;
         protected SVArgument Argument;
+        public Vector3 Position => transform.position;
+        public Vector3 Forward => transform.forward;
 
         protected override void Awake()
         {

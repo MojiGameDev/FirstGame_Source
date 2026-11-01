@@ -1,5 +1,4 @@
-﻿using __SARV.Framework.Module.State;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace __SARV.Common.Base
 {
@@ -9,9 +8,9 @@ namespace __SARV.Common.Base
         public static GameObject GameObject => Instance != null ? Instance.gameObject : null;
         public static Transform Transform => Instance != null ? Instance.transform : null;
 
-        public static void Initial(TType sarv)
+        public static void Initial(TType actor)
         {
-            Instance = sarv;
+            Instance = actor;
         }
     }
 }

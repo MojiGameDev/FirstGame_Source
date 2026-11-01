@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using __SARV.Actor.Common.Enum;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Module.Actor.Enum;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.State.Behavior.Base;
 using Animancer;
@@ -45,12 +45,12 @@ namespace __SARV.Framework.Module.State.Behavior
             await base.Enter();
             _smoothedFloatParameterMovementSpeed = new SmoothedFloatParameter(
                 Player.AnimancerComponent,
-                Player.Animancer.RuntimeAlias[parameterMovementSpeed],
+                Player.RuntimeAnimancerAlias[parameterMovementSpeed],
                 PARAMETER_MOVEMENT_SPEED_SMOOTH_TIME);
-            Player.Animancer.Play(Identifier);
+            Player.PlayAnimancer(Identifier);
             Player.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
-            Player.SetMovementSpeed(SVCharacterMovementSpeed.Idle);
+            Player.SetMovementSpeed(SVActorSpeed.Idle);
         }
 
         public override void Tick(float deltaTime)
@@ -74,7 +74,7 @@ namespace __SARV.Framework.Module.State.Behavior
                 return;
             }
 
-            if (Player.MovementSpeed == SVCharacterMovementSpeed.Sprint)
+            if (Player.MovementSpeed == SVActorSpeed.Sprint)
             {
                 Player.UpdateSpeed(sprintSpeed, sprintRotationRate);
             }
@@ -86,14 +86,14 @@ namespace __SARV.Framework.Module.State.Behavior
 
         private void HandleMovementSpeedParameter()
         {
-            SVCharacterMovementSpeed newMovementSpeed;
+            SVActorSpeed newMovementSpeed;
             if (Player.InputMovementDirection.HasValue())
             {
-                newMovementSpeed = Player.InputSprint ? SVCharacterMovementSpeed.Sprint : SVCharacterMovementSpeed.Run;
+                newMovementSpeed = Player.InputSprint ? SVActorSpeed.Sprint : SVActorSpeed.Run;
             }
             else
             {
-                newMovementSpeed = SVCharacterMovementSpeed.Idle;
+                newMovementSpeed = SVActorSpeed.Idle;
             }
 
             if (Player.MovementSpeed == newMovementSpeed)
@@ -113,13 +113,13 @@ namespace __SARV.Framework.Module.State.Behavior
             var movementSpeed = 0;
             switch (Player.MovementSpeed)
             {
-                case SVCharacterMovementSpeed.Idle:
+                case SVActorSpeed.Idle:
                     movementSpeed = PARAMETER_MOVEMENT_SPEED_IDLE;
                     break;
-                case SVCharacterMovementSpeed.Run:
+                case SVActorSpeed.Run:
                     movementSpeed = PARAMETER_MOVEMENT_SPEED_RUN;
                     break;
-                case SVCharacterMovementSpeed.Sprint:
+                case SVActorSpeed.Sprint:
                     movementSpeed = PARAMETER_MOVEMENT_SPEED_SPRINT;
                     break;
             }
