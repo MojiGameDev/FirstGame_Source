@@ -30,8 +30,8 @@ namespace __SARV.Framework.Module.State.Behavior.Base
             IsSnapping = true;
             SnapTimer = 0f;
 
-            TargetPosition = Player.Character.CurrentInteractor.CurrentInteractionPoint.position;
-            TargetRotation = Player.Character.CurrentInteractor.CurrentInteractionPoint.rotation;
+            TargetPosition = Player.CurrentInteractor.CurrentInteractionPoint.position;
+            TargetRotation = Player.CurrentInteractor.CurrentInteractionPoint.rotation;
 
             // Store start values
             StartPosition = Player.transform.position;

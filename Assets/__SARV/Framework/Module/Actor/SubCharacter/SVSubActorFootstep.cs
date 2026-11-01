@@ -4,9 +4,9 @@ using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Actor.Player.SubPlayer
+namespace __SARV.Framework.Module.Actor.SubCharacter
 {
-    public abstract class SVSubPlayerFootstep : SVSubPlayerInput
+    public abstract class SVSubActorFootstep : SVSubActorStateMachine
     {
         [FoldoutGroup("Footstep")] [BoxGroup("Footstep/Event")] [SerializeField] [HideLabel] [Required]
         private StringAsset footstepEvent;

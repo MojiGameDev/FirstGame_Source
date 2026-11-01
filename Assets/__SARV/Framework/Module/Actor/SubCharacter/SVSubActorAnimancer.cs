@@ -2,9 +2,9 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Actor.Player.SubPlayer
+namespace __SARV.Framework.Module.Actor.SubCharacter
 {
-    public abstract class SVSubPlayerAnimancer : SVSubPlayerFootstep
+    public abstract class SVSubActorAnimancer : SVSubActorFootstep
     {
         [FoldoutGroup("Animancer")] [SerializeField] [HideLabel]
         private SVAnimancer animancer;

@@ -9,19 +9,19 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Actor.SubCharacter
 {
     [Serializable]
-    public abstract class SVSubCharacterActor : SVSubCharacterCombat
+    public abstract class SVSubActorGeneral : SVSubActorCombat
     {
         public void SetInteractor(SARVInteractor interactor)
         {
             CurrentInteractor = interactor;
         }
 
-        public void AttachProp(Animator animator, GameObject prop, SVBone bone, Vector3 position, Vector3 rotation)
+        public void AttachProp(GameObject prop, SVBone bone, Vector3 position, Vector3 rotation)
         {
             var index = PropCache.IndexOf(prop);
             if (index == -1)
             {
-                var boneTransform = bone.GetTransform(animator);
+                var boneTransform = bone.GetTransform(animancerComponent.Animator);
                 var instance = UnityEngine.Object.Instantiate(prop, boneTransform, true);
                 instance.transform.localPosition = position;
                 instance.transform.localRotation = Quaternion.Euler(rotation);

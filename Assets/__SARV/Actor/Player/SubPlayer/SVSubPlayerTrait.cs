@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace __SARV.Actor.Player.SubPlayer
 {
-    public abstract class SVSubPlayerTrait : SVSubPlayerStateMachine
+    public abstract class SVSubPlayerTrait : SVSubPlayerInput
     {
         [FoldoutGroup("Trait")] [BoxGroup("Trait/Attribute")] [TabGroup("Trait/Attribute/Attribute", "Health")] [SerializeField] [Required] [HideLabel] [HideReferenceObjectPicker]
         private SVAttribute healthAttribute;

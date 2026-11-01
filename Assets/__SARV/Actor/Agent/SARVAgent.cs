@@ -15,35 +15,5 @@ namespace __SARV.Actor.Agent
             //SetArgument(this);
             base.Awake();
         }
-
-        public override void ChangeBehaviorTo(SARVIdentifier stateIdentifier)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void SetInteractor(SARVInteractor interactor)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void AttachProp(GameObject prop, SVBone bone, Vector3 position, Vector3 rotation)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Equip(SARVMelee melee)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Unequip()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override SARVMelee GetCurrentMelee()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

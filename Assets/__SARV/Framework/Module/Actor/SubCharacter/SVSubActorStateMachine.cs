@@ -1,11 +1,13 @@
-﻿using __SARV.Framework.Module.Identifier;
+﻿using System;
+using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.State;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Actor.Player.SubPlayer
+namespace __SARV.Framework.Module.Actor.SubCharacter
 {
-    public abstract class SVSubPlayerStateMachine : SVSubPlayerAnimancer
+    [Serializable]
+    public abstract class SVSubActorStateMachine : SVSubActorData
     {
         [FoldoutGroup("StateMachine")] [SerializeField] [HideLabel]
         private SVStateMachine stateMachine;

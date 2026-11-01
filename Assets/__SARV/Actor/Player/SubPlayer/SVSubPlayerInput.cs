@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using __SARV.Framework.Module.Actor;
 using __SARV.SceneControl.Game;
 using Rewired;
 using Sirenix.OdinInspector;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace __SARV.Actor.Player.SubPlayer
 {
-    public abstract class SVSubPlayerInput : SVSubPlayerReference
+    public abstract class SVSubPlayerInput : SVActor
     {
         [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("MoveHorizontal")]
         private string playerMoveHorizontalKey = "PlayerMoveHorizontal";

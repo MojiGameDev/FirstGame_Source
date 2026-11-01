@@ -50,7 +50,7 @@ namespace __SARV.Framework.Module.State.Behavior
             Player.Animancer.Play(Identifier);
             Player.UpdateSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
-            Player.Character.SetMovementSpeed(SVCharacterMovementSpeed.Idle);
+            Player.SetMovementSpeed(SVCharacterMovementSpeed.Idle);
         }
 
         public override void Tick(float deltaTime)
@@ -74,7 +74,7 @@ namespace __SARV.Framework.Module.State.Behavior
                 return;
             }
 
-            if (Player.Character.MovementSpeed == SVCharacterMovementSpeed.Sprint)
+            if (Player.MovementSpeed == SVCharacterMovementSpeed.Sprint)
             {
                 Player.UpdateSpeed(sprintSpeed, sprintRotationRate);
             }
@@ -96,14 +96,14 @@ namespace __SARV.Framework.Module.State.Behavior
                 newMovementSpeed = SVCharacterMovementSpeed.Idle;
             }
 
-            if (Player.Character.MovementSpeed == newMovementSpeed)
+            if (Player.MovementSpeed == newMovementSpeed)
             {
                 _isMovementSpeedParameterChanged = false;
                 return;
             }
 
             _isMovementSpeedParameterChanged = true;
-            Player.Character.SetMovementSpeed(newMovementSpeed);
+            Player.SetMovementSpeed(newMovementSpeed);
 
             _smoothedFloatParameterMovementSpeed.TargetValue = GetMovementSpeed();
         }
@@ -111,7 +111,7 @@ namespace __SARV.Framework.Module.State.Behavior
         private int GetMovementSpeed()
         {
             var movementSpeed = 0;
-            switch (Player.Character.MovementSpeed)
+            switch (Player.MovementSpeed)
             {
                 case SVCharacterMovementSpeed.Idle:
                     movementSpeed = PARAMETER_MOVEMENT_SPEED_IDLE;
