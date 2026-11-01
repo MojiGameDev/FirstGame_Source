@@ -4,9 +4,9 @@ using __SARV.Framework.Common.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Melee.SubMelee
+namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
 {
-    public abstract class SVSubMeleeHandling : SVSubMeleeInfo
+    public abstract class SVSubMeleeWeaponHandling : SVSubMeleeWeaponInfo
     {
         [FoldoutGroup("Handling")] [SerializeField] [Title("OnEquip")] [HideLabel]
         private SVInstruction onEquipInstruction;

@@ -3,9 +3,9 @@ using __SARV.Framework.Module.Melee.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Melee.SubMelee
+namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
 {
-    public abstract class SVSubMeleeCombo : SVSubMeleeHandling
+    public abstract class SVSubMeleeWeaponCombo : SVSubMeleeWeaponHandling
     {
         [FoldoutGroup("Combo")] [SerializeField] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [LabelText("$" + nameof(CombosLabel))]
         protected List<SVComboNode> combos = new();

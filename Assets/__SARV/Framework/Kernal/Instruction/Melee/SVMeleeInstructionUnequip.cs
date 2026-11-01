@@ -13,21 +13,21 @@ using UnityEngine;
 
 namespace __SARV.Framework.Kernal.Instruction.Melee
 {
-    [SVTitle("Unequip")]
+    [SVTitle("UnequipWeapon")]
     [SVCategory(SVConstantCategory.Instruction.MELEE)]
-    [SVDescription("Unequips the actor's current melee")]
+    [SVDescription("Unequips the actor's current melee weapon")]
     [Serializable]
-    public class SVMeleeInstructionUnequip : SVInstructionComponent
+    public class SVMeleeInstructionUnequipWeapon : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<SVActor> actor = new SVActorProperty();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Unequips current melee of {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Unequips current melee weapon of {actor}";
 
         protected override async Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             var act = actor.GetValue(argument);
-            act.Unequip();
+            await act.UnequipMeleeWeapon();
             return await SVInstructionResult.DEFAULT_RESULT;
         }
     }

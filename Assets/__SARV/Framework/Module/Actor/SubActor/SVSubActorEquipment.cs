@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using __SARV.Framework.Module.Melee;
 
 namespace __SARV.Framework.Module.Actor.SubActor
@@ -6,15 +7,25 @@ namespace __SARV.Framework.Module.Actor.SubActor
     [Serializable]
     public abstract class SVSubActorEquipment : SVSubActorAnimancer
     {
-        public void Equip(SARVMelee melee)
+        public async Task EquipMeleeWeapon(SARVMeleeWeapon meleeWeapon)
         {
-            CurrentMelee = melee;
-            _ = CurrentMelee.ExecuteEquip(Argument);
+            CurrentMeleeWeapon = meleeWeapon;
+            await CurrentMeleeWeapon.ExecuteEquip(Argument);
+        }
+        public async Task EquipMeleeShield(SARVMeleeShield meleeShield)
+        {
+            CurrentMeleeShield = meleeShield;
+            await CurrentMeleeShield.ExecuteEquip(Argument);
         }
 
-        public void Unequip()
+        public async Task UnequipMeleeWeapon()
         {
-            _ = CurrentMelee.ExecuteEquip(Argument);
+            await CurrentMeleeWeapon.ExecuteUnequip(Argument);
+        }
+
+        public async Task UnequipMeleeShield()
+        {
+            await CurrentMeleeShield.ExecuteUnequip(Argument);
         }
     }
 }

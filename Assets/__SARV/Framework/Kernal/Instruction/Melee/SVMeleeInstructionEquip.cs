@@ -14,24 +14,24 @@ using UnityEngine;
 
 namespace __SARV.Framework.Kernal.Instruction.Melee
 {
-    [SVTitle("Equip")]
+    [SVTitle("EquipWeapon")]
     [SVCategory(SVConstantCategory.Instruction.MELEE)]
-    [SVDescription("Equips the specified melee to Actor")]
+    [SVDescription("Equips the specified melee weapon to Actor")]
     [Serializable]
-    public class SVMeleeInstructionEquip : SVInstructionComponent
+    public class SVMeleeInstructionEquipWeapon : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<SVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
-        private SARVMelee melee;
+        private SARVMeleeWeapon meleeWeapon;
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Equip {(melee == null ? "..." : melee.name)} to {actor}";
-        
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Equip {(meleeWeapon == null ? "..." : meleeWeapon.name)} to {actor}";
+
         protected override async Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             var act = actor.GetValue(argument);
-             act.Equip(melee);
+            await act.EquipMeleeWeapon(meleeWeapon);
             return await SVInstructionResult.DEFAULT_RESULT;
         }
     }

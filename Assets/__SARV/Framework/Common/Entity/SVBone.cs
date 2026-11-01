@@ -11,10 +11,10 @@ namespace __SARV.Framework.Common.Entity
     {
         [SerializeField] private SVBoneType boneType;
 
-        [SerializeField] [ShowIf(nameof(IsBoneTypeHuman))]
+        [SerializeField] [ShowIf(nameof(IsBoneTypeHuman))] [LabelText("Bone")]
         private HumanBodyBones human;
 
-        [SerializeField] [HideIf(nameof(IsBoneTypeHuman))]
+        [SerializeField] [HideIf(nameof(IsBoneTypeHuman))] [LabelText("Bone")]
         private string path;
 
         public bool IsBoneTypeHuman => boneType == SVBoneType.Human;

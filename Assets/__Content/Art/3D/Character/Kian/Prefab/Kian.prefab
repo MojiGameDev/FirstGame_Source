@@ -13951,27 +13951,44 @@ MonoBehaviour:
   instruction:
     instruction: 
     instructions:
-    - rid: 4447245972134428791
+    - rid: 7729762489063702691
+    - rid: 7729762489063702707
   references:
     version: 2
     RefIds:
     - rid: 4447245972134428790
       type: {class: SVLifecycleSignalOnStart, ns: __SARV.Framework.Kernal.Signal, asm: Assembly-CSharp}
       data: 
-    - rid: 4447245972134428791
-      type: {class: SVMeleeInstructionEquip, ns: __SARV.Framework.Kernal.Instruction.Melee, asm: Assembly-CSharp}
+    - rid: 7729762489063702691
+      type: {class: SVMeleeInstructionEquipShield, ns: __SARV.Framework.Kernal.Instruction.Melee, asm: Assembly-CSharp}
       data:
         disabled: 0
         actor:
-          rid: 4447245972134428792
-        melee: {fileID: 11400000, guid: 7cede0d81be94734a9372fa89f7bd9d4, type: 2}
-    - rid: 4447245972134428792
+          rid: 7729762489063702692
+        meleeShield: {fileID: 11400000, guid: 726ee4b47eb5f2a4582efd30376bfb7a, type: 2}
+    - rid: 7729762489063702692
       type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         property: Player
         propertyType:
-          rid: 4447245972134428794
-    - rid: 4447245972134428794
+          rid: 7729762489063702697
+    - rid: 7729762489063702697
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762489063702707
+      type: {class: SVMeleeInstructionEquipWeapon, ns: __SARV.Framework.Kernal.Instruction.Melee, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 7729762489063702708
+        meleeWeapon: {fileID: 11400000, guid: 7cede0d81be94734a9372fa89f7bd9d4, type: 2}
+    - rid: 7729762489063702708
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 7729762489063702716
+    - rid: 7729762489063702716
       type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
 --- !u!1 &336461551121500919
@@ -14415,12 +14432,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898575263645600042}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.049, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.0489998, z: 0}
   m_LocalScale: {x: 3, y: 2.255, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5916954829686717409}
+  m_Father: {fileID: 805119441732482622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7820911676226106585
 MonoBehaviour:
@@ -18707,6 +18724,7 @@ Transform:
   - {fileID: 4427725292113032092}
   - {fileID: 934723197097957353}
   - {fileID: 115333298197886872}
+  - {fileID: 1423749008873352005}
   m_Father: {fileID: 5964301867289542776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6139892361400592292
@@ -19777,7 +19795,6 @@ Transform:
   m_Children:
   - {fileID: 5964301867289542776}
   - {fileID: 6112998586163153568}
-  - {fileID: 1423749008873352005}
   - {fileID: 7313367054514795936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

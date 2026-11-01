@@ -3,9 +3,9 @@ using __SARV.Framework.Module.Localizer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Melee.SubMelee
+namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
 {
-    public abstract class SVSubMeleeInfo : SVScriptableObject
+    public abstract class SVSubMeleeWeaponInfo : SVScriptableObject
     {
         [FoldoutGroup("Info")] [SerializeField] [Required]
         protected SARVLocalizer title;
