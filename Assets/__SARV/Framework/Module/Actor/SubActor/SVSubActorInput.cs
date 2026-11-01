@@ -6,27 +6,27 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
-    public abstract class SVSubPlayerInput : SVSubActorEquipment
+    public abstract class SVSubActorInput : SVSubActorReference
     {
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("MoveHorizontal")]
+        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("MoveHorizontal")] [ShowIf(nameof(IsActorPlayer))]
         private string playerMoveHorizontalKey = "PlayerMoveHorizontal";
 
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("MoveVertical")]
+        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("MoveVertical")] [ShowIf(nameof(IsActorPlayer))]
         private string playerMoveVerticalKey = "PlayerMoveVertical";
 
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Sprint")]
+        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Sprint")] [ShowIf(nameof(IsActorPlayer))]
         private string playerSprintKey = "PlayerSprint";
 
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Interact")]
+        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Interact")] [ShowIf(nameof(IsActorPlayer))]
         private string playerInteractKey = "PlayerInteract";
 
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Roll")]
+        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Roll")] [ShowIf(nameof(IsActorPlayer))]
         private string playerRollKey = "PlayerRoll";
 
-        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Attack")]
+        [FoldoutGroup("Input")] [BoxGroup("Input/Key")] [SerializeField] [LabelText("Attack")] [ShowIf(nameof(IsActorPlayer))]
         private string playerAttackKey = "PlayerAttack";
-        
-        [FoldoutGroup("Input")] [BoxGroup("Input/Debug")] [HorizontalGroup("Input/Debug/MovementDirection")] [SerializeField] [ReadOnly]
+
+        [FoldoutGroup("Input")] [BoxGroup("Input/Debug")] [HorizontalGroup("Input/Debug/MovementDirection")] [SerializeField] [ReadOnly] [ShowIf(nameof(IsActorPlayer))]
         private Vector3 inputMovementDirection;
 
         private int _playerMoveHorizontalId;
@@ -65,7 +65,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
             HandleMovementDirection();
             HandleInteractPressed();
         }
-        
+
         public Task WaitForInteract()
         {
             _interactPressed = new TaskCompletionSource<bool>();

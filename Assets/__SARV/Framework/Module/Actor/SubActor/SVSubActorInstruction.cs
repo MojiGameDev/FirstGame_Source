@@ -1,13 +1,11 @@
-﻿using System;
-using __SARV.Common.Extension;
+﻿using __SARV.Common.Extension;
 using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Module.Interactor;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
-    [Serializable]
-    public abstract class SVSubActorInstruction : SVSubPlayerCharacter
+    public abstract class SVSubActorInstruction : SVSubActorAgent
     {
         public void SetInteractor(SARVInteractor interactor)
         {

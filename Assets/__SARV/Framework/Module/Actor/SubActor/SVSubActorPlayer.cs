@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
-    public abstract class SVSubPlayerCharacter : SVSubPlayerTrait
+    public abstract class SVSubActorPlayer : SVSubActorTrait
     {
-        [FoldoutGroup("Character")] [BoxGroup("Character/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)]
+        [FoldoutGroup("Character")] [BoxGroup("Character/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)] [ShowIf(nameof(IsActorPlayer))]
         private float changeSpeedDuration = 0.2f;
 
-        [FoldoutGroup("Character")] [BoxGroup("Character/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)]
+        [FoldoutGroup("Character")] [BoxGroup("Character/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)] [ShowIf(nameof(IsActorPlayer))]
         private float changeRotationRateDuration = 0.2f;
 
         private Tween _changeSpeedTween;
@@ -36,7 +36,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
             KillTween();
         }
 
-        public void UpdateSpeed(float newSpeed, float newRotationRate)
+        public void UpdatePlayerSpeed(float newSpeed, float newRotationRate)
         {
             KillTween();
             _changeSpeedTween = DOTween.To(() => ecmCharacter.maxWalkSpeed, x => ecmCharacter.maxWalkSpeed = x, newSpeed, changeSpeedDuration)
@@ -45,22 +45,22 @@ namespace __SARV.Framework.Module.Actor.SubActor
                 .SetEase(Ease.Linear);
         }
 
-        public void SetMovementDirection(Vector3 direction)
+        public void SetPlayerMovementDirection(Vector3 direction)
         {
             ecmCharacter.SetMovementDirection(direction);
         }
 
-        public void StopMovement()
+        public void StopPlayerMovement()
         {
-            SetMovementDirection(Vector3.zero);
+            SetPlayerMovementDirection(Vector3.zero);
         }
 
-        public void EnableRootMotion()
+        public void EnablePlayerRootMotion()
         {
             ecmCharacter.useRootMotion = true;
         }
 
-        public void DisableRootMotion()
+        public void DisablePlayerRootMotion()
         {
             ecmCharacter.useRootMotion = false;
         }

@@ -48,21 +48,21 @@ namespace __SARV.Framework.Module.State.Behavior
                 Player.RuntimeAnimancerAlias[parameterMovementSpeed],
                 PARAMETER_MOVEMENT_SPEED_SMOOTH_TIME);
             Player.PlayAnimancer(Identifier);
-            Player.UpdateSpeed(runSpeed, runRotationRate);
+            Player.UpdatePlayerSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
             Player.SetMovementSpeed(SVActorSpeed.Idle);
         }
 
         public override void Tick(float deltaTime)
         {
-            Player.SetMovementDirection(Player.InputMovementDirection);
+            Player.SetPlayerMovementDirection(Player.InputMovementDirection);
             HandleMovementSpeedParameter();
             HandleCharacterSpeed();
         }
 
         public override async Task Exit()
         {
-            Player.UpdateSpeed(runSpeed, runRotationRate);
+            Player.UpdatePlayerSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.Dispose();
             await base.Exit();
         }
@@ -76,11 +76,11 @@ namespace __SARV.Framework.Module.State.Behavior
 
             if (Player.MovementSpeed == SVActorSpeed.Sprint)
             {
-                Player.UpdateSpeed(sprintSpeed, sprintRotationRate);
+                Player.UpdatePlayerSpeed(sprintSpeed, sprintRotationRate);
             }
             else
             {
-                Player.UpdateSpeed(runSpeed, runRotationRate);
+                Player.UpdatePlayerSpeed(runSpeed, runRotationRate);
             }
         }
 

@@ -9,7 +9,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Actor.SubActor
 {
     [Serializable]
-    public abstract class SVSubActorData : SVSubActorReference
+    public abstract class SVSubActorData : SVSubActorInput
     {
         [FoldoutGroup("Data")] [SerializeField] [ReadOnly]
         protected SVActorSpeed movementSpeed = SVActorSpeed.NotMoving;
