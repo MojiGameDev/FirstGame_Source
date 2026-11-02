@@ -23,6 +23,11 @@ namespace __SARV.Framework.Kernal
 
         private string BranchesLabels => $"{instructionBranches.Count} Conditions";
 
+        public override string ToString()
+        {
+            return $"Condition ({gameObject.name})";
+        }
+
         public async Task RunCondition(SVArgument argument)
         {
             var isInstructionExecute = false;

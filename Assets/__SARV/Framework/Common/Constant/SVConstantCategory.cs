@@ -25,6 +25,7 @@
         public static class Branch
         {
             public const string LOGIC = "Logic";
+            public const string ACTOR = "Actor";
         }
 
         public static class Property

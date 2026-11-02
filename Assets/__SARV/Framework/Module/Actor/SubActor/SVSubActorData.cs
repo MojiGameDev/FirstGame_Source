@@ -12,7 +12,10 @@ namespace __SARV.Framework.Module.Actor.SubActor
     public abstract class SVSubActorData : SVSubActorInput
     {
         [FoldoutGroup("Data")] [SerializeField] [ReadOnly]
-        protected SVActorSpeed movementSpeed = SVActorSpeed.NotMoving;
+        protected SVActorSpeed currentSpeed = SVActorSpeed.NotMoving;
+
+        [FoldoutGroup("Data")] [SerializeField] [ReadOnly]
+        protected SVCombatType currentCombatType = SVCombatType.None;
 
         protected List<GameObject> PropCache = new();
 
@@ -20,11 +23,17 @@ namespace __SARV.Framework.Module.Actor.SubActor
         public SARVMeleeAttack CurrentMeleeAttack { get; protected set; }
         public SARVMeleeWeapon CurrentMeleeWeapon { get; protected set; }
         public SARVMeleeShield CurrentMeleeShield { get; protected set; }
-        public SVActorSpeed MovementSpeed => movementSpeed;
+        public SVActorSpeed CurrentSpeed => currentSpeed;
+        public SVCombatType CurrentCombatType => currentCombatType;
 
-        public void SetMovementSpeed(SVActorSpeed speed)
+        public void SetMovementSpeed(SVActorSpeed actorSpeed)
         {
-            movementSpeed = speed;
+            currentSpeed = actorSpeed;
+        }
+
+        public void SetCombatType(SVCombatType combatType)
+        {
+            currentCombatType = combatType;
         }
     }
 }

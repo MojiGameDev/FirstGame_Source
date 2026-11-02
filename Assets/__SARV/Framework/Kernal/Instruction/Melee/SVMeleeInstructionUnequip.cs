@@ -20,7 +20,7 @@ namespace __SARV.Framework.Kernal.Instruction.Melee
     public class SVMeleeInstructionUnequipWeapon : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
-        private SVPropertyComponent<SVActor> actor = new SVActorProperty();
+        private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
 
         protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Unequips current melee weapon of {actor}";
 

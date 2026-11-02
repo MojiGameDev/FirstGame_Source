@@ -11,7 +11,7 @@ namespace __SARV.Framework.Kernal.Property
     [SVDescription("Includes all actors")]
     [SVIgnore]
     [Serializable]
-    public class SVActorProperty : SVParentProperty<SVActor>
+    public class SVActorProperty : SVParentProperty<SARVActor>
     {
     }
 }

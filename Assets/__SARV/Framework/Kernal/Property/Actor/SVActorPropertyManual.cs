@@ -14,16 +14,16 @@ namespace __SARV.Framework.Kernal.Property
     [SVCategory(SVConstantCategory.Property.ACTOR)]
     [SVDescription("Enter a actor")]
     [Serializable]
-    public class SVActorPropertyManual : SVPropertyComponent<SVActor>
+    public class SVActorPropertyManual : SVPropertyComponent<SARVActor>
     {
-        [SerializeField] [HideLabel] private SVActor value;
+        [SerializeField] [HideLabel] private SARVActor value;
 
         public override string ToString()
         {
             return $"Manual ({(value == null ? "..." : value.gameObject.name)})";
         }
 
-        public override SVActor GetValue(SVArgument argument)
+        public override SARVActor GetValue(SVArgument argument)
         {
             return value;
         }

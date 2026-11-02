@@ -14,14 +14,14 @@ namespace __SARV.Framework.Kernal.Property
     [SVCategory(SVConstantCategory.Property.ACTOR)]
     [SVDescription("Player Actor")]
     [Serializable]
-    public class SVActorPropertyPlayer : SVPropertyComponent<SVActor>
+    public class SVActorPropertyPlayer : SVPropertyComponent<SARVActor>
     {
         public override string ToString()
         {
             return "Player";
         }
 
-        public override SVActor GetValue(SVArgument argument)
+        public override SARVActor GetValue(SVArgument argument)
         {
             return SVAccessPlayer.Instance;
         }

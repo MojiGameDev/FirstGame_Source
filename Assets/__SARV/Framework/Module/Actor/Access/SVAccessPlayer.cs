@@ -2,7 +2,7 @@
 
 namespace __SARV.Framework.Module.Actor.Access
 {
-    public abstract class SVAccessPlayer : SVAccess<SVActor>
+    public abstract class SVAccessPlayer : SVAccess<SARVActor>
     {
     }
 }

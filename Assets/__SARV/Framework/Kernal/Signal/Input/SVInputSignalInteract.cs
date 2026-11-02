@@ -12,7 +12,7 @@ namespace __SARV.Framework.Kernal.Signal
 {
     [SVTitle("Interact")]
     [SVCategory(SVConstantCategory.Signal.INPUT)]
-    [SVDescription("Checks whether the player can interact")]
+    [SVDescription("Executes the trigger when the player presses the interact input while interaction is available")]
     [Serializable]
     public class SVInputSignalInteract : SVSignalComponent
     {

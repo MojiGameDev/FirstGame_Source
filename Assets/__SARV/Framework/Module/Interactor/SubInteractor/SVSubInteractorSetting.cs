@@ -11,7 +11,7 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
     public abstract class SVSubInteractorSetting : SVSubInteractorEvent
     {
         [FoldoutGroup("Setting")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        private SVPropertyComponent<SVActor> actor = new SVActorProperty();
+        private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("Setting")] [SerializeField] [PropertyRange(2f, 5f)] [OnValueChanged(nameof(OnInteractionAvailabilityRangeChanged), InvokeOnInitialize = true)]
         protected float interactionAvailabilityRange = 3f;
@@ -25,9 +25,9 @@ namespace __SARV.Framework.Module.Interactor.SubInteractor
         public Transform CurrentInteractionPoint { get; protected set; }
         public bool CanInteract { get; protected set; }
 
-        private SVActor _cachedActor;
+        private SARVActor _cachedActor;
 
-        public SVActor Actor
+        public SARVActor Actor
         {
             get
             {

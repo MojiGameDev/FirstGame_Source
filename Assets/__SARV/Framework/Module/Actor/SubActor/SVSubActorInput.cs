@@ -42,7 +42,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
         public bool InputInteract => SARVGame.Instance.Player.GetButtonDown(_playerInteractId);
         // public bool InputRoll => SARVGame.Instance.Player.GetButtonDown(_playerRollId);
-        // public bool InputAttack => SARVGame.Instance.Player.GetButtonDown(_playerAttackId);
+        public bool InputAttack => SARVGame.Instance.Player.GetButtonDown(_playerAttackId);
 
         public Vector3 InputMovementDirection => inputMovementDirection;
 
@@ -56,7 +56,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
             _playerSprintId = ReInput.mapping.GetActionId(playerSprintKey);
             _playerInteractId = ReInput.mapping.GetActionId(playerInteractKey);
             // _playerRollId = ReInput.mapping.GetActionId(playerRollKey);
-            // _playerAttackId = ReInput.mapping.GetActionId(playerAttackKey);
+             _playerAttackId = ReInput.mapping.GetActionId(playerAttackKey);
         }
 
         protected override void Update()

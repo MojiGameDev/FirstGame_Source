@@ -11,16 +11,16 @@ namespace __SARV.Framework.Kernal.Property
     [SVCategory(SVConstantCategory.Property.ACTOR)]
     [SVDescription("Self Actor")]
     [Serializable]
-    public class SVActorPropertySelf : SVPropertyComponent<SVActor>
+    public class SVActorPropertySelf : SVPropertyComponent<SARVActor>
     {
         public override string ToString()
         {
             return "Self";
         }
 
-        public override SVActor GetValue(SVArgument argument)
+        public override SARVActor GetValue(SVArgument argument)
         {
-            var actor = argument.Self.GetComponent<SVActor>();
+            var actor = argument.Self.GetComponent<SARVActor>();
             return actor;
         }
     }

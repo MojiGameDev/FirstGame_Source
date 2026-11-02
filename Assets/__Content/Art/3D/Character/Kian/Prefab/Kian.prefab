@@ -14131,6 +14131,144 @@ Transform:
   - {fileID: 2909660476646943173}
   m_Father: {fileID: 413489596361197262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &682093443017487897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1587979785126779990}
+  - component: {fileID: 5331442712699535166}
+  m_Layer: 0
+  m_Name: Change behavior to Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1587979785126779990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682093443017487897}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1667924408740766470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5331442712699535166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682093443017487897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ff69791fde49a79366e95afa34baaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Change behavior to Attack
+  conditionType: 10
+  hasElse: 0
+  instructionBranches:
+  - branch:
+      branch: 
+      conditionJoinType: 10
+      branches:
+      - rid: 7729762511179219098
+    trueTooltip: 
+    instruction:
+      instruction: 
+      instructions:
+      - rid: 7729762511179219114
+  - branch:
+      branch: 
+      conditionJoinType: 10
+      branches:
+      - rid: 7729762511179219230
+    trueTooltip: 
+    instruction:
+      instruction: 
+      instructions:
+      - rid: 7729762511179219246
+  elseInstruction:
+    instruction: 
+    instructions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762511179219098
+      type: {class: SVActorBranchIsCombatMelee, ns: __SARV.Framework.Kernal.Branch, asm: Assembly-CSharp}
+      data:
+        not: 0
+        disabled: 0
+        actor:
+          rid: 7729762511179219099
+    - rid: 7729762511179219099
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 7729762511179219105
+    - rid: 7729762511179219105
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762511179219114
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 7729762511179219115
+        behavior: {fileID: 11400000, guid: c27a0337f596e6a4f83029489411fe1f, type: 2}
+    - rid: 7729762511179219115
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 7729762511179219121
+    - rid: 7729762511179219121
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762511179219230
+      type: {class: SVActorBranchIsCombatShooter, ns: __SARV.Framework.Kernal.Branch, asm: Assembly-CSharp}
+      data:
+        not: 0
+        disabled: 0
+        actor:
+          rid: 7729762511179219231
+    - rid: 7729762511179219231
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 7729762511179219237
+    - rid: 7729762511179219237
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762511179219246
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 7729762511179219247
+        behavior: {fileID: 11400000, guid: e89893c7d81f5d947a5aefc1500b2d41, type: 2}
+    - rid: 7729762511179219247
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 7729762511179219253
+    - rid: 7729762511179219253
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &735584048579410306
 GameObject:
   m_ObjectHideFlags: 0
@@ -14707,13 +14845,15 @@ MonoBehaviour:
   playerRollKey: PlayerRoll
   playerAttackKey: PlayerAttack
   inputMovementDirection: {x: 0, y: 0, z: 0}
-  movementSpeed: 0
+  currentSpeed: 0
+  currentCombatType: 100
   stateMachine:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
     states:
     - {fileID: 1064174925218950400}
     - {fileID: 6054643402486404247}
+    - {fileID: 2529495885753791588}
   footstepEvent: {fileID: 11400000, guid: 4febfff8e143229428045fe08c2d6226, type: 2}
   footstep:
     feet:
@@ -17136,6 +17276,113 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6834237485146756306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3882803412963198393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667924408740766470}
+  - component: {fileID: 5663149439772638558}
+  m_Layer: 7
+  m_Name: Trigger_Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1667924408740766470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882803412963198393}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1587979785126779990}
+  m_Father: {fileID: 3149941321203981378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5663149439772638558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882803412963198393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Trigger_Attack
+  signal: Input/Attack
+  signalComponent:
+    rid: 7729762511179219069
+  tooltip: 
+  instruction:
+    instruction: 
+    instructions:
+    - rid: 7729762511179219290
+    - rid: 7729762511179219204
+    - rid: 7729762511179219294
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762511179219069
+      type: {class: SVInputSignalAttack, ns: __SARV.Framework.Kernal.Signal, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762511179219204
+      type: {class: SVFrameworkInstructionRunCondition, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        condition: {fileID: 5331442712699535166}
+        waitToFinish:
+          rid: 7729762511179219205
+    - rid: 7729762511179219205
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 7729762511179219290
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevel: 10
+        text:
+          rid: 7729762511179219291
+    - rid: 7729762511179219291
+      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762511179219293
+    - rid: 7729762511179219293
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: before con
+    - rid: 7729762511179219294
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevel: 10
+        text:
+          rid: 7729762511179219295
+    - rid: 7729762511179219295
+      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762511179219296
+    - rid: 7729762511179219296
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: after con
 --- !u!1 &3887340055385691308
 GameObject:
   m_ObjectHideFlags: 0
@@ -19370,6 +19617,67 @@ Transform:
   - {fileID: 2021022967564440165}
   m_Father: {fileID: 2991167897080276633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6831040577429891983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435763178980281904}
+  - component: {fileID: 2529495885753791588}
+  m_Layer: 0
+  m_Name: MeleeAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435763178980281904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831040577429891983}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6112998586163153568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2529495885753791588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831040577429891983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c0c7e88041482d866f0617e8bed555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: MeleeAttack
+  behavior: MeleeAttack
+  behaviorComponent:
+    rid: 7729762511179219299
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762511179219299
+      type: {class: SVPlayerBehaviorMeleeAttack, ns: __SARV.Framework.Module.State.Behavior, asm: Assembly-CSharp}
+      data:
+        identifier: {fileID: 0}
+        onEnterInstruction:
+          instruction: 
+          instructions: []
+        onExitInstruction:
+          instruction: 
+          instructions: []
 --- !u!1 &6943324295316943175
 GameObject:
   m_ObjectHideFlags: 0
@@ -19433,6 +19741,7 @@ Transform:
   m_Children:
   - {fileID: 864190903536386724}
   - {fileID: 5373488589364776756}
+  - {fileID: 1435763178980281904}
   m_Father: {fileID: 5916954829686717409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7096266175959367989
@@ -19795,6 +20104,7 @@ Transform:
   m_Children:
   - {fileID: 5964301867289542776}
   - {fileID: 6112998586163153568}
+  - {fileID: 3149941321203981378}
   - {fileID: 7313367054514795936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19817,6 +20127,38 @@ MonoBehaviour:
   - title: Cinematic
     position: {x: 31.3, y: 25.194, z: 46.42}
     target: {fileID: 7260924975195049022}
+--- !u!1 &7509155985212910734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3149941321203981378}
+  m_Layer: 7
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3149941321203981378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7509155985212910734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1667924408740766470}
+  m_Father: {fileID: 5916954829686717409}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7525479398307775012
 GameObject:
   m_ObjectHideFlags: 0

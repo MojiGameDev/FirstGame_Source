@@ -22,7 +22,7 @@ namespace __SARV.Framework.Kernal.Instruction
     public class SVActorInstructionSetInteractor : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
-        private SVPropertyComponent<SVActor> actor = new SVActorProperty();
+        private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVInteractor interactor;

@@ -21,7 +21,7 @@ namespace __SARV.Framework.Kernal.Instruction.Melee
     public class SVMeleeInstructionEquipShield : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
-        private SVPropertyComponent<SVActor> actor = new SVActorProperty();
+        private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVMeleeShield meleeShield;

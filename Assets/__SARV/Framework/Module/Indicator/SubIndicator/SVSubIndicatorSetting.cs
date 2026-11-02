@@ -12,7 +12,7 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
     public abstract class SVSubIndicatorSetting : SVSubIndicatorReference
     {
         [FoldoutGroup("Setting")] [BoxGroup("Setting/General")] [SerializeReference] [HideReferenceObjectPicker] [HideLabel]
-        private SVPropertyComponent<SVActor> actor = new SVActorProperty();
+        private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("Setting")] [BoxGroup("Setting/General")] [SerializeField] [PropertyRange(3f, 20f)] [OnValueChanged(nameof(OnDistanceDetectorRangeChanged), InvokeOnInitialize = true)]
         protected float distanceDetectorRange = 5f;
@@ -38,9 +38,9 @@ namespace __SARV.Framework.Module.Indicator.SubIndicator
         [FoldoutGroup("Setting")] [BoxGroup("Setting/FocusAnimation")] [SerializeField]
         protected Ease focusUIScaleEase = Ease.InOutBack;
 
-        private SVActor _cachedActor;
+        private SARVActor _cachedActor;
 
-        public SVActor Actor
+        public SARVActor Actor
         {
             get
             {

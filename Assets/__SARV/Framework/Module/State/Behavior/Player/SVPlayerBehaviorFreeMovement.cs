@@ -74,7 +74,7 @@ namespace __SARV.Framework.Module.State.Behavior
                 return;
             }
 
-            if (Player.MovementSpeed == SVActorSpeed.Sprint)
+            if (Player.CurrentSpeed == SVActorSpeed.Sprint)
             {
                 Player.UpdatePlayerSpeed(sprintSpeed, sprintRotationRate);
             }
@@ -96,7 +96,7 @@ namespace __SARV.Framework.Module.State.Behavior
                 newMovementSpeed = SVActorSpeed.Idle;
             }
 
-            if (Player.MovementSpeed == newMovementSpeed)
+            if (Player.CurrentSpeed == newMovementSpeed)
             {
                 _isMovementSpeedParameterChanged = false;
                 return;
@@ -110,21 +110,21 @@ namespace __SARV.Framework.Module.State.Behavior
 
         private int GetMovementSpeed()
         {
-            var movementSpeed = 0;
-            switch (Player.MovementSpeed)
+            var speed = 0;
+            switch (Player.CurrentSpeed)
             {
                 case SVActorSpeed.Idle:
-                    movementSpeed = PARAMETER_MOVEMENT_SPEED_IDLE;
+                    speed = PARAMETER_MOVEMENT_SPEED_IDLE;
                     break;
                 case SVActorSpeed.Run:
-                    movementSpeed = PARAMETER_MOVEMENT_SPEED_RUN;
+                    speed = PARAMETER_MOVEMENT_SPEED_RUN;
                     break;
                 case SVActorSpeed.Sprint:
-                    movementSpeed = PARAMETER_MOVEMENT_SPEED_SPRINT;
+                    speed = PARAMETER_MOVEMENT_SPEED_SPRINT;
                     break;
             }
 
-            return movementSpeed;
+            return speed;
         }
     }
 }
