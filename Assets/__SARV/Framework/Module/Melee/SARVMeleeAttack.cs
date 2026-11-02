@@ -4,7 +4,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Melee
 {
     [CreateAssetMenu(fileName = "MeleeAttack", menuName = "SARV/Melee/Attack")]
-    public class SARVMeleeAttack : SVSubMeleeAttackSetting
+    public class SARVMeleeAttack : SVSubMeleeAttackEvent
     {
     }
 }

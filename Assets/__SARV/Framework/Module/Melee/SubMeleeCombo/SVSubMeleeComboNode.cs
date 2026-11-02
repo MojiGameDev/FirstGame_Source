@@ -12,6 +12,8 @@ namespace __SARV.Framework.Module.Melee.SubMeleeCombo
         protected List<SVComboNode> combos = new();
 
         private string CombosLabel => $"{combos.Count} Combos";
+        
+        public List<SVComboNode> Combos => combos;
 
         private void CreateNode()
         {

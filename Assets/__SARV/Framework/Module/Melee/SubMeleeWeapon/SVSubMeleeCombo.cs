@@ -7,5 +7,7 @@ namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
     {
         [FoldoutGroup("Combo")] [SerializeField] [Required]
         protected SARVMeleeCombo meleeCombo;
+        
+        public SARVMeleeCombo MeleeCombo => meleeCombo;
     }
 }
