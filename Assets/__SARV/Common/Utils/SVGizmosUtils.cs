@@ -69,5 +69,18 @@ namespace __SARV.Common.Utils
                 archRange);
 #endif
         }
+
+        public static void DrawCube(Vector3 position, Quaternion rotation, Vector3 size, Color color)
+        {
+            Gizmos.color = color;
+
+            Gizmos.matrix = Matrix4x4.TRS(
+                position,
+                rotation,
+                Vector3.one
+            );
+            
+            Gizmos.DrawCube(Vector3.zero, size);
+        }
     }
 }

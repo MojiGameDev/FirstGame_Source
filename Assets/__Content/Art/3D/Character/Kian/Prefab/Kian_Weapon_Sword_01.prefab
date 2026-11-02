@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2555150695691944535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9072948721680114283}
+  - component: {fileID: 2025556964493662606}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9072948721680114283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555150695691944535}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7284097577886474089}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2025556964493662606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555150695691944535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df459b58e7984ff7844b5d897c687671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitboxSize: {x: 0.2, y: 1, z: 0.2}
+  hitboxOffset: {x: 0, y: 0.4, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  triggerMode: 2
+  showGizmos: 1
+  gizmosOnSelect: 0
+  normalGizmColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 0.19215687}
+  activeGizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &5158376116080755160
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +84,8 @@ Transform:
   m_LocalPosition: {x: -54.944, y: -0.010000467, z: 78.053894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 9072948721680114283}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &687178219050179739

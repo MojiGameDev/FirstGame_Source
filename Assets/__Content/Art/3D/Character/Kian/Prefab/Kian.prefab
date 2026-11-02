@@ -14870,15 +14870,6 @@ MonoBehaviour:
     gizmosOnSelect: 1
     gizmoCircleColor: {r: 0, g: 1, b: 0, a: 1}
     gizmosRadius: 0.05
-  wrappers:
-  - identifier: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
-    alias: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
-  - identifier: {fileID: 11400000, guid: af8cc05eb10d3a447b392f849c4a70de, type: 2}
-    alias: {fileID: 11400000, guid: 31bf7a31fd4d0a1449d340a69ba2bd19, type: 2}
-  - identifier: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
-    alias: {fileID: 11400000, guid: 804658efca7a0e848999f95926f94d30, type: 2}
-  - identifier: {fileID: 11400000, guid: 7858fad9fd3b2cc409e64391b03c9aae, type: 2}
-    alias: {fileID: 11400000, guid: 9b4771e2700e73f4f9280fc13e41334e, type: 2}
   healthAttribute: {fileID: 11400000, guid: 16b3563ce89cc9247aaf9249bd2603cf, type: 2}
   staminaAttribute: {fileID: 11400000, guid: 0ec85cf0e4c9f0142bc290841add215c, type: 2}
   changeSpeedDuration: 0.2
@@ -15240,11 +15231,12 @@ MonoBehaviour:
         onExitInstruction:
           instruction: 
           instructions: []
+        transitionAlias: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
+        movementSpeedParameter: {fileID: 11400000, guid: 804658efca7a0e848999f95926f94d30, type: 2}
         runSpeed: 6.5
         runRotationRate: 540
         sprintSpeed: 8.5
         sprintRotationRate: 700
-        parameterMovementSpeed: {fileID: 11400000, guid: 1cbe43a1f4ea29c44ad8a8105262fd4a, type: 2}
 --- !u!1 &1377074839011925139
 GameObject:
   m_ObjectHideFlags: 0
@@ -17331,9 +17323,7 @@ MonoBehaviour:
   instruction:
     instruction: 
     instructions:
-    - rid: 7729762511179219290
     - rid: 7729762511179219204
-    - rid: 7729762511179219294
   references:
     version: 2
     RefIds:
@@ -17351,40 +17341,6 @@ MonoBehaviour:
       type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         value: 0
-    - rid: 7729762511179219290
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        logLevel: 10
-        text:
-          rid: 7729762511179219291
-    - rid: 7729762511179219291
-      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 7729762511179219293
-    - rid: 7729762511179219293
-      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: before con
-    - rid: 7729762511179219294
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        logLevel: 10
-        text:
-          rid: 7729762511179219295
-    - rid: 7729762511179219295
-      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 7729762511179219296
-    - rid: 7729762511179219296
-      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: after con
 --- !u!1 &3887340055385691308
 GameObject:
   m_ObjectHideFlags: 0
@@ -19680,6 +19636,7 @@ MonoBehaviour:
         onExitInstruction:
           instruction: 
           instructions: []
+        meleeAttackEvent: {fileID: 11400000, guid: 2a5e4fd6424c6d540b5d57313650d6ea, type: 2}
 --- !u!1 &6943324295316943175
 GameObject:
   m_ObjectHideFlags: 0
@@ -25957,6 +25914,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
+        transitionAlias: {fileID: 11400000, guid: 31bf7a31fd4d0a1449d340a69ba2bd19, type: 2}
 --- !u!1 &8335551431749314332
 GameObject:
   m_ObjectHideFlags: 0

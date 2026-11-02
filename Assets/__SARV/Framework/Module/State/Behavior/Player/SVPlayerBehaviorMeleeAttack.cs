@@ -17,7 +17,7 @@ namespace __SARV.Framework.Module.State.Behavior
     [Serializable]
     public class SVPlayerBehaviorMeleeAttack : SVPlayerBehavior
     {
-        [BoxGroup("Event")] [SerializeField] [HideLabel] [Required]
+        [BoxGroup("Animancer")] [SerializeField] [Required]
         private StringAsset meleeAttackEvent;
 
         public override async Task Enter()
@@ -48,7 +48,7 @@ namespace __SARV.Framework.Module.State.Behavior
             }
             else
             {
-                Player.PlayAnimancer(comboNode.Attack.Identifier);
+                Player.PlayAnimancer(comboNode.Attack.TransitionAlias);
             }
         }
 

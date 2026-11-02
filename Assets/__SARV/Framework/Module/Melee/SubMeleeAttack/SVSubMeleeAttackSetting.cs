@@ -1,5 +1,5 @@
 ﻿using __SARV.Common.Base;
-using __SARV.Framework.Module.Identifier;
+using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -7,9 +7,9 @@ namespace __SARV.Framework.Module.Melee.SubMeleeAttack
 {
     public abstract class SVSubMeleeAttackSetting : SVScriptableObject
     {
-        [BoxGroup("Setting")] [SerializeField] [HideLabel]
-        private SARVIdentifier identifier;
+        [BoxGroup("Setting")] [SerializeField]
+        private StringAsset transitionAlias;
 
-        public SARVIdentifier Identifier => identifier;
+        public StringAsset TransitionAlias => transitionAlias;
     }
 }

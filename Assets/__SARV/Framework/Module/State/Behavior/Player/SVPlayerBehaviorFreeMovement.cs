@@ -4,7 +4,6 @@ using __SARV.Common.Extension;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Module.Actor.Enum;
-using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.State.Behavior.Base;
 using Animancer;
 using Sirenix.OdinInspector;
@@ -18,6 +17,12 @@ namespace __SARV.Framework.Module.State.Behavior
     [Serializable]
     public class SVPlayerBehaviorFreeMovement : SVPlayerBehavior
     {
+        [BoxGroup("Animancer")] [SerializeField] [Required]
+        private StringAsset transitionAlias;
+
+        [BoxGroup("Animancer")] [SerializeField] [Required]
+        private StringAsset movementSpeedParameter;
+
         [BoxGroup("Speed")] [SerializeField] [PropertyRange(1, 10)]
         private float runSpeed = 8f;
 
@@ -27,9 +32,6 @@ namespace __SARV.Framework.Module.State.Behavior
         private float sprintSpeed = 11f;
 
         [BoxGroup("Speed")] [SerializeField] private float sprintRotationRate = 700f;
-
-        [BoxGroup("Parameter")] [SerializeField] [Required]
-        private SARVIdentifier parameterMovementSpeed;
 
         private bool _isMovementSpeedParameterChanged;
 
@@ -45,9 +47,9 @@ namespace __SARV.Framework.Module.State.Behavior
             await base.Enter();
             _smoothedFloatParameterMovementSpeed = new SmoothedFloatParameter(
                 Player.AnimancerComponent,
-                Player.RuntimeAnimancerAlias[parameterMovementSpeed],
+                movementSpeedParameter,
                 PARAMETER_MOVEMENT_SPEED_SMOOTH_TIME);
-            Player.PlayAnimancer(Identifier);
+            Player.PlayAnimancer(transitionAlias);
             Player.UpdatePlayerSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
             Player.SetMovementSpeed(SVActorSpeed.Idle);
