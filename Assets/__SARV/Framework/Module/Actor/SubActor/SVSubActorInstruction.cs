@@ -1,6 +1,7 @@
 ﻿using __SARV.Common.Extension;
 using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Module.Interactor;
+using __SARV.Framework.Module.Melee;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
@@ -10,6 +11,11 @@ namespace __SARV.Framework.Module.Actor.SubActor
         public void SetInteractor(SARVInteractor interactor)
         {
             CurrentInteractor = interactor;
+        }
+
+        public void SetMeleeAttack(SARVMeleeAttack meleeAttack)
+        {
+            CurrentMeleeAttack = meleeAttack;
         }
 
         public void AttachProp(GameObject prop, SVBone bone, Vector3 position, Vector3 rotation)

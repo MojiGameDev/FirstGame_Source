@@ -17,6 +17,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
         protected List<GameObject> PropCache = new();
 
         public SARVInteractor CurrentInteractor { get; protected set; }
+        public SARVMeleeAttack CurrentMeleeAttack { get; protected set; }
         public SARVMeleeWeapon CurrentMeleeWeapon { get; protected set; }
         public SARVMeleeShield CurrentMeleeShield { get; protected set; }
         public SVActorSpeed MovementSpeed => movementSpeed;
