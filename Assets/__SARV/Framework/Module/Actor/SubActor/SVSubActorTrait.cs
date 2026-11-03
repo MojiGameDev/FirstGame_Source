@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
-    public abstract class SVSubActorTrait : SVSubActorEquipment
+    public abstract class SVSubActorTrait : SVSubActorAnimancer
     {
         [FoldoutGroup("Trait")] [BoxGroup("Trait/Attribute")] [TabGroup("Trait/Attribute/Attribute", "Health")] [SerializeField] [Required] [HideLabel] [HideReferenceObjectPicker]
         private SVAttribute healthAttribute;

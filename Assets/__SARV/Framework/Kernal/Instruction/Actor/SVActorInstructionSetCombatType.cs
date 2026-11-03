@@ -27,7 +27,7 @@ namespace __SARV.Framework.Kernal.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
         private SVCombatType combatType = SVCombatType.Melee;
         
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Set {combatType.ToReadableString()} to {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Set {combatType.ToReadableString()} combat type to {actor}";
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {

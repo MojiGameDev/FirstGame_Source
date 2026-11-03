@@ -26,7 +26,7 @@ namespace __SARV.Framework.Kernal.Instruction.Melee
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVMeleeAttack meleeAttack;
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Set {(meleeAttack == null ? "..." : meleeAttack.name)} to {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Set {(meleeAttack == null ? "..." : meleeAttack.name)} melee attack to {actor}";
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {

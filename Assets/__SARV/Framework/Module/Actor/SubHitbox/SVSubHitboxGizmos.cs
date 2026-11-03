@@ -14,7 +14,7 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
         private bool gizmosOnSelect = true;
 
         [FoldoutGroup("Gizmos")] [SerializeField] [ColorPalette]
-        private Color normalGizmColor = Color.yellow;
+        private Color normalGizmoColor = Color.yellow;
 
         [FoldoutGroup("Gizmos")] [SerializeField] [ColorPalette]
         private Color activeGizmoColor = Color.red;
@@ -41,7 +41,7 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
                 return;
             }
 
-            SVGizmosUtils.DrawCube(GetWorldCenter(), transform.rotation, hitboxSize, IsActive ? activeGizmoColor : normalGizmColor);
+            SVGizmosUtils.DrawCube(GetWorldCenter(), transform.rotation, hitboxSize, IsActive ? activeGizmoColor : normalGizmoColor);
         }
     }
 }

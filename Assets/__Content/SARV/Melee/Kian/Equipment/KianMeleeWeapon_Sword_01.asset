@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 0}
   description: {fileID: 0}
+  equipmentType: 10
   onEquipInstruction:
     instruction: 
     instructions:
     - rid: 7729762511179219045
-    - rid: 4447245972134428776
+    - rid: 7729762534329679981
   onUnequipInstruction:
     instruction: 
     instructions: []
@@ -29,50 +30,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4447245972134428776
-      type: {class: SVActorInstructionAttachProp, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        actor:
-          rid: 4447245972134428777
-        prop: {fileID: 5158376116080755160, guid: 4a771078f75b26c4d9b6c364a1471a9a, type: 3}
-        bone:
-          boneType: 10
-          human: 18
-          path: 
-        position:
-          rid: 4447245972134428778
-        rotation:
-          rid: 4447245972134428779
-    - rid: 4447245972134428777
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Self
-        propertyType:
-          rid: 4447245972134428795
-    - rid: 4447245972134428778
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 4447245972134428784
-    - rid: 4447245972134428779
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 4447245972134428785
-    - rid: 4447245972134428784
-      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {x: 1, y: 0.379, z: -0.033}
-    - rid: 4447245972134428785
-      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {x: 0, y: 0, z: 105}
-    - rid: 4447245972134428795
-      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
     - rid: 7729762511179219045
       type: {class: SVActorInstructionSetCombatType, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
@@ -89,3 +46,48 @@ MonoBehaviour:
     - rid: 7729762511179219048
       type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
+    - rid: 7729762534329679981
+      type: {class: SVActorInstructionAttachEquipment, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 7729762534329679982
+        equipmentType: 10
+        equipment: {fileID: 5158376116080755160, guid: 4a771078f75b26c4d9b6c364a1471a9a, type: 3}
+        bone:
+          boneType: 10
+          human: 18
+          path: 
+        position:
+          rid: 7729762534329679983
+        rotation:
+          rid: 7729762534329679984
+    - rid: 7729762534329679982
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Self
+        propertyType:
+          rid: 7729762534329679988
+    - rid: 7729762534329679983
+      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762534329679989
+    - rid: 7729762534329679984
+      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762534329679990
+    - rid: 7729762534329679988
+      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762534329679989
+      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {x: 0, y: 0, z: 0}
+    - rid: 7729762534329679990
+      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {x: 0, y: 0, z: 0}

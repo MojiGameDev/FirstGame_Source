@@ -6,7 +6,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Actor.SubActor
 {
     [Serializable]
-    public abstract class SVSubActorStateMachine : SVSubActorData
+    public abstract class SVSubActorStateMachine : SVSubActorCombat
     {
         [FoldoutGroup("StateMachine")] [SerializeField] [HideLabel]
         private SVStateMachine stateMachine;
