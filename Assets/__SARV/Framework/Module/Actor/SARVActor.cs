@@ -4,7 +4,7 @@ using __SARV.Framework.Module.Actor.SubActor;
 
 namespace __SARV.Framework.Module.Actor
 {
-    public class SARVActor : SVSubActorInstruction
+    public class SARVActor : SVSubActorCharacter
     {
         protected override void Awake()
         {

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
-    public abstract class SVSubActorInstruction : SVSubActorAgent
+    public abstract class SVSubActorCharacter : SVSubActorAgent
     {
         public void SetInteractor(SARVInteractor interactor)
         {
