@@ -18,7 +18,6 @@ namespace __SARV.Framework.Module.Actor.SubActor
         protected SVCombatType currentCombatType = SVCombatType.None;
 
         public SARVMeleeWeapon CurrentMeleeWeapon { get; protected set; }
-        public SARVMeleeShield CurrentMeleeShield { get; protected set; }
         public SVCombatType CurrentCombatType => currentCombatType;
 
         protected Dictionary<SARVIdentifier, GameObject> EquipmentCache = new();
@@ -31,25 +30,12 @@ namespace __SARV.Framework.Module.Actor.SubActor
         public async Task EquipMeleeWeapon(SARVMeleeWeapon meleeWeapon)
         {
             CurrentMeleeWeapon = meleeWeapon;
-            HandleEquipmentCache(meleeWeapon.Identifier, meleeWeapon.Model);
             await CurrentMeleeWeapon.ExecuteEquip(Argument);
-        }
-
-        public async Task EquipMeleeShield(SARVMeleeShield meleeShield)
-        {
-            CurrentMeleeShield = meleeShield;
-            HandleEquipmentCache(meleeShield.Identifier, meleeShield.Model);
-            await CurrentMeleeShield.ExecuteEquip(Argument);
         }
 
         public async Task UnequipMeleeWeapon()
         {
             await CurrentMeleeWeapon.ExecuteUnequip(Argument);
-        }
-
-        public async Task UnequipMeleeShield()
-        {
-            await CurrentMeleeShield.ExecuteUnequip(Argument);
         }
 
         public void AttachEquipment(SARVIdentifier identifier, SVBone bone, Vector3 position, Vector3 rotation)
