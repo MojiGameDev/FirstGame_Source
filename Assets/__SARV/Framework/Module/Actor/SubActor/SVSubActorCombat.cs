@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Module.Actor.Enum;
+using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Melee;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -16,32 +17,28 @@ namespace __SARV.Framework.Module.Actor.SubActor
         [FoldoutGroup("Data")] [SerializeField] [ReadOnly]
         protected SVCombatType currentCombatType = SVCombatType.None;
 
-        public SARVMeleeAttack CurrentMeleeAttack { get; protected set; }
         public SARVMeleeWeapon CurrentMeleeWeapon { get; protected set; }
         public SARVMeleeShield CurrentMeleeShield { get; protected set; }
         public SVCombatType CurrentCombatType => currentCombatType;
 
-        protected Dictionary<SVEquipmentType, GameObject> EquipmentCache = new();
+        protected Dictionary<SARVIdentifier, GameObject> EquipmentCache = new();
 
         public void SetCombatType(SVCombatType combatType)
         {
             currentCombatType = combatType;
         }
 
-        public void SetMeleeAttack(SARVMeleeAttack meleeAttack)
-        {
-            CurrentMeleeAttack = meleeAttack;
-        }
-
         public async Task EquipMeleeWeapon(SARVMeleeWeapon meleeWeapon)
         {
             CurrentMeleeWeapon = meleeWeapon;
+            HandleEquipmentCache(meleeWeapon.Identifier, meleeWeapon.Model);
             await CurrentMeleeWeapon.ExecuteEquip(Argument);
         }
 
         public async Task EquipMeleeShield(SARVMeleeShield meleeShield)
         {
             CurrentMeleeShield = meleeShield;
+            HandleEquipmentCache(meleeShield.Identifier, meleeShield.Model);
             await CurrentMeleeShield.ExecuteEquip(Argument);
         }
 
@@ -55,19 +52,25 @@ namespace __SARV.Framework.Module.Actor.SubActor
             await CurrentMeleeShield.ExecuteUnequip(Argument);
         }
 
-        public void AttachEquipment(SVEquipmentType equipmentType, GameObject prop, SVBone bone, Vector3 position, Vector3 rotation)
+        public void AttachEquipment(SARVIdentifier identifier, SVBone bone, Vector3 position, Vector3 rotation)
         {
-            if (!EquipmentCache.ContainsKey(equipmentType))
+            if (EquipmentCache.TryGetValue(identifier, out var instance))
             {
                 var boneTransform = bone.GetTransform(animancerComponent.Animator);
-                var instance = Instantiate(prop, boneTransform, true);
+                instance.transform.parent = boneTransform;
                 instance.transform.localPosition = position;
                 instance.transform.localRotation = Quaternion.Euler(rotation);
-                EquipmentCache.Add(equipmentType, instance);
+                instance.Active();
             }
+        }
 
-            var equipmentObject = EquipmentCache[equipmentType];
-            equipmentObject.Active();
+        private void HandleEquipmentCache(SARVIdentifier identifier, GameObject model)
+        {
+            if (!EquipmentCache.ContainsKey(identifier))
+            {
+                var instance = Instantiate(model);
+                instance.Inactive();
+            }
         }
     }
 }

@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524e274d0d72458da610d29d6929d195, type: 3}
   m_Name: KianMeleeWeapon_Sword_01
   m_EditorClassIdentifier: 
+  identifier: {fileID: 0}
+  model: {fileID: 5158376116080755160, guid: 4a771078f75b26c4d9b6c364a1471a9a, type: 3}
   title: {fileID: 0}
   description: {fileID: 0}
   onEquipInstruction:
     instruction: 
-    instructions:
-    - rid: 7729762534329679981
+    instructions: []
   onUnequipInstruction:
     instruction: 
     instructions: []
@@ -27,49 +28,4 @@ MonoBehaviour:
   meleeCombo: {fileID: 11400000, guid: 914c53a7dc259d34facb88f1fbff46ed, type: 2}
   references:
     version: 2
-    RefIds:
-    - rid: 7729762534329679981
-      type: {class: SVActorInstructionAttachEquipment, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        actor:
-          rid: 7729762534329679982
-        equipmentType: 10
-        equipment: {fileID: 5158376116080755160, guid: 4a771078f75b26c4d9b6c364a1471a9a, type: 3}
-        bone:
-          boneType: 10
-          human: 18
-          path: 
-        position:
-          rid: 7729762534329679983
-        rotation:
-          rid: 7729762534329679984
-    - rid: 7729762534329679982
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Self
-        propertyType:
-          rid: 7729762534329679988
-    - rid: 7729762534329679983
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 7729762534329679989
-    - rid: 7729762534329679984
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 7729762534329679990
-    - rid: 7729762534329679988
-      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
-    - rid: 7729762534329679989
-      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {x: 0, y: 0, z: 0}
-    - rid: 7729762534329679990
-      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {x: 0, y: 0, z: 0}
+    RefIds: []

@@ -8,7 +8,7 @@ using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Integration.OdinInspector.Runtime;
 using __SARV.Framework.Kernal.Property;
 using __SARV.Framework.Module.Actor;
-using __SARV.Framework.Module.Actor.Enum;
+using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -24,10 +24,7 @@ namespace __SARV.Framework.Kernal.Instruction
         private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
-        private SVEquipmentType equipmentType = SVEquipmentType.MeleeWeapon;
-
-        [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
-        private GameObject equipment;
+        private SARVIdentifier equipmentIdentifier;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
         private SVBone bone = new(HumanBodyBones.RightHand);
@@ -38,14 +35,14 @@ namespace __SARV.Framework.Kernal.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<Vector3> rotation = new SVVector3Property();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(equipment == null ? "..." : equipment.name)} to the {bone} of {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(equipmentIdentifier == null ? "..." : equipmentIdentifier.SkipWords(2))} to the {bone} of {actor}";
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             var act = actor.GetValue(argument);
             var pos = position.GetValue(argument);
             var rot = rotation.GetValue(argument);
-            act.AttachEquipment(equipmentType, equipment, bone, pos, rot);
+            act.AttachEquipment(equipmentIdentifier, bone, pos, rot);
             return SVInstructionResult.DEFAULT_RESULT;
         }
     }

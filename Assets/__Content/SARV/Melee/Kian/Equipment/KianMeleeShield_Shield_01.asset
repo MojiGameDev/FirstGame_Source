@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e1c9b5dcaa4b14a44b8ece56ee3d28, type: 3}
   m_Name: KianMeleeShield_Shield_01
   m_EditorClassIdentifier: 
+  identifier: {fileID: 0}
+  model: {fileID: 3594085491992109590, guid: ed3c82432727eac43abb3a8ed8cecfea, type: 3}
   title: {fileID: 0}
   description: {fileID: 0}
   onEquipInstruction:
     instruction: 
-    instructions:
-    - rid: 7729762534329679991
+    instructions: []
   onUnequipInstruction:
     instruction: 
     instructions: []
@@ -35,47 +36,4 @@ MonoBehaviour:
     instructions: []
   references:
     version: 2
-    RefIds:
-    - rid: 7729762534329679991
-      type: {class: SVActorInstructionAttachEquipment, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        actor:
-          rid: 7729762534329679992
-        equipmentType: 10
-        equipment: {fileID: 0}
-        bone:
-          boneType: 10
-          human: 18
-          path: 
-        position:
-          rid: 7729762534329679993
-        rotation:
-          rid: 7729762534329679994
-    - rid: 7729762534329679992
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: 
-        propertyType:
-          rid: 7729762534329679995
-    - rid: 7729762534329679993
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: 
-        propertyType:
-          rid: 7729762534329679996
-    - rid: 7729762534329679994
-      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: 
-        propertyType:
-          rid: 7729762534329679997
-    - rid: 7729762534329679995
-      type: {class: 'SVNullProperty`1[[__SARV.Framework.Module.Actor.SARVActor, Assembly-CSharp]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
-    - rid: 7729762534329679996
-      type: {class: 'SVNullProperty`1[[UnityEngine.Vector3, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
-    - rid: 7729762534329679997
-      type: {class: 'SVNullProperty`1[[UnityEngine.Vector3, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
+    RefIds: []
