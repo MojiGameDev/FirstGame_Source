@@ -1,16 +1,20 @@
-﻿using __SARV.Common.Extension;
-using __SARV.Framework.Common.Entity;
+﻿using __SARV.Framework.Module.Actor.Enum;
 using __SARV.Framework.Module.Interactor;
-using __SARV.Framework.Module.Melee;
-using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
     public abstract class SVSubActorCharacter : SVSubActorAgent
     {
+        public SARVInteractor CurrentInteractor { get; private set; }
+
         public void SetInteractor(SARVInteractor interactor)
         {
             CurrentInteractor = interactor;
+        }
+        
+        public void SetMovementSpeed(SVActorSpeed actorSpeed)
+        {
+            currentSpeed = actorSpeed;
         }
     }
 }
