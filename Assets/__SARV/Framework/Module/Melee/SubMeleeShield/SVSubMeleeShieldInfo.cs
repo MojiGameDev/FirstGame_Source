@@ -13,10 +13,5 @@ namespace __SARV.Framework.Module.Melee.SubMeleeShield
 
         [FoldoutGroup("Info")] [SerializeField]
         protected SARVLocalizer description;
-
-        [FoldoutGroup("Info")] [SerializeField] [ReadOnly]
-        protected SVEquipmentType equipmentType = SVEquipmentType.MeleeShield;
-
-        public SVEquipmentType EquipmentType => equipmentType;
     }
 }

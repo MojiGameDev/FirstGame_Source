@@ -12,60 +12,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e1c9b5dcaa4b14a44b8ece56ee3d28, type: 3}
   m_Name: KianMeleeShield_Shield_01
   m_EditorClassIdentifier: 
+  title: {fileID: 0}
+  description: {fileID: 0}
   onEquipInstruction:
     instruction: 
     instructions:
-    - rid: 7729762489063702672
+    - rid: 7729762534329679991
   onUnequipInstruction:
     instruction: 
     instructions: []
   onHolsterInstruction:
     instruction: 
     instructions: []
+  onBlockInstruction:
+    instruction: 
+    instructions: []
+  onBreakInstruction:
+    instruction: 
+    instructions: []
+  onParryInstruction:
+    instruction: 
+    instructions: []
   references:
     version: 2
     RefIds:
-    - rid: 7729762489063702672
-      type: {class: SVActorInstructionAttachProp, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+    - rid: 7729762534329679991
+      type: {class: SVActorInstructionAttachEquipment, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
         actor:
-          rid: 7729762489063702673
-        prop: {fileID: 3594085491992109590, guid: ed3c82432727eac43abb3a8ed8cecfea, type: 3}
+          rid: 7729762534329679992
+        equipmentType: 10
+        equipment: {fileID: 0}
         bone:
           boneType: 10
-          human: 17
+          human: 18
           path: 
         position:
-          rid: 7729762489063702674
+          rid: 7729762534329679993
         rotation:
-          rid: 7729762489063702675
-    - rid: 7729762489063702673
+          rid: 7729762534329679994
+    - rid: 7729762534329679992
       type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Self
+        property: 
         propertyType:
-          rid: 7729762489063702679
-    - rid: 7729762489063702674
+          rid: 7729762534329679995
+    - rid: 7729762534329679993
       type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Manual
+        property: 
         propertyType:
-          rid: 7729762489063702720
-    - rid: 7729762489063702675
+          rid: 7729762534329679996
+    - rid: 7729762534329679994
       type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Manual
+        property: 
         propertyType:
-          rid: 7729762489063702721
-    - rid: 7729762489063702679
-      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+          rid: 7729762534329679997
+    - rid: 7729762534329679995
+      type: {class: 'SVNullProperty`1[[__SARV.Framework.Module.Actor.SARVActor, Assembly-CSharp]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
-    - rid: 7729762489063702720
-      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {x: -0.386, y: -0.212, z: 0.085}
-    - rid: 7729762489063702721
-      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: {x: -11.609, y: 4.364, z: -65.437}
+    - rid: 7729762534329679996
+      type: {class: 'SVNullProperty`1[[UnityEngine.Vector3, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762534329679997
+      type: {class: 'SVNullProperty`1[[UnityEngine.Vector3, UnityEngine.CoreModule]]', ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 

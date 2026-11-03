@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 0}
   description: {fileID: 0}
-  equipmentType: 10
   onEquipInstruction:
     instruction: 
     instructions:
-    - rid: 7729762511179219045
     - rid: 7729762534329679981
   onUnequipInstruction:
     instruction: 
@@ -30,22 +28,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7729762511179219045
-      type: {class: SVActorInstructionSetCombatType, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        actor:
-          rid: 7729762511179219046
-        combatType: 100
-    - rid: 7729762511179219046
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Self
-        propertyType:
-          rid: 7729762511179219048
-    - rid: 7729762511179219048
-      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
     - rid: 7729762534329679981
       type: {class: SVActorInstructionAttachEquipment, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
