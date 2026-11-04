@@ -1,4 +1,5 @@
 ﻿using __SARV.Common.Base;
+using __SARV.Framework.Module.Actor.Enum;
 using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;

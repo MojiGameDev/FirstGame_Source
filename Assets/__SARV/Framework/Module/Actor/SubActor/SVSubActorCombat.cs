@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Entity;
-using __SARV.Framework.Module.Actor.Enum;
+using __SARV.Framework.Module.Actor.Entity;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Melee;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
@@ -14,17 +13,15 @@ namespace __SARV.Framework.Module.Actor.SubActor
     [Serializable]
     public abstract class SVSubActorCombat : SVSubActorData
     {
-        [FoldoutGroup("Data")] [SerializeField] [ReadOnly]
-        protected SVCombatType currentCombatType = SVCombatType.None;
-
+        public SARVIdentifier AttackBehaviorIdentifier { get; protected set; }
         public SARVMeleeWeapon CurrentMeleeWeapon { get; protected set; }
-        public SVCombatType CurrentCombatType => currentCombatType;
+        public SARVMeleeShield CurrentMeleeShield { get; protected set; }
 
-        protected Dictionary<SARVIdentifier, GameObject> EquipmentCache = new();
+        protected Dictionary<SVEquipmentKey, GameObject> RuntimeEquipmentItem = new();
 
-        public void SetCombatType(SVCombatType combatType)
+        public void SetAttackBehaviorIdentifier(SARVIdentifier identifier)
         {
-            currentCombatType = combatType;
+            AttackBehaviorIdentifier = identifier;
         }
 
         public async Task EquipMeleeWeapon(SARVMeleeWeapon meleeWeapon)
@@ -33,30 +30,36 @@ namespace __SARV.Framework.Module.Actor.SubActor
             await CurrentMeleeWeapon.ExecuteEquip(Argument);
         }
 
+        public async Task EquipMeleeShield(SARVMeleeShield meleeShield)
+        {
+            CurrentMeleeShield = meleeShield;
+            await CurrentMeleeShield.ExecuteEquip(Argument);
+        }
+
         public async Task UnequipMeleeWeapon()
         {
             await CurrentMeleeWeapon.ExecuteUnequip(Argument);
         }
 
-        public void AttachEquipment(SARVIdentifier identifier, SVBone bone, Vector3 position, Vector3 rotation)
+        public async Task UnequipMeleeShield()
         {
-            if (EquipmentCache.TryGetValue(identifier, out var instance))
-            {
-                var boneTransform = bone.GetTransform(animancerComponent.Animator);
-                instance.transform.parent = boneTransform;
-                instance.transform.localPosition = position;
-                instance.transform.localRotation = Quaternion.Euler(rotation);
-                instance.Active();
-            }
+            await CurrentMeleeShield.ExecuteUnequip(Argument);
         }
 
-        private void HandleEquipmentCache(SARVIdentifier identifier, GameObject model)
+        public void AttachEquipment(GameObject equipment, SVBone bone, Vector3 position, Vector3 rotation)
         {
-            if (!EquipmentCache.ContainsKey(identifier))
+            var boneTransform = bone.GetTransform(animancerComponent.Animator);
+            var combatItemKey = new SVEquipmentKey(equipment, boneTransform);
+            if (!RuntimeEquipmentItem.TryGetValue(combatItemKey, out var equipmentInstance))
             {
-                var instance = Instantiate(model);
-                instance.Inactive();
+                equipmentInstance = Instantiate(equipment);
+                RuntimeEquipmentItem.Add(combatItemKey, equipmentInstance);
             }
+
+            equipmentInstance.transform.parent = boneTransform;
+            equipmentInstance.transform.localPosition = position;
+            equipmentInstance.transform.localRotation = Quaternion.Euler(rotation);
+            equipmentInstance.Active();
         }
     }
 }

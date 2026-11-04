@@ -1,13 +1,12 @@
 ﻿using System.Threading.Tasks;
-using __SARV.Common.Base;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
+namespace __SARV.Framework.Module.Melee.SubMeleeShield
 {
-    public abstract class SVSubMeleeWeaponShield : SVScriptableObject
+    public abstract class SVSubMeleeShieldReaction : SVSubMeleeShieldHandling
     {
         [FoldoutGroup("Shield")] [SerializeField] [Title("OnBlock")] [HideLabel]
         private SVInstruction onBlockInstruction;
@@ -15,9 +14,9 @@ namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
         [FoldoutGroup("Shield")] [SerializeField] [Title("OnBreak")] [HideLabel]
         private SVInstruction onBreakInstruction;
 
-        [FoldoutGroup("Shield")] [SerializeField] [Title("OnnParry")] [HideLabel]
+        [FoldoutGroup("Shield")] [SerializeField] [Title("OnParry")] [HideLabel]
         private SVInstruction onParryInstruction;
-        
+
         public async Task ExecuteBlock(SVArgument argument)
         {
             await onBlockInstruction.ExecuteInstructions(argument);

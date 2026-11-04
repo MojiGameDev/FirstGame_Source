@@ -30,7 +30,8 @@ namespace __SARV.Framework.Kernal.Instruction
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
-            actor.GetValue(argument).StateMachine.ChangeBehaviorTo(behavior);
+            var act = actor.GetValue(argument);
+            act.StateMachine.ChangeBehaviorTo(behavior);
             return SVInstructionResult.DEFAULT_RESULT;
         }
     }

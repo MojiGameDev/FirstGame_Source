@@ -24,7 +24,7 @@ namespace __SARV.Framework.Kernal.Instruction
         private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
-        private SARVIdentifier equipmentIdentifier;
+        private GameObject model;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [HideLabel]
         private SVBone bone = new(HumanBodyBones.RightHand);
@@ -35,14 +35,14 @@ namespace __SARV.Framework.Kernal.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<Vector3> rotation = new SVVector3Property();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(equipmentIdentifier == null ? "..." : equipmentIdentifier.SkipWords(2))} to the {bone} of {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(model == null ? "..." : model.name)} to the {bone} of {actor}";
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             var act = actor.GetValue(argument);
             var pos = position.GetValue(argument);
             var rot = rotation.GetValue(argument);
-            act.AttachEquipment(equipmentIdentifier, bone, pos, rot);
+            act.AttachEquipment(model, bone, pos, rot);
             return SVInstructionResult.DEFAULT_RESULT;
         }
     }
