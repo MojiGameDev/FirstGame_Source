@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
+  m_Color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   fallbackSpriteSettings:
     Sprite: {fileID: 21300000, guid: 139928516d80e4411b009f860f379548, type: 3}
     ColorMode: 0
-    PrimaryColor: {r: 1, g: 1, b: 1, a: 0.29803923}
+    PrimaryColor: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
@@ -184,7 +184,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 120}
+  m_SizeDelta: {x: 120, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8691962887815146553
 MonoBehaviour:
@@ -266,7 +266,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 90}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &132946619217762106
 CanvasRenderer:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.3
+  m_PixelsPerUnitMultiplier: 3
   raycastPaddingFallback:
     screenConfigName: 
     OptimizedSize:
@@ -352,7 +352,7 @@ MonoBehaviour:
   keepBorderAspectRatio: 0
   spriteBorderScaleFallback:
     screenConfigName: 
-    OptimizedSize: {x: 0.2, y: 0.2}
+    OptimizedSize: {x: 1, y: 1}
     MinSize: {x: 0, y: 0}
     MaxSize: {x: 3, y: 3}
     UseMinSize: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 3494059247073659174}
   - component: {fileID: 842763951343378083}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 90}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3494059247073659174
 CanvasRenderer:
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.3
+  m_PixelsPerUnitMultiplier: 2
   raycastPaddingFallback:
     screenConfigName: 
     OptimizedSize:
@@ -496,7 +496,7 @@ MonoBehaviour:
   keepBorderAspectRatio: 0
   spriteBorderScaleFallback:
     screenConfigName: 
-    OptimizedSize: {x: 0.2, y: 0.2}
+    OptimizedSize: {x: 1, y: 1}
     MinSize: {x: 0, y: 0}
     MaxSize: {x: 3, y: 3}
     UseMinSize: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
   fallbackSpriteSettings:
     Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     ColorMode: 0
-    PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
+    PrimaryColor: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.78431374}
     SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
     FlippingMode: 0
     screenConfigName: 
@@ -543,17 +543,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8988347654933732846}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071064, w: -0.7071072}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7688407691674636163}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.4, y: 70.4}
-  m_SizeDelta: {x: 23, y: 3}
+  m_AnchoredPosition: {x: 0, y: 59.81}
+  m_SizeDelta: {x: 12, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2670982016471984031
 CanvasRenderer:
@@ -639,7 +639,7 @@ MonoBehaviour:
   keepBorderAspectRatio: 0
   spriteBorderScaleFallback:
     screenConfigName: 
-    OptimizedSize: {x: 1, y: 1}
+    OptimizedSize: {x: 0.1, y: 0.1}
     MinSize: {x: 0, y: 0}
     MaxSize: {x: 3, y: 3}
     UseMinSize: 0
