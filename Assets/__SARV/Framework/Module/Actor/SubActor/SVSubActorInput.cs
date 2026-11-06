@@ -41,6 +41,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
         public bool InputSprint => SARVGame.Instance.Player.GetButton(_playerSprintId);
 
         public bool InputInteract => SARVGame.Instance.Player.GetButtonDown(_playerInteractId);
+
         // public bool InputRoll => SARVGame.Instance.Player.GetButtonDown(_playerRollId);
         public bool InputAttack => SARVGame.Instance.Player.GetButtonDown(_playerAttackId);
 
@@ -51,19 +52,30 @@ namespace __SARV.Framework.Module.Actor.SubActor
         protected override void Awake()
         {
             base.Awake();
-            _playerMoveHorizontalId = ReInput.mapping.GetActionId(playerMoveHorizontalKey);
-            _playerMoveVerticalId = ReInput.mapping.GetActionId(playerMoveVerticalKey);
-            _playerSprintId = ReInput.mapping.GetActionId(playerSprintKey);
-            _playerInteractId = ReInput.mapping.GetActionId(playerInteractKey);
-            // _playerRollId = ReInput.mapping.GetActionId(playerRollKey);
-             _playerAttackId = ReInput.mapping.GetActionId(playerAttackKey);
+            if (IsActorPlayer)
+            {
+                HandleInputActionIds();
+            }
         }
 
         protected override void Update()
         {
             base.Update();
-            HandleMovementDirection();
-            HandleInteractPressed();
+            if (IsActorPlayer)
+            {
+                HandleMovementDirection();
+                HandleInteractPressed();
+            }
+        }
+
+        private void HandleInputActionIds()
+        {
+            _playerMoveHorizontalId = ReInput.mapping.GetActionId(playerMoveHorizontalKey);
+            _playerMoveVerticalId = ReInput.mapping.GetActionId(playerMoveVerticalKey);
+            _playerSprintId = ReInput.mapping.GetActionId(playerSprintKey);
+            _playerInteractId = ReInput.mapping.GetActionId(playerInteractKey);
+            // _playerRollId = ReInput.mapping.GetActionId(playerRollKey);
+            _playerAttackId = ReInput.mapping.GetActionId(playerAttackKey);
         }
 
         public Task WaitForInteract()
