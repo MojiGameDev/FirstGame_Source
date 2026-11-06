@@ -14,22 +14,18 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
         private QueryTriggerInteraction triggerMode = QueryTriggerInteraction.Collide;
 
         public bool IsActive { get; private set; }
-        
+
         private readonly Collider[] _overlapResults = new Collider[32];
-        private readonly HashSet<SARVHurtpoint> _hurtTargets = new();
+        private readonly HashSet<SARVActor> _hitTargets = new();
+
         private Vector3 _lastPosition;
         private Quaternion _lastRotation;
-        private Vector3 HalfExtents => hitboxSize * 0.5f;
 
-        protected override void FixedUpdate()
-        {
-            base.FixedUpdate();
-            DetectHits();
-        }
+        private Vector3 HalfExtents => hitboxSize * 0.5f;
 
         public void Activate()
         {
-            _hurtTargets.Clear();
+            _hitTargets.Clear();
 
             _lastPosition = GetWorldCenter();
             _lastRotation = transform.rotation;
@@ -40,14 +36,16 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
         public void Deactivate()
         {
             IsActive = false;
-            _hurtTargets.Clear();
+            _hitTargets.Clear();
         }
 
-        private void DetectHits()
+        public bool TryGetDetectedHit(out SARVHurtpoint hurtpoint)
         {
+            hurtpoint = null;
+
             if (!IsActive)
             {
-                return;
+                return false;
             }
 
             var currentPosition = GetWorldCenter();
@@ -68,7 +66,13 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
                         targetLayer,
                         triggerMode))
                 {
-                    ProcessHit(hit.collider, hit.point, hit.normal);
+                    hurtpoint = ProcessHit(hit.collider, hit.point);
+
+                    if (hurtpoint != null)
+                    {
+                        UpdateLastTransform(currentPosition, currentRotation);
+                        return true;
+                    }
                 }
             }
 
@@ -90,26 +94,44 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
                     continue;
                 }
 
-                var hitPosition = targetCollider.ClosestPoint(currentPosition);
-                var hitNormal = (hitPosition - currentPosition).normalized;
+                hurtpoint = ProcessHit(targetCollider, currentPosition);
 
-                ProcessHit(targetCollider, hitPosition, hitNormal);
+                if (hurtpoint != null)
+                {
+                    UpdateLastTransform(currentPosition, currentRotation);
+                    return true;
+                }
             }
 
-            _lastPosition = currentPosition;
-            _lastRotation = currentRotation;
+            UpdateLastTransform(currentPosition, currentRotation);
+            return false;
         }
 
-        private void ProcessHit(Collider targetCollider, Vector3 hitPosition, Vector3 hitNormal)
+        private SARVHurtpoint ProcessHit(Collider targetCollider, Vector3 hitPosition)
         {
-            var hurtpoint = targetCollider.GetComponentInParent<SARVHurtpoint>();
+            var target = targetCollider.GetComponentInParent<SARVActor>();
 
-            if (hurtpoint == null || !_hurtTargets.Add(hurtpoint))
+            if (target == null || _hitTargets.Contains(target))
             {
-                return;
+                return null;
             }
 
-            //OnHit?.Invoke(hitpoint, hitPosition, hitNormal);
+            var closestHurtpoint = target.GetClosestHurtpoint(hitPosition);
+
+            if (closestHurtpoint == null)
+            {
+                return null;
+            }
+
+            _hitTargets.Add(target);
+
+            return closestHurtpoint;
+        }
+
+        private void UpdateLastTransform(Vector3 position, Quaternion rotation)
+        {
+            _lastPosition = position;
+            _lastRotation = rotation;
         }
 
         protected Vector3 GetWorldCenter()

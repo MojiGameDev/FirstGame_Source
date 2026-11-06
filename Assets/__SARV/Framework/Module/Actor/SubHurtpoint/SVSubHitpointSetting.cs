@@ -1,8 +1,6 @@
-﻿using __SARV.Common.Base;
-
-namespace __SARV.Framework.Module.Actor.SubHurtpoint
+﻿namespace __SARV.Framework.Module.Actor.SubHurtpoint
 {
-    public abstract class SVSubHitpointSetting : SVOverrideMonoBehaviour
+    public abstract class SVSubHitpointSetting : SVSubHitpointReference
     {
         
     }

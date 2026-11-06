@@ -13,7 +13,7 @@ namespace __SARV.Framework.Module.Melee.SubMeleeCombo
 
         private string CombosLabel => $"{combos.Count} Combos";
         
-        public List<SVComboNode> Combos => combos;
+        public IReadOnlyList<SVComboNode> Combos => combos;
 
         private void CreateNode()
         {

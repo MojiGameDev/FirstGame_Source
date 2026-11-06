@@ -79,8 +79,94 @@ namespace __SARV.Common.Utils
                 rotation,
                 Vector3.one
             );
-            
+
             Gizmos.DrawCube(Vector3.zero, size);
+        }
+
+        public static void DrawBox(BoxCollider box, Color color)
+        {
+            Gizmos.color = color;
+            var oldMatrix = Gizmos.matrix;
+
+            Gizmos.matrix = box.transform.localToWorldMatrix;
+            Gizmos.DrawCube(box.center, box.size);
+
+            Gizmos.matrix = oldMatrix;
+        }
+
+        public static void DrawSphere(SphereCollider sphere, Color color)
+        {
+            Gizmos.color = color;
+            var oldMatrix = Gizmos.matrix;
+
+            Gizmos.matrix = sphere.transform.localToWorldMatrix;
+            Gizmos.DrawSphere(sphere.center, sphere.radius);
+
+            Gizmos.matrix = oldMatrix;
+        }
+
+        public static void DrawCapsule(CapsuleCollider capsule, Color color)
+        {
+            Gizmos.color = color;
+            var t = capsule.transform;
+
+            var center = t.TransformPoint(capsule.center);
+            var scale = t.lossyScale;
+
+            var axis = capsule.direction;
+
+            var direction = axis switch
+            {
+                0 => t.right,
+                1 => t.up,
+                _ => t.forward
+            };
+
+            var radiusScale = axis switch
+            {
+                0 => Mathf.Max(scale.y, scale.z),
+                1 => Mathf.Max(scale.x, scale.z),
+                _ => Mathf.Max(scale.x, scale.y)
+            };
+
+            var radius = capsule.radius * radiusScale;
+            var height = Mathf.Max(
+                capsule.height * Mathf.Abs(scale[axis]),
+                radius * 2f
+            );
+
+            var halfSegment = (height - radius * 2f) * 0.5f;
+
+            Gizmos.DrawSphere(center + direction * halfSegment, radius);
+            Gizmos.DrawSphere(center - direction * halfSegment, radius);
+
+            var size = Vector3.one * radius * 2f;
+            size[axis] = height - radius * 2f;
+
+            var oldMatrix = Gizmos.matrix;
+            Gizmos.matrix = Matrix4x4.TRS(center, t.rotation, Vector3.one);
+
+            Gizmos.DrawCube(Vector3.zero, size);
+
+            Gizmos.matrix = oldMatrix;
+        }
+
+        public static void DrawCollider(Collider collider, Color color)
+        {
+            switch (collider)
+            {
+                case BoxCollider box:
+                    DrawBox(box, color);
+                    break;
+
+                case SphereCollider sphere:
+                    DrawSphere(sphere, color);
+                    break;
+
+                case CapsuleCollider capsule:
+                    DrawCapsule(capsule, color);
+                    break;
+            }
         }
     }
 }

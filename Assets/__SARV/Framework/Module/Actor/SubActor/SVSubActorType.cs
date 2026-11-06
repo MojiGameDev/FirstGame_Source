@@ -13,5 +13,6 @@ namespace __SARV.Framework.Module.Actor.SubActor
         protected SVActorType type = SVActorType.Player;
 
         public bool IsActorPlayer => type == SVActorType.Player;
+        public bool IsActorAgent => type == SVActorType.Agent;
     }
 }

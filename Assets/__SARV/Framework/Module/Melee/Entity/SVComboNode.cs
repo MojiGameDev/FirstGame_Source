@@ -32,6 +32,7 @@ namespace __SARV.Framework.Module.Melee.Entity
         public SVBranch OnCanPerformBranch => onCanPerformBranch;
         public SVInstruction OnStartInstruction => onStartInstruction;
         public SVInstruction OnEndInstruction => onEndInstruction;
+        public  IReadOnlyList<SVComboNode> Combos => combos;
 
         private void CreateNode()
         {

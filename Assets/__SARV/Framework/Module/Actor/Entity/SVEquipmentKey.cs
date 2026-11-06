@@ -1,5 +1,4 @@
 ﻿using System;
-using __SARV.Framework.Module.Identifier;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.Entity

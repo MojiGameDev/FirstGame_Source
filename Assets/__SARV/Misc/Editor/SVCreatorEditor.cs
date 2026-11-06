@@ -3,6 +3,7 @@ using __SARV.Common.Base;
 using __SARV.Common.Extension;
 using __SARV.Framework;
 using __SARV.Framework.Kernal;
+using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Dialogue;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Indicator;
@@ -38,6 +39,12 @@ namespace __SARV.Misc.Editor
         private static void CreateSARVStatePlayer(MenuCommand command)
         {
             CreateSARVGameObject<SARVStatePlayer>(command, "StatePlayer");
+        }
+
+        [MenuItem("GameObject/SARV/Create Hurtpoint", false, 10)]
+        private static void CreateSARVHurtpoint(MenuCommand command)
+        {
+            CreateSARVGameObject<SARVHurtpoint>(command, "Hurtpoint");
         }
 
         // [MenuItem("GameObject/SARV/Create State Agent", false, 10)]
@@ -151,6 +158,12 @@ namespace __SARV.Misc.Editor
 
         [MenuItem("CONTEXT/SARV/Create Dialogue", true)]
         private static bool ValidateCreateSARVDialogue(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
+
+        [MenuItem("CONTEXT/SARV/Create Hurtpoint", true)]
+        private static bool ValidateCreateHurtpoint(MenuCommand command)
         {
             return command.context is GameObject;
         }

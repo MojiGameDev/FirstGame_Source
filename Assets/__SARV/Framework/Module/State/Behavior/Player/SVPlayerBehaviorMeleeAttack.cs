@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Integration.Animancer.Enum;
 using __SARV.Framework.Integration.Animancer.Parameter.Type;
+using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Melee.Entity;
 using __SARV.Framework.Module.State.Behavior.Base;
 using Animancer;
@@ -20,16 +24,29 @@ namespace __SARV.Framework.Module.State.Behavior
         [BoxGroup("Animancer")] [SerializeField] [Required]
         private StringAsset meleeAttackEvent;
 
+        private SVComboNode _currentCombo;
+        private SARVHitbox _currentHitbox;
+
         public override async Task Enter()
         {
             await base.Enter();
+            _currentCombo = null;
+            _currentHitbox = null;
             Player.EnablePlayerRootMotion();
             Player.AnimancerComponent.Events.AddTo<SVMeleeAttackParameterType>(meleeAttackEvent, HandleMeleeEventHandler);
-            HandleMatchedMeleeAttack();
+            HandleMatchedCombo();
+            HandlePlayMatchedMeleeAttack();
         }
 
         public override void Tick(float deltaTime)
         {
+            if (_currentHitbox != null && _currentHitbox.IsActive)
+            {
+                if (_currentHitbox.TryGetDetectedHit(out var hurtpoint))
+                {
+                    Debug.Log($"{hurtpoint.gameObject.name}");
+                }
+            }
         }
 
         public override async Task Exit()
@@ -39,36 +56,71 @@ namespace __SARV.Framework.Module.State.Behavior
             await base.Exit();
         }
 
-        private void HandleMatchedMeleeAttack()
+        private void HandlePlayMatchedMeleeAttack()
         {
-            var comboNode = GetMatchedCombo();
-            if (comboNode == null)
+            Player.PlayAnimancer(_currentCombo.Attack.TransitionAlias);
+        }
+
+        private void HandleHitbox(SVComboNode comboNode)
+        {
+            var boneTransform = comboNode.Attack.Bone.GetTransform(Player.AnimancerComponent.Animator);
+            _currentHitbox = boneTransform.GetComponentInChildren<SARVHitbox>();
+        }
+
+        private void HandleMatchedCombo()
+        {
+            var rootCombos = Player.CurrentMeleeWeapon.MeleeCombo.Combos;
+            var combos = _currentCombo?.Combos ?? rootCombos;
+
+            if (TryGetComboAttack(combos, out var currentCombo))
             {
-                //Finished
+                _currentCombo = currentCombo;
+                return;
             }
-            else
+
+            _currentCombo = null;
+
+            if (TryGetComboAttack(rootCombos, out currentCombo))
             {
-                Player.PlayAnimancer(comboNode.Attack.TransitionAlias);
+                _currentCombo = currentCombo;
             }
         }
 
-        private SVComboNode GetMatchedCombo()
+        private bool TryGetComboAttack(IReadOnlyList<SVComboNode> combos, out SVComboNode currentCombo)
         {
-            var meleeWeapon = Player.CurrentMeleeWeapon;
-            foreach (var combo in meleeWeapon.MeleeCombo.Combos)
+            currentCombo = null;
+
+            foreach (var combo in combos)
             {
                 if (combo.OnCanPerformBranch.IsBranchesPassed(Player.Argument))
                 {
-                    return combo;
+                    currentCombo = combo;
+                    HandleHitbox(currentCombo);
+                    _currentHitbox.Deactivate();
+                    return true;
                 }
             }
 
-            return null;
+            return false;
         }
 
         private void HandleMeleeEventHandler(SVMeleeAttackParameterType parameter)
         {
-            Debug.Log(parameter.AttackPhase);
+            switch (parameter.AttackPhase)
+            {
+                case SVMeleeAttackPhase.Start:
+                    break;
+                case SVMeleeAttackPhase.Next:
+                    break;
+                case SVMeleeAttackPhase.End:
+                    break;
+                case SVMeleeAttackPhase.EnableHitbox:
+                    _currentHitbox.Activate();
+                    break;
+                case SVMeleeAttackPhase.DisableHitbox:
+                    _currentHitbox.Deactivate();
+                    break;
+            }
         }
     }
 }

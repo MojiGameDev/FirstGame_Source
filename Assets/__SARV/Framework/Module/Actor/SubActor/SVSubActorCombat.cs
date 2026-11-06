@@ -11,7 +11,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Actor.SubActor
 {
     [Serializable]
-    public abstract class SVSubActorCombat : SVSubActorData
+    public abstract class SVSubActorCombat : SVSubActorHurtpoint
     {
         public SARVIdentifier AttackBehaviorIdentifier { get; protected set; }
         public SARVMeleeWeapon CurrentMeleeWeapon { get; protected set; }

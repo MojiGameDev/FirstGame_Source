@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f08fdd50e79d0c4bb235a5c2696516d, type: 3}
+  m_Name: Enemy_Modular_01_Sword_TransitionLibraryAsset
+  m_EditorClassIdentifier: 
+  _Definition:
+    _Transitions:
+    - {fileID: 4376716072861348297}
+    - {fileID: 550970922085477718}
+    _Modifiers: []
+    _Aliases:
+    - _Name: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
+      _Index: 0
+    - _Name: {fileID: 11400000, guid: 38eeae644b8a7bb409be236d03c0aacd, type: 2}
+      _Index: 1
+    _AliasAllTransitions: 0
+--- !u!114 &550970922085477718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 7729762603226365956
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762603226365956
+      type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _Asset: {fileID: 11400000, guid: fe1f898e6e3a32e499bcd0701fa44d30, type: 2}
+--- !u!114 &4376716072861348297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: FreeMovement
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 7729762603226365954
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762603226365954
+      type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _Asset: {fileID: 11400000, guid: e145209b1579e9d47bf3ee2db8026032, type: 2}
+--- !u!114 &8206271341768735544
+MonoBehaviour:
+  m_ObjectHideFlags: 17
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04d4a67566152e40aaa01b8b745ff6b, type: 3}
+  m_Name: Editor Data
+  m_EditorClassIdentifier: 
+  _Library: {fileID: 11400000}
+  _Data:
+    _TransitionGroups: []
+    _TransitionSortMode: 0

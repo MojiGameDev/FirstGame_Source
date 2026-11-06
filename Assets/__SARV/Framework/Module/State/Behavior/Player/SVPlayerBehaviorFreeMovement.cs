@@ -50,7 +50,7 @@ namespace __SARV.Framework.Module.State.Behavior
                 movementSpeedParameter,
                 PARAMETER_MOVEMENT_SPEED_SMOOTH_TIME);
             Player.PlayAnimancer(transitionAlias);
-            Player.UpdatePlayerSpeed(runSpeed, runRotationRate);
+            Player.HandlePlayerSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
             Player.SetMovementSpeed(SVActorSpeed.Idle);
         }
@@ -64,7 +64,7 @@ namespace __SARV.Framework.Module.State.Behavior
 
         public override async Task Exit()
         {
-            Player.UpdatePlayerSpeed(runSpeed, runRotationRate);
+            Player.HandlePlayerSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.Dispose();
             await base.Exit();
         }
@@ -78,11 +78,11 @@ namespace __SARV.Framework.Module.State.Behavior
 
             if (Player.CurrentSpeed == SVActorSpeed.Sprint)
             {
-                Player.UpdatePlayerSpeed(sprintSpeed, sprintRotationRate);
+                Player.HandlePlayerSpeed(sprintSpeed, sprintRotationRate);
             }
             else
             {
-                Player.UpdatePlayerSpeed(runSpeed, runRotationRate);
+                Player.HandlePlayerSpeed(runSpeed, runRotationRate);
             }
         }
 

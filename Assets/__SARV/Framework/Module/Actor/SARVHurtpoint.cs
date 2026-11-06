@@ -2,7 +2,7 @@
 
 namespace __SARV.Framework.Module.Actor
 {
-    public class SARVHurtpoint : SVSubHitpointSetting
+    public class SARVHurtpoint : SVSubHitpointGizmos
     {
         
     }
