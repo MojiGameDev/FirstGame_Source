@@ -14702,6 +14702,7 @@ MonoBehaviour:
   ecmCharacter: {fileID: 2661093102305112960}
   characterMovement: {fileID: 7191640013644561009}
   aiPath: {fileID: 0}
+  aiDestinationSetter: {fileID: 0}
   characterController: {fileID: 0}
   playerMoveHorizontalKey: PlayerMoveHorizontal
   playerMoveVerticalKey: PlayerMoveVertical
@@ -14739,6 +14740,9 @@ MonoBehaviour:
   staminaAttribute: {fileID: 11400000, guid: 0ec85cf0e4c9f0142bc290841add215c, type: 2}
   changeSpeedDuration: 0.2
   changeRotationRateDuration: 0.2
+  changeMovementSpeedDuration: 1
+  changeRotationSpeedDuration: 1
+  defaultEndReachedDistance: 0.2
   characterHeight: 2
   characterCenter: {x: 0, y: 1, z: 0}
   characterRadius: 0.3
