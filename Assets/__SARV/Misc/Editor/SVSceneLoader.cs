@@ -105,6 +105,15 @@ namespace __SARV.Misc.Editor
             EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Animation.unity", OpenSceneMode.Single);
         }
 
+        [MenuItem("SARV/Scene/Demo_Ragdoll")]
+        public static void DemoRagdoll()
+        {
+            // Close all current scenes first
+            CloseAllScenes();
+
+            EditorSceneManager.OpenScene($"{DEMO_SCENE}Demo_Ragdoll.unity", OpenSceneMode.Single);
+        }
+
         [MenuItem("SARV/Scene/Cinematic_01")]
         public static void Cinematic_01()
         {
