@@ -32,8 +32,8 @@ namespace __SARV.Framework.Module.State.Behavior
             await base.Enter();
             _currentCombo = null;
             _currentHitbox = null;
-            Player.EnablePlayerRootMotion();
-            Player.AnimancerComponent.Events.AddTo<SVMeleeAttackParameterType>(meleeAttackEvent, HandleMeleeEventHandler);
+            Actor.EnablePlayerRootMotion();
+            Actor.AnimancerComponent.Events.AddTo<SVMeleeAttackParameterType>(meleeAttackEvent, HandleMeleeEventHandler);
             HandleMatchedCombo();
             HandlePlayMatchedMeleeAttack();
         }
@@ -51,25 +51,25 @@ namespace __SARV.Framework.Module.State.Behavior
 
         public override async Task Exit()
         {
-            Player.DisablePlayerRootMotion();
-            Player.AnimancerComponent.Events.Remove(meleeAttackEvent);
+            Actor.DisablePlayerRootMotion();
+            Actor.AnimancerComponent.Events.Remove(meleeAttackEvent);
             await base.Exit();
         }
 
         private void HandlePlayMatchedMeleeAttack()
         {
-            Player.PlayAnimancer(_currentCombo.Attack.TransitionAlias);
+            Actor.PlayAnimancer(_currentCombo.Attack.TransitionAlias);
         }
 
         private void HandleHitbox(SVComboNode comboNode)
         {
-            var boneTransform = comboNode.Attack.Bone.GetTransform(Player.AnimancerComponent.Animator);
+            var boneTransform = comboNode.Attack.Bone.GetTransform(Actor.AnimancerComponent.Animator);
             _currentHitbox = boneTransform.GetComponentInChildren<SARVHitbox>();
         }
 
         private void HandleMatchedCombo()
         {
-            var rootCombos = Player.CurrentMeleeWeapon.MeleeCombo.Combos;
+            var rootCombos = Actor.CurrentMeleeWeapon.MeleeCombo.Combos;
             var combos = _currentCombo?.Combos ?? rootCombos;
 
             if (TryGetComboAttack(combos, out var currentCombo))
@@ -92,7 +92,7 @@ namespace __SARV.Framework.Module.State.Behavior
 
             foreach (var combo in combos)
             {
-                if (combo.OnCanPerformBranch.IsBranchesPassed(Player.Argument))
+                if (combo.OnCanPerformBranch.IsBranchesPassed(Actor.Argument))
                 {
                     currentCombo = combo;
                     HandleHitbox(currentCombo);

@@ -8,6 +8,6 @@ namespace __SARV.Framework.Module.State.Behavior.Base
     [Serializable]
     public abstract class SVPlayerBehavior : SVBehaviorComponent
     {
-        protected SARVActor Player => SVAccessPlayer.Instance;
+        
     }
 }

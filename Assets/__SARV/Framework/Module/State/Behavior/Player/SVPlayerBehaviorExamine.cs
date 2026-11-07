@@ -10,7 +10,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.State.Behavior
 {
     [SVTitle("Examine")]
-    [SVCategory(SVConstantCategory.Behavior.EXAMINE)]
+    [SVCategory(SVConstantCategory.Behavior.PLAYER)]
     [SVDescription("Allows the player to examine the environment and interact with points of interest")]
     [Serializable]
     public class SVPlayerBehaviorExamine : SVPlayerInteractBehavior
@@ -21,7 +21,7 @@ namespace __SARV.Framework.Module.State.Behavior
         public override async Task Enter()
         {
             await base.Enter();
-            Player.PlayAnimancer(transitionAlias);
+            Actor.PlayAnimancer(transitionAlias);
         }
     }
 }

@@ -48,7 +48,7 @@
         public static class Behavior
         {
             public const string PLAYER = "Player";
-            public const string EXAMINE = "Examine";
+            public const string AGENT = "Agent";
         }
     }
 }

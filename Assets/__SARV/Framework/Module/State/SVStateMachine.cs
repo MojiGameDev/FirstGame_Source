@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using __SARV.Common.Base;
+using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.State.Base;
 using Sirenix.OdinInspector;
@@ -52,6 +53,14 @@ namespace __SARV.Framework.Module.State
             }
 
             _currentState.Behavior.Tick(deltaTime);
+        }
+
+        public void HandleSetActor(SARVActor actor)
+        {
+            foreach (var state in states)
+            {
+                state.Behavior.SetActor(actor);
+            }
         }
 
         private void HandleDefaultState()

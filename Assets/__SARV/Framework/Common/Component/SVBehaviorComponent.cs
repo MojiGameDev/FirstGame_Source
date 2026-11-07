@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Shared;
+using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -24,10 +25,12 @@ namespace __SARV.Framework.Common.Component
         public SARVIdentifier Identifier => identifier;
 
         protected SVArgument Argument;
+        protected SARVActor Actor;
 
-        public void SetArgument(SVArgument argument)
+        public void SetActor(SARVActor actor)
         {
-            Argument = argument;
+            Actor = actor;
+            Argument = SVArgument.Create(actor.gameObject);
         }
 
         public virtual async Task Enter()

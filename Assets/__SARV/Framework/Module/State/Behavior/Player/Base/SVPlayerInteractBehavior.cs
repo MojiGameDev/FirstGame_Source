@@ -30,18 +30,18 @@ namespace __SARV.Framework.Module.State.Behavior.Base
             IsSnapping = true;
             SnapTimer = 0f;
 
-            TargetPosition = Player.CurrentInteractor.CurrentInteractionPoint.position;
-            TargetRotation = Player.CurrentInteractor.CurrentInteractionPoint.rotation;
+            TargetPosition = Actor.CurrentInteractor.CurrentInteractionPoint.position;
+            TargetRotation = Actor.CurrentInteractor.CurrentInteractionPoint.rotation;
 
             // Store start values
-            StartPosition = Player.transform.position;
-            StartRotation = Player.transform.rotation;
+            StartPosition = Actor.transform.position;
+            StartRotation = Actor.transform.rotation;
 
-            PreviousMovementMode = Player.ECMCharacter.GetMovementMode();
-            PreviousRotationMode = Player.ECMCharacter.GetRotationMode();
+            PreviousMovementMode = Actor.ECMCharacter.GetMovementMode();
+            PreviousRotationMode = Actor.ECMCharacter.GetRotationMode();
 
-            Player.ECMCharacter.SetMovementMode(ECM2.Character.MovementMode.None);
-            Player.ECMCharacter.SetRotationMode(ECM2.Character.RotationMode.None);
+            Actor.ECMCharacter.SetMovementMode(ECM2.Character.MovementMode.None);
+            Actor.ECMCharacter.SetRotationMode(ECM2.Character.RotationMode.None);
         }
 
         public override void Tick(float deltaTime)
@@ -54,8 +54,8 @@ namespace __SARV.Framework.Module.State.Behavior.Base
 
         public override async Task Exit()
         {
-            Player.ECMCharacter.SetMovementMode(PreviousMovementMode);
-            Player.ECMCharacter.SetRotationMode(PreviousRotationMode);
+            Actor.ECMCharacter.SetMovementMode(PreviousMovementMode);
+            Actor.ECMCharacter.SetRotationMode(PreviousRotationMode);
             await base.Exit();
         }
 
@@ -67,8 +67,8 @@ namespace __SARV.Framework.Module.State.Behavior.Base
             var curveValue = snapCurve.Evaluate(t);
 
             // Interpolate position and rotation
-            Player.transform.position = Vector3.Lerp(StartPosition, TargetPosition, curveValue);
-            Player.transform.rotation = Quaternion.Slerp(StartRotation, TargetRotation, curveValue);
+            Actor.transform.position = Vector3.Lerp(StartPosition, TargetPosition, curveValue);
+            Actor.transform.rotation = Quaternion.Slerp(StartRotation, TargetRotation, curveValue);
 
             // Check if snap is complete
             // When progress reaches 100%
@@ -81,8 +81,8 @@ namespace __SARV.Framework.Module.State.Behavior.Base
         private void HandleCompleteSnap()
         {
             // Ensure exact final position and rotation
-            Player.transform.position = TargetPosition;
-            Player.transform.rotation = TargetRotation;
+            Actor.transform.position = TargetPosition;
+            Actor.transform.rotation = TargetRotation;
 
             IsSnapping = false;
         }

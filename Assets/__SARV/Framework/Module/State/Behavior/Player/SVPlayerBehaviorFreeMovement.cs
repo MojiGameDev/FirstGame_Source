@@ -46,25 +46,25 @@ namespace __SARV.Framework.Module.State.Behavior
         {
             await base.Enter();
             _smoothedFloatParameterMovementSpeed = new SmoothedFloatParameter(
-                Player.AnimancerComponent,
+                Actor.AnimancerComponent,
                 movementSpeedParameter,
                 PARAMETER_MOVEMENT_SPEED_SMOOTH_TIME);
-            Player.PlayAnimancer(transitionAlias);
-            Player.HandlePlayerSpeed(runSpeed, runRotationRate);
+            Actor.PlayAnimancer(transitionAlias);
+            Actor.HandlePlayerSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.TargetValue = PARAMETER_MOVEMENT_SPEED_IDLE;
-            Player.SetMovementSpeed(SVActorSpeed.Idle);
+            Actor.SetMovementSpeed(SVActorSpeed.Idle);
         }
 
         public override void Tick(float deltaTime)
         {
-            Player.SetPlayerMovementDirection(Player.InputMovementDirection);
+            Actor.SetPlayerMovementDirection(Actor.InputMovementDirection);
             HandleMovementSpeedParameter();
             HandleCharacterSpeed();
         }
 
         public override async Task Exit()
         {
-            Player.HandlePlayerSpeed(runSpeed, runRotationRate);
+            Actor.HandlePlayerSpeed(runSpeed, runRotationRate);
             _smoothedFloatParameterMovementSpeed.Dispose();
             await base.Exit();
         }
@@ -76,36 +76,36 @@ namespace __SARV.Framework.Module.State.Behavior
                 return;
             }
 
-            if (Player.CurrentSpeed == SVActorSpeed.Sprint)
+            if (Actor.CurrentSpeed == SVActorSpeed.Sprint)
             {
-                Player.HandlePlayerSpeed(sprintSpeed, sprintRotationRate);
+                Actor.HandlePlayerSpeed(sprintSpeed, sprintRotationRate);
             }
             else
             {
-                Player.HandlePlayerSpeed(runSpeed, runRotationRate);
+                Actor.HandlePlayerSpeed(runSpeed, runRotationRate);
             }
         }
 
         private void HandleMovementSpeedParameter()
         {
             SVActorSpeed newMovementSpeed;
-            if (Player.InputMovementDirection.HasValue())
+            if (Actor.InputMovementDirection.HasValue())
             {
-                newMovementSpeed = Player.InputSprint ? SVActorSpeed.Sprint : SVActorSpeed.Run;
+                newMovementSpeed = Actor.InputSprint ? SVActorSpeed.Sprint : SVActorSpeed.Run;
             }
             else
             {
                 newMovementSpeed = SVActorSpeed.Idle;
             }
 
-            if (Player.CurrentSpeed == newMovementSpeed)
+            if (Actor.CurrentSpeed == newMovementSpeed)
             {
                 _isMovementSpeedParameterChanged = false;
                 return;
             }
 
             _isMovementSpeedParameterChanged = true;
-            Player.SetMovementSpeed(newMovementSpeed);
+            Actor.SetMovementSpeed(newMovementSpeed);
 
             _smoothedFloatParameterMovementSpeed.TargetValue = GetMovementSpeed();
         }
@@ -113,7 +113,7 @@ namespace __SARV.Framework.Module.State.Behavior
         private int GetMovementSpeed()
         {
             var speed = 0;
-            switch (Player.CurrentSpeed)
+            switch (Actor.CurrentSpeed)
             {
                 case SVActorSpeed.Idle:
                     speed = PARAMETER_MOVEMENT_SPEED_IDLE;

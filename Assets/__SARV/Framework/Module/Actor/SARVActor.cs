@@ -8,11 +8,12 @@ namespace __SARV.Framework.Module.Actor
     {
         protected override void Awake()
         {
+            base.Awake();
             if (type == SVActorType.Player)
             {
                 SVAccessPlayer.Initial(this);
             }
-            base.Awake();
+            StateMachine.HandleSetActor(this);
         }
     }
 }

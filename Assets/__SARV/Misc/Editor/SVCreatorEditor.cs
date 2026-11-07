@@ -41,6 +41,12 @@ namespace __SARV.Misc.Editor
             CreateSARVGameObject<SARVStatePlayer>(command, "StatePlayer");
         }
 
+        [MenuItem("GameObject/SARV/Create State Agent", false, 10)]
+        private static void CreateSARVStateAgent(MenuCommand command)
+        {
+            CreateSARVGameObject<SARVStateAgent>(command, "StateAgent");
+        }
+
         [MenuItem("GameObject/SARV/Create Hurtpoint", false, 10)]
         private static void CreateSARVHurtpoint(MenuCommand command)
         {

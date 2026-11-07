@@ -6,8 +6,7 @@ using __SARV.Framework.Module.Actor.Access;
 namespace __SARV.Framework.Module.State.Behavior.Agent.Base
 {
     [Serializable]
-    public abstract class SVPlayerBehavior : SVBehaviorComponent
+    public abstract class SVAgentBehavior : SVBehaviorComponent
     {
-        protected SARVActor Agent => SVAccessPlayer.Instance;
     }
 }
