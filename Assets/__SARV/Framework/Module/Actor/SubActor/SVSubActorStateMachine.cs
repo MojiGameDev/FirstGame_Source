@@ -22,7 +22,10 @@ namespace __SARV.Framework.Module.Actor.SubActor
         protected override void Start()
         {
             base.Start();
-            StateMachine.HandleStart();
+            if (IsActorPlayer)
+            {
+                StateMachine.HandleStart();
+            }
         }
 
         protected override void Update()

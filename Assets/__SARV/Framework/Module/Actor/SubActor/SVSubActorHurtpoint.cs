@@ -8,7 +8,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
     [Serializable]
     public abstract class SVSubActorHurtpoint : SVSubActorData
     {
-        [BoxGroup("Hurtpoint")] [SerializeField] [Required]
+        [FoldoutGroup("Hurtpoint")] [SerializeField] [Required]
         private List<SARVHurtpoint> hurtpoints =  new();
         
         public SARVHurtpoint GetClosestHurtpoint(Vector3 hitPosition)
