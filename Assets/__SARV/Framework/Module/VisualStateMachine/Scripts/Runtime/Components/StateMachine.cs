@@ -1,4 +1,10 @@
-﻿namespace Ilumisoft.VisualStateMachine
+﻿using System.Collections.Generic;
+using System.Linq;
+using __SARV.Framework.Module.Actor;
+using __SARV.Framework.Module.Identifier;
+using __SARV.Framework.Module.State;
+
+namespace Ilumisoft.VisualStateMachine
 {
     using System;
     using System.Collections;
@@ -9,8 +15,7 @@
     [DisallowMultipleComponent]
     public class StateMachine : MonoBehaviour
     {
-        [SerializeField]
-        private Graph graph = new Graph();
+        [SerializeField] private Graph graph = new Graph();
 
         /// <summary>
         /// Returns the ID of the previously active state. Empty if the state machine has not changed states yet
@@ -40,18 +45,12 @@
         public bool IsPaused { get; protected set; } = false;
 
         // The transition handler executes transitions
-        TransitionHandler transitionHandler;
+        private TransitionHandler transitionHandler;
+        private SVStateMachine _sarvStateMachine;
+
+        private Dictionary<string, State> RuntimeStates = new();
 
         #region Callbacks
-        /// <summary>
-        /// Callback invoked when a state is entered
-        /// </summary>
-        public UnityAction<State> OnEnterState = null;
-
-        /// <summary>
-        /// Callback invoked when a state is left
-        /// </summary>
-        public UnityAction<State> OnExitState = null;
 
         /// <summary>
         /// Callback invoked when a transition is triggered.
@@ -68,6 +67,7 @@
         /// Callback invoked when a transition is left
         /// </summary>
         public UnityAction<Transition> OnExitTransition = null;
+
         #endregion
 
         private void Awake()
@@ -77,6 +77,8 @@
 
         public void Start()
         {
+            HandleStatesToDictionary();
+
             // Don't reset state machine, if it has already been started.
             // When the state machine is created at runtime, this method might get called multiple times
             // or from anopther script
@@ -97,10 +99,10 @@
             transitionHandler.Update();
 
             // Trigger the OnUpdateState event of the currently active state
-            if (CurrentState != string.Empty && graph.TryGetState(CurrentState, out State state))
-            {
-                state?.OnUpdateState?.Invoke();
-            }
+            // if (CurrentState != string.Empty && graph.TryGetState(CurrentState, out State state))
+            // {
+            //     state?.OnUpdateState?.Invoke();
+            // }
         }
 
         /// <summary>
@@ -120,8 +122,7 @@
             {
                 if (node is State state)
                 {
-                    OnEnterState?.Invoke(state);
-                    state.OnEnterState.Invoke();
+                    OnEnterState();
                 }
             }
             else
@@ -130,29 +131,18 @@
             }
         }
 
-        /// <summary>
-        /// Instantly enters the state with the given ID.
-        /// Please Note: Using this method will not call OnExit on the current state or require a transition between the current state and the given one.
-        /// </summary>
-        /// <param name="stateID"></param>
-        public void ForceEnterState(string stateID)
+        public void SetSarvStateMachine(SVStateMachine sarvStateMachine)
         {
-            if (this.graph.TryGetNode(stateID, out Node targetNode))
-            {
-                if (targetNode is State state)
-                {
-                    this.PreviousState = CurrentState;
-                    this.CurrentState = state.ID;
+            _sarvStateMachine = sarvStateMachine;
+        }
 
-                    OnEnterState?.Invoke(state);
+        public void ForceEnterState(SARVIdentifier identifier)
+        {
+            var targetState = this.graph.States.First(d => d.Identifier == identifier);
+            this.PreviousState = CurrentState;
+            this.CurrentState = targetState.ID;
 
-                    state.OnEnterState.Invoke();
-
-                    return;
-                }
-            }
-
-            Debug.LogWarning($"Failed to enter state '{stateID}', because there is no state with the given ID on this state machine", this);
+            OnEnterState();
         }
 
         /// <summary>
@@ -342,9 +332,9 @@
             }
 
             // If a (timed) transition is currently being executed and the transition mode is set to 'Locked', triggering another transition will be ignored
-            if(StateMachineManager.Instance.Configuration.TransitionMode == TransitionMode.Locked)
+            if (StateMachineManager.Instance.Configuration.TransitionMode == TransitionMode.Locked)
             {
-                if(transitionHandler.IsRunning)
+                if (transitionHandler.IsRunning)
                 {
                     return false;
                 }
@@ -400,44 +390,6 @@
         }
 
         /// <summary>
-        /// Tries to exit the origin state of the given transition and returns true on success, false otherwise
-        /// </summary>
-        /// <param name="transition"></param>
-        /// <returns></returns>
-        private bool TryExitTransitionOriginState(Transition transition)
-        {
-            if (this.graph.TryGetNode(transition.OriginID, out Node originNode))
-            {
-                if (originNode is State state && state.ID == this.CurrentState)
-                {
-                    OnExitState?.Invoke(state);
-                    state.OnExitState.Invoke();
-                }
-                else if (originNode is AnyState anyState)
-                {
-                    if (this.graph.TryGetNode(this.CurrentState, out Node activeState))
-                    {
-                        if (activeState is State)
-                        {
-                            OnExitState?.Invoke((State)activeState);
-                            ((State)activeState).OnExitState.Invoke();
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.LogErrorFormat("Failed to trigger transition with name {0}, because its origin is not the current state", transition.ID, this);
-
-                    return false;
-                }
-
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
         /// Tries to enter the target state of the given transition and returns true on success, false otherwise.
         /// </summary>
         /// <param name="transition"></param>
@@ -451,8 +403,7 @@
                     this.PreviousState = this.CurrentState;
                     this.CurrentState = state.ID;
 
-                    OnEnterState?.Invoke(state);
-                    state.OnEnterState.Invoke();
+                    OnEnterState();
 
                     return true;
                 }
@@ -469,6 +420,19 @@
         public void Resume()
         {
             IsPaused = false;
+        }
+
+        private void HandleStatesToDictionary()
+        {
+            foreach (var state in this.graph.States)
+            {
+                RuntimeStates.Add(state.ID, state);
+            }
+        }
+
+        private void OnEnterState()
+        {
+            _sarvStateMachine.ChangeBehaviorTo(RuntimeStates[CurrentState].Identifier);
         }
 
         class TransitionHandler
@@ -535,7 +499,6 @@
 
             void StartTransition()
             {
-                stateMachine.TryExitTransitionOriginState(transition);
                 stateMachine.OnEnterTransition?.Invoke(transition);
                 transition.OnEnterTransition.Invoke();
             }
@@ -566,7 +529,7 @@
 
             public void Update()
             {
-                if(IsCompleted)
+                if (IsCompleted)
                 {
                     return;
                 }
@@ -599,43 +562,6 @@
         [Obsolete("This method is obsolete. Call Graph.HasTransition instead.")]
         public bool HasTransition(string id) => graph.HasTransition(id);
 
-        /// <summary>
-        /// Returns the OnEnterState event of the state with the given name, null if the state does not exist 
-        /// </summary>
-        /// <param name="stateName"></param>
-        /// <returns></returns>
-        [Obsolete("This method is obsolete. Call Graph.GetState instead.")]
-        public UnityEvent GetOnEnterStateEvent(string stateName)
-        {
-            if (graph.TryGetNode(stateName, out Node node))
-            {
-                if (node is State state)
-                {
-                    return state.OnEnterState;
-                }
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Returns the OnExitState event of the state with the given name, null if the state does not exist 
-        /// </summary>
-        /// <param name="stateName"></param>
-        /// <returns></returns>
-        [Obsolete("This method is obsolete. Call Graph.GetState instead.")]
-        public UnityEvent GetOnExitStateEvent(string stateName)
-        {
-            if (graph.TryGetNode(stateName, out Node node))
-            {
-                if (node is State state)
-                {
-                    return state.OnExitState;
-                }
-            }
-
-            return null;
-        }
 
         /// <summary>
         /// Returns the OnEnterTransition event of the transition with the given name, null if the transition does not exist 
@@ -668,6 +594,7 @@
 
             return null;
         }
+
         #endregion
     }
 }

@@ -81,9 +81,12 @@ namespace __SARV.Framework.Module.State
 
         private async Task ExitFromOldState()
         {
-            _previousState = _currentState;
-            await _previousState.Behavior.Exit();
-            OnExitState?.Invoke(currentStateIdentifier);
+            if (_currentState != null)
+            {
+                _previousState = _currentState;
+                await _previousState.Behavior.Exit();
+                OnExitState?.Invoke(currentStateIdentifier);
+            }
         }
 
         private async Task EnterToNewState(SARVIdentifier stateIdentifier)

@@ -63,6 +63,8 @@
 
             public List<Transition> Transitions { get; private set; }
         }
+        
+        public List<State>  States => states;
 
         /// <summary>
         /// Gets or sets the id of the entry state

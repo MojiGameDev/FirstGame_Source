@@ -12,9 +12,7 @@
 
         private SerializedProperty serializedStateProperty = null;
         private SerializedProperty stateNameProperty = null;
-        private SerializedProperty onEnterStateProperty = null;
-        private SerializedProperty onExitStateProperty = null;
-        private SerializedProperty onUpdateStateProperty = null;
+        private SerializedProperty identifierProperty = null;
 
         private GUIContent guiContentID = new GUIContent("ID", "A unique ID that can be used to identify the state");
 
@@ -43,9 +41,7 @@
                     {
                         this.serializedStateProperty = stateArray.GetArrayElementAtIndex(i);
 
-                        this.onEnterStateProperty = this.serializedStateProperty.FindPropertyRelative("onEnterState");
-                        this.onExitStateProperty = this.serializedStateProperty.FindPropertyRelative("onExitState");
-                        this.onUpdateStateProperty = this.serializedStateProperty.FindPropertyRelative("onUpdateState");
+                        this.identifierProperty = this.serializedStateProperty.FindPropertyRelative("identifier");
 
                         return;
                     }
@@ -84,9 +80,7 @@
 
                 //Draw the property fields
                 EditorGUILayout.Space();
-                EditorGUILayout.PropertyField(this.onEnterStateProperty);
-                EditorGUILayout.PropertyField(this.onUpdateStateProperty);
-                EditorGUILayout.PropertyField(this.onExitStateProperty);
+                EditorGUILayout.PropertyField(this.identifierProperty);
 
                 EditorGUI.EndDisabledGroup();
 

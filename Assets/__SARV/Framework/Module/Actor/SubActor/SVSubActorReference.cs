@@ -2,6 +2,7 @@
 using __SARV.Framework.Common.Argument;
 using Animancer;
 using ECM2;
+using Ilumisoft.VisualStateMachine;
 using Pathfinding;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -28,6 +29,9 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
         [FoldoutGroup("Reference")] [SerializeField] [ShowIf(nameof(IsActorAgent))] [SceneObjectsOnly] [Required] [HideLabel]
         protected CharacterController characterController;
+
+        [FoldoutGroup("Reference")] [SerializeField] [ShowIf(nameof(IsActorAgent))] [SceneObjectsOnly] [Required] [HideLabel]
+        protected StateMachine visualStateMachine;
 
         public Character ECMCharacter => ecmCharacter;
         public AnimancerComponent AnimancerComponent => animancerComponent;

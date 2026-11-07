@@ -12,12 +12,15 @@
         private bool showTransitions = false;
         private string transitionSearchFilter = string.Empty;
         private string stateSearchFilter = string.Empty;
-
+        
+        private SerializedProperty actorProperty;
+        
         //Reference to the inspected state machine
         private StateMachine stateMachine = null;
 
         private Graph graph = null;
 
+        
         //GUI Contents of the buttons
         private GUIContent selectButtonContent = new GUIContent("Select");
         private GUIContent openButtonContent = new GUIContent("Open");
@@ -27,7 +30,7 @@
         private void OnEnable()
         {
             EditorApplication.hierarchyChanged += OnHierarchyChanged;
-
+            actorProperty = serializedObject.FindProperty("actor");
             UpdateCache();
         }
 
@@ -67,7 +70,7 @@
             }
 
             this.serializedObject.Update();
-
+            
             GUILayoutUtils.VerticalSpace(8);
 
             DrawGraphButton();

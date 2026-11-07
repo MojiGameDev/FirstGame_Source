@@ -16,6 +16,11 @@ namespace __SARV.Framework.Module.Actor.SubActor
         protected override void Awake()
         {
             base.Awake();
+            if (IsActorAgent)
+            {
+                visualStateMachine.SetSarvStateMachine(stateMachine);
+            }
+
             StateMachine.HandleAwake();
         }
 
