@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3386958048231705007}
   - component: {fileID: 6641028088985947639}
   m_Layer: 0
-  m_Name: Chest_Open_Radial_Smoke_Impact
+  m_Name: VFX_Chest_Open_Radial_Smoke_Impact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5100897215028046603}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.307, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -73,7 +73,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Smoke Turbulence Intensity
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0.8
         m_Name: Smoke Alpha
         m_Overridden: 1
       - m_Value: 0.5
@@ -673,7 +673,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Use Smoke
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: Use Sparks
         m_Overridden: 1
       - m_Value: 0
@@ -700,10 +700,10 @@ VisualEffect:
       - m_Value: 1
         m_Name: Use Smoke Impact
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: Use Flash
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: Use Spark Trails
         m_Overridden: 1
       - m_Value: 0
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a988f4ff86f4f284096de1b2656f2bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightBurstPrefab: {fileID: 4275936888961235196, guid: 293343a8da2a9ac4b8df3737339b1209, type: 3}
+  lightBurstPrefab: {fileID: 4275936888961235196, guid: 8c4d3dc650a4d43e4917e3f094996cd0, type: 3}
   localYOffset: 0.15
   maxLifetime: 1
   hideCloneInHierarchy: 1
