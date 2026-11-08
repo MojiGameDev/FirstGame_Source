@@ -64,7 +64,7 @@ namespace __SARV.Framework.Module.State.Base
         {
             if (!string.IsNullOrEmpty(description) && description.Equals(UNKNOWN_STATE_NAME) && !string.IsNullOrEmpty(behavior))
             {
-                description = behavior;
+                gameObject.name = description = behavior;
                 return;
             }
 
