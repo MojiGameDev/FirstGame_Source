@@ -9,13 +9,13 @@ namespace __SARV.Framework.Module.Actor.SubActor
     [Serializable]
     public abstract class SVSubActorAgent : SVSubActorPlayer
     {
-        [FoldoutGroup("Agent")] [BoxGroup("Agent/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)]
+        [FoldoutGroup("Agent")] [BoxGroup("Agent/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)] [ShowIf(nameof(IsActorAgent))]
         private float changeMovementSpeedDuration = 1f;
 
-        [FoldoutGroup("Agent")] [BoxGroup("Agent/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)]
+        [FoldoutGroup("Agent")] [BoxGroup("Agent/Duration")] [SerializeField] [PropertyRange(0.1f, 2f)] [ShowIf(nameof(IsActorAgent))]
         private float changeRotationSpeedDuration = 1f;
 
-        [FoldoutGroup("Agent")] [BoxGroup("Agent/Astar")] [SerializeField] [PropertyRange(0.2f, 10f)][OnCollectionChanged(nameof(HandleAgentDefaultEndReachedDistance))]
+        [FoldoutGroup("Agent")] [BoxGroup("Agent/Astar")] [SerializeField] [PropertyRange(0.2f, 10f)] [OnCollectionChanged(nameof(HandleAgentDefaultEndReachedDistance))] [ShowIf(nameof(IsActorAgent))]
         protected float defaultEndReachedDistance = 0.2f;
 
         private static readonly NearestNodeConstraint NEAREST_WALKABLE_CONSTRAINT = NearestNodeConstraint.Walkable;
@@ -49,7 +49,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
         {
             return GetAgentNearestPoint(target.position);
         }
-        
+
         public void HandleAgentDefaultEndReachedDistance()
         {
             HandleAgentEndReachedDistance(defaultEndReachedDistance);
@@ -60,7 +60,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
             aiPath.slowdownDistance = endReachedDistance;
             aiPath.endReachedDistance = endReachedDistance;
         }
-        
+
         public bool HasAgentReachedTarget()
         {
             if (!aiPath.hasPath || aiPath.pathPending)
@@ -82,7 +82,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
             return hasReachedTarget;
         }
-        
+
         public void HandleAgentTransformBasedMovement()
         {
             aiPath.simulateMovement = true;

@@ -1,4 +1,5 @@
-﻿using __SARV.Framework.Integration.Animancer.Parameter.Type;
+﻿using System.Collections.Generic;
+using __SARV.Framework.Integration.Animancer.Parameter.Type;
 using __SARV.Framework.Module.Footstep;
 using Animancer;
 using Sirenix.OdinInspector;
@@ -13,6 +14,13 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
         [FoldoutGroup("Footstep")] [SerializeField] [HideLabel]
         private SVFootstep footstep;
+
+        [FoldoutGroup("Footstep")]
+        [Button]
+        private void DetectFeet()
+        {
+            footstep.AddFeet(gameObject);
+        }
 
         public SVFootstep Footstep => footstep;
 

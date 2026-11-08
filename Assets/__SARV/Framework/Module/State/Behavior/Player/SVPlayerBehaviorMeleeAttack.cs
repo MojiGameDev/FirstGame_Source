@@ -42,9 +42,9 @@ namespace __SARV.Framework.Module.State.Behavior
         {
             if (_currentHitbox != null && _currentHitbox.IsActive)
             {
-                if (_currentHitbox.TryGetDetectedHit(out var hurtpoint))
+                if (_currentHitbox.TryGetDetectedHit(out var hitActorResult))
                 {
-                    Debug.Log($"{hurtpoint.gameObject.name}");
+                    hitActorResult.Actor.ApplyHit(hitActorResult);
                 }
             }
         }
@@ -113,6 +113,8 @@ namespace __SARV.Framework.Module.State.Behavior
                 case SVMeleeAttackPhase.Next:
                     break;
                 case SVMeleeAttackPhase.End:
+                    Debug.Log("End");
+                    Actor.StateMachine.ToFirst();
                     break;
                 case SVMeleeAttackPhase.EnableHitbox:
                     _currentHitbox.Activate();

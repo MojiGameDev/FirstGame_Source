@@ -14,7 +14,7 @@ namespace __SARV.Framework.Module.Footstep.SubFootstep
         {
             var foot = RuntimeFeet[footIdentifier];
 
-            if (IsFootGrounded(foot.FootTransform, out var raycastResult))
+            if (IsFootGrounded(foot.transform, out var raycastResult))
             {
                 var footstepSource = raycastResult.Transform.GetComponent<SARVFootstepSource>();
                 if (footstepSource != null)

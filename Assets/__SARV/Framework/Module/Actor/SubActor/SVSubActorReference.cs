@@ -4,6 +4,7 @@ using Animancer;
 using ECM2;
 using Ilumisoft.VisualStateMachine;
 using Pathfinding;
+using RootMotion.Dynamics;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -14,6 +15,9 @@ namespace __SARV.Framework.Module.Actor.SubActor
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
         protected AnimancerComponent animancerComponent;
+        
+        [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
+        protected PuppetMaster puppetMaster;
 
         [FoldoutGroup("Reference")] [SerializeField] [ShowIf(nameof(IsActorPlayer))] [SceneObjectsOnly] [Required] [HideLabel]
         protected Character ecmCharacter;
@@ -35,6 +39,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
         public Character ECMCharacter => ecmCharacter;
         public AnimancerComponent AnimancerComponent => animancerComponent;
+        public PuppetMaster PuppetMaster => puppetMaster;
         public SVArgument Argument;
         public Vector3 Position => transform.position;
         public Vector3 Forward => transform.forward;

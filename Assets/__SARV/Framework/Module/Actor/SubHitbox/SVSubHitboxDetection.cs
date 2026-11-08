@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using __SARV.Common.Extension;
+using __SARV.Framework.Module.Actor.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -39,9 +40,9 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
             _hitTargets.Clear();
         }
 
-        public bool TryGetDetectedHit(out SARVHurtpoint hurtpoint)
+        public bool TryGetDetectedHit(out SVHitActorResult hitActorResult)
         {
-            hurtpoint = null;
+            hitActorResult = default;
 
             if (!IsActive)
             {
@@ -51,24 +52,32 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
             var currentPosition = GetWorldCenter();
             var currentRotation = transform.rotation;
 
-            var direction = currentPosition - _lastPosition;
-            var distance = direction.magnitude;
+            var movement = currentPosition - _lastPosition;
+            var distance = movement.magnitude;
+
+            var hitDirection = distance.HasValue()
+                ? movement / distance
+                : currentRotation * Vector3.forward;
 
             if (distance.HasValue())
             {
                 if (Physics.BoxCast(
                         _lastPosition,
                         HalfExtents,
-                        direction.normalized,
+                        hitDirection,
                         out var hit,
                         _lastRotation,
                         distance,
                         targetLayer,
                         triggerMode))
                 {
-                    hurtpoint = ProcessHit(hit.collider, hit.point);
+                    hitActorResult = ProcessHit(
+                        hit.collider,
+                        hit.point,
+                        hitDirection
+                    );
 
-                    if (hurtpoint != null)
+                    if (hitActorResult.IsValid)
                     {
                         UpdateLastTransform(currentPosition, currentRotation);
                         return true;
@@ -94,9 +103,13 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
                     continue;
                 }
 
-                hurtpoint = ProcessHit(targetCollider, currentPosition);
+                hitActorResult = ProcessHit(
+                    targetCollider,
+                    currentPosition,
+                    hitDirection
+                );
 
-                if (hurtpoint != null)
+                if (hitActorResult.IsValid)
                 {
                     UpdateLastTransform(currentPosition, currentRotation);
                     return true;
@@ -107,25 +120,25 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
             return false;
         }
 
-        private SARVHurtpoint ProcessHit(Collider targetCollider, Vector3 hitPosition)
+        private SVHitActorResult ProcessHit(Collider targetCollider, Vector3 hitPosition, Vector3 hitDirection)
         {
             var target = targetCollider.GetComponentInParent<SARVActor>();
 
             if (target == null || _hitTargets.Contains(target))
             {
-                return null;
+                return default;
             }
 
             var closestHurtpoint = target.GetClosestHurtpoint(hitPosition);
 
             if (closestHurtpoint == null)
             {
-                return null;
+                return default;
             }
 
             _hitTargets.Add(target);
 
-            return closestHurtpoint;
+            return new SVHitActorResult(target, closestHurtpoint, hitPosition, hitDirection);
         }
 
         private void UpdateLastTransform(Vector3 position, Quaternion rotation)

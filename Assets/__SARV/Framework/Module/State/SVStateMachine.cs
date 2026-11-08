@@ -73,6 +73,11 @@ namespace __SARV.Framework.Module.State
             _ = ChangeStateToInternal(stateIdentifier);
         }
 
+        public void ToFirst()
+        {
+            _ = ChangeStateToInternal(_runtimeStates.First().Key);
+        }
+
         private async Task ChangeStateToInternal(SARVIdentifier stateIdentifier)
         {
             await ExitFromOldState();

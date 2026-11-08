@@ -643,6 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4597627237240276181}
+  - component: {fileID: 7259407032976137359}
   m_Layer: 10
   m_Name: Foot_Right
   m_TagString: Untagged
@@ -665,6 +666,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6579343708077014124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7259407032976137359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591624278502151879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1308e921874808943c8f1b4664debd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footIdentifier: {fileID: 11400000, guid: 74422138b617d184baeed0ae3b2a9d46, type: 2}
 --- !u!1 &749280585880694001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,6 +3056,7 @@ GameObject:
   - component: {fileID: 5745233578550081542}
   - component: {fileID: 4523164981721103696}
   - component: {fileID: 2092256849295467691}
+  - component: {fileID: 4157490508962438026}
   m_Layer: 11
   m_Name: spine_02.x
   m_TagString: Untagged
@@ -3217,6 +3232,22 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &4157490508962438026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653970707073343641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b112c7cb8864e179f8a3655fd0bd790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderPoint: {fileID: 4523164981721103696}
+  showGizmos: 1
+  gizmosOnSelect: 1
+  gizmoColor: {r: 1, g: 0, b: 0, a: 0.45490196}
 --- !u!1 &2845771971791055760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8399830903830634203}
+  - component: {fileID: 626432556522166033}
   m_Layer: 10
   m_Name: Foot_Left
   m_TagString: Untagged
@@ -4235,6 +4267,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4140623054451490605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &626432556522166033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239175804612738932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1308e921874808943c8f1b4664debd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footIdentifier: {fileID: 11400000, guid: d7bb779eafd82f346a6a31c0d53306ba, type: 2}
 --- !u!1 &3544643265843997614
 GameObject:
   m_ObjectHideFlags: 0
@@ -6354,6 +6399,7 @@ MonoBehaviour:
   aiPath: {fileID: 8655612115440144559}
   aiDestinationSetter: {fileID: 794410719974701817}
   characterController: {fileID: 3215514682264700229}
+  visualStateMachine: {fileID: 1189017581064724884}
   playerMoveHorizontalKey: PlayerMoveHorizontal
   playerMoveVerticalKey: PlayerMoveVertical
   playerSprintKey: PlayerSprint
@@ -6362,7 +6408,10 @@ MonoBehaviour:
   playerAttackKey: PlayerAttack
   inputMovementDirection: {x: 0, y: 0, z: 0}
   currentSpeed: 0
-  hurtpoints: []
+  hurtpoints:
+  - {fileID: 936209657555148264}
+  - {fileID: 4157490508962438026}
+  - {fileID: 6047226088744891806}
   stateMachine:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
@@ -6371,12 +6420,10 @@ MonoBehaviour:
   footstepEvent: {fileID: 11400000, guid: 4febfff8e143229428045fe08c2d6226, type: 2}
   footstep:
     feet:
-    - footIdentifier: {fileID: 11400000, guid: d7bb779eafd82f346a6a31c0d53306ba, type: 2}
-      footTransform: {fileID: 8399830903830634203}
-    - footIdentifier: {fileID: 11400000, guid: 74422138b617d184baeed0ae3b2a9d46, type: 2}
-      footTransform: {fileID: 4597627237240276181}
+    - {fileID: 626432556522166033}
+    - {fileID: 7259407032976137359}
     surfaceDatabase: {fileID: 11400000, guid: 75aee7cd364991349b7f5287902f3bcf, type: 2}
-    raycastDistance: 0.5
+    raycastDistance: 0.2
     groundLayer:
       serializedVersion: 2
       m_Bits: 9
@@ -7319,6 +7366,7 @@ GameObject:
   - component: {fileID: 135595374830810346}
   - component: {fileID: 7541190897481681406}
   - component: {fileID: 2268032224719622891}
+  - component: {fileID: 936209657555148264}
   m_Layer: 11
   m_Name: root.x
   m_TagString: Untagged
@@ -7494,6 +7542,22 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &936209657555148264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546273312147061555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b112c7cb8864e179f8a3655fd0bd790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderPoint: {fileID: 7541190897481681406}
+  showGizmos: 1
+  gizmosOnSelect: 1
+  gizmoColor: {r: 1, g: 0, b: 0, a: 0.45490196}
 --- !u!1 &6594554630069463723
 GameObject:
   m_ObjectHideFlags: 0
@@ -12911,7 +12975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95737371d97a2747845a945bae3b2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 9123148573313955281}
   graph:
     states:
     - position: {x: 313, y: 427}
@@ -13581,6 +13644,7 @@ GameObject:
   - component: {fileID: 7952274095427087395}
   - component: {fileID: 8522569559870917408}
   - component: {fileID: 4198427814388249925}
+  - component: {fileID: 6047226088744891806}
   m_Layer: 11
   m_Name: head.x
   m_TagString: Untagged
@@ -13753,6 +13817,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.104274005
   m_Center: {x: -0.000000002298008, y: 0.059232548, z: -0.002923579}
+--- !u!114 &6047226088744891806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890556651963153002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b112c7cb8864e179f8a3655fd0bd790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderPoint: {fileID: 4198427814388249925}
+  showGizmos: 1
+  gizmosOnSelect: 1
+  gizmoColor: {r: 1, g: 0, b: 0, a: 0.59607846}
 --- !u!1 &9001300835935773297
 GameObject:
   m_ObjectHideFlags: 0

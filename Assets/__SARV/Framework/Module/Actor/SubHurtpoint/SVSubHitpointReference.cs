@@ -9,12 +9,28 @@ namespace __SARV.Framework.Module.Actor.SubHurtpoint
         [FoldoutGroup("Reference")] [SerializeField] [Required]
         protected Collider colliderPoint;
 
+        [FoldoutGroup("Reference")] [SerializeField] [Required]
+        protected Rigidbody rigidbodyPoint;
+        
+        public Rigidbody RigidbodyPoint => rigidbodyPoint;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            InitialReference();
+        }
+
         [OnInspectorInit]
         private void InitialReference()
         {
             if (colliderPoint == null)
             {
                 colliderPoint = GetComponent<Collider>();
+            }
+
+            if (rigidbodyPoint == null)
+            {
+                rigidbodyPoint = GetComponent<Rigidbody>();
             }
         }
     }

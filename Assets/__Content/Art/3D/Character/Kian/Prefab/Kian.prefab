@@ -14704,6 +14704,7 @@ MonoBehaviour:
   aiPath: {fileID: 0}
   aiDestinationSetter: {fileID: 0}
   characterController: {fileID: 0}
+  visualStateMachine: {fileID: 0}
   playerMoveHorizontalKey: PlayerMoveHorizontal
   playerMoveVerticalKey: PlayerMoveVertical
   playerSprintKey: PlayerSprint
@@ -14723,12 +14724,10 @@ MonoBehaviour:
   footstepEvent: {fileID: 11400000, guid: 4febfff8e143229428045fe08c2d6226, type: 2}
   footstep:
     feet:
-    - footIdentifier: {fileID: 11400000, guid: d7bb779eafd82f346a6a31c0d53306ba, type: 2}
-      footTransform: {fileID: 4571757338774881146}
-    - footIdentifier: {fileID: 11400000, guid: 74422138b617d184baeed0ae3b2a9d46, type: 2}
-      footTransform: {fileID: 1473671427352486973}
+    - {fileID: 3411136871755065207}
+    - {fileID: 8746982616443436905}
     surfaceDatabase: {fileID: 11400000, guid: 75aee7cd364991349b7f5287902f3bcf, type: 2}
-    raycastDistance: 0.5
+    raycastDistance: 0.2
     groundLayer:
       serializedVersion: 2
       m_Bits: 9
@@ -15427,6 +15426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1473671427352486973}
+  - component: {fileID: 8746982616443436905}
   m_Layer: 7
   m_Name: Foot_Right
   m_TagString: Untagged
@@ -15449,6 +15449,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4243678254248265855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8746982616443436905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759308604307372212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1308e921874808943c8f1b4664debd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footIdentifier: {fileID: 11400000, guid: 74422138b617d184baeed0ae3b2a9d46, type: 2}
 --- !u!1 &1903562788986387195
 GameObject:
   m_ObjectHideFlags: 0
@@ -18687,6 +18700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4571757338774881146}
+  - component: {fileID: 3411136871755065207}
   m_Layer: 7
   m_Name: Foot_Left
   m_TagString: Untagged
@@ -18709,6 +18723,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4533359710397458422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3411136871755065207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5923162471629313414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1308e921874808943c8f1b4664debd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footIdentifier: {fileID: 11400000, guid: d7bb779eafd82f346a6a31c0d53306ba, type: 2}
 --- !u!1 &5946386574133834189
 GameObject:
   m_ObjectHideFlags: 0
@@ -19918,7 +19945,7 @@ GameObject:
   - component: {fileID: 8483161195716763704}
   m_Layer: 7
   m_Name: Kian
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

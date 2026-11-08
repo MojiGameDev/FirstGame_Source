@@ -42,11 +42,11 @@ namespace __SARV.Framework.Module.Footstep.SubFootstep
 
             foreach (var foot in feet)
             {
-                if (foot == null || foot.FootTransform == null)
+                if (foot == null || foot.transform == null)
                 {
                     continue;
                 }
-                SVGizmosUtils.DrawRaycastGuide(foot.FootTransform.position, gizmosRadius, raycastDistance, gizmoCircleColor);
+                SVGizmosUtils.DrawRaycastGuide(foot.transform.position, gizmosRadius, raycastDistance, gizmoCircleColor);
             }
         }
     }
