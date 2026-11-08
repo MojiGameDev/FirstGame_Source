@@ -18,6 +18,7 @@
             public const string TIME = "Time";
             public const string VARIABLE = "Variable";
             public const string GAME_OBJECT = "GameObject";
+            public const string DO_TWEEN_PRO = "DOTweenPro";
             public const string LOGIC = "Logic";
             public const string MELEE = "Melee";
         }
