@@ -14699,6 +14699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 10
   animancerComponent: {fileID: 5061645055310410478}
+  puppetMaster: {fileID: 0}
   ecmCharacter: {fileID: 2661093102305112960}
   characterMovement: {fileID: 7191640013644561009}
   aiPath: {fileID: 0}
@@ -14714,6 +14715,9 @@ MonoBehaviour:
   inputMovementDirection: {x: 0, y: 0, z: 0}
   currentSpeed: 0
   hurtpoints: []
+  hitForce: 100
+  hitPinWeight: 0.2
+  pinRecoveryDuration: 0.2
   stateMachine:
     currentStateIdentifier: {fileID: 0}
     trackStates: []
@@ -14721,6 +14725,7 @@ MonoBehaviour:
     - {fileID: 1064174925218950400}
     - {fileID: 6054643402486404247}
     - {fileID: 2529495885753791588}
+    - {fileID: 3253130490614171238}
   footstepEvent: {fileID: 11400000, guid: 4febfff8e143229428045fe08c2d6226, type: 2}
   footstep:
     feet:
@@ -16219,6 +16224,93 @@ Transform:
   - {fileID: 4293422250267098760}
   m_Father: {fileID: 7416167497554105638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2854133837759619714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4429880322650969840}
+  - component: {fileID: 3253130490614171238}
+  m_Layer: 0
+  m_Name: LootChest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4429880322650969840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854133837759619714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6112998586163153568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3253130490614171238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854133837759619714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c0c7e88041482d866f0617e8bed555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: LootChest
+  behavior: LootChest
+  behaviorComponent:
+    rid: 7729762647791632500
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762647791632500
+      type: {class: SVPlayerBehaviorLootChest, ns: __SARV.Framework.Module.State.Behavior, asm: Assembly-CSharp}
+      data:
+        identifier: {fileID: 11400000, guid: 97950750eeeb6464f9bb78e03a97e086, type: 2}
+        onEnterInstruction:
+          instruction: 
+          instructions: []
+        onExitInstruction:
+          instruction: 
+          instructions: []
+        snapDuration: 0.3
+        snapCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        transitionAlias: {fileID: 11400000, guid: 5dc19f5ceb47043499f7128b80c92038, type: 2}
 --- !u!1 &3012688658374499520
 GameObject:
   m_ObjectHideFlags: 0
@@ -19603,6 +19695,7 @@ Transform:
   - {fileID: 864190903536386724}
   - {fileID: 5373488589364776756}
   - {fileID: 1435763178980281904}
+  - {fileID: 4429880322650969840}
   m_Father: {fileID: 5916954829686717409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7096266175959367989

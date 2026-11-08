@@ -1,5 +1,358 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1426817482480856083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8502329036458237162}
+  - component: {fileID: 7364747936940755419}
+  m_Layer: 0
+  m_Name: Variable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8502329036458237162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426817482480856083}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4788027265893822865}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7364747936940755419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426817482480856083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8541990fae29b0c4f90e8e22a28f4d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Variable
+  title: 
+  type: 
+  variables:
+  - rid: 4447245700635295891
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245700635295891
+      type: {class: SVVariableBool, ns: __SARV.Framework.Module.Variable, asm: Assembly-CSharp}
+      data:
+        localKey: 345d9546-6963-47e9-94e3-f689dff740d9
+        globalKey: {fileID: 0}
+        title: IsInteracted
+        canSave: 1
+        isGlobal: 0
+        lastSavedKey: 345d9546-6963-47e9-94e3-f689dff740d9
+        value: 0
+--- !u!1 &1507913879073583628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5322053204111418722}
+  - component: {fileID: 8045576021288530089}
+  m_Layer: 0
+  m_Name: Interact to the chest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5322053204111418722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507913879073583628}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1561279725658519029}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8045576021288530089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507913879073583628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Interact to the chest
+  signal: Input/Interact
+  signalComponent:
+    rid: 4447245901782581528
+  tooltip: 
+  instruction:
+    instruction: 
+    instructions:
+    - rid: 4447245911618748416
+    - rid: 4447245911618748420
+    - rid: 4447245901782581529
+    - rid: 4447245911618748532
+    - rid: 7729762647791632544
+    - rid: 7729762647791632553
+    - rid: 7729762647791632539
+    - rid: 4447245911618748522
+    - rid: 4447245911618748536
+    - rid: 4447245911618748527
+    - rid: 4447245911618748523
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245901782581528
+      type: {class: SVInputSignalInteract, ns: __SARV.Framework.Kernal.Signal, asm: Assembly-CSharp}
+      data:
+        interactor: {fileID: 3011146527958902743}
+    - rid: 4447245901782581529
+      type: {class: SVActorInstructionSetInteractor, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245901782581530
+        interactor: {fileID: 3011146527958902743}
+    - rid: 4447245901782581530
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245901782581532
+    - rid: 4447245901782581532
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245911618748416
+      type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        target:
+          rid: 4447245911618748417
+        activate: 0
+    - rid: 4447245911618748417
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245911618748419
+    - rid: 4447245911618748419
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 870836922887964067}
+    - rid: 4447245911618748420
+      type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        target:
+          rid: 4447245911618748421
+        activate: 0
+    - rid: 4447245911618748421
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245911618748422
+    - rid: 4447245911618748422
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 194766269737719083}
+    - rid: 4447245911618748522
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        duration: 2
+        realTime: 0
+    - rid: 4447245911618748523
+      type: {class: SVGameObjectInstructionDestroy, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 1
+        target:
+          rid: 4447245911618748524
+        delay: 0
+        detachChildren: 0
+        waitToFinish: 0
+    - rid: 4447245911618748524
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245911618748526
+    - rid: 4447245911618748526
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 3330723071611952013}
+    - rid: 4447245911618748527
+      type: {class: SVVariableInstructionSetBool, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 1
+        variable:
+          rid: 4447245911618748528
+        variableValue:
+          rid: 4447245911618748529
+    - rid: 4447245911618748528
+      type: {class: SVBoolPropertyVariable, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        variable: {fileID: 7364747936940755419}
+        variableName: IsInteracted
+    - rid: 4447245911618748529
+      type: {class: SVBoolProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245911618748531
+    - rid: 4447245911618748531
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 4447245911618748532
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245911618748533
+        behavior: {fileID: 11400000, guid: 97950750eeeb6464f9bb78e03a97e086, type: 2}
+    - rid: 4447245911618748533
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245911618748535
+    - rid: 4447245911618748535
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245911618748536
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 4447245911618748537
+        behavior: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
+    - rid: 4447245911618748537
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 4447245911618748538
+    - rid: 4447245911618748538
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762647791632539
+      type: {class: SVDOTweenProInstructionRotate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        target:
+          rid: 7729762647791632540
+        isWorldSpace: 0
+        toAngle:
+          rid: 7729762647791632541
+        delay: 0
+        duration: 1
+        ease: 17
+        waitToFinish: 1
+    - rid: 7729762647791632540
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762647791632545
+    - rid: 7729762647791632541
+      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762647791632546
+    - rid: 7729762647791632544
+      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        duration: 0.5
+        realTime: 0
+    - rid: 7729762647791632545
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 9033422438944139970}
+    - rid: 7729762647791632546
+      type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {x: -120, y: 0, z: 0}
+    - rid: 7729762647791632553
+      type: {class: SVGameObjectInstructionActivate, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        target:
+          rid: 7729762647791632554
+        activate: 0
+    - rid: 7729762647791632554
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762647791632555
+    - rid: 7729762647791632555
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 4998992487395897115}
+--- !u!1 &3330723071611952013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561279725658519029}
+  m_Layer: 6
+  m_Name: Interact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1561279725658519029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3330723071611952013}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2896256482337597562}
+  - {fileID: 6867537112992521252}
+  - {fileID: 5322053204111418722}
+  - {fileID: 6248687373327783468}
+  m_Father: {fileID: 4788027265893822865}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3827122875295820128
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,8 +536,129 @@ Transform:
   m_Children:
   - {fileID: 1455660097199335755}
   - {fileID: 5032495650470523171}
+  - {fileID: 1561279725658519029}
+  - {fileID: 8502329036458237162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &8220374105804918238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6248687373327783468}
+  - component: {fileID: 5259613213983665701}
+  m_Layer: 0
+  m_Name: Destroy interact if already interacted with
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6248687373327783468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8220374105804918238}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1561279725658519029}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5259613213983665701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8220374105804918238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Destroy interact if already interacted with
+  signal: Lifecycle/OnStart
+  signalComponent:
+    rid: 4447245901782581535
+  tooltip: 
+  instruction:
+    instruction: 
+    instructions:
+    - rid: 4447245901782581536
+    - rid: 4447245901782581544
+  references:
+    version: 2
+    RefIds:
+    - rid: 4447245901782581535
+      type: {class: SVLifecycleSignalOnStart, ns: __SARV.Framework.Kernal.Signal, asm: Assembly-CSharp}
+      data: 
+    - rid: 4447245901782581536
+      type: {class: SVLogicInstructionBreakIf, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        branch:
+          branch: 
+          conditionJoinType: 10
+          branches:
+          - rid: 4447245901782581537
+    - rid: 4447245901782581537
+      type: {class: SVLogicBranchCompareBool, ns: __SARV.Framework.Kernal.Branch, asm: Assembly-CSharp}
+      data:
+        not: 0
+        disabled: 0
+        leftOperand:
+          rid: 4447245901782581538
+        operatorType: 10
+        rightOperand:
+          rid: 4447245901782581539
+    - rid: 4447245901782581538
+      type: {class: SVBoolProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Variable
+        propertyType:
+          rid: 4447245901782581542
+    - rid: 4447245901782581539
+      type: {class: SVBoolProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245901782581543
+    - rid: 4447245901782581542
+      type: {class: SVBoolPropertyVariable, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        variable: {fileID: 7364747936940755419}
+        variableName: IsInteracted
+    - rid: 4447245901782581543
+      type: {class: SVBoolPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 4447245901782581544
+      type: {class: SVGameObjectInstructionDestroy, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        target:
+          rid: 4447245901782581545
+        delay: 1
+        detachChildren: 0
+        waitToFinish: 0
+    - rid: 4447245901782581545
+      type: {class: SVGameObjectProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 4447245901782581547
+    - rid: 4447245901782581547
+      type: {class: SVGameObjectPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 3330723071611952013}
 --- !u!1 &9033422438944139970
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +745,85 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1912323200802000104
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1561279725658519029}
+    m_Modifications:
+    - target: {fileID: 813850795139423035, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.661
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745739907327547843, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_Name
+      value: Indicator_Loot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14699936
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757671316765148494, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 3011146527958902743}
+    - target: {fileID: 8131759560525521851, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.98299885
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+--- !u!1 &194766269737719083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1745739907327547843, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+  m_PrefabInstance: {fileID: 1912323200802000104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6867537112992521252 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5028140684196024524, guid: 3c8d89eff40761f48be123900d23f0b3, type: 3}
+  m_PrefabInstance: {fileID: 1912323200802000104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3519496591890806815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,3 +948,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5298030348242897344, guid: 5238fa5e00c99446bbf4c9623afecf17, type: 3}
   m_PrefabInstance: {fileID: 4012098226139282823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4969135890994739579
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1561279725658519029}
+    m_Modifications:
+    - target: {fileID: 4136922010478065625, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136922010478065625, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.1730065
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251266789641993432, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_Name
+      value: Interactor_Loot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+--- !u!1 &870836922887964067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5251266789641993432, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+  m_PrefabInstance: {fileID: 4969135890994739579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2896256482337597562 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7837524693849805057, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+  m_PrefabInstance: {fileID: 4969135890994739579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3011146527958902743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7871261991523229356, guid: c91c5995db272dd4f943583d971b8528, type: 3}
+  m_PrefabInstance: {fileID: 4969135890994739579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870836922887964067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822ca56c3b3347bab90c21c28c00794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

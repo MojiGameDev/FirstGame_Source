@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9217099733454832844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: LootChest
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 7729762647791632502
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762647791632502
+      type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _Asset: {fileID: 11400000, guid: b9bc814e27e27ad4986c9d4c8240086c, type: 2}
 --- !u!114 &-4907967575176111112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +79,7 @@ MonoBehaviour:
   _Data:
     _TransitionGroups:
     - _Name: Attack_A
-      _Index: 2
+      _Index: 3
       _Count: 1
       _IsExpanded: 1
     _TransitionSortMode: 0
@@ -77,24 +98,27 @@ MonoBehaviour:
   _Definition:
     _Transitions:
     - {fileID: -1291670709009215659}
+    - {fileID: -9217099733454832844}
     - {fileID: -4907967575176111112}
     - {fileID: 3699238781104336456}
     _Modifiers:
-    - _From: 1
+    - _From: 2
       _To: 0
       _Fade: NaN
       _NormalizedStartTime: 0.5
     - _From: 0
-      _To: 1
+      _To: 2
       _Fade: NaN
       _NormalizedStartTime: 0.5
     _Aliases:
     - _Name: {fileID: 11400000, guid: 31bf7a31fd4d0a1449d340a69ba2bd19, type: 2}
       _Index: 0
-    - _Name: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
+    - _Name: {fileID: 11400000, guid: 5dc19f5ceb47043499f7128b80c92038, type: 2}
       _Index: 1
-    - _Name: {fileID: 11400000, guid: 9b4771e2700e73f4f9280fc13e41334e, type: 2}
+    - _Name: {fileID: 11400000, guid: eb0072bf2afc95840ac5f7c61c2f5306, type: 2}
       _Index: 2
+    - _Name: {fileID: 11400000, guid: 9b4771e2700e73f4f9280fc13e41334e, type: 2}
+      _Index: 3
     _AliasAllTransitions: 0
 --- !u!114 &3699238781104336456
 MonoBehaviour:
