@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using __SARV.Common.Extension;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
@@ -14,7 +15,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Kernal.Instruction
 {
-    [SVTitle("AttackEquipment")]
+    [SVTitle("AttachEquipment")]
     [SVCategory(SVConstantCategory.Instruction.ACTOR)]
     [SVDescription("Attaches a equipment to the Actor")]
     [Serializable]
@@ -35,7 +36,7 @@ namespace __SARV.Framework.Kernal.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<Vector3> rotation = new SVVector3Property();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(model == null ? "..." : model.name)} to the {bone} of {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(model == null ? "..." : model.name.ToWeaponName())} to the {bone} of {actor}";
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
