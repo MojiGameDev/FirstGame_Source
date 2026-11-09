@@ -6155,7 +6155,7 @@ GameObject:
   - component: {fileID: 8997828190702415932}
   - component: {fileID: 3469730208757072114}
   m_Layer: 0
-  m_Name: Equip_Weapon
+  m_Name: Equip_Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6188,7 +6188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d4585285e409586256b0fba78ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Equip_Weapon
+  description: Equip_Melee
   signal: Lifecycle/OnStart
   signalComponent:
     rid: 7729762670221983920
@@ -6197,6 +6197,7 @@ MonoBehaviour:
     instruction: 
     instructions:
     - rid: 7729762670221983928
+    - rid: 7729762670221983954
   references:
     version: 2
     RefIds:
@@ -6213,12 +6214,30 @@ MonoBehaviour:
     - rid: 7729762670221983929
       type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Self
+        property: Manual
         propertyType:
-          rid: 7729762670221983931
-    - rid: 7729762670221983931
-      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data: 
+          rid: 7729762670221983933
+    - rid: 7729762670221983933
+      type: {class: SVActorPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 9123148573313955281}
+    - rid: 7729762670221983954
+      type: {class: SVMeleeInstructionEquipShield, ns: __SARV.Framework.Kernal.Instruction.Melee, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        actor:
+          rid: 7729762670221983955
+        meleeShield: {fileID: 11400000, guid: 434e81d20e2332648aa7d755b38935ae, type: 2}
+    - rid: 7729762670221983955
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762670221983957
+    - rid: 7729762670221983957
+      type: {class: SVActorPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: {fileID: 9123148573313955281}
 --- !u!1 &5391628428715520816
 GameObject:
   m_ObjectHideFlags: 0

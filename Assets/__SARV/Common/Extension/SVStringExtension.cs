@@ -9,22 +9,28 @@ namespace __SARV.Common.Extension
             return char.ToUpperInvariant(value[0]) + value[1..];
         }
 
-        public static string ToWeaponName(this string value)
+        /// <summary>
+        /// Enemy_Modular_01_MeleeWeapon_Sword_01 => Sword_01
+        /// Modular_01_MeleeWeapon_Bow_01 => Bow_01
+        /// Boss_01_MeleeWeapon_Bow_01_B => Bow_01_B
+        /// Boss_01_MeleeWeapon_Sword_01_A => Sword_01_A
+        /// </summary>
+        public static string ToSpecificName(this string value)
         {
-            const string prefix = "Weapon_";
+            var parts = value.Split('_');
 
-            var index = value.IndexOf(prefix, StringComparison.Ordinal);
+            if (parts.Length < 2)
+            {
+                return value;
+            }
 
-            return index >= 0 ? value[(index + prefix.Length)..] : string.Empty;
-        }
+            var result = $"{parts[^2]}_{parts[^1]}";
+            if (parts.Length >= 3 && parts[^1].Length == 1 && char.IsLetter(parts[^1][0]))
+            {
+                result = $"{parts[^3]}_{parts[^2]}_{parts[^1]}";
+            }
 
-        public static string ToShieldName(this string value)
-        {
-            const string prefix = "Shield_";
-
-            var index = value.IndexOf(prefix, StringComparison.Ordinal);
-
-            return index >= 0 ? value[(index + prefix.Length)..] : string.Empty;
+            return result;
         }
     }
 }

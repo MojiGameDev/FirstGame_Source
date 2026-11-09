@@ -36,7 +36,7 @@ namespace __SARV.Framework.Kernal.Instruction
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker]
         private SVPropertyComponent<Vector3> rotation = new SVVector3Property();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(model == null ? "..." : model.name.ToWeaponName())} to the {bone} of {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Attach {(model == null ? "..." : model.name.ToSpecificName())} to the {bone} of {actor}";
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {

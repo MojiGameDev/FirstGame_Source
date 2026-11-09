@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Constant;
@@ -44,7 +43,7 @@ namespace __SARV.Framework.Module.State.Behavior
             {
                 if (_currentHitbox.TryGetDetectedHit(out var hitActorResult))
                 {
-                    hitActorResult.Actor.ApplyHit(hitActorResult);
+                    hitActorResult.TargetActor.ApplyHit(hitActorResult);
                 }
             }
         }

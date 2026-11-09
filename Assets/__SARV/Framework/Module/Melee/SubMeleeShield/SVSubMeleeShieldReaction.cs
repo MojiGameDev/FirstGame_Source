@@ -17,17 +17,17 @@ namespace __SARV.Framework.Module.Melee.SubMeleeShield
         [FoldoutGroup("Shield")] [SerializeField] [Title("OnParry")] [HideLabel]
         private SVInstruction onParryInstruction;
 
-        public async Task ExecuteBlock(SVArgument argument)
+        public async Task ExecuteOnBlock(SVArgument argument)
         {
             await onBlockInstruction.ExecuteInstructions(argument);
         }
 
-        public async Task ExecuteBreak(SVArgument argument)
+        public async Task ExecuteOnBreak(SVArgument argument)
         {
             await onBreakInstruction.ExecuteInstructions(argument);
         }
 
-        public async Task ExecuteParry(SVArgument argument)
+        public async Task ExecuteOnParry(SVArgument argument)
         {
             await onParryInstruction.ExecuteInstructions(argument);
         }

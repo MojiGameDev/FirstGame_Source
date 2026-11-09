@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using __SARV.Common.Extension;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
@@ -26,7 +27,7 @@ namespace __SARV.Framework.Kernal.Instruction.Melee
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVMeleeShield meleeShield;
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Equip {(meleeShield == null ? "..." : meleeShield.name)} to {actor}";
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}Equip {(meleeShield == null ? "..." : meleeShield.name.ToSpecificName())} to {actor}";
 
         protected override async Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
