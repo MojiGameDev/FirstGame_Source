@@ -21,6 +21,27 @@ MonoBehaviour:
       type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
       data:
         _Asset: {fileID: 11400000, guid: b9bc814e27e27ad4986c9d4c8240086c, type: 2}
+--- !u!114 &-7271418792730245606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: MeleeAttack_A_03
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 7729762670221983981
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762670221983981
+      type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _Asset: {fileID: 11400000, guid: 6b497d8bdfa60764fb00f46f61926b65, type: 2}
 --- !u!114 &-4907967575176111112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,6 +63,27 @@ MonoBehaviour:
       type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
       data:
         _Asset: {fileID: 11400000, guid: ece3c0b1d2cfe8b46ad311cdadb1473e, type: 2}
+--- !u!114 &-1376372321615067554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: MeleeAttack_A_04
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 7729762670221983983
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762670221983983
+      type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _Asset: {fileID: 11400000, guid: 9f235acf3fa5b194cb3891163cbe9973, type: 2}
 --- !u!114 &-1291670709009215659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +122,7 @@ MonoBehaviour:
     _TransitionGroups:
     - _Name: Attack_A
       _Index: 3
-      _Count: 1
+      _Count: 4
       _IsExpanded: 1
     _TransitionSortMode: 0
 --- !u!114 &11400000
@@ -101,15 +143,10 @@ MonoBehaviour:
     - {fileID: -9217099733454832844}
     - {fileID: -4907967575176111112}
     - {fileID: 3699238781104336456}
-    _Modifiers:
-    - _From: 2
-      _To: 0
-      _Fade: NaN
-      _NormalizedStartTime: 0.5
-    - _From: 0
-      _To: 2
-      _Fade: NaN
-      _NormalizedStartTime: 0.5
+    - {fileID: 4927970250571052389}
+    - {fileID: -7271418792730245606}
+    - {fileID: -1376372321615067554}
+    _Modifiers: []
     _Aliases:
     - _Name: {fileID: 11400000, guid: 31bf7a31fd4d0a1449d340a69ba2bd19, type: 2}
       _Index: 0
@@ -119,7 +156,13 @@ MonoBehaviour:
       _Index: 2
     - _Name: {fileID: 11400000, guid: 9b4771e2700e73f4f9280fc13e41334e, type: 2}
       _Index: 3
-    _AliasAllTransitions: 0
+    - _Name: {fileID: 11400000, guid: 802d761c44e5f9040adbd317474873f0, type: 2}
+      _Index: 4
+    - _Name: {fileID: 11400000, guid: e43dd4b5b0bdbb347aeb91d2bf24f5e4, type: 2}
+      _Index: 5
+    - _Name: {fileID: 11400000, guid: 87d69eb698ff2784c9321de13074bf9a, type: 2}
+      _Index: 6
+    _AliasAllTransitions: 1
 --- !u!114 &3699238781104336456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +184,24 @@ MonoBehaviour:
       type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
       data:
         _Asset: {fileID: 11400000, guid: d525f782a2a44854bb57e3c8b9f0159c, type: 2}
+--- !u!114 &4927970250571052389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: MeleeAttack_A_02
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 7729762670221983979
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762670221983979
+      type: {class: TransitionAssetReference, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _Asset: {fileID: 11400000, guid: d1f9dfbde54ed1241b94173affe9c5c5, type: 2}

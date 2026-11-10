@@ -8,14 +8,17 @@ namespace __SARV.Framework.Module.Melee.SubMeleeShield
 {
     public abstract class SVSubMeleeShieldReaction : SVSubMeleeShieldHandling
     {
-        [FoldoutGroup("Shield")] [SerializeField] [Title("OnBlock")] [HideLabel]
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnBlock")] [HideLabel]
         private SVInstruction onBlockInstruction;
 
-        [FoldoutGroup("Shield")] [SerializeField] [Title("OnBreak")] [HideLabel]
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnBreak")] [HideLabel]
         private SVInstruction onBreakInstruction;
 
-        [FoldoutGroup("Shield")] [SerializeField] [Title("OnParry")] [HideLabel]
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnParry")] [HideLabel]
         private SVInstruction onParryInstruction;
+
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnDamage")] [HideLabel]
+        private SVInstruction onDamageInstruction;
 
         public async Task ExecuteOnBlock(SVArgument argument)
         {
@@ -30,6 +33,11 @@ namespace __SARV.Framework.Module.Melee.SubMeleeShield
         public async Task ExecuteOnParry(SVArgument argument)
         {
             await onParryInstruction.ExecuteInstructions(argument);
+        }
+
+        public async Task ExecuteOnDamage(SVArgument argument)
+        {
+            await onDamageInstruction.ExecuteInstructions(argument);
         }
     }
 }

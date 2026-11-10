@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd72f65028341c89a7ab034b83ed26d, type: 3}
+  m_Name: Kian_MeleeAttack_A_01
+  m_EditorClassIdentifier: 
+  transitionAlias: {fileID: 11400000, guid: 9b4771e2700e73f4f9280fc13e41334e, type: 2}
+  bone:
+    boneType: 10
+    human: 18
+    path: 
+  onStartInstruction:
+    instruction: 
+    instructions: []
+  onHitInstruction:
+    instruction: 
+    instructions:
+    - rid: 7729762670221983972
+  onEndInstruction:
+    instruction: 
+    instructions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7729762670221983972
+      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        logLevel: 10
+        text:
+          rid: 7729762670221983973
+    - rid: 7729762670221983973
+      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Manual
+        propertyType:
+          rid: 7729762670221983977
+    - rid: 7729762670221983977
+      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        value: Hit

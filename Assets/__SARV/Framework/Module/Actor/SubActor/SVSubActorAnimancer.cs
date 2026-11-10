@@ -7,14 +7,18 @@ namespace __SARV.Framework.Module.Actor.SubActor
     {
         private AnimancerState _currentAnimancerState;
 
-        protected override void Awake()
-        {
-            base.Awake();
-        }
-
-        public void PlayAnimancer(StringAsset alias, Action onEnd = null)
+        public void PlayAnimancer(StringAsset alias, Action onEnd = null, bool restart = false)
         {
             _currentAnimancerState = animancerComponent.TryPlay(alias);
+            if (_currentAnimancerState == null)
+            {
+                return;
+            }
+
+            if (restart)
+            {
+                _currentAnimancerState.Time = 0;
+            }
 
             if (onEnd != null)
             {

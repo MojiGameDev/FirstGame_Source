@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
 {
-    public abstract class SVSubMeleeWeaponReaction : SVSubMeleeWeaponCombo
+    public abstract class SVSubMeleeWeaponReaction : SVSubMeleeShieldHandling
     {
-        [FoldoutGroup("Event")] [SerializeField] [Title("OnBlocked")] [HideLabel]
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnBlocked")] [HideLabel]
         private SVInstruction onBlockedInstruction;
 
-        [FoldoutGroup("Event")] [SerializeField] [Title("OnParried")] [HideLabel]
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnParried")] [HideLabel]
         private SVInstruction onParriedInstruction;
         
         public async Task ExecuteOnBlocked(SVArgument argument)

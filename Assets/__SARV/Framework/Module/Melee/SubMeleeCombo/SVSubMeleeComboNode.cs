@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Melee.SubMeleeCombo
 {
-    public abstract class SVSubMeleeComboNode : SVScriptableObject
+    public abstract class SVSubMeleeComboNode : SVSubMeleeComboReaction
     {
         [FoldoutGroup("Combo")] [SerializeField] [ListDrawerSettings(CustomAddFunction = nameof(CreateNode))] [LabelText("$" + nameof(CombosLabel))]
         protected List<SVComboNode> combos = new();

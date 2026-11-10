@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Integration.Animancer.Enum;
@@ -23,14 +24,21 @@ namespace __SARV.Framework.Module.State.Behavior
         [BoxGroup("Animancer")] [SerializeField] [Required]
         private StringAsset meleeAttackEvent;
 
-        private SVComboNode _currentCombo;
+        private SVComboNode _currentComboNode;
         private SARVHitbox _currentHitbox;
+        private bool _goToNextComboAttack = false;
+        private bool _canCheckNextComboAttack = false;
+        private bool _isAttackDone;
 
         public override async Task Enter()
         {
             await base.Enter();
-            _currentCombo = null;
+            await Actor.CurrentMeleeWeapon.MeleeCombo.ExecuteOnStart(Actor.Argument);
+            _currentComboNode = null;
             _currentHitbox = null;
+            _goToNextComboAttack = false;
+            _canCheckNextComboAttack = false;
+            _isAttackDone = false;
             Actor.EnablePlayerRootMotion();
             Actor.AnimancerComponent.Events.AddTo<SVMeleeAttackParameterType>(meleeAttackEvent, HandleMeleeEventHandler);
             HandleMatchedCombo();
@@ -39,11 +47,23 @@ namespace __SARV.Framework.Module.State.Behavior
 
         public override void Tick(float deltaTime)
         {
+            if (_isAttackDone)
+            {
+                return;
+            }
+
+            if (_canCheckNextComboAttack && !_goToNextComboAttack && Actor.InputAttack)
+            {
+                _goToNextComboAttack = true;
+            }
+
             if (_currentHitbox != null && _currentHitbox.IsActive)
             {
-                if (_currentHitbox.TryGetDetectedHit(out var hitActorResult))
+                if (_currentHitbox.TryGetHitResult(out var hitActorResult))
                 {
-                    hitActorResult.TargetActor.ApplyHit(hitActorResult);
+                    _ = _currentComboNode.Attack.ExecuteOnHit(Actor.Argument);
+                    _ = hitActorResult.TargetActor.CurrentMeleeShield.ExecuteOnDamage(hitActorResult.TargetActor.Argument);
+                    //hitActorResult.TargetActor.ApplyHit(hitActorResult);
                 }
             }
         }
@@ -57,7 +77,7 @@ namespace __SARV.Framework.Module.State.Behavior
 
         private void HandlePlayMatchedMeleeAttack()
         {
-            Actor.PlayAnimancer(_currentCombo.Attack.TransitionAlias);
+            Actor.PlayAnimancer(_currentComboNode.Attack.TransitionAlias, restart: true);
         }
 
         private void HandleHitbox(SVComboNode comboNode)
@@ -69,19 +89,19 @@ namespace __SARV.Framework.Module.State.Behavior
         private void HandleMatchedCombo()
         {
             var rootCombos = Actor.CurrentMeleeWeapon.MeleeCombo.Combos;
-            var combos = _currentCombo?.Combos ?? rootCombos;
+            var combos = _currentComboNode?.Combos ?? rootCombos;
 
             if (TryGetComboAttack(combos, out var currentCombo))
             {
-                _currentCombo = currentCombo;
+                _currentComboNode = currentCombo;
                 return;
             }
 
-            _currentCombo = null;
+            _currentComboNode = null;
 
             if (TryGetComboAttack(rootCombos, out currentCombo))
             {
-                _currentCombo = currentCombo;
+                _currentComboNode = currentCombo;
             }
         }
 
@@ -91,7 +111,7 @@ namespace __SARV.Framework.Module.State.Behavior
 
             foreach (var combo in combos)
             {
-                if (combo.OnCanPerformBranch.IsBranchesPassed(Actor.Argument))
+                if (combo.CanPerform(Actor.Argument))
                 {
                     currentCombo = combo;
                     HandleHitbox(currentCombo);
@@ -105,15 +125,23 @@ namespace __SARV.Framework.Module.State.Behavior
 
         private void HandleMeleeEventHandler(SVMeleeAttackParameterType parameter)
         {
+            if (_isAttackDone)
+            {
+                return;
+            }
+
             switch (parameter.AttackPhase)
             {
                 case SVMeleeAttackPhase.Start:
+                    _canCheckNextComboAttack = true;
                     break;
                 case SVMeleeAttackPhase.Next:
+                    HandleNextAttack();
+                    _canCheckNextComboAttack = false;
                     break;
                 case SVMeleeAttackPhase.End:
-                    Debug.Log("End");
-                    Actor.StateMachine.ToFirst();
+                    _isAttackDone = true;
+                    _ = Actor.CurrentMeleeWeapon.MeleeCombo.ExecuteOnEnd(Actor.Argument);
                     break;
                 case SVMeleeAttackPhase.EnableHitbox:
                     _currentHitbox.Activate();
@@ -121,6 +149,16 @@ namespace __SARV.Framework.Module.State.Behavior
                 case SVMeleeAttackPhase.DisableHitbox:
                     _currentHitbox.Deactivate();
                     break;
+            }
+        }
+
+        private void HandleNextAttack()
+        {
+            if (_goToNextComboAttack)
+            {
+                _goToNextComboAttack = false;
+                HandleMatchedCombo();
+                HandlePlayMatchedMeleeAttack();
             }
         }
     }

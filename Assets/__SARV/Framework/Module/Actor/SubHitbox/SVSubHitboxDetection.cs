@@ -40,7 +40,7 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
             _hitTargets.Clear();
         }
 
-        public bool TryGetDetectedHit(out SVHitResult hitResult)
+        public bool TryGetHitResult(out SVHitResult hitResult)
         {
             hitResult = default;
 
@@ -122,23 +122,23 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
 
         private SVHitResult ProcessHit(Collider targetCollider, Vector3 hitPosition, Vector3 hitDirection)
         {
-            var target = targetCollider.GetComponentInParent<SARVActor>();
+            var targetActor = targetCollider.GetComponentInParent<SARVActor>();
 
-            if (target == null || _hitTargets.Contains(target))
+            if (targetActor == null || _hitTargets.Contains(targetActor))
             {
                 return default;
             }
 
-            var closestHurtpoint = target.GetClosestHurtpoint(hitPosition);
+            var closestHurtpoint = targetActor.GetClosestHurtpoint(hitPosition);
 
             if (closestHurtpoint == null)
             {
                 return default;
             }
 
-            _hitTargets.Add(target);
-
-            return new SVHitResult(target, closestHurtpoint, hitPosition, hitDirection);
+            _hitTargets.Add(targetActor);
+            
+            return new SVHitResult(targetActor, closestHurtpoint, hitPosition, hitDirection);
         }
 
         private void UpdateLastTransform(Vector3 position, Quaternion rotation)
