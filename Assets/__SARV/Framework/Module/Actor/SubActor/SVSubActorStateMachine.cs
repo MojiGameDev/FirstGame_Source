@@ -10,27 +10,19 @@ namespace __SARV.Framework.Module.Actor.SubActor
     {
         [FoldoutGroup("StateMachine")] [SerializeField] [HideLabel]
         private SVStateMachine stateMachine;
-
+        
         public SVStateMachine StateMachine => stateMachine;
-
+        
         protected override void Awake()
         {
             base.Awake();
-            if (IsActorAgent)
-            {
-                visualStateMachine.SetSarvStateMachine(stateMachine);
-            }
-
             StateMachine.HandleAwake();
         }
 
         protected override void Start()
         {
             base.Start();
-            if (IsActorPlayer)
-            {
-                StateMachine.HandleStart();
-            }
+            StateMachine.HandleStart();
         }
 
         protected override void Update()

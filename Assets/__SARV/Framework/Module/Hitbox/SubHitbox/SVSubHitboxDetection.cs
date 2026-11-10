@@ -81,6 +81,8 @@ namespace __SARV.Framework.Module.Hitbox.SubHitbox
 
                     if (targetActor != null)
                     {
+                        targetHitPosition = currentPosition;
+                        targetHitDirection = hitDirection;
                         UpdateLastTransform(currentPosition, currentRotation);
                         return true;
                     }
@@ -113,6 +115,8 @@ namespace __SARV.Framework.Module.Hitbox.SubHitbox
 
                 if (targetActor != null)
                 {
+                    targetHitPosition = currentPosition;
+                    targetHitDirection = hitDirection;
                     UpdateLastTransform(currentPosition, currentRotation);
                     return true;
                 }

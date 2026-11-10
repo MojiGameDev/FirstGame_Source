@@ -61,7 +61,6 @@ namespace __SARV.Framework.Module.State.Behavior
             {
                 if (_currentHitbox.TryGetHitInfo(out var targetActor, out var hitPosition, out var hitDirection))
                 {
-                    Debug.Log("Hit");
                     var hitResult = new SVHitResult(targetActor, hitPosition, hitDirection, _currentComboNode.Attack.Power, _currentComboNode.Attack.Force);
                     targetActor.SetHitResult(hitResult);
                     _ = _currentComboNode.Attack.ExecuteOnHit(Actor.Argument);

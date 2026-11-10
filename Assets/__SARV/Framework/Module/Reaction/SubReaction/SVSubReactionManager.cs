@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using __SARV.Framework.Module.Reaction.Entity;
 using __SARV.Framework.Module.Reaction.Enum;
+using UnityEngine;
 
 namespace __SARV.Framework.Module.Reaction.SubReaction
 {
@@ -9,6 +10,8 @@ namespace __SARV.Framework.Module.Reaction.SubReaction
         public SVReaction GetReaction(SVReactionPower power, SVReactionDirection direction)
         {
             var targetReaction = reactions.FirstOrDefault(d => d.Direction == direction && d.Power == power);
+            Debug.Log(targetReaction == null);
+            Debug.Log(targetReaction?.Direction);
             return targetReaction ?? defaultReaction;
         }
     }
