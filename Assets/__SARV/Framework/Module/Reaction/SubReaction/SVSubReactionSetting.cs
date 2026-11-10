@@ -10,12 +10,9 @@ namespace __SARV.Framework.Module.Reaction.SubReaction
     public abstract class SVSubReactionSetting : SVScriptableObject
     {
         [FoldoutGroup("Setting")] [BoxGroup("Setting/Specific")] [SerializeField]
-        private List<SVReaction> reactions = new();
+        protected List<SVReaction> reactions = new();
 
         [FoldoutGroup("Setting")] [BoxGroup("Setting/Default")] [SerializeField] [Required] [HideLabel]
-        private StringAsset defaultReactionAlias;
-
-        public IReadOnlyList<SVReaction> Reactions => reactions;
-        public StringAsset DefaultReactionAlias => defaultReactionAlias;
+        protected SVReaction defaultReaction;
     }
 }

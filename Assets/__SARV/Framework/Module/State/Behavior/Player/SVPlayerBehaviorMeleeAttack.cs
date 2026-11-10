@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Constant;
 using __SARV.Framework.Integration.Animancer.Enum;
 using __SARV.Framework.Integration.Animancer.Parameter.Type;
-using __SARV.Framework.Module.Actor;
+using __SARV.Framework.Module.Hitbox;
+using __SARV.Framework.Module.Hitbox.Entity;
 using __SARV.Framework.Module.Melee.Entity;
 using __SARV.Framework.Module.State.Behavior.Base;
 using Animancer;
@@ -59,13 +59,13 @@ namespace __SARV.Framework.Module.State.Behavior
 
             if (_currentHitbox != null && _currentHitbox.IsActive)
             {
-                if (_currentHitbox.TryGetHitResult(out var hitActorResult))
+                if (_currentHitbox.TryGetHitInfo(out var targetActor, out var hitPosition, out var hitDirection))
                 {
-                    Actor.SetHitResult(hitActorResult);
-                    hitActorResult.TargetActor.SetHitResult(hitActorResult);
+                    Debug.Log("Hit");
+                    var hitResult = new SVHitResult(targetActor, hitPosition, hitDirection, _currentComboNode.Attack.Power, _currentComboNode.Attack.Force);
+                    targetActor.SetHitResult(hitResult);
                     _ = _currentComboNode.Attack.ExecuteOnHit(Actor.Argument);
-                    _ = hitActorResult.TargetActor.CurrentMeleeShield.ExecuteOnDamage(hitActorResult.TargetActor.Argument);
-                    hitActorResult.TargetActor.ApplyHit(hitActorResult);
+                    _ = targetActor.CurrentMeleeShield.ExecuteOnDamage(targetActor.Argument);
                 }
             }
         }

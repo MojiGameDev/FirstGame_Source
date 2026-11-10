@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Actor.SubHurtpoint
+namespace __SARV.Framework.Module.Hurtpoint.SubHurtpoint
 {
     public abstract class SVSubHitpointReference : SVOverrideMonoBehaviour
     {

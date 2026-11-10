@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Module.Actor.SubHitbox
+namespace __SARV.Framework.Module.Hitbox.SubHitbox
 {
     public abstract class SVSubHitboxSetting : SVOverrideMonoBehaviour
     {

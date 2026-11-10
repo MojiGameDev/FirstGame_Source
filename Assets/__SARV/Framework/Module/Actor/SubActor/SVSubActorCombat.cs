@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using __SARV.Common.Extension;
 using __SARV.Framework.Common.Entity;
 using __SARV.Framework.Module.Actor.Entity;
+using __SARV.Framework.Module.Hitbox.Entity;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Melee;
 using UnityEngine;

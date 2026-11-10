@@ -5,6 +5,7 @@ using __SARV.Framework;
 using __SARV.Framework.Kernal;
 using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Dialogue;
+using __SARV.Framework.Module.Hurtpoint;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Indicator;
 using __SARV.Framework.Module.Interactor;

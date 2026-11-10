@@ -17,33 +17,17 @@ MonoBehaviour:
     boneType: 10
     human: 18
     path: 
+  power: 10
+  force: 100
   onStartInstruction:
     instruction: 
     instructions: []
   onHitInstruction:
     instruction: 
-    instructions:
-    - rid: 7729762670221983972
+    instructions: []
   onEndInstruction:
     instruction: 
     instructions: []
   references:
     version: 2
-    RefIds:
-    - rid: 7729762670221983972
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        logLevel: 10
-        text:
-          rid: 7729762670221983973
-    - rid: 7729762670221983973
-      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        property: Manual
-        propertyType:
-          rid: 7729762670221983977
-    - rid: 7729762670221983977
-      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: Hit
+    RefIds: []

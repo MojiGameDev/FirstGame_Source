@@ -1,79 +1,62 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using __SARV.Framework.Module.Actor.Entity;
-using __SARV.Framework.Module.Actor.Enum;
-using __SARV.Framework.Module.Reaction.Enum;
+using __SARV.Framework.Module.Hitbox.Entity;
+using __SARV.Framework.Module.Hurtpoint;
 using RootMotion.Dynamics;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
-    [Serializable]
-    public abstract class SVSubActorRagdoll : SVSubActorData
+    public abstract class SVSubActorRagdoll : SVSubActorHurtpoint
     {
-        [FoldoutGroup("Hurtpoint")] [SerializeField] [Required]
-        private List<SARVHurtpoint> hurtpoints = new();
-
         [SerializeField] private float hitForce = 100f;
 
         [SerializeField, Range(0f, 1f)] private float hitPinWeight = 0.2f;
 
         [SerializeField] private float pinRecoveryDuration = 0.2f;
-        
-        [FoldoutGroup("Hurtpoint")]
-        [Button]
-        private void DetectHurtpoints()
-        {
-            hurtpoints.Clear();
-            foreach (var hurtpoint in GetComponentsInChildren<SARVHurtpoint>(true))
-            {
-                hurtpoints.Add(hurtpoint);
-            }
-        }
-        
+
         private readonly Dictionary<Muscle, Coroutine> recoveryCoroutines = new();
         private readonly Dictionary<Muscle, float> originalPinWeights = new();
 
-        public void ApplyHit(SVHitResult hitResult)
+        public void ApplyRagdollHit(SVHitResult hitResult)
         {
-            if (hitResult.TargetHurtpoint.RigidbodyPoint == null)
+            var targetHurtPoint = GetClosestHurtpoint(hitResult.HitPosition);
+            if (targetHurtPoint.RigidbodyPoint == null)
             {
-                Debug.LogError(hitResult.TargetHurtpoint.name);
-                Debug.LogError("Hit Rigidbody is NULL.");
+                //Debug.LogError("Hit Rigidbody is NULL.");
                 return;
             }
 
-            Debug.Log(
-                $"Hit: {hitResult.TargetHurtpoint.RigidbodyPoint.name} | " +
-                $"Kinematic: {hitResult.TargetHurtpoint.RigidbodyPoint.isKinematic} | " +
-                $"Mass: {hitResult.TargetHurtpoint.RigidbodyPoint.mass} | " +
-                $"Direction: {hitResult.HitDirection}"
-            );
+            // Debug.Log(
+            //     $"Hit: {hitResult.TargetHurtpoint.RigidbodyPoint.name} | " +
+            //     $"Kinematic: {hitResult.TargetHurtpoint.RigidbodyPoint.isKinematic} | " +
+            //     $"Mass: {hitResult.TargetHurtpoint.RigidbodyPoint.mass} | " +
+            //     $"Direction: {hitResult.HitDirection}"
+            // );
 
-            if (hitResult.TargetHurtpoint.RigidbodyPoint.isKinematic)
+            if (targetHurtPoint.RigidbodyPoint.isKinematic)
             {
-                Debug.LogError("Hit Rigidbody is Kinematic.");
+                //Debug.LogError("Hit Rigidbody is Kinematic.");
                 return;
             }
 
-            if (!hitResult.IsValid) return;
+            var muscle = FindMuscle(targetHurtPoint.RigidbodyPoint);
 
-            Muscle muscle = FindMuscle(hitResult.TargetHurtpoint.RigidbodyPoint);
-
-            if (muscle == null) return;
+            if (muscle == null)
+            {
+                return;
+            }
 
             // Temporarily reduce this muscle's pin weight.
-            Muscle.State state = muscle.state;
+            var muscleState = muscle.state;
 
             if (!originalPinWeights.ContainsKey(muscle))
             {
-                originalPinWeights.Add(muscle, state.pinWeightMlp);
+                originalPinWeights.Add(muscle, muscleState.pinWeightMlp);
             }
 
-            state.pinWeightMlp = hitPinWeight;
-            muscle.state = state;
+            muscleState.pinWeightMlp = hitPinWeight;
+            muscle.state = muscleState;
 
             // Restart recovery if this muscle is hit again.
             if (recoveryCoroutines.TryGetValue(muscle, out Coroutine routine))
@@ -91,37 +74,10 @@ namespace __SARV.Framework.Module.Actor.SubActor
                 ForceMode.Impulse
             );
             
-            Debug.Log(GetHitDirection(hitResult));
-
             Debug.Log(
-                $"Hit reaction: {hitResult.TargetHurtpoint.RigidbodyPoint.name}",
+                $"Hit reaction: {targetHurtPoint.RigidbodyPoint.name}",
                 this
             );
-        }
-        
-        private SVReactionDirection GetHitDirection(SVHitResult hit)
-        {
-            // Reverse weapon travel direction to get the incoming direction.
-            Vector3 incomingDirection = -hit.HitDirection;
-
-            // Convert world direction into actor-local direction.
-            Vector3 localDirection = hit.TargetActor.transform
-                .InverseTransformDirection(incomingDirection);
-
-            // Ignore vertical direction.
-            localDirection.y = 0f;
-            localDirection.Normalize();
-
-            if (Mathf.Abs(localDirection.z) > Mathf.Abs(localDirection.x))
-            {
-                return localDirection.z > 0f
-                    ? SVReactionDirection.Front
-                    : SVReactionDirection.Back;
-            }
-
-            return localDirection.x > 0f
-                ? SVReactionDirection.Right
-                : SVReactionDirection.Left;
         }
 
         private Muscle FindMuscle(Rigidbody target)
@@ -139,13 +95,12 @@ namespace __SARV.Framework.Module.Actor.SubActor
         {
             yield return new WaitForSeconds(pinRecoveryDuration);
 
-            Muscle.State state = muscle.state;
+            var state = muscle.state;
 
-            if (originalPinWeights.TryGetValue(muscle, out float originalWeight))
+            if (originalPinWeights.TryGetValue(muscle, out var originalWeight))
             {
                 state.pinWeightMlp = originalWeight;
                 muscle.state = state;
-
                 originalPinWeights.Remove(muscle);
             }
 

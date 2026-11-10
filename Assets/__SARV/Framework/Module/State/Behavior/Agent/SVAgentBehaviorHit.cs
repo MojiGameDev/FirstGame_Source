@@ -21,7 +21,8 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
         public override async Task Enter()
         {
             await base.Enter();
-            Debug.Log(Actor.CurrentHitResult.HitPosition);
+            var svReaction = reaction.GetReaction(Actor.CurrentHitResult.Power, Actor.CurrentHitResult.GetDirectionAsEnum());
+            Actor.PlayAnimancer(svReaction.Alias);
         }
     }
 }

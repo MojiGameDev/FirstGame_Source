@@ -1,4 +1,4 @@
-﻿namespace __SARV.Framework.Module.Actor.SubHurtpoint
+﻿namespace __SARV.Framework.Module.Hurtpoint.SubHurtpoint
 {
     public abstract class SVSubHitpointSetting : SVSubHitpointReference
     {
