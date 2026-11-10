@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f0cc8b8557488e8db388397f08ffb3, type: 3}
+  m_Name: Enemy_Modular_01_Reaction_Hit
+  m_EditorClassIdentifier: 
+  reactions:
+  - power: 10
+    direction: 20
+    alias: {fileID: 11400000, guid: 5647f2fc52447f04cb730ea002702ffa, type: 2}
+  - power: 10
+    direction: 10
+    alias: {fileID: 11400000, guid: 408b652904b619b4bb85fae74ac45806, type: 2}
+  - power: 10
+    direction: 30
+    alias: {fileID: 11400000, guid: 78c0d5708e0e0b44885cccef44cd7db0, type: 2}
+  - power: 10
+    direction: 40
+    alias: {fileID: 11400000, guid: ca7b1688fe9ee534ab6438ec47f8cb0a, type: 2}
+  defaultReactionAlias: {fileID: 11400000, guid: 408b652904b619b4bb85fae74ac45806, type: 2}

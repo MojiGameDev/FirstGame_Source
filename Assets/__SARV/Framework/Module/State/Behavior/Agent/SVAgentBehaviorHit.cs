@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Constant;
+using __SARV.Framework.Module.Reaction;
 using __SARV.Framework.Module.State.Behavior.Agent.Base;
-using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -15,9 +15,13 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
     [Serializable]
     public class SVAgentBehaviorHit : SVAgentBehavior
     {
+        [BoxGroup("Reaction")] [SerializeField] [Required] [HideLabel]
+        private SARVReaction reaction;
+
         public override async Task Enter()
         {
             await base.Enter();
+            Debug.Log(Actor.CurrentHitResult.HitPosition);
         }
     }
 }

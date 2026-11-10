@@ -61,9 +61,11 @@ namespace __SARV.Framework.Module.State.Behavior
             {
                 if (_currentHitbox.TryGetHitResult(out var hitActorResult))
                 {
+                    Actor.SetHitResult(hitActorResult);
+                    hitActorResult.TargetActor.SetHitResult(hitActorResult);
                     _ = _currentComboNode.Attack.ExecuteOnHit(Actor.Argument);
                     _ = hitActorResult.TargetActor.CurrentMeleeShield.ExecuteOnDamage(hitActorResult.TargetActor.Argument);
-                    //hitActorResult.TargetActor.ApplyHit(hitActorResult);
+                    hitActorResult.TargetActor.ApplyHit(hitActorResult);
                 }
             }
         }

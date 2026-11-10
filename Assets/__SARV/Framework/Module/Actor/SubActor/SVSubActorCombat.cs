@@ -11,17 +11,23 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Actor.SubActor
 {
     [Serializable]
-    public abstract class SVSubActorCombat : SVSubActorHurtpoint
+    public abstract class SVSubActorCombat : SVSubActorRagdoll
     {
         public SARVIdentifier AttackBehaviorIdentifier { get; protected set; }
         public SARVMeleeWeapon CurrentMeleeWeapon { get; protected set; }
         public SARVMeleeShield CurrentMeleeShield { get; protected set; }
+        public SVHitResult CurrentHitResult { get; protected set; }
 
         protected Dictionary<SVEquipmentKey, GameObject> RuntimeEquipmentItem = new();
 
         public void SetAttackBehaviorIdentifier(SARVIdentifier identifier)
         {
             AttackBehaviorIdentifier = identifier;
+        }
+
+        public void SetHitResult(SVHitResult hitResult)
+        {
+            CurrentHitResult = hitResult;
         }
 
         public async Task EquipMeleeWeapon(SARVMeleeWeapon meleeWeapon)

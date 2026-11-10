@@ -35,7 +35,7 @@ MonoBehaviour:
   onDamageInstruction:
     instruction: 
     instructions:
-    - rid: 7729762670221983968
+    - rid: 7729762692614062219
   references:
     version: 2
     RefIds:
@@ -83,20 +83,19 @@ MonoBehaviour:
       type: {class: SVVector3PropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
         value: {x: 0, y: 0, z: 0}
-    - rid: 7729762670221983968
-      type: {class: SVDebugInstructionLogText, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+    - rid: 7729762692614062219
+      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
-        logLevel: 10
-        text:
-          rid: 7729762670221983969
-    - rid: 7729762670221983969
-      type: {class: SVStringProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+        actor:
+          rid: 7729762692614062220
+        behavior: {fileID: 11400000, guid: cdfbb1a9b82c453429bba301a2c36f4d, type: 2}
+    - rid: 7729762692614062220
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data:
-        property: Manual
+        property: Self
         propertyType:
-          rid: 7729762670221983971
-    - rid: 7729762670221983971
-      type: {class: SVStringPropertyManual, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
-      data:
-        value: Damage
+          rid: 7729762692614062222
+    - rid: 7729762692614062222
+      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 

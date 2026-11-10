@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using __SARV.Framework.Module.Actor.Entity;
+using __SARV.Framework.Module.Actor.Enum;
+using __SARV.Framework.Module.Reaction.Enum;
 using RootMotion.Dynamics;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -9,7 +11,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Actor.SubActor
 {
     [Serializable]
-    public abstract class SVSubActorHurtpoint : SVSubActorData
+    public abstract class SVSubActorRagdoll : SVSubActorData
     {
         [FoldoutGroup("Hurtpoint")] [SerializeField] [Required]
         private List<SARVHurtpoint> hurtpoints = new();
@@ -97,7 +99,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
             );
         }
         
-        private SVHitDirection GetHitDirection(SVHitResult hit)
+        private SVReactionDirection GetHitDirection(SVHitResult hit)
         {
             // Reverse weapon travel direction to get the incoming direction.
             Vector3 incomingDirection = -hit.HitDirection;
@@ -113,13 +115,13 @@ namespace __SARV.Framework.Module.Actor.SubActor
             if (Mathf.Abs(localDirection.z) > Mathf.Abs(localDirection.x))
             {
                 return localDirection.z > 0f
-                    ? SVHitDirection.Front
-                    : SVHitDirection.Back;
+                    ? SVReactionDirection.Front
+                    : SVReactionDirection.Back;
             }
 
             return localDirection.x > 0f
-                ? SVHitDirection.Right
-                : SVHitDirection.Left;
+                ? SVReactionDirection.Right
+                : SVReactionDirection.Left;
         }
 
         private Muscle FindMuscle(Rigidbody target)
@@ -175,13 +177,5 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
             return closestHurtpoint;
         }
-    }
-    
-    public enum SVHitDirection
-    {
-        Front,
-        Back,
-        Left,
-        Right
     }
 }
