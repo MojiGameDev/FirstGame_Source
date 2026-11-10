@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic; // <-- List için gerekli
+using System.Collections.Generic; // <-- List iï¿½in gerekli
 
 public class UniversalDecalSpawner : MonoBehaviour
 {
@@ -37,9 +37,10 @@ public class UniversalDecalSpawner : MonoBehaviour
             Vector3 normal = collisionEvents[i].normal;
 
             // Calculate rotation
-            Quaternion baseRotation = Quaternion.LookRotation(isHDRP ? -normal : normal);
-            Quaternion randomSpin = Quaternion.AngleAxis(Random.Range(0f, 360f), normal);
-            Quaternion finalRotation = randomSpin * baseRotation;
+            // Quaternion baseRotation = Quaternion.LookRotation(isHDRP ? -normal : normal);
+            // Quaternion randomSpin = Quaternion.AngleAxis(Random.Range(0f, 360f), normal);
+            // Quaternion finalRotation = randomSpin * baseRotation;
+            Quaternion finalRotation = Quaternion.LookRotation(isHDRP ? -normal : normal);
 
             Vector3 spawnPos = pos + normal * 0.01f;
 
