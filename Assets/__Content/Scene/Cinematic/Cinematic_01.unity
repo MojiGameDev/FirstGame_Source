@@ -882,7 +882,7 @@ MonoBehaviour:
     onExitInstruction:
       instruction: 
       instructions:
-      - rid: 4447245677697171636
+      - rid: -2
     dialogues: []
   - type: 10
     advanceMode: 30
@@ -900,12 +900,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4447245677697171636
-      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        duration: 0.3
-        realTime: 0
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!4 &177442532064681341
 Transform:
   m_ObjectHideFlags: 0
@@ -2569,6 +2565,63 @@ Transform:
   - {fileID: 5698325794579741863}
   m_Father: {fileID: 5971169336447101852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6260055445365133094
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 56.109
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 51.577
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731255839539982794, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634744138576911403, guid: 209f2b34e21ba4659978583d88223127, type: 3}
+      propertyPath: m_Name
+      value: VisualEffect_BloodSlash_01_Small
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 209f2b34e21ba4659978583d88223127, type: 3}
 --- !u!4 &6353607332954612151
 Transform:
   m_ObjectHideFlags: 0
@@ -2837,76 +2890,22 @@ MonoBehaviour:
   description: Interact to the body
   signal: Input/Interact
   signalComponent:
-    rid: 4447245640774189349
+    rid: -2
   tooltip: 
   instruction:
     instruction: 
     instructions:
-    - rid: 4447245654144843911
-    - rid: 4447245677697171637
-    - rid: 4447245677697171624
-    - rid: 4447245677697171648
     - rid: -2
-    - rid: 4447245677697171649
+    - rid: -2
+    - rid: -2
+    - rid: -2
+    - rid: -2
+    - rid: -2
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 4447245640774189349
-      type: {class: SVInputSignalInteract, ns: __SARV.Framework.Kernal.Signal.Input, asm: Assembly-CSharp}
-      data:
-        interactor: {fileID: 2294678685596397462}
-    - rid: 4447245654144843911
-      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        actor:
-          rid: 4447245654144843912
-        behavior: {fileID: 11400000, guid: af8cc05eb10d3a447b392f849c4a70de, type: 2}
-    - rid: 4447245654144843912
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
-      data:
-        property: Player
-        propertyType:
-          rid: 4447245677697171552
-    - rid: 4447245677697171552
-      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
-      data: 
-    - rid: 4447245677697171624
-      type: {class: SVDialogueInstructionRun, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        dialogue: {fileID: 73064957534780400}
-        waitToFinish: 1
-    - rid: 4447245677697171637
-      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        duration: 0.8
-        realTime: 0
-    - rid: 4447245677697171648
-      type: {class: SVTimeInstructionWait, ns: __SARV.Framework.Kernal.Instruction.Time, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        duration: 1
-        realTime: 0
-    - rid: 4447245677697171649
-      type: {class: SVActorInstructionChangeBehavior, ns: __SARV.Framework.Kernal.Instruction.Actor, asm: Assembly-CSharp}
-      data:
-        disabled: 0
-        actor:
-          rid: 4447245677697171650
-        behavior: {fileID: 11400000, guid: 93b1ace301e950b4196f1d318f108597, type: 2}
-    - rid: 4447245677697171650
-      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
-      data:
-        property: Player
-        propertyType:
-          rid: 4447245677697171652
-    - rid: 4447245677697171652
-      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property.Actor, asm: Assembly-CSharp}
-      data: 
 --- !u!1 &7464564026832687790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,3 +3380,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1742700644}
   - {fileID: 2643743459902445484}
+  - {fileID: 6260055445365133094}
