@@ -40,9 +40,9 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
             _hitTargets.Clear();
         }
 
-        public bool TryGetDetectedHit(out SVHitActorResult hitActorResult)
+        public bool TryGetHitResult(out SVHitResult hitResult)
         {
-            hitActorResult = default;
+            hitResult = default;
 
             if (!IsActive)
             {
@@ -71,13 +71,13 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
                         targetLayer,
                         triggerMode))
                 {
-                    hitActorResult = ProcessHit(
+                    hitResult = ProcessHit(
                         hit.collider,
                         hit.point,
                         hitDirection
                     );
 
-                    if (hitActorResult.IsValid)
+                    if (hitResult.IsValid)
                     {
                         UpdateLastTransform(currentPosition, currentRotation);
                         return true;
@@ -103,13 +103,13 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
                     continue;
                 }
 
-                hitActorResult = ProcessHit(
+                hitResult = ProcessHit(
                     targetCollider,
                     currentPosition,
                     hitDirection
                 );
 
-                if (hitActorResult.IsValid)
+                if (hitResult.IsValid)
                 {
                     UpdateLastTransform(currentPosition, currentRotation);
                     return true;
@@ -120,25 +120,25 @@ namespace __SARV.Framework.Module.Actor.SubHitbox
             return false;
         }
 
-        private SVHitActorResult ProcessHit(Collider targetCollider, Vector3 hitPosition, Vector3 hitDirection)
+        private SVHitResult ProcessHit(Collider targetCollider, Vector3 hitPosition, Vector3 hitDirection)
         {
-            var target = targetCollider.GetComponentInParent<SARVActor>();
+            var targetActor = targetCollider.GetComponentInParent<SARVActor>();
 
-            if (target == null || _hitTargets.Contains(target))
+            if (targetActor == null || _hitTargets.Contains(targetActor))
             {
                 return default;
             }
 
-            var closestHurtpoint = target.GetClosestHurtpoint(hitPosition);
+            var closestHurtpoint = targetActor.GetClosestHurtpoint(hitPosition);
 
             if (closestHurtpoint == null)
             {
                 return default;
             }
 
-            _hitTargets.Add(target);
-
-            return new SVHitActorResult(target, closestHurtpoint, hitPosition, hitDirection);
+            _hitTargets.Add(targetActor);
+            
+            return new SVHitResult(targetActor, closestHurtpoint, hitPosition, hitDirection);
         }
 
         private void UpdateLastTransform(Vector3 position, Quaternion rotation)

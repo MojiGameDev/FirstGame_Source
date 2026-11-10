@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using __SARV.Common.Extension;
 using __SARV.Framework.Module.Actor.Entity;
 using RootMotion.Dynamics;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
@@ -36,31 +34,31 @@ namespace __SARV.Framework.Module.Actor.SubActor
         private readonly Dictionary<Muscle, Coroutine> recoveryCoroutines = new();
         private readonly Dictionary<Muscle, float> originalPinWeights = new();
 
-        public void ApplyHit(SVHitActorResult hitActorResult)
+        public void ApplyHit(SVHitResult hitResult)
         {
-            if (hitActorResult.Hurtpoint.RigidbodyPoint == null)
+            if (hitResult.TargetHurtpoint.RigidbodyPoint == null)
             {
-                Debug.LogError(hitActorResult.Hurtpoint.name);
+                Debug.LogError(hitResult.TargetHurtpoint.name);
                 Debug.LogError("Hit Rigidbody is NULL.");
                 return;
             }
 
             Debug.Log(
-                $"Hit: {hitActorResult.Hurtpoint.RigidbodyPoint.name} | " +
-                $"Kinematic: {hitActorResult.Hurtpoint.RigidbodyPoint.isKinematic} | " +
-                $"Mass: {hitActorResult.Hurtpoint.RigidbodyPoint.mass} | " +
-                $"Direction: {hitActorResult.HitDirection}"
+                $"Hit: {hitResult.TargetHurtpoint.RigidbodyPoint.name} | " +
+                $"Kinematic: {hitResult.TargetHurtpoint.RigidbodyPoint.isKinematic} | " +
+                $"Mass: {hitResult.TargetHurtpoint.RigidbodyPoint.mass} | " +
+                $"Direction: {hitResult.HitDirection}"
             );
 
-            if (hitActorResult.Hurtpoint.RigidbodyPoint.isKinematic)
+            if (hitResult.TargetHurtpoint.RigidbodyPoint.isKinematic)
             {
                 Debug.LogError("Hit Rigidbody is Kinematic.");
                 return;
             }
 
-            if (!hitActorResult.IsValid) return;
+            if (!hitResult.IsValid) return;
 
-            Muscle muscle = FindMuscle(hitActorResult.Hurtpoint.RigidbodyPoint);
+            Muscle muscle = FindMuscle(hitResult.TargetHurtpoint.RigidbodyPoint);
 
             if (muscle == null) return;
 
@@ -86,26 +84,26 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
             // Apply physical impact.
             muscle.rigidbody.AddForceAtPosition(
-                hitActorResult.HitDirection.normalized * hitForce,
-                hitActorResult.HitPosition,
+                hitResult.HitDirection.normalized * hitForce,
+                hitResult.HitPosition,
                 ForceMode.Impulse
             );
             
-            Debug.Log(GetHitDirection(hitActorResult));
+            Debug.Log(GetHitDirection(hitResult));
 
             Debug.Log(
-                $"Hit reaction: {hitActorResult.Hurtpoint.RigidbodyPoint.name}",
+                $"Hit reaction: {hitResult.TargetHurtpoint.RigidbodyPoint.name}",
                 this
             );
         }
         
-        private SVHitDirection GetHitDirection(SVHitActorResult hit)
+        private SVHitDirection GetHitDirection(SVHitResult hit)
         {
             // Reverse weapon travel direction to get the incoming direction.
             Vector3 incomingDirection = -hit.HitDirection;
 
             // Convert world direction into actor-local direction.
-            Vector3 localDirection = hit.Actor.transform
+            Vector3 localDirection = hit.TargetActor.transform
                 .InverseTransformDirection(incomingDirection);
 
             // Ignore vertical direction.

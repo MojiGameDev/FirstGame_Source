@@ -4,7 +4,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Melee
 {
     [CreateAssetMenu(fileName = "MeleeWeapon", menuName = "SARV/Melee/Weapon")]
-    public class SARVMeleeWeapon : SVSubMeleeWeaponAttack
+    public class SARVMeleeWeapon : SVSubMeleeWeaponCombo
     {
         
     }

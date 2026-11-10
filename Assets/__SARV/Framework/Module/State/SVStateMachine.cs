@@ -73,9 +73,9 @@ namespace __SARV.Framework.Module.State
             _ = ChangeStateToInternal(stateIdentifier);
         }
 
-        public void ToFirst()
+        public bool IsCurrentStateBehavior(SARVIdentifier stateIdentifier)
         {
-            _ = ChangeStateToInternal(_runtimeStates.First().Key);
+            return _currentState.Behavior.Identifier == stateIdentifier;
         }
 
         private async Task ChangeStateToInternal(SARVIdentifier stateIdentifier)

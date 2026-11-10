@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
 {
-    public abstract class SVSubMeleeWeaponHandling : SVSubMeleeWeaponSetting
+    public abstract class SVSubMeleeShieldHandling : SVSubMeleeWeaponSetting
     {
         [FoldoutGroup("Handling")] [SerializeField] [Title("OnEquip")] [HideLabel]
         private SVInstruction onEquipInstruction;

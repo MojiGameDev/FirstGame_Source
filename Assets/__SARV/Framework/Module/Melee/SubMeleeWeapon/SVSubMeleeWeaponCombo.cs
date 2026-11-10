@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Melee.SubMeleeWeapon
 {
-    public abstract class SVSubMeleeWeaponCombo : SVSubMeleeWeaponHandling
+    public abstract class SVSubMeleeWeaponCombo : SVSubMeleeWeaponReaction
     {
         [FoldoutGroup("Combo")] [SerializeField] [Required]
         protected SARVMeleeCombo meleeCombo;
