@@ -23,6 +23,15 @@ namespace __SARV.Framework.Module.Actor.SubActor
         private Tween _changeSpeedTween;
         private Tween _changeRotationRateTween;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            if (IsActorAgent)
+            {
+                agentDestination.parent = null;
+            }
+        }
+
         protected override void OnDestroy()
         {
             base.OnDestroy();

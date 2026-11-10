@@ -378,6 +378,93 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b8e9043782303448704ef8a17b9423, type: 3}
+--- !u!1 &589215254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589215256}
+  - component: {fileID: 589215255}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &589215255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589215254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1073741824
+  data:
+    dataString: UEsDBBQAAAgIAMAbIexeZXz7YAIAAO4EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1v2zAM/SuBz1vhKEvX7Lgk6w79GJIAKzrsQMuMLVSWMklOmhb97yPlj7jrehL8yEeRj09+TmQJDmRAt4Jc1T75MkrPph9GibQm2Npdw+PSOesIF4yi1mv1hDFNcN4B9ANkGr+jKsrQpnXgXKsq60tW8LjWdsfkSdp8L/MCr9AUoWRmBJVZYaGsaa+ZEIa5CtZtlMYWHIsLgkML3L1B7nuk9sg8niu4GgnZobuCI7prm6utkhDoLg7/+t0EN+gcKPN+Tq4qNJ4QinIzyaIDJouE4hnIh8LZ2uQbB3t0HjKlVThy6s9WGM5zqHEPJlw62JXr2m1BYl/S3tiwwj+1cjFXWq1RchtrDEGZgrt5HsAdMbbtmbIrj15Jv5ZoOGJqrf9BxeKE6zgu+AeuO0r2oGtmXcymoxcWFoo2GCVw4MkxJPScGlA539jr28eu0ZdR+C1o/yrSSvwfzsbhcFehSWy8VcFuYQ/GQ7XTpMA3cm305aTVh/tYdYUWGEBptgFFrZk3QvUt8dQ8l7MhLreZ+pGtSuixPZ/4jPNvrZOYf+Wl+jkauuMtYzwdn6WzaTo+f5fa2rclirSjTlJxJsZpKkRLpVAk+9IeuOnbOtDMeFKGAze087k1pnHAUOmO1rrqRDMIDn1Y0yHLW6OPd/cDGhr25g3sK+LO62i0E7eoVf7aHckF5J8EpggCUiERP25TMcvGs89ZJsTkXE6TOIUyKijQP6i+Dp249CMYOMBAFSuuUNIKR/FNsItzB4dL9VTZgSuU2dq1JKeY26ZGPzatHjRpnC/jH2PwVpLnl+TlL1BLAwQUAAAICADAGyHs/sei7m4AAAB5AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDVM9Ez01FQSi9KLMgoBgoYgjilmSkgdrSSRWKKiVGqQWqiUaKBUXJqqm6agZFlkqGleVKSkZGxWbKpUixQfUllQapfYm4qRE9AYklGWmZeSmZeul5QanJicYk7yHCl2FoAUEsBAi0AFAAACAgAwBsh7F5lfPtgAgAA7gQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAwBsh7P7Hou5uAAAAeQAAAAkAJAAAAAAAAAAAAAAArQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABmAwAAAAA=
+    file_cachedStartup: {fileID: 0}
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  graphUpdateDebugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _AreaColors: []
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 10
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  navmeshUpdates:
+    updateInterval: 0
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 10
+  showGraphs: 1
+  showGraphsInStandalonePlayer: 0
+--- !u!4 &589215256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589215254}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881802754
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +501,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 589215256}
   - {fileID: 463123356}
   - {fileID: 172693313}
   - {fileID: 881802755}

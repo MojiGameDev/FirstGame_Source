@@ -3249,6 +3249,37 @@ MonoBehaviour:
   showGizmos: 1
   gizmosOnSelect: 1
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.45490196}
+--- !u!1 &2841645023940049863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3837420106455530747}
+  m_Layer: 0
+  m_Name: Destination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3837420106455530747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2841645023940049863}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3577485919059254469}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2845771971791055760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4579,6 +4610,8 @@ MonoBehaviour:
         onExitInstruction:
           instruction: 
           instructions: []
+        animationEvent: {fileID: 11400000, guid: 88dd7903e8505654a9794ad17a2f9799, type: 2}
+        reaction: {fileID: 11400000, guid: f8c0d93f1154d7e4fba1f626a5ce1644, type: 2}
 --- !u!1 &3644608124741513800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4724,6 +4757,7 @@ Transform:
   - {fileID: 5762993154713970099}
   - {fileID: 4182492086581624140}
   - {fileID: 6294307916016367870}
+  - {fileID: 3837420106455530747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3833305062124537041
@@ -6479,7 +6513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  target: {fileID: 0}
+  target: {fileID: 3837420106455530747}
   useRotation: 0
 --- !u!114 &8655612115440144559
 MonoBehaviour:
@@ -6590,7 +6624,7 @@ MonoBehaviour:
   aiPath: {fileID: 8655612115440144559}
   aiDestinationSetter: {fileID: 794410719974701817}
   characterController: {fileID: 3215514682264700229}
-  visualStateMachine: {fileID: 1189017581064724884}
+  agentDestination: {fileID: 3837420106455530747}
   playerMoveHorizontalKey: PlayerMoveHorizontal
   playerMoveVerticalKey: PlayerMoveVertical
   playerSprintKey: PlayerSprint
@@ -13135,7 +13169,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4182492086581624140}
-  - component: {fileID: 1189017581064724884}
   m_Layer: 0
   m_Name: State
   m_TagString: Untagged
@@ -13160,50 +13193,6 @@ Transform:
   - {fileID: 6638663437016354526}
   m_Father: {fileID: 3577485919059254469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1189017581064724884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8391812717321845933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c95737371d97a2747845a945bae3b2de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graph:
-    states:
-    - position: {x: 316.33334, y: 429.50003}
-      id: Idle
-      identifier: {fileID: 11400000, guid: f9198d24a777a8044934133d9fec1105, type: 2}
-    - position: {x: 564.5995, y: 443.4667}
-      id: Hit
-      identifier: {fileID: 11400000, guid: cdfbb1a9b82c453429bba301a2c36f4d, type: 2}
-    anyStates: []
-    transitions:
-    - id: Transition 1
-      label: 
-      originID: Idle
-      targetID: Hit
-      onEnterTransition:
-        m_PersistentCalls:
-          m_Calls: []
-      onExitTransition:
-        m_PersistentCalls:
-          m_Calls: []
-      duration: 0
-      timeMode: 0
-    preferences:
-      zoomSettings:
-        zoomFactor: 1.2
-      dragSettings:
-        dragOffset: {x: -77.16668, y: 28.500027}
-      gridSettings:
-        isEnabled: 1
-      labelSettings:
-        isEnabled: 1
-    entryState: Idle
 --- !u!1 &8505648111062248822
 GameObject:
   m_ObjectHideFlags: 0

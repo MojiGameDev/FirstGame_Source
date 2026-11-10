@@ -22,5 +22,31 @@ namespace __SARV.Framework.Module.Actor.SubActor
                 hurtpoints.Add(hurtpoint);
             }
         }
+        
+        protected SARVHurtpoint GetClosestHurtpoint(Vector3 hitPosition)
+        {
+            SARVHurtpoint closestHurtpoint = null;
+            var closestDistance = float.MaxValue;
+
+            foreach (var candidate in hurtpoints)
+            {
+                if (candidate == null)
+                {
+                    continue;
+                }
+
+                var distance = (candidate.transform.position - hitPosition).sqrMagnitude;
+
+                if (distance >= closestDistance)
+                {
+                    continue;
+                }
+
+                closestDistance = distance;
+                closestHurtpoint = candidate;
+            }
+
+            return closestHurtpoint;
+        }
     }
 }

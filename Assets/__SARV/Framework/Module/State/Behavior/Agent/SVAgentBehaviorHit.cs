@@ -27,9 +27,18 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
         public override async Task Enter()
         {
             await base.Enter();
-            var svReaction = reaction.GetReaction(Actor.CurrentHitResult.Power, Actor.CurrentHitResult.GetDirectionAsEnum());
+            Debug.Log("hitReaction.Alias");
             Actor.AnimancerComponent.Events.AddTo<SVAnimationParameterType>(animationEvent, HandleAnimationEventHandler);
-            Actor.PlayAnimancer(svReaction.Alias, restart: true);
+            Actor.HandleAgentRootMotionMovement();
+            var hitReaction = reaction.GetReaction(Actor.CurrentHitResult.Power, Actor.CurrentHitResult.GetDirectionAsEnum());
+            Actor.PlayAnimancer(hitReaction.Alias, restart: true);
+        }
+
+        public override async Task Exit()
+        {
+            Actor.HandleAgentTransformBasedMovement();
+            Actor.HandleAgentDestination(Actor.Position);
+            await base.Exit();
         }
 
         private void HandleAnimationEventHandler(SVAnimationParameterType parameter)

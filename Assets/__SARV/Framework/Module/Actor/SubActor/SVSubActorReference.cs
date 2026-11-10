@@ -14,7 +14,7 @@ namespace __SARV.Framework.Module.Actor.SubActor
     {
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
         protected AnimancerComponent animancerComponent;
-        
+
         [FoldoutGroup("Reference")] [SerializeField] [SceneObjectsOnly] [Required] [HideLabel]
         protected PuppetMaster puppetMaster;
 
@@ -32,7 +32,10 @@ namespace __SARV.Framework.Module.Actor.SubActor
 
         [FoldoutGroup("Reference")] [SerializeField] [ShowIf(nameof(IsActorAgent))] [SceneObjectsOnly] [Required] [HideLabel]
         protected CharacterController characterController;
-        
+
+        [FoldoutGroup("Reference")] [SerializeField] [ShowIf(nameof(IsActorAgent))] [SceneObjectsOnly] [Required] [HideLabel]
+        protected Transform agentDestination;
+
         public Character ECMCharacter => ecmCharacter;
         public AnimancerComponent AnimancerComponent => animancerComponent;
         public PuppetMaster PuppetMaster => puppetMaster;
@@ -48,6 +51,16 @@ namespace __SARV.Framework.Module.Actor.SubActor
         {
             base.Awake();
             Argument = SVArgument.Create(gameObject);
+            InitialReference();
+        }
+
+        [OnInspectorInit]
+        private void InitialReference()
+        {
+            if (aiDestinationSetter != null && aiDestinationSetter.target == null)
+            {
+                aiDestinationSetter.target = agentDestination;
+            }
         }
     }
 }
