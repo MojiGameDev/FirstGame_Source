@@ -21,6 +21,7 @@
             public const string DO_TWEEN_PRO = "DOTweenPro";
             public const string LOGIC = "Logic";
             public const string MELEE = "Melee";
+            public const string ATMOSPHERE = "Atmosphere";
         }
 
         public static class Branch

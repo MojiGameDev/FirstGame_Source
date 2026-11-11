@@ -14616,10 +14616,27 @@ MonoBehaviour:
     branch:
       branch: 
       conditionJoinType: 10
-      branches: []
+      branches:
+      - rid: 7729762723405496511
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7729762723405496511
+      type: {class: SVAgentBranchIsCurrentBehaviorFinished, ns: __SARV.Framework.Kernal.Branch.Agent, asm: Assembly-CSharp}
+      data:
+        not: 0
+        disabled: 0
+        actor:
+          rid: 7729762723405496512
+    - rid: 7729762723405496512
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Self
+        propertyType:
+          rid: 7729762723405496514
+    - rid: 7729762723405496514
+      type: {class: SVActorPropertySelf, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &9070854358145323665
 GameObject:
   m_ObjectHideFlags: 0

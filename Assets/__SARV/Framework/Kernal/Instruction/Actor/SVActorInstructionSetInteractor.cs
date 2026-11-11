@@ -31,7 +31,8 @@ namespace __SARV.Framework.Kernal.Instruction
 
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
-            actor.GetValue(argument).SetInteractor(interactor);
+            var act = actor.GetValue(argument);
+            act.SetInteractor(interactor);
             return SVInstructionResult.DEFAULT_RESULT;
         }
     }
