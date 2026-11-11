@@ -21,7 +21,7 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
         public override async Task Enter()
         {
             await base.Enter();
-            Actor.PlayAnimancer(transitionAlias);
+            Actor.PlayAnimancer(transitionAlias, footIk: true);
         }
     }
 }

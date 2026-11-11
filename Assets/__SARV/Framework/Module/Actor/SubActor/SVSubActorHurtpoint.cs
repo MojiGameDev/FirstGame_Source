@@ -11,18 +11,18 @@ namespace __SARV.Framework.Module.Actor.SubActor
     {
         [FoldoutGroup("Hurtpoint")] [SerializeField] [Required]
         protected List<SARVHurtpoint> hurtpoints = new();
-        
+
         [FoldoutGroup("Hurtpoint")]
         [Button]
         private void DetectHurtpoints()
         {
             hurtpoints.Clear();
-            foreach (var hurtpoint in GetComponentsInChildren<SARVHurtpoint>(true))
+            foreach (var hurtpoint in puppetMaster.GetComponentsInChildren<SARVHurtpoint>(true))
             {
                 hurtpoints.Add(hurtpoint);
             }
         }
-        
+
         protected SARVHurtpoint GetClosestHurtpoint(Vector3 hitPosition)
         {
             SARVHurtpoint closestHurtpoint = null;

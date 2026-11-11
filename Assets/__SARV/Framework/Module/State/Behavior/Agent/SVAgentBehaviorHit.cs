@@ -27,11 +27,10 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
         public override async Task Enter()
         {
             await base.Enter();
-            Debug.Log("hitReaction.Alias");
             Actor.AnimancerComponent.Events.AddTo<SVAnimationParameterType>(animationEvent, HandleAnimationEventHandler);
             Actor.HandleAgentRootMotionMovement();
             var hitReaction = reaction.GetReaction(Actor.CurrentHitResult.Power, Actor.CurrentHitResult.GetDirectionAsEnum());
-            //Actor.PlayAnimancer(hitReaction.Alias, restart: true);
+            Actor.PlayAnimancer(hitReaction.Alias, footIk: true, restart: true);
             Actor.ApplyRagdollHit();
         }
 

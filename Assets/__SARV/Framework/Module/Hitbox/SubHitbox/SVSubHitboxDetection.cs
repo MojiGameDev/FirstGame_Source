@@ -2,6 +2,7 @@
 using __SARV.Common.Extension;
 using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Hitbox.Entity;
+using RootMotion.Dynamics;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -128,7 +129,9 @@ namespace __SARV.Framework.Module.Hitbox.SubHitbox
 
         private SARVActor GetTargetActor(Collider targetCollider, Vector3 hitPosition, Vector3 hitDirection)
         {
-            var targetActor = targetCollider.GetComponentInParent<SARVActor>();
+            var targetActor = targetCollider
+                .GetComponentInParent<PuppetMaster>()
+                ?.transform.parent.GetComponentInChildren<SARVActor>();
 
             if (targetActor == null || !_hitTargets.Add(targetActor))
             {

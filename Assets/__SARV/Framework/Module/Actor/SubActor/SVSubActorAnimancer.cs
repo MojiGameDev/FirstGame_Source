@@ -7,13 +7,15 @@ namespace __SARV.Framework.Module.Actor.SubActor
     {
         private AnimancerState _currentAnimancerState;
 
-        public void PlayAnimancer(StringAsset alias, Action onEnd = null, bool restart = false)
+        public void PlayAnimancer(StringAsset alias, Action onEnd = null, bool footIk = false, bool restart = false)
         {
             _currentAnimancerState = animancerComponent.TryPlay(alias);
             if (_currentAnimancerState == null)
             {
                 return;
             }
+
+            _currentAnimancerState.ApplyFootIK = footIk;
 
             if (restart)
             {
