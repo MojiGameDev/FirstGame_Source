@@ -51,30 +51,12 @@ public class UniversalDecalSpawner : MonoBehaviour
             float scale = Random.Range(minScale, maxScale);
             bool didScale = false;
 
-#if UNITY_RENDER_PIPELINE_HIGH_DEFINITION
-            if (isHDRP)
+            var urpProjector = decal.GetComponent<UnityEngine.Rendering.Universal.DecalProjector>();
+            if (urpProjector != null)
             {
-                var hdrpProjector = decal.GetComponent<UnityEngine.Rendering.HighDefinition.DecalProjector>();
-                if (hdrpProjector != null)
-                {
-                    var original = hdrpProjector.size;
-                    hdrpProjector.size = new Vector3(scale, scale, original.z);
-                    didScale = true;
-                }
+                decal.transform.localScale = Vector3.one * scale;
+                didScale = true;
             }
-#endif
-
-#if UNITY_RENDER_PIPELINE_UNIVERSAL
-            if (!isHDRP)
-            {
-                var urpProjector = decal.GetComponent<UnityEngine.Rendering.Universal.DecalProjector>();
-                if (urpProjector != null)
-                {
-                    decal.transform.localScale = Vector3.one * scale;
-                    didScale = true;
-                }
-            }
-#endif
 
             if (!didScale)
             {
