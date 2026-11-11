@@ -57,7 +57,7 @@ namespace __SARV.Framework.Module.State.Base
 
         private void OnBehaviorComponentChanged()
         {
-            Debug.Log("ChildOrSelf Changed");
+            
         }
 
         private void OnDescriptionChanged()

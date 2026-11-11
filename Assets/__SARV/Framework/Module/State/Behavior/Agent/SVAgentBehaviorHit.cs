@@ -45,7 +45,7 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
         {
             if (parameter.AnimationPhase == SVMAnimationPhase.End)
             {
-                Debug.Log("End");
+                IsBehaviorFinished = true;
             }
         }
     }

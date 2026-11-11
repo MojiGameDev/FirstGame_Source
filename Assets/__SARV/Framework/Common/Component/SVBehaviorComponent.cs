@@ -5,6 +5,7 @@ using __SARV.Framework.Common.Base;
 using __SARV.Framework.Common.Shared;
 using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Identifier;
+using __SARV.Framework.Module.Transition;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,13 +14,13 @@ namespace __SARV.Framework.Common.Component
     [Serializable]
     public abstract class SVBehaviorComponent : SVComponent
     {
-        [BoxGroup("Identifier")] [SerializeField] [HideLabel]
+        [BoxGroup("Identifier")] [SerializeField] [HideLabel] [PropertyOrder(-10)]
         private SARVIdentifier identifier;
 
-        [SerializeField] [Title("OnEnter")] [HideLabel]
+        [SerializeField] [Title("OnEnter")] [HideLabel] [PropertyOrder(-8)]
         private SVInstruction onEnterInstruction;
 
-        [SerializeField] [Title("OnExit")] [HideLabel] [PropertySpace(0, 10)]
+        [SerializeField] [Title("OnExit")] [HideLabel] [PropertySpace(0, 10)] [PropertyOrder(-7)]
         private SVInstruction onExitInstruction;
 
         public SARVIdentifier Identifier => identifier;

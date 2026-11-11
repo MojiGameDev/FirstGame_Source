@@ -1,4 +1,5 @@
 ﻿using System;
+using __SARV.Common.Extension;
 using __SARV.Framework.Common.Argument;
 using __SARV.Framework.Common.Attributes;
 using __SARV.Framework.Common.Component;
@@ -13,7 +14,7 @@ namespace __SARV.Framework.Kernal.Branch
 {
     [SVTitle("CompareBool")]
     [SVCategory(SVConstantCategory.Branch.LOGIC)]
-    [SVDescription("Compares two boolean values using an equality operator")]
+    [SVDescription("Compares two boolean values using the specified equality operator")]
     [Serializable]
     public class SVLogicBranchCompareBool : SVBranchComponent
     {
@@ -26,8 +27,8 @@ namespace __SARV.Framework.Kernal.Branch
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<bool> rightOperand = new SVBoolProperty();
 
-        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")} {leftOperand} {(Not ? "Is not" : "Is")} {operatorType} to {rightOperand}";
-
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}{leftOperand} {(Not ? "Is not" : "Is")} {operatorType.ToReadableString()} to {rightOperand}";
+        
         public override bool IsTrue(SVArgument argument)
         {
             var result = false;

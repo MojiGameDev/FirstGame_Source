@@ -1,7 +1,9 @@
 ﻿using System.IO;
+using System.Reflection;
 using __SARV.Common.Base;
 using __SARV.Common.Extension;
 using __SARV.Framework;
+using __SARV.Framework.Common.Component;
 using __SARV.Framework.Kernal;
 using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Dialogue;
@@ -10,6 +12,7 @@ using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Indicator;
 using __SARV.Framework.Module.Interactor;
 using __SARV.Framework.Module.State;
+using __SARV.Framework.Module.Transition;
 using __SARV.Framework.Module.Variable;
 using UnityEditor;
 using UnityEngine;
@@ -82,6 +85,54 @@ namespace __SARV.Misc.Editor
         private static void CreateSARVInteractor(MenuCommand command)
         {
             CreateSARVGameObject<SARVInteractor>(command, "Interactor");
+        }
+
+        [MenuItem("GameObject/SARV/Create Transition", false, 10)]
+        private static void CreateSARVTransition(MenuCommand command)
+        {
+            var selectedObject = command.context as GameObject;
+
+            if (selectedObject == null)
+            {
+                return;
+            }
+
+            var stateAgent = selectedObject.GetComponent<SARVStateAgent>();
+
+            if (stateAgent == null)
+            {
+                return;
+            }
+            
+            var behavior = stateAgent.Behavior;
+
+            if (behavior == null)
+            {
+                return;
+            }
+            
+            // Create child
+            var child = new GameObject($"{stateAgent.name}Transition");
+            child.transform.SetParent(selectedObject.transform);
+            child.transform.Reset();
+
+            // Add the same component to the child
+            var transition = Undo.AddComponent<SARVTransition>(child);
+
+            // Assign transition using reflection
+            if (!TrySetTransition(behavior, transition))
+            {
+                Undo.DestroyObjectImmediate(child);
+                Debug.LogError(
+                    $"Could not find field transition in {behavior.GetType().Name}."
+                );
+                return;
+            }
+
+            Undo.RegisterCreatedObjectUndo(child, $"Create Transition");
+            
+            // Select the newly created child
+            Selection.activeGameObject = child;
         }
 
         [MenuItem("Assets/SARV/Create AudioIdentifier", false, 10)]
@@ -175,6 +226,12 @@ namespace __SARV.Misc.Editor
             return command.context is GameObject;
         }
 
+        [MenuItem("CONTEXT/SARV/Create Transition", true)]
+        private static bool ValidateCreateSARVTransition(MenuCommand command)
+        {
+            return command.context is GameObject;
+        }
+
         private static void CreateSARVGameObject<TComponent>(MenuCommand command, string component) where TComponent : SVMonoBehaviour
         {
             var selectedObject = command.context as GameObject;
@@ -192,10 +249,36 @@ namespace __SARV.Misc.Editor
             // Add the same component to the child
             child.AddComponent<TComponent>();
 
+            Undo.RegisterCreatedObjectUndo(child, $"Create {component}");
+
             // Select the newly created child
             Selection.activeGameObject = child;
+        }
+        
+        private static bool TrySetTransition(SVBehaviorComponent behavior, SARVTransition transition)
+        {
+            var type = behavior.GetType();
 
-            Undo.RegisterCreatedObjectUndo(child, $"Create {component}");
+            while (type != null)
+            {
+                var field = type.GetField(
+                    "transition",
+                    BindingFlags.Instance |
+                    BindingFlags.NonPublic |
+                    BindingFlags.Public |
+                    BindingFlags.DeclaredOnly
+                );
+
+                if (field != null && field.FieldType == typeof(SARVTransition))
+                {
+                    field.SetValue(behavior, transition);
+                    return true;
+                }
+
+                type = type.BaseType;
+            }
+
+            return false;
         }
     }
 }

@@ -18,21 +18,23 @@ namespace __SARV.Framework.Module.Actor.SubActor
         
         private void ApplyRagdollDead()
         {
-            // Stop all pending recoveries.
+            // Stop all pending pin-weight recoveries.
             foreach (var recovery in recoveryCoroutines.Values)
+            {
                 Timing.KillCoroutines(recovery);
+            }
 
             recoveryCoroutines.Clear();
 
-            // Restore original pin weights.
+            // Restore temporary hit modifications.
             foreach (var pair in originalPinWeights)
+            {
                 pair.Key.state.pinWeightMlp = pair.Value;
+            }
 
             originalPinWeights.Clear();
-
-            // Enable full ragdoll response.
-            foreach (var muscle in puppetMaster.muscles)
-                muscle.state.pinWeightMlp = 0f;
+            
+            PuppetMaster.Kill();
         }
 
         public void ApplyRagdollHit()

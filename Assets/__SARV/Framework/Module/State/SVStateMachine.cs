@@ -6,6 +6,7 @@ using __SARV.Common.Base;
 using __SARV.Framework.Module.Actor;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.State.Base;
+using __SARV.Framework.Module.State.Behavior.Agent.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,13 +24,13 @@ namespace __SARV.Framework.Module.State
 
         [BoxGroup("States")] [SerializeField] [ListDrawerSettings(ShowFoldout = false)] [OnValueChanged(nameof(OnBehaviorsChanged))] [PropertyOrder(int.MaxValue)]
         private List<SVBaseState> states = new();
-
+        
         private SVBaseState _currentState;
         private SVBaseState _previousState;
         private bool _isStateChanged;
         private readonly Dictionary<Type, SARVIdentifier> _uniqueStateIdentifier = new();
         private readonly Dictionary<SARVIdentifier, SVBaseState> _runtimeStates = new();
-
+        
         protected UnityEvent<string> OnEnterState;
         protected UnityEvent<string> OnExitState;
         protected UnityEvent<string, string> OnChangeState;
@@ -76,6 +77,11 @@ namespace __SARV.Framework.Module.State
         public bool IsCurrentStateBehavior(SARVIdentifier stateIdentifier)
         {
             return _currentState.Behavior.Identifier == stateIdentifier;
+        }
+
+        public bool IsCurrentAgentBehaviorFinished()
+        {
+            return ((SVAgentBehavior)_currentState.Behavior).IsBehaviorFinished;
         }
 
         private async Task ChangeStateToInternal(SARVIdentifier stateIdentifier)

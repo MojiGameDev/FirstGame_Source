@@ -27,6 +27,7 @@
         {
             public const string LOGIC = "Logic";
             public const string ACTOR = "Actor";
+            public const string AGENT = "Agent";
         }
 
         public static class Property

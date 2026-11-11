@@ -20,16 +20,18 @@ namespace __SARV.Framework.Kernal.Branch
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeReference] [HideLabel] [HideReferenceObjectPicker] [SVRequired]
         private SVPropertyComponent<SARVActor> actor = new SVActorProperty();
-        
+
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVIdentifier behavior;
+
+        protected override string GroupTitle => $"{(Disabled ? "Disabled - " : "")}{(Not ? "Is not" : "Is")} {(actor == null ? "..." : actor)}'s current behavior {(string.IsNullOrEmpty(behavior) ? "..." : behavior.SkipWords(2))}";
 
         public override bool IsTrue(SVArgument argument)
         {
             var act = actor.GetValue(argument);
 
             var result = act.StateMachine.IsCurrentStateBehavior(behavior);
-            
+
             return Not ? !result : result;
         }
     }
