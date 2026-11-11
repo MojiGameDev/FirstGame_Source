@@ -29,7 +29,7 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
             await base.Enter();
             Actor.AnimancerComponent.Events.AddTo<SVAnimationParameterType>(animationEvent, HandleAnimationEventHandler);
             Actor.HandleAgentRootMotionMovement();
-            var hitReaction = reaction.GetReaction(Actor.CurrentHitResult.Power, Actor.CurrentHitResult.GetDirectionAsEnum());
+            var hitReaction = reaction.GetReaction(Actor.CurrentHitResult.Power, Actor.GetCurrentHitDirectionAsEnum());
             Actor.PlayAnimancer(hitReaction.Alias, footIk: true, restart: true);
             Actor.ApplyRagdollHit();
         }

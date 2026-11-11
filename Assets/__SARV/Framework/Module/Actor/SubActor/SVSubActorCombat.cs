@@ -7,6 +7,7 @@ using __SARV.Framework.Module.Actor.Entity;
 using __SARV.Framework.Module.Hitbox.Entity;
 using __SARV.Framework.Module.Identifier;
 using __SARV.Framework.Module.Melee;
+using __SARV.Framework.Module.Reaction.Enum;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
@@ -67,6 +68,34 @@ namespace __SARV.Framework.Module.Actor.SubActor
             equipmentInstance.transform.localPosition = position;
             equipmentInstance.transform.localRotation = Quaternion.Euler(rotation);
             equipmentInstance.Active();
+        }
+        
+        public SVReactionDirection GetCurrentHitDirectionAsEnum()
+        {
+            // Reverse weapon travel direction.
+            var incomingDirection = -CurrentHitResult.HitDirection;
+
+            // Convert to actor-local direction.
+            var localDirection = transform.InverseTransformDirection(incomingDirection);
+
+            // Find the dominant axis.
+            var absDirection = new Vector3(
+                Mathf.Abs(localDirection.x),
+                Mathf.Abs(localDirection.y),
+                Mathf.Abs(localDirection.z)
+            );
+
+            if (absDirection.y > absDirection.x && absDirection.y > absDirection.z)
+            {
+                return localDirection.y > 0f ? SVReactionDirection.Top : SVReactionDirection.Bottom;
+            }
+
+            if (absDirection.z > absDirection.x)
+            {
+                return localDirection.z > 0f ? SVReactionDirection.Front : SVReactionDirection.Back;
+            }
+
+            return localDirection.x > 0f ? SVReactionDirection.Right : SVReactionDirection.Left;
         }
     }
 }

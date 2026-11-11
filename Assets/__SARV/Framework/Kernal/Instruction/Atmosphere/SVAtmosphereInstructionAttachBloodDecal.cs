@@ -25,7 +25,6 @@ namespace __SARV.Framework.Kernal.Instruction
         protected override Task<SVInstructionResult> ExecuteInternal(SVArgument argument)
         {
             var act = actor.GetValue(argument);
-
             return SVInstructionResult.DEFAULT_RESULT;
         }
     }
