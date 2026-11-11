@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &295412773642147133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 945031443992807394}
+  - component: {fileID: 2933924683525175458}
+  m_Layer: 0
+  m_Name: Behaviours
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &945031443992807394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295412773642147133}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5399718485648774925}
+  - {fileID: 5531737575348795201}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2933924683525175458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295412773642147133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92471cc1733c49042be56cd39b4b6e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: All Puppet Behaviours should be parented to this GameObject, the PuppetMaster
+    will automatically find them from here. All Puppet Behaviours have been designed
+    so that they could be simply copied from one character to another without changing
+    any references. It is important because they contain a lot of parameters and
+    would be otherwise tedious to set up and tweak.
+--- !u!1 &1825954048313718871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5399718485648774925}
+  - component: {fileID: 3566351537878749676}
+  m_Layer: 8
+  m_Name: Puppet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5399718485648774925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825954048313718871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -33.32, y: 0, z: -9.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 945031443992807394}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3566351537878749676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825954048313718871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efacf79ab4214e85aeebfd07064c20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puppetMaster: {fileID: 0}
+  deactivated: 0
+  masterProps:
+    normalMode: 0
+    mappingBlendSpeed: 10
+    activateOnStaticCollisions: 0
+    activateOnImpulse: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 16
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 2051
+  collisionThreshold: 0.1
+  collisionResistance:
+    mode: 0
+    floatValue: 700
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 756.44855
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5.1236973
+        value: 1088.3738
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    tooltip: Smaller value means more unpinning from collisions so the characters
+      get knocked out more easily. If using a curve, the value will be evaluated
+      by each muscle's target velocity magnitude. This can be used to make collision
+      resistance higher while the character moves or animates faster.
+  collisionResistanceMultipliers: []
+  maxCollisions: 5
+  regainPinSpeed: 1.5
+  boostFalloff: 1
+  defaults:
+    unpinParents: 0.9
+    unpinChildren: 0.9
+    unpinGroup: 0
+    minMappingWeight: 0
+    maxMappingWeight: 1
+    minPinWeight: 0
+    disableColliders: 0
+    regainPinSpeed: 0.6
+    collisionResistance: 0.5
+    knockOutDistance: 0.5
+    puppetMaterial: {fileID: 13400000, guid: a3fd0ffcf0d0a384ba3568687a96ab8e, type: 2}
+    unpinnedMaterial: {fileID: 13400000, guid: d4563de398e2c4412a95f4317ddf4b1a, type: 2}
+  groupOverrides:
+  - name: Head
+    groups: 02000000
+    props:
+      unpinParents: 0.9
+      unpinChildren: 0
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.6
+      collisionResistance: 0.5
+      knockOutDistance: 0.3
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  - name: Arm, Hand, Prop
+    groups: 030000000400000008000000
+    props:
+      unpinParents: 0.5
+      unpinChildren: 1
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.5
+      collisionResistance: 0.3
+      knockOutDistance: 100
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  - name: Hips, Leg
+    groups: 0000000005000000
+    props:
+      unpinParents: 0.8
+      unpinChildren: 1
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.6
+      collisionResistance: 1
+      knockOutDistance: 0.3
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  - name: Foot
+    groups: 06000000
+    props:
+      unpinParents: 1
+      unpinChildren: 0
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.6
+      collisionResistance: 1
+      knockOutDistance: 0.3
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  knockOutDistance: 0.7
+  unpinnedMuscleWeightMlp: 0.5
+  maxRigidbodyVelocity: 10
+  pinWeightThreshold: 1
+  unpinnedMuscleKnockout: 1
+  dropProps: 0
+  canGetUp: 1
+  getUpDelay: 0
+  blendToAnimationTime: 0.5
+  maxGetUpVelocity: 0.5
+  minGetUpDuration: 1.2
+  getUpCollisionResistanceMlp: 2
+  getUpRegainPinSpeedMlp: 1
+  getUpKnockOutDistanceMlp: 1
+  getUpOffsetProne: {x: 0, y: 0, z: 0}
+  getUpOffsetSupine: {x: 0, y: 0, z: 0}
+  isQuadruped: 0
+  onGetUpProne:
+    switchToBehaviour: 
+    animations:
+    - animationState: GetUpProne
+      crossfadeTime: 0.2
+      layer: 0
+      resetNormalizedTime: 1
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onGetUpSupine:
+    switchToBehaviour: 
+    animations:
+    - animationState: GetUpSupine
+      crossfadeTime: 0.2
+      layer: 0
+      resetNormalizedTime: 1
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLoseBalance:
+    switchToBehaviour: BehaviourFall
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLoseBalanceFromPuppet:
+    switchToBehaviour: 
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLoseBalanceFromGetUp:
+    switchToBehaviour: 
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onRegainBalance:
+    switchToBehaviour: 
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  canMoveTarget: 1
+--- !u!1 &4038869238997620447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5531737575348795201}
+  - component: {fileID: 7933793145889755046}
+  m_Layer: 8
+  m_Name: Fall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5531737575348795201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038869238997620447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -33.32, y: 0, z: -9.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 945031443992807394}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7933793145889755046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038869238997620447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367e952422ba44b82a0206d3b9cf12c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puppetMaster: {fileID: 0}
+  deactivated: 0
+  stateName: Falling
+  transitionDuration: 0.7
+  layer: 0
+  fixedTime: 0
+  raycastLayers:
+    serializedVersion: 2
+    m_Bits: 16
+  blendParameter: FallBlend
+  writheHeight: 2.5
+  writheYVelocity: 1
+  blendSpeed: 3
+  blendMappingSpeed: 1
+  canEnd: 1
+  minTime: 1
+  maxEndVelocity: 0.4
+  onEnd:
+    switchToBehaviour: BehaviourPuppet
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []

@@ -767,22 +767,22 @@ MonoBehaviour:
     enableAngularLimitsOnKill: 1
     enableInternalCollisionsOnKill: 1
   mode: 0
-  blendTime: 0.3
-  fixTargetTransforms: 1
-  solverIterationCount: 3
-  visualizeTargetPose: 1
+  blendTime: 0.1
+  fixTargetTransforms: 0
+  solverIterationCount: 6
+  visualizeTargetPose: 0
   mappingWeight: 1
   pinWeight: 1
   muscleWeight: 1
-  muscleSpring: 30
-  muscleDamper: 3
+  muscleSpring: 200
+  muscleDamper: 100
   pinPow: 4
-  pinDistanceFalloff: 0
+  pinDistanceFalloff: 5
   angularPinning: 0
   updateJointAnchors: 1
   supportTranslationAnimation: 0
   angularLimits: 1
-  internalCollisions: 1
+  internalCollisions: 0
   muscles:
   - name: root.x
     joint: {fileID: 2268032224719622891}
@@ -1640,6 +1640,235 @@ Transform:
   - {fileID: 2907677858536982201}
   m_Father: {fileID: 5154159522961957328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1262888353682786267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399742644507468714}
+  - component: {fileID: 8828465646009995630}
+  m_Layer: 8
+  m_Name: Puppet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1399742644507468714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262888353682786267}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -33.32, y: 0, z: -9.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2493834274764489816}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8828465646009995630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262888353682786267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efacf79ab4214e85aeebfd07064c20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puppetMaster: {fileID: 0}
+  deactivated: 0
+  masterProps:
+    normalMode: 0
+    mappingBlendSpeed: 10
+    activateOnStaticCollisions: 0
+    activateOnImpulse: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 16
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 2051
+  collisionThreshold: 0.1
+  collisionResistance:
+    mode: 0
+    floatValue: 700
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 756.44855
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5.1236973
+        value: 1088.3738
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    tooltip: Smaller value means more unpinning from collisions so the characters
+      get knocked out more easily. If using a curve, the value will be evaluated
+      by each muscle's target velocity magnitude. This can be used to make collision
+      resistance higher while the character moves or animates faster.
+  collisionResistanceMultipliers: []
+  maxCollisions: 5
+  regainPinSpeed: 1.5
+  boostFalloff: 1
+  defaults:
+    unpinParents: 0.9
+    unpinChildren: 0.9
+    unpinGroup: 0
+    minMappingWeight: 0
+    maxMappingWeight: 1
+    minPinWeight: 0
+    disableColliders: 0
+    regainPinSpeed: 0.6
+    collisionResistance: 0.5
+    knockOutDistance: 0.5
+    puppetMaterial: {fileID: 13400000, guid: a3fd0ffcf0d0a384ba3568687a96ab8e, type: 2}
+    unpinnedMaterial: {fileID: 13400000, guid: d4563de398e2c4412a95f4317ddf4b1a, type: 2}
+  groupOverrides:
+  - name: Head
+    groups: 02000000
+    props:
+      unpinParents: 0.9
+      unpinChildren: 0
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.6
+      collisionResistance: 0.5
+      knockOutDistance: 0.3
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  - name: Arm, Hand, Prop
+    groups: 030000000400000008000000
+    props:
+      unpinParents: 0.5
+      unpinChildren: 1
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.5
+      collisionResistance: 0.3
+      knockOutDistance: 100
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  - name: Hips, Leg
+    groups: 0000000005000000
+    props:
+      unpinParents: 0.8
+      unpinChildren: 1
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.6
+      collisionResistance: 1
+      knockOutDistance: 0.3
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  - name: Foot
+    groups: 06000000
+    props:
+      unpinParents: 1
+      unpinChildren: 0
+      unpinGroup: 0
+      minMappingWeight: 0
+      maxMappingWeight: 1
+      minPinWeight: 0
+      disableColliders: 0
+      regainPinSpeed: 0.6
+      collisionResistance: 1
+      knockOutDistance: 0.3
+      puppetMaterial: {fileID: 0}
+      unpinnedMaterial: {fileID: 0}
+  knockOutDistance: 0.7
+  unpinnedMuscleWeightMlp: 0.5
+  maxRigidbodyVelocity: 10
+  pinWeightThreshold: 1
+  unpinnedMuscleKnockout: 1
+  dropProps: 0
+  canGetUp: 1
+  getUpDelay: 0
+  blendToAnimationTime: 0.5
+  maxGetUpVelocity: 0.5
+  minGetUpDuration: 1.2
+  getUpCollisionResistanceMlp: 2
+  getUpRegainPinSpeedMlp: 1
+  getUpKnockOutDistanceMlp: 1
+  getUpOffsetProne: {x: 0, y: 0, z: 0}
+  getUpOffsetSupine: {x: 0, y: 0, z: 0}
+  isQuadruped: 0
+  onGetUpProne:
+    switchToBehaviour: 
+    animations:
+    - animationState: GetUpProne
+      crossfadeTime: 0.2
+      layer: 0
+      resetNormalizedTime: 1
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onGetUpSupine:
+    switchToBehaviour: 
+    animations:
+    - animationState: GetUpSupine
+      crossfadeTime: 0.2
+      layer: 0
+      resetNormalizedTime: 1
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLoseBalance:
+    switchToBehaviour: BehaviourFall
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLoseBalanceFromPuppet:
+    switchToBehaviour: 
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLoseBalanceFromGetUp:
+    switchToBehaviour: 
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onRegainBalance:
+    switchToBehaviour: 
+    animations: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  canMoveTarget: 1
 --- !u!1 &1298782195442510978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2787,7 @@ Transform:
   m_GameObject: {fileID: 2445143625034412293}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7892299, y: 0.064762555, z: 0.6103428, w: -0.020093484}
-  m_LocalPosition: {x: 0.09195256, y: -4.132284e-11, z: 0.00034668462}
+  m_LocalPosition: {x: 0.09195256, y: -4.1351263e-11, z: 0.00034692304}
   m_LocalScale: {x: 0.99999636, y: 0.99999994, z: 0.99999946}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3073,7 +3302,7 @@ Transform:
   m_GameObject: {fileID: 2653970707073343641}
   serializedVersion: 2
   m_LocalRotation: {x: -0.041394114, y: -0.0000013941489, z: -0.0000000603816, w: 0.99914294}
-  m_LocalPosition: {x: 5.4300653e-12, y: 0.24088287, z: -0.0000018786332}
+  m_LocalPosition: {x: 4.069151e-12, y: 0.24088287, z: -0.000001401796}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3308,7 +3537,7 @@ Transform:
   m_GameObject: {fileID: 2845771971791055760}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000037721467, y: 0.00000019082908, z: 0.2528693, w: 0.96750045}
-  m_LocalPosition: {x: -0.000000044703484, y: 0.26397783, z: -0.00000093877304}
+  m_LocalPosition: {x: 0.00000043213367, y: 0.26397786, z: -0.0000009164213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3642,7 +3871,7 @@ Transform:
   m_GameObject: {fileID: 2900434211487333351}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000036300355, y: -0.00000003949084, z: 0.08911428, w: 0.9960214}
-  m_LocalPosition: {x: -0.00000013038564, y: 0.45254126, z: -0.000000037252924}
+  m_LocalPosition: {x: 0.00000010058321, y: 0.45254126, z: -0.000000096857605}
   m_LocalScale: {x: 1, y: 0.9999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4674,7 +4903,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3089583927821527468}
+  - {fileID: 1399742644507468714}
   m_Father: {fileID: 5762993154713970099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6819544941002563871
@@ -4936,7 +5165,7 @@ Transform:
   m_GameObject: {fileID: 3837487946784020704}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000033122342, y: 0.00012669952, z: -0.25286934, w: 0.96750045}
-  m_LocalPosition: {x: 0.000000046566146, y: 0.26397786, z: -0.0000008940698}
+  m_LocalPosition: {x: 0.000000044703498, y: 0.26397786, z: -0.00000090897095}
   m_LocalScale: {x: 1, y: 1, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7204,7 +7433,7 @@ Transform:
   m_GameObject: {fileID: 6208403338366321572}
   serializedVersion: 2
   m_LocalRotation: {x: -0.674833, y: -0.22779684, z: -0.6279533, w: 0.31366163}
-  m_LocalPosition: {x: 0.1541748, y: 0.18796058, z: -0.03121644}
+  m_LocalPosition: {x: 0.1541748, y: 0.18796062, z: -0.031216916}
   m_LocalScale: {x: 0.9999997, y: 0.99999994, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7612,7 +7841,7 @@ Transform:
   m_GameObject: {fileID: 6546273312147061555}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000059604645, y: 0.0000014270222, z: 5.684342e-14, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0435753, z: 0.037207365}
+  m_LocalPosition: {x: 0, y: 1.0435753, z: 0.037207127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8223,7 +8452,7 @@ Transform:
   m_GameObject: {fileID: 6986925326858514312}
   serializedVersion: 2
   m_LocalRotation: {x: 0.78923184, y: -0.06476246, z: -0.6103403, w: -0.020093609}
-  m_LocalPosition: {x: -0.09195256, y: -4.1270647e-11, z: 0.00034615977}
+  m_LocalPosition: {x: -0.09195256, y: -4.129907e-11, z: 0.00034639818}
   m_LocalScale: {x: 0.99999696, y: 0.99999994, z: 0.9999996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10331,7 +10560,7 @@ Transform:
   m_GameObject: {fileID: 7112759497055229005}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000003189152, y: 0.00000013512827, z: -0.08911422, w: 0.9960214}
-  m_LocalPosition: {x: 0.000000115484355, y: 0.4525412, z: 0.000000014901168}
+  m_LocalPosition: {x: -0.00000011362171, y: 0.4525412, z: -0.000000044703505}
   m_LocalScale: {x: 1, y: 0.9999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13257,221 +13486,6 @@ Transform:
   - {fileID: 4353376222699331647}
   m_Father: {fileID: 7830035062852813572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8623032921753504424
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3089583927821527468}
-  - component: {fileID: 2836466763004146103}
-  m_Layer: 8
-  m_Name: Puppet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3089583927821527468
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8623032921753504424}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2493834274764489816}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2836466763004146103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8623032921753504424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efacf79ab4214e85aeebfd07064c20f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puppetMaster: {fileID: 0}
-  deactivated: 0
-  masterProps:
-    normalMode: 0
-    mappingBlendSpeed: 10
-    activateOnStaticCollisions: 0
-    activateOnImpulse: 0
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 9
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  collisionThreshold: 0
-  collisionResistance:
-    mode: 0
-    floatValue: 100
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    tooltip: Smaller value means more unpinning from collisions so the characters
-      get knocked out more easily. If using a curve, the value will be evaluated
-      by each muscle's target velocity magnitude. This can be used to make collision
-      resistance higher while the character moves or animates faster.
-  collisionResistanceMultipliers: []
-  maxCollisions: 30
-  regainPinSpeed: 1
-  boostFalloff: 1
-  defaults:
-    unpinParents: 0.75
-    unpinChildren: 0.75
-    unpinGroup: 0
-    minMappingWeight: 0
-    maxMappingWeight: 1
-    minPinWeight: 0
-    disableColliders: 0
-    regainPinSpeed: 1
-    collisionResistance: 1
-    knockOutDistance: 0.5
-    puppetMaterial: {fileID: 13400000, guid: a3fd0ffcf0d0a384ba3568687a96ab8e, type: 2}
-    unpinnedMaterial: {fileID: 13400000, guid: d4563de398e2c4412a95f4317ddf4b1a, type: 2}
-  groupOverrides:
-  - name: Head
-    groups: 02000000
-    props:
-      unpinParents: 0.9
-      unpinChildren: 0
-      unpinGroup: 0
-      minMappingWeight: 0
-      maxMappingWeight: 1
-      minPinWeight: 0
-      disableColliders: 0
-      regainPinSpeed: 1
-      collisionResistance: 2
-      knockOutDistance: 0.3
-      puppetMaterial: {fileID: 0}
-      unpinnedMaterial: {fileID: 0}
-  - name: Arm, Hand, Prop
-    groups: 030000000400000008000000
-    props:
-      unpinParents: 0.5
-      unpinChildren: 1
-      unpinGroup: 0
-      minMappingWeight: 0
-      maxMappingWeight: 1
-      minPinWeight: 0
-      disableColliders: 0
-      regainPinSpeed: 1
-      collisionResistance: 2
-      knockOutDistance: 100
-      puppetMaterial: {fileID: 0}
-      unpinnedMaterial: {fileID: 0}
-  - name: Hips, Leg
-    groups: 0000000005000000
-    props:
-      unpinParents: 0.2
-      unpinChildren: 0.2
-      unpinGroup: 0
-      minMappingWeight: 0
-      maxMappingWeight: 1
-      minPinWeight: 0
-      disableColliders: 0
-      regainPinSpeed: 1
-      collisionResistance: 2
-      knockOutDistance: 0.3
-      puppetMaterial: {fileID: 0}
-      unpinnedMaterial: {fileID: 0}
-  - name: Foot
-    groups: 06000000
-    props:
-      unpinParents: 0.2
-      unpinChildren: 0
-      unpinGroup: 0
-      minMappingWeight: 0
-      maxMappingWeight: 1
-      minPinWeight: 0
-      disableColliders: 0
-      regainPinSpeed: 2
-      collisionResistance: 2
-      knockOutDistance: 0.4
-      puppetMaterial: {fileID: 0}
-      unpinnedMaterial: {fileID: 0}
-  knockOutDistance: 1
-  unpinnedMuscleWeightMlp: 0.5
-  maxRigidbodyVelocity: 10
-  pinWeightThreshold: 1
-  unpinnedMuscleKnockout: 1
-  dropProps: 0
-  canGetUp: 1
-  getUpDelay: 1
-  blendToAnimationTime: 0.3
-  maxGetUpVelocity: 0.4
-  minGetUpDuration: 2
-  getUpCollisionResistanceMlp: 2
-  getUpRegainPinSpeedMlp: 1
-  getUpKnockOutDistanceMlp: 1
-  getUpOffsetProne: {x: 0, y: 0, z: 0}
-  getUpOffsetSupine: {x: 0, y: 0, z: 0}
-  isQuadruped: 0
-  onGetUpProne:
-    switchToBehaviour: 
-    animations:
-    - animationState: GetUpProne
-      crossfadeTime: 0.2
-      layer: 0
-      resetNormalizedTime: 1
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  onGetUpSupine:
-    switchToBehaviour: 
-    animations:
-    - animationState: GetUpSupine
-      crossfadeTime: 0.2
-      layer: 0
-      resetNormalizedTime: 1
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  onLoseBalance:
-    switchToBehaviour: 
-    animations:
-    - animationState: Fall
-      crossfadeTime: 0.7
-      layer: 0
-      resetNormalizedTime: 0
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  onLoseBalanceFromPuppet:
-    switchToBehaviour: 
-    animations: []
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  onLoseBalanceFromGetUp:
-    switchToBehaviour: 
-    animations: []
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  onRegainBalance:
-    switchToBehaviour: 
-    animations: []
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  canMoveTarget: 1
 --- !u!1 &8652330100567689188
 GameObject:
   m_ObjectHideFlags: 0
@@ -13862,7 +13876,7 @@ Transform:
   m_GameObject: {fileID: 8890556651963153002}
   serializedVersion: 2
   m_LocalRotation: {x: 0.04139415, y: 1.0879829e-10, z: 0.0000000026270184, w: 0.99914294}
-  m_LocalPosition: {x: -0.000000001721447, y: 0.34862125, z: 0.02717278}
+  m_LocalPosition: {x: -0.0000000017214319, y: 0.34862125, z: 0.027172543}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children: []

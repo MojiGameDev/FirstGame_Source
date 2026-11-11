@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace __SARV.Framework.Module.Actor.SubActor
 {
-    public abstract class SVSubActorRagdoll : SVSubActorHurtpoint
+    public abstract class SVSubActorRagdoll : SVSubActorCombat
     {
         [SerializeField] private float hitForce = 100f;
 
@@ -18,9 +18,9 @@ namespace __SARV.Framework.Module.Actor.SubActor
         private readonly Dictionary<Muscle, Coroutine> recoveryCoroutines = new();
         private readonly Dictionary<Muscle, float> originalPinWeights = new();
 
-        public void ApplyRagdollHit(SVHitResult hitResult)
+        public void ApplyRagdollHit()
         {
-            var targetHurtPoint = GetClosestHurtpoint(hitResult.HitPosition);
+            var targetHurtPoint = GetClosestHurtpoint(CurrentHitResult.HitPosition);
             if (targetHurtPoint.RigidbodyPoint == null)
             {
                 //Debug.LogError("Hit Rigidbody is NULL.");
@@ -68,9 +68,8 @@ namespace __SARV.Framework.Module.Actor.SubActor
                 StartCoroutine(RecoverPinWeight(muscle));
 
             // Apply physical impact.
-            muscle.rigidbody.AddForceAtPosition(
-                hitResult.HitDirection.normalized * hitForce,
-                hitResult.HitPosition,
+            muscle.rigidbody.AddForce(
+                CurrentHitResult.HitDirection.normalized * hitForce,
                 ForceMode.Impulse
             );
             

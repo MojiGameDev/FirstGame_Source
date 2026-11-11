@@ -31,7 +31,8 @@ namespace __SARV.Framework.Module.State.Behavior.Agent
             Actor.AnimancerComponent.Events.AddTo<SVAnimationParameterType>(animationEvent, HandleAnimationEventHandler);
             Actor.HandleAgentRootMotionMovement();
             var hitReaction = reaction.GetReaction(Actor.CurrentHitResult.Power, Actor.CurrentHitResult.GetDirectionAsEnum());
-            Actor.PlayAnimancer(hitReaction.Alias, restart: true);
+            //Actor.PlayAnimancer(hitReaction.Alias, restart: true);
+            Actor.ApplyRagdollHit();
         }
 
         public override async Task Exit()
