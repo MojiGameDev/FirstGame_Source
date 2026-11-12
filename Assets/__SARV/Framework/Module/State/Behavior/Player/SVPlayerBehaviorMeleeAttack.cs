@@ -62,7 +62,8 @@ namespace __SARV.Framework.Module.State.Behavior
                 if (_currentHitbox.TryGetHitInfo(out var targetActor, out var hitPosition, out var hitDirection))
                 {
                     var hitResult = new SVHitResult(hitPosition, hitDirection, _currentComboNode.Attack.Power, _currentComboNode.Attack.Force);
-                    targetActor.SetHitResult(hitResult);
+                    Actor.SetCurrentMeleeAttack(_currentComboNode.Attack);
+                    targetActor.SetCurrentHitResult(hitResult);
                     _ = _currentComboNode.Attack.ExecuteOnHit(Actor.Argument);
                     _ = targetActor.CurrentMeleeShield.ExecuteOnDamage(targetActor.Argument);
                 }

@@ -1,5 +1,6 @@
 ﻿using __SARV.Framework.Module.Hitbox.Entity;
 using __SARV.Framework.Module.Identifier;
+using __SARV.Framework.Module.Melee;
 using __SARV.Framework.Module.Reaction.Enum;
 using UnityEngine;
 
@@ -7,17 +8,23 @@ namespace __SARV.Framework.Module.Actor.SubActor
 {
     public abstract class SVSubActorCombat : SVSubActorEquipment
     {
-        public SARVIdentifier AttackBehaviorIdentifier { get; protected set; }
-        public SVHitResult CurrentHitResult { get; protected set; }
+        public SARVIdentifier AttackBehaviorIdentifier { get; private set; }
+        public SVHitResult CurrentHitResult { get; private set; }
+        public SARVMeleeAttack CurrentMeleeAttack { get; private set; }
         
         public void SetAttackBehaviorIdentifier(SARVIdentifier identifier)
         {
             AttackBehaviorIdentifier = identifier;
         }
 
-        public void SetHitResult(SVHitResult hitResult)
+        public void SetCurrentHitResult(SVHitResult hitResult)
         {
             CurrentHitResult = hitResult;
+        }
+
+        public void SetCurrentMeleeAttack(SARVMeleeAttack meleeAttack)
+        {
+            CurrentMeleeAttack = meleeAttack;
         }
         
         public SVReactionDirection GetCurrentHitDirectionAsEnum()

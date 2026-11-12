@@ -14,10 +14,10 @@ namespace __SARV.Framework.Module.Cameras.Entity
         private SARVIdentifier identifier;
 
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Title("Camera")] [HideLabel] [Required]
-        private CinemachineCamera cameraShot;
+        private CinemachineCamera cinemachineCamera;
 
         public SARVIdentifier Identifier => identifier;
-        public CinemachineCamera CameraShot => cameraShot;
+        public CinemachineCamera CinemachineCamera => cinemachineCamera;
         private string GroupTitle => Identifier == null ? "Shot" : Identifier.name;
     }
 }

@@ -3,7 +3,7 @@ using __SARV.Framework.Module.Cameras.SubCamera;
 
 namespace __SARV.Framework.Module.Cameras
 {
-    public class SARVCamera : SVSubCameraShot
+    public class SARVCamera : SVSubCameraHitStop
     {
         protected override void Awake()
         {
