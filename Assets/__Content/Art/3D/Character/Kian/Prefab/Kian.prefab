@@ -14698,6 +14698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
+  agentType: 20
   animancerComponent: {fileID: 5061645055310410478}
   puppetMaster: {fileID: 0}
   ecmCharacter: {fileID: 2661093102305112960}
@@ -14705,7 +14706,7 @@ MonoBehaviour:
   aiPath: {fileID: 0}
   aiDestinationSetter: {fileID: 0}
   characterController: {fileID: 0}
-  visualStateMachine: {fileID: 0}
+  agentDestination: {fileID: 0}
   playerMoveHorizontalKey: PlayerMoveHorizontal
   playerMoveVerticalKey: PlayerMoveVertical
   playerSprintKey: PlayerSprint
@@ -14715,8 +14716,8 @@ MonoBehaviour:
   inputMovementDirection: {x: 0, y: 0, z: 0}
   currentSpeed: 0
   hurtpoints: []
-  hitForce: 100
-  hitPinWeight: 0.2
+  hitForce: 300
+  hitPinWeight: 0
   pinRecoveryDuration: 0.2
   stateMachine:
     currentStateIdentifier: {fileID: 0}
@@ -17299,6 +17300,7 @@ MonoBehaviour:
   instruction:
     instruction: 
     instructions:
+    - rid: 7729762670221983987
     - rid: 7729762557903765645
   references:
     version: 2
@@ -17319,6 +17321,32 @@ MonoBehaviour:
         propertyType:
           rid: 7729762557903765648
     - rid: 7729762557903765648
+      type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 
+    - rid: 7729762670221983987
+      type: {class: SVLogicInstructionBreakIf, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        branch:
+          branch: 
+          conditionJoinType: 10
+          branches:
+          - rid: 7729762670221983994
+    - rid: 7729762670221983994
+      type: {class: SVActorBranchIsCurrentBehavior, ns: __SARV.Framework.Kernal.Branch, asm: Assembly-CSharp}
+      data:
+        not: 0
+        disabled: 0
+        actor:
+          rid: 7729762670221983995
+        behavior: {fileID: 11400000, guid: c27a0337f596e6a4f83029489411fe1f, type: 2}
+    - rid: 7729762670221983995
+      type: {class: SVActorProperty, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: Player
+        propertyType:
+          rid: 7729762670221983997
+    - rid: 7729762670221983997
       type: {class: SVActorPropertyPlayer, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
       data: 
 --- !u!1 &3887340055385691308

@@ -24,10 +24,16 @@ MonoBehaviour:
     instructions: []
   onHitInstruction:
     instruction: 
-    instructions: []
+    instructions:
+    - rid: 7729762738864128101
   onEndInstruction:
     instruction: 
     instructions: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7729762738864128101
+      type: {class: SVFeelInstructionPlayHitStop, ns: __SARV.Framework.Kernal.Instruction.Feel, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        identifier: {fileID: 11400000, guid: 73b487cc21cb2f841976584a81a14819, type: 2}
