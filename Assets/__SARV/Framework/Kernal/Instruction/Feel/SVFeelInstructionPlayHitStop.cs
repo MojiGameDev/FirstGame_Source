@@ -10,13 +10,13 @@ using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace __SARV.Framework.Kernal.Instruction.Feel
+namespace __SARV.Framework.Kernal.Instruction
 {
     [SVTitle("PlayHitStop")]
     [SVCategory(SVConstantCategory.Instruction.FEEL)]
     [SVDescription("Briefly pauses the game to emphasize an impact, making attacks and collisions feel more impactful")]
     [Serializable]
-    public class SVFeelInstructionPlayHitStop: SVInstructionComponent
+    public class SVFeelInstructionPlayHitStop : SVInstructionComponent
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVIdentifier identifier;

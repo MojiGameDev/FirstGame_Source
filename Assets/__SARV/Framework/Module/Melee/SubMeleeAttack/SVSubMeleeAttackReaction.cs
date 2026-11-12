@@ -8,28 +8,20 @@ namespace __SARV.Framework.Module.Melee.SubMeleeAttack
 {
     public abstract class SVSubMeleeAttackReaction : SVSubMeleeAttackSetting
     {
-        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnStart")] [HideLabel]
-        private SVInstruction onStartInstruction;
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnEnableStrike")] [HideLabel]
+        private SVInstruction onEnableStrikeInstruction;
 
-        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnHit")] [HideLabel]
-        private SVInstruction onHitInstruction;
+        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnDisableStrike")] [HideLabel]
+        private SVInstruction onDisableStrikeInstruction;
 
-        [FoldoutGroup("Reaction")] [SerializeField] [Title("OnEnd")] [HideLabel]
-        private SVInstruction onEndInstruction;
-
-        public async Task ExecuteOnStart(SVArgument argument)
+        public async Task ExecuteOnEnableStrike(SVArgument argument)
         {
-            await onStartInstruction.ExecuteInstructions(argument);
+            await onEnableStrikeInstruction.ExecuteInstructions(argument);
         }
 
-        public async Task ExecuteOnHit(SVArgument argument)
+        public async Task ExecuteOnDisableStrike(SVArgument argument)
         {
-            await onHitInstruction.ExecuteInstructions(argument);
-        }
-
-        public async Task ExecuteOnEnd(SVArgument argument)
-        {
-            await onEndInstruction.ExecuteInstructions(argument);
+            await onDisableStrikeInstruction.ExecuteInstructions(argument);
         }
     }
 }

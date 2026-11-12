@@ -22,6 +22,7 @@
             public const string LOGIC = "Logic";
             public const string MELEE = "Melee";
             public const string FEEL = "Feel";
+            public const string MASTER_AUDIO = "MasterAudio";
         }
 
         public static class Branch

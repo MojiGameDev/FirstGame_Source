@@ -64,7 +64,7 @@ namespace __SARV.Framework.Module.State.Behavior
                     var hitResult = new SVHitResult(hitPosition, hitDirection, _currentComboNode.Attack.Power, _currentComboNode.Attack.Force);
                     Actor.SetCurrentMeleeAttack(_currentComboNode.Attack);
                     targetActor.SetCurrentHitResult(hitResult);
-                    _ = _currentComboNode.Attack.ExecuteOnHit(Actor.Argument);
+                    _ = _currentComboNode.Attack.ExecuteOnDisableStrike(Actor.Argument);
                     _ = targetActor.CurrentMeleeShield.ExecuteOnDamage(targetActor.Argument);
                 }
             }
@@ -145,10 +145,12 @@ namespace __SARV.Framework.Module.State.Behavior
                     _isAttackDone = true;
                     _ = Actor.CurrentMeleeWeapon.MeleeCombo.ExecuteOnEnd(Actor.Argument);
                     break;
-                case SVMeleeAttackPhase.EnableHitbox:
+                case SVMeleeAttackPhase.EnableStrike:
+                    _ = _currentComboNode.Attack.ExecuteOnEnableStrike(Actor.Argument);
                     _currentHitbox.Activate();
                     break;
-                case SVMeleeAttackPhase.DisableHitbox:
+                case SVMeleeAttackPhase.DisableStrike:
+                    _ = _currentComboNode.Attack.ExecuteOnDisableStrike(Actor.Argument);
                     _currentHitbox.Deactivate();
                     break;
             }

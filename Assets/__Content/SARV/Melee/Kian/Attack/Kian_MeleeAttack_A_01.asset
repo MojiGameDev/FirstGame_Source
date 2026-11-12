@@ -19,21 +19,29 @@ MonoBehaviour:
     path: 
   power: 10
   force: 500
-  onStartInstruction:
-    instruction: 
-    instructions: []
-  onHitInstruction:
+  onEnableStrikeInstruction:
     instruction: 
     instructions:
-    - rid: 7729762738864128101
-  onEndInstruction:
+    - rid: 7729762738864128144
+  onDisableStrikeInstruction:
     instruction: 
     instructions: []
   references:
     version: 2
     RefIds:
-    - rid: 7729762738864128101
-      type: {class: SVFeelInstructionPlayHitStop, ns: __SARV.Framework.Kernal.Instruction.Feel, asm: Assembly-CSharp}
+    - rid: 7729762738864128144
+      type: {class: SVMasterAudioInstructionPlayAt, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
       data:
         disabled: 0
-        identifier: {fileID: 11400000, guid: 73b487cc21cb2f841976584a81a14819, type: 2}
+        identifier: {fileID: 11400000, guid: 623cd42083e32fe42b343d0efc386990, type: 2}
+        position:
+          rid: 7729762738864128145
+    - rid: 7729762738864128145
+      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: PlayerPosition
+        propertyType:
+          rid: 7729762738864128147
+    - rid: 7729762738864128147
+      type: {class: SVVector3PropertyPlayerPosition, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 

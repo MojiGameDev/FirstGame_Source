@@ -30,13 +30,6 @@ namespace __SARV.Framework.Module.Feel.SubFell
         {
             base.Update();
             
-            Debug.Log(
-                $"HitStop Active: {_isActive} | " +
-                $"TimeScale: {Time.timeScale} | " +
-                $"UnscaledDelta: {Time.unscaledDeltaTime} | " +
-                $"Remaining: {_remainingTime}"
-            );
-            
             if (!_isActive)
             {
                 return;
