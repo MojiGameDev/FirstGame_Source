@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using __SARV.Framework.Module.Cameras.Entity;
 using __SARV.Framework.Module.Identifier;
 using Sirenix.OdinInspector;
-using Unity.Cinemachine;
 using UnityEngine;
 
 namespace __SARV.Framework.Module.Cameras.SubCamera
@@ -11,11 +9,11 @@ namespace __SARV.Framework.Module.Cameras.SubCamera
     public abstract class SVSubCameraShot : SVSubCameraReference
     {
         [FoldoutGroup("Shot")] [SerializeField] [RequiredListLength(1, 10)]
-        protected List<SVCameraShot> cameraShots = new();
+        protected List<SARVCameraShot> cameraShots = new();
 
-        protected readonly Dictionary<SARVIdentifier, SVCameraShot> RuntimeCameraShot = new();
+        protected readonly Dictionary<SARVIdentifier, SARVCameraShot> RuntimeCameraShot = new();
         
-        protected SVCameraShot CurrentCameraShot;
+        protected SARVCameraShot CurrentCameraShot;
 
         protected override void Awake()
         {

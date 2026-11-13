@@ -17,17 +17,31 @@ MonoBehaviour:
     boneType: 10
     human: 18
     path: 
-  power: 10
+  power: 20
   force: 100
-  onStartInstruction:
+  onEnableStrikeInstruction:
     instruction: 
-    instructions: []
-  onHitInstruction:
-    instruction: 
-    instructions: []
-  onEndInstruction:
+    instructions:
+    - rid: 7729762738864128151
+  onDisableStrikeInstruction:
     instruction: 
     instructions: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7729762738864128151
+      type: {class: SVMasterAudioInstructionPlayAt, ns: __SARV.Framework.Kernal.Instruction, asm: Assembly-CSharp}
+      data:
+        disabled: 0
+        identifier: {fileID: 11400000, guid: 623cd42083e32fe42b343d0efc386990, type: 2}
+        position:
+          rid: 7729762738864128152
+    - rid: 7729762738864128152
+      type: {class: SVVector3Property, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data:
+        property: PlayerPosition
+        propertyType:
+          rid: 7729762738864128153
+    - rid: 7729762738864128153
+      type: {class: SVVector3PropertyPlayerPosition, ns: __SARV.Framework.Kernal.Property, asm: Assembly-CSharp}
+      data: 

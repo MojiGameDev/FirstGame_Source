@@ -35,24 +35,17 @@ namespace __SARV.Framework.Module.Actor.SubActor
             // Convert to actor-local direction.
             var localDirection = transform.InverseTransformDirection(incomingDirection);
 
-            // Find the dominant axis.
-            var absDirection = new Vector3(
-                Mathf.Abs(localDirection.x),
-                Mathf.Abs(localDirection.y),
-                Mathf.Abs(localDirection.z)
-            );
-
-            if (absDirection.y > absDirection.x && absDirection.y > absDirection.z)
+            // Compare horizontal axes only.
+            if (Mathf.Abs(localDirection.z) > Mathf.Abs(localDirection.x))
             {
-                return localDirection.y > 0f ? SVReactionDirection.Top : SVReactionDirection.Bottom;
+                return localDirection.z > 0f
+                    ? SVReactionDirection.Front
+                    : SVReactionDirection.Back;
             }
 
-            if (absDirection.z > absDirection.x)
-            {
-                return localDirection.z > 0f ? SVReactionDirection.Front : SVReactionDirection.Back;
-            }
-
-            return localDirection.x > 0f ? SVReactionDirection.Right : SVReactionDirection.Left;
+            return localDirection.x > 0f
+                ? SVReactionDirection.Right
+                : SVReactionDirection.Left;
         }
     }
 }

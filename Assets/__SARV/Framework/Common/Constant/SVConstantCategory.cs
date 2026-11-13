@@ -21,7 +21,8 @@
             public const string DO_TWEEN_PRO = "DOTweenPro";
             public const string LOGIC = "Logic";
             public const string MELEE = "Melee";
-            public const string ATMOSPHERE = "Atmosphere";
+            public const string FEEL = "Feel";
+            public const string MASTER_AUDIO = "MasterAudio";
         }
 
         public static class Branch

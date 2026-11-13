@@ -119,63 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1599109848
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.6720464
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 50.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.3797667
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1578740381550409619, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8357644444844305109, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
-      propertyPath: m_Name
-      value: Particle_BloodDecalSplatter_01
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 11aba42f6ed94b649abbc6dbe124cd99, type: 3}
 --- !u!1001 &4413526154423562662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -228,6 +171,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8246214810646818262, guid: 19a9e9c0a9445e84f9f40f7a8f872c40, type: 3}
+      propertyPath: audioWrappers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246214810646818262, guid: 19a9e9c0a9445e84f9f40f7a8f872c40, type: 3}
+      propertyPath: audioWrappers.Array.data[3].clipName
+      value: WeaponSwing
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246214810646818262, guid: 19a9e9c0a9445e84f9f40f7a8f872c40, type: 3}
+      propertyPath: audioWrappers.Array.data[3].identifier
+      value: 
+      objectReference: {fileID: 11400000, guid: 623cd42083e32fe42b343d0efc386990, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -284,26 +239,6 @@ PrefabInstance:
     - target: {fileID: 1994570379005869629, guid: ed5714605eedab342a7c78bb4fc7f0dd, type: 3}
       propertyPath: m_Name
       value: MasterAudio
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228899547369121719, guid: ed5714605eedab342a7c78bb4fc7f0dd, type: 3}
-      propertyPath: showOcclusion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228899547369121719, guid: ed5714605eedab342a7c78bb4fc7f0dd, type: 3}
-      propertyPath: showAdvancedSettings
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228899547369121719, guid: ed5714605eedab342a7c78bb4fc7f0dd, type: 3}
-      propertyPath: showRangeSoundGizmos
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228899547369121719, guid: ed5714605eedab342a7c78bb4fc7f0dd, type: 3}
-      propertyPath: visualAdvancedExpanded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321608275896136096, guid: ed5714605eedab342a7c78bb4fc7f0dd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -374,4 +309,3 @@ SceneRoots:
   - {fileID: 4413526154423562662}
   - {fileID: 8232051624864758598}
   - {fileID: 5895101437999298690}
-  - {fileID: 1599109848}

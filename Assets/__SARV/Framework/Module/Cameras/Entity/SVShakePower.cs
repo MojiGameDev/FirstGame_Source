@@ -7,7 +7,7 @@ using UnityEngine;
 namespace __SARV.Framework.Module.Cameras.Entity
 {
     [Serializable]
-    public class SVHitStop : SVSerializable
+    public class SVShakePower : SVSerializable
     {
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField] [Required]
         private SARVIdentifier identifier;
@@ -33,8 +33,8 @@ namespace __SARV.Framework.Module.Cameras.Entity
         [FoldoutGroup("$" + nameof(GroupTitle))] [SerializeField]
         private AnimationCurve fadeCurve = AnimationCurve.EaseInOut(0, 1, 1, 0);
 
-        private string GroupTitle => $"A shake with strength of {strength} in {duration} seconds";
-
+        private string GroupTitle => $"Camera Shake ({strength}x strength for {duration}s)";
+        
         public SARVIdentifier Identifier => identifier;
         public float Strength => strength;
         public float Speed => speed;
